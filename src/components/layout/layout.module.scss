@@ -1,0 +1,12 @@
+.outer-container {
+    min-height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.inner-container {
+    padding: 1.8rem;
+    flex-grow: 1;
+    min-height: 60vh;
+}
