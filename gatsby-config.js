@@ -7,6 +7,12 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet'
+    'gatsby-plugin-react-helmet',
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'en'
+      }
+    }
   ]
 }
