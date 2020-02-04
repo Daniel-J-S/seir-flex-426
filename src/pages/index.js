@@ -1,3 +1,9 @@
 import React from "react"
 
-export default () => <div>GA Classroom Website</div>
+import Layout from '../components/layout';
+
+export default () => (
+    <Layout pageTitle={"Home"}>
+        <h1>Home Page</h1>
+    </Layout>
+);
