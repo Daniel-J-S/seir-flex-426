@@ -12,13 +12,29 @@ module.exports = {
     keywords: 'sofware engineer, software engineering, coding, javascript, html, css'
   },
   plugins: [
-    'gatsby-plugin-sass',
-    'gatsby-plugin-react-helmet',
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-plugin-html-attributes',
+      resolve: `gatsby-plugin-html-attributes`,
       options: {
-        lang: 'en'
+        lang: `en`
       }
-    }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `page-content`,
+        path: `${__dirname}/src/page-content`
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `course-materials`,
+        path: `${__dirname}/src/course-materials`
+      }
+    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-catch-links`
   ]
 };
