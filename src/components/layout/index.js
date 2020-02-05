@@ -13,9 +13,9 @@ export default ({ pageTitle, children }) => {
             <Head pageTitle={pageTitle} />
             <div className={styles.outerContainer}>
                 <NavBar />
-                <main className={styles.innerContainer}>
+                <div className={styles.innerContainer}>
                     { children }
-                </main>
+                </div>
                 <Footer />
             </div>
         </Fragment>

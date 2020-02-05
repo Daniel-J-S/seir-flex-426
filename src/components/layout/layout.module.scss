@@ -6,7 +6,16 @@
 }
 
 .inner-container {
-    padding: 1.8rem;
+    padding: 2rem 10rem 2rem 2rem;
+    min-height: 80vh;
     flex-grow: 1;
-    min-height: 60vh;
+    main {
+        a {
+            text-decoration: none;
+            color: crimson;
+        }
+        td {
+            font-weight: 700;
+        }
+    }
 }
