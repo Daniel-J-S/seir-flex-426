@@ -30,8 +30,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `course-materials`,
-        path: `${__dirname}/src/course-materials`
+        name: `React Fundamentals`,
+        path: `${__dirname}/src/course-materials/react-fundamentals`
       }
     },
     `gatsby-transformer-remark`,
