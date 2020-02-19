@@ -1,3 +1,12 @@
+---
+track: "React Fundamentals"
+title: "Intro to SPAs and ReactJS"
+week: 1
+day: 1
+slug: "intro-to-spas-and-reactjs"
+type: "lecture"
+---
+
 # Intro to SPAs and ReactJS
 
 
