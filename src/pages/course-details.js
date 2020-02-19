@@ -18,7 +18,7 @@ export default ({ data }) => {
 export const query = graphql`
     query {
         allMarkdownRemark (
-        filter: { fileAbsolutePath: {regex : "\/index/"} }
+        filter: { fileAbsolutePath: {regex : "\/course-details/"} }
     ) {
         edges {
             node {
