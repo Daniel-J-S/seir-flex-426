@@ -9,13 +9,11 @@
     padding: 2rem 10rem 2rem 2rem;
     min-height: 80vh;
     flex-grow: 1;
-    main {
-        a {
-            text-decoration: none;
-            color: crimson;
-        }
-        td {
-            font-weight: 700;
-        }
+    a {
+        text-decoration: none;
+        color: crimson;
+    }
+    td {
+        font-weight: 700;
     }
 }
