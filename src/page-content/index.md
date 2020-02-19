@@ -20,7 +20,7 @@ Curriculum schedule and content is subject to change at instructor's discretion.
 | 2  | CSS & React, Handling Events, Updating State & React Router |
 | 3  | Handling Input, Component Lifecycle Methods, Full Stack React & React + AJAX |
 | 4  | Token-Based Authentication with React and JWTs & Review - Catch up/Review Weekend|
-| 5 | Lab Catch Up & Project 3 |
-| 6  | Project 3 Week |
-| 7  | Project 3  and Project 3 Presentations |
+| 5 | Lab Catch Up & Project |
+| 6  | Project Week |
+| 7  | Project and Project Presentations |
 
