@@ -6,11 +6,10 @@ import logo from '../../../static/ga-logo.svg';
 
 export default () => (
     <nav className={styles.navWrapper}>
-        <img src={logo} alt="General Assembly" />
+        <Link to="/">
+            <img src={logo} alt="General Assembly" />
+        </Link>
         <ul>
-            <li>
-                <Link to="/">Home</Link>
-            </li>
             <li>
                 <Link to="/course-details">Course Details</Link>
             </li>

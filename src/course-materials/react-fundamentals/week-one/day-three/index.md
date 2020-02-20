@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Week One - Day Three"
 week: 1
 day: 3
-slug: "week-one-day-3"
 type: "homepage"
 topics: "State, Props & Components"
 ---

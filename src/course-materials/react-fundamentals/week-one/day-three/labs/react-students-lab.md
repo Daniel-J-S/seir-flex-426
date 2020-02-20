@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "React Students Lab"
 week: 1
 day: 3
-slug: "react-students-lab"
 type: "lab"
 ---
 
@@ -24,7 +23,7 @@ Time for some practice repeating what you know about React so far!
 
 ## Set Up
 
-Please complete this lab in a React [CodeSandbox](https://codesandbox.io){:target="_blank"} named "React Students".
+Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named "React Students".
 
 ## Minimum Requirements
 

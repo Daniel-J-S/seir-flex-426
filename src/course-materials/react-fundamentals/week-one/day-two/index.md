@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Week One - Day Two"
 week: 1
 day: 2
-slug: "week-one-day-2"
 type: "homepage"
 topics: "Intro to JSX"
 ---

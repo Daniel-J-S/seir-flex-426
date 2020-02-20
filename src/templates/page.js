@@ -4,10 +4,14 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
-export default ({ data }) => {
+export default ({ data, location }) => {
     const { markdownRemark } = data;
     return (
-        <Layout pageTitle={markdownRemark.frontmatter.title}>
+        <Layout 
+            pageTitle={markdownRemark.frontmatter.title} 
+            location={location}
+            crumbLabel={markdownRemark.frontmatter.title}
+        >
             <main dangerouslySetInnerHTML={{ __html: markdownRemark.html }}/>
         </Layout>
     );

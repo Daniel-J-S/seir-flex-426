@@ -35,6 +35,18 @@ module.exports = {
       }
     },
     `gatsby-transformer-remark`,
-    `gatsby-plugin-catch-links`
+    `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-breadcrumb`,
+      options: {
+        defaultCrumb: {
+          location: {
+            pathname: "/"
+          },
+          crumbLabel: "/",
+          crumbSeperator: " / ",
+        }
+      }
+    }
   ]
 };

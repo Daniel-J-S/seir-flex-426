@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Intro to SPAs and ReactJS"
 week: 1
 day: 1
-slug: "intro-to-spas-and-reactjs"
 type: "lecture"
 ---
 
@@ -109,7 +108,7 @@ The undisputed champ of client-side rendering today is React!
 
 ### When Use React?
 
-[React](https://reactjs.org/){:target="_blank"} is the go to front-end library when developing highly dynamic user interfaces.
+[React](https://reactjs.org/) is the go to front-end library when developing highly dynamic user interfaces.
 
 ### Why Use React?
 
@@ -121,7 +120,7 @@ Adoption = Jobs !!!
 
 The React team has developed a wonderful CLI for starting a new React app. The command will be `create-react-app <app name>` - think of it as the express-generator for React apps.
 
-However, before we use `create-react-app` we will use a most excellent code playground, [CodeSandbox](https://codesandbox.io/){:target="_blank"} to take a first look at how React works...
+However, before we use `create-react-app` we will use a most excellent code playground, [CodeSandbox](https://codesandbox.io/) to take a first look at how React works...
 
 #### CodeSandbox Starting React App
 
@@ -252,7 +251,7 @@ Setting up a project initially is pretty mundane, thus there are tools that do i
 
 For example, we've been using **express-generator** to set up our Express apps.
 
-[**Yeoman**](http://yeoman.io/){:target="_blank"} is a general purpose scaffolding tool that has a huge ecosystem of _generators_ for just about any framework or workflow structure you can think of.
+[**Yeoman**](http://yeoman.io/) is a general purpose scaffolding tool that has a huge ecosystem of _generators_ for just about any framework or workflow structure you can think of.
 
 #### Developer Services / Task Runners
 
@@ -268,9 +267,9 @@ Just about any task a developer does repeatedly manually, can benefit from tooli
 
 Developing a React app requires tooling because a typical React app is spread across numerous files/modules with dependencies that need to be bundled together. In addition, JSX needs to be transpiled into pure JS.
 
-When you need tooling, you have several options. One of the early build tools/task runners to become popular was [**Grunt**](https://gruntjs.com/){:target="_blank"}. However, most developers have found [**Gulp**](http://gulpjs.com/){:target="_blank"} to be more friendly and faster.
+When you need tooling, you have several options. One of the early build tools/task runners to become popular was [**Grunt**](https://gruntjs.com/). However, most developers have found [**Gulp**](http://gulpjs.com/) to be more friendly and faster.
 
-Over time, [**webpack**](https://webpack.github.io/){:target="_blank"} has become the tool of choice in the React community and it is what the `create-react-app` CLI uses.
+Over time, [**webpack**](https://webpack.github.io/) has become the tool of choice in the React community and it is what the `create-react-app` CLI uses.
 
 Webpack is a module bundler that figures out dependencies, processes source code and other files, and in the end, provides a single `bundle.js` file to be loaded into the browser.
 
@@ -280,11 +279,11 @@ We will be using `create-react-app` to start all React apps in SEI from this poi
 
 ## Lab: Official React Tutorial
 
-[React's official tutorial](https://reactjs.org/tutorial/tutorial.html){:target="_blank"} assumes no existing React knowledge and is therefore a great place to get your feet wet.
+[React's official tutorial](https://reactjs.org/tutorial/tutorial.html) assumes no existing React knowledge and is therefore a great place to get your feet wet.
 
-Note that the tutorial has two different setup options.  Please use the [starter code for Option 1](https://codepen.io/gaearon/pen/oWWQNa?editors=0010){:target="_blank"}.
+Note that the tutorial has two different setup options.  Please use the [starter code for Option 1](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
 
-After opening the starter code (a CodePen), start the tutorial [here](https://reactjs.org/tutorial/tutorial.html#inspecting-the-starter-code){:target="_blank"}.
+After opening the starter code (a CodePen), start the tutorial [here](https://reactjs.org/tutorial/tutorial.html#inspecting-the-starter-code).
 
 This lab is not a deliverable.
 
@@ -292,19 +291,19 @@ This lab is not a deliverable.
 
 #### HTML5's History API
 
-Using HTML5's [History API](https://developer.mozilla.org/en-US/docs/Web/API/History){:target="_blank"}, an application in the browser is able to manipulate the browser's current URL using JS and without triggering a server request.
+Using HTML5's [History API](https://developer.mozilla.org/en-US/docs/Web/API/History), an application in the browser is able to manipulate the browser's current URL using JS and without triggering a server request.
 
 Client-side router software can use the History API to perform client-side routing to load different "screens"/functionality and perform other magic without a full-page refresh.
 
 This approach works wonderfully when the client router is in charge and is the only thing manipulating the URL in the address bar. However, what about when a user enters a URL manually, or a link external to the client app is clicked? These cases require a small bit of configuration on the server - a simple "catch all" route that handles all requests that don't match requests for static assets, API routes, etc. The catch all route will then return the **index.html** and all is well.
 
-Later in this unit you'll be introduced to the popular [React Router](https://github.com/ReactTraining/react-router){:target="_blank"}, which uses the History API to perform client-side routing in React SPAs.
+Later in this unit you'll be introduced to the popular [React Router](https://github.com/ReactTraining/react-router), which uses the History API to perform client-side routing in React SPAs.
 
 #### Browser Hash Navigation
 
 The HTML specification includes what is known as **Hash URIs**.
 
-Hash URIs include a "hash" (`#`) in the URI, for example:<br>[https://facebook.github.io/react/docs/react-dom.html#reference](https://facebook.github.io/react/docs/react-dom.html#reference){:target="_blank"}  
+Hash URIs include a "hash" (`#`) in the URI, for example:<br>[https://facebook.github.io/react/docs/react-dom.html#reference](https://facebook.github.io/react/docs/react-dom.html#reference)  
 
 If we browse to the above link, we will see that it takes us directly to the "Reference" section on the page.
 
@@ -320,5 +319,5 @@ Today's client-side routers lean toward using the History API over Hash URIs due
 
 ## References
 
-[React Docs](https://facebook.github.io/react/){:target="_blank"}
+[React Docs](https://facebook.github.io/react/)
 

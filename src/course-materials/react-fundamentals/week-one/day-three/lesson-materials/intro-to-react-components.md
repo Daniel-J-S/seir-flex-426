@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Components in React"
 week: 1
 day: 3
-slug: "components-in-react"
 type: "lecture"
 ---
 
@@ -118,7 +117,7 @@ How do we know which components _should_ have state or just props? That's what w
 
 #### Two Categories of Components
 
-To build better UIs with components, experts like [Dan Abramov](https://twitter.com/dan_abramov?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor){:target="_blank"} within the React community have established guidelines to separate components into one of two different categories:
+To build better UIs with components, experts like [Dan Abramov](https://twitter.com/dan_abramov?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor) within the React community have established guidelines to separate components into one of two different categories:
 
 - **Container** (formerly known as "smart components")
 - **Presentational** (formerly known as "dumb components")
@@ -156,7 +155,7 @@ Developing a game in React provides excellent practice designing and developing 
 
 Don't think that by writing a game, you won't learn how to use React in non-game apps. This game is going to be a full-stack app with CRUD on the backend and even advanced authentication! In reality, there's no better way to learn about React than by developing what we're going to this unit!
 
-Our goal is by the end of this unit, to have a working game of [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)){:target="_blank"}.
+Our goal is by the end of this unit, to have a working game of [Mastermind](https://en.wikipedia.org/wiki/Mastermind_(board_game)).
 
 You're not familiar? Come on, it was only named game of the year - in 1973 :)
 
@@ -164,7 +163,7 @@ It normally takes two players to play Mastermind because one player had to set t
 
 Luckily, this app will make it possible for users to play Mastermind by themselves!
 
-Let's check out what we're going to build [here](https://seir-flex-mastermind.herokuapp.com/){:target="_blank"}.
+Let's check out what we're going to build [here](https://seir-flex-mastermind.herokuapp.com/).
 
 #### Generate the App
 
@@ -189,7 +188,7 @@ For the most part, you will be coding your React apps by modifying/adding code w
 
 Not long ago, `create-react-app` generated the `<App>` component in **App.js** as a class.  However, it now uses a Function Component.
 
-Function Components are "lighter weight", and with the recent addition of [hooks](https://reactjs.org/docs/hooks-intro.html){:target="_blank"}, they can now manage state like Class Components (as well as implement their other features).
+Function Components are "lighter weight", and with the recent addition of [hooks](https://reactjs.org/docs/hooks-intro.html), they can now manage state like Class Components (as well as implement their other features).
 
 However, 99% of the React code out there uses Class Components to manage state and thus we will as well until we have a chance to cover hooks.
 
@@ -287,7 +286,7 @@ Let's review the following common approach:
 
 In the next lesson we'll focus on the data model (state) that a game of Mastermind requires.
 
-Lastly, [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html){:target="_blank"} from the docs is a fantastic read that covers many of the above concepts in greater detail.
+Lastly, [Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html) from the docs is a fantastic read that covers many of the above concepts in greater detail.
 
 Let's start defining some components...
 
@@ -478,7 +477,7 @@ As a bonus challenge, use CSS flexbox to rearrange the components into a basic l
 
 ## References
 
-[React Docs - Components & Props](https://facebook.github.io/react/docs/components-and-props.html){:target="_blank"}
+[React Docs - Components & Props](https://facebook.github.io/react/docs/components-and-props.html)
 
-[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html){:target="_blank"}
+[Thinking in React](https://facebook.github.io/react/docs/thinking-in-react.html)
 

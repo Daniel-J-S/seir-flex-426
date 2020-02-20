@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Intro to JSX"
 week: 1
 day: 2
-slug: "intro-to-jsx"
 type: "lecture"
 ---
 
@@ -43,7 +42,7 @@ type: "lecture"
 
 #### What?
 
-- **JSX** is an XML-like syntax extension to JavaScript. [XML](https://en.wikipedia.org/wiki/XML){:target="_blank"} is short for _extensible markup language_ and JSX it's one of those extensions - just like HTML is.
+- **JSX** is an XML-like syntax extension to JavaScript. [XML](https://en.wikipedia.org/wiki/XML) is short for _extensible markup language_ and JSX it's one of those extensions - just like HTML is.
 - Created by Facebook for use in React.
 - It provides a way to concisely define tree structures with attributes - perfect for defining a DOM tree!
 - It is transpiled into pure JavaScript. **Why is this necessary?**
@@ -58,7 +57,7 @@ type: "lecture"
 
 As discussed, developing real-world React apps requires tooling. One of the reasons tooling is necessary is for the transpiling of JSX into JavaScript that can run in the browser.
 
-The most popular transpiler for JSX is [Babel](https://babeljs.io/){:target="_blank"}. Babel originally was created because developers got tired of waiting for ES2015 features to be implemented in browsers. Babel has become the go to tool for enabling the use of tomorrow's features of JavaScript today.
+The most popular transpiler for JSX is [Babel](https://babeljs.io/). Babel originally was created because developers got tired of waiting for ES2015 features to be implemented in browsers. Babel has become the go to tool for enabling the use of tomorrow's features of JavaScript today.
 
 Babel's website has a REPL that enables typing in some JSX and see what its pure JS equivalent is. Click the **Try it out feature** tab and make sure that **react** is selected as one of the _presets_.
 
@@ -81,7 +80,7 @@ const student = React.createElement(
 );
 ```
 
-> Note: In JSX, every element must be explicitly _closed_. Every "tag" must either have an opening **and** closing tag, or in the case of an [empty element](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element){:target="_blank"} (a tag that has no content such as `<br>`, `<img>`, `<hr>`, etc.), unlike in HTML, we must include a forward slash before the closing angle bracket like we did with `<br/>` above.
+> Note: In JSX, every element must be explicitly _closed_. Every "tag" must either have an opening **and** closing tag, or in the case of an [empty element](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element) (a tag that has no content such as `<br>`, `<img>`, `<hr>`, etc.), unlike in HTML, we must include a forward slash before the closing angle bracket like we did with `<br/>` above.
 
 Okay, we have the following observations regarding the JS for a component:
 
@@ -122,7 +121,7 @@ So, I ask you - **Which is a more clear and concise way of defining a component'
 
 #### Setting Up a React Playground
 
-Let's use [CodeSandbox](https://codesandbox.io/){:target="_blank"} to experiment further with JSX.
+Let's use [CodeSandbox](https://codesandbox.io/) to experiment further with JSX.
 
 Be sure to create a new React sandbox, then:
 
@@ -238,7 +237,7 @@ There are a few other syntax rules, etc.:
 	
 **NEWS FLASH!**
 	
-Beginning with version 16.2, react has added support for "fragments" in JSX as detailed in [this blog post](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html?utm_campaign=React%2BNewsletter&utm_medium=email&utm_source=React_Newsletter_95){:target="_blank"}
+Beginning with version 16.2, react has added support for "fragments" in JSX as detailed in [this blog post](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html?utm_campaign=React%2BNewsletter&utm_medium=email&utm_source=React_Newsletter_95)
 
 Essentially, they allow for multiple components to be "wrapped" with an empty tag, called a **Fragment**.  For example:
 
@@ -293,7 +292,7 @@ We will soon have a lesson dedicated to learning about `props` and `state` in Re
 
 The syntax of passing props to a component is much like defining attributes in an HTML element.
 
-Many pre-defined props map to HTML attributes. [These docs](https://facebook.github.io/react/docs/dom-elements.html){:target="_blank"} list the supported HTML attributes and discuss important differences. For example, we cannot use `class` to assign CSS classes to a built-in HTML component, instead we must use `className` because `class` is a reserved word in JavaScript.
+Many pre-defined props map to HTML attributes. [These docs](https://facebook.github.io/react/docs/dom-elements.html) list the supported HTML attributes and discuss important differences. For example, we cannot use `class` to assign CSS classes to a built-in HTML component, instead we must use `className` because `class` is a reserved word in JavaScript.
 
 Many props map directly to their HTML attribute counterparts. For example, this is how you could add an `id` to a `<div>`:
 
@@ -507,6 +506,6 @@ Note that a `key` prop has been added. Whenever React has a list of components, 
 
 ## References
 
-[React Docs - JSX](https://facebook.github.io/react/docs/introducing-jsx.html){:target="_blank"}
+[React Docs - JSX](https://facebook.github.io/react/docs/introducing-jsx.html)
 
-[Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react){:target="_blank"}
+[Airbnb React/JSX Style Guide](https://github.com/airbnb/javascript/tree/master/react)

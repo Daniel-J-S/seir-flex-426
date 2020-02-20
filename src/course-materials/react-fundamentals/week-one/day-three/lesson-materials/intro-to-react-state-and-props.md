@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "State and Props in React"
 week: 1
 day: 3
-slug: "state-and-props-in-react"
 type: "lecture"
 ---
 
@@ -288,7 +287,7 @@ The first prop we'll pass in react-mastermind will be the `colors` array to the 
 
 You must use curly braces to pass any value other than a simple string (template literals need to be surrounded by curly braces as well).
 
-We can now go to  `<ColorPicker>` and work with the colors array, but there's a better way to check things like props and state - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en){:target="_blank"}
+We can now go to  `<ColorPicker>` and work with the colors array, but there's a better way to check things like props and state - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
 
 Just like how Chrome's DevTools are invaluable when it comes to troubleshooting the DOM, so are React's Developer Tools when it comes to troubleshooting a React app!
 
@@ -699,8 +698,8 @@ Take a minute to review the following questions:
 
 ## References
 
-[Thinking in React](https://reactjs.org/docs/thinking-in-react.html){:target="_blank"}
+[Thinking in React](https://reactjs.org/docs/thinking-in-react.html)
 
-[Components and Props - React Docs](https://reactjs.org/docs/components-and-props.html){:target="_blank"}
+[Components and Props - React Docs](https://reactjs.org/docs/components-and-props.html)
 
-[State and Lifecycle - React Docs](https://reactjs.org/docs/state-and-lifecycle.html){:target="_blank"}
+[State and Lifecycle - React Docs](https://reactjs.org/docs/state-and-lifecycle.html)
