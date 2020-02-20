@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "Week One - Day One"
 week: 1
 day: 1
-slug: "week-one-day-1"
 type: "homepage"
 topics: "Intro to SPAs and React"
 ---

@@ -3,7 +3,6 @@ track: "React Fundamentals"
 title: "React Floor Plan Lab"
 week: 1
 day: 2
-slug: "floor-plan-lab"
 type: "lab"
 ---
 
@@ -23,7 +22,7 @@ In the _Intro to JSX_ lesson, you saw the following React basics:
 
 ## Set Up
 
-Please complete this lab in a React [CodeSandbox](https://codesandbox.io){:target="_blank"} named "Floor Plan".
+Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named "Floor Plan".
 
 ## Minimum Requirements
 
@@ -111,5 +110,5 @@ Style the components to make the output look like a floor plan:
 
 Don't peek unless you HAVE to:
 
-[Possible solution](https://codesandbox.io/s/mj279mk4vx?fontsize=14){:target="_blank"}
+[Possible solution](https://codesandbox.io/s/mj279mk4vx?fontsize=14)
 
