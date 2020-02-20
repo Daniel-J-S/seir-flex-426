@@ -1,24 +1,34 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql, Link } from 'gatsby';
 
 import Layout from '../components/layout';
 
 
-export default({ data }) => {
-
+export default({ data, location }) => {
+    
    const { allMarkdownRemark } = data;
 
-   const lessons = allMarkdownRemark.edges.map(({ node }) => 
-      <section key={node.id}>
-          <Link to={node.fields.slug}>
+   const lessons = allMarkdownRemark.edges.map(({ node }, idx) => 
+      idx !== allMarkdownRemark.edges.length - 1
+      ? <Fragment>
+          <section key={node.id}>
+              <Link to={node.fields.slug}>
+                  <h2>{node.frontmatter.title}</h2>
+              </Link>
+                  <p>{node.frontmatter.topics}</p>
+          </section>
+          <hr />
+        </Fragment>
+      : <section key={node.id}>
+            <Link to={node.fields.slug}>
               <h2>{node.frontmatter.title}</h2>
-          </Link>
-              <p>{node.frontmatter.topics}</p>
-      </section>
+            </Link>
+            <p>{node.frontmatter.topics}</p>
+        </section>
    );
 
     return (
-        <Layout pageTitle="React Fundamentals">
+        <Layout pageTitle="React Fundamentals" location={location} crumbLabel={"React Fundamentals"}>
             <h1>React Fundamentals</h1>
             {lessons}
         </Layout>
@@ -30,7 +40,7 @@ query {
     allMarkdownRemark (
           filter: {frontmatter: {track: {eq: "React Fundamentals"}, 
           type: {eq: "homepage"}}}
-            sort: {fields: frontmatter___day }
+            sort: {fields:  [frontmatter___week, frontmatter___day]}
         ){
       edges {
         node {
@@ -44,7 +54,6 @@ query {
             day
             type
             topics
-            slug
           }
         }
       }
