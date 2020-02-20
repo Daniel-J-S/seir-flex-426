@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
-export default ({ data }) => {
+export default ({ data, location }) => {
     const { allMarkdownRemark } = data;
 
     const html = allMarkdownRemark.edges[0].node.html;
+
     return (
-        <Layout pageTitle={"Home"}>
+        <Layout pageTitle={"Home"} location={location} crumbLabel={"Home"}>
             <main dangerouslySetInnerHTML={{__html: html}} />
         </Layout>
     );
