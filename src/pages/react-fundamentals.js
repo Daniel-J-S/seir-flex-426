@@ -1,36 +1,34 @@
-import React, { Fragment } from 'react';
-import { graphql, Link } from 'gatsby';
+import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
+import LectureCard from '../components/lecture-card';
+
+import styles from '../styles/react-fundamentals.module.scss';
 
 
 export default({ data, location }) => {
     
    const { allMarkdownRemark } = data;
 
-   const lessons = allMarkdownRemark.edges.map(({ node }, idx) => 
-      idx !== allMarkdownRemark.edges.length - 1
-      ? <Fragment>
-          <section key={node.id}>
-              <Link to={node.fields.slug}>
-                  <h2>{node.frontmatter.title}</h2>
-              </Link>
-                  <p>{node.frontmatter.topics}</p>
-          </section>
-          <hr />
-        </Fragment>
-      : <section key={node.id}>
-            <Link to={node.fields.slug}>
-              <h2>{node.frontmatter.title}</h2>
-            </Link>
-            <p>{node.frontmatter.topics}</p>
-        </section>
+   const lessons = allMarkdownRemark.edges.map(({ node }) => 
+      <LectureCard 
+        key={node.id}
+        slug={node.fields.slug}
+        title={node.frontmatter.title}
+        topics={node.frontmatter.topics} 
+      />
    );
 
     return (
-        <Layout pageTitle="React Fundamentals" location={location} crumbLabel={"React Fundamentals"}>
+        <Layout 
+          pageTitle="React Fundamentals" 
+          location={location} 
+          crumbLabel={"React Fundamentals"}>
             <h1>React Fundamentals</h1>
-            {lessons}
+            <main className={styles.main}>
+              {lessons}
+            </main>
         </Layout>
     );
 }
