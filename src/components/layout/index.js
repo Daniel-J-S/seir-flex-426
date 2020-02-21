@@ -9,8 +9,11 @@ import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 import '../../styles/reset.scss';
 import styles from './layout.module.scss';
 
-export default ({ pageTitle, children, location, crumbLabel }) => {
-    console.log(location, crumbLabel)
+export default ({ 
+        pageTitle, 
+        children, 
+        location, 
+        crumbLabel }) => {
     return (
         <Fragment>
             <Head pageTitle={pageTitle} />
