@@ -9,9 +9,9 @@ topics: "Updating State Walkthrough and React Router"
 # Week 2 - Day 3
 
 #### Updating State Walkthrough and React Router
-- [Lecture: Updating State Walkthrough](/week-two/day-three/lecture-materials/updating-state-walkthrough/)
-- [Lecture: Intro to React Router](/week-two/day-three/lecture-materials/intro-to-react-router/)
-- [Lab: React Router Lab](/week-two/day-three/labs/react-router-lab/) - **Non-Deliverable**
+- [Lecture: Updating State Walkthrough](/week-2/day-3/lecture-materials/updating-state-walkthrough/)
+- [Lecture: Intro to React Router](/week-2/day-3/lecture-materials/intro-to-react-router/)
+- [Lab: React Router Lab](/week-2/day-3/labs/react-router-lab/) - **Non-Deliverable**
 
 
 
