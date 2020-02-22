@@ -1,8 +1,8 @@
 ---
 track: "React Fundamentals"
 title: "React Project Assignment: A MERN Stack Application:"
-week: 5
-day: 1
+week: 4
+day: 3
 type: "lecture"
 ---
 
