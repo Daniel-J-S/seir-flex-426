@@ -11,5 +11,5 @@ topics: "Handling Input with React"
 # Week 3 - Day 1
 
 #### Handling Input with React
-- [Lecture: Handling Input with React](./lesson-materials/README.md)
+- [Lecture: Handling Input with React](/week-3/day-1/lecture-materials/handling-input-in-react/)
 - Actvity: Catch up on Labs
