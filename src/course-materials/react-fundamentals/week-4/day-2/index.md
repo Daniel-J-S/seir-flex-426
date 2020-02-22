@@ -12,5 +12,5 @@ topics: "React With AJAX"
 
 #### React With AJAX
 - [Lecture: React + Ajax](/week-4/day-2/lecture-materials/react-with-ajax/)
-- [Lab: React + AJAX Lab](/week-4/day-3/labs/star-wars-api-react-lab/) - **Deliverable**
+- [Lab: React + AJAX Lab](/week-4/day-2/labs/star-wars-api-react-lab/) - **Deliverable**
 
