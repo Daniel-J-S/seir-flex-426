@@ -8,14 +8,14 @@ export default () => (
     <footer className={styles.footer}>
         <p>Copyright &copy; General Assembly {new Date().getFullYear()}</p>
         <section>
-            <a href="https://www.facebook.com/generalassembly/" target="_blank">
-                <FontAwesomeIcon icon={faFacebook} size="lg" rel="noopener noreferrer"/>
+            <a href="https://www.facebook.com/generalassembly/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faFacebook} size="lg"/>
             </a>
-            <a href="https://www.linkedin.com/school/general-assemb-ly/" target="_blank">
-                <FontAwesomeIcon icon={faLinkedin} size="lg" rel="noopener noreferrer"/>
+            <a href="https://www.linkedin.com/school/general-assemb-ly/" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faLinkedin} size="lg" />
             </a>
-            <a href="https://twitter.com/GA" target="_blank">
-                <FontAwesomeIcon icon={faTwitter} size="lg" rel="noopener noreferrer"/>
+            <a href="https://twitter.com/GA" target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={faTwitter} size="lg"/>
             </a>
         </section>
     </footer>
