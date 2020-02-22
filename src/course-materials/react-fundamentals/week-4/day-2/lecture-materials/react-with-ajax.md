@@ -1,396 +1,530 @@
 ---
 track: "React Fundamentals"
-title: "Component Lifecycle Methods"
+title: "React with AJAX"
 week: 4
 day: 2
 type: "lecture"
 ---
 
-
-
-# Component Lifecycle Methods
-
+# React with AJAX
 
 ## Learning Objectives
 
-| Students Will Be Able To: |
-| --- |
-| Explain the use case for lifecycle methods |
-| List the three phases of a component's lifecycle |
-| Override/implement a lifecycle method |
-
+| Students Will Be Able To |
+|---|
+| Make AJAX requests from a React app |
+| Use third-party libraries such as Google Maps |
+| Modularize code using "service" modules |
 
 ## Lesson Recording
 
 <div class="iframe-container">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/HSyPYvfu5Kg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/LJmb_h_a5Bo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
-
-## Road Map
+## Roadmap
 
 - Set Up
-- The Lifecycle of Components
-- The Lifecycle Methods
-- A Component's Lifecycle
-- Overriding Lifecycle Methods
-- Adding a Game Timer to Mastermind
+- Review the Functionality of the App
+- Including Third-Party Libraries
+- Accessing the Browser's Current Coordinates
+- Making Asynchronous/AJAX Calls in React
+- Implement the _As a Visitor..._ User Story
 - Essential Questions
 
 ## Set Up
 
-The starter code for this lesson is the same as the solution code from the _Mastermind Settings Lab_.
+This lesson has starter-code.
 
 To get set up for this lesson:
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="./react-weather.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
 - Start the dev server: `$ npm start`
 
-The following page should be displayed:
+Shortly after starting React's Development Server, you should be greeted with:
 
-<img src="https://i.imgur.com/ScWtx2B.png">
+<img src="https://i.imgur.com/qj3bSlP.png">
 
-There's also a `/settings` route that displays:
+## Review the Functionality of the App
 
-<img src="https://i.imgur.com/YI6qBcX.png">
+To demonstrate how to make AJAX calls from React, we're going to build an app that:
 
-## The Lifecycle of Components
+1. Fills the web page with a Google map of the user's current location.  The map will be styled in a way to remove many of the distractions such as roads and controls for zooming, etc.
 
-#### What are Lifecycle Methods
+2. Upon loading, uses the [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) (Web API) to obtain the user's current latitude and longitude GPS coordinates.
 
-When a React app first loads and/or when state is changed, React components may be instantiated, updated, and destroyed.
+3. The coordinates (latitude & longitude) will be passed as props to a custom `<Map>` component responsible for rendering the map referred to in step 1 above.
 
-React's `Component` has several methods that React automatically invokes during a component's lifecycle process.
+4. Also upon loading, the current coordinates will be used to make a call to the [OpenWeatherMap API](https://openweathermap.org/api) to display the current temperature and the weather condition (as an icon).
 
-When we subclass `Component` using `extends` our custom class component inherits those methods.
+To focus on how to make an AJAX call in a React app, the app purposely is minimalistic - requiring no user interaction at all.
 
-For example, you are already familiar with a couple of them: `constructor` and `render`.
+#### The Starter Code
 
-#### Why do Lifecycle Methods Exist?
+In the starter code, `<App>` is currently rendering only a `<header>` and the custom `<Map>` component which currently does not render a map because it's waiting for us to provide a couple of props, which we'll do in a bit.
 
-In many React apps, sometimes overriding just the `render` method is not enough.
+Also, take a peek at **index.css** & **App.css** to see how [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (AKA CSS Variables) are being used. They are really cool addition to the CSS spec.
 
-**Lifecycle methods enable developers to write code that executes during the stages of a component's lifetime.**
+## Including Third-Party Libraries
 
-The ability to "hook" code into a component's lifecycle is why these methods are also referred to as "lifecycle hooks" (not to be confused with the React's latest "Hooks" API).
+If you google how to use this or that library with React, many of the results returned will reference modules and/or React components that can be installed via npm.
 
-Some use cases that require overriding certain lifecycle methods include:
+However, much of the time, using third-party libraries such as Google Maps without resorting to installing custom React-oriented modules/components is not difficult.
 
-- Making AJAX calls
-- Performing animations
-- Performance optimization
-- Creating/destroying resources such as timers
+To demonstrate this, we're going to use the Google Maps JavaScript library to load a map of the user's current location.
 
-## The Lifecycle Methods
+#### Including the Library
 
-First, a heads up that the release of React version 16.3 brought significant changes to React's lifecycle methods as React moves toward an [async rendering mode](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html). A couple of lifecycle methods have been deprecated (marked for removal in a later version).
+In React, we can load JavaScript libraries in _index.html_ via CDNs as usual.
 
-In this lesson, we will not work with any of the deprecated lifecycle methods - so sleep well...
+The starter code has the [Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial) being loaded in the `<head>` of **public/index.html**.
 
-### Common Lifecycle Methods
+Checking the Google Maps docs shows how to load the library in a non-React app:
 
-The following diagrams the **common** lifecycle methods of components:
+```html
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+```
 
-<img src="https://i.imgur.com/BeR38kf.png">
+The `callback=initMap` in the query string tells the library to run a function named `initMap` after it has loaded. This function would, in a non-React app, create the map.
 
-These three main **phases** of a component's **lifecycle** are known as:
+However, in a React app, you need more control as to when a map is rendered - thus in the starter code, the `callback` parameter has been removed.
 
-- **Mounting** - the phase that occurs when an instance of a component is being created and inserted into the DOM.
-- **Updating** - the phase that occurs when a component is already in the DOM but is being re-rendered when state and/or props change.
-- and **Unmounting** - the phase that occurs when a component is being removed from the DOM and destroyed.
+This is what we want:
 
-In the above diagram, there are five lifecycle methods (in bold):
+```html
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY">
+</script>
+```
 
-- **constructor**: Runs when a component is being rendered for the first time.
-- **render**: Runs first render, then whenever
-	- `setState` is called
-	- New props are received
-	- `forceUpdate` is called (not recommended)
-- **componentDidMount**: Called after the first render.
-- **componentDidUpdate**: Called after subsequent renders.
-- **componentWillUnmount**: Called just before a component will be removed from the DOM.
+Note that Google Map's API keys are intended to be used client-side.
 
-### Less-common Lifecycle Methods
+#### The Custom `<Map>` Component
 
-For completeness, the following diagram includes the **less-common** lifecycle methods:
+The starter code includes a simple `<Map>` function component that can be reused to render as many maps desired.
 
-<img src="https://i.imgur.com/xANapyE.png">
+Reviewing the code in **Map.jsx** reveals that, thanks to the `if` statement on line 9, a map is only created and displayed in the `<div>` if both a `lat` and a `lng` prop is provided.
 
-As explained by [this React blog post](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html), you will rarely ever have to use these less-common lifecycle methods.
+The component also uses a `zoom` prop if it's provided, otherwise a default value of `12` is used (line 12).
 
-## Overriding the Lifecycle Methods
+Since the library's `Map` constructor needs a reference to the DOM element to draw the map in, line 7 creates a [ref](https://reactjs.org/docs/refs-and-the-dom.html) that is assigned to the only React Element being rendered:
 
-To use any of the lifecycle methods, the component must be defined using a class - Function Components do not have lifecycle methods.
+```js
+<div ref={mapDiv} className={styles.Map}></div>
+```
 
-Overriding a lifecycle method is done the same way we override any method inherited from a superclass - by simply defining the method within the class.
+This allows us to use the ref (`mapDiv.current`) to provide the library a reference to the mounted `<div>` on line 11.
 
-Let's override the `componentDidMount` method in **App.js**:
+#### Accessing Libraries Loaded Outside of React
+
+Take note on how the Google Maps library is being referenced on line 10 (and also on line 18):
+
+```js
+const map = new window.google.maps.Map(
+``` 
+
+Normally, as shown in the docs, you would access the global `google` object created by the library directly.  However, due to the way the module system works in React, `google` is not in scope and the app will fail to build if we try to access `google` directly:
+
+<img src="https://i.imgur.com/OGdPf7e.png">
+
+The solution is to access `google`, as well as other global variables, such as `socket` or `$`, by prefacing the global variable with the `window` object, which we know to represent the global namespace.
+
+## Accessing the Browser's Current Coordinates
+
+The [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) is a Web API available in the browser that can return an object that contains the current GPS coordinates of the browser.
+
+#### Modularization Using Service Modules
+
+It is a best practice to organize general purpose, reusable functionality within utility/service modules.
+
+The project's starter code has a `services` folder for holding such modules.
+
+The **services/geolocation.js** module has a single named export, `getCurrentLatLng`.
+
+So that we can take advantage of `async/await`, the Geolocation API's `getCurrentPosition` method has been wrapped to return a promise instead of accepting a callback (the Geolocation API was around before promises were):
+
+```js
+export function getCurrentLatLng() {
+  // Wrap getCurrentPosition to return a promise
+  return new Promise(resolve => {
+    navigator.geolocation.getCurrentPosition(pos => resolve({
+      lat: pos.coords.latitude,
+      lng: pos.coords.longitude
+    }));
+  });
+}
+```
+
+> The above code pattern can basically be used to "promisfy" callback-based asynchronous methods.  However, if the callback has an `err` parameter, be sure to pass that to `reject` function.
+
+Let's see how to use this service to provide the coordinates to the `<Map>` component...
+
+## Making Asynchronous/AJAX Calls in React
+
+You may be wondering why we have a dedicated lesson to cover making AJAX calls from a React app.
+
+After all, we've already seen how to use `fetch` to make AJAX calls.
+
+#### CORS Restrictions
+
+**It's always recommended that you make calls to APIs from your server, not the browser.**
+
+Doing so avoids exposing API keys in the browser and avoids the [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) security restrictions that can prevent a browser from being able to access an API if the server does not participate in CORS.
+
+However, we currently don't have a backend to act as a "passthrough", so we will be using `fetch` to make calls to an API directly.
+
+To make `fetch` send the correct CORS headers to the server, we need to include an options object with a `mode: "cors"` property like the following:
+
+```js
+fetch(someUrl, {mode: "cors"}).then(res => res.json())
+```
+
+#### Adding a `componentDidMount` Method
+
+If you take a look at a React component, it's not easy to figure out where to put the AJAX code. You can't put it in `render` because you can't invoke `setState` when the data comes back from within `render` because it will cause an infinite loop.
+
+The answer, as you learned earlier in the Lifecycle lesson, is to initiate calls to asynchronous operations, such as making AJAX calls, from inside of the `componentDidMount` and `componentDidUpdate` lifecycle methods.
+
+Although not an AJAX call, obtaining GPS coordinates is also an asynchronous operation, so we should make the call to `getCurrentLatLng` from within `componentDidMount`.
+
+First though, we will need to add an import inside of **App.js** to be able to access the `getCurrentLatLng` function that's being exported from the **geolocation.js** service module:
+
+```js
+// App.js
+
+import { getCurrentLatLng } from '../../services/geolocation';
+```
+
+Now let's add the `componentDidMount` lifecycle method and the code to call `getCurrentLatLng`:
 
 ```js
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {...this.getInitialState(), difficulty: 'Easy'};
-  }
 
-  /*---------- Lifecycle Methods ----------*/
-
-  componentDidMount() {
-    console.log('App: componentDidMount');
+  // Add this method
+  async componentDidMount() {
+    // Destructure the object returned from getCurrentLatLng()
+    const {lat, lng} = await getCurrentLatLng();
+    console.log(lat, lng);
   }
-  
-  ...
 ```
 
-Checking the console of the browser should now show `App: componentDidMount` logged out.
+The browser may be asking your permission to access you location - best grant it for this lesson to work 😊
 
-#### 💪 Practice (5 mins)
+How cool is it that we can declare instance methods in a class to be `async`?!?!
 
-Continuing to modify **App.js**:
+As usual, we're baby stepping our way to glory...
 
-1. Add a `console.log('App: constructor');` within the `constructor` method.
-2. Add a `console.log('App: render');` within the `render` method.
-3. Define a `componentDidUpdate` method with a `console.log('App: componentDidUpdate');`.
+<img src="https://i.imgur.com/T3BeGec.png">
 
-After the app loads, the console should look something like this:
+#### Providing the Coordinates to `<Map>`
 
-<img src="https://i.imgur.com/TclU7Di.png">
-
-Selecting a new color in the color selector will trigger an update resulting in the console now looking something like:
-
-<img src="https://i.imgur.com/06qGRaE.png">
-
-Note how the `constructor` and `componentDidMount` methods did not run a second time because `<App>` already exists (been mounted) in the DOM.
-
-Instead, just as the diagram shows, the `render` and `componentDidUpdate` methods ran in response to `setState` being called.
-
-## Adding a Game Timer to Mastermind
-
-### User Stories
-
-It would be cool to implement the following user stories:
-
-- _As a player (AAP), I want to see how long it's taking to crack the code so that I can track my times._
-- _AAP, I want the timer to stop when I crack the code._
-- _AAP, I want the timer to reset to zero when a new game starts._
-
-### Wireframe
-
-Here's what we want the timer to look like when rendered:
-
-<img src="https://i.imgur.com/fm7tURM.png">
-
-### Design of the `<GameTimer>` Component
-
-#### State
-
-With the **user stories** and **wireframe** done, let's turn out attention to **state**.
-
-Before starting to implement new features in a React app, we need to consider if a component needs to have its own state or will all of its "data" be passed to it via props?
-
-The key piece of data that `<GameTimer>` will need to render is _elapsed time_.
-
-At first, it seems like `elapsedTime` is a perfect candidate to be held in the state of  `<GameTimer>` - after all, you always want to lean toward encapsulating related data (state) and behavior together when you can.
-
-However, soon we will want `<App>` to persist scores, easily reset the timer when it needs to be reset, etc., `<App>` will need to know what the value of `elapsedTime`.
-
-Okay, so once again, it makes sense to keep state high up in the component hierarchy, in our case, `<App>`.
-
-We will then pass `elapsedTime` to `<GameTimer>` as a prop to be rendered.
-
-But how will `<App>` know when to increment `elapsedTime`? As usual, we'll also need to pass down a callback method that `<GameTimer>` can call with each "tick".
-
-#### Function or Class Component?
-
-If `<GameTimer>` had its own state, we would have to define it as a class component - **why?**
-
-But even though `<GameTimer>` doesn't have its own state, it still has to be written as a class-based component because it's going to use a JavaScript timer created using `setInterval`.
-
-Each timer consumes system resources (memory and CPU).
-
-Since the `<GameTimer>` component will be using a timer, we want to make sure that it destroys the timer when itself is destroyed. For example, every time the player switches to the set difficulty route, `<GameTimer>` will be destroyed and then a new `<GameTimer>` created when the player returns to the game play route. BTW, this is another reason for keeping `elapsedTime` higher up in the hierarchy so that it doesn't get reset when the player moves to the settings page and then cancels.
-
-The key to preventing a new timer from being created without the existing timer being "cleared" is to override the `componentDidMount` and `componentWillUnmount` lifecycle methods - again, only possible in class components.
-
-### Coding the `<GameTimer>` Component
-
-Let's get coding...
-
-#### YOU DO: Refactor `<GameTimer>` as a Class Component (3 mins)
-
-`<GameTimer>` exists as a Function Component - refactor it to be a Class Component.
-
-#### Add `elapsedTime` to `<App>`'s State and Pass as a Prop
-
-Let's add `elapsedTime` to `<App>`'s state by including it within the `getInitialState`:
+Now that we have the latitude and longitude, we can add them to `state`, then pass them to `<Map>` as props:
 
 ```js
- // App.jsx
+const {lat, lng} = await getCurrentLatLng();
+// Replace the console.log with the following
+this.setState({lat, lng});
+```
 
-getInitialState() {
-  return {
-    selColorIdx: 0,
-    guesses: [this.getNewGuess()],
-    code: this.genCode(),
-    // new state coming in!
-    elapsedTime: 0
+Also, it's a good practice to always initialize all state:
+
+```js
+class App extends Component {
+
+  // Initialize state
+  state = {
+    lat: null,
+    lng: null
   };
-}
 ```
 
-**YOU DO:** Pass `elapsedTime` down as a prop named `elapsedTime` to `<GameTimer>`.
-
-
-#### Make it Tick
-
-Time to override the `componentDidMount` lifecycle method in **GameTimer.jsx**:
+Finally, we can now pass that state as props to `<Map>` within the `render` method:
 
 ```js
-/*--- Lifecycle Methods ---*/
-
-componentDidMount() {
-  this.timerId = setInterval(this.handleTick, 1000);
-}
-
-render() {
-...
+<Map lat={this.state.lat} lng={this.state.lng}/>
 ```
 
-As shown by the above diagram, `componentDidMount` will be called by React after the `render` method.
+Oh so lovely - we have errors...
 
-We'll get to the `handleTick` method in a bit.
+#### Refactoring `<Map>` into a Class Component
 
-We are creating a `timerId` property on the component to save the timer id returned by `setInterval`. When you need to remember data, but don't want to re-render when that data changes, be sure to assign that data to a property on the component or in a variable like we've done above.
+Unfortunately, we're receiving errors because there are now coordinates being provided, however, the component has not been mounted yet, thus the ref does not reference a DOM element - making the Google Maps library sad.
 
-With the timer's id stored, we can use it to clear the timer when the component is going to be destroyed by overriding the `componentWillUnmount` lifecycle method:
+We took a shot at writing `<Map>` as a Function Component but now find ourselves needing to tap into lifecycle methods, e.g., `componentDidMount`.
 
-```js
-componentWillUnmount() {
-  clearInterval(this.timerId);
-}
-```
-
-Now create the `handleTick` method and add some some code to let `<App>` know to increment `elapsedTime`:
+This is a dandy of a refactor:
 
 ```js
-handleTick = () => {
-  this.props.handleTimerUpdate();
-};
-```
+class Map extends React.Component {
+  mapDiv = React.createRef();
 
-`handleTimerUpdate` is a method that we're adding to **App.js** next. As you can see, we're calling it from `handleTick` with each tick.
+  setMap() {
+    if (this.props.lat && this.props.lng) {
+      const location = {lat: this.props.lat, lng: this.props.lng};
+      const map = new window.google.maps.Map(
+        this.mapDiv.current, {
+          zoom: this.props.zoom || 12,
+          center: location,
+          disableDefaultUI: true,
+          styles: mapStyle
+        }
+      );
+      new window.google.maps.Marker({position: location, map: map});
+    }
+  }
 
-#### Incrementing `elapsedTime` in `<App>`
+  // Called after the first render
+  componentDidMount() {
+    this.setMap();
+  }
 
-We have to write that `handleTimerUpdate` callback method in **App.js**:
+  // Called when props or state change
+  componentDidUpdate() {
+    this.setMap();
+  }
 
-```js
-handleTimerUpdate = () => {
-  this.setState((state) => ({elapsedTime: ++state.elapsedTime}));
-}
-```
-
-**YOU DO:** You know the routine - pass it down! 😎
-
-#### Get Ticking
-
-Finally, let's confirm that `elapsedTime` is being incremented by rendering it's value instead of the text of "GameTimer":
-
-```js
   render() {
     return (
-      <div>
-        {this.props.elapsedTime}
-      </div>
+      <div ref={this.mapDiv} className={styles.Map}></div>
     );
   }
-```
-
-Awesome!
-
-#### Formatting and Style `<GameTimer>`
-
-Time to make `<GameTimer>` look like the wireframe.
-
-First, let's convert the number of seconds into a `mins:seconds` format by writing a `formatTime` function.
-
-Since `formatTime` is a general purpose function that we might reuse, let's define it outside of the class component:
-
-```js
-function formatTime(seconds) {
-  let mins = Math.floor(seconds / 60).toString().padStart(2, '0');
-  let secs = (seconds % 60).toString().padStart(2, '0');
-  return `${mins}:${secs}`;
-}
-
-class GameTimer extends Component {
-  ...
-```
-
-`padStart` and `padEnd` are handy new String methods added in the ES2017 spec.
-
-Now we can invoke `formatTime` right in the render method:
-
-```js
-render() {
-  return (
-    <div>
-      {formatTime(this.props.elapsedTime)}
-    </div>
-  );
 }
 ```
 
-Although your system might have the _Roboto Mono_ font installed, others may not so we should play it safe by adding this link to the Google font in **public/index.html**:
+Okay, assuming the refactor went well, the `<Map>` component will be displaying the map:
 
-```html
-<head>
-...
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
-    <!-- Add the Roboto Mono font for the GameTimer component -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+<img src="https://i.imgur.com/ZnIwsAt.png">
+
+## Implement the _As a Visitor..._ User Story
+
+Okay, let's implement the following User Story:<br>
+**_As a Visitor, when I browse to the app, I want to see the current weather conditions for my location_**
+
+#### The OpenWeatherMap API
+
+We'll be using the [OpenWeatherMap API](https://openweathermap.org/) to return weather data in JSON format.
+
+The API has lots of options, but [here's the link](https://openweathermap.org/current) to the current weather section.
+
+Scroll down to here:
+
+<img src="https://i.imgur.com/frr3qFs.png">
+
+The API requires an API Key to use, however, you can borrow this one `d3945aa316355ce92bb8cc10bf63e3da`.
+
+According to the docs, to retrieve the current weather data, we can make a call to the following endpoint substituting our desired coordinates:
+
+```
+https://api.openweathermap.org/data/2.5/weather?lat=34.0475869&lon=-117.8985651&units=imperial&appid=d3945aa316355ce92bb8cc10bf63e3da
 ```
 
-After making a couple of guesses, we would be displaying something like this:
+Included in the URL is a query parameter of<br>`units=imperial`<br>that returns the temperature in Fahrenheit (the default is Kelvin).
 
-<img src="https://i.imgur.com/xNzEDw1.png ">
+Let's checkout the JSON returned by pasting that URL into a browser tab.  You should get something like the following returned:
 
+```js
+{
+  "coord": {
+    "lon": -117.9,
+    "lat": 34.05
+  },
+  "weather": Array[1][
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 68.27,
+    "pressure": 1019,
+    "humidity": 37,
+    "temp_min": 64,
+    "temp_max": 72
+  },
+  "visibility": 16093,
+  "wind": {
+    "speed": 11.41,
+    "deg": 250
+  },
+  "clouds": {
+    "all": 1
+  },
+  "dt": 1553905125,
+  "sys": {
+    "type": 1,
+    "id": 3578,
+    "message": 0.0103,
+    "country": "US",
+    "sunrise": 1553866982,
+    "sunset": 1553911768
+  },
+  "id": 5405326,
+  "name": "Valinda",
+  "cod": 200
+}
+```
 
+### Exercise - Create a `weather-api.js` Service Module (15 min)
 
-## ❓ Essential Questions
+Putting `fetch` calls in service/utility modules is a best practice - do not litter your components with `fetch` calls!
 
-1. **In your own words, what do lifecycle methods allow developers to do?**
+This applies to whether you're making calls to the backend of the SPA or third-party APIs.
 
-2. **Name two lifecycle methods.**
+Using the **geolocation.js** module as an example, create a **weather-api.js** service module that:
 
-3. **Explain how to update a component's state from a child component.**
+- Exports, as a named export, a `getCurWeatherByLatLng` function.
 
-## 💪 Bonus Challenge Exercises
+- The `getCurWeatherByLatLng` function should:
 
-1. Make the timer stop ticking when the player has cracked the code.
+  - Define two parameters: `lat` & `lng`.
+  - Use `fetch` to make a call to the same endpoint as above, substituting the values of `lat` and `lng` passed as arguments. Be sure to assign our `lng` value to the `lon` query param that the API uses.
+  - Be sure to provide the `{mode: 'cors'}` option object as a second argument to `fetch`.
+  - Return the result of `fetch(...).then(res => res.json())` so that we can work with the promise that returns the actual data.
 
-2. Reset the timer when a new game starts - maybe the easiest exercise of all time since it already does this. Just ensure that you know why it works 😊
+- Import the named export , `getCurWeatherByLatLng`, into **App.js**.
 
-Be sure to test that timer stops when the game has been won!
+- Before the `this.setState` line in `componentDidMount`, use `getCurWeatherByLatLng` to obtain the data, assigning it to a variable named `weatherData`.
 
-#### Hints
+- `console.log(weatherData)` and verify that the data is being logged:
 
-- React encourages us to drive our app's functionality using "state". Maybe something like `isTiming`?
+	<img src="https://i.imgur.com/y8JXo71.png">
+	
+#### Add the Weather Data to State
 
-- `<App>` is the component that knows when the timer should be ticking or not.
+We're going to keep it simple and display:
 
-- In `<GameTimer>`, don't try to clear `setInterval` to stop the timer, instead, just put some logic in the `handleTick` method to ignore ticks according to that new `isTiming` state being passed to it via props.
+- The current temperature, and
+- An icon for the "conditions"
 
-- There's a great place in **App.js** to update the `isTiming` state by adding a single line of code!
+Looking at the data returned, we see that the temperature can be accessed as `weatherData.main.temp`.
+
+Let's log that out to verify, but let's also round it off while we're at it:
+
+```js
+const weatherData = await getCurWeatherByLatLng(lat, lng);
+console.log(Math.round(weatherData.main.temp));
+```
+
+Cool.
+
+Now there's the `icon` property whose value is a short string that we can use to build out a URL for use as an `<img>` element's `src` attribute.
+
+**Figure out the data path like we just did for `temp` and slack it in the lessons channel when you've got it.**
+
+Now that we know the data paths, let's add them to state:
+
+```js
+state = {
+  lat: null,
+  lng: null,
+  // Add the initializations
+  temp: null,
+  icon: ''
+};
+
+async componentDidMount() {
+  const {lat, lng} = await getCurrentLatLng();
+  const weatherData = await getCurWeatherByLatLng(lat, lng);
+  this.setState({
+    lat,
+    lng,
+    // Add temp & icon to state
+    temp: Math.round(weatherData.main.temp),
+    icon: weatherData.weather[0].icon
+  });
+  console.log(Math.round(weatherData.main.temp));
+}
+```
+
+React Developer Tools assure us that we're ready to move on to rendering:
+
+<img src="https://i.imgur.com/uaYgTCq.png">
+
+#### Render the Temperature and Condition Icon
+
+Ignoring CSS for now, let's update the `<header>` in **App.js** as follows:
+
+```js
+<header className='App-header'>
+  <div>{this.state.temp}&deg;</div>
+  REACT WEATHER
+  {this.state.icon && 
+    <img
+      src={`https://openweathermap.org/img/w/${this.state.icon}.png`}
+      alt='Current Conditions'
+    />
+  }
+</header>
+```
+
+The ["How to get icon URL" section](https://openweathermap.org/weather-conditions) of OpenWeatherMap's docs shows us how to form the URL that points to the current condition's icon. Be sure to always use `https` however.
+
+Note how we're using the `&&` operator within a JSX expression to prevent the rendering of a "broken image" tag that would show until the data arrives.
+
+Lastly, React will give a warning in the console if you don't include an `alt` prop in all `<img>` components.
+
+#### Update the CSS for the `<header>`
+
+The `<header>` already has a `App-header` class being applied that makes it a flexbox.
+
+Let's update the `justify-content` property:
+
+```css
+justify-content: space-between;
+```
+
+All that's left is to add a touch of CSS to style the temp and image:
+
+```css
+.App-header div {
+  color: white;
+  font-size: 8vmin;
+  font-weight: bold;
+}
+
+.App-header img {
+  height: 15vmin;
+}
+```
+
+Congrats!
+
+<img src="https://i.imgur.com/rUTkeVb.png">
+
+## Essential Questions
+
+Take a moment to review the following questions:
+
+1. **Assuming you loaded jQuery via a CDN in a React app's index.html, what object must you precede `$()` (jQuery function) with?**
+
+2. **What lifecycle method(s) do we typically initiate asynchronous calls from?**
+
+3. **Why is the following code not a best practice?**
+
+	```js
+	componentDidMount() {
+	  fetch('https//api.somehost.com/endpoint', {mode: 'cors'})
+	    .then(res => res.json())
+	    .then(data => this.setState({ data }));
+	}
+	```
 
 ## References
 
-[React Docs - The Component Lifecycle](https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle)
+[Google Maps JavaScript API](https://developers.google.com/maps/documentation/javascript/tutorial)
+
+[OpenWeatherMap API](https://openweathermap.org/api)
+
+[React - Refs and the DOM](https://reactjs.org/docs/refs-and-the-dom.html)
 
 
-#### Psssst....don't use this unless you absolutely need to
-<a href="./react-mastermind-bonus-solution.zip" download>Bonus Solution Code</a>
+
+
