@@ -1,6 +1,6 @@
 ---
 track: "React Fundamentals"
-title: "Week Two - Day Two"
+title: "Week 2 - Day 2"
 week: 2
 day: 2
 type: "homepage"
