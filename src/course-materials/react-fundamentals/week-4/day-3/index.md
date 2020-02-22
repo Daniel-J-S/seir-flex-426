@@ -2,7 +2,7 @@
 track: "React Fundamentals"
 title: "Week 4 - Day 3"
 week: 4
-day: 1
+day: 3
 type: "homepage"
 topics: "Final Review - Introduce Project Assignment"
 ---

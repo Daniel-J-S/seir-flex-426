@@ -1,7 +1,7 @@
 ---
 track: "React Fundamentals"
 title: "Component Lifecycle Methods"
-week: 3
+week: 4
 day: 2
 type: "lecture"
 ---

@@ -2,7 +2,7 @@
 track: "React Fundamentals"
 title: "Star Wars API - React Lab"
 week: 4
-day: 3
+day: 2
 type: "lab"
 ---
 
