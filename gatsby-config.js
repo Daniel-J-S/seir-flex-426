@@ -8,12 +8,12 @@ module.exports = {
     title: 'GA Student Website',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
-    description: 'An interactive website for GA Students by Instructors',
-    keywords: 'sofware engineer, software engineering, coding, javascript, html, css'
+    description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Program',
+    keywords: 'software engineer, software engineering, coding, javascript, html, css'
   },
   plugins: [
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet-async`,
     {
       resolve: `gatsby-plugin-html-attributes`,
       options: {
