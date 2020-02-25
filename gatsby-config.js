@@ -15,6 +15,13 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet-async`,
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: process.env.GOOGLE_TRACKING_ID,
+        head: true
+      }
+    },
+    {
       resolve: `gatsby-plugin-html-attributes`,
       options: {
         lang: `en`
