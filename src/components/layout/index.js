@@ -6,7 +6,8 @@ import Footer from '../footer';
 
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
-import '../../styles/reset.scss';
+import '../../styles/base.scss';
+
 import styles from './layout.module.scss';
 
 export default ({ 

@@ -97,7 +97,18 @@ Instead of an invisible `<div>`, we want to render a "null" peg with a dashed gr
 
 To accomplish this, let's update the object being assigned to the `style` prop in **GuessPeg.jsx** as follows:
 
-<img src="https://i.imgur.com/U70PXyr.png">
+```jsx
+const GuessPeg = (props) => (
+  <div
+    className={styles.peg}
+    style={{
+      backgroundColor: props.color,
+      /* Add a new CSS border property */
+      border: props.color ? `1px solid ${props.color}`: '1px dashed grey'
+    }}
+  />
+);
+```
 
 
 Just another ternary expression!
@@ -123,7 +134,13 @@ But, the four `<GuessPeg>` components don't yet have access to the `currentGuess
 
 Now that each `<GuessPeg>` has a `currentGuess` prop, we can add another property to the `style` object to set the CSS `cursor` property:
 
-<img src="https://i.imgur.com/JqxhFGa.png">
+```jsx
+  style={{
+    backgroundColor: props.color,
+    border: props.color ? `1px solid ${props.color}`: '1px dashed grey',
+    cursor: props.currentGuess && 'pointer'
+  }}
+```
 
 
 > Refresher: JS's logical `&&` (and) operator returns the first value if it's falsey. Otherwise, the second value (`'pointer'`) is returned.
@@ -149,7 +166,24 @@ In React, we do not add event listeners using JavaScript's `addEventListener` me
 Let's see this by adding an anonymous arrow function as a click handler on the colored circles within the `<ColorPicker>` component:
 
 
-<img src="https://i.imgur.com/HeOLWsl.png">
+```jsx
+  const ColorPicker = (props) => (
+    <div className={styles.ColorPicker}>
+      {props.colors.map((color, idx) =>
+        <button
+          key={color}
+          className={styles.button}
+          style={{
+            backgroundColor: props.selColorIdx === idx ? 'white' : color,
+            borderColor: color
+          }}
+          {/* add the click handler below */}
+          onClick={() => alert('clicked!')}
+        />
+      )}
+    </div>
+  );
+```
 
 
 Just a baby-step `alert` for now - test it out.

@@ -11,6 +11,9 @@ export default () => (
         </Link>
         <ul>
             <li>
+                <Link to="/">Home</Link>
+            </li>
+            <li>
                 <Link to="/course-details">Course Details</Link>
             </li>
             <li>
