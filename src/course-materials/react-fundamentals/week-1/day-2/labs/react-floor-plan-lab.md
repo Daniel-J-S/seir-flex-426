@@ -30,22 +30,22 @@ Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named 
 
 2. Export each component from its module. For example:
 
-	```js
-	// CodeSandbox.js
-	
-	import React from 'react';
-	
-	function CodeSandbox(props) {
-	  return (
-	    <div>
-	      <h1>CodeSandbox</h1>
-	    </div>
-	  );
-	}
-	
-	// Must export the component's function (or class)
-	export default CodeSandbox;
-	```
+```jsx
+ // CodeSandbox.js
+ 
+ import React from 'react';
+ 
+ function CodeSandbox(props) {
+   return (
+     <div>
+       <h1>CodeSandbox</h1>
+     </div>
+   );
+ }
+ 
+ // Must export the component's function (or class)
+ export default CodeSandbox;
+```
 
 3. Define the following components as functions and code them such that they fulfill their responsibilities:
 
@@ -62,11 +62,11 @@ Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named 
 Add the following CSS inside of **styles.css** to style each component's wrapping `<div>` to make it easier to visualize the components:
 
 ```css
-div {
-  border: 1px solid grey;
-  margin: 5px;
-  padding: 5px;
-}
+	div {
+	border: 1px solid grey;
+	margin: 5px;
+	padding: 5px;
+	}
 ```
 
 With the minimum requirements complete, the output should resemble:
