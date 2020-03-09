@@ -9,7 +9,15 @@ module.exports = {
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Program',
-    keywords: 'software engineer, software engineering, coding, javascript, html, css'
+    keywords: 'software engineer, software engineering, coding, javascript, html, css',
+    navigationLinks: [
+      {title: 'Home', slug: '/'},
+      {title: 'Course Details', slug: '/course-details'},
+    ],
+    homeworkSubmissionLink: {
+      title: 'Submit Homework',
+      href: 'https://forms.gle/ZhsdJF2JpgvAK41h6'
+    }
   },
   plugins: [
     `gatsby-plugin-sass`,
