@@ -52,7 +52,9 @@ export default ({
 
   return (
     <div className="nav-wrapper">
-      <img className="logo" src={logo} alt={title} />
+      <Link to="/">
+        <img className="logo" src={logo} alt={title} />
+      </Link>
       <CSSTransition
         in={isNavVisible}
         timeout={350}
