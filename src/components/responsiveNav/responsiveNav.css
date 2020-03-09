@@ -2,7 +2,7 @@
     position: fixed;
     z-index: 2;
     top: 0;
-    max-height: 6rem;
+    max-height: 6.5rem;
     width: 100vw;
     display: grid;
     grid-template-areas: "logo nav";
@@ -20,7 +20,7 @@
   .nav {
     display: grid;
     grid-area: nav;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(3, auto);
     align-items: center;
     justify-items: center;
   }
@@ -63,7 +63,7 @@
       grid-template-areas: "logo burger" "nav nav";
     }
     .nav {
-      grid-template-rows: repeat(5, auto);
+      grid-template-rows: repeat(3, auto);
       grid-template-columns: none;
       z-index: -1;
       padding: 0;
