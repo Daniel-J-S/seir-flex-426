@@ -28,3 +28,9 @@
     padding-left: 2.8em;
     overflow: initial;
   }
+
+  @media (max-width: 600px) {
+    a.breadcrumb__link {
+      line-height: 2.5rem;
+    }
+  }
