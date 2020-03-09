@@ -95,6 +95,26 @@ module.exports = {
           crumbSeperator: " / ",
         }
       }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `General Assembly`,
+        short_name: `GA`,
+        description: `Our Student-Facing website expressed as a progressive web app!`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `static/logo.png`,
+        start_url: `/`,
+        background_color: `#222222`,
+        theme_color: `#dc143c`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachedPages: [`/`]
+      }
     }
   ]
 };
