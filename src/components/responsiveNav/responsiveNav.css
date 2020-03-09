@@ -14,7 +14,7 @@
     grid-area: logo;
     height: 6rem;
     margin-bottom: 0;
-    animation: fadeIn 600ms linear forwards;
+    animation: fadeIn 800ms linear forwards;
   }
   
   .nav {
