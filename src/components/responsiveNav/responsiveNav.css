@@ -4,28 +4,25 @@
     top: 0;
     max-height: 6.5rem;
     width: 100vw;
-    display: grid;
-    grid-template-areas: "logo nav";
+    display: flex;
     background-color: #222222;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   
   .logo {
-    grid-area: logo;
     height: 6rem;
     margin-bottom: 0;
     animation: fadeIn 800ms linear forwards;
   }
   
   .nav {
-    display: grid;
-    grid-area: nav;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
     align-items: center;
     justify-items: center;
   }
   .nav a {
     color: #ffffff;
+    margin-left: 4rem;
     font-size: 1.1rem;
     font-weight: 700;
     transition: 0.5s;
@@ -60,9 +57,14 @@
   
   @media (max-width: 1065px) {
     .nav-wrapper {
+      display: grid;
       grid-template-areas: "logo burger" "nav nav";
     }
     .nav {
+      display: grid;
+      grid-area: nav;
+      align-items: center;
+      justify-items: center;
       grid-template-rows: repeat(3, auto);
       grid-template-columns: none;
       z-index: -1;
@@ -75,10 +77,14 @@
     .nav a {
         position: relative;
         display: block;
-        padding: .8rem 0 .8rem 0;
+        padding: 1.2rem 0 1.2rem 0;
         text-align: center;
         width: 100%;
         border-top: .1rem solid #000000;
+    }
+
+    .logo {
+      grid-area: logo;
     }
 
     .burger {
