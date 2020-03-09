@@ -6,12 +6,12 @@
 }
 
 .inner-container {
-    padding: 2rem 10rem 2rem 10rem;
+    padding: 10rem 10rem 2rem 10rem;
     min-height: 80vh;
     flex-grow: 1;
     a {
         text-decoration: none;
-        color: crimson;
+        color: #dc143c;
     }
     td {
         font-weight: 700;
@@ -20,3 +20,11 @@
 .bread-container {
     margin: 1rem 0 1.5rem 0;
 }
+
+@media (max-width: 600px) {
+    .inner-container {
+        padding-top: 7rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+} 

@@ -18,9 +18,9 @@ type: "lecture"
 
 ## Lesson Recording
 
-<div class="iframe-container">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/oGKfEYWP3ZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oGKfEYWP3ZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Road Map
 
@@ -31,59 +31,17 @@ type: "lecture"
 
 ## Set Up
 
-To get set up for this lesson, please:
+Here's the project we'll work on in `codesandbox.io`
 
-- Create a React Sandbox in [CodeSandbox](https://codesandbox.io/){:target="_blank" } and name it "Handling Input".
+<iframe
+   src="https://codesandbox.io/embed/optimistic-shadow-g332b?fontsize=14&hidenavigation=1&theme=dark"
+   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+   title="optimistic-shadow-g332b"
+   allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
+   sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
+</iframe>
 
-- Replace the existing `<App>` component with this starting code:
-
-	```js
-	import React from "react";
-	import "./styles.css";
-	
-	class App extends React.Component {
-	  state = {
-	    skills: [{ skill: "JavaScript", level: 4 }]
-	  };
-	
-	  addSkill = () => {
-	    //TODO finish writing this method when a form is submitted
-	  };
-	
-	  render() {
-	    return (
-	      <section>
-	        <h2>DEV SKILLS</h2>
-	        <hr />
-	        {this.state.skills.map(s => (
-	          <article key={s.skill}>
-	            <div>{s.skill}</div> <div>{s.level}</div>
-	          </article>
-	        ))}
-	        <hr />
-	        <form>
-	          <label>
-	            <span>SKILL</span>
-	            <input name='skill'/>
-	          </label>
-	          <label>
-	            <span>LEVEL</span>
-	            <select name='level'>
-	              <option value="1">1</option>
-	              <option value="2">2</option>
-	              <option value="3">3</option>
-	              <option value="4">4</option>
-	              <option value="5">5</option>
-	            </select>
-	          </label>
-	          <button>ADD SKILL</button>
-	        </form>
-	      </section>
-	    );
-	  }
-	}
-	export default App;
-	```
+[![Edit optimistic-shadow-g332b](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/optimistic-shadow-g332b?fontsize=14&hidenavigation=1&theme=dark)
 
 - Let's make it look okay by replacing the contents of **styles.css** with:
 		

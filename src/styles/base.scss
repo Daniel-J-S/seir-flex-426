@@ -28,3 +28,13 @@
     padding-left: 2.8em;
     overflow: initial;
   }
+
+  .gatsby-resp-iframe-wrapper {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    a.breadcrumb__link {
+      line-height: 2.5rem;
+    }
+  }

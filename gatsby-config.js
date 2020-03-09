@@ -9,7 +9,16 @@ module.exports = {
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Program',
-    keywords: 'software engineer, software engineering, coding, javascript, html, css'
+    keywords: 'software engineer, software engineering, coding, javascript, html, css',
+    navigationLinks: [
+      {title: 'Home', slug: '/'},
+      {title: 'Course Details', slug: '/course-details'},
+      {title: 'Coding Challenges', slug: '/coding-challenges'},
+    ],
+    homeworkSubmissionLink: {
+      title: 'Submit Homework',
+      href: 'https://forms.gle/ZhsdJF2JpgvAK41h6'
+    }
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -45,6 +54,9 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-responsive-iframe`
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
@@ -83,6 +95,26 @@ module.exports = {
           crumbLabel: "/",
           crumbSeperator: " / ",
         }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `General Assembly`,
+        short_name: `GA`,
+        description: `Our Student-Facing website expressed as a progressive web app!`,
+        lang: `en`,
+        display: `standalone`,
+        icon: `static/logo.png`,
+        start_url: `/`,
+        background_color: `#222222`,
+        theme_color: `#dc143c`,
+      }
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachedPages: [`/`]
       }
     }
   ]
