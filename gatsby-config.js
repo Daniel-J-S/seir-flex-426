@@ -13,6 +13,7 @@ module.exports = {
     navigationLinks: [
       {title: 'Home', slug: '/'},
       {title: 'Course Details', slug: '/course-details'},
+      {title: 'Coding Challenges', slug: '/coding-challenges'},
     ],
     homeworkSubmissionLink: {
       title: 'Submit Homework',
