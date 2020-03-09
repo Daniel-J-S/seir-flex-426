@@ -26,6 +26,7 @@
     "gatsby-plugin-react-helmet-async": "^1.0.15",
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-remark-prismjs": "^3.3.31",
+    "gatsby-remark-responsive-iframe": "^2.2.33",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.50",
     "node-sass": "^4.13.1",

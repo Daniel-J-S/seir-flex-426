@@ -54,6 +54,9 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-responsive-iframe`
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: "language-",
