@@ -20,9 +20,9 @@ type: "lecture"
 | Configure a React project for full-stack development |
 
 ## Lesson Recording
-<div class="iframe-container">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/PPPt-0lN32U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PPPt-0lN32U" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Roadmap
 
