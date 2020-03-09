@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react';
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Head from '../head/';
-import NavBar from '../nav';
+import NavBar from '../responsiveNav';
 import Footer from '../footer';
 
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
@@ -15,11 +16,34 @@ export default ({
         children, 
         location, 
         crumbLabel }) => {
+
+        const { site } = useStaticQuery(graphql`
+        query {
+            site {
+                siteMetadata {
+                    title
+                    navigationLinks {
+                        title
+                        slug
+                    }
+                    homeworkSubmissionLink {
+                        title
+                        href
+                    }
+                }
+            }
+        }
+    `);
+
     return (
         <Fragment>
             <Head pageTitle={pageTitle} />
             <div className={styles.outerContainer}>
-                <NavBar />
+                <NavBar 
+                    title={site.siteMetadata.title}
+                    navigationLinks={site.siteMetadata.navigationLinks}
+                    homeworkSubmissionLink={site.siteMetadata.homeworkSubmissionLink}
+                />
                 <div className={styles.innerContainer}>
                     <div className={styles.breadContainer}>
                         <Breadcrumb 
