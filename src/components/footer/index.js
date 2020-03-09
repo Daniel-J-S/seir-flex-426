@@ -9,13 +9,13 @@ export default () => (
         <p>Copyright &copy; General Assembly {new Date().getFullYear()}</p>
         <section>
             <a href="https://www.facebook.com/generalassembly/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faFacebook} size="lg"/>
+                <FontAwesomeIcon icon={faFacebook} title="Facebook" size="lg"/>
             </a>
             <a href="https://www.linkedin.com/school/general-assemb-ly/" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                <FontAwesomeIcon icon={faLinkedin} title="LinkedIn" size="lg" />
             </a>
             <a href="https://twitter.com/GA" target="_blank" rel="noopener noreferrer">
-                <FontAwesomeIcon icon={faTwitter} size="lg"/>
+                <FontAwesomeIcon icon={faTwitter} title="Twitter" size="lg"/>
             </a>
         </section>
     </footer>
