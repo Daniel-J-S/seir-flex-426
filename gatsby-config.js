@@ -105,7 +105,7 @@ module.exports = {
         description: `Our Student-Facing website expressed as a progressive web app!`,
         lang: `en`,
         display: `standalone`,
-        icon: `static/logo.png`,
+        icon: `static/ga-logo.svg`,
         start_url: `/`,
         background_color: `#222222`,
         theme_color: `#dc143c`,
