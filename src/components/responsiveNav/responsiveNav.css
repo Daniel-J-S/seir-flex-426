@@ -2,27 +2,33 @@
     position: fixed;
     z-index: 2;
     top: 0;
-    max-height: 6.5rem;
+    max-height: 5rem;
     width: 100vw;
-    display: flex;
+    display: grid;
+    grid-template-areas: "logo nav";
     background-color: #222222;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
   
   .logo {
-    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: logo;
+    height: 5rem;
     margin-bottom: 0;
     animation: fadeIn 800ms linear forwards;
   }
   
   .nav {
-    display: flex;
+    display: grid;
+    grid-area: nav;
+    grid-template-columns: repeat(4, auto);
     align-items: center;
-    justify-items: center;
+    justify-items: start;
   }
   .nav a {
     color: #ffffff;
-    margin-left: 4rem;
     font-size: 1.1rem;
     font-weight: 700;
     transition: 0.5s;
@@ -57,14 +63,9 @@
   
   @media (max-width: 1065px) {
     .nav-wrapper {
-      display: grid;
       grid-template-areas: "logo burger" "nav nav";
     }
     .nav {
-      display: grid;
-      grid-area: nav;
-      align-items: center;
-      justify-items: center;
       grid-template-rows: repeat(4, auto);
       grid-template-columns: none;
       z-index: -1;
@@ -89,6 +90,7 @@
     }
 
     .burger {
+      grid-area: burger;
       color: #ffffff;
       display: inline;
     }

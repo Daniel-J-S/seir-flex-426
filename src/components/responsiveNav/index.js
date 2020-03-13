@@ -56,7 +56,7 @@ export default ({
         <img className="logo" src={logo} alt={title} />
       </Link>
       <CSSTransition
-        in={isNavVisible}
+        in={isSmallScreen && isNavVisible}
         timeout={350}
         classNames="navAnimation"
         unmountOnExit
