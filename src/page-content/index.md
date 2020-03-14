@@ -1,11 +1,11 @@
 ---
 title: "index"
-date: '2020-02-04'
+date: '2020-03-13'
 ---
 
-# SEIR-FLEX  "Blade Runner"
+# SEIR-FLEX 04/07/2020
 
-This website contains React.js assignments and materials for General Assembly's Software Engineering Immersive Program. 
+This website contains assignments and materials for General Assembly's Software Engineering Immersive Flex Program. 
 
 ## Curriculum Overview
 
