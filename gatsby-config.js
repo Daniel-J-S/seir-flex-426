@@ -51,6 +51,13 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `Frontend Fundamentals`,
+        path: `${__dirname}/src/course-materials/frontend-fundamentals`
+      }
+    },
+    {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
