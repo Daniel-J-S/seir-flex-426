@@ -1,5 +1,5 @@
 {
-  "name": "ga-classroom-website",
+  "name": "seir-flex-04-07-20",
   "private": true,
   "description": "A Website for Administering GA Lecture, Lab, and Homework Material",
   "version": "0.1.0",
@@ -43,9 +43,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.generalassemb.ly/Dvlpr-Dan/ga-classroom-website"
+    "url": "https://github.com/GA-Dallas/seir-flex-04-07-20"
   },
   "bugs": {
-    "url": "https://git.generalassemb.ly/Dvlpr-Dan/ga-classroom-website/issues"
+    "url": "https://github.com/GA-Dallas/seir-flex-04-07-20/issues"
   }
 }
