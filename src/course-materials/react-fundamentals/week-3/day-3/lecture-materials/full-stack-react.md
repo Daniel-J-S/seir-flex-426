@@ -265,7 +265,7 @@ So, when you are hacking out code and nothing seems to be updating in the browse
 
 Now that you've checked out the what the production code will look like when it's deployed, let's start up the development environment as usual:
 
-```
+```shell
 $ npm start
 ```
 
@@ -338,7 +338,7 @@ So yes, we need to create a **Procfile** (named exactly without a file extension
 
 Then, adding a single line inside **Procfile** takes care of informing Heroku how to boot our app:
 
-```
+```shell
 web: node server.js
 ```
 
@@ -362,7 +362,7 @@ The last step is to ensure that every KEY=VALUE pair in the `.env` file is set i
 
 No different than with the two previous projects deployed to Heroku. For each KEY=VALUE:
 
-```
+```shell
 $ heroku config:set KEY=VALUE
 ```
 
