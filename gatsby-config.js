@@ -46,15 +46,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `React Fundamentals`,
-        path: `${__dirname}/src/course-materials/react-fundamentals`
-      }
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `Frontend Fundamentals`,
-        path: `${__dirname}/src/course-materials/frontend-fundamentals`
+        name: `Course Materials`,
+        path: `${__dirname}/src/course-materials`
       }
     },
     {
