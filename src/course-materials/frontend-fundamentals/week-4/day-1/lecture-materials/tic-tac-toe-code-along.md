@@ -49,7 +49,8 @@ Build a Tic-Tac-Toe game incorporating the three web app technologies you've wor
 Pseudocode is a detailed description of what an application must do, written in natural language instead of a particular programming language.
 Well-written pseudocode should be easily translated into actual code.
 The best way to get started is to start with the "big picture" of what the app needs to do:
-```
+
+```shell
 1) Define required constants
 2) Define required variables used to track the state of the game
 3) Store elements on the page that will be accessed in code more than once in variables to make code more concise, readable and performant.
@@ -62,7 +63,8 @@ The best way to get started is to start with the "big picture" of what the app n
 ```
 Since most web apps are event-driven by nature. Coding an event-driven program generally requires that we set up the application when it loads (steps 1 - 4) and wait for the user to interact with the app (steps 5 & 6).
 Now we can start filling some more detailed steps:
-```
+
+```shell
 1) Define required constants:
     1.1) Define a colors object with keys of 'null' (when the square is empty), and players 1 & -1. The value assigned to each key represents the color to display for an empty square (null), player 1 and player -1.
     1.2) Define the 8 possible winning combinations, each containing three indexes of the board that make a winner if they hold the same player value.

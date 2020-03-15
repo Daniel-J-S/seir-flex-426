@@ -40,7 +40,7 @@ Dougie the Donut and Pizza Rat have become best buds taking New York City by sto
 
 4. So, your top level down directory structure should look like this:
 
-```
+```shell
 w05/
   labs/
     complaints-app/

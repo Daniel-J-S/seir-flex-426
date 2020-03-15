@@ -84,7 +84,7 @@ Students will be able to:
 
 - Inside of `js-arrays-practice` create the following folder/file structure:
 
-```
+```shell
 wk01/
   js-arrays-practice/
     index.html
@@ -172,7 +172,7 @@ wk01/
 
 - Maybe this will help you remember:
 
-	```
+	```shell
 	The "longer" named methods do the same thing (add to an array)
 	unshift -> [...] <- push
 	

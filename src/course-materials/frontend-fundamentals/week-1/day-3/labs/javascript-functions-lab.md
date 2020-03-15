@@ -25,7 +25,7 @@ Create the following folder/file structure inside your `labs` folder for today's
 2. An `index.html` file inside of your `js-functions-lab` folder
 3. A `script.js` file inside of a `js` folder inside your `js-functions-lab` folder
 
-```
+```shell
 wk01/
   labs/
       js-functions-lab/

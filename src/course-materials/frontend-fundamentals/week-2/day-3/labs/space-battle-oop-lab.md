@@ -87,7 +87,7 @@ if (Math.random() < alien[0].accuracy) {
 
 - Inside of `js-space-battle-lab` create the following folder/file structure:
 
-```
+```shell
 js-space-battle-lab/
   index.html
     js/
@@ -96,7 +96,7 @@ js-space-battle-lab/
 
 - Once you are done, your entire directory should look like this:
 
-```
+```shell
 w02/
   labs
     js-space-battle-lab/

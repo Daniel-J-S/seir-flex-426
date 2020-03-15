@@ -20,7 +20,7 @@ This lab is a **deliverable** - when completed, please use the [Google Form](htt
 
 1. Inside of your `labs` folder inside your `w02` folder, the following folder/file structure to complete the following exercise.
 
-```
+```shell
 w02/
   labs/
     guess-the-number-game/
@@ -82,11 +82,11 @@ Completing the following tasks will result in a working _Guess the Number_ game:
 
 5. Add a `render` method to `game` that `play` will call after a guess has been made that alerts:
 	- If the secret has been guessed:<br>
-		```
+		```shell
 		Congrats! You guessed the number in [x] guesses!
 		```
 	- Otherwise:<br>
-		```
+		```shell
 		Your guess is too [high|low]
 		Previous guesses: x, x, x, x
 		```

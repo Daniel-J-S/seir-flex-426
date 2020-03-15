@@ -52,7 +52,7 @@ Students Will Be Able To:
 
 - Inside of `js-objects-practice` create the following folder/file structure:
 
-```
+```shell
 js-objects-practice/
   index.html
   js/
@@ -61,7 +61,7 @@ js-objects-practice/
 
 - Once you are done, your directory should look like this:
 
-```
+```shell
 w02/
  practice/
    js-objects-practice/
@@ -478,7 +478,7 @@ w02/
 
 - All non-object data types are known as primitive, or value, types because they hold a single value. Picture a table in memory like this:
 	
-	```
+	```shell
 	                       var | value
 	                                  -
 	      let x = 25  -->   x  |  25
@@ -493,7 +493,7 @@ w02/
 
 - Objects, including Arrays, Functions, etc. are stored in a separate part of memory known as the _heap_. A variable for an object has as its value a "reference" (think pointer):
 
-	```
+	```shell
 	                        var | value
 	                                   -
 	       let x = 25  -->   x  |  25

@@ -27,7 +27,7 @@ Then create the following folder/file structure for today's warmup activies:
 2. An `index.html` file inside of your `js-arrays-lab` folder
 3. A `script.js` file inside of a `js` folder inside your `js-arrays-lab` folder
 
-```
+```shell
 wk01/
   labs/
       js-arrays-lab/

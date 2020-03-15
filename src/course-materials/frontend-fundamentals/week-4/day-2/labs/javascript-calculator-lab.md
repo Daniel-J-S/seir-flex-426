@@ -38,7 +38,7 @@ User stories are a great way to break down what the different features of the we
 
 - Inside of `calculator-lab` create the following folder/file structure:
 
-```
+```shell
 calculator-lab/
   index.html
   css/
@@ -50,7 +50,7 @@ calculator-lab/
 
 So, your top level down folder/file structure should look like this:
 
-```
+```shell
 w04/
   labs/
    calculator-lab/

@@ -26,7 +26,7 @@ This is the first of a two-part lab that builds a menu bar with a slide-down sub
 
 - Inside of `dom-menu-lab` create the following folder/file structure:
 
-```
+```shell
 dom-menu-lab/
   index.html
   css/
@@ -37,7 +37,7 @@ dom-menu-lab/
 
 So, your top level down folder/file structure should look like this:
 
-```
+```shell
 w03/
   labs/
    dom-menu-lab/

@@ -261,7 +261,7 @@ Lastly, regardless of which approach we use, `setState` is always an asynchronou
 
 So in summary, `setState` has the following signature:
 
-```
+```shell
 setState(<object or function>, <optional callback>);
 ```
 

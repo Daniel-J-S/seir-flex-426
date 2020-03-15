@@ -38,7 +38,7 @@ type: "lecture"
 
 - Inside of `ajax-practice` create the following folder/file structure:
 
-```
+```shell
   practice/
     ajax-practice/
       index.html
@@ -48,7 +48,7 @@ type: "lecture"
 
 So, your top level down directory structure should look like this:
 
-```
+```shell
 w04/
   practice/
     ajax-practice/

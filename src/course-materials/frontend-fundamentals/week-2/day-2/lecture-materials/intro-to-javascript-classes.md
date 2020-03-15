@@ -32,7 +32,7 @@ type: "lecture"
 
 - Inside of `js-classes-practice` create the following folder/file structure:
 
-```
+```shell
 w02/
   practice
     js-classes-practice/

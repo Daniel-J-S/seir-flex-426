@@ -64,7 +64,7 @@ type: "lecture"
 
 - Inside of `js-dom-practice` create the following folder/file structure:
 
-```
+```shell
   practice/
     js-dom-practice/
       index.html
@@ -74,7 +74,7 @@ type: "lecture"
 
 So, your top level down directory structure should look like this:
 
-```
+```shell
 w03/
   practice/
     js-dom-practice/

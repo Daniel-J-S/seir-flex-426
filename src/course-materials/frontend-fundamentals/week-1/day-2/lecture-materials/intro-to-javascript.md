@@ -199,7 +199,7 @@ Okay, let's briefly go through the data types...
 
 A **string** represents textual data with zero or more characters wrapped by single or double quotation marks such as `"John"` or `'Jane'`. A pair of quotes with nothing between them is still a **string** - an _empty string_.
 
-```
+```shell
 > 'Hello World'
 < "Hello World"
 > typeof "I'm a string"
@@ -218,7 +218,7 @@ Unlike many other programming languages, there is no distinction between integer
 
 Internally, JS represents all numbers as floating-point values.
 
-```
+```shell
 > 15
 < 15
 > typeof 15
@@ -251,7 +251,7 @@ Before moving on to review the other data types, let's identify a couple of exam
 	</tbody>
 </table>
 
-```
+```text
 If you're reviewing this exercies during a live lecture, please reply to the instructor's prompt in slack with some examples of:
 
 Strings:
@@ -269,7 +269,7 @@ The _null_ data type has only one value: `null`.
 
 We often assign the value _null_ to a variable to represent the fact that it has no "real" value 😊
 
-```
+```shell
 > typeof null
 < "object"  // Fail! Remember, JS was written in 10 days by one dude!
 ```
@@ -286,7 +286,7 @@ In addition, a function by default returns `undefined` if a value was not explic
 
 Lastly, you will see `undefined` a lot in the console when it evaluates a statement that does not return a value.
 
-```
+```shell
 > typeof undefined
 < "undefined"
 > console.log('hello')
@@ -314,7 +314,7 @@ We will learn more about _objects_ in a later lesson.
 
 For now, let's just verify what `typeof` returns:
 
-```
+```shell
 > typeof {course: 'SEI', cohort: 4}
 < "object"
 > typeof []
@@ -325,7 +325,7 @@ For now, let's just verify what `typeof` returns:
 
 Although _functions_ are also considered objects (_callable objects_ to be exact), the `typeof` operator returns a more helpful data type:
 
-```
+```shell
 > typeof function(){}
 < "function"
 ```

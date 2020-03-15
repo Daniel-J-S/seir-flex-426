@@ -165,7 +165,7 @@ Students will be able to:
 
 - Let's change to the _home_ directory of the logged in user:
 
-	```sh
+	```shell
 	$ cd ~
 	```
 
@@ -195,7 +195,7 @@ Students will be able to:
 
 - Let's create a `drawers` directory inside of the _home_ directory:
 
-	```sh
+	```shell
 	$ mkdir ~/drawers
 	```
 
@@ -219,13 +219,13 @@ Students will be able to:
 
 - Let's move to the `drawers` directory and create a directory named `socks`. Here is how we can create the directory **and** change to it using a single command:
 	
-	```sh
+	```shell
 	$ mkdir socks && cd socks
 	```
 
 - Now let's create a `dress.socks` file:
 
-	```sh
+	```shell
 	$ touch dress.socks
 	```
 
@@ -245,7 +245,7 @@ Students will be able to:
 
 - Here's how we can do the move regardless of which directory we're currently in by using absolute paths:
 
-	```sh
+	```shell
 	$ mv ~/drawers/pjs/favorite.socks ~/drawers/socks/
 	```
 	Be sure to use tab-completion!
@@ -273,7 +273,7 @@ Students will be able to:
 
 - Here's how we can rename the `warm.pjs` file to `summer.pjs` from anywhere:
 	
-	```sh
+	```shell
 	$ mv ~/drawers/pjs/warm.pjs ~/drawers/pjs/summer.pjs
 	```
 - Of course, you can actually move and rename simultaneously!
@@ -286,7 +286,7 @@ Students will be able to:
 
 - Let's first use it to delete the `dress.socks` file. Here's one way:
 	
-	```sh
+	```shell
 	$ cd ~/drawers/socks && rm dress.socks
 	```
 
@@ -300,7 +300,7 @@ Students will be able to:
 
 - To delete the `pjs` folder we could use this command:
 
-	```sh
+	```shell
 	$ rm -rf ~/drawers/pjs
 	```
 
@@ -313,7 +313,7 @@ Students will be able to:
 
 - Now let's move all of the `.socks` files out of the `socks` folder into our _home_ folder. The following command assumes we're inside the `socks` folder:
 
-	```sh
+	```shell
 	$ mv *.socks ~
 	```
 
@@ -327,13 +327,13 @@ Students will be able to:
 
 - Here's how we can copy all **.js** files:
 
-	```sh
+	```shell
 	$ cp *.js ~/dest-folder
 	```
 
 - And entire directories by adding the `-R` option:
 
-	```sh
+	```shell
 	$ cp -R ./sample-code ~/dest-folder
 	```
 	
@@ -381,7 +381,7 @@ Students will be able to:
 
 - Let's add an _alias_ (shortcut) command that will change to your class repo directory by simply typing `repo`.  We can do this by editing the hidden `.bash_profile` file
 
-	```sh
+	```shell
 	$ code ~/.bash_profile
 	```
 
@@ -391,7 +391,7 @@ Students will be able to:
 
 - Now add this line (preferably near other aliases)
 
-	```sh
+	```shell
 	alias repo='cd ~/code/<path to homework repo folder>'
 	```
 

@@ -32,7 +32,7 @@ type: "lecture"
 
 - Inside of `js-functions-practice` create the following folder/file structure:
 
-```
+```shell
 wk01/
   js-functions-practice/
   index.html

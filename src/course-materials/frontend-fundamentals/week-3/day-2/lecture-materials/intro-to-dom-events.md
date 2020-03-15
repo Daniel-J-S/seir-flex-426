@@ -84,7 +84,7 @@ type: "lecture"
 
 - Inside of `dom-events-practice` create the following folder/file structure:
 
-```
+```shell
   practice/
     dom-events-practice/
       index.html
@@ -94,7 +94,7 @@ type: "lecture"
 
 So, your top level down directory structure should look like this:
 
-```
+```shell
 w03/
   practice/
     dom-events-practice/

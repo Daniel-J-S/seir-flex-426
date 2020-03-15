@@ -82,7 +82,7 @@ Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder ins
 
 - Inside of `jquery-practice` create the following folder/file structure:
 
-```
+```shell
   practice/
     jquery-practice/
       index.html
@@ -90,7 +90,7 @@ Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder ins
 
 So, your top level down directory structure should look like this:
 
-```
+```shell
 w03/
   practice/
     jquery-practice/
@@ -214,7 +214,7 @@ The jQuery selector function, `$()`, returns a special object, known as the **jQ
 
 Let's check out the structure of the _jQuery Object_. First, let's create a _jQuery Object_ using `$()` to select all of the `<li>` elements in the console:
 
-```
+```shell
 > var $li = $('li');
 < undefined
 > dir($li)
@@ -227,14 +227,14 @@ Exploring `$li` in the console will reveal that it is an array-like object with 
 
 To check how many elements a jQuery set contains in its array, we can use its `length` property:
 
-```
+```shell
 > $li.length
 < 5
 ```
 
 Let's see what an element within the _jQuery Object_ array holds:
 
-```
+```shell
 > $li[0]
 < <li>...
 ```
@@ -261,7 +261,7 @@ Assuming you don't know how many `<li>` DOM elements are contained in the `$li` 
 
 Although native DOM elements have numerous useful methods and properties by default, they don't have jQuery's shortcuts and super powers like these:
 
-```
+```shell
 > $li.fadeOut()
 > $li.fadeIn()
 ```

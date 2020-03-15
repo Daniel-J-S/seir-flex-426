@@ -34,7 +34,7 @@ For this lesson, we're going to use the same jQuery practice project folder insi
 
 But let's create an `script.js` file inside of a `js` directory to put our JavaScript in:
 
-```
+```shell
 mkdir js
 touch js/script.js
 ```

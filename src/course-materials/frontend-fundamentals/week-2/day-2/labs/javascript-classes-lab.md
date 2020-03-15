@@ -20,7 +20,7 @@ Now that you've learned about using **classes** in JavaScript to create objects,
 
 - Inside of `js-classes-lab` create the following folder/file structure:
 
-```
+```shell
 w02/
   labs
     js-classes-lab/

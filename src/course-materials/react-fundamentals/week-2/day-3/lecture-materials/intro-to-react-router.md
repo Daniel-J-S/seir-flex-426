@@ -77,13 +77,13 @@ In a typical React app, defining routing for a React app using React Router is a
 
 Since React Router is not part of the React library, it needs to be installed separately:
 
-```
+```shell
 $ npm i react-router-dom
 ```
 
 Not only is it a fairly large Node package, npm might list some vulnerability warnings as well. If so, the output says to run the following command to fix those that can be fixed:
 
-```
+```shell
 $ npm audit fix
 ```
 
@@ -211,7 +211,7 @@ As a practice exercise you will define a `/settings` route used to display a "se
 
 To help organize the components in the app, we'll create a dedicated folder that will hold "page" components:
 
-```
+```shell
 $ mkdir src/pages
 ```
 
@@ -219,13 +219,13 @@ The first "page" component we're going to put in there is the `<App>` component 
 
 Let's refactor by creating an **src/pages/App** folder first:
 
-```
+```shell
 $ mkdir src/pages/App
 ```
 
 Now let's move the **App**-related files into their new home:
 
-```
+```shell
 $ mv src/App.* src/pages/App/
 ```
 
@@ -259,13 +259,13 @@ For the root route we want to render a `<GamePage>` component responsible for re
 
 Time to stub up `<GamePage>`:
 
-```
+```shell
 $ mkdir src/pages/GamePage
 ```
 
 Now create **src/pages/GamePage/GamePage.jsx**:
 
-```
+```shell
 touch src/pages/GamePage/GamePage.jsx
 ```
 

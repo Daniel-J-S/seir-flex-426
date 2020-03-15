@@ -38,7 +38,7 @@ Homebrew is a package manager that we will use to install various command line t
 
 Open up terminal, and paste the following command to install Homebrew. You might be prompted to install XCode Command Line Tools during the install process.
 
-```
+```shell
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
@@ -52,7 +52,7 @@ Lastly, make sure to run `brew update` to make sure you have the latest lists of
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
 
-```
+```shell
 xcode-select --install
 ```
 
@@ -88,7 +88,7 @@ You should have already installed Git as instructed to complete the pre-work.
 
 If it's not installed, we can use Homebrew to install it:
 
-```
+```shell
 brew install git
 ```
 
@@ -108,7 +108,7 @@ Next, configure git to use this file:  `git config --global core.excludesfile ~/
 
 Finally, lets put some good stuff in there:
 
-```sh
+```shell
 # This is a list of rules for ignoring files in every Git repositories on your computer.
 # See https://help.github.com/articles/ignoring-files
 
