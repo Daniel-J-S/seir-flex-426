@@ -42,6 +42,7 @@ query {
         ){
       edges {
         node {
+          id
           fields {
             slug
           }
