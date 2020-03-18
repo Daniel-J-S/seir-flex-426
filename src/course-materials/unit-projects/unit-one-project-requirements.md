@@ -1,5 +1,3 @@
-
-
 # Project One: Your First Web Application
 
 ## Attendance
