@@ -12,5 +12,5 @@ topics: "Calculator Lab"
 
 #### Calculator Lab
 
-- [**Group Lab:** Calculator Lab](/frontend-fundamentals/week-4/day-2/labs/javascript-calculator-lab/) - **Deliverable**
+- [**Group Lab:** Calculator Lab](/frontend-fundamentals/week-4/day-2/labs/javascript-calculator-lab/) - **Non-Deliverable**
 

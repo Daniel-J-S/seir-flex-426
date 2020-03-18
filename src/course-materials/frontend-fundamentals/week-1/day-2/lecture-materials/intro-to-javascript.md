@@ -251,15 +251,6 @@ Before moving on to review the other data types, let's identify a couple of exam
 	</tbody>
 </table>
 
-```text
-If you're reviewing this exercies during a live lecture, please reply to the instructor's prompt in slack with some examples of:
-
-Strings:
-Numbers:
-Booleans:
-```
-
-<hr>
 
 Now let's continue looking at the other data types...
 

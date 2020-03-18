@@ -4,13 +4,14 @@ title: "Week 5 - Day 2"
 week: 5
 day: 2
 type: "homepage"
-topics: "Callbacks and Arrow Functions Walkthrough"
+topics: "Review AJAX Practice Code Along - Start Project One"
 ---
 
 
 # Week 5 - Day 2
 
-#### Callback and Arrow Functions Walkthrough
+#### Review AJAX Practice Code Along - Start Project One
 
-- [**Lecture:** JavaScript Callbacks and Arrow Functions](/frontend-fundamentals/week-5/day-2/lecture-materials/javascript-callbacks-and-arrow-functions/) 
+- [**Review:** Build An App That Uses NYPD API Data](/frontend-fundamentals/week-5/day-1/labs/build-an-app-that-uses-nyc-api-data/)
 
+- **Activity:** Students Start Project One

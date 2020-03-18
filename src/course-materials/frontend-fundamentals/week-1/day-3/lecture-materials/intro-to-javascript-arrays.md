@@ -1,5 +1,5 @@
 ---
-track: "Frontent Fundamentals"
+track: "Frontend Fundamentals"
 title: "JavaScript Arrays"
 week: 1
 day: 3
