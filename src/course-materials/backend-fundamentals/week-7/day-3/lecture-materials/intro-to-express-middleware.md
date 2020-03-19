@@ -221,7 +221,7 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Checking the [Resourceful Routing for CRUD Operations in Web Applications Chart](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0), we find that the proper route is:
 
-	```sh
+	```shell
 	GET /todos/new
 	```
 
@@ -292,7 +292,7 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - If you remember the routing chart from our last lesson, we can see the proper (RESTful) route is...
 
-	```sh
+	```shell
 	POST /todos
 	```
 
@@ -398,7 +398,7 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - First we need to install the middleware:
 
-	```sh
+	```shell
 	$ npm i method-override
 	```
 
@@ -430,7 +430,7 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - The RESTful route is:
 
-	```sh
+	```shell
 	DELETE /todos/:id
 	```
 

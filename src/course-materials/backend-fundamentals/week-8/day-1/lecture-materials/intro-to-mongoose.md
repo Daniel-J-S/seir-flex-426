@@ -297,7 +297,7 @@ app.use('/', indexRouter);
 
 - Installing the Mongoose package is straight forward:
 
-	```sh
+	```shell
 	$ npm i mongoose
 	```
 	Note: `i` is a shortcut for `install`
@@ -308,7 +308,7 @@ app.use('/', indexRouter);
 
 - We're going to create a separate module named `database.js` and put it in a folder named `config`:
 
-	```sh
+	```shell
 	$ mkdir config
 	$ touch config/database.js
 	```
@@ -427,7 +427,7 @@ app.use('/', indexRouter);
 
 - The MVC design pattern influences our code organization:
 
-	```sh
+	```shell
 	$ mkdir models
 	$ touch models/movie.js
 	```
@@ -558,7 +558,7 @@ module.exports = mongoose.model('Movie', movieSchema);
 
 - Warning, if you make a typo, you'll have to start over:
 
-	```sh
+	```shell
 	$ node
 	> require('./config/database')
 	> const Movie = require('./models/movie')
@@ -605,7 +605,7 @@ module.exports = mongoose.model('Movie', movieSchema);
 
 - Referring back to our routing chart from the routing lesson this week, we find that to display a `new.ejs` view with a form for entering movies, the proper route will be:
 
-	```sh
+	```shell
 	GET /movies/new
 	```
 
@@ -649,7 +649,7 @@ app.use('/movies', moviesRouter);
 - Start by:
 	- Creating `controllers/movies.js`
 
-```sh
+```shell
 touch controllers/movies.js
 ```
 
@@ -918,7 +918,7 @@ Movie.find({}, function(err, movies) {
 ```
 - Perfect! Now we just need to create `views/movies/index.ejs` and add some markup!
 
-```sh
+```shell
 touch views/movies/index.ejs
 ```
 

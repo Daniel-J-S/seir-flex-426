@@ -154,7 +154,7 @@ Students Will Be Able To:
 
 - Using the chart, the proper route for creating a _review_ is:
 
-	```sh
+	```shell
 	POST /movies/:id/reviews
 	```
 
@@ -229,13 +229,13 @@ Students Will Be Able To:
 
 - To achieve max flexibility for CUD'ing the _reviews_ resource, let's define a dedicated **route** module:
 
-	```sh
+	```shell
 	$ touch routes/reviews.js
 	```
 	
 	and a **controller** module too:
 	
-	```sh
+	```shell
 	$ touch controllers/reviews.js
 	```
 

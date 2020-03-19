@@ -42,14 +42,14 @@ type: "lecture"
 
 - Inside this weeks practice folder create another folder called `express-practice`
 
-	```sh
+	```shell
 	$ mkdir express-practice
 	$ cd express-practice
 	```
 	
 - Then create a `package.json` using this command:
 
-	```sh
+	```shell
 	$ npm init
 	```
 	Accept the defaults to the prompts by pressing `[return]`, **except** for the **entry point** - set this to be "**server.js**":
@@ -83,14 +83,14 @@ type: "lecture"
 
 - Let's use `npm` to install the Express module in this project:
 
-	```sh
+	```shell
 	$ npm i express
 	```
 	Note that `i` is a shortcut for `install`
 
 - Create a `server.js` to put our web app's main code in:
 
-	```sh
+	```shell
 	$ touch server.js
 	```
 
@@ -122,7 +122,7 @@ type: "lecture"
 
 - Run the app:
 
-	```sh
+	```shell
 	$ node server
 	```
 	
@@ -184,7 +184,7 @@ type: "lecture"
 
 - If you are unsure if you've already installed it, you can make sure you have it or at least ensure you have the latest version by running:
 
-	```sh
+	```shell
 	$ npm i -g nodemon
 	``` 
 	Command line tools are installed using the `-g` (global) option
@@ -306,7 +306,7 @@ app.post('/cars', function(req, res) {
 
 - Express applications are usually architected using the MVC design pattern, so we will put all view templates inside of a `views` folder:
 
-	```sh
+	```shell
 	$ mkdir views
 	$ touch views/home.ejs
 	```
@@ -381,7 +381,7 @@ app.set('view engine', 'ejs');
 
 - _Error: Cannot find module 'ejs'_ - this error is telling us that we need to install the EJS view engine package:
 
-```sh
+```shell
 $ npm i ejs
 ```
 
@@ -406,7 +406,7 @@ $ npm i ejs
 
 - Do this to set up the module:
 
-```sh
+```shell
 $ mkdir data
 $ touch data/todo-db.js
 ```
@@ -463,7 +463,7 @@ app.get('/todos', function(req, res) {
 
 - Therefore, we need an `index.ejs` view inside of a `views/todos` folder:
 
-```sh
+```shell
 $ mkdir views/todos
 $ touch views/todos/index.ejs
 ```

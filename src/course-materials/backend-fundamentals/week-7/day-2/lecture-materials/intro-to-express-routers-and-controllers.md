@@ -185,7 +185,7 @@ Express is listening on port 3000
 
 - Let's make folders to hold our controllers and models...
 
-	```sh
+	```shell
 	$ mkdir controllers models
 	```
 
@@ -318,7 +318,7 @@ app.use('/', indexRouter);
 
 - Create **todos/index.ejs**:
 
-	```sh
+	```shell
 	$ mkdir views/todos
 	$ touch views/todos/index.ejs
 	```
@@ -354,7 +354,7 @@ app.use('/', indexRouter);
 
 - Create **models/todo.js**:
 
-	```sh
+	```shell
 	$ touch models/todo.js 
 	```
 
@@ -507,7 +507,7 @@ ReferenceError: app is not defined
 
 - Let's start by creating a controller module for the _todos_ resource:
 
-	```sh
+	```shell
 	$ touch controllers/todos.js
 	```
 
@@ -613,7 +613,7 @@ ReferenceError: app is not defined
 
 - According to REST, the "proper" route to display asingle To Do would be:
 
-	```sh
+	```shell
 	GET /todos/:id
 	```
 

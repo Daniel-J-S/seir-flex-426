@@ -238,13 +238,13 @@ We will complete these stories today:
 
 - **NOTE:** This file is created at the root of the project's directory.
 
-```sh
+```shell
 touch .env
 ```
 
 - We'll also need to install the `dotenv` npm package in order to make the environment variables available to our application
 
-```sh
+```shell
 npm i dotenv
 ```
 
@@ -449,7 +449,7 @@ require('dotenv').config()
 
 > EXAMPLE ONLY - DO NOT COPY AND PASTE 
 
-```sh
+```shell
 DATABASE_URL=mongodb+srv://someusername:abc1234@seir-flex-students-1btwt.azure.mongodb.net/students?retryWrites=true
 GOOGLE_CLIENT_ID=245025414219-2r7f4bvh3t88s3shh6hhagrki0f6op8t.apps.googleusercontent.com
 GOOGLE_SECRET=Yn9T_2BKzxr4zgprzKDGI5j3
@@ -520,7 +520,7 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Let's install the module:
 
-	```sh
+	```shell
 	$ npm install express-session
 	```
 
@@ -578,7 +578,7 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - First the easy part:
 
-	```sh
+	```shell
 	$ npm install passport
 	```
 
@@ -614,7 +614,7 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Let's create the file:
 
-	```sh
+	```shell
 	$ touch config/passport.js
 	```
 
@@ -653,7 +653,7 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Time to install the strategy that will implement Google's flavor of OAuth:
 
-	```sh
+	```shell
 	$ npm install passport-google-oauth
 	```
 

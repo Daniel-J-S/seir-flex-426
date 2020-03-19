@@ -69,14 +69,14 @@ type: "lecture"
 
 - Start a Node REPL:
 
-	```sh
+	```shell
 	$ node
 	> 
 	```
 
 - Connect to the MongoDB database:
 
-	```sh
+	```shell
 	> require('./config/database')
 	{}
 	> Connected to MongoDB at localhost:27017
@@ -86,7 +86,7 @@ type: "lecture"
 
 - Load the `Movie` Model:
 
-	```sh
+	```shell
 	> const M = require('./models/movie')
 	```
 
@@ -95,7 +95,7 @@ type: "lecture"
 
 - Log all _movie_ docs:
 
-	```sh
+	```shell
 	> M.find({}, (e, movies) => {
 	... console.log(movies)
 	... })
@@ -110,7 +110,7 @@ type: "lecture"
 
 - Here's a way to delete all documents from a collection:
 
-	```sh
+	```shell
 	> M.deleteMany({}, (err, result) => console.log(result))
 	...
 	> { n: 3, ok: 1, deletedCount: 3 }
@@ -303,7 +303,7 @@ type: "lecture"
 
 - We'll need that `new` view that we just rendered:
 
-	```sh
+	```shell
 	$ touch views/performers/new.ejs
 	```
 

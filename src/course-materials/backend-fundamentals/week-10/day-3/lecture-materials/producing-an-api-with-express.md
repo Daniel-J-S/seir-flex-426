@@ -88,14 +88,14 @@ topics: "Producing an API in Express"
 
 We'll use a build tool, which will make creating an express application much faster! 
 
-```sh
+```shell
 $ npm install -g express-generator
 ```
 - Generate an Express app named `puppies-api`.
 
 Now that we have the build tool, we can quickly generate an app with the following command:
 
-```sh
+```shell
 $ express puppies-api --ejs
 ```
 

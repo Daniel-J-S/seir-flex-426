@@ -96,7 +96,7 @@ w06/
 
 - In the REPL we can write JS and even load Node modules, which we're going to learn about in this lesson:
 
-	```sh
+	```shell
 	> 10 + 5
 	15
 	> function sayHello() {
@@ -179,7 +179,7 @@ w06/
 
 - Press `ctrl + backtick` to open the integrated terminal in VS Code and type the following to execute **script.js**:
 
-	```sh
+	```shell
 	$ node script
 	40
 	```
@@ -366,19 +366,19 @@ w06/
 
 - If you start a Node app from scratch, the first thing you should do is create the `package.json` file by entering the following command:
 
-	```sh
+	```shell
 	$ npm init
 	```
 
 - It's okay to accept all of the default settings.  To accept the defaults without being prompted, you can run the command as follows:
 
-	```sh
+	```shell
 	$ npm init -y
 	```
 
 - Now, let's use `npm` to download and install a package:
 
-	```sh
+	```shell
 	$ npm install request
 	```
 
@@ -443,7 +443,7 @@ w06/
 
 - Now we can install our app's dependencies like this:
 
-	```sh
+	```shell
 	$ npm install
 	```
 	Witness the return of `node_modules`!
