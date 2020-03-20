@@ -14,5 +14,5 @@ topics: "Callbacks and Arrow Functions Walkthrough"
 
 - [**Lecture:** JavaScript Callbacks and Arrow Functions](/frontend-fundamentals/week-5/day-3/lecture-materials/javascript-callbacks-and-arrow-functions/) 
 
-- **Activity:** Students Work on Project One
+- **Activity:** Students Work on Project 1
 
