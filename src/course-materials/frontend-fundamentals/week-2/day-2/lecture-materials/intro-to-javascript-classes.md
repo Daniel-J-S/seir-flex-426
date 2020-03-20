@@ -1,5 +1,5 @@
 ---
-track: "Frontent Fundamentals"
+track: "Frontend Fundamentals"
 title: "Intro to JavaScript Classes"
 week: 2
 day: 2

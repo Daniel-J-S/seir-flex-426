@@ -5,7 +5,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'GA Student Website',
+    title: 'SEIR Flex 04/07 Cyberpunk 2020',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Program',
@@ -100,7 +100,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `General Assembly`,
+        name: `General Assembly - SEIR Flex 04/07 Cyberpunk 2020`,
         short_name: `GA`,
         description: `Our Student-Facing website expressed as a progressive web app!`,
         lang: `en`,

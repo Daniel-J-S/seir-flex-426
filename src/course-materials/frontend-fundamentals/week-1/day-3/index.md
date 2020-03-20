@@ -11,6 +11,6 @@ topics: "JavaScript Basics"
 
 #### JavaScript Basics
 - [**Lecture:** JavaScript Arrays](/frontend-fundamentals/week-1/day-3/lecture-materials/intro-to-javascript-arrays/)
-- [**Lab**: JavaScript Arrays Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-arrays-lab/)
+- [**Lab**: JavaScript Arrays Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-arrays-lab/) - **Deliverable**
 - [**Lecture**: JavaScript Functions and Scope](/frontend-fundamentals/week-1/day-3/lecture-materials/intro-to-javascript-functions-and-scope/) 
-- [**Lab**: JavaScript Functions Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-functions-lab/) - **Deliverable**
+- [**Lab**: JavaScript Functions Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-functions-lab/) - **Non-Deliverable**
