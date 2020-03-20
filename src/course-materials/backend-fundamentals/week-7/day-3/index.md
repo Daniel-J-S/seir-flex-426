@@ -10,9 +10,9 @@ topics: "Express Middleware and MongoDB"
 # Week 7 - Day 3
 
 #### Express Middleware and MongoDB
-- [**Lecture:** Intro to Express Middleware](/backend-fundamentals/week-7/day-3/labs/intro-to-express-middleware/)
+- [**Lecture:** Intro to Express Middleware](/backend-fundamentals/week-7/day-3/lecture-materials/intro-to-express-middleware/)
 - [**Lab:** Express Dev Skills Part 2 of 2](/backend-fundamentals/week-7/day-3/labs/express-dev-skills-part-2/) - **Parts 1 and 2 Are Deliverable**
-- [**Lecture:** Intro to MongoDB](/backend-fundamentals/week-7/day-3/labs/intro-to-mongodb/)
+- [**Lecture:** Intro to MongoDB](/backend-fundamentals/week-7/day-3/lecture-materials/intro-to-mongodb/)
 
 
 
