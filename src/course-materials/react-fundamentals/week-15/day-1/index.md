@@ -4,12 +4,13 @@ title: "Week 15 - Day 1"
 week: 15
 day: 1
 type: "homepage"
-topics: "Token-Based Auth with React and JWTs"
+topics: "Component Lifecycle Methods"
 ---
 
 
 # Week 15 - Day 1
 
-#### Token-Based Auth with React and JWTs 
-- [Lecture: Auth with React and JWTs](/react-fundamentals/week-15/day-1/lecture-materials/token-based-auth-with-react-and-jwts/)
+#### Component Lifecycle Methods 
+- [**Lecture:** Intro To Component Lifecycle Methods](/react-fundamentals/week-15/day-1/lecture-materials/component-lifecycle-methods/)
+- **Activity:** Catch up on Labs
 
