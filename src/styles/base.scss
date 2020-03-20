@@ -33,8 +33,16 @@
     margin-bottom: 2rem;
   }
 
-  @media (max-width: 600px) {
-    a.breadcrumb__link {
-      line-height: 2.5rem;
-    }
+ a.breadcrumb__link {
+   line-height: 2.5rem;
+ }
+
+ h1:first-of-type {
+   line-height: 3.5rem;
+ }
+
+ @media (max-width: 600px) {
+  h1:first-of-type {
+    font-size: 1.7rem;
   }
+ }

@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import LectureCard from '../components/lecture-card';
 
-import styles from '../styles/react-fundamentals.module.scss';
+import styles from '../styles/course-content-display.module.scss';
 
 
 export default({ data, location }) => {
@@ -42,6 +42,7 @@ query {
         ){
       edges {
         node {
+          id
           fields {
             slug
           }
