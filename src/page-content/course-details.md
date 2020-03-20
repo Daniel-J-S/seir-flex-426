@@ -8,12 +8,12 @@ You will be required to meet 80% completion of homework assignments at the end o
 
 ## Schedule and Holidays
 
-Start date: 10/29/2019
-End date: 04/25/2020
-Monday-Friday 6:30 pm - 10:15 pm EST  
-Sat 10 am - 6:30 pm EST
+Start date: 04/07/2020
+End date: 10/03/2020
+Monday-Friday 7 pm - 11 pm EST  
+Sat 11 am - 7 pm EST
 Office Hours Follow Classroom Time and run for :45 mins
-Holidays: 11/30, 12/24, 12/25, 12/28, 12/31, 1/1, 4/23
+Holidays: 07/04
 
 ## In Class
 * Before class:
@@ -32,8 +32,9 @@ Holidays: 11/30, 12/24, 12/25, 12/28, 12/31, 1/1, 4/23
 | Name  | Role |
 | ----- | ----- |
 | Daniel Scott  |  Lead Instructor 
-| Kevin Bloomquist  |  Lead Instructor 
+| Casey Harding  |  Lead Instructor 
 | Yanny Castrillon | Instructional Associate 
+| Veronica Ramirez | Instructional Associate 
 | Jennifer Youngblood | Outcomes Coach
 
 
@@ -62,15 +63,16 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 ## Lab/Homework Submission Procedure
 
 ### We will walk through this together the first time!
-* Create a repo on Github Enterprise named `SEIR-FLEX-HOMEWORK-AND-LABS`
+<!-- * Create a repo on Github Enterprise named `SEIR-FLEX-HOMEWORK-AND-LABS`
 * Inside the parent directory you will create a folder representing each week we're currently working in... i.e `wk01`
 * Complete the work for each homework assignment inside a folder inside your current week folder... i.e `wk01/homework`
 * Please note that we'll also use this repo for in-class exercises
 * Push your changes to your repository from your terminal by running the following commands:
 * `git add .`
 * `git commit -m "completed lab/homework”`
-* `git push`
-* Fill out this [Google Form](https://forms.gle/ZhsdJF2JpgvAK41h6) with your github link for that specific homework. It will be the same Google Form for each homework
+* `git push` -->
+* Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
+* Fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdA1y0h8XSKzYEfnFmADOh7aJU0UoT6DVIX69SwBeGI-qkg0A/viewform) with a link for that specific homework. It will be the same Google Form for each homework
 * **Homework is due one week from the day it was assigned**
 * If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
 
