@@ -1,15 +1,17 @@
 ---
 track: "Frontend Fundamentals"
-title: "Week 6 - Day 1"
+title: "Week 6 - Day 2"
 week: 6
-day: 1
+day: 2
 type: "homepage"
-topics: "Project One"
+topics: "Project 1 Presentations"
 ---
 
 
 # Week 5 - Day 1
 
-#### Project One
-- **Activity:** Students Work on Project One
+#### Project 1 Presentations
+- **Activity:** Students Present Project 1
+
+
 
