@@ -12,4 +12,4 @@ topics: "Intro to JavaScript Classes"
 
 #### Event Handling in React
 - [**Lecture:** Intro to JavaScript Classes](/frontend-fundamentals/week-2/day-2/lecture-materials/intro-to-javascript-classes/)
-- [**Lab:** JavaScript Classes Lab](/frontend-fundamentals/week-2/day-2/labs/intro-to-javascript-classes/) - **Non-Deliverable**
+- [**Lab:** JavaScript Classes Lab](/frontend-fundamentals/week-2/day-2/labs/javascript-classes-lab/) - **Non-Deliverable**
