@@ -26,7 +26,7 @@ Curriculum schedule and content is subject to change at instructor's discretion.
 <br>
 <br>
 
-### Unit Two: Backend Fundamentals
+### Unit Two: Backend Fundamentals (Locked)
 
 | Week  | Topics |
 | ----- | ------ |
@@ -40,7 +40,7 @@ Curriculum schedule and content is subject to change at instructor's discretion.
 <br>
 <br>
 
-### Unit Three: React Fundamentals
+### Unit Three: React Fundamentals (Locked)
 
 | Week  | Topics |
 | ----- | ------ |
@@ -56,7 +56,7 @@ Curriculum schedule and content is subject to change at instructor's discretion.
 <br>
 <br>
 
-### Unit Four: Second Language
+### Unit Four: Second Language (Locked)
 
 | Week  | Topics |
 | ----- | ------ |
