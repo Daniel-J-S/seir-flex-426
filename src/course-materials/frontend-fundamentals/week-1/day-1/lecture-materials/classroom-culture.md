@@ -21,7 +21,6 @@ type: "lecture"
 
 - Daniel Scott - Instructor Lead
 - Casey Harding - Instructor Lead
-- Yanny Castrillon - Instructional Associate (IA)
 - Veronica Ramirez - Instructional Associate (IA)
 
 
