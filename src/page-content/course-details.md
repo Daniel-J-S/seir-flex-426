@@ -33,7 +33,6 @@ Holidays: 07/04
 | ----- | ----- |
 | Daniel Scott  |  Lead Instructor 
 | Casey Harding  |  Lead Instructor 
-| Yanny Castrillon | Instructional Associate 
 | Veronica Ramirez | Instructional Associate 
 | Jennifer Youngblood | Outcomes Coach
 
