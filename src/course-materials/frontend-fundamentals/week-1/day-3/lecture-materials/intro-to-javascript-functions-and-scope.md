@@ -17,49 +17,18 @@ type: "lecture"
 
 
 ## Roadmap
-1. What is a function?
-2. Why Functions Anyway?
-3. Defining and Calling Functions
-4. Parameters
-5. Scope
-6. Further Study
+1. Lesson Setup
+2. What is a function?
+3. Why Functions Anyway?
+4. Defining and Calling Functions
+5. Parameters
+6. Scope
+7. Further Study
 
 
 ### Lesson Setup  
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside of this week's folder called `js-functions-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/wk01/js-functions-practice`
-
-- Inside of `js-functions-practice` create the following folder/file structure:
-
-```shell
-wk01/
-  js-functions-practice/
-  index.html
-    js/
-      script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Functions Practice</title>
-</head>
-<body>
-    <h1>JS Functions Practice</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-
+For this lesson, we're going to code along using an `HTML, CSS & JS` on [repl.it](https://repl.it)
   
 ### 1. What is a function?
 
@@ -149,7 +118,7 @@ function sendReport(report) {
 
 #### Review
 
-**Take a minute to discuss with a pair which would be a better programming practice:**
+**Take a minute to discuss with a partner which would be a better programming practice:**
 
 - **Code numerous, smaller functions**<br>-or-<br>
 - **Code fewer, larger functions**
@@ -264,7 +233,7 @@ Now it's your turn...
 
 You're going to write two functions, one as a function declaration & the other as a function expression.
 
-This will be an individual exercise, however, feel free to seek guidance from your neighbors and instructor if you get stuck.
+This will be an individual exercise, however, feel free to seek guidance from a partner via direct message or posting a question in the classroom Slack channel if you get stuck.
 
 ##### EXERCISE 1: Write a Function Declaration
 
