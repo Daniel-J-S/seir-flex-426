@@ -10,7 +10,6 @@ type: "lecture"
 
 ## Learning Objectives
  
-
 Students will be able to:
 
 - Describe the Use Case for Arrays
@@ -25,21 +24,23 @@ Students will be able to:
 
 
 ## Roadmap
- 
 
-1. The Use Case (What & Why) of Arrays
-2. Creating Arrays
-3. Accessing Elements in an Array
-4. Adding Elements to an Array
-5. Removing Elements from an Array
-6. Iterating Over the Elements
-7. Copying an Array
-8. Create a String from an Array
-9. Essential Questions
-10. Further Study
+1. Lesson Setup
+2. The Use Case (What & Why) of Arrays
+3. Creating Arrays
+4. Accessing Elements in an Array
+5. Adding Elements to an Array
+6. Removing Elements from an Array
+7. Iterating Over the Elements
+8. Copying an Array
+9.  Create a String from an Array
+10. Essential Questions
+11. Further Study
 
+### Lesson Setup  
 
-  
+For this lesson, we're going to code along using an `HTML, CSS & JS` on [repl.it](https://repl.it)
+
 ### The Use Case (What & Why) of Arrays
  
 
@@ -52,8 +53,7 @@ Students will be able to:
 	- It is a best practice to name array variables plurally, e.g.,  `let colors = ['red', 'green', 'blue'];`
 
 
-  
-### The Use Case (What & Why) of Arrays
+
  
 
 - <strong>Why use Arrays?</strong>
@@ -77,42 +77,6 @@ Students will be able to:
 - The best practice is to use the _Array Literal_ syntax because it's more concise and the Class approach behaves differently if you pass only one argument
 
 
-### Lesson Setup  
-
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside of this week's folder called `js-arrays-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/wk01/js-arrays-practice`
-
-- Inside of `js-arrays-practice` create the following folder/file structure:
-
-```shell
-wk01/
-  js-arrays-practice/
-    index.html
-	js/
-	  script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Arrays Practice</title>
-</head>
-<body>
-    <h1>JS Arrays Practice</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-  
-
 ### Creating Arrays - Exercise (2 mins)
  
 - Create an array consisting of three of your favorite movies (strings) and assign it to a variable named `movies`
@@ -129,9 +93,6 @@ wk01/
 	```
 
 > Since when is `0` the first item in anything?  Since computer science came along!<br> Internally, programs prefer to think in terms of "offsets" in memory. Thus, we access the first item using an offset of zero - arrays are "zero-based" in JS.
-
-  
-### Adding Elements to an Array
  
 
 - We can add elements to the **end** of an array using the `push` method:
@@ -188,8 +149,6 @@ wk01/
 
 - `splice` has a syntax of: `array.splice(start, deleteCount, newItem1, newItem2...)`
 
-  
-### Add/Remove Elements to/from Anywhere in the Array
  
 
 Examples of adding/removing elements with `splice`:
@@ -222,10 +181,7 @@ The `splice` method always returns an array containing the removed elements.
 
 - Try it out. As you can see, the `forEach` method calls the function provided as an argument **once for each element** in the array
 
-  
-### Iterate Over All of the Elements in an Array
- 
-	
+  	
 - You can also access the index of each iteration:
 
 	```js
@@ -235,9 +191,6 @@ The `splice` method always returns an array containing the removed elements.
 	```
 
 - Note that it's a good practice to name the parameter that accepts each element as the singular of the array, or simply the first letter of the array variable (`movie` or `m` for the example above)
-
-  
-### Iterate Over All of the Elements in an Array
  
 
 - ES2015 provides the `for...of` loop for iterating over the elements of arrays and other iterables such as strings:
@@ -259,11 +212,7 @@ The `splice` method always returns an array containing the removed elements.
 
 - The approach you use depends upon whether you need to copy just some or the entire array
 
-- Let's take a look...
-
-  
-### Copy All or Some of an Array
- 
+- Let's take a look... 
 
 - We can use the [Array.prototype.slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) method to create a copy of all, **or part**, of an array
 

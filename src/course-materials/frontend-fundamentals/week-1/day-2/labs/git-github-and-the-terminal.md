@@ -10,9 +10,14 @@ type: "lab"
 
 # Git/Github and the Terminal 
 
-1. Create a file called `git-github-answers.md` inside your homework folder inside your `wk01` folder
-1. Write your answers to the questions below in your `git-github-answers.md` file
-1. Commit your work at each point when directed (remember to `git add .` and then `git commit -m "your commit message"`)
+## Setup Instructions
+1. Create a folder in your Desktop or any other designated location on your machine; you can name it `git-github-and-terminal`
+2. Initialize a `git` repo inside that folder with the command `git init`
+3. Create a repository on [`github.com`](https://github.com)
+4. Add your remote from `github` to your local repo with the following command: `git remote add origin https://www.github.com/YOURUSERNAME/git-github-and-terminal.git`
+5. Create a file called `README.md` inside your `git-github-and-terminal` folder
+6. Write your answers to the questions below in your `README.md` file
+7. Commit your work at each point when directed (remember to `git add .` and then `git commit -m "your commit message"`)
 
 ## Git & Github - Questions 
 
@@ -45,9 +50,9 @@ Fundamentals, class, or that you find on your own.
 
 * Open the **Terminal app**
 
-* Navigate to your homework folder inside your `wk01` folder and create a folder called: `galaxy_far_far_away`
+* Inside your homework folder, git-github-and-terminal, create another folder called: `galaxy-far-far-away`
 
-* Then create a file inside `galaxy_far_far_away` called `commands.txt`
+* Then create a file inside `galaxy-far-far-away` called `commands.txt`
 
 * Paste the answer to each numbered question (i.e. the command(s) that accomplished the task) in `commands.txt` once you get it to work
 
@@ -56,11 +61,11 @@ Fundamentals, class, or that you find on your own.
 
 ## Part I: Set the Scene
 
-Complete all work inside the `galaxy_far_far_away` folder.
+Complete all work inside the `galaxy-far-far-away` folder.
 
 1. Create a directory called `death_star`, and make the following files inside of it: `darth_vader.txt`, `princess_leia.txt`, `storm_trooper.txt`
 
-2. In `galaxy_far_far_away`, make a directory named `tatooine` and create the following files in it: `luke.txt`, `ben_kenobi.txt`
+2. In `galaxy-far-far-away`, make a directory named `tatooine` and create the following files in it: `luke.txt`, `ben_kenobi.txt`
 
 3. Inside of `tatooine` make a directory called `millenium_falcon`, and in it create: `han_solo.txt`, `chewbaca.txt`
 
@@ -90,7 +95,7 @@ You can use the `mv` command to move files from one location to another. `mv` ca
 
 6. Move `luke.txt` and `obi_wan.txt` to the `millenium_falcon`
 
-7. Move `millenium_falcon` out of `tatooine` and into `galaxy_far_far_away`
+7. Move `millenium_falcon` out of `tatooine` and into `galaxy-far-far-away`
 
 8. Move `millenium_falcon` into `death_star`
 
@@ -112,7 +117,7 @@ You can use `rm` to delete a file.
 
 ## Part VI: all together
 
-11. In `galaxy_far_far_away`, make a directory called `yavin_4`
+11. In `galaxy-far-far-away`, make a directory called `yavin_4`
 
 12. Move the `millenium_falcon` out of the `death_star` and into `yavin_4`
 
@@ -120,7 +125,7 @@ You can use `rm` to delete a file.
 
 14. Move `princess_leia.txt` to `yavin_4` and `luke.txt` to `x_wing`
 
-15. Move the `millenium_falcon` and `x_wing` out of `yavin_4` and into `galaxy_far_far_away`
+15. Move the `millenium_falcon` and `x_wing` out of `yavin_4` and into `galaxy-far-far-away`
 
 16. In `death_star`, create directories for `tie_fighter_1`, `tie_fighter_2` and `tie_fighter_3`
 
@@ -128,7 +133,7 @@ You can use `rm` to delete a file.
 
 18. Make a copy of `storm_trooper.txt` in both `tie_fighter_2` and `tie_fighter_3`
 
-19. Move all of the `tie_fighters` out of the `death_star` and into `galaxy_far_far_away`
+19. Move all of the `tie_fighters` out of the `death_star` and into `galaxy-far-far-away`
 
 <br>
 
@@ -168,7 +173,7 @@ $ git add -A
 
 "Commit" your changes—any time you make a commit, you can always restore the files in the repo to that point:
 ```bash
-$ git commit -m "Completed homework assignment"
+$ git commit -m "Completed homework"
 ```
 
 "Push" your commits to github:

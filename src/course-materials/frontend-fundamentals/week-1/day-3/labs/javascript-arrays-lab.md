@@ -15,51 +15,17 @@ This lab provides an opportunity to practice defining, accessing and manipulatin
 
 > **Note:** Feel free to reference the arrays lesson, collaborate, google, etc.
 
-This lab is **a DELIVERABLE**. When completed, please fill out the [Google Form](https://forms.gle/ZhsdJF2JpgvAK41h6) or click the link above **(it's the same form)** in the navbar to submit your work to your instructional team for review.
+This lab is **a DELIVERABLE**. When completed, please fill out the [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) or click the link above **(it's the same form)** in the navbar to submit your work to your instructional team for review.
 
 ## Setup & Instructions
 
-If you haven't done so already, create a `labs` folder inside of this week's folder.
+For the exercises in this lab, create a `HTML, CSS & JS` on [repl.it](https://repl.it) and name it `"JavaScript Arrays lab"`
 
-Then create the following folder/file structure for today's warmup activies:
-
-1. A `js-arrays-lab` folder
-2. An `index.html` file inside of your `js-arrays-lab` folder
-3. A `script.js` file inside of a `js` folder inside your `js-arrays-lab` folder
-
-```shell
-wk01/
-  labs/
-      js-arrays-lab/
-        index.html
-        js/
-          script.js
-
-``` 
-Here's what you can put in your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Arrays Lab</title>
-</head>
-<body>
-    <h1>JS Arrays Lab</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-> **Confused on what to do? You can <a href="./js-arrays-lab.zip" download>Download</a> this file/folder structure to work out of, just make sure you add it to your homework and labs folder.**
+As a reminder, this lab is a **Deliverable**
 
 ## Exercise
 
-Copy the exercises below into **script.js** file and code away!
+Copy the exercises below into the included **script.js** file and code away!
 
 > Please note, you will most likely need to comment out the console.logs for the exercises you've yet to complete to avoid getting a Reference Error
 
