@@ -21,7 +21,7 @@ module.exports = {
     ],
     homeworkSubmissionLink: {
       title: 'Submit Homework',
-      href: 'https://docs.google.com/forms/d/e/1FAIpQLSdA1y0h8XSKzYEfnFmADOh7aJU0UoT6DVIX69SwBeGI-qkg0A/viewform'
+      href: 'https://forms.gle/aGLyBqABxeDLv18B9'
     }
   },
   plugins: [
