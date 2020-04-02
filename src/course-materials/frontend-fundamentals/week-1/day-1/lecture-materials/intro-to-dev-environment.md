@@ -389,8 +389,8 @@ $ code ~/.bash_profile
 motivation(){
 	echo 'Yesterday you said tomorrow!'
 	say 'Yesterday you said tomorrow!'
-	echo 'You can do it, Daniel!'
-	say 'You can do it, Daniel!'
+	echo 'You can do it!'
+	say 'You can do it!'
 }
 ```
 
