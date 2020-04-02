@@ -15,7 +15,7 @@ This lab provides an opportunity to practice defining, accessing and manipulatin
 
 > **Note:** Feel free to reference the arrays lesson, collaborate, google, etc.
 
-This lab is **a DELIVERABLE**. When completed, please fill out the [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) or click the link above **(it's the same form)** in the navbar to submit your work to your instructional team for review.
+This lab **is a deliverable**. When completed, please fill out the [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) or click the link above **(it's the same form)** in the navbar to submit your work to your instructional team for review.
 
 ## Setup & Instructions
 
