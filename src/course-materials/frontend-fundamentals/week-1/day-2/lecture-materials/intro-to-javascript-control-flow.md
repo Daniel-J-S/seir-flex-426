@@ -23,28 +23,24 @@ type: "lecture"
 
 ## Roadmap                             
 
-- What is Control Flow? (5 mins)
+- What is Control Flow? 
 
-- Conditional Expressions - (15 mins)
+- Conditional Expressions 
 
-- Branching Statements (15 mins)
+- Branching Statements 
 
-- Looping Statements (15 mins)
+- Looping Statements 
 
-- Closing Questions (5 mins)
+- Closing Questions 
 
-- Practice Exercises (20 mins)
+- Practice Exercises 
 
 - Bonus Material
 
 
 ## Lesson Setup  
 
-- Inside your classroom folder, `SEI-FLEX-10-29`, create a folder inside of this week's folder called `js-control-flow-practice`
-	- So, `SEI-FLEX-10-29/wk01/js-control-flow-practice`
-
-- Then create a single `.js` file inside of `js-control-flow-practice` called `script.js`
-
+For this lesson, we're going to code along using an [`HTML, CSS & JS` `repl.it`](https://repl.it)
 
 ## What is Control Flow?
    
