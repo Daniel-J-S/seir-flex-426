@@ -19,43 +19,9 @@ This lab provides an opportunity to practice defining and coding some real-world
 
 ## Setup & Instructions
 
-Create the following folder/file structure inside your `labs` folder for today's warmup activies:
+For the exercises in this lab, create a `HTML, CSS & JS` on [repl.it](https://repl.it) and name it `"JavaScript Functions lab"`
 
-1. A `js-functions-lab` folder
-2. An `index.html` file inside of your `js-functions-lab` folder
-3. A `script.js` file inside of a `js` folder inside your `js-functions-lab` folder
-
-```shell
-wk01/
-  labs/
-      js-functions-lab/
-        index.html
-        js/
-          script.js
-
-``` 
-Here's what you can put in your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Functions Lab</title>
-</head>
-<body>
-    <h1>JS Functions Lab</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-> **Confused on what to do? You can <a href="./js-functions-lab.zip" download>Download</a> this file/folder structure to work out of, just make sure you add it to your homework and labs folder.**
-
-This lab is **not a deliverable**.
+As a reminder this lab is **not a deliverable**.
 
 #### Requirements
 
