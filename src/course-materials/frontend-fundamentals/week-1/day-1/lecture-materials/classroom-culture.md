@@ -46,7 +46,6 @@ type: "lecture"
 >**Note:** These roles define who *leads* a section, and whom you should go to if you have a question on a certain topic, but each of these roles are shared responsibilities.
 
 # Communication
-- Micro Feedback will be given regularly
 - Feedback goes both directions, we love getting/giving feedback at GA
 - Let us know how you're doing and how we can improve your experience
 
@@ -56,10 +55,10 @@ type: "lecture"
 
 #### 4 channels
 
-	- seir-flex-47-classroom
-	- seir-flex-47-outcomes
-	- seir-flex-47-partytime
-	- seir-flex-47-techtalk
+	- seirfx-47-classroom
+	- seirfx-47-outcomes
+	- seirfx-47-partytime
+	- seirfx-47-techtalk
 
 #### How To:
 
