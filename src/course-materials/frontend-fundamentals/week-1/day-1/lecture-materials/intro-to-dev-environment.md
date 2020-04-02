@@ -138,7 +138,7 @@ Students will be able to:
 
 - _Terminal_ is the developers' choice for entering commands and navigating the filesystem
 
-- _Terminal_ is an app known as a _shell_.  The default shell in Mac OS X is _Bash_. You will find the terms _terminal_ and _bash_ often used interchangeably
+- _Terminal_ is also known as a _shell_.  The default shell in Mac OS X is _Bash_. You will find the terms _terminal_ and _bash_ often used interchangeably
 
 - Go ahead and open _Terminal_ (remember - use Spotlight!)
 
