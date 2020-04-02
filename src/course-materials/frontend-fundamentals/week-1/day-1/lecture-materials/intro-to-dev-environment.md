@@ -346,7 +346,7 @@ Students will be able to:
 - If you'd like to clear the Terminal window, simply press `cmd+k`
 
 
-## Using _VS Code_ to<br>Open and Edit Files
+## Using _VS Code_ to Open and Edit Files
 
 
 ### What is _VS Code_?
@@ -377,23 +377,22 @@ Students will be able to:
 ### Edit a File in VS Code
 
 
-- To edit a specific file in VS Code, we can simply type the file after `code`
+- To edit a specific file in VS Code, we can simply type the file after `code`, so for example:
 
-- Let's add an _alias_ (shortcut) command that will change to your class repo directory by simply typing `repo`.  We can do this by editing the hidden `.bash_profile` file
+```shell
+$ code ~/.bash_profile
+```
 
-	```shell
-	$ code ~/.bash_profile
-	```
+- Let's add a simple function called `motivation` to our `.bash_profile` using VS Code
 
-
-### Edit a File in VS Code (cont.)
-
-
-- Now add this line (preferably near other aliases)
-
-	```shell
-	alias repo='cd ~/code/<path to homework repo folder>'
-	```
+```shell
+motivation(){
+	echo 'Yesterday you said tomorrow!'
+	say 'Yesterday you said tomorrow!'
+	echo 'You can do it, Daniel!'
+	say 'You can do it, Daniel!'
+}
+```
 
 - Pressing `cmd-s` will save the file
 
@@ -405,4 +404,4 @@ Students will be able to:
 
 - Today, we have only scratched the surface of tools such as _Terminal_ and _VS Code_
 
-- Rest assured that throughout your time in SEI Flex, we will help you to get to know these tools much better!
+- Rest assured that throughout your time in SEIR Flex, we will help you to get to know these tools much better!
