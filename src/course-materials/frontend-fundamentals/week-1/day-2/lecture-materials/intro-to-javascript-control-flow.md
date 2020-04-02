@@ -62,7 +62,7 @@ For this lesson, we're going to code along using an [`HTML, CSS & JS` `repl.it`]
 
   
 
-## Conditional Expressions <small>(15 mins)</small>
+## Conditional Expressions 
    
 
 - In JavaScript, what is considered to be True/Truthy & False/Falsey?
@@ -72,7 +72,7 @@ For this lesson, we're going to code along using an [`HTML, CSS & JS` `repl.it`]
   
 ### What is True/Truthy & What is False/Falsey?
 
-- To test what is truthy and what is falsey, let's type the following code into `script.js`:
+- To test what is truthy and what is falsey, let's type the following code into `script.js` inside our `repl.it`:
 
 	```js
 	if (true) {
@@ -82,17 +82,9 @@ For this lesson, we're going to code along using an [`HTML, CSS & JS` `repl.it`]
 	}
 	```
 
-- **To run JavaScript in the terminal we use the `node` command followed by the file name**
+- We can "run" this code using repl.it's built in JavaScript Engine by pressing the `[ run ]` button
 
-```bash
-$ node script.js
-```
-
-- Now we can easily test expressions by typing it in the place of `true`
-
-  
-### What is True/Truthy & What is False/Falsey?
-   
+- Now we can easily test expressions by typing it in the place of `true`   
 
 - Why this _truthy_ and _falsey_ business? Why not just use _true_ and _false_?
 
@@ -147,10 +139,6 @@ $ node script.js
 	- **`<=`** less than or equal
 	- **`>=`** greater than or equal
 
-  
-
-### Boolean Logic   <small><em>Logical Operators</em></small>
-
 - The logical operators **`||`** and **`&&`** are more powerful than meets the eye
 
 - The logical `||` (OR) operator always returns the first operand if it is truthy, otherwise the second operand is returned:
@@ -160,9 +148,6 @@ $ node script.js
 	0 || null  // evaluates to null
 	```
 
-  
-
-### Boolean Logic   <small><em>Logical Operators</em></small>
 
 - The logical `&&` (AND) operator always returns the first operand if it is falsey, otherwise the second operand is returned:
 
@@ -202,7 +187,7 @@ $ node script.js
 4. **What value does `!!0` evaluate to?**
 
   
-## The <span style="text-transform:lowercase">if..else</span> Branching Statement <small>(15 mins)</small>
+## The <span style="text-transform:lowercase">if..else</span> Branching Statement 
    
 
 - As you saw in the pre-work, the `if` and the optional `else` clause allows us to conditionally execute code
@@ -277,7 +262,7 @@ $ node script.js
 
   
 
-## Looping Statements <small>(15 mins)</small>
+## Looping Statements 
    
 
 - Looping statements provide us with the ability to execute a block of code multiple times while a conditional expression is truthy
