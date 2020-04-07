@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 export default ({ data, location }) => {
     const { markdownRemark } = data;
     return (
-        <Layout 
+        <Layout
             pageTitle={markdownRemark.frontmatter.title} 
             location={location}
             crumbLabel={markdownRemark.frontmatter.title}

@@ -10,7 +10,7 @@ type: "lecture"
 
 ## Intro
 
-For this activity you will get to practice researching and learning _markdown_
+For this activity you will practice researching and learning _markdown_
 
 _Markdown_ is a simple markup language that uses plain text characters for formatting.  For example, text between asterisk (`*`) characters is italicized and the `#` character is used to format lines as headings
 
@@ -25,7 +25,7 @@ You will use _markdown_ to write README files which are used to document your pr
 
 2. Install a _Markdown_ editor/viewer
 
-3. Create a cheatsheet for Bash Commands
+3. Create a cheatsheet for Bash Commands using Markdown -- _your first piece of technical documentation in this program_
 
 ### Research
 
@@ -39,12 +39,12 @@ Here are a few links that will help you learn _Markdown_:
 
 ### Install a _Markdown_ Editor
 
-For editing and viewing _Markdown_, use VS Code or a dedicated markdown editor such as [MacDown](http://macdown.uranusjr.com/)
+For editing and viewing _Markdown_, use VS Code or a dedicated markdown editor such as [MacDown](http://macdown.uranusjr.com/).
 
 ### Create a Cheatsheet for Bash Commands
 
 Although you can find numerous cheatsheets for Bash (Terminal) commands, why not create your own using markdown to get some practice with it?
 
-Note that a cheatsheet need not be an exhaustive reference - so feel free to exclude commands that are used infrequently
+Note that a cheatsheet need not be an exhaustive reference - so feel free to exclude commands that are used infrequently.
 
 

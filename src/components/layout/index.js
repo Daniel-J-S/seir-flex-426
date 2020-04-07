@@ -11,7 +11,8 @@ import '../../styles/base.scss';
 
 import styles from './layout.module.scss';
 
-export default ({ 
+export default ({
+        centerContent, 
         pageTitle, 
         children, 
         location, 
@@ -44,7 +45,9 @@ export default ({
                     navigationLinks={site.siteMetadata.navigationLinks}
                     homeworkSubmissionLink={site.siteMetadata.homeworkSubmissionLink}
                 />
-                <div className={styles.innerContainer}>
+                <div 
+                    style={centerContent ? {margin: '0 auto'} : {}}
+                    className={styles.innerContainer}>
                     <div className={styles.breadContainer}>
                         <Breadcrumb 
                             location={location} 
