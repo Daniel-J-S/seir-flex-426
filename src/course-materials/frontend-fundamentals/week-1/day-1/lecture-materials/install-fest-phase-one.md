@@ -8,7 +8,7 @@ type: "lecture"
 
 # Install-fest Phase One
 
-For the first phase of "install-fest", we'll install or verify the install the following tools on our machines:
+For the first phase of "install-fest", we'll install or verify the installation of the following tools on our machines:
 
 - Slack
 - Zoom
