@@ -53,7 +53,7 @@ In summary:
 
 By following along today and having done the pre-work, you should now be familiar with basic git commands.
 
-In SEI, you'll get plenty of practice using git, especially during project week because each of your projects will be stored in its own directory and will be made a git repository in that directory tracking the changes.
+In SEIR, you'll get plenty of practice using git, especially during project week because each of your projects will be stored in its own directory and will be made a git repository in that directory tracking the changes.
 
 
 For your convenience, <a href="/downloads/frontend_fundamentals/github-git-cheat-sheet.pdf" download>Click Here</a> for a Git Cheatsheet.
