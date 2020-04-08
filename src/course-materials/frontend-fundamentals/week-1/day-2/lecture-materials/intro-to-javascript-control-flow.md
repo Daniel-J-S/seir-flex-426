@@ -40,7 +40,7 @@ type: "lecture"
 
 ## Lesson Setup  
 
-For this lesson, we're going to code along using an `HTML, CSS & JS` on [repl.it](https://repl.it)
+For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](https://repl.it)
 
 ## What is Control Flow?
    
