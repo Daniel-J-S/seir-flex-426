@@ -12,7 +12,11 @@ Now, let's get in a little bit of JavaScript practice; specifically, more loops!
 
 ## Setup
 
-For this lab, create an `HTML, CSS & JS` [repl.it](https://repl.it) and name it **`Loops and Conditionals Lab`**
+For this lab, create an `HTML, CSS & JS` [repl.it](https://repl.it) and name it **`Loops and Conditionals Lab`** 
+
+Inside the `script.js` file inside your repl, please write the following:
+
+<hr>
 
 1. Create a loop that logs the numbers from 0-99 (ascending)
    
