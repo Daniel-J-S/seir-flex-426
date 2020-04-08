@@ -258,7 +258,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 - Hint: Don't forget to declare and initialize a variable named `color`
 
-- As always, be sure to ask your local instructor for help if you get stuck!
+- As always, be sure to ask your instructional team for help if you get stuck!
 
   
 
