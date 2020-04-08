@@ -424,7 +424,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 	```
 
   
-### <span style="text-transform:lowercase">switch</span> Statement
+### Switch Statement
    
 
 - Look into using the `switch` statement instead of `if...else` if you have more than three code paths and your conditionals always check the same variable
