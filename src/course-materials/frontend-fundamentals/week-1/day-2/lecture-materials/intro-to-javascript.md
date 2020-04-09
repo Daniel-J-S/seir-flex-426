@@ -15,6 +15,10 @@ type: "lecture"
 | Define Variables Using Proper Naming Conventions |
 | Identify JavaScript's Data Types |
 
+## Lesson Recording
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/U4y_iMZCdxY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Roadmap
 1. Intro to JavaScript
 2. Variables
