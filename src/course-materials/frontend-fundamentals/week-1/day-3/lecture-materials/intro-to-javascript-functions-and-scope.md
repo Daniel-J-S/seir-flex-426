@@ -28,7 +28,7 @@ type: "lecture"
 
 ### Lesson Setup  
 
-For this lesson, we're going to code along using an `HTML, CSS & JS` on [repl.it](https://repl.it)
+For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Functions and Scope Practice"`.
   
 ### 1. What is a function?
 

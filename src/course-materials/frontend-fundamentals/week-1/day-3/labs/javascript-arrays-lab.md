@@ -19,7 +19,7 @@ This lab **is a deliverable**. When completed, please fill out the [Google Form]
 
 ## Setup & Instructions
 
-For the exercises in this lab, create a `HTML, CSS & JS` on [repl.it](https://repl.it) and name it `"JavaScript Arrays lab"`
+For the exercises in this lab, create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Arrays lab"`.
 
 As a reminder, this lab is a **Deliverable**
 
