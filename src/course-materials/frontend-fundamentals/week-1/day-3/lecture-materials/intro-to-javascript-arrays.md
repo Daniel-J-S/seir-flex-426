@@ -39,7 +39,7 @@ Students will be able to:
 
 ### Lesson Setup  
 
-For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it "JavaScript Arrays Practice".
+For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Arrays Practice"`.
 
 ### The Use Case (What & Why) of Arrays
  
