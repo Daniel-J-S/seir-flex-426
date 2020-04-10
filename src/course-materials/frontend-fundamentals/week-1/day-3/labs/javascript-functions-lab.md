@@ -19,7 +19,7 @@ This lab provides an opportunity to practice defining and coding some real-world
 
 ## Setup & Instructions
 
-For the exercises in this lab, create a `HTML, CSS & JS` on [repl.it](https://repl.it) and name it `"JavaScript Functions lab"`
+For the exercises in this lab, create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Functions lab"`.
 
 As a reminder this lab is **not a deliverable**.
 
