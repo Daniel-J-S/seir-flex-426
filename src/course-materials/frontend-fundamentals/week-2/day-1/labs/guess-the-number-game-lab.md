@@ -14,23 +14,14 @@ This lab will provide you with practice working with JavaScript objects, plus so
 
 This lab builds upon the `game` object that was started in the Intro to JS Objects lesson.
 
-This lab is a **deliverable** - when completed, please use the [Google Form](https://forms.gle/ZhsdJF2JpgvAK41h6) to submit it to your instructional team.
+This lab is a **deliverable** - when completed, please use the [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) to submit it to your instructional team.
 
-## Setup
+### Lab Setup  
 
-1. Inside of your `labs` folder inside your `w02` folder, the following folder/file structure to complete the following exercise.
-
-```shell
-w02/
-  labs/
-    guess-the-number-game/
-	  index.html
-	  js/
-	    script.js
-```
+For this lab, create a `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Objects Lab"`.
 
 
-1. Copy over the work already done on the `game` object from the lesson earlier
+1. Copy over the work already done on the `game` object from the lesson earlier into your `REPL's` `script.js`
 
 2. To make the `game` object's code 'cleaner', let's move the properties that were added separately during the lesson, into the object literal so that it looks like this:
 
@@ -49,7 +40,7 @@ w02/
 
 > Note that `numGuesses` has been removed because you will be adding a `prevGuesses` array whose length can be used to obtain the number of guesses when needed.
 
-3. To begin running your code and checking its output, go ahead and load `index.html` in your browser.
+3. To begin running your code and checking its output, click the `[run]` button.
 
 ## Features
 

@@ -82,51 +82,8 @@ if (Math.random() < alien[0].accuracy) {
 
 ## &#x1F47E; Setup
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your labs folder of this week's folder called `js-space-battle-lab`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w02/labs/js-space-battle-lab`
+Create a `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"Space Battle Lab"`.
 
-- Inside of `js-space-battle-lab` create the following folder/file structure:
-
-```shell
-js-space-battle-lab/
-  index.html
-    js/
-      script.js
-```
-
-- Once you are done, your entire directory should look like this:
-
-```shell
-w02/
-  labs
-    js-space-battle-lab/
-      index.html
-      js/
-        script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Space Battle Lab</title>
-</head>
-<body>
-    <h1>JS Space Battle Lab</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-
-<br>
-<hr>
 
 ## &#x1F47E; Where to begin?
 

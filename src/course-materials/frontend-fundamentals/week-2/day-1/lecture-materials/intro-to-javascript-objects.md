@@ -47,48 +47,7 @@ Students Will Be Able To:
 
 ### Lesson Setup  
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a practice folder inside of this week's folder called `js-objects-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w02/js-objects-practice`
-
-- Inside of `js-objects-practice` create the following folder/file structure:
-
-```shell
-js-objects-practice/
-  index.html
-  js/
-    script.js
-```
-
-- Once you are done, your directory should look like this:
-
-```shell
-w02/
- practice/
-   js-objects-practice/
-     index.html
-	 js/
-	   script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Objects Practice</title>
-</head>
-<body>
-    <h1>JS Objects Practice</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
+For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Objects Practice"`.`
    
 ### What Are Objects?
  
@@ -101,9 +60,6 @@ w02/
 	- **key** is a _string_ (JS will coerce the type automatically), and the
 	- **value** is any JS expression (code that evaluates to a single value or thing), including other objects (yes, functions too)
 
-   
-### What Are Objects?
- 
 
 - <p>In computer science, collections of key/value pairs are commonly referred to as dictionaries - a good visualization of what an object is</p>
 
@@ -120,10 +76,6 @@ w02/
 	- Every part of those elements, including their styling, is accessed via JS objects
 	- Data submitted from the browser will be accessed on the server as objects
 	- Data retrieved from a database will be stored in objects
-
-   
-### Why Objects?
- 
 
 - Even primitive data types like strings and numbers are turned into an object on demand by the JS runtime when we want to call a method like `toUpperCase`!  BTW, this process is called _boxing_.
 
@@ -161,10 +113,6 @@ w02/
 
 - We just used curly braces to create an empty `game` object. **We consider it to be empty because it contains no _________?**
 
-   
-### Creating Objects with Object Literal Notation
- 
-
 - Let's change the code so that `game` has a _property_:
 
 	```js
@@ -175,10 +123,6 @@ w02/
 - Stylistically, defining an object with a single property or a couple of "short" properties on a single line of code like this `let point = {x: 10, y: -5};` isn't a problem (unless it is with your boss)
 
 - It's all about maintaining readability
-
-   
-### Creating Objects with Object Literal Notation
- 
 
 - Properties are separated by commas:
 
@@ -267,9 +211,6 @@ w02/
 	console.log(game['title']);
 	```
 	Note that using a string literal like above is being done just to demonstrate the syntax. More efficient code would be `console.log(game.title);`
-
-   
-### Square Bracket Notation
  
 
 - If the result of the expression between the brackets is not a string, JS will convert it to one. For example:
@@ -295,9 +236,6 @@ w02/
 - Note: If you want to include special characters in the key, just be sure to use quotes
 
    
-### Square Bracket Notation - Practice
- 
-
 - Now let's code a price lookup:
 
 	```js
@@ -322,10 +260,6 @@ w02/
 - However, we can't rely on a value of `undefined` to check if a property exists because maybe a property legitimately has a value of `undefined`
 
 - Instead, we can use the `in` operator...
-
-   
-### Checking if an Object has a Property
- 
 
 - Let's tweak the code to use the `in` operator to check if the user has entered a valid key (SKU):
 
@@ -379,9 +313,6 @@ w02/
 	}
 	```
 
-   
-### Iterating Over an Object's Properties
- 
 
 - There's a couple of nifty ES2017 methods that can be used to iterate over the keys & **values** of an object's properties:
 	- [Object.keys(obj)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
@@ -390,10 +321,6 @@ w02/
 
 - Although cutting edge, these _static_ methods have already been implemented in all modern browsers
 
-
-   
-### Iterating Over an Object's Properties
- 
 
 - Each of those methods mentioned returns an array that we can iterate over, for example:
 
@@ -421,9 +348,6 @@ w02/
 	```
 
 - ES2015 strikes again...
-
-   
-### Property Shorthand Syntax
  
 
 - Thanks to ES2015's **Property Shorthand** syntax, we can now do this
@@ -458,9 +382,6 @@ w02/
 
 - What's with the `this`...
 
-   
-### Methods
- 
 
 - The `this` keyword represents the "context" of a function
 
@@ -485,11 +406,7 @@ w02/
 	var msg = 'hello' -->  msg | 'hello'
 	```
 	
-- But objects are complex/reference types because they can hold multiple pieces of data...
-
-   
-### How Variables Reference an Object
- 
+- But objects are complex/reference types because they can hold multiple pieces of data... 
 
 - Objects, including Arrays, Functions, etc. are stored in a separate part of memory known as the _heap_. A variable for an object has as its value a "reference" (think pointer):
 
@@ -504,10 +421,6 @@ w02/
 	```
 
 - Interestingly, the elements of an array and the properties of an object hold their values in the same way!
-
-   
-### How Variables Reference an Object
- 
 
 <p>Now this all makes sense:</p>
 
