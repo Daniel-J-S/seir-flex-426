@@ -13,42 +13,9 @@ type: "lab"
 
 Now that you've learned about using **classes** in JavaScript to create objects, it's time for some practice! <br>In this lab, you will choose one of the object hierarchies below, **Bank Accounts** or **People**, and write the classes to implement it.
 
-## Setup  
+## Setup   
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your labs folder of this week's folder called `js-classes-lab`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w02/labs/js-classes-lab`
-
-- Inside of `js-classes-lab` create the following folder/file structure:
-
-```shell
-w02/
-  labs
-    js-classes-lab/
-      index.html
-      js/
-        script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Classes Lab</title>
-</head>
-<body>
-    <h1>JS Classes Lab</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
-
+Create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Classes Lab"`.`
 
 ### Bank Accounts
 
