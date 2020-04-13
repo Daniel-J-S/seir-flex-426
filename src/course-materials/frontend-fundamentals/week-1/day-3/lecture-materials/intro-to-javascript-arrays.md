@@ -37,6 +37,10 @@ Students will be able to:
 10. Essential Questions
 11. Further Study
 
+## Lesson Recording
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/t83tHvIztU8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ### Lesson Setup  
 
 For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Arrays Practice"`.
