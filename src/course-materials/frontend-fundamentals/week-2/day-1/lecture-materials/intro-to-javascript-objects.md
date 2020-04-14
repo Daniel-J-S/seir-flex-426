@@ -231,12 +231,13 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 	- The _key_ of each property represents the item's SKU (Stock Keeping Unit - a retail store's unique ID for an item)
 	- The _value_ of the property represents the price of the item
 
-- Take a couple of minutes to create another object named `catalog` that includes a few items - but don't delete `game` object. Again, each item is a _property_ with it's _key_ set to a unique alphanumeric string (a SKU) and its value to a number representing its price
+- For this practice activity we're going to create another object named `catalog` that includes a few items - but don't delete your `game` object.
+- Again, each item is a _property_ with it's _key_ set to a unique alphanumeric string (a SKU) and its value to a number representing its price
 
-- Note: If you want to include special characters in the key, just be sure to use quotes
+- **Note:** If you want to include special characters in the key, just be sure to use quotes
 
    
-- Now let's code a price lookup:
+- Now let's code a price lookup loop:
 
 	```js
 	let sku = '';
@@ -330,7 +331,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 	});
 	```
 
-> Note: The ECMAScript specification does not dictate how properties should be ordered, however, all browsers currently iterator over them in the order they are defined/added.
+> Note: The ECMAScript specification does not dictate how properties should be ordered, however, all browsers currently iterate over them in the order they are defined/added.
 
    
 ### Property Shorthand Syntax
