@@ -47,7 +47,7 @@ Students Will Be Able To:
 
 ### Lesson Setup  
 
-For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Objects Practice"`.`
+For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Objects Practice"`.`
    
 ### What Are Objects?
  
@@ -91,7 +91,7 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 
 - Today, we're going to focus on using _Object Literals_ to create objects
 
-- Next week, we'll learn how _Classes_ are used
+- Later, we'll learn how _Classes_ are used
 
 - Using `Object.create` is not very common and won't be used during SEI, but as always, you're encouraged to research it
 
@@ -155,7 +155,7 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 	};
 	```
 	
-- Answer the following questions:
+- Let's answer the following questions:
 	- **How many properties does `game` contain?**
 	- **What are the keys (AKA property names)?**
 	- **What are the property values of `game`?**
@@ -177,7 +177,7 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 - Using the _assignment operator_, if a property doesn't exist, it is created, otherwise it's updated.
 
    
-### Adding/Updating Properties Practice (2 min)
+### Adding/Updating Properties Practice (3 min)
  
 
 - <p>Using dot notation on the `game` object:</p>
