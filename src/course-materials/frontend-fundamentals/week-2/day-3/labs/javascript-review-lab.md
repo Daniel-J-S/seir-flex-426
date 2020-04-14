@@ -12,48 +12,7 @@ type: "lab"
 
 ## Setup  
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your homework folder of this week's folder called `js-review`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w02/homework/js-review`
-
-- Inside of `js-review` create the following folder/file structure:
-
-```shell
-js-review/
-  index.html
-  js/
-    script.js
-```
-
-Once you're done, your entire directory should look like this:
-
-```shell
-w02/
-  homework
-    js-review/
-      index.html
-      js/
-        script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS Review</title>
-</head>
-<body>
-    <h1>JS Review</h1>
-    <h3>Open JS Console To See Output</h3>
-    <p>Macbook Keyboard shortcut: <code>[command] + [option] + j</code></p>
-    <script src="./js/script.js"></script>
-</body>
-</html>
-```
+For this lab, create a `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Review Lab"`.
 
 
 ## I. Variables & Datatypes
