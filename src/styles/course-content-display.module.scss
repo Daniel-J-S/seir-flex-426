@@ -2,5 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    max-width: 55rem;
+}
+
+.main h1 {
+    text-align: left;
 }
 
