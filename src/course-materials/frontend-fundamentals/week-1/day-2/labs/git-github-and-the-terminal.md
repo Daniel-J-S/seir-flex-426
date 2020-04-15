@@ -28,8 +28,7 @@ Refer back to the notes from today and/or use the internet and `google-fu` to fi
 1. What command do you use to setup a git repository inside of your folder?
 1. What command do you use to ask git to start tracking a file?
 1. What command do you use to ask git to move your file from the staging area to the repository?
-1. What command do you use to get updates from the class repository?
-1. What command do you use to push your work to your fork of the class repository?
+
 
 **Commit your work!** <br>
 Your commit message should read something like: <br>

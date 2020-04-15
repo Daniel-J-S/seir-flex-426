@@ -108,7 +108,9 @@ var cohort = {
 
 - Looks similar to defining a function because classes are in fact, _special_ functions, except...
 
-**What's different compared to a function?****What's different about the naming convention?**
+**What's different compared to a function?**
+<br />
+**What's different about the naming convention?**
 
 
 ### Instantiating a Class
@@ -244,7 +246,10 @@ var cohort = {
 
 ### Review Questions
 
-- You've just learned how to define a class and add prototype methods to it.  This represents about 80% there is to know about classes - congrats!Some questions before moving on:
+- You've just learned how to define a class and add prototype methods to it.  This represents about 80% there is to know about classes - congrats! 
+  
+<br />  
+Some questions before moving on:
 1. **What is the JS keyword used to define a class?**
 2. **What is the name of the method in a class that is automatically called when we instantiate a class?**
 3. **What is the main purpose of this method?**
@@ -391,18 +396,9 @@ var car = new Vehicle('A1234', 'Toyota', 'Camry');
 
 ### Final Notes on Classes
 
+> Unlike function declarations, class declarations are not _hoisted_ - they must be declared before using them to create objects.
 
-1. Unlike function declarations, class declarations are not _hoisted_ - they must be declared before using them to create objects.
 
-2. It's possible to subclass JS's built-in "classes"! For example:
-
-	```js
-	class Stack extends Array {
-	  get top() {
-	    return this[this.length - 1];
-	  }
-	}
-	```
 
 
 ## References
