@@ -170,9 +170,9 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - We'll discuss why there are two syntaxes in a bit, for now, let's use _dot notation_ to add another property to the `game` object:
 	
-	```js
-	game.smallestNum = 0;
-	```
+```js
+game.smallestNum = 0;
+```
 
 - Using the _assignment operator_, if a property doesn't exist, it is created, otherwise it's updated.
 
@@ -180,7 +180,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 ### Adding/Updating Properties Practice (3 min)
  
 
-- <p>Using dot notation on the `game` object:</p>
+- Using dot notation on the `game` object:
 	- Add a property with a key of `numGuesses` set to a value of `0`
 	- Update the `smallestNum` property's value to be `1`
 
@@ -207,19 +207,19 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - For example to access the `game` object's `title` property, we could write this code:
 
-	```js
-	console.log(game['title']);
-	```
+```js
+console.log(game['title']);
+```
 	Note that using a string literal like above is being done just to demonstrate the syntax. More efficient code would be `console.log(game.title);`
  
 
 - If the result of the expression between the brackets is not a string, JS will convert it to one. For example:
 
-	```js
-	const weirdObj = {};
-	weirdObj[null] = true;
-	console.log(weirdObj) // {'null': true}
-	```
+```js
+const weirdObj = {};
+weirdObj[null] = true;
+console.log(weirdObj) // {'null': true}
+```
 
 - Again, the expression between the square brackets can be any expression - even a function call!
 
