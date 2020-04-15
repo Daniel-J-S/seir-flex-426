@@ -27,7 +27,7 @@ export default({ data, location }) => {
           location={location} 
           crumbLabel={"Frontend Fundamentals"}>
             <h1>Frontend Fundamentals</h1>
-            <main className={styles.main}>
+            <main className={styles.main}>  
               {lessons}
             </main>
         </Layout>
