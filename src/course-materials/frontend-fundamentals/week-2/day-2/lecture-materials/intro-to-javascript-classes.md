@@ -300,7 +300,7 @@ var car = new Vehicle('A1234', 'Toyota', 'Camry');
 
 	```js
 	  static about() {
-	    alert("I'm the Vehicle class!");
+	    console.log("I'm the Vehicle class!");
 	  }
 	```
 	Yup, the only difference is the `static` keyword
