@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 
+
 export default ({ data, location }) => {
     const { markdownRemark } = data;
     return (
