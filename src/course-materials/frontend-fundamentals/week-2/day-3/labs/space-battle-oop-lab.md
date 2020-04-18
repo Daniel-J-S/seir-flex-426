@@ -91,7 +91,7 @@ This lab was meant to be completed by a team, so make sure you organize your tea
 - The lead should then share the URL to their repository so the rest of the team members can fork and clone the repository to their local machines
 - Each team member should then add the team leads' remote repo as the `upstream` remote to their locally (cloned) repositories
 
-> We will go over this demonstration in class as well as show each of you how to set up your files
+> We will go over this demonstration in class to show you how to set up your files
 
 
 ## &#x1F47E; Where to begin?
