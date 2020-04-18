@@ -14,7 +14,7 @@ type: "lab"
 
 All day today, you will be using your knowledge of OOP, loops, and functions to build a rudimentary **space battle** game. <br>The game will be programmed for, and played in the Chrome console. You will need to use pop-up prompts to get user input.
 
-Today's task is to **build something according to specification**. Pretend you have received the **specification** below for a class project. <br>Planning your program is a challenge unto itself. START SIMPLE. Break the problem down as far as you can and don't move on until the smallest piece works.
+Today's task is to **build something according to specification**. <br> Pretend you have received the **specification** below for a class project. <br>Planning your program is a challenge unto itself. START SIMPLE. Break the problem down as far as you can and don't move on until the smallest piece works.
 
 Once you've figured out the basics, it's up to you to make the game you want, but remember, your game does not have to be elegant. **The only thing that matters is that it works.**
 
@@ -82,7 +82,16 @@ if (Math.random() < alien[0].accuracy) {
 
 ## &#x1F47E; Setup
 
-Create a `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"Space Battle Lab"`.
+This lab was meant to be completed by a team, so make sure you organize your team as such:
+- One team lead will be in charge of creating a project folder with two files inside of it: 
+  - An `index.html` file
+  - A `script.js` file
+  - A `README.md` file
+- The lead should also set up a local and remote repository for the project on their personal github
+- The lead should then share the URL to their repository so the rest of the team members can fork and clone the repository to their local machines
+- Each team member should then add the team leads' remote repo as the `upstream` remote to their locally (cloned) repositories
+
+> We will go over this demonstration in class as well as show each of you how to set up your files
 
 
 ## &#x1F47E; Where to begin?
