@@ -8,17 +8,18 @@ type: "lecture"
 
 # Intro to jQuery Part One
 
-| Learning Objectives - SWBAT:
-| :---
-| Explain the use case for jQuery
-| Include jQuery in projects 
-| Use the jQuery function to select DOM Elements
-| Access the elements in a jQuery Object/Set
-| Use jQuery to modify content of elements
-| Use jQuery to modify the CSS of elements
+| Learning Objectives - SWBAT |
+| :---: | 
+| Explain the use case for jQuery|
+| Include jQuery in projects |
+| Use the jQuery function to select DOM Elements|
+| Access the elements in a jQuery Object/Set|
+| Use jQuery to modify content of elements|
+| Use jQuery to modify the CSS of elements|
 
 
 ## Roadmap
+
 1. What is jQuery?
 2. Setting up jQuery
 3. Selecting Elements with jQuery
@@ -75,28 +76,16 @@ Those new to jQuery are best served by jQuery's newer [Learning Center](http://l
 
 **❓ What is the use case for jQuery? (what and when/why...)**
 
-## 2. Setting up jQuery
 
-Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your practice folder of this week's folder called `jquery-practice`
-<br> So, `SEIR-FLEX-HOMEWORK-AND-LABS/w03/practice/jquery-practice`
+## 2. Setup
 
-- Inside of `jquery-practice` create the following folder/file structure:
-
-```shell
-  practice/
-    jquery-practice/
-      index.html
-```
-
-So, your top level down directory structure should look like this:
+- Create a folder called `intro-to-jquery`
+- Inside of `intro-to-jquery` create the following folder/file structure:
 
 ```shell
-w03/
-  practice/
-    jquery-practice/
-      index.html
+intro-to-jquery/
+  index.html
 ```
-
 - You can add this HTML to your `.html` file:
 
 ```html

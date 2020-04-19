@@ -34,6 +34,52 @@ type: "lecture"
 - Event delegation
 - Removing event listeners
 
+### Lesson Setup  
+
+- Create a folder called `intro-to-dom-events`
+- Inside of `intro-to-dom-events` create the following folder/file structure:
+
+```shell
+intro-to-dom-events/
+  index.html
+  js/
+    script.js
+```
+
+- You can add this HTML to your `.html` file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to DOM Events</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+### Setup
+  
+
+- Add a `<script>` tag to include `script.js` in the `<head>`:
+
+	```html
+	<head>
+	  ...
+	  <title>Intro to DOM Events</title>
+	  <script defer src="./js/script.js"></script>
+	</head>
+	```
+
+- The `defer` attribute ensures the DOM is ready before the script executes.
+
+- Putting a temporary `alert('js loaded)` will verify `script.js` is being loaded.
+
   
 ### What are DOM Events?
   
@@ -77,71 +123,10 @@ type: "lecture"
 	- **use-capture** is a boolean and is optional. It has to do with _event phases_. We won't need to worry about it in SEI but if you want to know more, read the [Event Phases section of this article](https://www.smashingmagazine.com/2013/11/an-introduction-to-dom-events/). 
 
   
-### Lesson Setup  
-
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your practice folder of this week's folder called `dom-events-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w03/practice/dom-events-practice`
-
-- Inside of `dom-events-practice` create the following folder/file structure:
-
-```shell
-  practice/
-    dom-events-practice/
-      index.html
-      js/
-        script.js
-```
-
-So, your top level down directory structure should look like this:
-
-```shell
-w03/
-  practice/
-    dom-events-practice/
-      index.html
-      js/
-        script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS DOM Events Practice</title>
-</head>
-<body>
-
-</body>
-</html>
-```
-
-### Setup
-  
-
-- Add a `<script>` tag to include `script.js` in the `<head>`:
-
-	```html
-	<head>
-	  ...
-	  <title>DOM Events Practice</title>
-	  <script defer src="./js/script.js"></script>
-	</head>
-	```
-
-- The `defer` attribute ensures the DOM is ready before the script executes.
-
-- Putting a temporary `alert('js loaded)` will verify `script.js` is being loaded.
-
-  
 ### Our first Event Listener
   
 
-- <p>After setting up the project, add the following HTML:</p>
+- Add the following HTML to the Project we setup:
 
 	```html
 	<h3>Comments</h3>

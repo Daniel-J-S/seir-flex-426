@@ -17,9 +17,7 @@ This lab **is not a deliverable**.
 
 ### Setup  
 
-1. Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your labs folder of this week's folder called `dev-skills-lab`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w03/labs/dev-skills-lab`
-
+1. Create a folder called `dev-skills-lab`
 - Inside of `dev-skills-lab` create the following folder/file structure:
 
 ```shell
@@ -31,20 +29,8 @@ dev-skills-lab/
    script.js
 ```
 
-So, your top level down folder/file structure should look like this:
 
-```shell
-w03/
-  labs/
-   dev-skills-lab/
-    index.html
-    css/
-     style.css
-    js/
-     script.js
-```
-
-3. Do the usual when setting up a front-end project:
+1. Do the usual when setting up a front-end project:
 	- Add the HTML boilerplate to `index.html`
 	- Link in `./js/script.js` - don't forget the `defer` attribute!
 	- Link in `./css/script.css`

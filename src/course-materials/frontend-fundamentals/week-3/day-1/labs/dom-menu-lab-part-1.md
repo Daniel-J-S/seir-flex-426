@@ -21,34 +21,20 @@ This is the first of a two-part lab that builds a menu bar with a slide-down sub
 
 ## Setup  
 
-1. Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your labs folder of this week's folder called `dom-menu-lab`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w03/labs/dom-menu-lab`
-
+1. Create a folder called `dom-menu-lab`
+   
 - Inside of `dom-menu-lab` create the following folder/file structure:
 
 ```shell
 dom-menu-lab/
   index.html
   css/
-   style.css
+    style.css
   js/
-   script.js
+    script.js
 ```
 
-So, your top level down folder/file structure should look like this:
-
-```shell
-w03/
-  labs/
-   dom-menu-lab/
-    index.html
-    css/
-     style.css
-    js/
-     script.js
-```
-
-1. Add this boilerplate to `index.html`:
+1. Add this "boilerplate" markup to `index.html`:
 
 	```html
 	<!DOCTYPE html>
@@ -122,6 +108,9 @@ w03/
 	```
 
 	> Note: The CSS is complete - **DO NOT** modify it in any way.
+	
+	1. Lastly, be sure to initialize a local repository inside `dom-menu-lab`, then create a remote repository on your github account that you can push your commits to.
+	2. Once you are done with parts 1 and 2 of these labs, you can copy and paste a link to your repo using the [homework submittal form](https://forms.gle/aGLyBqABxeDLv18B9)
 	
 	Take five minutes to familiarize yourself with [CSS Custom Properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) - they are an amazing new addition to CSS. If you're familiar with using variables with SASS/LESS pre-processors, CSS Custom Properties are similar, but far more powerful because they are dynamic (their values can be changed during runtime) - and they are built into the CSS language!
 

@@ -8,12 +8,12 @@ type: "lecture"
 
 # Intro to jQuery - Part 2 
 
-| Learning Objectives - SWBAT:
-| :---
-| Use jQuery to add & remove classes
-| Use jQuery to modify attributes
-| Use jQuery to add and remove DOM elements
-| Bind to events with jQuery
+| Learning Objectives - SWBAT | 
+| :---:| 
+| Use jQuery to add & remove classes |
+| Use jQuery to modify attributes |
+| Use jQuery to add and remove DOM elements|
+| Bind to events with jQuery|
 
 
 ## Roadmap
@@ -30,13 +30,20 @@ type: "lecture"
 
 ### Create a `./js/script.js` File
 
-For this lesson, we're going to use the same jQuery practice project folder inside our practice folder
-
-But let's create an `script.js` file inside of a `js` directory to put our JavaScript in:
+For this lesson, we're going to use the same jQuery practice project except we're going to touch a `script.js` file inside of a `js` directory to put our JavaScript in:
 
 ```shell
-mkdir js
-touch js/script.js
+mkdir intro-to-jquery/js
+touch intro-to-jquery/js/script.js
+```
+
+So, your folder/file structure should look like this:
+
+```shell
+intro-to-jquery/
+  index.html
+  js/
+    script.js
 ```
 
 ### Load Order Matters
@@ -172,7 +179,7 @@ We're all set to get started. If you have the _Open in Browser_ VS Code extensio
 
 Your page should load and the alert should appear.
 
-## Adding & Removing Classes<small> (10 mins)</small>
+## Adding & Removing Classes
 
 <img src="https://i.imgur.com/li8qvF7.png">
 

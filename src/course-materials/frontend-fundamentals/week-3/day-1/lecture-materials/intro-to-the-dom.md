@@ -37,7 +37,65 @@ type: "lecture"
 - Selecting multiple elements
 - Iterating over a collection of elements
 
+### Lesson Setup  
+
+- Create a folder called `intro-to-dom`
+- Inside of `intro-to-dom` create the following folder/file structure:
+
+```shell
+intro-to-dom/
+	index.html
+	js/
+	 script.js
+```
+
+- You can add this HTML to your `.html` file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Intro to the DOM</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
   
+### Lesson Setup (continued)
+  
+
+- Add a `<script>` tag to include `script.js` in the `<head>`:
+
+	```html
+	<head>
+	  ...
+	  <title>Intro to the DOM</title>
+	  <script defer src="./js/script.js"></script>
+	</head>
+	```
+
+- The `defer` attribute ensures the DOM is ready before the script executes.
+
+- Finally, let's add an `<h1>` inside of the `<body>` as follows:
+
+	```html
+	...
+	<body>
+	  <h1 id="title" class="main-title">Intro to the DOM</h1>
+	  
+	</body>
+	</html>
+	```
+
+- Note: It's a best practice to use double quotes and kebob-casing in the HTML.
+
+
 ### What's the DOM
   
 
@@ -56,78 +114,6 @@ type: "lecture"
 	-  Change the content of elements
 	-  Change the style properties of elements
 
-  
-### Lesson Setup  
-
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your practice folder of this week's folder called `js-dom-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w03/practice/js-dom-practice`
-
-- Inside of `js-dom-practice` create the following folder/file structure:
-
-```shell
-  practice/
-    js-dom-practice/
-      index.html
-      js/
-        script.js
-```
-
-So, your top level down directory structure should look like this:
-
-```shell
-w03/
-  practice/
-    js-dom-practice/
-      index.html
-      js/
-        script.js
-```
-
-- You can add this HTML to your `.html` file:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JS DOM Practice</title>
-</head>
-<body>
-
-</body>
-</html>
-```
-
-  
-### Lesson Setup (continued)
-  
-
-- Add a `<script>` tag to include `script.js` in the `<head>`:
-
-	```html
-	<head>
-	  ...
-	  <title>DOM Practice</title>
-	  <script defer src="./js/script.js"></script>
-	</head>
-	```
-
-- The `defer` attribute ensures the DOM is ready before the script executes.
-
-- Finally, let's add an `<h1>` inside of the `<body>` as follows:
-
-	```html
-	...
-	<body>
-	  <h1 id="title" class="main-title">DOM Practice</h1>
-	  
-	</body>
-	</html>
-	```
-
-- Note: It's a best practice to use double quotes and  kebob-casing in the HTML.
 
   
 ### Using DevTools to Explore the DOM
