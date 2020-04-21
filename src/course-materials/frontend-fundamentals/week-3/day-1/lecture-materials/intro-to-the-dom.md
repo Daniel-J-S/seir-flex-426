@@ -263,9 +263,6 @@ intro-to-dom/
 - Reload the page and verify that the link does not work (in fact, it probably doesn't even look like a link).
 
 - In the JS, write the line of code that will add an `href` attribute that will make the link navigate to "https://www.google.com".
-
-- Hint: Check out the previous slide
-
   
 ### Attributes of an element - Classes
   
