@@ -12,18 +12,15 @@ type: "lecture"
 ## Learning Objectives
   
 
-<p>Students will be able to:</p>
-
+**Students will be able to:**
 - Add event listeners for events such as `click`
 - Explore the event object
 - Explain event bubbling
 - Use event bubbling to implement event delegation
-- Stop an event from bubbling
 
 
 ## Roadmap
   
-
 - What are DOM events?
 - Setup
 - What's an **event listener**?
@@ -32,7 +29,6 @@ type: "lecture"
 - Creating a new element
 - Event bubbling
 - Event delegation
-- Removing event listeners
 
 ### Lesson Setup  
 
@@ -116,7 +112,7 @@ intro-to-dom-events/
 
 - The `addEventListener` approach is widely considered to be the best practice because it has the flexibility of adding multiple listener functions!
 
-- Here is the common syntax for _registering_ an event listener for a given event:  `element.addEventListener(<event-name>, <callback>, <use-capture>);`  
+- Here is the common syntax for _registering_ an event listener for a given event: <br> **`element.addEventListener(<event-name>, <callback>, <use-capture>);`**  
 
 	- **event-name** is the name of the event (string)
 	- **callback** is the function we want executed when the event happens.  When called by the JS engine, it will be passed an _event object_ as an argument.
@@ -131,7 +127,7 @@ intro-to-dom-events/
 	```html
 	<h3>Comments</h3>
 	<ul>
-	  <li>SEI Rocks!</li>
+	  <li>SEIR Rocks!</li>
 	</ul>
 	<input>
 	<button>Add Comment</button>
@@ -179,8 +175,7 @@ intro-to-dom-events/
 	- Note that JS's `this` keyword within the listener function will be set to the DOM element that `addEventListener` was called on.
 
   
-### Creating a new _\<span style="text-transform:lowercase">li</span>_ element
-  
+### Creating a new `li` element
 
 - If we want to add a new comment, we're going to need to create a new `<li>` element.
 
