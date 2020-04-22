@@ -21,9 +21,12 @@ type: "lecture"
 - Manipulate the Classes of an Element
 - Iterate Over a Collection of Elements
   
+## Lesson Recording
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cBB3ZGg8QmQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
 ## Roadmap
   
-
 - What's the DOM?
 - Setup
 - Using DevTools to Explore the DOM

@@ -71,9 +71,14 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 * `git commit -m "completed lab/homework”`
 * `git push` -->
 * Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
-* Fill out this [Google Form](https://docs.google.com/forms/d/e/1FAIpQLSdA1y0h8XSKzYEfnFmADOh7aJU0UoT6DVIX69SwBeGI-qkg0A/viewform) with a link for that specific homework. It will be the same Google Form for each homework
+* Fill out this [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) with a link for that specific homework. It will be the same Google Form for each homework
 * **Homework is due one week from the day it was assigned**
 * If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
+
+
+## Lesson Recordings
+
+Lessons will be recorded and embedded into the lesson material within 24-48 hours -- you can also view the entire playlist for this program [here](https://www.youtube.com/playlist?list=PLN8j7ZvmsikDz3csSUQaWz7966uGwJ0Wn)
 
 ## Managing your Projects
 * At the end of each unit, you will create a repo in your personal github for your project... i.e. Unit One - Project One, Unit Two - Project Two ...etc
