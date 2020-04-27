@@ -16,7 +16,9 @@ type: "lab"
 
 - Use the [Open Weather map](https://openweathermap.org/api) to get a forecast and display it on the page
   
-- Start by coming up with your `User Stories`, then move on to `White-Boarding`, `Pseudocoding`, and `Wireframing`
+- Start by coming up with your `User Stories`, then move on to `Pseudocoding`, and `Wireframing`
+
+- Create a project folder with the usual setup ... i.e. `.html`, `.css`, and `.js` files in their appropriate sub folders
 
 - Create a `README.md` inside of your project's root directory you can use to describe what your app does
 

@@ -1,7 +1,7 @@
 # Project One: Your First Web Application
 
 ## Attendance
-There are no instructional classes during project weeks, but we expect you to work on your project during class days and be available during that time for office hours or any meetings with instructors as needed.  
+During project periods, you are expected to be virtually present to work on your project during class days and be available during that time for office hours or any meetings with instructors as needed.  
 
 We will **still check attendance** during project week, so be sure to still check in at the start of each class period and attend the Zoom channel in case of announcements.
 
@@ -19,28 +19,24 @@ We will **still check attendance** during project week, so be sure to still chec
   5. Use AJAX to make a request to an external data source like OMDBapi and insert some of the data retrieved into the DOM
 
 #### Here are some "nice to haves" but not required:
-
-  1. Implement responsive design (i.e. it should be fully functional on desktop, tablet, mobile, etc)
-  2. Have one or more complex user interface modules such as a carousel, drag and drop, a sticky nav, tooltips, etc
-  3. Game functionality (e.g. a quiz)
-  4. Look into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">localstorage</a> so you can save data to the user's browser 
+  1. Have one or more complex user interface modules such as a carousel, drag and drop, a sticky nav, tooltips, etc
+  2. Look into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">localstorage</a> so you can save data to the user's browser 
 
 ### 📋 List of API's
 
 Below is a non-exhaustive list of some free API's you can use. There are _many_ API's out there, however, so if you find one not on this list that you'd like to use, feel free! Please note that some may require signing up for an API key (e.g. the Marvel API).
 
   1. Marvel: <a href="https://developer.marvel.com/" target="_blank">https://developer.marvel.com/</a>
-  2. Star Wars: <a href="https://swapi.co/" target="_blank">https://swapi.co/</a>
-  3. Weather: <a href="https://openweathermap.org/api" target="_blank">https://openweathermap.org/api</a>
-  4. News: <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a>
-  5. Giphy: <a href="https://developers.giphy.com/">https://developers.giphy.com/</a>
-  6. Pokemon: <a href="http://pokeapi.co/">http://pokeapi.co/</a>
-  7. Card Deck: <a href="https://deckofcardsapi.com/" target="_blank">https://deckofcardsapi.com/</a>
-  8. Google Books: <a href="https://developers.google.com/books/" target="_blank">https://developers.google.com/books/</a>
-  9. City of Chicago: <a href="https://data.cityofchicago.org/" target="_blank">https://data.cityofchicago.org/</a>
-  10. Beer: <a href="https://www.brewerydb.com/developers" target="_blank">https://www.brewerydb.com/developers</a>
-  11. Chuck Norris: <a href="http://www.icndb.com/" target="_blank">http://www.icndb.com/</a>
-  12. Rick and Morty: <a href="https://rickandmortyapi.com/documentation/#rest" target="_blank">https://rickandmortyapi.com/documentation/#rest</a>
+  2. Weather: <a href="https://openweathermap.org/api" target="_blank">https://openweathermap.org/api</a>
+  3. News: <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a>
+  4. Giphy: <a href="https://developers.giphy.com/">https://developers.giphy.com/</a>
+  5. Pokemon: <a href="http://pokeapi.co/">http://pokeapi.co/</a>
+  6. Card Deck: <a href="https://deckofcardsapi.com/" target="_blank">https://deckofcardsapi.com/</a>
+  7. Google Books: <a href="https://developers.google.com/books/" target="_blank">https://developers.google.com/books/</a>
+  8. City of Chicago: <a href="https://data.cityofchicago.org/" target="_blank">https://data.cityofchicago.org/</a>
+  9.  Beer: <a href="https://www.brewerydb.com/developers" target="_blank">https://www.brewerydb.com/developers</a>
+  10. Chuck Norris: <a href="http://www.icndb.com/" target="_blank">http://www.icndb.com/</a>
+  11. Rick and Morty: <a href="https://rickandmortyapi.com/documentation/#rest" target="_blank">https://rickandmortyapi.com/documentation/#rest</a>
   
 Lastly, the following sites congregates a bunch of API's together, so you can take a look through their libraries and try to find an API that interests you! <br>Note, however, that not all API's are free and many listed may require payment. <br>We **highly suggest** to use a free API for your first project dealing with one. 
 
@@ -69,7 +65,7 @@ You can also host your github pages with your own domain name.<br>[Here is a wal
 
 
 ## How to Submit Your Project
-Your project is due on Wednesday, Dec 4 at 6:30 EST. You will present your project and show your code to classmates and instructors.
+Your project is due on Wednesday, May 13th at 7:30 EST. You will present your project and show your code to classmates and instructors.
 
 ## Where to go for help during project week
 1. Seek out help online

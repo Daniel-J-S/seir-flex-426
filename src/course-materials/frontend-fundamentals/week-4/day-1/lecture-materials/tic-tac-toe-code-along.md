@@ -25,17 +25,17 @@ Build a Tic-Tac-Toe game incorporating the three web app technologies you've wor
 
 ### Getting Started
 
-- Create a new project folder seperate from your classroom homework and labs folder; we'll name it `tic-tac-toe`.
+- Create a new project folder named `tic-tac-toe`.
 
-- **note** This project will live inside of it's own repository on your personal github.
+- **note** As a suggestions, create a repository for this project on your personal github.
 
 - Create an `index.html` page inside the root of `tic-tac-toe`.
 
-- Create your `style.css` and `script.js` files inside of their appropriate sub-folders.
+- Create your `style.css` and `script.js` files inside of their appropriate sub-folders ... i.e. `css/style.css` & `js/script.js`.
 
 - Start by writing the HTML and CSS that displays a 3x3 grid and the `reset game` button.
 
-- Using `id` and/or `class` attributes will help you target elements for styling and wiring up your click event listeners.
+- Using `id`, `class`, and/or `data` attributes will help you target elements for styling and wiring up your click event listeners.
 
 - Programs, including games, are frequently focused on manipulating data and displaying that data to a user. Decide on the data structures, held in variables, that will maintain the _state_ (data / status) of the game.
 

@@ -33,28 +33,15 @@ type: "lecture"
 
 ### Lesson Setup  
 
-- Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your practice folder of this week's folder called `ajax-practice`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w04/practice/ajax-practice`
+- Create a folder called `intro-to-ajax-practice`
 
-- Inside of `ajax-practice` create the following folder/file structure:
-
-```shell
-  practice/
-    ajax-practice/
-      index.html
-      js/
-        script.js
-```
-
-So, your top level down directory structure should look like this:
+- Inside of `intro-to-ajax-practice` create the following folder/file structure:
 
 ```shell
-w04/
-  practice/
-    ajax-practice/
-      index.html
-      js/
-        script.js
+intro-to-ajax-practice/
+  index.html
+  js/
+    script.js
 ```
 
 - You can add this HTML to your `.html` file:
@@ -68,7 +55,7 @@ w04/
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
-    <title>AJAX Practice</title>
+    <title>Intro to AJAX</title>
 </head>
 <body>
 
@@ -86,22 +73,6 @@ We'll have our page get data from the external site [http://www.omdbapi.com/](ht
 Let's use JavaScript to get data for our page:
 
 ```javascript
-$.ajax({
-    url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen',
-    success: function(movieData) {
-        console.log(movieData);
-    },
-    error: function (error){
-        console.log('bad request: ', error);
-    }
-});
-```
-
-## Explain promises
-
-The previous code is a little old fashioned. <br>Let's update it:
-
-```javascript
 const promise = $.ajax({
     url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
 });
@@ -116,6 +87,8 @@ promise.then(
 );
 ```
 
+## Explain promises
+
 `$.ajax` returns a "promise" object, which we'll save to the variable `promise`.
 
 Think of this as an object that holds information about the AJAX request "event".
@@ -125,9 +98,13 @@ All "promise" objects have a `.then()` method. This method takes two parameters.
 1. The `success` callback
 2. The `error` callback
 
-These callbacks behave just like callbacks to DOM events. It's a function that get's called when something happens, in this case when the AJAX request succeeds or fails.
+These callbacks behave just like callbacks to DOM events. 
 
-We can rewrite the previous code to make it a little more succinct:
+Remember: a callback is a function that get's passed to another function, as an argument, to be called at a later time, when something happens. 
+
+In this case, when the AJAX request succeeds or fails.
+
+We can also rewrite the previous code into one expression:
 
 ```javascript
 $.ajax({
@@ -160,14 +137,23 @@ Now that we have successfully made an AJAX request, let's use the response from 
 
 Now let's use the data to populate the DOM:
 
+- First we'll select the DOM elements we'll need to work with.
+- Then once the data comes back from our AJAX request, we can set the content of our DOM elements.
+
 ```javascript
+
+const $title = $('#title');
+const $year = $('#year');
+const $rated = $('#rated');
+
+
 $.ajax({
   url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
   }).then(
     (data) => {
-    $('#title').html(data.Title);
-    $('#year').html(data.Year);
-    $('#rated').html(data.Rated);
+    $title.html(data.Title);
+    $year.html(data.Year);
+    $rated .html(data.Rated);
   },
     (error) => {
    console.log('bad request: ', error);
@@ -188,47 +174,83 @@ We'll use the below `html` to begin adding this functionality.
 </form>
 ```
 
-Move the AJAX request to within a form submit event handler:
+First, let's set up an event listener for our form.
+
+For best practices, we'll move the AJAX request to it's own function called `handleGetData`.
+
+Then, we'll create a seperate function called `render` to take care of populating our DOM with data.
+
+From this point forward, `handleGetData` will just handle requesting the data; once it has data, it will tcall `render` passing it the data it needs to "visualize" it in the DOM.
+
+This is a great way to seperate concerns and keep our code organized.
 
 ```javascript
-  $('form').on('submit', (event) => {
-    event.preventDefault();
-    $.ajax({
-      url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
-      }).then(
-        (data) => {
-          $('#title').html(data.Title);
-          $('#year').html(data.Year);
-          $('#rated').html(data.Rated);
-        },
-        (error) => {
-          console.log('bad request: ', error);
-        }
-      );
-    })
-  });
+
+const $title = $('#title');
+const $year = $('#year');
+const $rated = $('#rated');
+
+$('form').on('submit', handleGetData);
+
+function handleGetData(event) {
+  event.preventDefault();    
+   $.ajax({
+         url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
+         }).then(
+           (data) => {
+             render(data);
+           },
+           (error) => {
+             console.log('bad request: ', error);
+           }
+         );
+    });
+}
+
+function render(movieData) {
+   $('#title').html(data.Title);
+   $('#year').html(data.Year);
+   $('#rated').html(data.Rated);
+}
+
 ```
 
 Lastly, let's use the input that user types to modify the AJAX request:
 
+- First we select/cache a reference to the input element.
+- Then we store it's value to a local variable inside of `handleGetData` and use that value to modify the AJAX request.
+
 ```javascript
-  $('form').on('submit', (event) => {
-   event.preventDefault();
-   const userInput = $('input[type="text"]').val();
-    $.ajax({
-      url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
-    }).then(
-        (data) => {
-        $('#title').html(data.Title);
-        $('#year').html(data.Year);
-        $('#rated').html(data.Rated);
-        },
-        (error) => {
-          console.log('bad request: ', error);
-         }
-        );
-      })
-   })
+
+const $title = $('#title');
+const $year = $('#year');
+const $rated = $('#rated');
+const $input = $('input[type="text"]');
+
+$('form').on('submit', handleGetData);
+
+function handleGetData(event) {
+  event.preventDefault();
+  
+  const userInput = $input.val();
+   $.ajax({
+         url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
+         }).then(
+           (data) => {
+             render(data);
+           },
+           (error) => {
+             console.log('bad request: ', error);
+           }
+         );
+    });
+}
+
+function render(movieData) {
+   $('#title').html(data.Title);
+   $('#year').html(data.Year);
+   $('#rated').html(data.Rated);
+}
 ```
 
 ## Review Questions

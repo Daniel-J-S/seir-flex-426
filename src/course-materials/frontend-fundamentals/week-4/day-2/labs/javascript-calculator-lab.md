@@ -12,8 +12,7 @@ type: "lab"
 
 ![loop](https://i.imgur.com/LxaKMCj.png)
 
-- Build a calculator in your browser!
-- This Lab is a Deliverable.
+Build a calculator in your browser as a group! This Lab is **not a Deliverable**.
 
 ## User Stories
 
@@ -33,8 +32,7 @@ User stories are a great way to break down what the different features of the we
 
 ## Setup  
 
-1. Inside your classroom folder, `SEIR-FLEX-HOMEWORK-AND-LABS`, create a folder inside your labs folder of this week's folder called `calculator-lab`
-	- So, `SEIR-FLEX-HOMEWORK-AND-LABS/w04/labs/calculator-lab`
+1. Create a folder called `calculator-lab`
 
 - Inside of `calculator-lab` create the following folder/file structure:
 
@@ -46,20 +44,6 @@ calculator-lab/
   js/
    script.js
   README.md
-```
-
-So, your top level down folder/file structure should look like this:
-
-```shell
-w04/
-  labs/
-   calculator-lab/
-    index.html
-    css/
-     style.css
-    js/
-     script.js
-    README.md
 ```
 
 **Use your `README.md` to provide a description of your calculator project**
