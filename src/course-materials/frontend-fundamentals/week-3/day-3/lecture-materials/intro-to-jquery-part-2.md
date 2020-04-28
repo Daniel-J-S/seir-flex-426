@@ -15,6 +15,10 @@ type: "lecture"
 | Use jQuery to add and remove DOM elements|
 | Bind to events with jQuery|
 
+## Lesson Recording - Lessons 1 & 2
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VRTgW-0Y-Z4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ## Roadmap
 
