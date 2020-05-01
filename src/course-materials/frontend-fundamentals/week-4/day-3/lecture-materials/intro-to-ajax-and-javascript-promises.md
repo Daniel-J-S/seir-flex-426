@@ -165,9 +165,13 @@ $.ajax({
 
 Currently, we're getting data for Frozen every time the page loads. Let's let the user choose the movie:
 
-We'll use the below `html` to begin adding this functionality.
+We'll use the below `html` to begin adding this functionality. Go ahead and place this form below the closing `<dl>` tag
 
 ```html
+<!-- existing code above -->
+...
+</dl>
+
 <form>
   <input type="text" placeholder="Movie Title"/>
   <input type="submit" value="Get Movie Info" />
@@ -180,37 +184,32 @@ For best practices, we'll move the AJAX request to it's own function called `han
 
 Then, we'll create a seperate function called `render` to take care of populating our DOM with data.
 
-From this point forward, `handleGetData` will just handle requesting the data; once it has data, it will tcall `render` passing it the data it needs to "visualize" it in the DOM.
+From this point forward, `handleGetData` will just handle requesting the data; once it has data, it will call `render` passing it the data it needs to "visualize" it in the DOM.
 
 This is a great way to seperate concerns and keep our code organized.
 
 ```javascript
 
-const $title = $('#title');
-const $year = $('#year');
-const $rated = $('#rated');
-
-$('form').on('submit', handleGetData);
-
 function handleGetData(event) {
-  event.preventDefault();    
-   $.ajax({
+    event.preventDefault();
+   // calling preventDefault() on a 'submit' event will prevent a page refresh  
+    $.ajax({
          url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
-         }).then(
-           (data) => {
-             render(data);
-           },
-           (error) => {
-             console.log('bad request: ', error);
-           }
-         );
-    });
+      }).then(
+        (data) => {
+         render(data);
+        },
+        (error) => {
+         console.log('bad request', error);
+        }
+    );    
 }
+    
 
 function render(movieData) {
-   $('#title').html(data.Title);
-   $('#year').html(data.Year);
-   $('#rated').html(data.Rated);
+   $('#title').html(movieData.Title);
+   $('#year').html(movieData.Year);
+   $('#rated').html(movieData.Rated);
 }
 
 ```
@@ -230,27 +229,27 @@ const $input = $('input[type="text"]');
 $('form').on('submit', handleGetData);
 
 function handleGetData(event) {
-  event.preventDefault();
-  
-  const userInput = $input.val();
-   $.ajax({
-         url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
-         }).then(
-           (data) => {
-             render(data);
-           },
-           (error) => {
-             console.log('bad request: ', error);
-           }
-         );
-    });
+    event.preventDefault();
+       // calling preventDefault() on a 'submit' event will prevent a page refresh  
+    const userInput = $input.val();
+      // getting the user input
+    $.ajax({
+        url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
+      }).then(
+        (data) => {
+         render(data);
+        },
+        (error) => {
+         console.log('bad request', error);
+        }
+    );    
 }
 
 function render(movieData) {
-   $('#title').html(data.Title);
-   $('#year').html(data.Year);
-   $('#rated').html(data.Rated);
-}
+    $('#title').html(movieData.Title);
+    $('#year').html(movieData.Year);
+    $('#rated').html(movieData.Rated);
+ }
 ```
 
 ## Review Questions

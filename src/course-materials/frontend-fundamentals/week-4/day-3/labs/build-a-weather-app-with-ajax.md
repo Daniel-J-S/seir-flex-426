@@ -8,8 +8,6 @@ type: "lab"
 
 # Build a Weather App With AJAX
 
-- This lab is not and deliverable, but completion is **strongly recommended** as your project for Unit One involves using an API; this lab is really good practice
-
 - Create an app that uses a search form to show the weather in any city the user searches for
   
 - Set this up as a seperate Project Repo, and push it to your personal Github; this is a wonderful first project to have in your portfolio
