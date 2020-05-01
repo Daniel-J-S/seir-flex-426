@@ -7,6 +7,10 @@ type: "lecture"
 ---
 
 # Tic-Tac-Toe Code Along
+
+## Walkthrough Recording
+
+[Click Here](https://generalassembly.zoom.us/rec/share/-PFIKL_LtSBLeY31r0L_UfcLQqi6eaa82iEf-fpemEeXhHKQR6O2YfiI0-4DADuL?startTime=1588118685000) to access recording
   
 ## Objective
 

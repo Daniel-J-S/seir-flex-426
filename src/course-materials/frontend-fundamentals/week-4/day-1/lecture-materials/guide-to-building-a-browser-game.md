@@ -8,6 +8,10 @@ type: "lecture"
 
 # Guide to Building a Browser Game
 
+## Walkthrough Recording
+
+[Click Here](https://generalassembly.zoom.us/rec/share/-PFIKL_LtSBLeY31r0L_UfcLQqi6eaa82iEf-fpemEeXhHKQR6O2YfiI0-4DADuL?startTime=1588117579000) to access recording
+
 ## Intro
 
 Getting started and knowing how to structure the code in an application is one of the most difficult things for students to figure out.
