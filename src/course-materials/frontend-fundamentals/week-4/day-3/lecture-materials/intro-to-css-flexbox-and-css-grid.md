@@ -36,15 +36,7 @@ type: "lecture"
 
 ### Setup
 
-- For this lesson, we'll be using [repl.it](https://repl.it) to learn about Flexbox & CSS Grid.
-
-- If you haven't created an account on **repl.it**, the process is pretty simple.
-
-- You can create an account using your Google or Github credentials! Hey! They use Oauth too!
-
-- Once signed up successfully, you should be able to create a `[+ new repl]`
-
-- For languages, select the option to create a new **HTML, CSS, JS** Repl.
+- For this lesson, we'll be using a **HTML, CSS, JS** [repl.it](https://repl.it)
 
 - Name the Repl something like _Flexbox & CSS Grid_
 
