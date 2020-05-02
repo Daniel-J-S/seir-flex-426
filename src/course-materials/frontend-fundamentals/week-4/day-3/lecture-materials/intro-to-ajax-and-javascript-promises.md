@@ -280,9 +280,9 @@ function render() {
 
 ❓**In your own words describe a JavaScript Promise**
 
-❓**What Does The Term AJAX Stand For?**
+❓**What is AJAX?**
 
-❓**What jQuery Method Do We Use to Make AJAX Requests**
+❓**What jQuery method do we use to make AJAX requests**
 
 ## Resources
 
