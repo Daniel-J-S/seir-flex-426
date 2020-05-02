@@ -1,13 +1,13 @@
 ---
 track: "Frontend Fundamentals"
-title: "Flexbox / CSS Grid - Lab"
+title: "CSS Flexbox / Grid - Lab"
 week: 4
 day: 3
 type: "lab"
 ---
 
 
-# Flexbox / CSS Grid - Lab
+# CSS Flexbox / Grid - Lab
 
 ## Intro
 

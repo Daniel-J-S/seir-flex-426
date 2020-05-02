@@ -68,7 +68,7 @@ We'll have our page get data from the external site [http://www.omdbapi.com/](ht
 - From the documentation, we can see that `http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen` will get data about the movie Frozen
 - The `apikey` parameter is necessary for this external source so that can track and possibly limit access to specific people
 
-- In order to use this particular API in our projects, we'll likely need to [request an API key](http://www.omdbapi.com/apikey.aspx)
+- In order to use this particular API in our projects, we'll need to [request an API key](http://www.omdbapi.com/apikey.aspx)
 
 Let's use JavaScript to get data for our page:
 
@@ -121,7 +121,10 @@ $.ajax({
 
 ## Populate the DOM with AJAX data
 
-Now that we have successfully made an AJAX request, let's use the response from OMDB to populate the DOM. Let's add the below `html` to our practice project.   
+Now that we have successfully made an AJAX request, let's use the response from OMDB to populate the DOM. 
+
+
+Let's add the below `html` to our practice project.   
 
 ```html
 <h1>Movie Info</h1>
@@ -137,8 +140,8 @@ Now that we have successfully made an AJAX request, let's use the response from 
 
 Now let's use the data to populate the DOM:
 
-- First we'll select the DOM elements we'll need to work with.
-- Then once the data comes back from our AJAX request, we can set the content of our DOM elements.
+- First we'll select/cache the DOM elements we'll need to work with.
+- Once the data comes back from our AJAX request, we can set the content of our DOM elements with it.
 
 ```javascript
 
@@ -163,7 +166,10 @@ $.ajax({
 
 ## Make dynamic AJAX requests
 
-Currently, we're getting data for Frozen every time the page loads. Let's let the user choose the movie:
+Currently, we're getting data for Frozen every time the page loads. 
+
+
+Let's let the user choose the movie:
 
 We'll use the below `html` to begin adding this functionality. Go ahead and place this form below the closing `<dl>` tag
 
@@ -178,17 +184,29 @@ We'll use the below `html` to begin adding this functionality. Go ahead and plac
 </form>
 ```
 
-First, let's set up an event listener for our form.
+First, let's set up a state variable to store our movie data.
 
-For best practices, we'll move the AJAX request to it's own function called `handleGetData`.
+Then, we'll set up an event listener for a 'submit' events from our form.
 
-Then, we'll create a seperate function called `render` to take care of populating our DOM with data.
+For best practices, we'll move the AJAX request to it's own function called `handleGetData`, this function will get called when the form is submitted thus fetching our data and assigning it to our `movieData` state variable. 
 
-From this point forward, `handleGetData` will just handle requesting the data; once it has data, it will call `render` passing it the data it needs to "visualize" it in the DOM.
+Also, notice how we're having to call `preventDefault()` on the `event` object, this is how we can prevent the default browser behavior for form submissions: A full page refresh. 
 
-This is a great way to seperate concerns and keep our code organized.
+In this case, refreshing/reloading the page defeats the purpose of AJAX, so we'll "turn off" the default behavior.
+
+
+Next, we'll create a seperate function called `render` to take care of transfering the data from our state variable to the DOM.
+
+
+To summarize, `handleGetData` will just handle requesting the data and assigning it to "state". It will then call `render`, which will transfer that state to the DOM.
+
+
+By the way, using specialized functions like `handleGetData` and `render` are a great practice to seperate concerns and keep our code organized.
 
 ```javascript
+let movieData;
+
+$('form').on('submit', handleGetData);
 
 function handleGetData(event) {
     event.preventDefault();
@@ -197,7 +215,8 @@ function handleGetData(event) {
          url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
       }).then(
         (data) => {
-         render(data);
+         movieData = data;
+         render();
         },
         (error) => {
          console.log('bad request', error);
@@ -206,7 +225,7 @@ function handleGetData(event) {
 }
     
 
-function render(movieData) {
+function render() {
     $title.html(movieData.Title);
     $year.html(movieData.Year);
     $rated.html(movieData.Rated);
@@ -216,10 +235,14 @@ function render(movieData) {
 
 Lastly, let's use the input that user types to modify the AJAX request:
 
-- First we select/cache a reference to the input element.
-- Then we store it's value to a local variable inside of `handleGetData` and use that value to modify the AJAX request.
+- Let's create another state variable called `userInput`.
+- Next, we'll select/cache a reference to the input element from the DOM.
+- Whenever `handleGetData` gets called, we want to assign the value from our input element to our state variable and use that value to modify the AJAX request.
+- Very much like our `apikey`, `userInput` becomes what is known as a query parameter in our `URL`.
 
 ```javascript
+
+let movieData, userInput;
 
 const $title = $('#title');
 const $year = $('#year');
@@ -231,13 +254,14 @@ $('form').on('submit', handleGetData);
 function handleGetData(event) {
     event.preventDefault();
        // calling preventDefault() on a 'submit' event will prevent a page refresh  
-    const userInput = $input.val();
+    userInput = $input.val();
       // getting the user input
     $.ajax({
         url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
       }).then(
         (data) => {
-         render(data);
+         movieData = data;
+         render();
         },
         (error) => {
          console.log('bad request', error);
@@ -245,7 +269,7 @@ function handleGetData(event) {
     );    
 }
 
-function render(movieData) {
+function render() {
     $title.html(movieData.Title);
     $year.html(movieData.Year);
     $rated.html(movieData.Rated);
@@ -253,6 +277,8 @@ function render(movieData) {
 ```
 
 ## Review Questions
+
+❓**In your own words describe a JavaScript Promise**
 
 ❓**What Does The Term AJAX Stand For?**
 
