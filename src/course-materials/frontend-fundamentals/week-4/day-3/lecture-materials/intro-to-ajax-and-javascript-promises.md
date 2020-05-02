@@ -63,18 +63,18 @@ intro-to-ajax-practice/
 </html>
 ```
 
-We'll have our page get data from the external site [http://www.omdbapi.com/](http://www.omdbapi.com/)
+We'll have our page get data from the external site [https://www.omdbapi.com/](https://www.omdbapi.com/)
 
-- From the documentation, we can see that `http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen` will get data about the movie Frozen
+- From the documentation, we can see that `https://swww.omdbapi.com/?apikey=53aa2cd6&t=Frozen` will get data about the movie Frozen
 - The `apikey` parameter is necessary for this external source so that can track and possibly limit access to specific people
 
-- In order to use this particular API in our projects, we'll need to [request an API key](http://www.omdbapi.com/apikey.aspx)
+- In order to use this particular API in our projects, we'll need to [request an API key](https://www.omdbapi.com/apikey.aspx)
 
 Let's use JavaScript to get data for our page:
 
 ```javascript
 const promise = $.ajax({
-    url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
+    url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
 });
 
 promise.then(
@@ -108,7 +108,7 @@ We can also rewrite the previous code into one expression:
 
 ```javascript
 $.ajax({
-  url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
+  url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
 }).then(
   (data) => {
    console.log(data);
@@ -151,7 +151,7 @@ const $rated = $('#rated');
 
 
 $.ajax({
-  url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
+  url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
   }).then(
     (data) => {
     $title.html(data.Title);
@@ -212,7 +212,7 @@ function handleGetData(event) {
     event.preventDefault();
    // calling preventDefault() on a 'submit' event will prevent a page refresh  
     $.ajax({
-         url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
+         url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
       }).then(
         (data) => {
          movieData = data;
@@ -257,7 +257,7 @@ function handleGetData(event) {
     userInput = $input.val();
       // getting the user input
     $.ajax({
-        url:'http://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
+        url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=' + userInput
       }).then(
         (data) => {
          movieData = data;
