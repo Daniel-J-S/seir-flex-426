@@ -65,7 +65,7 @@ intro-to-ajax-practice/
 
 We'll have our page get data from the external site [https://www.omdbapi.com/](https://www.omdbapi.com/)
 
-- From the documentation, we can see that `https://swww.omdbapi.com/?apikey=53aa2cd6&t=Frozen` will get data about the movie Frozen
+- From the documentation, we can see that `https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen` will get data about the movie Frozen
 - The `apikey` parameter is necessary for this external source so that can track and possibly limit access to specific people
 
 - In order to use this particular API in our projects, we'll need to [request an API key](https://www.omdbapi.com/apikey.aspx)
