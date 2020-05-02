@@ -1,9 +1,12 @@
 # Project One: Your First Web Application
 
 ## Attendance
-During project periods, you are expected to be virtually present to work on your project during class days and be available during that time for office hours or any meetings with instructors as needed.  
 
-We will **still check attendance** during project week, so be sure to still check in at the start of each class period and attend the Zoom channel in case of announcements.
+There are typically no classes taught during project periods with the exception of optional review time or bonus lectures. However, we still take normal attendance for scheduled classroom days that fall on project periods, so you are still expected to be virtually present in our usual Zoom call. 
+
+
+In most cases we'll place you in breakout rooms to work on your project, but it's your responsibility to be available for meetings with instructors as needed. 
+
 
 ## Project Details
 
@@ -14,11 +17,11 @@ We will **still check attendance** during project week, so be sure to still chec
 
   1. Built with HTML, CSS, JavaScript and *jQuery* 
   2. Hosted on github pages<br>
-  3. Commits to github every day<br>
+  3. Frequent Commits to github<br>
   4. A `README.md` file with explanations of the technologies used, the approach taken, a link to your live site, installation instructions, unsolved problems, etc.
   5. Use AJAX to make a request to an external data source like OMDBapi and insert some of the data retrieved into the DOM
 
-#### Here are some "nice to haves" but not required:
+#### Here are some "bonus features" but not required:
   1. Have one or more complex user interface modules such as a carousel, drag and drop, a sticky nav, tooltips, etc
   2. Look into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">localstorage</a> so you can save data to the user's browser 
 
@@ -42,6 +45,15 @@ Lastly, the following sites congregates a bunch of API's together, so you can ta
 
   1. <a href="https://github.com/toddmotto/public-apis" target="_blank">https://github.com/toddmotto/public-apis<a>
   1. <a href="https://rapidapi.com/" target="_blank">https://rapidapi.com/</a>
+   
+
+## Final Note on Selecting an API
+
+Please be extremely thorough when finding an API you'd like to use for your project. In other words, please ensure you have properly vetted your API, by taking the time to read it's documentation and even "hitting a few endpoints". 
+
+Do this **BEFORE** you decide to seek instructor approval. 
+
+This ensures you're taking the time to test the API and see how you can get it to respond with data and what that data looks like.
 
 
 ## Make A New Repo

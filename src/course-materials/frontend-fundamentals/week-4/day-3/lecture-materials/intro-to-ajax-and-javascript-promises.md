@@ -207,10 +207,10 @@ function handleGetData(event) {
     
 
 function render(movieData) {
-   $('#title').html(movieData.Title);
-   $('#year').html(movieData.Year);
-   $('#rated').html(movieData.Rated);
-}
+    $title.html(movieData.Title);
+    $year.html(movieData.Year);
+    $rated.html(movieData.Rated);
+ }
 
 ```
 
@@ -246,9 +246,9 @@ function handleGetData(event) {
 }
 
 function render(movieData) {
-    $('#title').html(movieData.Title);
-    $('#year').html(movieData.Year);
-    $('#rated').html(movieData.Rated);
+    $title.html(movieData.Title);
+    $year.html(movieData.Year);
+    $rated.html(movieData.Rated);
  }
 ```
 
