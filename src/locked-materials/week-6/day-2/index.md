@@ -8,7 +8,7 @@ topics: "Project 1 Presentations"
 ---
 
 
-# Week 5 - Day 1
+# Week 6 - Day 2
 
 #### Project 1 Presentations
 - **Activity:** Students Present Project 1

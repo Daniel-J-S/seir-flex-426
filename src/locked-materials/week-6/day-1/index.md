@@ -8,7 +8,7 @@ topics: "Project 1 Week"
 ---
 
 
-# Week 5 - Day 1
+# Week 6 - Day 1
 
 #### Project 1 Week
 - **Activity:** Students Work on Project 1
