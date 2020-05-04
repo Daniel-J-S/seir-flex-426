@@ -1,6 +1,6 @@
 ---
 track: "Frontend Fundamentals"
-title: "Tic-Tac-Toe Code Along"
+title: "Dougie the Donut & Pizza Rat"
 week: 5
 day: 1
 type: "lecture"
@@ -32,23 +32,21 @@ Dougie the Donut and Pizza Rat have become best buds taking New York City by sto
 
 ## Getting Started
 
-1. Inside the lab's folder inside this week's folder, create a directory named `complaints-app`
+1. Create a directory named `complaints-app`
     
 2. Inside that directory, make your `js` and `css` sub-directories and create the appropriate `script.js` and `style.css` files inside of them
    
 3. Link them to the jQuery CDN library as well, and make sure all things are connected correctly! 
 
-4. So, your top level down directory structure should look like this:
+4. Your directory structure should look like this:
 
 ```shell
-w05/
-  labs/
-    complaints-app/
-      index.html
-      js/
-        script.js
-      css/
-        style.css
+ complaints-app/
+   index.html
+   js/
+     script.js
+   css/
+     style.css
 ```        
 
 ## The App 
