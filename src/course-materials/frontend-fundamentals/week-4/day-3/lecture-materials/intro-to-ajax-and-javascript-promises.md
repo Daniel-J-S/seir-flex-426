@@ -8,6 +8,12 @@ type: "lecture"
 
 # Intro to AJAX and JavaScript Promises with jQuery
 
+## Lesson Recording
+
+## Lesson Recording
+
+[Click Here](https://generalassembly.zoom.us/rec/share/2pV2KLb95G1LcomX5maOXoUzGoTUX6a8g3If-acNxEvu1QhxEgWrwaZfkngW0Nyw?startTime=1588448262000) to access recording
+
 ## Lesson Objectives
 
 1. Explain AJAX
