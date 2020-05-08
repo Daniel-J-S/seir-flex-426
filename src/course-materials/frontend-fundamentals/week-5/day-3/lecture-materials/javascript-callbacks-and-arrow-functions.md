@@ -8,13 +8,65 @@ type: "lecture"
 
 # JavaScript Callbacks and Arrow Functions
 
-This is meant to be a resource for students to refer to later, but your instructor will briefly introduce/review these concepts, so we're familiar with them.
+This material was meant to be a resource for students to refer to later, but we'll briefly introduce/review these concepts, so we're familiar with them.
 
 
-### What are Callbacks and when Are They Used?
+### What's a Callback Function and when Are They Used?
 
-One of the best ways to learn about callbacks is to first understand their use cases.
 
+**A callback function, or "callback", is a function being passed to another function as an argument**
+
+Since you've already used the array `forEach` method before, you've already used a callback!
+
+Don't run the following, let's just read the code...
+
+```js
+const colors = ['red', 'green', 'blue'];
+
+colors.forEach(function(color, idx) {
+  console.log(`${idx + 1} - ${color}`);
+});
+```
+
+In the above, the _anonymous inline function_ being passed to `forEach` as its one and only argument - is a callback function.
+
+Of course, when a function takes a callback as input, it is likely doing so with the intention of invoking that callback at some point in time.
+
+> VOCAB:  In computer science, a function that accepts a function as input or returns a function is also known as a _higher order function_.
+
+In addition to using callbacks functions with forEach, you also used them when you added event listeners in your `Tic-Tac-Toe` game like so:
+
+```javascript
+gameboard.addEventListener('click', handleClick);
+```
+
+Now let's look at a more comprehensive example of how we can use callbacks by trying out this code:
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function compute(a, b, op) {
+  return op(a, b);
+}
+
+let result1 = compute(10, 5, add);
+let result2 = compute(10, 5, subtract);
+```
+
+**Review Question**
+
+❓ When the add and subtract functions are passed as arguments to the computefunction - they are ___ functions.
+
+Also, note that we are passing named functions `(add& sum)` instead of using an anonymous inline function like with the `forEach` earlier.
+
+
+##### One of the best ways to learn about callbacks is to first understand their use cases.
 
 **Here are three use cases for callback functions:**
 
@@ -36,7 +88,7 @@ JavaScript has designed the `forEach` method to:
 2. Invoke that callback once for each element in the array
 
 
-How many times would the anonymous callback function below be called - I'll take a number of fingers.**:
+How many times would the anonymous callback function below be called?**:
 
 ```js
 const flowers = ['rose', 'orchid', 'daisy'];
@@ -55,7 +107,7 @@ Before we can clearly understand what "asynchronous" means, it will help to conf
 
 #### Synchronous Code Execution
 
-So far, all the code we've written is **synchronous** code.
+So far, most of the code we've written **(...with the exception of the code we wrote for performing `AJAX` requests)** is **synchronous** code.
 
 **Synchronous** code is when a line of code **completely finishes executing** before the next line of code runs.
 
@@ -267,56 +319,12 @@ add(x, y) => x + y;
 const add = (x, y) => x + y;
 ```
 
-### What's a Callback Function?
+**Review Question**
+
+❓ In your own words describe what the term "implicit return" means.
 
 
-**A callback function, or simply callback, is a function being passed to another function as an argument!**
+### Resources
 
-Since you've already used the array `forEach` method before, you've already used a callback!
-
-Don't run the following, let's just read the code...
-
-```js
-const colors = ['red', 'green', 'blue'];
-
-colors.forEach(function(color, idx) {
-  console.log(`${idx + 1} - ${color}`);
-});
-```
-
-In the above, the _anonymous inline function_ being passed to `forEach` as its one and only argument - is a callback function.
-
-Of course, when a function takes a callback as input, it is likely doing so with the intention of invoking that callback at some point in time.
-
-> VOCAB:  In computer science, a function that accepts a function as input or returns a function is also known as a _higher order function_.
-
-Now let's look at a more comprehensive example of how we can use callbacks by trying out this code:
-
-```js
-function add(a, b) {
-  return a + b;
-}
-
-function subtract(a, b) {
-  return a - b;
-}
-
-function compute(a, b, op) {
-  return op(a, b);
-}
-
-let result1 = compute(10, 5, add);
-let result2 = compute(10, 5, subtract);
-```
-
-❓ **When the `add` and `subtract` functions are passed as arguments to the `compute` function - they are ___________ functions.**
-
-Also, note that we are passing _named functions_ (`add` & `sum`) instead of using an _anonymous inline function_ like with the `forEach` earlier.
-
-In addition to using callbacks functions with `forEach`, you also used them when you added event listeners in your Tic-Tac-Toe app like so:
-
-```js
-gameboard.addEventListener('click', handleClick);
-```
-
-> Be careful not to invoke the callback when passing it as an argument - in other words, do not put parens after it! Otherwise, you'll be passing the result returned by that function instead of the function itself.
+[MDN | Callback Function](https://developer.mozilla.org/en-US/docs/Glossary/Callback_function)
+[MDN | Arrow Function Expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
