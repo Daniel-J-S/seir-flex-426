@@ -61,14 +61,14 @@ let result2 = compute(10, 5, subtract);
 
 **Review Question**
 
-❓ When the add and subtract functions are passed as arguments to the computefunction - they are ___ functions.
+❓ When the add and subtract functions are passed as arguments to the compute function - they are ___ functions.
 
 Also, note that we are passing named functions `(add& sum)` instead of using an anonymous inline function like with the `forEach` earlier.
 
 
-##### One of the best ways to learn about callbacks is to first understand their use cases.
+##### One of the best ways to learn about callbacks is to first understand their use-cases.
 
-**Here are three use cases for callback functions:**
+**Here are three use-cases for callback functions:**
 
 1. To provide a function to be called by a higher-order function such  as `forEach` or the `compute` function we wrote above.
 
@@ -78,7 +78,7 @@ Also, note that we are passing named functions `(add& sum)` instead of using an 
 
 ### Using Callbacks with Array Iterator Methods
 
-One of the most popular use cases for callback functions is to provide them to iterator methods on arrays.
+One of the most popular use-cases for callback functions is to provide them to iterator methods on arrays.
 
 As we've seen, calling the `forEach` method is a great way to iterate over all of the elements in an array.
 
@@ -145,7 +145,7 @@ console.log('Code after the asynchronous function call');
 
 > We use `setTimeout` to "simulate" asynchronous code.
 
-##### Why do Asynchronous Functions exist?
+#### Why do Asynchronous Functions exist?
 
 Asynchronous functions are necessary in JavaScript because JS runs on a single CPU thread dedicated to handling events, running your code, painting the screen, etc.
 
@@ -245,6 +245,7 @@ Functions that are asynchronous must be **designed** to either:
 - Accept a callback function, or
 - Return a promise
 
+<hr>
 
 ### Intro to Arrow Functions:
 
