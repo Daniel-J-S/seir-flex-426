@@ -38,17 +38,15 @@ type: "lecture"
 #### Setup
 
 
-1. Inside the exercise folder inside this week's folder, create a directory named `node-practice`
+1. Create a directory named `node-practice`
     
 2. Inside that directory, make a single JavaScript file called `script.js`
    
 3. Open the folder in `VS Code`
 
 ```
-w06/
-  practice/
-    node-practice/
-        script.js
+node-practice/
+     script.js
 ```        
 
 ### What is Node.js?
@@ -150,6 +148,9 @@ w06/
 - Therefore, a Node developer will use _callback functions_ and/or _promises_ extensively.
 
 
+<br>
+<br>
+
 #### ❓ Review Questions - What is Node.js?
 
 
@@ -159,6 +160,9 @@ w06/
 
 3. **Is...`const el = document.getElementById('my-list');`a valid JavaScript statement in a Node app?**
 
+
+<br>
+<br>
 
 #### Now that you've learned how awesome Node is, let's see how it runs JavaScript programs
 
@@ -336,6 +340,9 @@ w06/
 - BTW, the global scope in a Node application is represented by an object named `global`, **unlike the browser's ________ object**.
 
 
+<br>
+<br>
+
 #### ❓ Review Questions - Modules
 
 
@@ -347,6 +354,9 @@ w06/
 
 4. **How many times can we `require` a module in our program?**
 
+
+<br>
+<br>
 
 #### Now that you've created and used your own modules, let's see how we can install open-source packages and use the modules they contain
 
@@ -455,24 +465,30 @@ w06/
 
 - In the next lesson, you will use one of the most popular Node modules, `Express`, that turns Node into a capable web server.
 
-- **Questions?**
+<br>
+<br>
 
-- There are a couple of practice exercises following...
-
+#### Here are a couple of practice exercises...
+<br>
 
 #### 💪 Practice - Modules #1
 
 <p style="text-align:left">Create two separate modules:</p>
 
 <p style="text-align:left">A module named "random" that has a function <strong>assigned</strong> to the <em>module.exports</em> and returns a random number, as an integer, between two numbers provided, inclusive, as arguments; so that we could use it in our program like this:</p>
-	
-```js
-const random = require('./utilities/random');
-for (let i = 0; i < 10; i++) {
-	console.log( random(100, 200) );
-}
-```
 
+
+```js
+  const random = require('./utilities/random');
+  for (let i = 0; i < 10; i++) {
+  	console.log( random(100, 200) );
+  }
+```
+<br>
+<br>
+<hr>
+<br>
+<br>
 
 #### 💪 Practice - Modules #2
 
@@ -483,12 +499,15 @@ for (let i = 0; i < 10; i++) {
 - `circumference`: Computes the circumference of a circle (radius X 2 X Pi), with the radius provided as an argument. 
 - Hint: This is JS, so `Math.PI` is available.
 
-	```js
-	const circle = require('./utilities/circle');
-	console.log( circle.area(50) );  // 7853.98...
-	console.log( circle.circumference(75) );  // 471.23...
-	```
+```js
+  const circle = require('./utilities/circle');
+  console.log( circle.area(50) );  // 7853.98...
+  console.log( circle.circumference(75) );  // 471.23...
+```
 
+<br>
+<br>
+<br>
 
 
 ### References
