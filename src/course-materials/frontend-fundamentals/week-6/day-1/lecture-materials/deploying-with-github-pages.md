@@ -8,6 +8,11 @@ type: "lecture"
 
 # Deploying Your Static App to GitHub-Pages
 
+## Walkthrough Recording
+
+[Click Here](https://generalassembly.zoom.us/rec/share/vJ1SMevaqzJJfq_KylzdcIsQOoDsX6a81SUeq6VexUbkHgefrvin1uUM2cp98Ng_?startTime=1589328003000) to access recording
+
+
 ## Intro
 
 This quick walk-thru will show you how easy it is to deploy your static web application so that it can be accessed by anyone with Internet access, anywhere in world!
