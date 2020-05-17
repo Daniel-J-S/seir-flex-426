@@ -26,6 +26,8 @@ The goal of the exercise is to do put in a rep doing everything that you did dur
 
 However, instead of To Dos, change up the data resource to something else, like `students` - your call.
 
+#### This lab is not a deliverable
+
 <br>
 <br>
 
