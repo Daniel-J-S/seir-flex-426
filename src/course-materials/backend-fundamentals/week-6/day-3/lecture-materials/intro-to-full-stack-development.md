@@ -8,6 +8,9 @@ type: "lecture"
 
 # Intro to Full-Stack Development 
 
+## Lesson Recording
+[Click here](https://generalassembly.zoom.us/rec/share/wuU2EerW-2VJb8_oyV6EXJN-RY_HX6a82yMX-PELmUfc_qU26M5FzbfQlMrcYqV6?startTime=1589645577000) to access recording
+
 
 ## Learning Objectives
 
