@@ -17,6 +17,8 @@ It's natural, in fact, **expected**, to feel "uncomfortable" and confused by Nod
 
 As always, the journey toward competence requires practice - so let's get on with it!
 
+<br>
+<br>
 
 ## Exercise
 
@@ -24,11 +26,17 @@ The goal of the exercise is to do put in a rep doing everything that you did dur
 
 However, instead of To Dos, change up the data resource to something else, like `students` - your call.
 
+<br>
+<br>
+
 ## Bonuses
 
 - Use EJS partial views to make your templates more DRY (see link in Reference section of the lesson) and/or [this link](https://www.npmjs.com/package/ejs#includes).
 
 - Include Materialize, or another CSS framework, if you want your app to look better quickly.
+
+<br>
+<br>
 
 ## Super Bonus
 

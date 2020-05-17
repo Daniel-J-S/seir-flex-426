@@ -40,22 +40,29 @@ type: "lecture"
 #### Setup
 
 
-- Inside this weeks practice folder create another folder called `express-practice`
+- Create a folder called `express-practice` and then change into it
 
-	```shell
-	$ mkdir express-practice
-	$ cd express-practice
-	```
+```shell
+$ mkdir express-practice
+$ cd express-practice
+```
+
+- Create a file inside this folder called `server.js`
+
+```shell
+$ touch server.js
+```
 	
-- Then create a `package.json` using this command:
+- Then create a `package.json` and accept the defaults using this command:
 
-	```shell
-	$ npm init
-	```
-	Accept the defaults to the prompts by pressing `[return]`, **except** for the **entry point** - set this to be "**server.js**":
+```shell
+$ npm init -y
+```
 
 - Open the project's folder in VS Code.
 
+<br>
+<br>
 
 #### The Three Fundamental Capabilities ofWeb Application Frameworks 
 
@@ -77,6 +84,8 @@ type: "lecture"
 
 - Express uses Node's built-in HTTP module to listen for, and respond to, HTTP requests - Express simply adds those three web application capabilities on top of Node
 
+<br>
+<br>
 
 #### Install the Express Module
 
@@ -88,12 +97,9 @@ type: "lecture"
 	```
 	Note that `i` is a shortcut for `install`
 
-- Create a `server.js` to put our web app's main code in:
 
-	```shell
-	$ touch server.js
-	```
-
+<br>
+<br>
 
 #### Express - Hello World!
 
@@ -119,6 +125,8 @@ type: "lecture"
 	});
 	```
 
+<br>
+<br>
 
 - Run the app:
 
@@ -134,6 +142,8 @@ type: "lecture"
 
 - The `send` method is a general purpose way to respond to the request, however, soon we'll be using more specific methods.
 
+<br>
+<br>
 
 #### Basic Structure of Express App
 
@@ -161,6 +171,8 @@ type: "lecture"
 	});
 	```
 
+<br>
+<br>
 
 #### Our First Route
 
@@ -177,6 +189,8 @@ type: "lecture"
 - Refreshing the page will reveal that it didn't work!  This is because we have to restart the server, or...
 
 
+<br>
+<br>
 
 #### Nodemon
 
@@ -193,8 +207,10 @@ type: "lecture"
 
 - Let's move on to routing...
 
+<br>
+<br>
 
-#### Our First Route
+#### Our First Route (Cont)
 
 
 - Like most web frameworks, Express uses the `HTTP Method` and the `Path` of the HTTP request to match a route defined in the application.
@@ -210,6 +226,9 @@ type: "lecture"
 
 - In tomorrow's Express lesson, we'll learn a preferred way of defining routes using the Express `Router` object, but you need to be aware of defining routes this way as well.
 
+
+<br>
+<br>
 
 #### The Route's Callback
 
@@ -246,6 +265,8 @@ type: "lecture"
 
 - The `response` object contains properties and methods used to end the request/response cycle - like we've done so far using the  `res.send` method.
 
+<br>
+<br>
 
 #### Practice - Define Another Route (3 mins)
 
@@ -254,6 +275,8 @@ type: "lecture"
 
 - Test it by browsing to `localhost:3000/home`.
 
+<br>
+<br>
 
 #### Review Question - Routing
 
@@ -270,6 +293,8 @@ app.post('/cars', function(req, res) {
 });
 ```
 
+<br>
+<br>
 
 #### Ways to Respond to a Request
 
@@ -283,6 +308,8 @@ app.post('/cars', function(req, res) {
   - `res.redirect()` -	Tell the browser to issue another `GET` request.
   - `res.json()` - Send a JSON response (used when we communicate via AJAX).
 
+<br>
+<br>
 
 #### Rendering Views
 
@@ -389,6 +416,8 @@ $ npm i ejs
 
 - Refresh the page - success!
 
+<br>
+<br>
 
 #### Dynamic Templating Using EJS
 
@@ -495,6 +524,8 @@ $ touch views/todos/index.ejs
 
 - Refresh and browse to `localhost:3000/todos` - yeah!
 
+<br>
+<br>
 
 #### Redirecting
 
@@ -518,6 +549,8 @@ $ touch views/todos/index.ejs
 
 - Later, when we  start creating, updating, or deleting data, we will always perform a `redirect`.
 
+<br>
+<br>
 
 #### ❓ Essential Questions
 
