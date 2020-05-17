@@ -33,15 +33,15 @@ type: "lecture"
 - Exercise: Update a To-Do
 
 
+<br>
+<br>
 
 #### Setup
 
+- This lesson builds upon the `express-todos` project created in the previous lesson. Make sure that you're in this folder and have it open in your text editor.
 
-- This lesson builds upon the `express-todos` project created in the previous lesson.
-
-- Make sure that you're in the **express-todos** folder and open your text editor.
-
-
+<br>
+<br>
 
 #### What is Middleware?
 
@@ -88,6 +88,9 @@ type: "lecture"
 	});
 	```
 - Type `nodemon` to start the server, browse to `localhost:3000`, and check terminal. 
+
+<br>
+<br>
 
 
 #### Our First Middleware
@@ -151,6 +154,8 @@ type: "lecture"
 
 - Move it back above the routes - that's better.
 
+<br>
+<br>
 
 
 #### Key Middleware
@@ -201,6 +206,8 @@ For our static assets, we'll create a `public` folder at the root of our project
 
 This is where our stylesheets, images and front-end javascript will live!
 
+<br>
+<br>
 
 #### Express Request-Response Cycle
 
@@ -279,6 +286,9 @@ This is where our stylesheets, images and front-end javascript will live!
 	</body>
 	```
 
+<br>
+<br>
+
 
 #### Creating To-Dos
 
@@ -321,7 +331,7 @@ This is where our stylesheets, images and front-end javascript will live!
 - Yay! Our first non-`GET` route!
 
 
-#### Creating To-Dos
+#### Creating To-Dos (Cont)
 
 
 - Same process:
@@ -384,6 +394,10 @@ This is where our stylesheets, images and front-end javascript will live!
 - Note that when `nodemon` restarts the server, added to-dos will be lost.
 
 
+<br>
+<br>
+
+
 ### <span style="text-transform:lowercase">method-override</span> Middleware
 
 
@@ -418,6 +432,9 @@ This is where our stylesheets, images and front-end javascript will live!
 	```
 
 - We are using the [Query String](https://en.wikipedia.org/wiki/Query_string) approach for `method-override` as documented [here](https://www.npmjs.com/package/method-override#override-using-a-query-value).
+
+<br>
+<br>
 
 
 #### Delete a To-Do
@@ -512,9 +529,6 @@ This is where our stylesheets, images and front-end javascript will live!
 	}
 	```
 
-- Any questions?
-
-
 
 - All that's left is to add the `deleteOne` method to the `Todo` model:
 
@@ -533,6 +547,9 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Does it work?  Of course it does!
 
+<br>
+<br>
+
 
 ### 💪 Exercises: Update a To-Do
 
@@ -542,6 +559,8 @@ This is where our stylesheets, images and front-end javascript will live!
 	1. One request to display a form used to edit the To-Do.
 	2. Another request to submitted the form to the server so that it can update the To-Do.
 
+
+<br>
 
 #### Update a To-Do
 
@@ -567,9 +586,12 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Enjoy!
 
+<br>
+<br>
 
 ## References
 
+[Official Documentation | Express.js](https://expressjs.com/)
 
 <p style="text-align:left"><em>Note: When searching for info on the Express framework, be sure that you search for the info for version 4 only - there were significant changes made from earlier versions.</em></p>
 

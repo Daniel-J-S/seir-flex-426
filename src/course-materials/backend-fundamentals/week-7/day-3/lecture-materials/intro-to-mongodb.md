@@ -28,30 +28,8 @@ type: "lecture"
 	- Embedding Subdocuments
 	- Referencing Documents
 
-
-## Installing MongoDB
-
-Install MongoDB using Homebrew using the following commands:
-
-```bash
-brew tap mongodb/brew
-```
-The above command might take a moment or two to complete. When finished, install MongoDB with:
-
-```bash
-brew install mongodb-community
-Starting the MongoDB Server
-```
-
-You start the Mongo database server with the following command:
-
-```bash
-brew services start mongodb-community
-```
-
-The above command also ensures that the MongoDB engine runs after restarting your computer.
-
-More info about installing MongoDB using Homebrew can be found [here](https://github.com/mongodb/homebrew-brew).
+<br>
+<br>
 
 ## What's a Database?
 
@@ -69,6 +47,8 @@ However, you'll also see that **MongoDB** is by far the most popular **NoSQL** d
 
 There are several varieties of NoSQL databases. MongoDB is of the **document-based** variety because it stores and retrieves _documents_.
 
+<br>
+<br>
 
 ## MongoDB vs. Relational SQL Databases
 
@@ -77,6 +57,10 @@ There are several varieties of NoSQL databases. MongoDB is of the **document-bas
 <img src="https://i.imgur.com/XdV3hSs.png" style="width:900px">
 
 As diagramed above, there is a one-to-one mapping of the key concepts of a database.
+
+
+<br>
+<br>
 
 ### Key Differences
 
@@ -90,6 +74,10 @@ However, in general:
 
 - **MongoDB** is preferred for storing vast amounts of unstructured data, such as in social-media type applications.  MongoDB is also a great choice when prototyping applications because it is **schema-less** and more adaptable to change.
 
+<br>
+<br>
+
+
 ## More About MongoDB
 
 MongoDB puts the "M" in the MEAN/MERN Stack, technology stacks that emphasizes the use of JavaScript on both the front-end and back-end.
@@ -97,6 +85,10 @@ MongoDB puts the "M" in the MEAN/MERN Stack, technology stacks that emphasizes t
 Instead of _SQL_ (_Structured Query Language_), MongoDB uses JavaScript as its native language for database operations.
 
 You're going to see that working with **data** in MongoDB is like working with JavaScript objects.
+
+<br>
+<br>
+
 
 ## MongoDB Documents
 
@@ -131,6 +123,11 @@ MongoDB uses a special `ObjectId` datatype for the value of `_id`.
 
 The value that MongoDB creates for the `_id` is guaranteed to be _globally unique_.
 
+
+<br>
+<br>
+
+
 ## Creating a Database and Inserting Documents
 
 ### Before we Start
@@ -138,6 +135,10 @@ The value that MongoDB creates for the `_id` is guaranteed to be _globally uniqu
 In this lesson, we are going to be working directly with MongoDB to create and modify data using the _Mongo Shell_ in a Terminal window.
 
 However, after this first look at MongoDB, you will be better off using _Mongoose_ that we're going to learn about next.
+
+<br>
+<br>
+
 
 ### The Mongo Shell
 
@@ -159,6 +160,9 @@ Let's switch to the `local` database: `> use local`
 
 Show the collections of the current database `> show collections`
 
+<br>
+
+
 ### Creating a new Database
 
 To create a new database in the Mongo Shell, we simply have to `use` the database.  Lets create a database named _myDB_:
@@ -166,6 +170,9 @@ To create a new database in the Mongo Shell, we simply have to `use` the databas
 ```
 > use myDB
 ```
+
+<br>
+
 
 ### Inserting Data into a Collection
 
@@ -190,6 +197,10 @@ To list all documents in a collection, we can use the _find_ method on the colle
 
 The argument is called a _query object_ and is used to specify criteria.  If we provide an empty query object, `find` will return all documents:
 
+<br>
+<br>
+
+
 ## Data Modeling - Intro
 
 ### Data Entities
@@ -197,6 +208,8 @@ The argument is called a _query object_ and is used to specify criteria.  If we 
 A **data entity** represents a certain _type_ of data in an application.
 
 Examples include:  **User**, **Account**, **Post**, **Comment**, etc.
+
+<br>
 
 ### Relationships
 
@@ -210,6 +223,8 @@ There is also a less common **one-to-one** relationship. For example, _A User ha
 
 You will be asked to model the relationships as part the planning for your CRUD projects.  Here's a [link](https://www.lucidchart.com/pages/er-diagrams?a=0) that talks more about data relationships and how to create what's called an Entity Relationship Diagram (ERD).
 
+<br>
+
 ### Database Implementation
 
 ##### SQL Databases
@@ -217,6 +232,7 @@ You will be asked to model the relationships as part the planning for your CRUD 
 In SQL Databases, by design, there would be a **table** for each _data entity_.
 
 Related data is _joined_ together using SQL queries.
+<br>
 
 ##### MongoDB
 
@@ -225,6 +241,10 @@ In MongoDB, unlike with SQL tables, there might not be a **collection** for ever
 Unlike in SQL, there's no requirement to break different _entity types_ into separate **collections**.
 
 The reason is that some _entities_ are better off being **embedded** with its parent document instead, for example, _comments_ that belong to a _post_. It would not make sense to have to query a separate **comments** collection to obtain the comments for a given post...
+
+<br>
+<br>
+
 
 ## Data Modeling in MongoDB
 
@@ -235,6 +255,8 @@ There are two ways to model related data in MongoDB:
 2. Using **referencing**, where a document contains just the related document's `ObjectId`.
 
 Both approaches can be used simultaneously in the same document.
+
+<br>
 
 ### Embedded Documents
 
@@ -265,6 +287,8 @@ In a relational database, those contacts would **have** to be in a separate tabl
 Embedding data is more efficient than referencing data because it takes extra queries to fetch related data.
 
 FYI, when we use Mongoose, even those subdocuments will automatically have their own `_id`.
+
+<br>
 
 ### Referencing Documents (linking)
 
@@ -306,11 +330,15 @@ As you can see, the related _contacts_ are separate documents.
 
 We would have to make separate queries to get to that data, although, Mongoose can do this automatically using the `populate` method.
 
+<br>
+
 ### Which Document Should Hold the "Reference"?
 
 When referencing data in MongoDB, you can hold the `ObjectId` in either document or both!
 
 The decision depends upon the design and functionality of your application and it's not always clear-cut.
+
+<br>
 
 ### If Embedding is More Efficient, Why Reference at All?
 
@@ -321,6 +349,10 @@ The decision depends upon the design and functionality of your application and i
 - If it makes sense for your application. For example, if you wanted to view all _posts_ on your landing page, regardless of the user that posted them, it would certainly take more effort to extract the _posts_ from each user if they were embedded. However, it would be gravy to get the _posts_ from their own collection.
 
 For more details regarding data modeling in MongoDB, start with [this section of mongoDB's documentation ](http://docs.mongodb.org/manual/core/data-modeling-introduction/) or this [hour long YouTube video](https://www.youtube.com/watch?v=PIWVFUtBV1Q)
+
+<br>
+<br>
+
 
 ## References
 

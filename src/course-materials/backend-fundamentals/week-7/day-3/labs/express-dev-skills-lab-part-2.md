@@ -20,7 +20,10 @@ to perform **Create**, **Update** & **Delete** data operations in an Express app
 
 This lab builds upon the `express-dev-skills` project you created in the _My Dev Skills - Part 1_ lab where the **Read** data operation was implemented.
 
-##### This Lab is a Deliverable
+#### This Lab is a Deliverable
+
+<br>
+<br>
 
 ## Exercises
 
@@ -38,11 +41,17 @@ Note: All routes should follow those described in the [RESTful/Resourceful routi
 
 - Be sure to install, require & mount the `method-override` middleware.
 
+<br>
+<br>
+
 ## Bonus Exercises
 
 1. On the **show** view, display an _Edit Skill_ link that when clicked, displays an **edit** view that displays a form for editing that Dev Skill.
 
 2. When the edit Dev Skill form is submitted, the skill should be updated in the "database" and redirect the user back to the **show** view.
+
+<br>
+<br>
 
 ##### Hints
 
