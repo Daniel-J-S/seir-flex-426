@@ -17,6 +17,9 @@ Now it's time to practice by doing the very same thing, but for a different data
 
 ##### This lab, combined with Part 2, is a Deliverable
 
+<br>
+<br>
+
 ## Exercises
 
 The goal of the lab is to put in a rep doing everything that you did during the _Express - Routers & Controllers_ lesson:
@@ -29,6 +32,8 @@ The goal of the lab is to put in a rep doing everything that you did during the 
 
 - Implement **show** functionality for the `skills` resource
 
+<br>
+<br>
 
 ## Hints
 
@@ -42,6 +47,8 @@ The goal of the lab is to put in a rep doing everything that you did during the 
 
 - Use [RESTful routes](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0)
 
+<br>
+<br>
 
 ## Bonuses
 

@@ -33,42 +33,40 @@ type: "lecture"
 
 > The goal for this lesson is to rebuild the todos app we created for the last lesson.
 
+<br>
+<br>
 
 #### Full Setup Walkthrough
 
-For today's setup, we'll create a new express project name `express-todos` inside of our `practice` directory inside of our `w07` directory. 
+For today's setup, we'll create a new express project name `express-todos` 
 
+- Create a `server.js` file inside of `express-todos`
 
-So, your directory structure should look like this...
+- Use the `npm init` command to generate your `package.json`
 
-```bash
-w07/
-  practice/
-    express-todos/
-```
+<br>
+<br>
 
-- Once you have your directories in place, we'll prepare it to be used with `node/npm` using the `npm init` command
-
-- Choose the name `server.js` for your entry point, and then accept all the defaults
-
-- Then create `server.js` inside of `express-todos`
-
-
+**This is what your directory structure should look like**
 
 ```bash
-w07/
-  practice/
-    express-todos/
-      package.json
-      server.js
+express-todos/
+  package.json
+  server.js
 ```
 
+<br>
+<br>
 
 - Now, let's install express...
 
 ```bash 
   npm i express
 ```
+
+
+<br>
+<br>
 
 - let's set up our initial boilerplate code...
 
@@ -116,6 +114,9 @@ app.listen(3000, function() {
   touch views/index.ejs
 ```
 
+<br>
+<br>
+
 - Let's add this boilerplate to `index.ejs`
 
 ```html
@@ -133,7 +134,10 @@ app.listen(3000, function() {
 </html>
 ```
 
-- This is what our project's directory structure should look like
+<br>
+<br>
+
+- Let's check our project directory structure once more
 
 ```bash
 express-todos/
@@ -145,7 +149,8 @@ express-todos/
   server.js
 ```
 
-
+<br>
+<br>
 
 #### Starting the Application
 
@@ -165,6 +170,8 @@ $ nodemon
 [nodemon] starting `node server.js`
 Express is listening on port 3000
 ```
+<br>
+<br>
 
 #### MVC Code Organization
 
@@ -176,8 +183,10 @@ Express is listening on port 3000
 
 - Here's what the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes) docs have to say on the matter.
 
-#### MVC Code Organization
+<br>
+<br>
 
+#### MVC Code Organization
 
 - However, since MVC is a proven pattern that works, most Express developers use MVC to organize their Express applications - so we will too.
 
@@ -189,9 +198,10 @@ Express is listening on port 3000
 	$ mkdir controllers models
 	```
 
+<br>
+<br>
 
 #### Best Practice Routing
-
 
 - For our first express app, we used the `app.get` method to define routes.
 
@@ -222,10 +232,12 @@ Express is listening on port 3000
   touch routes/index.js
 ```
 
+<br>
+<br>
+
 #### The Express <em>Router</em> Object
 
 - Now that we've added our `routes` directory and `index.js` file inside of it, we'll need require `express`, set up our `router`, which get's referenced off the `express` module. 
-
 - We'll also need to export our router's functionality so we can mount it to `server.js`.
 
 ```js
@@ -236,6 +248,10 @@ const router = express.Router();
 
 module.exports = router;
 ```
+
+<br>
+<br>
+
 
 - Now, we're going to remove this route handler from `server.js` and place it inside of `routes/index.js` with a slight refactoring.
 
@@ -253,6 +269,9 @@ module.exports = router;
 
 - Notice how routes are defined on our `router` object is using a `get` method just like we did with `app.get()`?
 
+<br>
+<br>
+
 - Next, we'll `require` our router module inside of `server.js`
 
 ```js
@@ -265,6 +284,8 @@ const indexRouter = require('./routes/index');
 const app = express();
 ```
 
+<br>
+<br>
 
 - Lastly, we'll mount our router to the middleware pipeline with the `app.use` method.
 
@@ -289,6 +310,8 @@ app.use('/', indexRouter);
 	```
 	**What is the actual path of the route?**
 
+<br>
+<br>
 
 - Another example, let's say you have a `router` object that defines a route like this:
 
@@ -303,6 +326,8 @@ app.use('/', indexRouter);
 	```
 	**What is the actual path of that route?**
 
+<br>
+<br>
 
 #### To-Do Redo
 
@@ -312,6 +337,9 @@ app.use('/', indexRouter);
 
 - Finally, after learning about how to organize code into _controllers_, well, that's what we'll do
 
+
+<br>
+<br>
 
 #### To-Do Refactor - <span style="text-transform:lowercase">index.ejs</span>
 
@@ -328,8 +356,8 @@ app.use('/', indexRouter);
 - Update the title to: `<title>Express To-Do</title>`
 
 
-#### To-Do Refactor - <span style="text-transform:lowercase">index.ejs</span>
-
+<br>
+<br>
 
 - Here's the EJS from our last lesson, but with a little extra formatting using a ternary statement to indicate when a todo item is `done`
 
@@ -346,9 +374,10 @@ app.use('/', indexRouter);
 	   </ul>
 	```
 
+<br>
+<br>
 
 #### To-Do Refactor - Todo Model
-
 
 - Now let's create and copy over our model.
 
@@ -379,6 +408,8 @@ app.use('/', indexRouter);
 	}
 	```
 
+<br>
+<br>
 
 #### To-Do Refactor - Routing
 
@@ -389,7 +420,11 @@ app.use('/', indexRouter);
 touch routes/todos.js
 ```
 
-##### The set up for the todos router module will be a practice activity for you to try and create on your own (3 min).
+
+<br>
+<br>
+
+#### The set up for the todos router module will be a practice activity for you to try and create on your own (3 min).
 
 
 - Next, we'll require the router module inside of `server.js` and then mount it to the request pipeline.
@@ -429,7 +464,6 @@ touch routes/todos.js
 	  });
 	});
 	```
-
 - **Why is it only a forward slash?**
 
 - Notice how we're calling `todoDb.getAll()` - this will currently cause an error...
@@ -491,6 +525,9 @@ ReferenceError: app is not defined
 ```
 
 - On to **controllers**...
+
+<br>
+<br>
 
 #### Controllers
 
@@ -566,6 +603,8 @@ ReferenceError: app is not defined
 
 - Refresh and everything should be hunky-dory!
 
+<br>
+<br>
 
 #### MVC Organization Revisited
 
@@ -580,6 +619,8 @@ ReferenceError: app is not defined
 
 - Note that resource names are pluralized except for the model.
 
+<br>
+<br>
 
 #### URL/Route Parameters
 
@@ -603,7 +644,8 @@ ReferenceError: app is not defined
 
 - Let's add the functionality to view a single To Do...
 
-
+<br>
+<br>
 
 #### Adding Show a To-Do Functionality
 
@@ -716,11 +758,14 @@ ReferenceError: app is not defined
 
 - Refresh - BAM!
 
+<br>
+<br>
 
 ### Routing Review
-
-
 #### Use This Routing Guide and feel free to quiz yourself as necessary...
+
+<br>
+<br>
 
 # RESTful Routes to CRUD Mapping
 
@@ -734,12 +779,21 @@ POST    | /posts          | Create a new _post_ | create | Yes
 PUT/PATCH     | /posts/:id      | Update specified _post_  | update | Yes
 DELETE  | /posts/:id      | Delete specified _post_ | delete | No
 
+
+<br>
+<br>
+
+
 # Additional Common Non-RESTful (CRUD-less) Routes
 
 HTTP Method<br>(Verb) | URI (endpoint)  | Purpose | Typical<br>Controller Action |Has Data<br>Payload
 -----------|------------------|------------------|:---:|:---:
 GET     | /posts/new          | Return view (form) to add a new _post_ | new | No
 GET     | /posts/:id/edit     | Return view (form) to edit a _post_ | edit | No
+
+<br>
+<br>
+
 
 # Routing for Nested Resources (One:Many & Many:Many Relationships)
 
@@ -756,6 +810,8 @@ DELETE  | /comments/:id      | Delete specified _comment_ | "Shallow" route / No
 you do not need the `id` of the _post_ route to delete a specific _comment_ - you only
 need that particular _comment's_ `id`.
 
+<br>
+<br>
 
 #### Routing Review
 
@@ -787,5 +843,6 @@ need that particular _comment's_ `id`.
 
 ## References
 
+[Official Documentation | Express.js](https://expressjs.com/)
 
 <p style="text-align:left"><em>Note: When searching for info on the Express framework, be sure that you search for the info for version 4 only - there were significant changes made from earlier versions.</em> Also note that version 5 is currently in alpha although all of the code we've written should be compatible.</p>
