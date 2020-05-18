@@ -64,7 +64,7 @@ $ npm init -y
 <br>
 <br>
 
-#### The Three Fundamental Capabilities ofWeb Application Frameworks 
+#### The Three Fundamental Capabilities of Web Application Frameworks 
 
 
 - Web Application Frameworks have three capabilities fundamental to writing a back-end web application:
