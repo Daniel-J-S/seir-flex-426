@@ -164,7 +164,7 @@ const app = express();
 
 // Mount routes
 app.get('/', function(req, res) {
-  	res.send('<h1>Hello World</h1>');
+  	res.send('<h1>Hello World!</h1>');
 });
 
 // Tell the app to listen on port 3000
