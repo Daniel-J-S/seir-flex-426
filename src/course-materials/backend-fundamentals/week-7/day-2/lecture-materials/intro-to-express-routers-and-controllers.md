@@ -299,15 +299,15 @@ app.use('/', indexRouter);
 
 - Let's say you have a `router` object inside of `routes/todos.js` that defines a route like this:
 
-	```js
-	router.get('/', function(req, res) {...
-	```
-	
-	and mounted like this:
-	
-	```js
-	app.use('/todos', todoRouter);
-	```
+```js
+router.get('/', function(req, res) {...
+```
+
+and mounted like this:
+
+```js
+app.use('/todos', todoRouter);
+```
 	**What is the actual path of the route?**
 
 <br>
@@ -315,15 +315,15 @@ app.use('/', indexRouter);
 
 - Another example, let's say you have a `router` object that defines a route like this:
 
-	```js
-	router.get('/today', function(req, res) {...
-	```
-	
-	and mounted like this:
-	
-	```js
-	app.use('/calendar', calendarRouter);
-	```
+```js
+router.get('/today', function(req, res) {...
+```
+
+and mounted like this:
+
+```js
+app.use('/calendar', calendarRouter);
+```
 	**What is the actual path of that route?**
 
 <br>
@@ -346,10 +346,10 @@ app.use('/', indexRouter);
 
 - Create **todos/index.ejs**:
 
-	```shell
-	$ mkdir views/todos
-	$ touch views/todos/index.ejs
-	```
+```shell
+$ mkdir views/todos
+$ touch views/todos/index.ejs
+```
 
 - Add the HTML boilerplate.
 
@@ -361,18 +361,18 @@ app.use('/', indexRouter);
 
 - Here's the EJS from our last lesson, but with a little extra formatting using a ternary statement to indicate when a todo item is `done`
 
-	```html
-	   <h1>Here Are Your Todos</h1>
-	   <ul>
-	     <% todos.forEach(function(t) { %>
-	       <li>
-	         <%= t.todo %>
-	           - 
-	         <%= t.done ? 'done' : 'not done' %>
-	       </li>
-	     <% }); %>
-	   </ul>
-	```
+```html
+  <h1>Here Are Your Todos</h1>
+  <ul>
+    <% todos.forEach(function(t) { %>
+      <li>
+        <%= t.todo %>
+          - 
+        <%= t.done ? 'done' : 'not done' %>
+      </li>
+    <% }); %>
+  </ul>
+```
 
 <br>
 <br>
@@ -383,30 +383,30 @@ app.use('/', indexRouter);
 
 - Create **models/todo.js**:
 
-	```shell
-	$ touch models/todo.js 
-	```
+```shell
+$ touch models/todo.js 
+```
 
 - Note that modules for _models_ should be named singularly.
 
 
 - Here's the code from our last lesson, just slightly refactored:
 
-	```js
-	const todos = [
-	  {todo: 'Feed Dogs', done: true},
-	  {todo: 'Learn Express', done: false},
-	  {todo: 'Buy Milk', done: false}
-	];
-	
-	module.exports = {
-	  getAll
-	};
-	
-	function getAll() {
-	  return todos;
-	}
-	```
+```js
+module.exports = {
+ getAll
+};
+
+const todos = [
+ {todo: 'Feed Dogs', done: true},
+ {todo: 'Learn Express', done: false},
+ {todo: 'Buy Milk', done: false}
+];
+
+function getAll() {
+ return todos;
+}
+```
 
 <br>
 <br>
@@ -429,61 +429,61 @@ touch routes/todos.js
 
 - Next, we'll require the router module inside of `server.js` and then mount it to the request pipeline.
 
-	Require it...
-	```js
-	const todosRouter = require('./routes/todos');
-	```
+Require it...
+```js
+const todosRouter = require('./routes/todos');
+```
 
-	Then mount it...
-	
-	```js
-	app.use('/todos', todosRouter);
-	```
+Then mount it...
+
+```js
+app.use('/todos', todosRouter);
+```
 
 
 - The following is the **index** route code for the to-dos we used our last lesson.
 
 - Copy it into **routes/todos.js** below the existing route and then we'll refactor it:
 
-	```js
-	
-	app.get('/todos', function(req, res) {
-	  res.render('todos/index', {
-	    todos: todoDb.getAll()
-	  });
-	});
-	```
+```js
+
+app.get('/todos', function(req, res) {
+ res.render('todos/index', {
+   todos: todoDb.getAll()
+ });
+});
+```
 
 - Now for the refactor...
 
-	```js
-	
-	app.get('/', function(req, res) {
-	  res.render('todos/index', {
-	    todos: todoDb.getAll()
-	  });
-	});
-	```
+```js
+
+app.get('/', function(req, res) {
+ res.render('todos/index', {
+   todos: todoDb.getAll()
+ });
+});
+```
 - **Why is it only a forward slash?**
 
 - Notice how we're calling `todoDb.getAll()` - this will currently cause an error...
 
 - We first need to require the Todo model as follows:
 
-	```js
-	const router = express.Router();
-	// require the Todo model
-	const Todo = require('../models/todo');
-	```
+```js
+const router = express.Router();
+// require the Todo model
+const Todo = require('../models/todo');
+```
 
 - It's convention to name model variables singularly and with upper-camel-casing.
 
 
 - With the model required, **what do we need to change on this line of code?**
 
-	```js
-	todos: todoDb.getAll()
-	```
+```js
+todos: todoDb.getAll()
+```
 
 - Let's do it!
 
@@ -550,13 +550,13 @@ ReferenceError: app is not defined
 
 - Let's copy **just the function part** of the following route definition:
 
-	```js
-	router.get('/', function(req, res) {
-	  res.render('todos/index', {
-	    todos: Todo.getAll()
-	  });
-	});
-	```
+```js
+router.get('/', function(req, res) {
+ res.render('todos/index', {
+   todos: Todo.getAll()
+ });
+});
+```
 	
 - Paste that function inside of **controllers/todos.js** and give it the name of `index`...
 
@@ -564,17 +564,17 @@ ReferenceError: app is not defined
 
 - The pasted and refactored code should look like:
 
-	```js
-	module.exports = {
-	  index
-	};
-	
-	function index(req, res) {
-	  res.render('todos/index', {
-	    todos: Todo.getAll()
-	  });
-	}
-	```
+```js
+module.exports = {
+ index
+};
+
+function index(req, res) {
+ res.render('todos/index', {
+   todos: Todo.getAll()
+ });
+}
+```
 
 - The above is a good approach to follow when it comes to exporting functionality.
 
@@ -583,22 +583,22 @@ ReferenceError: app is not defined
 
 - But, the controller does! Let's go cut it from **routes/todos.js** and paste it at the top of **controllers/todos.js**:
 
-	```js
-	const Todo = require('../models/todo');
-	```
+```js
+const Todo = require('../models/todo');
+```
 
 
 - Back in **routes/todos.js**, we need to require the controller in order to have access to its actions (methods):
 
-	```js
-	const todosCtrl = require('../controllers/todos');
-	```
+```js
+const todosCtrl = require('../controllers/todos');
+```
 
 - Now, the refactor:
 
-	```js
-	router.get('/', todosCtrl.index);
-	```
+```js
+router.get('/', todosCtrl.index);
+```
 	How clean is that?!?!
 
 - Refresh and everything should be hunky-dory!
@@ -655,20 +655,20 @@ ReferenceError: app is not defined
 
 - According to REST, the "proper" route to display asingle To Do would be:
 
-	```shell
-	GET /todos/:id
-	```
+```shell
+GET /todos/:id
+```
 
 - With the proper route identified, the next step is to create some UI that will send a request that matches that route...
 
 
 - Let's refactor **todos/index.ejs** as follows:
 
-	```html
-	    <% todos.forEach(function(t, idx) { %>
-	      <li>
-	        <a href="/todos/<%= idx %>"><%= t.todo %></a>
-	```
+```html
+   <% todos.forEach(function(t, idx) { %>
+     <li>
+       <a href="/todos/<%= idx %>"><%= t.todo %></a>
+```
 	Don't forget to add the `idx` parameter in the callback function
 
 
@@ -686,45 +686,45 @@ ReferenceError: app is not defined
 
 - Add the **show** route below the **index** route as follows:
 
-	```js
-	router.get('/', todosCtrl.index);
-	router.get('/:id', todosCtrl.show);
-	```
-	**The actual path is `/todos/:id` - right?**
+```js
+router.get('/', todosCtrl.index);
+router.get('/:id', todosCtrl.show);
+```
+**The actual path is `/todos/:id` - right?**
 
 - Saving will crash the app because there is no `todosCtrl.show` being exported from the controller...
 
 
 - Add the `show` action inside of **controllers/todos.js** and don't forget to export it!
 
-	```js
-	function show(req, res) {
-	  res.render('todos/show', {
-	    todo: Todo.getOne(req.params.id),
-	    todoNum: parseInt(req.params.id) + 1
-	  });
-	}
-	```
+```js
+function show(req, res) {
+ res.render('todos/show', {
+   todo: Todo.getOne(req.params.id),
+   todoNum: parseInt(req.params.id) + 1
+ });
+}
+```
 
 - Express's `req.params` object will have a property for each **route parameter** defined, for example...
 
 
 - A route defined like this:
 
-	```js
-	router.get('/category/:catName/page/:pageNo', ...);
-	```
-	and a link like this:
-	
-	```html
-	<a href="/category/socks/page/2">Next Page</a>
-	```
-	would have a `req.params` available in the controller of:
-	
-	```js
-	console.log(req.params.catName) //=> "socks"
-	console.log(req.params.pageNo) //=> "2"
-	```
+```js
+router.get('/category/:catName/page/:pageNo', ...);
+```
+and a link like this:
+
+```html
+<a href="/category/socks/page/2">Next Page</a>
+```
+would have a `req.params` available in the controller of:
+
+```js
+console.log(req.params.catName) //=> "socks"
+console.log(req.params.pageNo) //=> "2"
+```
 
 - Note that all route param values are strings.
 
@@ -733,28 +733,40 @@ ReferenceError: app is not defined
 
 - Let's fix that error! In **models/todo.js**:
 
-	```js
-	module.exports = {
-	  getAll,
-	  getOne
-	};
-	
-	function getOne(id) {
-	  return todos[id];
-	}
-	```
+```js
+module.exports = {
+ getAll,
+ getOne
+};
+
+const todos = [
+ {todo: 'Feed Dogs', done: true},
+ {todo: 'Learn Express', done: false},
+ {todo: 'Buy Milk', done: false}
+];
+
+function getAll(id) {
+ return todos;
+}
+
+// Here's our latest function for this module
+function getOne(id) {
+ return todos[id];
+}
+
+```
 
 - Refresh and of course there's an error because we haven't created  the **views/todos/show.ejs** that we're trying to render.
 
 - Copy the boilerplate from **views/todos/index.ejs** and then add this inside the body element:
 
-	```html
-	<a href="/">Home</a>
-	<a href="/todos">All Todos</a>
-	<h1>Todo #<%= todoNum %></h1>
-	<h3><%= todo.todo %></h3>
-	<h3>Complete: <%= todo.done ? 'Yes' : 'No' %></h3>
-	```
+```html
+<a href="/">Home</a>
+<a href="/todos">All Todos</a>
+<h1>Todo #<%= todoNum %></h1>
+<h3><%= todo.todo %></h3>
+<h3>Complete: <%= todo.done ? 'Yes' : 'No' %></h3>
+```
 
 - Refresh - BAM!
 

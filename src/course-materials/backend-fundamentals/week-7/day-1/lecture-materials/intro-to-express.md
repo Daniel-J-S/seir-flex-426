@@ -446,17 +446,20 @@ $ touch data/todo-db.js
 - In the spirit of saving time, copy/paste the following inside of `todo-db.js`, then we'll review the code:
 
 ```js
+module.exports = {
+  getAll
+};
+
 const todos = [
   {text: 'Feed Dogs', done: true},
   {text: 'Learn Express', done: false},
   {text: 'Buy Milk', done: false}
 ];
 	
-module.exports = {
-  getAll: function() {
+
+function getAll() {
 	return todos;
-  }
-};
+}
 ```
 
 
@@ -539,11 +542,11 @@ $ touch views/todos/index.ejs
 
 - Refactor the root route as follows:
 
-	```js
-	app.get('/', function(req, res) {
-	  res.redirect('/home');
-	});
-	```
+```js
+app.get('/', function(req, res) {
+ res.redirect('/home');
+});
+```
 
 - Redirects tell the browser to make a new `GET` request to the provided `path`.
 

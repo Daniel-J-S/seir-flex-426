@@ -58,9 +58,9 @@ type: "lecture"
 
 - A middleware is simply a function with the following signature:
 
-	```js
-	function(req, res, next) {}
-	```
+```js
+function(req, res, next) {}
+```
 
 - As you can see, middleware have access to the _request_ (`req`) and _response_ (`res`) objects - this allows middleware to modify them in anyway they see fit.
 
@@ -78,15 +78,15 @@ type: "lecture"
 
 - Open **server.js** and add this "do nothing" middleware:
 
-	```js
-	app.set('view engine', 'ejs');
-	
-	// add middleware below the above line of code
-	app.use(function(req, res, next) {
-	  console.log('Hello Blade Runner!');
-	  next();
-	});
-	```
+```js
+app.set('view engine', 'ejs');
+
+// add middleware below the above line of code
+app.use(function(req, res, next) {
+ console.log('Hello Blade Runner!');
+ next();
+});
+```
 - Type `nodemon` to start the server, browse to `localhost:3000`, and check terminal. 
 
 <br>
@@ -100,14 +100,14 @@ type: "lecture"
 
 - Let's add a line of code that modifies the `req` object: 
 
-	```js
-	app.use(function(req, res, next) {
-	  console.log('Hello Blade Runner!');
-	  // Add a time property to the req object
-	  req.time = new Date().toLocaleTimeString();
-	  next();
-	});
-	```
+```js
+app.use(function(req, res, next) {
+ console.log('Hello Blade Runner!');
+ // Add a time property to the req object
+ req.time = new Date().toLocaleTimeString();
+ next();
+});
+```
 
 - Now let's pass this info to the **todos/index.ejs** view...
 
@@ -116,21 +116,21 @@ type: "lecture"
 
 - Let's update the `index` action in **controllers/todos.js** so that it passes `req.time`:
 
-	```js
-	function index(req, res) {
-	  res.render('todos/index', {
-	    todos: Todo.getAll(),
-	    time: req.time  // add this line
-	  });
-	}
-	```
+```js
+function index(req, res) {
+ res.render('todos/index', {
+   todos: Todo.getAll(),
+   time: req.time  // add this line
+ });
+}
+```
 
 
 - Now let's render the time in **todos/index.ejs** by updating the `<h1>` as follows:
 
-	```html
-	<h1>Todos as of <%= time %></h1>
-	```
+```html
+<h1>Todos as of <%= time %></h1>
+```
 
 - Refresh!
 
@@ -139,16 +139,16 @@ type: "lecture"
 
 - In **server.js**, let's move our custom middleware below where the routers are being mounted:
 
-	```js
-	app.use('/', indexRouter);
-	app.use('/todos', todosRouter);
-	
-	app.use(function(req, res, next) {
-	  console.log('Hello SEI!');
-	  req.time = new Date().toLocaleTimeString();
-	  next();
-	});
-	```
+```js
+app.use('/', indexRouter);
+app.use('/todos', todosRouter);
+
+app.use(function(req, res, next) {
+ console.log('Hello SEI!');
+ req.time = new Date().toLocaleTimeString();
+ next();
+});
+```
 
 - Refresh shows that it no longer works :(
 
@@ -192,14 +192,14 @@ app.use(morgan('dev'));
 ##### This is what our "Middleware Stack" should look like by the end of this lesson
 ```js
 
-	// Mount Middleware (app.use)
-	app.use(morgan('dev'));
-	app.use(express.static(path.join(__dirname + '/public')));
-	app.use(express.json());
-	app.use(express.urlencoded({ extended: false }));
+// Mount Middleware (app.use)
+app.use(morgan('dev'));
+app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-	app.use('/', indexRouter);
-	app.use('/todos', todoRouter);
+app.use('/', indexRouter);
+app.use('/todos', todoRouter);
 ```
 
 For our static assets, we'll create a `public` folder at the root of our project and the place a `css`, `js`, and `images` subdirectory inside of it (we can also create a `style.css` and `script.js` file inside the appropriate sub-directories as well). 
@@ -228,29 +228,29 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Checking the [Resourceful Routing for CRUD Operations in Web Applications Chart](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0), we find that the proper route is:
 
-	```shell
-	GET /todos/new
-	```
+```shell
+GET /todos/new
+```
 
 
 - Next step is to add a link in **views/todos/index.ejs** that will invoke this route:
 
-	```html
-	...
-	  </ul>
-	  <a href="/todos/new">Add To-Do</a>
-	</body>
-	```
+```html
+...
+ </ul>
+ <a href="/todos/new">Add To-Do</a>
+</body>
+```
 	
 - Step 2 is done. On to step 3 - defining the route on the server...
 
 - Let's add the `new` route in **routes/todos.js** as follows:
 
-	```js
-	router.get('/', todosCtrl.index);
-	router.get('/new', todosCtrl.new);
-	router.get('/:id', todosCtrl.show);
-	```
+```js
+router.get('/', todosCtrl.index);
+router.get('/new', todosCtrl.new);
+router.get('/:id', todosCtrl.show);
+```
 
 - Why must the `new` route be defined before the `show` route?
 
@@ -258,17 +258,20 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - In **controllers/todos.js**:
 
-	```js
-	module.exports = {
-	  index,
-	  show,
-	  new: newTodo
-	};
-	
-	function newTodo(req, res) {
-	  res.render('todos/new');
-	}
-	```
+```js
+module.exports = {
+ index,
+ show,
+ new: newTodo
+};
+
+
+function newTodo(req, res) {
+ res.render('todos/new');
+}
+
+// original code below...
+```
 
 - Note that you cannot create a function using a JS _reserved_ word like `new`.
 
@@ -276,15 +279,15 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Create **views/todos/new.ejs**, copy over the boilerplate from another view, then put this good stuff in there:
 
-	```html
-	<body>
-	  <h1>New Todo</h1>
-	  <form action="/todos" method="POST" autocomplete="off">
-	    <input type="text" name="todo">
-	    <button type="submit">Save Todo</button>
-	  </form>
-	</body>
-	```
+```html
+<body>
+ <h1>New Todo</h1>
+ <form action="/todos" method="POST" autocomplete="off">
+   <input type="text" name="todo">
+   <button type="submit">Save Todo</button>
+ </form>
+</body>
+```
 
 <br>
 <br>
@@ -302,9 +305,9 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - If you remember the routing chart from our last lesson, we can see the proper (RESTful) route is...
 
-	```shell
-	POST /todos
-	```
+```shell
+POST /todos
+```
 
 - That's why the form's attributes have been set to:
 	- `action="/todos"`
@@ -323,10 +326,10 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - In **routes/todos.js**:
 
-	```js
-	router.get('/:id', todosCtrl.show);
-	router.post('/', todosCtrl.create);  // add this route
-	```
+```js
+router.get('/:id', todosCtrl.show);
+router.post('/', todosCtrl.create);  // add this route
+```
 
 - Yay! Our first non-`GET` route!
 
@@ -344,50 +347,58 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - In **controllers/todos.js**:
 
-	```js
-	  ...
-	  create
-	};
-	
-	function create(req, res) {
-	  console.log(req.body);
-	  req.body.done = false;
-	  Todo.create(req.body);
-	  res.redirect('/todos');
-	}
-	```
+```js
+  	  ...
+  	  create
+  	};
+  	
+  	function create(req, res) {
+  	  console.log(req.body);
+  	  req.body.done = false;
+  	  Todo.create(req.body);
+  	  res.redirect('/todos');
+  	}
+```
 
 - Temporarily comment out the `Todo.create(req.body);` line so that we can check out what gets logged out...
 
 
 - `req.body` is courtesy of this middleware in **server.js**:
 	
-	```js
-	app.use(express.urlencoded({ extended: false }));
-	```
+```js
+app.use(express.urlencoded({ extended: false }));
+```
 
 - The properties on `req.body` will always match the values of the `<input>`'s `name` attributes:
 
-	```html
-	<input type="text" name="todo">
-	```
+```html
+<input type="text" name="todo">
+```
 
 
 - We already did Step 5 with the `res.redirect`.
 
 - All we need is that `create` in **models/todo.js**:
 
-	```js
-	module.exports = {
-	  getAll,
-	  getOne,
-	  create
-	};
-	
-	function create(todo) {
-	  todos.push(todo);
-	}
-	```
+```js
+module.exports = {
+ getAll,
+ getOne,
+ create
+};
+
+const todos = [
+   {todo: 'Feed Dogs', done: true},
+   {todo: 'Learn Express', done: false},
+   {todo: 'Buy Milk', done: false}
+  ];
+
+function create(todo) {
+ todos.push(todo);
+}
+
+// Original code below
+```
 
 - Test it out!
 
@@ -419,17 +430,17 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Require it below `logger` in **server.js**:
 
-	```js
-	var logger = require('morgan');
-	var methodOverride = require('method-override');
-	```
+```js
+const logger = require('morgan');
+const methodOverride = require('method-override');
+```
 
 - Now let's add `method-override` to the middleware pipeline:
 
-	```js
-	app.use(express.static(path.join(__dirname, 'public')));
-	app.use(methodOverride('_method'));  // add this
-	```
+```js
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));  // add this
+```
 
 - We are using the [Query String](https://en.wikipedia.org/wiki/Query_string) approach for `method-override` as documented [here](https://www.npmjs.com/package/method-override#override-using-a-query-value).
 
@@ -447,9 +458,9 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - The RESTful route is:
 
-	```shell
-	DELETE /todos/:id
-	```
+```shell
+DELETE /todos/:id
+```
 
 
 - Same process:
@@ -461,34 +472,34 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Therefore, we'll use a `<form>` for the UI in **views/todos/index.ejs**:
 
-	```html
-    <% todos.forEach(function(t, idx) { %>
-      <li>
-        <form action="/todos/<%= idx %>?_method=DELETE"
-          class="delete-form" method="POST">
-          <button type="submit">X</button>
-        </form>
-	```
+```html
+  <% todos.forEach(function(t, idx) { %>
+    <li>
+      <form action="/todos/<%= idx %>?_method=DELETE"
+        class="delete-form" method="POST">
+        <button type="submit">X</button>
+      </form>
+```
 
 - The `?_method=DELETE` is the query string.
 
 
 - Let's some styling in **public/css/style.css**:
 
-	```css
-	.delete-form {
-	  display: inline-block;
-	  margin-right: 10px;
-	}
-	
-	.delete-form button {
-	  color: red;
-	}
-	
-	li {
-	  list-style: none;
-	}
-	```
+```css
+.delete-form {
+ display: inline-block;
+ margin-right: 10px;
+}
+
+.delete-form button {
+ color: red;
+}
+
+li {
+ list-style: none;
+}
+```
 
 - Refresh and use DevTools to ensure the links look correct.
 
@@ -503,10 +514,10 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - In **routes/todos.js**:
 
-	```js
-	router.post('/', todosCtrl.create);
-	router.delete('/:id', todosCtrl.delete);
-	```
+```js
+router.post('/', todosCtrl.create);
+router.delete('/:id', todosCtrl.delete);
+```
 
 
 - Same process:
@@ -518,32 +529,40 @@ This is where our stylesheets, images and front-end javascript will live!
 
 - Similar to `newTodo`, we can't name a function `delete`, so...
 
-	```js
-	  create,
-	  delete: deleteTodo
-	};
-	
-	function deleteTodo(req, res) {
-	  Todo.deleteOne(req.params.id);
-	  res.redirect('/todos');
-	}
-	```
+```js
+ create,
+ delete: deleteTodo
+};
+
+function deleteTodo(req, res) {
+ Todo.deleteOne(req.params.id);
+ res.redirect('/todos');
+}
+```
 
 
 - All that's left is to add the `deleteOne` method to the `Todo` model:
 
-	```js
-	module.exports = {
-	  getAll,
-	  getOne,
-	  create,
-	  deleteOne
-	};
-	
-	function deleteOne(id) {
-	  todos.splice(id, 1);
-	}
-	```
+```js
+module.exports = {
+ getAll,
+ getOne,
+ create,
+ deleteOne
+};
+
+const todos = [
+ {todo: 'Feed Dogs', done: true},
+ {todo: 'Learn Express', done: false},
+ {todo: 'Buy Milk', done: false}
+];
+
+function deleteOne(id) {
+ todos.splice(id, 1);
+}
+
+// Original code below
+```
 
 - Does it work?  Of course it does!
 
