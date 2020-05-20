@@ -642,7 +642,7 @@ router.get('/', todosCtrl.index);
 
 - Notice how we now have the following for the **_todos_ resource**:
 	- **models/todo.js**
-	- **views/todos** (directory)
+	- **views/todos/index.ejs** 
 	- **controllers/todos.js**
 	- **routes/todos.js**
 
