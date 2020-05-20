@@ -237,8 +237,9 @@ Express is listening on port 3000
 
 #### The Express <em>Router</em> Object
 
-- Now that we've added our `routes` directory and `index.js` file inside of it, we'll need require `express`, set up our `router`, which get's referenced off the `express` module. 
-- We'll also need to export our router's functionality so we can mount it to `server.js`.
+- Now that we've added our `routes` directory and `index.js` router module inside of it, we'll need to require `express`, to set up our `router` object.
+- This router object comes exported from the `express` module. 
+- We'll also need to export our index router's functionality so we can require and mount it to `server.js`.
 
 ```js
 const express = require('express');
