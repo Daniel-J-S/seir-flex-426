@@ -42,7 +42,7 @@ For today's setup, we'll create a new express project name `express-todos`
 
 - Create a `server.js` file inside of `express-todos`
 
-- Use the `npm init` command to generate your `package.json`
+- Use the `npm init -y` command to generate your `package.json`
 
 <br>
 <br>
@@ -92,7 +92,7 @@ app.get('/', function(req, res) {
 });
 
 
-// Tell the App to Listent on Port 3000
+// Tell the App to Listen on Port 3000
 app.listen(3000, function() {
     console.log('Express is listening on port 3000');
 });
