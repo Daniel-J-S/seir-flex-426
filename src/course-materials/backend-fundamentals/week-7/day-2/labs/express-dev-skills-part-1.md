@@ -42,7 +42,7 @@ The goal of the lab is to put in a rep doing everything that you did during the 
 - Following best-practice routing and MVC will result in the following modules for the `skills` ressource:
 	- **routes/skills.js**
 	- **models/skill.js**
-	- **views/skills**
+	- **views/skills/index.ejs**
 	- **controllers/skills.js**
 
 - Use [RESTful routes](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0)

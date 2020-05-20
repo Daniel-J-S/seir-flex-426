@@ -253,21 +253,49 @@ module.exports = router;
 <br>
 
 
-- Now, we're going to remove this route handler from `server.js` and place it inside of `routes/index.js` with a slight refactoring.
+- Now, we're going to remove route handler from `server.js` and place it inside of `routes/index.js`.
 
 ```js
 const express = require('express');
 const router = express.Router();
 
 
-router.get('/', function(req, res) {
+app.get('/', function(req, res) {
     res.render('index');
 });
 
 module.exports = router;
 ```
 
-- Notice how routes are defined on our `router` object.<br> We're using a `get` method just like we used inside of `server.js` with `app.get()`
+...but wait, there's a change that need to be made **does anybody see it?**
+
+<br>
+
+```bash
+app.get('/', function(req, res) {
+^
+
+ReferenceError: app is not defined
+```
+
+**Hint: What's that `app` object doing there?**
+
+<br>
+
+For router objects created by `express.Router()`, we can also call `.get()`
+
+
+```js
+const express = require('express');
+const router = express.Router();
+
+// refactored to router.get() instead of app.get()
+router.get('/', function(req, res) { 
+    res.render('index');
+});
+
+module.exports = router;
+```
 
 <br>
 <br>
@@ -428,77 +456,79 @@ touch routes/todos.js
 
 Here are some helpful steps to guide you...
 
-Require it...
-```js
-const todosRouter = require('./routes/todos');
+Inside of `./routes/todos.js` let's configure a basic router setup:
+
+```javascript
+const express = require('express');
+const router = express.Router();
+
+// note that we'll need to define routes here later (following this activity)
+
+module.exports = router;
 ```
 
-Then mount it...
+Require it inside of `server.js` ...
 
 ```js
-app.use('/todos', todosRouter);
+// Require modules
+const express = require('express');
+const indexRouter = require('./routes/index');
+const todosRouter = require('./routes/todos'); 
+
+```
+
+Then mount it inside of `server.js` ...
+
+```js
+// Mount routes
+app.use('/', indexRouter);
+app.use('/todos', todosRouter); 
 ```
 
 
-- The following is the **index** route code for the to-dos we used our last lesson.
+Let's add an `index` route for our todos resource inside of `routes/todos.js` ... by the way, an **"index"** route is simply a route designed to map to a response that shows all the instances of a resource in a single view.
 
-- Copy it into **routes/todos.js** right below our `require` statements, but right above our `module.exports` and then we'll refactor it:
+
+- We'll place the code below inside of **routes/todos.js** right below our `require` statements, but right above our `module.exports`.
 
 ```js
 
-app.get('/todos', function(req, res) {
- res.render('todos/index', {
-   todos: todoDb.getAll()
- });
+router.get('/', function(req, res) {
+ res.render('todos/index');
 });
 ```
 
-- Now for the refactor...
+**Why is the route/path only a forward slash?**
 
-```js
+<br>
 
-app.get('/', function(req, res) {
- res.render('todos/index', {
-   todos: todoDb.getAll()
- });
-});
-```
-- **Why is it only a forward slash?**
-
-- Notice how we're calling `todoDb.getAll()` - this will currently cause an error...
+**Wait... we're not sending any data with this response!**
 
 - We first need to require the Todo model as follows:
 
 ```js
+const express = require('express');
 const router = express.Router();
 // require the Todo model
 const Todo = require('../models/todo');
 ```
 
-- It's convention to name model variables singularly and with upper-camel-casing.
+It's convention to name model variables singularly and with upper-camel-casing.
 
 
-- With the model required, **what do we need to change on this line of code?**
+- With the model required, we can now update our route handler
 
 ```js
-todos: todoDb.getAll()
+router.get('/', function(req, res) {
+ res.render('todos/index', {
+   todos: Todo.getAll()
+ });
+});
 ```
 
-- Let's do it!
-
-- There's another change that need to be made**<br>does anybody see it?**
-
-```bash
-app.get('/todos', function(req, res) {
-^
-
-ReferenceError: app is not defined
-```
-
-- **Hint: What's that `app` object doing there?**
 
 
-- With the refactor complete, browsing to `localhost:3000/todos` should render the to-dos just like our last lesson!
+- With our Todo router complete, browsing to `localhost:3000/todos` should render the to-dos just like our last lesson!
 
 - Hey, let's add a link like this: `<a href="/todos">To-Do List</a>` on **views/index.ejs** so that we can click it to see the to-dos instead of navigating via the address bar...
 
