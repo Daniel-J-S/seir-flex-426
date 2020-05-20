@@ -25,7 +25,7 @@ type: "lecture"
 - Setup
 - MVC Code Organization
 - Best Practice Routing
-- To-Do Refactor
+- To-Do Redo
 - Controllers
 - MVC Organization Revisited
 - URL/Route Parameters
@@ -267,7 +267,7 @@ router.get('/', function(req, res) {
 module.exports = router;
 ```
 
-- Notice how routes are defined on our `router` object is using a `get` method just like we did with `app.get()`?
+- Notice how routes are defined on our `router` object.<br> We're using a `get` method just like we used inside of `server.js` with `app.get()`
 
 <br>
 <br>
@@ -287,10 +287,10 @@ const app = express();
 <br>
 <br>
 
-- Lastly, we'll mount our router to the middleware pipeline with the `app.use` method.
+- Lastly, we'll mount our router to the bottom of the middleware stack with the `app.use` method.
 
 ```js
-// Mount Middleware (app.use)
+// Mount Routes
 app.use('/', indexRouter);
 ```
 
@@ -331,7 +331,7 @@ app.use('/calendar', calendarRouter);
 
 #### To-Do Redo
 
-- Let's finish with the redo of our Todo app
+_As you probably noticed, we're building another todo app for more practice -- to make this easier, we're going to build on what we already practiced yesterday._
 
 - We'll copy over the **index.ejs** view and put the todos "database" into a file called `todo.js` inside the `models` folder
 
@@ -341,7 +341,7 @@ app.use('/calendar', calendarRouter);
 <br>
 <br>
 
-#### To-Do Refactor - <span style="text-transform:lowercase">index.ejs</span>
+#### To-Do Redo - <span style="text-transform:lowercase">index.ejs</span>
 
 
 - Create **todos/index.ejs**:
@@ -359,7 +359,7 @@ $ touch views/todos/index.ejs
 <br>
 <br>
 
-- Here's the EJS from our last lesson, but with a little extra formatting using a ternary statement to indicate when a todo item is `done`
+- Here's the EJS from our last lesson, but a slight polishing touch.
 
 ```html
   <h1>Here Are Your Todos</h1>
@@ -368,7 +368,7 @@ $ touch views/todos/index.ejs
       <li>
         <%= t.todo %>
           - 
-        <%= t.done ? 'done' : 'not done' %>
+        <%= t.done ? 'Done' : 'Not done' %>
       </li>
     <% }); %>
   </ul>
@@ -377,7 +377,7 @@ $ touch views/todos/index.ejs
 <br>
 <br>
 
-#### To-Do Refactor - Todo Model
+#### To-Do Redo - Todo Model
 
 - Now let's create and copy over our model.
 
@@ -411,7 +411,7 @@ function getAll() {
 <br>
 <br>
 
-#### To-Do Refactor - Routing
+#### To-Do Redo - Routing
 
 
 - We'll need a router for our **todos** resource, let's go ahead and create it.
@@ -424,10 +424,9 @@ touch routes/todos.js
 <br>
 <br>
 
-#### The set up for the todos router module will be a practice activity for you to try and create on your own (3 min).
+#### The set up for the todos router module will be a practice activity for you to try and create on your own.
 
-
-- Next, we'll require the router module inside of `server.js` and then mount it to the request pipeline.
+Here are some helpful steps to guide you...
 
 Require it...
 ```js
@@ -443,7 +442,7 @@ app.use('/todos', todosRouter);
 
 - The following is the **index** route code for the to-dos we used our last lesson.
 
-- Copy it into **routes/todos.js** below the existing route and then we'll refactor it:
+- Copy it into **routes/todos.js** right below our `require` statements, but right above our `module.exports` and then we'll refactor it:
 
 ```js
 
@@ -487,7 +486,7 @@ todos: todoDb.getAll()
 
 - Let's do it!
 
-- There's another change that need to be made**does anybody see it?**
+- There's another change that need to be made**<br>does anybody see it?**
 
 ```bash
 app.get('/todos', function(req, res) {
