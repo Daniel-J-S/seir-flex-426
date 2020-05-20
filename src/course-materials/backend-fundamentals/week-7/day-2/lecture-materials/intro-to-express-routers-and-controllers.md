@@ -485,6 +485,8 @@ app.use('/', indexRouter);
 app.use('/todos', todosRouter); 
 ```
 
+<br>
+<br>
 
 Let's add an `index` route for our todos resource inside of `routes/todos.js` ... by the way, an **"index"** route is simply a route designed to map to a response that shows all the instances of a resource in a single view.
 
