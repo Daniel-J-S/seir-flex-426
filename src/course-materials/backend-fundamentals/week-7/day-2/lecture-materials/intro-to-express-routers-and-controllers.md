@@ -462,7 +462,7 @@ Inside of `./routes/todos.js` let's configure a basic router setup:
 const express = require('express');
 const router = express.Router();
 
-// note that we'll need to define routes here later (following this activity)
+// note that we'll need to define routes here later
 
 module.exports = router;
 ```
