@@ -15,6 +15,30 @@ You've now seen how we can build an Express application and implement the **inde
 
 Now it's time to practice by doing the very same thing, but for a different data resource - _developer skills_.
 
+## Setup
+
+**You will need to start by creating the following folder structure:**
+
+```bash
+express-dev-skills-lab/
+  models
+  controllers
+  routes
+  node_modules
+  views/
+    index.ejs
+  package.json
+  package-lock.json
+  server.js
+```
+
+> You will need to add additional files (& possibly folders) as your progress in this lab (just as we've done in the lesson)
+
+
+**You will then need to create a repository for this lab on Github Enterprise**
+
+**You will continue working on this same project for both parts 1 & 2 -- the final version will be submitted via a link to your github repo using the homework submission form**
+
 ##### This lab, combined with Part 2, is a Deliverable
 
 <br>
@@ -23,8 +47,6 @@ Now it's time to practice by doing the very same thing, but for a different data
 ## Exercises
 
 The goal of the lab is to put in a rep doing everything that you did during the _Express - Routers & Controllers_ lesson:
-
-- Create a new app named `express-dev-skills` inside the labs directory for this week.
 
 - Be sure to create an array of "fake" data representing some of your awesome developer skills. The specific properties describing a skill object is up to you! 
 
@@ -43,6 +65,7 @@ The goal of the lab is to put in a rep doing everything that you did during the 
 	- **routes/skills.js**
 	- **models/skill.js**
 	- **views/skills/index.ejs**
+	- **views/skills/show.ejs**
 	- **controllers/skills.js**
 
 - Use [RESTful routes](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0)

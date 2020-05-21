@@ -83,7 +83,7 @@ app.set('view engine', 'ejs');
 
 // add middleware below the above line of code
 app.use(function(req, res, next) {
- console.log('Hello Blade Runner!');
+ console.log('Hello Cyberpunk!');
  next();
 });
 ```
@@ -102,7 +102,7 @@ app.use(function(req, res, next) {
 
 ```js
 app.use(function(req, res, next) {
- console.log('Hello Blade Runner!');
+ console.log('Hello Cyberpunk!');
  // Add a time property to the req object
  req.time = new Date().toLocaleTimeString();
  next();
@@ -160,7 +160,7 @@ app.use(function(req, res, next) {
 
 #### Key Middleware
 
-- Here are some other peices of middleware we'll need as we scale our application
+- Here are some other pieces of middleware we'll need as we scale our application
 
 - **morgan**: Logger that logs requests.
 
@@ -168,7 +168,7 @@ app.use(function(req, res, next) {
 
 - **express.static**: Serves _static assets_, such as css, js and image files.
 
-- The only one we need to install is `morgan` because `json`, `path`, and `static` are part of and included when we install `express`. 
+- The only one we need to install is `morgan` because everything else is included when we install `express`. 
 
 ```bash
   npm i morgan 
@@ -194,12 +194,12 @@ app.use(morgan('dev'));
 
 // Mount Middleware (app.use)
 app.use(morgan('dev'));
-app.use(express.static(path.join(__dirname + '/public')));
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
-app.use('/todos', todoRouter);
+app.use('/todos', todosRouter);
 ```
 
 For our static assets, we'll create a `public` folder at the root of our project and the place a `css`, `js`, and `images` subdirectory inside of it (we can also create a `style.css` and `script.js` file inside the appropriate sub-directories as well). 
@@ -216,15 +216,16 @@ This is where our stylesheets, images and front-end javascript will live!
 
 
 
-- Again, here's a great flow to follow when you want to add functionality to your web app:
-	1. Identify the "proper" Route (Verb + Path)
-	2. Create the UI that issues a request that matches that route.
-	3. Define the route on the server and map it to a controller action.
-	4. Code and export the controller action.
-	5. `res.render` a view in the case of a `GET` request, or `res.redirect` if data was changed. 
+**Here's a great flow to follow when you want to add functionality to your web app:**
+<br>
+1. Identify the "proper" Route (Verb + Path)
+2. Create the UI that issues a request that matches that route.
+3. Define the route on the server and map it to a controller action.
+4. Code and export the controller action.
+5. `res.render` a view in the case of a `GET` request, or `res.redirect` if data was changed. 
 
 
-- What functionality do we want?  Do we want to show a form on the `index` view, or do we want a separate page dedicated to adding a To Do?  Typically, you'd want have the form on the same page, however, for completeness, we'll use the dedicated page approach.
+What functionality do we want? Do we want to show a form on the `index` view, or do we want a separate page dedicated to adding a To Do? Typically, you'd want have the form on the same page, however, for completeness, we'll use the dedicated page approach.
 
 - Checking the [Resourceful Routing for CRUD Operations in Web Applications Chart](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0), we find that the proper route is:
 
@@ -309,18 +310,17 @@ function newTodo(req, res) {
 POST /todos
 ```
 
-- That's why the form's attributes have been set to:
-	- `action="/todos"`
-	- `method="POST"`
+**That's why the form's attributes have been set to:**
+- `action="/todos"`
+- `method="POST"`
 
 - Check [this](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Your_first_HTML_form) out if you want to learn more about HTML Forms.
 
 
-
-- Same process:
-	1. Determine proper route - check!
-	2. Create UI - check!
-	3. Define the route on the server - next...
+Same process:
+1. Determine proper route - check!
+2. Create UI - check!
+3. Define the route on the server - next...
 
 
 
@@ -337,15 +337,15 @@ router.post('/', todosCtrl.create);  // add this route
 #### Creating To-Dos (Cont)
 
 
-- Same process:
-	1. Determine proper route - check!
-	2. Create UI - check!
-	3. Define the route on the server - check!
-	4. Code and export the controller action - next...
+Same process:
+1. Determine proper route - check!
+2. Create UI - check!
+3. Define the route on the server - check!
+4. Code and export the controller action - next...
 
 
 
-- In **controllers/todos.js**:
+In **controllers/todos.js**:
 
 ```js
   	  ...
@@ -360,7 +360,7 @@ router.post('/', todosCtrl.create);  // add this route
   	}
 ```
 
-- Temporarily comment out the `Todo.create(req.body);` line so that we can check out what gets logged out...
+**Temporarily comment out the `Todo.create(req.body);` line so that we can check out what gets logged out...**
 
 
 - `req.body` is courtesy of this middleware in **server.js**:
@@ -388,9 +388,9 @@ module.exports = {
 };
 
 const todos = [
-   {todo: 'Feed Dogs', done: true},
-   {todo: 'Learn Express', done: false},
-   {todo: 'Buy Milk', done: false}
+   {text: 'Feed Dogs', done: true},
+   {text: 'Learn Express', done: false},
+   {text: 'Buy Milk', done: false}
   ];
 
 function create(todo) {
@@ -438,7 +438,7 @@ const methodOverride = require('method-override');
 - Now let's add `method-override` to the middleware pipeline:
 
 ```js
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 app.use(methodOverride('_method'));  // add this
 ```
 
@@ -520,11 +520,11 @@ router.delete('/:id', todosCtrl.delete);
 ```
 
 
-- Same process:
-	1. Determine proper route - check!
-	2. Create UI - check!
-	3. Define the route on the server - check!
-	4. Code and export the controller action - next...
+Same process:
+1. Determine proper route - check!
+2. Create UI - check!
+3. Define the route on the server - check!
+4. Code and export the controller action - next...
 
 
 - Similar to `newTodo`, we can't name a function `delete`, so...
@@ -552,9 +552,9 @@ module.exports = {
 };
 
 const todos = [
- {todo: 'Feed Dogs', done: true},
- {todo: 'Learn Express', done: false},
- {todo: 'Buy Milk', done: false}
+ {text: 'Feed Dogs', done: true},
+ {text: 'Learn Express', done: false},
+ {text: 'Buy Milk', done: false}
 ];
 
 function deleteOne(id) {
@@ -564,7 +564,7 @@ function deleteOne(id) {
 // Original code below
 ```
 
-- Does it work?  Of course it does!
+**Does it work? Of course it does!**
 
 <br>
 <br>
@@ -574,9 +574,9 @@ function deleteOne(id) {
 
 
 
-- Updating a To-Do is very similar to creating one because it also is a two-request process:
-	1. One request to display a form used to edit the To-Do.
-	2. Another request to submitted the form to the server so that it can update the To-Do.
+**Updating a To-Do is very similar to creating one because it also is a two-request process:**
+1. One request to display a form used to edit the To-Do.
+2. Another request to submitted the form to the server so that it can update the To-Do.
 
 
 <br>

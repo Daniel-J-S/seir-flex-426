@@ -268,9 +268,35 @@ app.get('/', function(req, res) {
 module.exports = router;
 ```
 
-...but wait, there's a change that need to be made **does anybody see it?**
+ Next, we'll `require` our router module inside of `server.js`
+
+```js
+// Require Modules
+const express = require('express');
+const indexRouter = require('./routes/index');
+// ^- We'll require it like this
+
+// Create the Express App
+const app = express();
+```
 
 <br>
+<br>
+
+- Then we'll mount our router to the bottom of the middleware stack with the `app.use` method.
+
+```js
+// Mount Routes
+app.use('/', indexRouter);
+```
+
+- It's **important** to realize that the path in `app.use` is **combined** with the path specified on the router objects...
+
+<br>
+<br>
+
+...Oh no! There's an error now! It's coming from `routes/index.js` **does anybody see it?**
+
 
 ```bash
 app.get('/', function(req, res) {
@@ -301,32 +327,9 @@ module.exports = router;
 <br>
 <br>
 
-- Next, we'll `require` our router module inside of `server.js`
-
-```js
-// Require Modules
-const express = require('express');
-const indexRouter = require('./routes/index');
-// ^- We'll require it like this
-
-// Create the Express App
-const app = express();
-```
-
-<br>
-<br>
-
-- Lastly, we'll mount our router to the bottom of the middleware stack with the `app.use` method.
-
-```js
-// Mount Routes
-app.use('/', indexRouter);
-```
-
-- It's **important** to realize that the path in `app.use` is **combined** with the path specified on the router objects...
 
 
-- Let's say you have a `router` object inside of `routes/todos.js` that defines a route like this:
+Let's say you have a `router` object inside of `routes/todos.js` that defines a route like this:
 
 ```js
 router.get('/', function(req, res) {...
@@ -393,11 +396,11 @@ $ touch views/todos/index.ejs
 ```html
   <h1>Here Are Your Todos</h1>
   <ul>
-    <% todos.forEach(function(t) { %>
+    <% todos.forEach(function(todo) { %>
       <li>
-        <%= t.todo %>
+        <%= todo.text %>
           - 
-        <%= t.done ? 'Done' : 'Not done' %>
+        <%= todo.done ? 'Done' : 'Not done' %>
       </li>
     <% }); %>
   </ul>
@@ -427,9 +430,9 @@ module.exports = {
 };
 
 const todos = [
- {todo: 'Feed Dogs', done: true},
- {todo: 'Learn Express', done: false},
- {todo: 'Buy Milk', done: false}
+ {text: 'Feed Dogs', done: true},
+ {text: 'Learn Express', done: false},
+ {text: 'Buy Milk', done: false}
 ];
 
 function getAll() {
@@ -697,9 +700,9 @@ GET /todos/:id
 - Let's refactor **todos/index.ejs** as follows:
 
 ```html
-   <% todos.forEach(function(t, idx) { %>
+   <% todos.forEach(function(todo, idx) { %>
      <li>
-       <a href="/todos/<%= idx %>"><%= t.todo %></a>
+       <a href="/todos/<%= idx %>"><%= todo.text %></a>
 ```
 	Don't forget to add the `idx` parameter in the callback function
 
@@ -772,9 +775,9 @@ module.exports = {
 };
 
 const todos = [
- {todo: 'Feed Dogs', done: true},
- {todo: 'Learn Express', done: false},
- {todo: 'Buy Milk', done: false}
+ {text: 'Feed Dogs', done: true},
+ {text: 'Learn Express', done: false},
+ {text: 'Buy Milk', done: false}
 ];
 
 function getAll(id) {
@@ -796,7 +799,7 @@ function getOne(id) {
 <a href="/">Home</a>
 <a href="/todos">All Todos</a>
 <h1>Todo #<%= todoNum %></h1>
-<h3><%= todo.todo %></h3>
+<h3><%= todo.text %></h3>
 <h3>Complete: <%= todo.done ? 'Yes' : 'No' %></h3>
 ```
 
