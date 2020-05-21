@@ -174,25 +174,24 @@ app.use(function(req, res, next) {
   npm i morgan 
 ```
 
-- Now we will require `morgan` and mount our middleware
-
-
-**We only require Morgan** 
+Now we require `morgan` and mount it as middleware
 
 ```js
 const morgan = require('morgan');
 ```
 
+<br>
 **We'll mount Morgan like this**
 
 ```js
 app.use(morgan('dev'));
 ```
 
-##### This is what our "Middleware Stack" should look like by the end of this lesson
+**This is what our "Middleware Stack" should look like by the end of this lesson**
+
 ```js
 
-// Mount Middleware (app.use)
+// Mount middleware (app.use)
 app.use(morgan('dev'));
 app.use(express.static('public'));
 app.use(express.json());
