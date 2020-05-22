@@ -162,9 +162,9 @@ app.use(function(req, res, next) {
 
 - Here are some other pieces of middleware we'll need as we scale our application
 
-- **morgan**: Logger that logs requests.
+- **morgan**: An `HTTP` logger that "logs" requests in the terminal.
 
-- **express.json** & **express.urlencoded** (formerly known as `body-parser`): Parses data sent in the body of the request and populates a `req.body` object containing that data.
+- **express.urlencoded** (formerly known as `body-parser`): Parses data sent in the body of the request and populates a `req.body` object containing that data.
 
 - **express.static**: Serves _static assets_, such as css, js and image files.
 
@@ -187,14 +187,13 @@ const morgan = require('morgan');
 app.use(morgan('dev'));
 ```
 
-**This is what our "Middleware Stack" should look like by the end of this lesson**
+**This is what our "Middleware Stack" should look like**
 
 ```js
 
 // Mount middleware (app.use)
 app.use(morgan('dev'));
 app.use(express.static('public'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.use('/', indexRouter);
@@ -204,6 +203,18 @@ app.use('/todos', todosRouter);
 For our static assets, we'll create a `public` folder at the root of our project and the place a `css`, `js`, and `images` subdirectory inside of it (we can also create a `style.css` and `script.js` file inside the appropriate sub-directories as well). 
 
 This is where our stylesheets, images and front-end javascript will live!
+
+<br>
+
+While we're at it, let's make sure all of our templates have this link tag so they can use any CSS rules we've defined in `style.css`
+
+<br>
+
+**Add the following `link` tag to all of your template files ...(files that end with the .ejs extension inside of the `views` directory)**
+
+```html
+    <link rel="stylesheet" href="/css/style.css">
+```
 
 <br>
 <br>
@@ -427,10 +438,10 @@ function create(todo) {
 	```
 
 
-- Require it below `logger` in **server.js**:
+- Require it below `morgan` in **server.js**:
 
 ```js
-const logger = require('morgan');
+const morgan = require('morgan');
 const methodOverride = require('method-override');
 ```
 
