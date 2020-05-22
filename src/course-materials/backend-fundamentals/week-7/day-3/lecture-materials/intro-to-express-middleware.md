@@ -283,7 +283,7 @@ function newTodo(req, res) {
 <body>
  <h1>New Todo</h1>
  <form action="/todos" method="POST" autocomplete="off">
-   <input type="text" name="todo">
+   <input type="text" name="text">
    <button type="submit">Save Todo</button>
  </form>
 </body>
@@ -371,7 +371,7 @@ app.use(express.urlencoded({ extended: false }));
 - The properties on `req.body` will always match the values of the `<input>`'s `name` attributes:
 
 ```html
-<input type="text" name="todo">
+<input type="text" name="text">
 ```
 
 
