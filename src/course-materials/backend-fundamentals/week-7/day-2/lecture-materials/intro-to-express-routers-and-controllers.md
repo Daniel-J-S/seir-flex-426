@@ -9,6 +9,10 @@ type: "lecture"
 # Express Routers & Controllers
 
 
+## Lesson Recording
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cmoWhuY6znM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 ### Learning Objectives
 
