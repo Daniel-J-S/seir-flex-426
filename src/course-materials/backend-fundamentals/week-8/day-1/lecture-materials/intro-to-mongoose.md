@@ -6,7 +6,7 @@ day: 1
 type: "lecture"
 ---
 
-# Intro To Mongoose
+# Intro To Mongoose Part 1 & 2
 
 
 ## Learning Objectives
@@ -593,13 +593,21 @@ $ node
 
 - That was fun! Exit the REPL (`ctrl + C` twice) and let's see how we can use`new` + `save` to create movie documents - but this time from within our app.
 
+<br>
+<br>
 
-- As we build out our CRUD functionality, here is the process we will repeat:
-	1. Determine the verb + URI for the route.  Use RESTful conventions whenever possible.
-	2. Add the UI (link and/or forms) to the view that will trigger the request.
-	3. Define the route in the appropriate router module for the request, mapping it to the `<controller>.<method>`.
-	4. Add the controller action/method and be sure to export it.
-	5. In the controller, perform necessary CRUD and either `render` (passing it the data) or `redirect`.
+## Begin Part 2
+
+<br>
+<br>
+
+**As we build out our CRUD functionality, here is the process we will repeat:**
+
+1. Determine the verb + URI for the route.  Use RESTful conventions whenever possible.
+2. Add the UI (link and/or forms) to the view that will trigger the request.
+3. Define the route in the appropriate router module for the request, mapping it to the `<controller>.<method>`.
+4. Add the controller action/method and be sure to export it.
+5. In the controller, perform necessary CRUD and either `render` (passing it the data) or `redirect`.
 
 
 - Referring back to our routing chart from the routing lesson this week, we find that to display a `new.ejs` view with a form for entering movies, the proper route will be:

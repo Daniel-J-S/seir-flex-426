@@ -8,6 +8,8 @@ type: "lab"
 
 # Mongoose "Flights" Lab - Part 1
 
+> Please note, due to the nature of the longer "Intro to Mongoose" lesson, you will need to proportion your work for this lab over the next couple days only practicing what we're able to cover on days 2 & 3 of week 8
+
 ## Intro
 
 Today in the Intro to Mongoose lesson you Created and Read documents using a `Movie` Model
