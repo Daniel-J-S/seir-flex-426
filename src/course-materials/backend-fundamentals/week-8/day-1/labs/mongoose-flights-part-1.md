@@ -10,11 +10,11 @@ type: "lab"
 
 ## Intro
 
-Today in the Intro to Mongoose lesson you Created and Read documents using a `Movie` Model.
+Today in the Intro to Mongoose lesson you Created and Read documents using a `Movie` Model
 
-In this lab, you'll do the same, except you'll create and use a `Flight` model.
+In this lab, you'll do the same, except you'll create and use a `Flight` model
 
-Similar to what we did in the lesson, you'll start by creating a `mongoose-flights` project.
+Similar to what we did in the lesson, you'll start by creating a `mongoose-flights` project
 
 FYI, future lessons will expand upon the `mongoose-movies` project, and the labs will expand upon the `mongoose-flights` project!
 
@@ -22,11 +22,13 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 
 ## Exercises
 
-1. Create a new project inside the labs directory of this week's directory called `mongoose-flights`. 
+1. Create a new folder for this lab called `mongoose-flights` and initialize a git repo inside of it
+2. Create a seperate remote for this repo on Github Enterprise to push your commits for this assignment; you will need to send us a URL to your remote when you're ready to turn this assignment in for feedback
+3. Create your `package.json` and `server.js`
+4. Create all your basic folders to get started; just as we've done with every express projects ... i.e. `models`, `routes`, `controllers`, and `views` -- prepare to create additional files (modules) inside of these folders
+5. Create a **config/database.js** module inside your project that connects to a database named `flights` -- Be sure to require the module in **server.js**
 
-2. Create a **config/database.js** module inside your project that connects to a database named `flights`. Be sure to require the module in **server.js**.
-
-3. Create a `Flight` Model with the following properties:
+6. Create a `Flight` Model with the following properties:
 
 	| Property | Type | Validations | Default Value |
 	|---|---|---|---|
@@ -34,20 +36,20 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 	| `flightNo`| `Number`| Required<br>Between `10` and `9999` | n/a | 
 	| `departs`| `Date`| n/a | One year from date created | 
 
-4. Implement the following User Stories:
-	- AAU, I want to view a list of all flights (index view) that displays each flight's airline, flight no., and departure date/time.
+4. Implement the following User Stories **(_"As A User"_ == AAU)**:
+	- AAU, I want to view a list of all flights (index view) that displays each flight's airline, flight no., and departure date/time
 	
-	- AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it.
+	- AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it
 
 #### Hints:
 
 - Checkout the [`<input type="datetime-local">`
-](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to assist users in entering valid date/time values.
+](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to assist users in entering valid date/time values
 
 
 ## Bonuses
 
-1. Display the default departure date when displaying the new flight form. 
+1. Display the default departure date when displaying the new flight form 
 	
 	**Hints:**
 

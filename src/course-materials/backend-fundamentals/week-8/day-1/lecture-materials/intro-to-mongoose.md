@@ -46,41 +46,41 @@ For this lecture, we'll need to get setup with a brand new express app in our pr
 
 We're going to make a movies app!
 
-Also, in case you're still a little fuzzy on the workflow, here are the steps:
-
-- `cd` inside of `w07/practice` and make a directory called `mongoose-movies`
+1. Make a directory called `mongoose-movies` then change into it
 
 ```bash
 mkdir mongoose-movies
+cd mongoose-movies/
 ```
 
-- Set up our project to work with `node/npm` and create `package.json` using `npm init`
 
-```bash
-npm init
-```
-> Remember, server.js is our entry point; accept all the defaults
-
-- Create `server.js` file
+2. Create a `server.js` file
 
 ```bash
 touch server.js
 ```
 
-- Install base dependencies
+3. Create a `package.json` file and accept all defaults using `npm init -y`
+
+```bash
+npm init -y
+```
+
+
+4. Install base dependencies
 
 ```bash
 npm i express ejs morgan
 ```
 
 
-- Set up boilerplate for `server.js`
+5. Set up boilerplate for `server.js`
 
 ```js
 // Require modules
 const express = require('express');
-const port = 3000; // We'll eventually set the port dynamically
-const logger = require('morgan');
+const morgan = require('morgan');
+const port = 3000; 
 
 // Set up express app
 const app = express();
@@ -88,43 +88,42 @@ const app = express();
 // Connect to DB
 
 
-// Configure Express App app.set()
+// Configure the app with app.set()
 app.set('view engine', 'ejs');
 
-// Mount middleware app.use()
-app.use(logger('dev'));
+// Mount middleware with app.use()
+app.use(morgan('dev'));
 app.use(express.static('public'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Mount Routes app.use()
+// Mount routes with app.use()
 
 // Tell App to listen
-app.listen(port, () => {
+app.listen(port, function() {
     console.log(`Express is listening on port:${port}`);
 });
 ```
 
-- Create `routes`, `views`, and `public` directories
+6. Create `routes`, `views`, and `public` directories
 
 ```bash
 mkdir routes controllers views public
 ```
 
-- Add subdirectories to your `public` directory
+7. Add the appropriate subdirectories to your `public` directory
 
 ```bash
 mkdir public/css public/js public/images 
 ```
 
-- Add base files to your sub directories
+8. Add base files to your sub directories
 
 ```bash
 touch views/index.ejs routes/index.js controllers/index.js public/css/style.css 
 
 ```
 
-- Add some boilerplate `html` to `views/index.ejs`
+9. Add some boilerplate `html` to `views/index.ejs`
 
 ```html
 <!DOCTYPE html>
@@ -143,7 +142,7 @@ touch views/index.ejs routes/index.js controllers/index.js public/css/style.css
 </html>
 ```
 
-- Let's set up our routes and controller actions for our root routes.
+10. Let's set up our routes and controller actions for our root routes
 
 
 ```js
@@ -163,7 +162,7 @@ module.exports = router;
 // inside of controllers/index.js
 module.exports = {
     index
-}
+};
 
 function index(req, res) {
     res.render('index');
@@ -171,13 +170,13 @@ function index(req, res) {
 ```
 
 
-- Now we require and mount our index router inside of `server.js`
+11. Now we require and mount our index router inside of `server.js`
 
 ```js
 // Require modules
 const express = require('express');
-const port = 3000; // We'll eventually set the port dynamically
-const logger = require('morgan');
+const morgan = require('morgan');
+const port = 3000;
 const indexRouter = require('./routes/index');
 // ^-- requiring the indexRouter
 
@@ -252,24 +251,24 @@ app.use('/', indexRouter);
 
 - Assuming the following schema:
 
-	```js
-	const postSchema = new mongoose.Schema({
-		content: String
-	});
-	```
+```js
+const postSchema = new mongoose.Schema({
+content: String
+});
+```
 
 - It can be compiled into a model and that model exported like this:
 
-	```js
-	module.exports = mongoose.model('Post', postSchema);
-	```
+```js
+module.exports = mongoose.model('Post', postSchema);
+```
 
 - The model can then be required and used to perform CRUD on the `posts` collection in the MongoDB:
 
-	```js
-	const Post = require('./models/post');
-	Post.create({content: 'Amazing post...'});
-	```
+```js
+const Post = require('./models/post');
+Post.create({content: 'Amazing post...'});
+```
 
 
 ### ❓ Review Questions
@@ -297,52 +296,50 @@ app.use('/', indexRouter);
 
 - Installing the Mongoose package is straight forward:
 
-	```shell
-	$ npm i mongoose
-	```
-	Note: `i` is a shortcut for `install`
+```shell
+$ npm i mongoose
+```
 	
-
 #### Configure Mongoose in a module
 
 
 - We're going to create a separate module named `database.js` and put it in a folder named `config`:
 
-	```shell
-	$ mkdir config
-	$ touch config/database.js
-	```
+```shell
+$ mkdir config
+$ touch config/database.js
+```
 
 - Then in `database.js`, let's connect to a database named `movies`:
 
-	```js
-	const mongoose = require('mongoose');
+```js
+const mongoose = require('mongoose');
 
-	mongoose.connect('mongodb://localhost/movies', {
-			useNewUrlParser: true, 
-			useCreateIndex: true,
-			useUnifiedTopology: true 
-	});
-	```
+mongoose.connect('mongodb://localhost/movies', {
+	useNewUrlParser: true, 
+	useCreateIndex: true,
+	useUnifiedTopology: true 
+});
+```
 	
 - The `{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}` options avoid deprecation warnings.
 
 
 - In order for the code in `database.js` to run and connect to the database, we must require it in `server.js`:
 
-	```js
-	const express = require('express');
-	const port = 3000; // We'll eventually set the port dynamically
-	const logger = require('morgan');
-	const indexRouter = require('./routes/index');
-	// Set up express app
-	const app = express();
-	
-	// connect to the database with Mongoose
-	require('./config/database');
+```js
+const express = require('express');
+const morgan = require('morgan');
+const port = 3000; 
+const indexRouter = require('./routes/index');
+// Set up express app
+const app = express();
 
-	// more code below
-	```
+// connect to the database with Mongoose
+require('./config/database');
+
+// more code below
+```
 
 
 - Note that we aren't assigning our module to a variable. That's because there's no need to because:
@@ -380,23 +377,23 @@ app.use('/', indexRouter);
 
 - Let's modify our _database.js_ module as follows:
 
-	```js
-	const mongoose = require('mongoose');
+```js
+const mongoose = require('mongoose');
 
-	mongoose.connect('mongodb://localhost/movies', {
-    	useNewUrlParser: true, 
-    	useCreateIndex: true, 
-    	useUnifiedTopology: true
-	});
+mongoose.connect('mongodb://localhost/movies', {
+  	useNewUrlParser: true, 
+  	useCreateIndex: true, 
+  	useUnifiedTopology: true
+});
 
-	// shortcut to mongoose.connection object
-	const db = mongoose.connection;
-	
-	db.on('connected', function() {
-		console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
-	});
+// shortcut to mongoose.connection object
+const db = mongoose.connection;
 
-	```
+db.on('connected', function() {
+console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
+});
+
+```
 
 - Check for the _Connected to MongoDb..._ message in the server terminal.
 
@@ -427,10 +424,10 @@ app.use('/', indexRouter);
 
 - The MVC design pattern influences our code organization:
 
-	```shell
-	$ mkdir models
-	$ touch models/movie.js
-	```
+```shell
+$ mkdir models
+$ touch models/movie.js
+```
 
 
 #### Define a basic Schema for a _Movie_ model
@@ -444,11 +441,11 @@ app.use('/', indexRouter);
 
 - In the schema/model module, we will always do this:
 
-	```js
-	const mongoose = require('mongoose');
-	// optional shortcut to the mongoose.Schema class
-	const Schema = mongoose.Schema;
-	```
+```js
+const mongoose = require('mongoose');
+// optional shortcut to the mongoose.Schema class
+const Schema = mongoose.Schema;
+```
 
 - Creating the shortcut to the `mongoose.Schema` class is optional but convenient when defining complex schemas.
 
@@ -558,31 +555,31 @@ module.exports = mongoose.model('Movie', movieSchema);
 
 - Warning, if you make a typo, you'll have to start over:
 
-	```shell
-	$ node
-	> require('./config/database')
-	> const Movie = require('./models/movie')
-	> Movie.create({
-	... title: 'Star Wars',
-	... releaseYear: 1977
-	... }, function(err, doc) {
-	... console.log(doc);
-	... })
-	```
+```shell
+$ node
+> require('./config/database')
+> const Movie = require('./models/movie')
+> Movie.create({
+... title: 'Star Wars',
+... releaseYear: 1977
+... }, function(err, doc) {
+... console.log(doc);
+... })
+```
 
 - Logged out will be a document that looks something like...
 
 
 - Here's the newly created document:
 
-	```js
-	{ __v: 0,
-	  title: 'Star Wars',
-	  releaseYear: 1977,
-	  _id: 57ea692bab09506a97e969ba,
-	  cast: []
-	}
-	```
+```shell
+{ __v: 0,
+ title: 'Star Wars',
+ releaseYear: 1977,
+ _id: 57ea692bab09506a97e969ba,
+ cast: []
+}
+```
 
 - The `__v` field is added by Mongoose to track versioning - ignore it.
 
@@ -605,9 +602,9 @@ module.exports = mongoose.model('Movie', movieSchema);
 
 - Referring back to our routing chart from the routing lesson this week, we find that to display a `new.ejs` view with a form for entering movies, the proper route will be:
 
-	```shell
-	GET /movies/new
-	```
+```shell
+GET /movies/new
+```
 
 - At this point, we need to finish coding out the router and controller modules for our movies resource; let's take care of that now
 
@@ -620,16 +617,16 @@ touch routes/movies.js
 
 - Inside of `routes/movies.js`, set up the router and code our first route responsible for showing a form for entering a movie:
 
-	```js
-	const express = require('express');
-	const router = express.Router();
-	const moviesCtrl = require('../controllers/movies');
-	
-	// GET /movies/new
-	router.get('/new', moviesCtrl.new);
-	
-	module.exports = router;
-	```
+```js
+const express = require('express');
+const router = express.Router();
+const moviesCtrl = require('../controllers/movies');
+
+// GET /movies/new
+router.get('/new', moviesCtrl.new);
+
+module.exports = router;
+```
 
 - Don't forget to require and mount our router inside of `server.js`
 
@@ -657,24 +654,24 @@ touch controllers/movies.js
 
 - The code in the `new` action is pretty simple:
 
-	```js
-	module.exports = {
-      new: newMovie
-	}
+```js
+module.exports = {
+    new: newMovie
+};
 
-	function newMovie(req, res) {
-	  res.render('movies/new');
-	}
-	```
+function newMovie(req, res) {
+ res.render('movies/new');
+}
+```
 
 - Now for the view.
 
 - As we've discussed, organizing views for a certain model into a dedicated folder makes sense:
 
-	```
-	$ mkdir views/movies
-	$ touch views/movies/new.ejs
-	```
+```
+$ mkdir views/movies
+$ touch views/movies/new.ejs
+```
 	
 - Next, add the HTML boilerplate to `new.ejs`:
 
@@ -731,17 +728,17 @@ touch controllers/movies.js
 
 - Let's define that route in **routes/movies.js**:
 
-	```js
-	router.post('/', moviesCtrl.create);
-	```
+```js
+router.post('/', moviesCtrl.create);
+```
 	
 - The next step is to write that `create` controller action...
 
 - In **controllers/movies.js** we're going to be using our `Movie` model, so we need to require it at the top:
 
-	```js
-	const Movie = require('../models/movie');
-	```
+```js
+const Movie = require('../models/movie');
+```
 
 - Shortly we'll talk through how to use the `Movie` Model in the controller to create the movie submitted by the form.
 
@@ -749,12 +746,12 @@ touch controllers/movies.js
 
 - Don't forget to export `create`, then write the function:
 
-	```js
-	module.exports = {
-      new: newMovie,
-      create
-	}
-	```
+```js
+module.exports = {
+    new: newMovie,
+    create
+};
+```
 
 - This is our controller action for `create`
   
@@ -787,37 +784,51 @@ function create(req, res) {
 
 - The querying ability of Mongoose is **very** capable.  For example:
 
-	```js
-	Movie.find({mpaaRating: 'PG'})
-		.where('releaseYear').lt(1970)
-		.where('cast').in('Bob Hope')
-		.sort('-title')
-		.limit(3)
-		.select('title releaseYear')
-		.exec(cb);
-	``` 
+```js
+Movie.find({mpaaRating: 'PG'})
+	.where('releaseYear').lt(1970)
+	.where('cast').in('Bob Hope')
+	.sort('-title')
+	.limit(3)
+	.select('title releaseYear')
+	.exec(cb);
+``` 
 
 - But we're going to start with the basics :)
 
-- Here are the useful methods on a Model for querying data:
-	- `find`: Returns an array of all documents matching the _query object_
+<br>
+<br>
+
+### Here are the useful methods on a Model for querying data:
+
+- `find`: Returns an array of all documents matching the _query object_
 		
-		```js
-		Movie.find({mpaaRating: 'PG'}, function(err, movies) {...
-		```
-		
-	- `findById`: Find a document based on it's `_id`
+```js
+Movie.find({mpaaRating: 'PG'}, function(err, movies) {...
+```
+
+<br>
+<br>
+
+- `findById`: Find a document based on it's `_id`
 	
-		```js
-		Movie.findById(req.params.id, function(err, movie) {...
-		```
+```js
+Movie.findById(req.params.id, function(err, movie) {...
+```
 
-	- `findOne`: Find the first document that matches the _query object_
+<br>
+<br>
 
-		```js
-		Movie.findOne({releaseYear: 2000}, function(err, movie) {...
-		```
 
+- `findOne`: Find the first document that matches the _query object_
+
+```js
+Movie.findOne({releaseYear: 2000}, function(err, movie) {...
+```
+
+<br>
+<br>
+<br>
 
 #### Reading Data - Practice (20 min)
 
@@ -829,7 +840,7 @@ function create(req, res) {
 
 - Hint: In the view, use the array `join` method to concatenate the names inside of the `cast` array.
 
-- We'll review in 20 minutes.
+**We'll review in 20 minutes.**
 
 <br>
 <br>
@@ -881,7 +892,7 @@ module.exports = {
     new: newMovie,
     create,
     index
-}
+};
 
 
 
@@ -965,15 +976,13 @@ touch views/movies/index.ejs
 
 - Now that we have an `index` view, let's update the `redirect` in the `create` action:
 
-	```js
-	  movie.save(function(err) {
-	    if (err) return res.render('movies/new');
-	    console.log(movie);
-	    res.redirect('/movies');  // update this line
-	  });
-	```
-
-
+```js
+ movie.save(function(err) {
+   if (err) return res.render('movies/new');
+   console.log(movie);
+   res.redirect('/movies');  // update this line
+ });
+```
 
 ### Defining default values for a Property
 
@@ -988,12 +997,12 @@ touch views/movies/index.ejs
 
 - To add a default value, we need to switch from this simple property definition syntax:
 
-	```js
-	const movieSchema = new Schema({
-		title: String,
-		releaseYear: Number,
-  		...
-	```
+```js
+const movieSchema = new Schema({
+	title: String,
+	releaseYear: Number,
+		...
+```
 
 - To this object syntax:
 
@@ -1006,15 +1015,15 @@ touch views/movies/index.ejs
 
 - Now we can add a `default` key to specify a default value:
 
-	```js
-	const movieSchema = new mongoose.Schema({
-	  title: String,
-	  releaseYear: {type: Number, default: 2000},
-	  mpaaRating: String,
-	  cast: [String],
-	  nowShowing: {type: Boolean, default: false}
-	});
-	```
+```js
+const movieSchema = new mongoose.Schema({
+ title: String,
+ releaseYear: {type: Number, default: 2000},
+ mpaaRating: String,
+ cast: [String],
+ nowShowing: {type: Boolean, default: false}
+});
+```
 
 - Silly example defaulting the release year to 2000 - yes. But that's how we can add a simple default value.
 
@@ -1024,13 +1033,13 @@ touch views/movies/index.ejs
 
 - We can fix this in the `create` action by deleting any property in `req.body` that is an empty string:
 
-	```js
-	if (req.body.cast) req.body.cast = req.body.cast.split(',');
-  	// remove empty properties
-  	for (let key in req.body) {
-   	  if (req.body[key] === '') delete req.body[key];
-  	}
-	```
+```js
+if (req.body.cast) req.body.cast = req.body.cast.split(',');
+	// remove empty properties
+	for (let key in req.body) {
+ 	  if (req.body[key] === '') delete req.body[key];
+	}
+```
 
 - Now if we don't enter a release year, the default will be set.
 
@@ -1067,13 +1076,13 @@ const movieSchema = new mongoose.Schema({
 
 - Mongoose will add `createdAt` and add + update `updatedAt` fields automatically to every document if we set the `timestamps` option as follows in the schema:
 
-	```js
-	const movieSchema = new mongoose.Schema({
-	  ...
-	}, {
-	  timestamps: true
-	});
-	```
+```js
+const movieSchema = new mongoose.Schema({
+ ...
+}, {
+ timestamps: true
+});
+```
 
 - This really comes in handy so it's recommended to add the `timestamps: true` option to all schemas by default.
 
@@ -1092,30 +1101,30 @@ const movieSchema = new mongoose.Schema({
 
 - Movies should not be allowed to be created without a `title`.  Let's make it required:
 
-	```js
-	const movieSchema = new mongoose.Schema({
-	  title: {
-	    type: String,
-	    required: true
-	  },
-	  ...
-	```
+```js
+const movieSchema = new mongoose.Schema({
+ title: {
+   type: String,
+   required: true
+ },
+ ...
+```
 - Now, if we try saving a movie without a `title` an error will be set and we'll render the `new` view instead of being redirected to the `index`.
 
 - For properties that are of type _Number_, we can specifya `min` and `max` value:
 
-	```js
-	const movieSchema = new mongoose.Schema({
-	  ...
-	  releaseYear: {
-	    type: Number,
-	    default: function() {
-	      return new Date().getFullYear();
-	    },
-	    min: 1927
-	  },
-	  ...
-	```
+```js
+const movieSchema = new mongoose.Schema({
+ ...
+ releaseYear: {
+   type: Number,
+   default: function() {
+     return new Date().getFullYear();
+   },
+   min: 1927
+ },
+ ...
+```
 
 - No more silent movies!
 	
@@ -1126,15 +1135,15 @@ const movieSchema = new mongoose.Schema({
 
 - Here is how we use the `enum` validator:
 
-	```js
-	const movieSchema = new mongoose.Schema({
-	  ...
-	  mpaaRating: {
-	    type: String,
-	    enum: ['G', 'PG', 'PG-13', 'R']
-	  },
-	  ...
-	```
+```js
+const movieSchema = new mongoose.Schema({
+ ...
+ mpaaRating: {
+   type: String,
+   enum: ['G', 'PG', 'PG-13', 'R']
+ },
+ ...
+```
 
 
 #### Summary

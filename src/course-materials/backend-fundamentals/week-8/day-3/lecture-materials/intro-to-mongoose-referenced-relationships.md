@@ -35,13 +35,13 @@ type: "lecture"
 
 #### Setup
 
-- `clone` the starter code from [this repo](https://git.generalassemb.ly/Dvlpr-Dan/mongoose-movies-2.git); you can clone this project anywhere except for your homework and labs folder.
+1. <a href="/downloads/backend_fundamentals/mongoose-referenced-relationships/starter-code/mongoose-movies.zip" download>Download</a> the starter code to get started
 
 - Install the node modules:
 
-	```
-	$ npm install
-	```
+```shell
+$ npm install
+```
 	
 - `cd` inside the project folder in your code editor.
 
@@ -69,38 +69,39 @@ type: "lecture"
 
 - Start a Node REPL:
 
-	```shell
-	$ node
-	> 
-	```
+```shell
+$ node
+> 
+```
 
 - Connect to the MongoDB database:
 
-	```shell
-	> require('./config/database')
-	{}
-	> Connected to MongoDB at localhost:27017
-	// Press enter to return to the prompt
-	```
+```shell
+> require('./config/database')
+{}
+> Connected to MongoDB at localhost:27017
+// Press enter to return to the prompt
+```
 
 
 - Load the `Movie` Model:
 
-	```shell
-	> const M = require('./models/movie')
-	```
+```shell
+> const M = require('./models/movie')
+```
 
 - **Important:** If you make any changes to the Model, you'll have exit Node and start again.
 
 
 - Log all _movie_ docs:
 
-	```shell
-	> M.find({}, (e, movies) => {
-	... console.log(movies)
-	... })
-	```
-	The `find` method returns a **Query** object that is first logged, followed by the _movie_ docs. Press enter to return to the prompt.
+```shell
+> M.find({}, (e, movies) => {
+... console.log(movies)
+... })
+```
+
+The `find` method returns a **Query** object that is first logged, followed by the _movie_ docs. Press enter to return to the prompt.
 
 
 - Anything that can be done with a Model in the app, can be done in the REPL including CRUD operations, manipulate individual documents, etc.
@@ -110,11 +111,11 @@ type: "lecture"
 
 - Here's a way to delete all documents from a collection:
 
-	```shell
-	> M.deleteMany({}, (err, result) => console.log(result))
-	...
-	> { n: 3, ok: 1, deletedCount: 3 }
-	```
+```shell
+> M.deleteMany({}, (err, result) => console.log(result))
+...
+> { n: 3, ok: 1, deletedCount: 3 }
+```
 	
 - The _empty query object_ provided as the first argument matches all documents, so all documents were removed.
 
@@ -154,19 +155,19 @@ type: "lecture"
 
 - We'll review the schema for the `Performer` Model as we type it:
 
-	```js
-	const mongoose = require('mongoose');
-	const Schema = mongoose.Schema;
-	
-	const performerSchema = new Schema({
-	  name: {type: String, required: true, unique: true},
-	  born: Date
-	}, {
-	  timestamps: true
-	});
-	
-	module.exports = mongoose.model('Performer', performerSchema);
-	```
+```javascript
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
+
+const performerSchema = new Schema({
+ name: {type: String, required: true, unique: true},
+ born: Date
+}, {
+ timestamps: true
+});
+
+module.exports = mongoose.model('Performer', performerSchema);
+```
 
 - We want to _try_ to prevent duplicate _performers_ (more on this in a bit).
 
@@ -176,11 +177,11 @@ type: "lecture"
 
 - With the `Performer` Model created, we can now add back the `cast` property in `Movie`:
 
-	```js
-	reviews: [reviewSchema],
-	// don't forget to add a comma above
-	cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
-	```
+```javascript
+reviews: [reviewSchema],
+// don't forget to add a comma above
+cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
+```
 
 - The property type of `ObjectId` **is always** used to implement **referencing**.
 
@@ -242,14 +243,15 @@ type: "lecture"
 
 - Let's add a new link in the nav bar in **partials/header.js**:
 
-	```html
-	<img src="/images/camera.svg">
-	<!-- new menu link below -->
-	<a href="/performers/new"
-		<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-		ADD PERFORMER</a>
-	```
-	Yup, the same pattern as the other links.
+```html
+<img src="/images/camera.svg">
+<!-- new menu link below -->
+<a href="/performers/new"
+<%- title === 'Add Performer' ? 'class="active"' : '' %>>
+ADD PERFORMER</a>
+```
+
+Yup, the same pattern as the other links.
 
 
 #### Creating _Performers_ - Step 3
@@ -257,15 +259,15 @@ type: "lecture"
 
 - Clicking the **ADD PERFORMER** link is going to send a `GET /performers/new` request - now we need a route to map that HTTP request to code (controller action) in **routes/performers.js**:
 
-	```js
-	const express = require('express');
-	const router = express.Router();
-	const performersCtrl = require('../controllers/performers');
-	
-	router.get('/performers/new', performersCtrl.new);
-	
-	module.exports = router;
-	```
+```javascript
+const express = require('express');
+const router = express.Router();
+const performersCtrl = require('../controllers/performers');
+
+router.get('/performers/new', performersCtrl.new);
+
+module.exports = router;
+```
 
 - As usual, the server won't be happy until we create and export that `new` action...
 
@@ -280,22 +282,22 @@ type: "lecture"
 
 - Inside of **controllers/performers.js** we go:
 
-	```js
-	const Performer = require('../models/performer');
-	
-	module.exports = {
-	  new: newPerformer
-	};
-	
-	function newPerformer(req, res) {
-	  Performer.find({}, function(err, performers) {
-	    res.render('performers/new', {
-	      title: 'Add Performer',
-	      performers
-	    });
-	  })
-	}
-	```
+```javascript
+const Performer = require('../models/performer');
+
+module.exports = {
+ new: newPerformer
+};
+
+function newPerformer(req, res) {
+ Performer.find({}, function(err, performers) {
+   res.render('performers/new', {
+     title: 'Add Performer',
+     performers
+   });
+ })
+}
+```
 
 
 #### Creating _Performers_ - Step 5
@@ -303,58 +305,58 @@ type: "lecture"
 
 - We'll need that `new` view that we just rendered:
 
-	```shell
-	$ touch views/performers/new.ejs
-	```
+```shell
+$ touch views/performers/new.ejs
+```
 
 - The next slide has the markup...
 
 - Here's the markup for **performers/new.ejs**:
 
-	```html
-	<%- include('../partials/header') %>
-	<p>Please first ensure that the Performer is not in the dropdown
-	  <select>
-	    <% performers.forEach(function(p) { %>
-	      <option><%= p.name %></option>
-	    <% }) %>
-	  </select>
-	</p>
-	<form id="add-performer-form" action="/performers" method="POST">
-	  <label>Name:</label>
-	  <input type="text" name="name">
-	  <label>Born:</label>
-	  <input type="date" name="born">
-	  <input type="submit" value="Add Performer">
-	</form>
-	<%- include('../partials/footer') %>
-	``` 
+```html
+<%- include('../partials/header') %>
+<p>Please first ensure that the Performer is not in the dropdown
+ <select>
+   <% performers.forEach(function(p) { %>
+     <option><%= p.name %></option>
+   <% }) %>
+ </select>
+</p>
+<form id="add-performer-form" action="/performers" method="POST">
+ <label>Name:</label>
+ <input type="text" name="name">
+ <label>Born:</label>
+ <input type="date" name="born">
+ <input type="submit" value="Add Performer">
+</form>
+<%- include('../partials/footer') %>
+``` 
 
 
-<!-- #### Creating _Performers_ - CSS
+#### Creating _Performers_ - CSS
 
 - Find and update in **public/stylesheets/style.css**:
 
-	```css
-	#new-form *,
-	#add-review-form *,
-	#add-performer-form * {
-	  font-size: 20px;
-	  ...
-	}
-	...
-	#add-review-form,
-	#add-performer-form {
-	  display: grid;
-	  ...
-	}	
-	...
-	#add-review-form input[type="submit"],
-	#add-performer-form input[type="submit"] {
-	  width: 10rem;
-	  ...
-	}	
-	``` -->
+```css
+#new-form *,
+#add-review-form *,
+#add-performer-form * {
+ font-size: 20px;
+ ...
+}
+...
+#add-review-form,
+#add-performer-form {
+ display: grid;
+ ...
+}	
+...
+#add-review-form input[type="submit"],
+#add-performer-form input[type="submit"] {
+ width: 10rem;
+ ...
+}	
+``` 
 
 
 #### Creating _Performers_
@@ -368,25 +370,25 @@ type: "lecture"
 
 - In **controllers/performers.js**:
 
-	```js
-	module.exports = {
-	  new: newPerformer,
-	  create
-	};
-		
-	function create(req, res) {
-    // Hack to "fix" date formatting to prevent possible day off by 1
-    // https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
-	  var s = req.body.born;
-	  req.body.born = 
-	    `${s.substr(5,2)}-${s.substr(8,2)}-${s.substr(0,4)}`;
-	  Performer.create(req.body, function(err, performer) {
-	    res.redirect('/performers/new');
-	  });
-	}
-	```
+```javascript
+module.exports = {
+ new: newPerformer,
+ create
+};
 
-- Okay, give a whirl and let's fix those typos 😊
+function create(req, res) {
+  // Hack to "fix" date formatting to prevent possible day off by 1
+  // https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
+ var s = req.body.born;
+ req.body.born = 
+   `${s.substr(5,2)}-${s.substr(8,2)}-${s.substr(0,4)}`;
+ Performer.create(req.body, function(err, performer) {
+   res.redirect('/performers/new');
+ });
+}
+```
+
+- Okay, give a whirl and let's fix those typos 
 
 
 #### Associating Movies and Performers
@@ -402,13 +404,13 @@ type: "lecture"
 
 - This user story can be accomplished with a quick refactor in the `moviesCtrl.create` action in **controllers/movies/js**:
 
-	```js
-	movie.save(function(err) {
-	  if (err) return res.redirect('/movies/new');
-	  // res.redirect('/movies');
-	  res.redirect(`/movies/${movie._id}`);
-	});
-	```
+```javascript
+movie.save(function(err) {
+ if (err) return res.redirect('/movies/new');
+ // res.redirect('/movies');
+ res.redirect(`/movies/${movie._id}`);
+});
+```
 
 - Don't forget to replace the single-quotes with back-ticks!
 
@@ -430,14 +432,14 @@ type: "lecture"
 
 - Let's refactor the `moviesCtrl.show` action so that it will pass the movie with the _performer_ documents in its `cast` array instead of `ObjectIds`:
 
-	```js
-	function show(req, res) {
-	  Movie.findById(req.params.id)
-	  .populate('cast').exec(function(err, movie) {
-	    res.render('movies/show', { title: 'Movie Detail', movie });
-	  });
-	}
-	```
+```javascript
+function show(req, res) {
+ Movie.findById(req.params.id)
+ .populate('cast').exec(function(err, movie) {
+   res.render('movies/show', { title: 'Movie Detail', movie });
+ });
+}
+```
 
 - `populate`, the unicorn of Mongoose...
 
@@ -459,35 +461,36 @@ type: "lecture"
 
 - First, we're going to need to access the `Performer` model, so require it at the top:
 
-	```js
-	const Movie = require('../models/movie');
-	// require the Performer model
-	const Performer = require('../models/performer');
-	```
+```javascript
+const Movie = require('../models/movie');
+// require the Performer model
+const Performer = require('../models/performer');
+```
 	
 - Now we're ready to refactor the `show` action... 
 
 - We'll review as we refactor the code:
 
-	```js
-	
-	function show(req, res) {
-	  Movie.findById(req.params.id)
-	  .populate('cast').exec(function(err, movie) {
-	    // Performer.find({}).where('_id').nin(movie.cast)
-	    Performer.find(
-         {_id: {$nin: movie.cast}},
-         function(err, performers) {
-           console.log(performers);
-           res.render('movies/show', {
-             title: 'Movie Detail', movie, performers
-           });
-         }
-       );
-	  });
-	}
-	```
-	The log will show we are retrieving the _performers_ - a good sign at this point. 
+```javascript
+
+function show(req, res) {
+ Movie.findById(req.params.id)
+ .populate('cast').exec(function(err, movie) {
+   // Performer.find({}).where('_id').nin(movie.cast)
+   Performer.find(
+       {_id: {$nin: movie.cast}},
+       function(err, performers) {
+         console.log(performers);
+         res.render('movies/show', {
+           title: 'Movie Detail', movie, performers
+         });
+       }
+     );
+ });
+}
+```
+
+The log will show we are retrieving the _performers_ - a good sign at this point. 
 
 
 #### Refactor _show.ejs_
@@ -525,22 +528,20 @@ type: "lecture"
 ```
 
 
-<!-- #### Refactor _show.ejs_ - CSS
-
-
+#### Refactor _show.ejs_ - CSS
 - Add this tidbit of CSS to clean up the cast list:
 
-	```css
-	ul {
-	  margin: 0 0 1rem;
-	  padding: 0;
-	  list-style: none;
-	}
-	
-	li {
-	  font-weight: bold;
-	}
-	``` -->
+```css
+ul {
+ margin: 0 0 1rem;
+ padding: 0;
+ list-style: none;
+}
+
+li {
+ font-weight: bold;
+}
+```
 
 
 #### Need a Route for the _Add to Cast_ Form Post
@@ -550,36 +551,37 @@ type: "lecture"
 
 - In **routes/performers.js**
 
-	```js
-	router.post('/movies/:id/performers', performersCtrl.addToCast);
-	```
-	`addToCast` - not a bad name, but you can use a different one if you want to
+```javascript
+router.post('/movies/:id/performers', performersCtrl.addToCast);
+```
+
+`addToCast` - not a bad name, but you can use a different one if you want to
 
 
 #### The _addToCast_ Controller Action
 
 - Let's write that `addToCast` action in **controllers/performers.js**:
 
-	```js
-	const Performer = require('../models/performer');
-	// add the Movie model
-	const Movie = require('../models/movie');
-	
-	module.exports = {
-	  new: newPerformer,
-	  create,
-	  addToCast
-	};
-	
-	function addToCast(req, res) {
-	  Movie.findById(req.params.id, function(err, movie) {
-	    movie.cast.push(req.body.performerId);
-	    movie.save(function(err) {
-	      res.redirect(`/movies/${movie._id}`);
-	    });
-	  });
-	}
-	```
+```javascript
+const Performer = require('../models/performer');
+// add the Movie model
+const Movie = require('../models/movie');
+
+module.exports = {
+ new: newPerformer,
+ create,
+ addToCast
+};
+
+function addToCast(req, res) {
+ Movie.findById(req.params.id, function(err, movie) {
+   movie.cast.push(req.body.performerId);
+   movie.save(function(err) {
+     res.redirect(`/movies/${movie._id}`);
+   });
+ });
+}
+```
 
 
 #### We Did It!

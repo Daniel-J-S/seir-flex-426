@@ -12,4 +12,4 @@ topics: "Mongoose Embedded Relationships"
 
 #### Mongoose Embedded Relationships
 - [**Lecture:** Intro to Mongoose Embedded Relationships](/backend-fundamentals/week-8/day-2/lecture-materials/intro-to-mongoose-embedded-relationships/)
-- [**Lab:** Mongoose Flights Part 2 of 3](/backend-fundamentals/week-8/day-2/labs/mongoose-flights-part-2/) - **Deliverable**
+- [**Lab:** Mongoose Flights Part 2 of 3](/backend-fundamentals/week-8/day-2/labs/mongoose-flights-part-2/) - **Combined Parts 1 - 3 Are Deliverable**

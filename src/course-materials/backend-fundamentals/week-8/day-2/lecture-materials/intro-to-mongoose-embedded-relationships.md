@@ -33,23 +33,22 @@ Students Will Be Able To:
 #### Setup
 
 
-- `clone` the starter code from [this repo](https://git.generalassemb.ly/Dvlpr-Dan/mongoose-movies.git); you can clone this project anywhere except for your homework and labs folder.
+1. <a href="/downloads/backend_fundamentals/mongoose-embedded-relationships/starter-code/mongoose-movies.zip" download>Download</a> the starter code to get started
+2. Install the node modules:
 
-- Install the node modules:
-
-	```
-	$ npm install
-	```
+```shell
+$ npm install
+```
 	
-- `cd` inside the project folder in your code editor.
+3. `cd` inside the project folder in your code editor.
 
-- Use `nodemon` to start the server.
+4. Use `nodemon` to start the server.
 
 
 #### Review the Starter Code
 
 
-- As you can see, a navigation bar and a bit of styling has been added since yesterday, but we've commented it out so we can focus on functionality for now.
+- As you can see, a navigation bar and a bit of styling has been added since yesterday.
 
 - However, the changes are more than skin deep...
 
@@ -116,29 +115,29 @@ Students Will Be Able To:
 
 - In our case, it's okay to write the `reviewSchema` just above the `movieSchema` in **models/movie.js**:
 
-	```js
-	const reviewSchema = new Schema({
-	  content: String,
-	  rating: {type: Number, min: 1, max: 5, default: 5}
-	}, {
-	  timestamps: true
-	});
-	
-	const movieSchema = new Schema({
-	```
+```javascript
+const reviewSchema = new Schema({
+ content: String,
+ rating: {type: Number, min: 1, max: 5, default: 5}
+}, {
+ timestamps: true
+});
+
+const movieSchema = new Schema({
+```
 
 - With `reviewSchema` defined, we can now use it within the `movieSchema` as follows:
 
-	```js
-	const movieSchema = new Schema({
-	  ...
-	  nowShowing: { type: Boolean, default: false },
-	  // reviews is an array of review subdocs!
-	  reviews: [reviewSchema]
-	}, {
-	  timestamps: true
-	});
-	```
+```javascript
+const movieSchema = new Schema({
+ ...
+ nowShowing: { type: Boolean, default: false },
+ // reviews is an array of review subdocs!
+ reviews: [reviewSchema]
+}, {
+ timestamps: true
+});
+```
 
 - We're now ready for the  _User Story_...
 
@@ -154,9 +153,9 @@ Students Will Be Able To:
 
 - Using the chart, the proper route for creating a _review_ is:
 
-	```shell
-	POST /movies/:id/reviews
-	```
+```shell
+POST /movies/:id/reviews
+```
 
 - Importantly, the route provides to the server the `_id` of the _movie_ that the _review_ is being created for.
 
@@ -173,50 +172,50 @@ Students Will Be Able To:
 
 - Here's the form to add under the current `</section>`:
 
-	```html
-	</section>
-	<!-- new markup below -->
-	<h2>Reviews</h2>
-	<form id="add-review-form" method="POST"
-	  action="/movies/<%= movie._id %>/reviews">
-	  <label>Review:</label>
-	  <textarea name="content"></textarea>
-	  <label>Rating:</label>
-	  <select name="rating">
-	    <option value="1">1</option>
-	    <option value="2">2</option>
-	    <option value="3">3</option>
-	    <option value="4">4</option>
-	    <option value="5">5</option>
-	  </select>
-	  <input type="submit" value="Add Review">
-	</form>
-	```
+```html
+</section>
+<!-- new markup below -->
+<h2>Reviews</h2>
+<form id="add-review-form" method="POST"
+ action="/movies/<%= movie._id %>/reviews">
+ <label>Review:</label>
+ <textarea name="content"></textarea>
+ <label>Rating:</label>
+ <select name="rating">
+   <option value="1">1</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+ </select>
+ <input type="submit" value="Add Review">
+</form>
+```
 
-<!-- - A touch of styling. **Update** this existing CSS rule on line 68:
+- A touch of styling. **Update** this existing CSS rule on line 68:
 
-	```css
-	#new-form *, #add-review-form * {
-	  font-size: 20px;
-	  ...
-	```
-	
-	and **add** this new CSS to the bottom:
-	
-	```css
-	#add-review-form {
-	  display: grid;
-	  grid-template-columns: auto auto;
-	  grid-gap: 1rem;
-	}
-	
-	#add-review-form input[type="submit"] {
-	  width: 8rem;
-	  grid-column: 2 / 3;
-	  margin-bottom: 2rem;
-	}
-	```
- -->
+```css
+#new-form *, #add-review-form * {
+ font-size: 20px;
+ ...
+```
+
+and **add** this new CSS to the bottom:
+
+```css
+#add-review-form {
+ display: grid;
+ grid-template-columns: auto auto;
+ grid-gap: 1rem;
+}
+
+#add-review-form input[type="submit"] {
+ width: 8rem;
+ grid-column: 2 / 3;
+ margin-bottom: 2rem;
+}
+```
+ 
 
 #### Adding Movie Reviews - Step 3
 
@@ -229,15 +228,19 @@ Students Will Be Able To:
 
 - To achieve max flexibility for CUD'ing the _reviews_ resource, let's define a dedicated **route** module:
 
-	```shell
-	$ touch routes/reviews.js
-	```
+```shell
+$ touch routes/reviews.js
+```
+
+<br>
+
+and a **controller** module too:
 	
-	and a **controller** module too:
-	
-	```shell
-	$ touch controllers/reviews.js
-	```
+<br>
+
+```shell
+$ touch controllers/reviews.js
+```
 
 
 #### Adding Movie Reviews
@@ -245,18 +248,18 @@ Students Will Be Able To:
 
 - Now let's require the new router in **server.js**:
 
-	```js
-	const moviesRouter = require('./routes/movies');
-	// new reviews router
-	const reviewsRouter = require('./routes/reviews');
-	```
-	and mount it like this:
-	
-	```js
-	app.use('/movies', moviesRouter);
-	// mount the reviews router
-	app.use('/', reviewsRouter);
-	```
+```javascript
+const moviesRouter = require('./routes/movies');
+// new reviews router
+const reviewsRouter = require('./routes/reviews');
+```
+and mount it like this:
+
+```js
+app.use('/movies', moviesRouter);
+// mount the reviews router
+app.use('/', reviewsRouter);
+```
 
 - Note that when mounting routers for _nested_ resources we need more flexibility in our paths, so we are going to mount to the root (`/`) path.
 
@@ -266,15 +269,15 @@ Students Will Be Able To:
 
 - Let's require the usual at the top of the router module and add our first route in **routes/reviews.js**:
 
-	```js
-	const express = require('express');
-	const router = express.Router();
-	const reviewsCtrl = require('../controllers/reviews');
-	
-	router.post('/movies/:id/reviews', reviewsCtrl.create);
-	
-	module.exports = router;
-	```
+```javascript
+const express = require('express');
+const router = express.Router();
+const reviewsCtrl = require('../controllers/reviews');
+
+router.post('/movies/:id/reviews', reviewsCtrl.create);
+
+module.exports = router;
+```
 
 - The server won't be happy until we create and export that `create` action...
 
@@ -286,13 +289,13 @@ Students Will Be Able To:
 
 - Let's go to the new **controllers/reviews.js**:
 
-	```js
-	const Movie = require('../models/movie');
-	
-	module.exports = {
-	  create
-	};
-	```
+```javascript
+const Movie = require('../models/movie');
+
+module.exports = {
+ create
+};
+```
 	
 - Above we are requiring the `Movie` model because we will need it to access the _movie_ document to add a review to.
 
@@ -301,16 +304,16 @@ Students Will Be Able To:
 
 - Here's the `create` function used to add a _review_ to a _movie_:
 	
-	```js
-	function create(req, res) {
-	  Movie.findById(req.params.id, function(err, movie) {
-	    movie.reviews.push(req.body);
-	    movie.save(function(err) {
-	      res.redirect(`/movies/${movie._id}`);
-	    });
-	  });
-	}
-	```
+```javascript
+function create(req, res) {
+ Movie.findById(req.params.id, function(err, movie) {
+   movie.reviews.push(req.body);
+   movie.save(function(err) {
+     res.redirect(`/movies/${movie._id}`);
+   });
+ });
+}
+```
 
 - As you can see, we simply push in an object that's compatible with the embedded document's schema, call `save` on the parent doc, and redirect to wherever makes sense for the app.
 
@@ -383,9 +386,9 @@ Students Will Be Able To:
 
 - Mongoose arrays have an `id` method used to find a subdocument based on the subdoc's `_id`:
 
-	```js
-	const reviewDoc = movieDoc.reviews.id('5c5ce1be03563ad5540e93e2');
-	```
+```javascript
+const reviewDoc = movieDoc.reviews.id('5c5ce1be03563ad5540e93e2');
+```
 
 - Note that the string argument represents the `_id` of the _review_ subdoc, not the _movie_ doc.
 
@@ -395,10 +398,10 @@ Students Will Be Able To:
 
 - Subdocuments have a `remove` method used to remove them from the array:
 
-	```js
-	// remove the first review subdoc
-	movieDoc.reviews[0].remove();
-	```
+```javascript
+// remove the first review subdoc
+movieDoc.reviews[0].remove();
+```
 
 
 #### Query for a Document that Contains a Certain Subdocument
@@ -407,11 +410,11 @@ Students Will Be Able To:
 
 - Let's say you wanted to find all movies with a 5 rating:
 
-	```js
-	Movie.find({'reviews.rating': 5}, function(err, movies) {
-		console.log(movies);  // wow!
-	});
-	```
+```javascript
+Movie.find({'reviews.rating': 5}, function(err, movies) {
+  console.log(movies);
+});
+```
 - Wow! `reviews.rating` represents the array and a property on the subdocs within that array!
 
 - Note that the **dot** property syntax must be enclosed in quotes.
@@ -419,7 +422,5 @@ Students Will Be Able To:
 
 
 # References
-
-
 - [MongooseJS Docs - Subdocuments](https://mongoosejs.com/docs/subdocs.html)
 

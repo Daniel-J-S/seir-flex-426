@@ -16,7 +16,7 @@ Once you've decided what you will build, please contact your instructional team 
 
 ## Planning & Presentation Requirements
 
-- By Jan 4th, EOD (End of Day), you need to have turned in the following:
+- By Wednesday Jun 3rd, EOD (End of Day), you need to have turned in the following:
 
 - A **[Trello](https://trello.com/) board** with:
     
