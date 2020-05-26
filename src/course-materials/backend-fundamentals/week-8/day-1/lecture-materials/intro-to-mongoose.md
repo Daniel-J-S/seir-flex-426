@@ -473,8 +473,10 @@ const movieSchema = new Schema({
 - Mongoose vocababulary:
 	- A **property** may be referred to as a "**path**", or "**field**".
 
-- **💪 YOU DO:**
-	- Add an additional property named `nowShowing` with a type of `Boolean` (make sure that it's uppercased so that it refers to JavaScript's built-in `Boolean` object wrapper).
+<br>
+
+**💪 YOU DO:**
+- Add an additional property named `nowShowing` with a type of `Boolean` (make sure that it's uppercased so that it refers to JavaScript's built-in `Boolean` object wrapper).
 
 - Awesome! We have defined a Mongoose schema!
 
@@ -640,7 +642,9 @@ app.use('/movies', moviesRouter);
 
 > You will most likely getting errors in your terminal at this point - we need a controller
 
-- **💪 YOU DO: Pair up and create the controller and export the `new` action - also create the view!
+<br>
+
+**💪 YOU DO: Create the controller and export the `new` action - also create the view!
 
 
 - Start by:
@@ -832,11 +836,13 @@ Movie.findOne({releaseYear: 2000}, function(err, movie) {...
 
 #### Reading Data - Practice (20 min)
 
+<br>
 
-- **💪 YOU DO - Pair up and display the list of movies!**:
-	- Define the RESTful route
-	- Write the controller `index` action to read and provide all movies to the view
-	- Create an **index.ejs** view to display in an HTML table.
+**💪 YOU DO - Pair up and display the list of movies!**:
+
+- Define the RESTful route
+- Write the controller `index` action to read and provide all movies to the view
+- Create an **index.ejs** view to display in an HTML table.
 
 - Hint: In the view, use the array `join` method to concatenate the names inside of the `cast` array.
 
