@@ -194,6 +194,11 @@ app.use('/', indexRouter);
 
 ```
 
+**Perfect! Let's start up the app with `nodemon` and check for errors**
+
+<br>
+<br>
+
 
 #### Intro to Mongoose
 
