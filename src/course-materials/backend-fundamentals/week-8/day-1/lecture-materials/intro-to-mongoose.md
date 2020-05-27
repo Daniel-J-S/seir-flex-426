@@ -8,6 +8,9 @@ type: "lecture"
 
 # Intro To Mongoose Part 1 & 2
 
+## Lesson Recordings
+
+[Click here](https://generalassembly.zoom.us/rec/share/wtBEDeDK9X9OTInEt3r8SLd6A4nuX6a80SMe_fBfnxoiBAeu_Dxt4Ssifj0ZtAS0?startTime=1590539375000) to access part 1
 
 ## Learning Objectives
 
@@ -369,9 +372,11 @@ require('./config/database');
 
 **Note that we aren't assigning our module to a variable. That's because there's no need to because:**
 
-	- We're not exporting anything of use - why assign to a variable?
-	- Calling `require('./config/database')` is all it takes to make the code run.
-	- We can `require` Mongoose in any module we want and it will always refer to the same _configured_ Mongoose instance.
+<br>
+
+- We're not exporting anything of use - why assign to a variable?
+- Calling `require('./config/database')` is all it takes to make the code run
+- We can `require` Mongoose in any module we want and it will always refer to the same _configured_ Mongoose instance
 
 <br>
 <br>
@@ -524,6 +529,8 @@ const movieSchema = new Schema({
 
 - For now, let's take a look at the eight built-in types available...
 
+<br>
+<br>
 
 #### Built-in Types for Properties
 
@@ -697,7 +704,7 @@ app.use('/movies', moviesRouter);
 
 <br>
 
-**💪 YOU DO: Create the controller and export the `new` action - also create the view!**
+**💪 YOU DO: Create the controller, export the `new` action & create the view!**
 
 <br>
 
@@ -903,7 +910,7 @@ Movie.findOne({releaseYear: 2000}, function(err, movie) {...
 <br>
 <br>
 
-**💪 YOU DO - Pair up and display the list of movies!**:
+**💪 YOU DO - Display the list of movies!**
 
 - Define the RESTful route
 - Write the controller `index` action to read and provide all movies to the view
@@ -977,7 +984,7 @@ function index(req, res) {
 
 - Before we set up the `index` view to see all the movies, let's think about how we'll get our data using the `Movie` model
   
-- To do this, we use the [`mongoose` `find()`](https://mongoosejs.com/docs/api.html#model_Model.find) method, which is available on our `Model`
+- To do this, we use the [`mongoose` `Model.find()`](https://mongoosejs.com/docs/api.html#model_Model.find) method.
 
 - This is how we implement it...
 
@@ -1046,8 +1053,9 @@ touch views/movies/index.ejs
 
 <br>
 <br>
+<br>
 
-#### Refactor the Redirect
+### Refactor the Redirect
 
 
 **Now that we have an `index` view, let's update the `redirect` in the `create` action:**
@@ -1248,8 +1256,6 @@ const movieSchema = new mongoose.Schema({
 
 ## ❓ Essential Questions
 
-
-<p>Take a couple of minutes to review in case you get picked!</p>
 
 1. **True or False:  In our code, a document's structure is _defined_ in a Mongoose model.**
 
