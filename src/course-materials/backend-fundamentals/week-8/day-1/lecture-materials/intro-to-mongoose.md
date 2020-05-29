@@ -12,6 +12,8 @@ type: "lecture"
 
 [Click here](https://generalassembly.zoom.us/rec/share/wtBEDeDK9X9OTInEt3r8SLd6A4nuX6a80SMe_fBfnxoiBAeu_Dxt4Ssifj0ZtAS0?startTime=1590539375000) to access part 1
 
+[Click here](https://generalassembly.zoom.us/rec/share/upB8BYzX02RLfJHB9XPBVaAmL5_sT6a8hCUW__Zemkezm5jbTdrdxmL9UQb5NaJR?startTime=1590622942000) to access part 2
+
 ## Learning Objectives
 
 
