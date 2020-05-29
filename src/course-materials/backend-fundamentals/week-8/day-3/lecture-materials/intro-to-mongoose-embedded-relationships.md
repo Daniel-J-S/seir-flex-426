@@ -34,13 +34,15 @@ Students Will Be Able To:
 
 
 1. <a href="/downloads/backend_fundamentals/mongoose-embedded-relationships/starter-code/mongoose-movies.zip" download>Download</a> the starter code to get started
-2. Install the node modules:
+
+2. `cd` inside the project folder in your code editor.
+
+
+3. Install the node modules:
 
 ```shell
 $ npm install
 ```
-	
-3. `cd` inside the project folder in your code editor.
 
 4. Use `nodemon` to start the server.
 
