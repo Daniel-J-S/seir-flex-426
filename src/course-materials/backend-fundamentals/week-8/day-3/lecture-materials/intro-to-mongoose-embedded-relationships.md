@@ -8,6 +8,10 @@ type: "lecture"
 
 # Intro to Mongoose Embedded Relationships
 
+<br>
+<br>
+<br>
+
 ## Learning Objectives
 
 Students Will Be Able To:
@@ -16,6 +20,8 @@ Students Will Be Able To:
 - Define schemas for embedding Subdocuments
 - Embed a Subdocument in its related document
 
+<br>
+<br>
 
 ## Roadmap
 1. Setup
@@ -29,6 +35,9 @@ Students Will Be Able To:
 	- Remove a Subdocument from a Mongoose Array
 	- Query for a Document that Contains a Certain Subdocument
 
+<br>
+<br>
+<br>
 
 #### Setup
 
@@ -46,6 +55,8 @@ $ npm install
 
 4. Use `nodemon` to start the server.
 
+<br>
+<br>
 
 #### Review the Starter Code
 
@@ -59,15 +70,13 @@ $ npm install
 	- Check [these docs](https://www.npmjs.com/package/ejs#includes) for more info.
 	- All `res.render()` calls are passing in a `title` property that's being used for the page title and to dynamically add an `active` class to the links in the nav bar.
 
-
-#### Review the Starter Code
-
-
 - Similar to how we previously added **show** functionality to the todos app, the **show** route/action for viewing a single movie has been implemented:
 	- **views/index.ejs** shows a "DETAILS" link that will send a request to the proper `show` route: `GET /movies/:id`.
 	- EJS tags write the movie's `_id` into the `href` attribute.
 	- The `moviesCtrl.show` action is using `Movie.findById` method to retrieve the movie doc with an id of `req.params.id`.
 
+<br>
+<br>
 
 #### Related Data Entities - Review
 
@@ -88,6 +97,8 @@ $ npm install
 
 - However, modeling data in MongoDB/Mongoose is more flexible, less strict, and  left up to the developer to decide,andthose decisions should be based on how best to implement the features of an application...
 
+<br>
+<br>
 
 #### Adding Movie Reviews
 
@@ -98,6 +109,8 @@ $ npm install
 
 - With MongoDB/Mongoose, **_reviews_** are a perfect use case for embedding related data.
 
+<br>
+<br>
 
 #### Embedding Subdocuments
 
@@ -110,6 +123,8 @@ $ npm install
 
 - However, since subdocs are not saved to a collection, we **do not compile a subdoc's schema into a Model**.
 
+<br>
+<br>
 
 #### Creating a Schema for a Subdocument
 
@@ -143,6 +158,9 @@ const movieSchema = new Schema({
 
 - We're now ready for the  _User Story_...
 
+<br>
+<br>
+<br>
 
 #### Adding Movie Reviews - Step 1
 
@@ -161,6 +179,9 @@ POST /movies/:id/reviews
 
 - Importantly, the route provides to the server the `_id` of the _movie_ that the _review_ is being created for.
 
+<br>
+<br>
+<br>
 
 #### Adding Movie Reviews - Step 2
 
@@ -193,38 +214,16 @@ POST /movies/:id/reviews
  <input type="submit" value="Add Review">
 </form>
 ```
-
-- A touch of styling. **Update** this existing CSS rule on line 68:
-
-```css
-#new-form *, #add-review-form * {
- font-size: 20px;
- ...
-```
-
-and **add** this new CSS to the bottom:
-
-```css
-#add-review-form {
- display: grid;
- grid-template-columns: auto auto;
- grid-gap: 1rem;
-}
-
-#add-review-form input[type="submit"] {
- width: 8rem;
- grid-column: 2 / 3;
- margin-bottom: 2rem;
-}
-```
- 
+<br>
+<br>
+<br>
 
 #### Adding Movie Reviews - Step 3
 
 
 - Browse to the "details" of a movie.
 
-- I warned you it would be ugly, but the form's `action` attribute looks pretty sweet!
+- Check out the form's `action` attribute, looks pretty sweet huh?!
 
 - Step 3 calls for defining the route on the server...
 
@@ -244,6 +243,8 @@ and a **controller** module too:
 $ touch controllers/reviews.js
 ```
 
+<br>
+<br>
 
 #### Adding Movie Reviews
 
@@ -265,6 +266,8 @@ app.use('/', reviewsRouter);
 
 - Note that when mounting routers for _nested_ resources we need more flexibility in our paths, so we are going to mount to the root (`/`) path.
 
+<br>
+<br>
 
 #### Adding Movie Reviews - Step 3
 
@@ -283,6 +286,8 @@ module.exports = router;
 
 - The server won't be happy until we create and export that `create` action...
 
+<br>
+<br>
 
 #### Adding Movie Reviews - Step 4
 
@@ -319,14 +324,17 @@ function create(req, res) {
 
 - As you can see, we simply push in an object that's compatible with the embedded document's schema, call `save` on the parent doc, and redirect to wherever makes sense for the app.
 
+<br>
+<br>
 
 #### Adding Movie Reviews - Update **show.ejs**
 
 
-- All that's left is to update **movies/show.ejs** to render the _reviews_.  Time permitting, let's type it in, otherwise we can copy/paste then review.
+- All that's left is to update **movies/show.ejs** to render the _reviews_. Time permitting, let's type it in, otherwise we can copy/paste then review.
 
-- It's a bit large, next slide please...
+<br>
 
+**We'll add the following markup below the review form**
 
 
 ```html
@@ -354,6 +362,10 @@ function create(req, res) {
 <% } %>
 ```
 
+<br>
+<br>
+<br>
+<br>
 
 #### Adding Movie Reviews 
 
@@ -367,6 +379,9 @@ function create(req, res) {
 	- Remove a subdocument from a Mongoose array, and
 	- Query for a document that contains a certain subdocument!
 
+<br>
+<br>
+
 
 ### ❓ Essential Questions
 
@@ -379,9 +394,14 @@ function create(req, res) {
 
 3. **True or False: An embedded subdocument must have its `save` method called to be persisted to the database.**
 
+<br>
+<br>
+<br>
 
 ### Further Study
 
+<br>
+<br>
 
 #### Retrieve a Subdocument from a Mongoose Array
 
@@ -394,6 +414,8 @@ const reviewDoc = movieDoc.reviews.id('5c5ce1be03563ad5540e93e2');
 
 - Note that the string argument represents the `_id` of the _review_ subdoc, not the _movie_ doc.
 
+<br>
+<br>
 
 #### Remove a Subdocument from a Mongoose Array
 
@@ -405,6 +427,8 @@ const reviewDoc = movieDoc.reviews.id('5c5ce1be03563ad5540e93e2');
 movieDoc.reviews[0].remove();
 ```
 
+<br>
+<br>
 
 #### Query for a Document that Contains a Certain Subdocument
 
@@ -422,7 +446,9 @@ Movie.find({'reviews.rating': 5}, function(err, movies) {
 - Note that the **dot** property syntax must be enclosed in quotes.
 
 
+<br>
+<br>
 
-# References
+## References
 - [MongooseJS Docs - Subdocuments](https://mongoosejs.com/docs/subdocs.html)
 

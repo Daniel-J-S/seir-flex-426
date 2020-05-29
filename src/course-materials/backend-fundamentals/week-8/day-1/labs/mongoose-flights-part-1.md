@@ -59,24 +59,19 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 
 2. Just like any other data you want to access/display in a view template, that data needs to be passed by the controller action when it calls `res.render`, however…
 
-3. Although an input of `type="datetime-local"` will display a date assigned to its `value` attribute, that date value needs to be formatted as a string matching this format: `yyyy-MM-ddThh:mm` (yes, a “T” character is used to separate the date portion from the time portion).  Formatting a date as a string is not that straight forward, but one way to do would be to use a template literal and use the `get*` methods to access the parts of the date, for example:<br>
+3. Although an input of type="datetime-local" will display a date assigned to its value attribute, that date value needs to be formatted as a string matching this format: yyyy-MM-ddThh:mm (yes, a “T” character is used to separate the date portion from the time portion). One way of obtaining the properly formatted string is to use the toISOString() method and use slice() to return only the first 16 characters, for example:
 
-
-```js
-// inside controller action
-
-var dt = newFlight.departs;
- const destDate = `${dt.getFullYear()}-0${dt.getMonth() + 1}-${dt.getDate()}T${dt.getHours().toString().padStart(2, '0')}:${dt.getMinutes().toString().padStart(2, '0')}`;  
-
- res.render('flights/new', {destDate});
+```javascript
+	const newFlight = new Flight();
+	// Obtain the default date
+	const dt = newFlight.departs;
+	// Format the date for the value attribute of the input
+	const departsDate = dt.toISOString().slice(0, 16);
+	res.render('flights/new', {departsDate});
 ```
 
-Note that the month is zero-based in JS Date objects.  Also, since `getMonth` and `getDate` return numbers that have to be “padded” to two characters in length, `.toString().padStart(2, '0')` is being used to pull this off.
 
-Another approach would be to use one of the built-in formatters to convert the date to a string and then access the parts you need from that string using the `slice` method (`slice` works on strings too).
-
-
-2. Code these additional User Stories:
+1. Code these additional User Stories:
 	- AAU, I want to be able to access each view via a navigation bar at the top of the page with links to:
 		- `ALL FLIGHTS`, and
 		- `ADD FLIGHT`

@@ -8,6 +8,8 @@ type: "lecture"
 
 # Mongoose Referencing Related Data
 
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -18,9 +20,10 @@ type: "lecture"
 - Explain the Difference Between 1:M & M:M Relationships
 - "Populate" Referenced Documents 
 
+<br>
+<br>
 
 ## Roadmap
-
 
 1. Setup
 2. Review the Starter Code
@@ -33,37 +36,125 @@ type: "lecture"
 9. _AAU, when viewing a movie's detail page, I want to see a list of the current cast and add a new performer to the list_
 10. Essential Questions
 
+
+<br>
+<br>
+
 #### Setup
 
-1. <a href="/downloads/backend_fundamentals/mongoose-referenced-relationships/starter-code/mongoose-movies.zip" download>Download</a> the starter code to get started
+- Today's starter code is the final code from our _Mongoose - Embedding Related Data_ lesson, however, to make this lesson flow better, we're need to make a couple small changes:
 
-- Install the node modules:
+<br>
 
-```shell
-$ npm install
+#### 1) We're going to add a feature to `show.ejs` that shows the average rating:
+
+```html
+
+<% if (movie.reviews.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Review</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!--First let's set up a total variable -->
+      <% let total = 0 %>  
+      <% movie.reviews.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+        </tr>
+      <% }); %>
+      <!-- Then we'll add this table row element below to show our average rating =) -->
+      <tr>
+        <td colspan="2"></td>
+        <td><strong><%= (total / movie.reviews.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Reviews Yet</h5>
+<% } %>
 ```
-	
-- `cd` inside the project folder in your code editor.
+<br>
 
-- Use `nodemon` to start the server.
+#### 2) Remove the "Cast" input tag from `/views/movies/new.ejs`
 
+```html
+<form id="new-form" action="/movies" method="POST">
+  <label>Title:</label>
+  <input type="text" name="title">
+  <label>Release Year:</label>
+  <input type="text" name="releaseYear">
+  <label>MPAA Rating</label>
+  <select name="mpaaRating">
+    <option value="G">G</option>
+    <option value="PG">PG</option>
+    <option value="PG-13">PG-13</option>
+    <option value="R">R</option>
+  </select>
+  <label>Now Showing:</label>
+  <input type="checkbox" name="nowShowing" checked>
+  <input type="submit" value="Add Movie">
+</form>
+```
 
-#### Review the Starter Code
+<br>
 
+#### 3) Remove the `<div>` elements for displaying the movie "Cast" input tag from `/views/movies/show.ejs`
 
-- Today's starter code is the final code from yesterday's _Mongoose - Embedding Related Data_ lesson with a couple of changes...
+```html
+<section id="show-page">
+  <div>Title: </div>
+  <div><%= movie.title %></div>
+  <div>Release Year: </div>
+  <div><%= movie.releaseYear %></div>
+  <div>Rating: </div>
+  <div><%= movie.mpaaRating %></div>
+  <div>Now Showing: </div>
+  <div><%= movie.nowShowing ? 'Yes' : 'Nope' %></div>
+</section>
+```
 
-- The `cast` property on the `Movie` model has been removed and all related forms/views and controller code have been adjusted accordingly. This was done so that in this lesson we can reference _performer_ documents created using a `Performer` Model.
+<br>
 
-- The **movies/show.ejs** view shows how you can use EJS to calculate an _average rating_ for a movie.
+#### 4) Temporarily "comment out" the cast property in the `models/movie.js`
 
+```javascript
+onst movieSchema = new Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  releaseYear: {
+    type: Number,
+    default: function () {
+      return new Date().getFullYear();
+    }
+  }, mpaaRating: String,
+  // cast: [String],
+  nowShowing: { type: Boolean, default: false },
+  reviews: [reviewSchema]
+
+}, {
+  timestamps: true
+});
+```
+
+<br>
+<br>
 
 #### Perform CRUD Using Mongoose Models in a Node REPL
 
 
-- Because of the removal of the `cast` property, we will want to start fresh by deleting the existing _movie_ documents.
+- Because of the eventual refactor of the `cast` property, we will want to start fresh by deleting the existing _movie_ documents.
 
-- This provides another opportunity to perform CRUD operations in Terminal using a Node REPL session - something that you'll likely need to do when developing an app.
+- This provides another opportunity to perform CRUD operations in Terminal using a Node REPL session - something that you'll likely need to do in a real-world scenario.
 
 - Start by opening a terminal session and make sure that you are in the **mongoose-movies** folder.
 
@@ -125,11 +216,16 @@ The `find` method returns a **Query** object that is first logged, followed by t
 
 - For future reference, here's a gist that documents how to do what we just did:[Perform CRUD Using Mongoose Models in a Node REPL](https://gist.github.com/myDeveloperJourney/1f3c01e199913b09e90988dce3384bb1)
 
+<br>
+<br>
 
 #### A New Data Resource: _Performers_
 
 
 - We are going to implement the following data relationship:**_A Movie has many Performers; A Performer has many Movies_**** `Movie >--< Performer`** (Many-To-Many)
+
+<br>
+<br>
 
 
 #### 💪 Practice Exercise (5 minutes)
@@ -145,6 +241,8 @@ The `find` method returns a **Query** object that is first logged, followed by t
 
 - Require and mount the new router in **server.js** to the path of `/`.
 
+<br>
+<br>
 
 #### Create the _Performer_ Model
 
@@ -170,6 +268,9 @@ module.exports = mongoose.model('Performer', performerSchema);
 ```
 
 - We want to _try_ to prevent duplicate _performers_ (more on this in a bit).
+
+<br>
+<br>
 
 
 #### Referencing _Performers_ in the _Movie_ Model
@@ -199,6 +300,8 @@ cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
 
 - What this means for **mongoose-movies** is that we only want to create a certain _performer_ once (when they don't exist).
 
+<br>
+<br>
 
 #### Many:Many CRUD
 
@@ -209,6 +312,8 @@ cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
 
 - **mongoose-movies** can already create _movies_, but now it needs the capability to create _performers_...
 
+<br>
+<br>
 
 #### _AAU, I want to create a new performer if they don't already exist_
 
@@ -225,15 +330,24 @@ cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
 	
 	- `res.render` a view in the case of a GET request, or `res.redirect` if data was changed.
 
+<br>
+<br>
+
 
 #### Creating _Performers_ - Step 1
 
 
 - We will want a dedicated view for adding a performer, thus creating a performer will require two request/response cycles:  One for the `new` action and one for the `create` action...
 
-- **💪 YOU DO: Reply in Slack with the proper routes (Method & Path) for**:
-	- Displaying a page with a form for entering a _performer_
-	- Creating a new _performer_ when the form is submitted
+<br>
+<br>
+
+**💪 YOU DO: Reply in Slack with the proper routes (Method & Path) for**:
+- Displaying a page with a form for entering a _performer_
+- Creating a new _performer_ when the form is submitted
+
+<br>
+<br>
 
 
 #### Creating _Performers_ - Step 2
@@ -243,16 +357,16 @@ cast: [{type: Schema.Types.ObjectId, ref: 'Performer'}]
 
 - Let's add a new link in the nav bar in **partials/header.js**:
 
-```html
+```ejs
 <img src="/images/camera.svg">
 <!-- new menu link below -->
-<a href="/performers/new"
-<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-ADD PERFORMER</a>
+<a href="/performers/new" <%- title === 'Add Performer' ? 'class="active"' : '' %>>ADD PERFORMER</a>
 ```
 
 Yup, the same pattern as the other links.
 
+<br>
+<br>
 
 #### Creating _Performers_ - Step 3
 
@@ -271,6 +385,8 @@ module.exports = router;
 
 - As usual, the server won't be happy until we create and export that `new` action...
 
+<br>
+<br>
 
 #### Creating _Performers_ - Step 4
 
@@ -298,6 +414,9 @@ function newPerformer(req, res) {
  })
 }
 ```
+
+<br>
+<br>
 
 
 #### Creating _Performers_ - Step 5
@@ -331,6 +450,8 @@ $ touch views/performers/new.ejs
 </form>
 <%- include('../partials/footer') %>
 ``` 
+<br>
+<br>
 
 
 #### Creating _Performers_ - CSS
@@ -357,6 +478,8 @@ $ touch views/performers/new.ejs
  ...
 }	
 ``` 
+<br>
+<br>
 
 
 #### Creating _Performers_
@@ -366,7 +489,13 @@ $ touch views/performers/new.ejs
 
 - The `action` & `method` on the form look good, we just need to listen to that route.
 
-- **💪 YOU DO: Define the route for the create action**
+<br>
+<br>
+
+**💪 YOU DO: Define the route for the create action**
+
+<br>
+<br>
 
 - In **controllers/performers.js**:
 
@@ -390,6 +519,8 @@ function create(req, res) {
 
 - Okay, give a whirl and let's fix those typos 
 
+<br>
+<br>
 
 #### Associating Movies and Performers
 
@@ -398,6 +529,8 @@ function create(req, res) {
 
 - But first, a quick refactor...
 
+<br>
+<br>
 
 #### _AAU, after adding a movie, I want to see its details page_
 
@@ -416,6 +549,9 @@ movie.save(function(err) {
 
 - User story done! Now for some fun!
 
+<br>
+<br>
+
 
 #### _AAU, when viewing a movie's detail page,I want to see a list of the current cast and add a new performer to the list_
 
@@ -425,6 +561,9 @@ movie.save(function(err) {
 	- Using a form with a dropdown, we can send a request to associate a performer and movie. We will need the list of performers to build the dropdown, but only the performers not already in the cast!
 
 - Let's get started!
+
+<br>
+<br>
 
 
 #### Replacing _ObjectIds_ with the Actual Docs
@@ -443,6 +582,8 @@ function show(req, res) {
 
 - `populate`, the unicorn of Mongoose...
 
+<br>
+<br>
 
 #### Replacing _ObjectIds_ with the Actual Docs
 
@@ -451,8 +592,14 @@ function show(req, res) {
 
 - When we "build" queries like this, we need to call the `exec` method to actually run it (passing in the callback to it).
 
-- **❓ How does the `populate` method know to replace the `ObjectId`s with `Performer` documents?**
+<br>
+<br>
 
+**❓ How does the `populate` method know to replace the `ObjectId`s with `Performer` documents?**
+
+
+<br>
+<br>
 
 #### Passing the _Performers_
 
@@ -492,6 +639,9 @@ function show(req, res) {
 
 The log will show we are retrieving the _performers_ - a good sign at this point. 
 
+<br>
+<br>
+
 
 #### Refactor _show.ejs_
 
@@ -527,6 +677,10 @@ The log will show we are retrieving the _performers_ - a good sign at this point
 </form>
 ```
 
+<br>
+<br>
+<br>
+<br>
 
 #### Refactor _show.ejs_ - CSS
 - Add this tidbit of CSS to clean up the cast list:
@@ -543,6 +697,9 @@ li {
 }
 ```
 
+<br>
+<br>
+
 
 #### Need a Route for the _Add to Cast_ Form Post
 
@@ -557,6 +714,8 @@ router.post('/movies/:id/performers', performersCtrl.addToCast);
 
 `addToCast` - not a bad name, but you can use a different one if you want to
 
+<br>
+<br>
 
 #### The _addToCast_ Controller Action
 
@@ -584,6 +743,9 @@ function addToCast(req, res) {
 ```
 
 
+<br>
+<br>
+
 #### We Did It!
 
 
@@ -591,6 +753,9 @@ function addToCast(req, res) {
 
 - A few questions, then on to the lab!
 
+
+<br>
+<br>
 
 ### ❓ Essential Questions
 
@@ -602,6 +767,9 @@ function addToCast(req, res) {
 2. **Describe the difference between 1:M & M:M relationships.**
 
 3. **What's the name of the method used to replace an `ObjectId` with the document it references?**
+
+<br>
+<br>
 
 
 ## References
