@@ -42,7 +42,7 @@ type: "lecture"
 
 #### Setup
 
-- Today's starter code is the final code from our _Mongoose - Embedding Related Data_ lesson, however, to make this lesson flow better, we're need to make a couple small changes:
+- Today's starter code is the final code from our _Mongoose - Embedding Related Data_ lesson, however, to make this lesson flow better, let's make a few small changes:
 
 <br>
 
@@ -63,6 +63,7 @@ type: "lecture"
       <!--First let's set up a total variable -->
       <% let total = 0 %>  
       <% movie.reviews.forEach(function(r) { %>
+         <!-- We'll aggregate the total ratings -->
         <% total += r.rating %>
         <tr>
           <td><%= r.createdAt.toLocaleDateString() %></td>
@@ -144,6 +145,19 @@ onst movieSchema = new Schema({
 }, {
   timestamps: true
 });
+```
+
+<br>
+<br>
+
+
+#### 5) Remove the following lines from the **`create` action** inside of `controllers/movies.js`
+
+```javascript
+
+  req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
+
+  if (req.body.cast) req.body.cast = req.body.cast.split(',');
 ```
 
 <br>

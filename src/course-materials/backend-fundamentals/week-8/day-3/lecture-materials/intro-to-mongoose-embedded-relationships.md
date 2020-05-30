@@ -61,7 +61,7 @@ $ npm install
 #### Review the Starter Code
 
 
-- As you can see, a navigation bar and a bit of styling has been added since yesterday.
+- As you can see, a navigation bar and a bit of styling has been added since our last `Mongoose` lesson.
 
 - However, the changes are more than skin deep...
 
