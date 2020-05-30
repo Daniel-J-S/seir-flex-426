@@ -473,19 +473,19 @@ $ touch views/performers/new.ejs
 - Find and update in **public/stylesheets/style.css**:
 
 ```css
+#add-review-form,
+#add-performer-form {
+ display: grid;
+ ...
+}	
+
 #new-form *,
 #add-review-form *,
 #add-performer-form * {
  font-size: 20px;
  ...
 }
-...
-#add-review-form,
-#add-performer-form {
- display: grid;
- ...
-}	
-...
+
 #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
  width: 10rem;
@@ -531,7 +531,6 @@ function create(req, res) {
 }
 ```
 
-- Okay, give a whirl and let's fix those typos 
 
 <br>
 <br>
@@ -571,8 +570,8 @@ movie.save(function(err) {
 
 - Let's ponder what it's going to take to implement this user story:
 	- In **movies/show.ejs**, iterate over the movie's cast and use EJS to render them.
-	- Hold it! Because we are using referencing, there are `ObjectId`s in a movie's `cast` array - not subdocs. Oh wait, this is what the magical `populate` method is for!
-	- Using a form with a dropdown, we can send a request to associate a performer and movie. We will need the list of performers to build the dropdown, but only the performers not already in the cast!
+	- Hold it! Because we are using referencing, there are `ObjectId`s in a movie's `cast` array - not subdocs. <br>Oh wait, this is what the magical `populate` method is for!
+	- Using a form with a dropdown, we can send a request to associate a performer and movie. <br>We will need the list of performers to build the dropdown, but only the performers not already in the cast!
 
 - Let's get started!
 
