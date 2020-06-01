@@ -15,6 +15,18 @@ type: "lecture"
 | Save and Retrieve MongoDB Documents using the Mongo Shell |
 | Describe Embedding & Referencing |
 
+<br>
+<br>
+
+[Click here](https://generalassembly.zoom.us/rec/share/vdZSKJfwrklLfs_u9Hn1a7YaF4r4X6a82yBL-acKmU4A5svSo0Y8cKY1BRqlNcwb?startTime=1590271346000) to access recording
+
+<br>
+
+**If prompted for password, please enter 8q$l352x**
+
+<br>
+<br>
+
 ## Roadmap
 
 - Tech Check - Make sure we have MongoDB Installed
