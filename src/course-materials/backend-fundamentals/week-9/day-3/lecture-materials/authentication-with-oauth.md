@@ -7,6 +7,8 @@ type: "lecture"
 ---
 # Authentication with OAuth
 
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -19,6 +21,8 @@ Students will be able to:
 - Add OAuth authentication to an Express app using PassportJS
 - Use Middleware & PassportJS to provide authorization
 
+<br>
+<br>
 
 ## Roadmap
 
@@ -32,6 +36,8 @@ Students will be able to:
 - Review the Starter Code
 - Today's Game Plan (11 Steps)
 
+<br>
+<br>
 
 ## Intro to Authentication
 
@@ -43,6 +49,8 @@ Students will be able to:
 
 - For example, when we use online banking, or more importantly, save songs to our Spotify playlists, the application has to know who we are - and this is where **authentication** comes in.
 
+<br>
+<br>
 
 #### What is Authentication?
 
@@ -54,6 +62,8 @@ Students will be able to:
 	- **Unit 3**: Token-based username/password login
 	- **Unit 4**: Session-based username/password login
 
+<br>
+<br>
 
 #### Authentication vs. Authorization
 
@@ -66,6 +76,8 @@ Students will be able to:
 	- What features a logged in (authenticated) user has vs. an anonymous visitor?- or -
 	- What features an _admin_ user has vs. some other user _role_?
 
+<br>
+<br>
 
 ## Why OAuth?
 
@@ -100,11 +112,11 @@ Students will be able to:
 
 - OAuth is hot, so let's use it!
 
+<br>
+<br>
 
-## What is OAuth?
 
-
-#### What is OAuth? - Vocab
+## What is OAuth? - Vocab
 
 
 - **OAuth provider**: A service company such as _Google_ that makes its OAuth authentication service available to third-party applications.
@@ -129,6 +141,10 @@ Students will be able to:
 	- Twitter
 	- [Many more...](https://en.wikipedia.org/wiki/List_of_OAuth_providers)
 
+
+<br>
+<br>
+<br>
 
 ## How Does OAuth Work?
 
@@ -158,6 +174,9 @@ Students will be able to:
 
 - Plus, we will be using a very popular piece of middleware that will handle most of the OAuth _dance_ for us.
 
+<br>
+<br>
+<br>
 
 #### OAuth Review Questions
 
@@ -170,11 +189,10 @@ Students will be able to:
 
 - **What is the _client application_ within the context of an OAuth provider?**
 
+<br>
+<br>
 
-## Preview the App
-
-
-#### The App We Will Build Today
+## Preview the App - The App We Will Build Today
 
 
 - Today, we are going to take a starter application and add OAuth authentication & authorization to it.
@@ -188,7 +206,9 @@ Students will be able to:
 <br>
 <br>
 <br>
+
 [**Click Here to Check it Out!**](https://seir-flex-students.herokuapp.com/)
+
 <br>
 <br>
 <br>
@@ -209,12 +229,13 @@ We will complete these stories today:
 	- I want to view the Google avatar instead of the placeholder icon.
 
 
-## Review the Starter Code
+<br>
+<br>
+<br>
 
+## Setup and Review the Starter Code
 
-#### Setup the Starter Code
-
-- `clone` the starter code from [this repo](https://git.generalassemb.ly/Dvlpr-Dan/SEIR-Flex-Students.git); you can clone this project anywhere except for your homework and labs folder.
+<a href="/downloads/backend_fundamentals/authentication-with-oauth/starter-code/seir-flex-students.zip" download>Download</a> the starter code to get started
 
 - Install the node modules:
 
@@ -230,6 +251,8 @@ We will complete these stories today:
 
 - The app uses the [_Materialize_ CSS framework](http://materializecss.com/) based upon [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
+<br>
+<br>
 
 #### Review the Starter Code<small>Config</small>
 
@@ -271,6 +294,8 @@ require('dotenv').config()
 
 - Note that all environment variables listed in `.env` will also need to be set on the server after the app has been deployed. 
 
+<br>
+<br>
 
 #### Review the Starter Code<small>Database</small>
 
@@ -283,6 +308,8 @@ require('dotenv').config()
 
 - FYI, we get our hosted database from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), which is our goto for cloud-based MongoDB databases.
 
+<br>
+<br>
 
 
 #### Review the Starter Code<small>The View</small>
@@ -292,6 +319,8 @@ require('dotenv').config()
 
 - EJS is being used to render a "card" for each student.
 
+<br>
+<br>
 
 #### Review the Starter Code<small>Models</small>
 
@@ -308,6 +337,8 @@ require('dotenv').config()
 
 - Thanks to the `factSchema`, when we push a new fact into the `facts` array, all we do is provide the `text` field, and an `_id` will automatically be created in the subdocument for us.
 
+<br>
+<br>
 
 #### Review the Starter Code<small>Routing</small>
 
@@ -332,7 +363,8 @@ require('dotenv').config()
   
 - Please note, this is one of the few exceptions we'd make to our typical RESTful routing convention.
 
-
+<br>
+<br>
 
 #### Review the Starter Code <small>Controller</small>
 
@@ -340,8 +372,9 @@ require('dotenv').config()
 - The `index` action in **controllers/students.js** is querying the `Student` model and providing the array of students to the **students/index.ejs** view.
 
 
-## Ready for Some OAuth?
-
+<br>
+<br>
+<br>
 
 #### Today's OAuth Game Plan
 
@@ -359,6 +392,9 @@ require('dotenv').config()
 - **Step 11:** Add Authorization
 
 
+<br>
+<br>
+
 #### Step 1 - Register our App
 
 
@@ -370,6 +406,8 @@ require('dotenv').config()
 
 - Time to register our app...
 
+<br>
+<br>
 
 #### Step 1.1 - Google Developers Console
 
@@ -377,6 +415,8 @@ require('dotenv').config()
 
 <img src="https://i.imgur.com/HE95SsU.png">
 
+<br>
+<br>
 
 #### Step 1.2 - Create a Project
 
@@ -386,6 +426,9 @@ require('dotenv').config()
 
 <img src="https://i.imgur.com/u4A0oHs.png">
 
+
+<br>
+<br>
 
 #### Step 1.3 - Enable the People API
 
@@ -402,6 +445,8 @@ require('dotenv').config()
 
 <img src="https://i.imgur.com/DkLnpdr.png">
 
+<br>
+<br>
 
 #### Step 1.4 - Obtain Credentials for App
 
@@ -423,6 +468,8 @@ require('dotenv').config()
 
 <img src="https://i.imgur.com/DtyMe9F.png">
 
+<br>
+<br>
 
 #### Step 1.4 - Obtain Credentials for App
 
@@ -456,6 +503,8 @@ GOOGLE_SECRET=Yn9T_2BKzxr4zgprzKDGI5j3
 GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 ```
 
+<br>
+<br>
 
 #### Congrats on Registering the App
 
@@ -464,6 +513,9 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Any questions about what we just did?
 
+
+<br>
+<br>
 
 #### Step 2 - Passport Discussion
 
@@ -498,6 +550,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - You will then be able to access that `req.user` object in all of our controller actions!
 
+<br>
+<br>
 
 #### Step 3 - Session Middleware
 
@@ -514,6 +568,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - FYI, since sessions are maintained in memory by default, if the server restarts, session data will be lost. You will see this happen when _nodemon_ restarts the server and you are no longer logged in :)
 
+<br>
+<br>
 
 #### Step 3.1 - Installing Session Middleware
 
@@ -535,6 +591,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 	const port = 3000;
 	```
 
+<br>
+<br>
 
 #### Step 3.2 - Configure and Mount Session Middleware
 
@@ -553,6 +611,9 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 - The `secret` is used to digitally sign the session cookie making it very secure. You can change it to anything you want. Don't worry about the other two settings, they are only being set to suppress deprecation warnings.
 
 
+<br>
+<br>
+
 #### Step 3.3 - Verifying Session Middleware
 
 
@@ -564,11 +625,15 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - A cookie named `connect.sid` confirms that the session middleware is doing its job.
 
+<br>
+<br>
 
 
 #### Congrats, the session middleware is now in place!
 
 
+<br>
+<br>
 
 
 #### Step 4 - Install Passport
@@ -590,6 +655,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 	const passport = require('passport');
 	```
 
+<br>
+<br>
 
 #### Step 4.1 - Mount Passport
 
@@ -606,6 +673,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 	
 - The way `passport` middleware is being mounted is [straight from the docs](http://www.passportjs.org/docs/configure/).
 
+<br>
+<br>
 
 #### Step 5 - Create a Passport Config Module
 
@@ -620,6 +689,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - In case you're wondering, although the module is named the same as the `passport` module we've already required, it won't cause a problem because a module's full path uniquely identifies it to Node.
 
+<br>
+<br>
 
 #### Step 5.1 - Passport Module's Exports Code 
 
@@ -635,6 +706,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 	require('./config/passport');
 	```
 
+<br>
+<br>
 
 #### Step 5.2 - Require Passport 
 
@@ -647,6 +720,8 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - This `require` returns the very same `passport` object that was required in **server.js** - Node modules are _singletons_.
 
+<br>
+<br>
 
 #### Step 6 - Install the OAuth Strategy
 
@@ -661,6 +736,9 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Note that _OAuth 1.0_ does still exist here and there, but it's pretty much obsolete.
 
+
+<br>
+<br>
 
 #### Step 6.1 - Require the OAuth Strategy
 
@@ -677,7 +755,9 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 - Let's make sure there's no errors before moving on to the fun stuff!
 
- 
+<br>
+<br>
+
 #### Step 7 - Configuring Passport
 
 <p style="text-align:left">To configure Passport we will:</p>
@@ -688,7 +768,9 @@ GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
 
 3. Define a _deserializeUser_ method that Passport will call on each request when a user is logged in. What we return will be assigned to the `req.user` object.
 
- 
+<br>
+<br>
+
 #### Step 7.1 - <span style="text-transform:lowercase">passport.use</span>
 
 - Now it's time to call the `passport.use` method to plug-in an instance of the OAuth strategy and provide a _verify_ callback function that will be called whenever a user logs in with OAuth. In **passport.js**:
@@ -712,7 +794,9 @@ passport.use(new GoogleStrategy({
 
 - Next we have to code the _verify_ callback function...
 
- 
+<br>
+<br>
+
 #### Step 7.2 - The <em>Verify</em> Callback
 
 
@@ -736,6 +820,8 @@ passport.use(new GoogleStrategy({
 	
 - However, in order to find a user in our database by their _Google Id_, we're going to need to add a field to our `Student` model's schema to hold it...
 
+<br>
+<br>
 
 #### Step 7.3 - Modify the <em>Student</em> Model
 
@@ -755,6 +841,8 @@ passport.use(new GoogleStrategy({
 
 - Cool, now when we get a new user via OAuth, we can use the Google `profile` object's info to create our new user!
 
+<br>
+<br>
 
 #### Step 7.4 - Callback Code
 
@@ -803,6 +891,8 @@ passport.use(new GoogleStrategy({
 ));
 ```
 
+<br>
+<br>
 
 #### Step 7.5 - <span style="text-transform:lowercase">de/serialize</span>U<span style="text-transform:lowercase">ser</span> Methods
 
@@ -825,6 +915,8 @@ passport.use(new GoogleStrategy({
 
 - Again, this is done for server scalability and performance reasons - a lot of session data sucks.
 
+<br>
+<br>
 
 #### Step 7.6 - <span style="text-transform:lowercase">deserialize</span>U<span style="text-transform:lowercase">ser</span> Method
 
@@ -842,6 +934,8 @@ passport.use(new GoogleStrategy({
 
 - Let's do another error check.
 
+<br>
+<br>
 
 #### Step 8 - Define Routes for Authentication
 
@@ -852,6 +946,8 @@ passport.use(new GoogleStrategy({
 
 - Lastly, we will need a route for the user to logout.
 
+<br>
+<br>
 
 #### Step 8.1 - <span style="text-transform:lowercase">routes/index</span> Module
 
@@ -866,6 +962,8 @@ passport.use(new GoogleStrategy({
 	const passport = require('passport');
 	```
 
+<br>
+<br>
 
 #### Step 8.2 - Login Route
 
@@ -889,6 +987,8 @@ passport.use(new GoogleStrategy({
 
 - We are also specifying the _scope_ that we want access to, in this case, `['profile', 'email']`.
 
+<br>
+<br>
 
 #### Step 8.3 - Google Callback Route
 
@@ -908,6 +1008,8 @@ passport.use(new GoogleStrategy({
 
 - Note that we can specify the redirects for a successful and unsuccessful login. For this app, we will redirect the user to see the list of students/facts in the case of a successful login and to the root in case of a failure.
 
+<br>
+<br>
 
 #### Step 8.4 - Logout Route
 
@@ -926,6 +1028,8 @@ passport.use(new GoogleStrategy({
 
 - Good time to do another error check.
 
+<br>
+<br>
 
 #### Step 9 - Add Login/Logout UI
 
@@ -941,6 +1045,8 @@ passport.use(new GoogleStrategy({
 	<br>
 	<br>
 	<img src="https://i.imgur.com/CXKo29Z.png">
+<br>
+<br>
 
 
 #### Step 9 - Add Login/Logout UI
@@ -974,6 +1080,8 @@ function index(req, res, next) {
 
 - Now the logged in student is in a `user` variable that's available inside of both **views/index.ejs** and **views/students/index.ejs**. If nobody is logged in, `user` will be `undefined` (falsey).
 
+<br>
+<br>
 
 #### Step 9.1 - Add the Login / Logout UI Logic
 
@@ -1015,12 +1123,20 @@ function index(req, res, next) {
 	</ul>
 	```
 
+
+<br>
+<br>
+
 #### Step 9 - Try Logging In!
 
 
 - We've finally got to the point where you can test out our app's authentication!
 
 - May the force be with us!
+
+
+<br>
+<br>
 
 
 #### Step 10 - Code the First User Story
@@ -1032,7 +1148,8 @@ function index(req, res, next) {
 
 - However, we **only** want this UI to show within the logged in student's card only.
 
-
+<br>
+<br>
 
 #### Step 10.1 - Add Dynamic UI
 
@@ -1060,6 +1177,8 @@ function index(req, res, next) {
 
 - Note how the `equals` method is being used to compare the `_id`s - this is necessary because they are objects. Also, the `(user && user._id)` prevents an error when there's no `user` logged in.
 
+<br>
+<br>
 
 #### Step 10.2 - Controller Code
 
@@ -1077,6 +1196,8 @@ function index(req, res, next) {
 
 - Note that `req.user` IS a Mongoose _user_ document!
 
+<br>
+<br>
 
 
 #### Step 10 - Code the First User Story
@@ -1089,6 +1210,8 @@ function index(req, res, next) {
 - Cool, just one step left!
 
 
+<br>
+<br>
 
 #### Step 11 - Authorization
 
@@ -1099,6 +1222,8 @@ function index(req, res, next) {
 
 - We're going to write our own little middleware function to take advantage of `req.isAuthenticated()` to perform some authorization.
 
+<br>
+<br>
 
 #### Step 11.1 - Authorization Middleware
 
@@ -1118,6 +1243,10 @@ function index(req, res, next) {
 - Take note of the inserted `isLoggedIn` middleware function!
 
 
+<br>
+<br>
+
+
 #### Step 11.2 - Authorization Middleware
 
 
@@ -1135,6 +1264,8 @@ function index(req, res, next) {
 
 - That's all there is to it!
 
+<br>
+<br>
 
 ## Congrats!
 
@@ -1147,6 +1278,10 @@ function index(req, res, next) {
 
 - **In your own words, explain what a _session_ is.**
 
+
+<br>
+<br>
+
 ### Practice Exercises
 
 
@@ -1156,6 +1291,10 @@ function index(req, res, next) {
 	- I want to show the user's Google avatar instead of the current icon.
 	- I want to be able to delete a fact about myself, in case I make a mistake.
 
+<br>
+<br>
+<br>
+<br>
 
 ### References
 

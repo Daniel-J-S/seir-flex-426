@@ -1,16 +1,16 @@
 ---
 track: "Backend Fundamentals"
-title: "Week 9 - Day 2"
+title: "Week 9 - Day 1"
 week: 9
-day: 2
+day: 1
 type: "homepage"
 topics: "Catch up on Labs & Project 2 Planning"
 ---
 
 
-# Week 9 - Day 2
+# Week 9 - Day 1
 
 #### Catch up and Plan
-- **Activity:** Catch up to & Review Labs
+- **Activity:** Catch up to & finish Mongoose Flights Labs
 - **Activity:** Planning and Approvals For Project 2
 
