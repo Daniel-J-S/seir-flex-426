@@ -11,6 +11,6 @@ topics: "Catch up on Labs & Project 2 Planning"
 # Week 9 - Day 1
 
 #### Catch up and Plan
-- **Activity:** Catch up to & finish Mongoose Flights Labs
+- **Activity:** Finish Mongoose Flights Labs
 - **Activity:** Planning and Approvals For Project 2
 
