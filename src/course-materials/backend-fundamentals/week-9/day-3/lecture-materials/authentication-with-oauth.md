@@ -10,6 +10,14 @@ type: "lecture"
 <br>
 <br>
 
+[Click here](https://generalassembly.zoom.us/rec/share/y_dOIJ_u2GFIUpHN1n_0Y6QBQKPqX6a81yBI8_sFyRl2f7NALFREbjmnL_S4n8qT?startTime=1591455356000) to access lesson recording
+
+- The access password is: **1o@gg+0+**
+
+
+<br>
+<br>
+
 ## Learning Objectives
 
 
