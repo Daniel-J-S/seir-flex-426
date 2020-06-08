@@ -9,6 +9,9 @@ topics: "Producing an API in Express"
 
 # Producing an API in Express
 
+<br>
+<br>
+
 # Learning Objectives
 
 
@@ -18,6 +21,8 @@ topics: "Producing an API in Express"
 
 - Respond to API requests with JSON and appropriate status codes
 
+<br>
+<br>
 
 # Roadmap
 
@@ -35,11 +40,8 @@ topics: "Producing an API in Express"
 - CORS
 - Essential Questions
 
-## Lesson Recording
-
-<div class="iframe-container">
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/iK6VVsnD0Ls" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+<br>
+<br>
 
 
 ### Why expose API access to an app?
@@ -51,6 +53,8 @@ topics: "Producing an API in Express"
 	- Development of single-page applications (no full-page refreshes).
 	- Our app's RESTful resources and functionality to be accessed by multiple front-ends (web, mobile and desktop).
 
+<br>
+<br>
 
 ### Views not required
 
@@ -61,6 +65,8 @@ topics: "Producing an API in Express"
 
 - However, the very same web app may send back HTML using views **and** send back JSON by exposing an API.  They are not mutually exclusive.
 
+<br>
+<br>
 
 ### Postman
 
@@ -69,6 +75,9 @@ topics: "Producing an API in Express"
 
 - It can be installed by [this download](https://www.getpostman.com/downloads/) 
 
+<br>
+<br>
+<br>
 
 ### 💪 Practice Exercise (15 Min)
 
@@ -81,12 +90,17 @@ topics: "Producing an API in Express"
 
 - Follow the instructions in the next 4 slides...
 
+<br>
+<br>
+<br>
 
 ### 💪 We need an Express app
 
-- Install the [express generator](https://www.npmjs.com/package/express-generator)
+- If you haven't done so already, install the [express generator](https://www.npmjs.com/package/express-generator)
 
-We'll use a build tool, which will make creating an express application much faster! 
+- This tool will make creating an express application much faster! 
+
+- Only follow the below commands if you haven't installed the generator, otherwise we'll go straight to creating the application.
 
 ```shell
 $ npm install -g express-generator
@@ -109,6 +123,8 @@ The express generator provides us with the `express` command, then we simply pro
 
 - The last thing we need to do is `cd` into `puppies-api` and install the `node-modules` with `npm install` - _(Express generator does not automatically install them)._
 
+<br>
+<br>
 
 ### 💪 Install Mongoose and connect to a DB
 
@@ -119,6 +135,8 @@ The express generator provides us with the `express` command, then we simply pro
 
 - Reminder:  The code in the `database.js` module won't ever run unless...
 
+<br>
+<br>
 
 ### 💪 Model?  Puppy, of course!
 
@@ -130,12 +148,18 @@ The express generator provides us with the `express` command, then we simply pro
 	- **breed**: `String` / default to "Mixed"
 	- **age**: `Number` / default to 0
 
+<br>
+<br>
+<br>
 
 ### 💪 Test the Model (Time Permitting)
 
 
 - If you have the time, test the code by creating a puppy or two in a  Node REPL. <br>[Here are instructions how](https://gist.github.com/myDeveloperJourney/1f3c01e199913b09e90988dce3384bb1)
 
+<br>
+<br>
+<br>
 
 ### API RESTful routes
 
@@ -153,6 +177,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 <img src="https://i.imgur.com/Y9n4SPT.png" width="900">
 
+<br>
+<br>
+<br>
 
 ### Proper response codes
 
@@ -166,6 +193,10 @@ The express generator provides us with the `express` command, then we simply pro
 	<img src="https://i.imgur.com/TbZcD8Z.png" width="900">
 	
 - Note that if something goes wrong on the server (network error, etc., we should send back a status code of 500).
+
+<br>
+<br>
+<br>
 
 
 ### Set up the routes for the API
@@ -184,6 +215,9 @@ The express generator provides us with the `express` command, then we simply pro
 	- `puppiesCtrl.update`
 	- `puppiesCtrl.delete`
 	
+<br>
+<br>
+<br>
 
 ### Responding with JSON and a Status Code
 
@@ -201,6 +235,9 @@ The express generator provides us with the `express` command, then we simply pro
 	```
 - Notice how we chained on to the `status` method.
 
+<br>
+<br>
+<br>
 
 ### Code the `index` Action
 
@@ -213,6 +250,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 - When you're done, we'll use Postman to test out our first API route!
 
+<br>
+<br>
+<br>
 
 ### Code the `create` Action
 
@@ -225,6 +265,10 @@ The express generator provides us with the `express` command, then we simply pro
 - Be sure to double-quote all JSON keys and strings in the data payload (body) because JSON & Postman is strict.
 
 
+<br>
+<br>
+<br>
+
 ### Code the `show` Action - Practice
 
 
@@ -234,6 +278,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 - We'll review in 5 minutes.
 
+<br>
+<br>
+<br>
 
 ### Code the `update` Action
 
@@ -254,6 +301,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 - Note the `{new: true}` options object is required if you want the updated document returned.
 
+<br>
+<br>
+<br>
 
 ### Code the `delete` Action - Practice
 
@@ -262,6 +312,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 - We'll review in 5 minutes.
 
+<br>
+<br>
+<br>
 
 ### Congrats on exposing an API for your app!
 
@@ -270,6 +323,9 @@ The express generator provides us with the `express` command, then we simply pro
 
 - We included all five routes/actions required for full CRUD, however, some applications may choose to expose less functionality, e.g., read-only functionality with `index` & `show` actions only.
 
+<br>
+<br>
+<br>
 
 ### CORS
 
@@ -308,8 +364,11 @@ The express generator provides us with the `express` command, then we simply pro
 - As usual, check the docs for additional info and options.
 
 
-### ❓ Essential Questions
+<br>
+<br>
+<br>
 
+### ❓ Essential Questions
 
 1. How would these two routes be expected to behave differently?
 	`GET /accounts` and`GET /api/accounts`

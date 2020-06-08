@@ -1,14 +1,17 @@
 ---
 track: "Backend Fundamentals"
-title: "Week 10 - Day 3"
+title: "Create a cloud-based MongoDB Database with Atlas"
 week: 10
-day: 3
+day: 1
 type: "lecture"
-topics: "Setting up a Cloud-Hosted MongoDB Database"
 ---
 
-# Setting up a Cloud-Hosted MongoDB Database
 
+
+# Create a cloud-based MongoDB database with Atlas
+
+<br>
+<br>
 
 ## Intro
 
@@ -22,6 +25,10 @@ In addition, it's advantageous to use a service to host MongoDB databases other 
 
 The most popular service for hosting MongoDB databases, not surprisingly, is MongoDB's own [Atlas](https://www.mongodb.com/cloud/atlas).
 
+<br>
+<br>
+<br>
+
 ## Create an Atlas Account
 
 First you will need to signup for a free account [here](https://cloud.mongodb.com/user?_ga=2.87815960.1293087282.1558635812-709388783.1558635812#/atlas/register/accountProfile):
@@ -30,7 +37,7 @@ First you will need to signup for a free account [here](https://cloud.mongodb.co
 
 ## Create a New Cluster
 
-Once logged in, Atlas will request that you create a _cluster_.
+Once logged in, Atlas will request that you create a _cluster_. (click on build a New cluster, if you don't see create)
 
 Atlas allows one free cluster per account.
 
@@ -50,6 +57,10 @@ Finally, you can optionally change the name of the cluster, then click the `Crea
 
 It may take several minutes for Atlas to build your cluster.
 
+<br>
+<br>
+<br>
+
 ## Add a User for the Cluster
 
 Each cluster must have a user created whose credentials will be provided in the database connection string when connecting to a database.
@@ -62,6 +73,10 @@ Click the `+ ADD NEW USER` button, then enter a username, password, select the *
 
 <img src="https://i.imgur.com/CU8R4d2.png">
 
+<br>
+<br>
+<br>
+
 ## Update the Whitelisted IPs
 
 Atlas has a security feature that allows the databases to be accessed by _whitelisted_ (approved) IP addresses only.
@@ -73,6 +88,10 @@ While still in the Security tab, click **IP Whitelist**, then click the `+ ADD I
 In the dialog, first click `ALLOW ACCESS FROM ANYWHERE` then click the `Confirm` button:
 
 <img src="https://i.imgur.com/iO7dMbz.png">
+
+<br>
+<br>
+<br>
 
 ## Obtain the Connection String
 
@@ -88,22 +107,28 @@ Next, ensure that the **Node.js** driver and latest version is selected.  Then c
 
 <img src="https://i.imgur.com/lt1NyzH.png">
 
+<br>
+<br>
+<br>
+
 ## Use the Connection String in Your App
 
 You can now paste the connection string in the app's `.env` file, assigning it to a `DATABASE_URL` environment variable:
 
 ```
-DATABASE_URL=mongodb+srv://sei:<password>@sei-w0kys.azure.mongodb.net/admin?retryWrites=true
+DATABASE_URL=mongodb+srv://sei:<password>@sei-w0kys.azure.mongodb.net/test?retryWrites=true
 ```
 
-You're almost done, but you **need to update** the connection string as follows:
+You're almost done, but you need to update the connection string as follows:
 
 1. Replace `<password>` with the password of the database user you created earlier.
-2. **IMPORTANT** The connection string by default connects to a namespace (Atlas' term for database) named `admin` (`...mongodb.net/admin?retryWrites=true...`).  However, the `admin` namespace **must** be updated to your preferred namespace (database) name.  For example, "movies" (`...mongodb.net/movies?retryWrites=true...`).
+2. **IMPORTANT** The connection string by default connects to a namespace (database) named `test` (`...mongodb.net/test?retryWrites=true...`).  However, the `test` namespace **must** be updated to your preferred namespace (database) name.  For example, "movies" (`...mongodb.net/movies?retryWrites=true...`).
 
 You're good to go!
 
-> Note: For future projects, you only have to change the namespace of the connection string to create a different database for that app.
+<br>
+<br>
+<br>
 
 ## Connecting with Mongoose
 
@@ -117,12 +142,13 @@ mongoose.connect(process.env.DATABASE_URL, {
 });
 ```
 
+<br>
+<br>
+<br>
+
 ## Viewing & Editing Data
 
 FYI, you can use the Atlas app to view and edit data by clicking on the `COLLECTIONS` button.
 
-
   
-
-
 
