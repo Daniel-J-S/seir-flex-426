@@ -8,7 +8,7 @@ This website contains assignments and materials for General Assembly's Software 
 
 ## Curriculum Overview
 
-Curriculum schedule and content is subject to change at instructor's discretion.
+Curriculum schedule and content is subject to change at the instructor's discretion.
 
 
 ### [Unit One: Frontend Fundamentals](/frontend-fundamentals)
