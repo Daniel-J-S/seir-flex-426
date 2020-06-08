@@ -4,7 +4,7 @@ title: "Week 10 - Day 3"
 week: 10
 day: 3
 type: "homepage"
-topics: "Project 2 Week"
+topics: "Project 2 Week and Producing an API with Express"
 ---
 
 
