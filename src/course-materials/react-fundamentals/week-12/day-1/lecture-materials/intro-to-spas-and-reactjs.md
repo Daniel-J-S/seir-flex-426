@@ -8,6 +8,8 @@ type: "lecture"
 
 # Intro to SPAs and ReactJS
 
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -18,6 +20,8 @@ type: "lecture"
 | Explain the use case of React |
 | Explain the role tooling plays when developing a React app |
 
+<br>
+<br>
 
 ## Roadmap
 
@@ -27,7 +31,13 @@ type: "lecture"
 - Lab: Official React Tutorial
 - Further Study
 
+<br>
+<br>
+
 ## Intro to SPA Architecture
+
+<br>
+<br>
 
 ### Review - What is a Single-Page App?
 
@@ -45,6 +55,9 @@ There are three main concepts that make this possible:
 2. Client-side routing
 3. Client-side rendering
 
+<br>
+<br>
+
 ### Concept 1: Client/Server Communication via AJAX
 
 As you've seen the `fetch` API and utilities such as Axios & jQuery's AJAX methods can be used to send HTTP requests to a server using JavaScript instead of the browser.
@@ -52,6 +65,9 @@ As you've seen the `fetch` API and utilities such as Axios & jQuery's AJAX metho
 The server then responds with an HTTP response, which usually contains a JSON payload in the response body.
 
 Because the request and response were all handled in the JavaScript, the browser does not reload the page!
+
+<br>
+<br>
 
 ### Concept 2: Client-side Routing
 
@@ -69,6 +85,9 @@ As we've seen, when the URL in the address bar is changed, the browser automatic
 
 Feel free to check the Further Study section to learn more about the History API or Hash URIs.
 
+<br>
+<br>
+
 ### Concept 3: Client-side Rendering
 
 So, assume a user clicks an **Add Comment** button in a SPA and expects to see the new comment show up in the list of comments...
@@ -83,13 +102,22 @@ However, to make the comment show up in the UI, it needs to be updated using Jav
 
 The undisputed champ of client-side rendering today is React!
 
+<br>
+<br>
+
 ### ❓ Review Questions
 
 1. **What's the key difference between a traditional web app and a single-page app?**
 
 2. **What development concepts enable the creation of comprehensive single-page applications?**
 
+<br>
+<br>
+
 ## Intro to React
+
+<br>
+<br>
 
 ### What is React?
 
@@ -100,9 +128,15 @@ The undisputed champ of client-side rendering today is React!
 - Now being used by big-time companies such as Netflix, Imgur, Airbnb, Walmart, and many more.
 - A separate library, React Native, can be used to develop native iOS and Android mobile apps.
 
+<br>
+<br>
+
 ### When Use React?
 
 [React](https://reactjs.org/) is the go to front-end library when developing highly dynamic user interfaces.
+
+<br>
+<br>
 
 ### Why Use React?
 
@@ -110,17 +144,26 @@ React is the hottest front-end library around for building SPA user interfaces.
 
 Adoption = Jobs !!!
 
+<br>
+<br>
+
 ### React in Action - A Minimal Example
 
 The React team has developed a wonderful CLI for starting a new React app. The command will be `create-react-app <app name>` - think of it as the express-generator for React apps.
 
 However, before we use `create-react-app` we will use a most excellent code playground, [CodeSandbox](https://codesandbox.io/) to take a first look at how React works...
 
+<br>
+<br>
+
 #### CodeSandbox Starting React App
 
 Create an account and open a new React sandbox...
 
 In CodeSandbox, we can browse our files in the left-pane, edit code in the center-pane, and see the output on the right.
+
+<br>
+<br>
 
 #### Modern JavaScript
 
@@ -131,6 +174,9 @@ For example, note the use of `import` at the top of **index.js**.  Similar to ho
 Modules were introduced with ES2015 and they're really cool. However, you're probably wondering if they're so cool, why haven't we used them yet. The answer is that their use requires "tooling", or more specifically, a "module loader", which we'll discuss in a bit.
 
 As React developers, we will be using newer features of JavaScript such as the **spread operator**, **destructuring assignment**, etc.
+
+<br>
+<br>
 
 #### How Does this App Work?
 
@@ -148,6 +194,10 @@ When the app is run, this is what happens:
 
 Let's briefly read through the code in **index.js** and I'll describe how the view is ultimately being rendered.
 
+
+<br>
+<br>
+
 #### Key Takeaways
 
 At this point, the takeaway should be that:
@@ -155,11 +205,14 @@ At this point, the takeaway should be that:
 - React apps consist of **components** that we code using JavaScript (and a special syntax known as JSX). You will not be creating any *.html files when developing a React app.
 - The line of code that causes all of the components to be rendered for the first time is:
 
-	```js
-	ReactDOM.render(<App />, rootElement);
-	```
+```js
+ReactDOM.render(<App />, rootElement);
+```
 
 - Rendering a React component, i.e., `<App>`, results in its nested components being rendered as well! Let that soak in for a bit.
+
+<br>
+<br>
 
 #### Try it Out and Make a Change
 
@@ -167,9 +220,15 @@ Now that you know a little bit about React components, try making some changes t
 
 Later today, we'll be defining lots of our own components but first let's look closer at some of the key concepts of React...
 
+<br>
+<br>
+
 ### Key Concepts of React
 
 Let's briefly review some key concepts of React. We'll dig deeper in future lessons.
+
+<br>
+<br>
 
 #### Components
 
@@ -183,11 +242,17 @@ Let's briefly review some key concepts of React. We'll dig deeper in future less
 - React Elements can be styled using CSS and are the components that we will add event listeners to for responding to user interaction.
 - Components that create the UI are created using 100% JavaScript. There is no HTML markup in React components, just something that looks like it...
 
+<br>
+<br>
+
 #### JSX
 
 - Although a React component's UI is ultimately defined by JavaScript, there is a better way to define the UI using a special syntax known as **JSX**.
 - The syntax is an XML-based syntax that looks like HTML - as it should since HTML is also based on XML.
 - Since our browsers do not understand JSX, it must first be transpiled (converted) into pure JS.
+
+<br>
+<br>
 
 #### State and Props
 
@@ -197,6 +262,9 @@ Let's briefly review some key concepts of React. We'll dig deeper in future less
 - A "stateful" component passes any state needed by child components as **props**.
 - Props are accessible as key/value pairs on a **props** object. This props object is passed to the component every time it is rendered.
 - **Props** in a component are always read-only.
+
+<br>
+<br>
 
 #### Rendering
 
@@ -210,6 +278,8 @@ Yeah, rendering happens frequently in a React app (whenever state changes), but 
 
 	<img src="https://i.imgur.com/LC7wclE.jpg">
 
+<br>
+<br>
 
 ### ❓ Review Questions
 
@@ -217,9 +287,20 @@ Yeah, rendering happens frequently in a React app (whenever state changes), but 
 
 2. **When ________ changes in a component, that component, and all of its children components are rendered.**
 
+
+<br>
+<br>
+
+
 ## Tooling
 
+<br>
+<br>
+
 ### What is Tooling?
+
+<br>
+<br>
 
 Tooling enables the development of complex web applications by automating and enhancing the developer's workflow.
 
@@ -231,6 +312,9 @@ Tooling takes our **source code** and processes it to make it production ready.
 
 Take JSX for example. Its special syntax allows us to more easily define components, however, it must first be transpiled into JavaScript so that the browser can execute it.
 
+<br>
+<br>
+
 #### Module Packaging and Loading
 
 Today's complex front-end applications often consist of many components, general purpose modules, third-party libraries, etc. that have _dependencies_ between them.
@@ -239,6 +323,9 @@ How do all of these different parts that depend on each other find each other? T
 
 >Note: ES2015 introduced a module system that uses `import` and `export` statements, however, it does not currently implement a way to actually load those modules - thus it takes tooling to load imported modules.
 
+<br>
+<br>
+
 #### Scaffolding
 
 Setting up a project initially is pretty mundane, thus there are tools that do it for you.
@@ -246,6 +333,9 @@ Setting up a project initially is pretty mundane, thus there are tools that do i
 For example, we've been using **express-generator** to set up our Express apps.
 
 [**Yeoman**](http://yeoman.io/) is a general purpose scaffolding tool that has a huge ecosystem of _generators_ for just about any framework or workflow structure you can think of.
+
+<br>
+<br>
 
 #### Developer Services / Task Runners
 
@@ -256,6 +346,10 @@ They can watch for changes to our source code and automatically compile, reload,
 They can assist with testing.
 
 Just about any task a developer does repeatedly manually, can benefit from tooling.
+
+<br>
+<br>
+
 
 ### Tooling for React
 
@@ -271,6 +365,10 @@ Configuring webpack's **webpack.config.js** file can be overwhelming. Lucky for 
 
 We will be using `create-react-app` to start all React apps in SEI from this point forward.
 
+<br>
+<br>
+<br>
+
 ## Lab: Official React Tutorial
 
 [React's official tutorial](https://reactjs.org/tutorial/tutorial.html) assumes no existing React knowledge and is therefore a great place to get your feet wet.
@@ -280,6 +378,9 @@ Note that the tutorial has two different setup options.  Please use the [starter
 After opening the starter code (a CodePen), start the tutorial [here](https://reactjs.org/tutorial/tutorial.html#inspecting-the-starter-code).
 
 This lab is not a deliverable.
+
+<br>
+<br>
 
 ## Further Study
 
@@ -310,6 +411,9 @@ Hovering over other titles/sub-titles on the page reveals other links that have 
 Notice that when we can click on these links, the address bar changes, but the browser does **not** make an HTTP request.
 
 Today's client-side routers lean toward using the History API over Hash URIs due mainly to the fact that the URL's are "prettier" without the hash.
+
+<br>
+<br>
 
 ## References
 
