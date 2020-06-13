@@ -8,6 +8,8 @@ type: "lecture"
 
 # Intro to JSX
 
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -21,6 +23,8 @@ type: "lecture"
 | Explain how a component's UI gets rendered |
 | Render a "list" of components |
 
+<br>
+<br>
 
 ## Roadmap
 
@@ -32,7 +36,14 @@ type: "lecture"
 - Component Rendering
 - Essential Questions
 
+<br>
+<br>
+
 ## JSX - What and Why?
+
+
+<br>
+<br>
 
 #### What?
 
@@ -41,11 +52,17 @@ type: "lecture"
 - It provides a way to concisely define tree structures with attributes - perfect for defining a DOM tree!
 - It is transpiled into pure JavaScript. **Why is this necessary?**
 
+<br>
+<br>
+
 #### Why?
 
 - Why JSX? It's simple. As compared to pure JavaScript, JSX provides a more concise and clearer (better) way to define a UI.
 - JSX resembles HTML, which allows us to more easily visualize the UI its JavaScript will create.
 - 99.99% (a guess) of React apps are developed today using JSX to define the UI, not vanilla JS.
+
+<br>
+<br>
 
 ## Transpiling JSX
 
@@ -75,6 +92,8 @@ const student = React.createElement(
 ```
 
 > Note: In JSX, every element must be explicitly _closed_. Every "tag" must either have an opening **and** closing tag, or in the case of an [empty element](https://developer.mozilla.org/en-US/docs/Glossary/Empty_element) (a tag that has no content such as `<br>`, `<img>`, `<hr>`, etc.), unlike in HTML, we must include a forward slash before the closing angle bracket like we did with `<br/>` above.
+
+<br>
 
 Okay, we have the following observations regarding the JS for a component:
 
@@ -111,7 +130,13 @@ React.createElement(component, props, ...children);
 
 So, I ask you - **Which is a more clear and concise way of defining a component's UI - JSX or JavaScript?**
 
+<br>
+<br>
+
 ## Basic Syntax of JSX
+
+<br>
+<br>
 
 #### Setting Up a React Playground
 
@@ -202,6 +227,9 @@ You should now be seeing the text "Greeting Earthling" in the output:
 
 <img src="https://i.imgur.com/grr3D7S.png">
 
+<br>
+<br>
+
 #### More Syntax Rules
 
 Besides these rules:
@@ -265,6 +293,9 @@ function MyComponent(props) {
 
 **The advantage of using a fragment is that it avoids rendering extra elements into the DOM.**
 	
+<br>
+<br>
+
 #### Curiosity
 
 We now know that JSX is transpiled into a method call to `React.createElement(...)`, however, we haven't seen what that method call returns.
@@ -279,6 +310,9 @@ console.log(g);
 An object, of course!
 
 React internally uses a JS object to represent each component.
+
+<br>
+<br>
 
 ## Including `props` in JSX
 
@@ -342,6 +376,8 @@ function Greeter(props) {
 
 ```
 
+<br>
+<br>
 
 ## JavaScript Expressions in JSX
 
@@ -370,6 +406,9 @@ Now let's add a more interesting expression:
 
 It's just a JavaScript expression, so we can use our favorite JS operator!!!
 
+<br>
+<br>
+
 #### Expressions vs. Statements in JS
 
 We can only embed **expressions** in JSX, not JS statements.
@@ -388,6 +427,9 @@ Statements on the other hand, perform actions. A program consists primarily of s
 We were able to use the `ternary` operator between the `{}` in the JSX above because it's an expression (it evaluates to a single value), however we would not be able to use an `if` statement.
 
 > Caveat: JavaScript allows us to write an expression when it expects a statement, however, the opposite is not true - you cannot provide a statement when JS expects an expression.
+
+<br>
+<br>
 
 #### JSX itself is an Expression Too
 
@@ -415,7 +457,13 @@ Note that within the function we can write JS code just like in any other functi
 
 We just have to be careful not to try to write _JS statements_ within the JSX. 
 
+<br>
+<br>
+
 ## Component Rendering
+
+<br>
+<br>
 
 #### When & How Components Get Rendered
 
@@ -435,6 +483,8 @@ Regardless of how components are defined (as a `class` or `function`), they are 
 Now, here's another key to be aware of:  when a component is rendered, **all** of its children components are rendered as well (as well as the children of those children, etc.).
 
 It's this cascade of rendering that results in an entire app being rendered with that single `ReactDOM.render` call!
+<br>
+<br>
 
 #### Rendering Lists (Arrays) of Components
 
@@ -488,6 +538,9 @@ function Greeter(props) {
 
 Note that a `key` prop has been added. Whenever React has a list of components, it wants a `key` prop so that it can more efficiently track changes that need to be made to the DOM. The value assigned to the key can be any primitive value, but they need to be unique within the array. It's also better to use a value from the data itself instead of an index.
 
+<br>
+<br>
+
 ## ❓ Essential Questions
 
 1. **In your own words, what is JSX and why do we use it?**
@@ -497,6 +550,9 @@ Note that a `key` prop has been added. Whenever React has a list of components, 
 3. **We use _______ to pass information as key/value pairs to a component.**
 
 4. **To embed JS expressions within JSX, we wrap the expressions with ________?**
+
+<br>
+<br>
 
 ## References
 

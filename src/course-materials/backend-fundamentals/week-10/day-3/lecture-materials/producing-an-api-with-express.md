@@ -12,6 +12,11 @@ topics: "Producing an API in Express"
 <br>
 <br>
 
+[Click here](https://generalassembly.zoom.us/rec/share/tItMdI76_WxLZafE53rTZ5UkM5jsT6a81ydP-_MFxBrKneG1TxKt2z-DxMseUA6S?startTime=1592061118000) to access recording
+
+<br>
+<br>
+
 # Learning Objectives
 
 
