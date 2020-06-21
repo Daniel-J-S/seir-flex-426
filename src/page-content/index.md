@@ -40,7 +40,7 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### Unit Three: React Fundamentals (Locked)
+### [Unit Three: React Fundamentals](/react-fundamentals)
 
 | Week  | Topics |
 | ----- | ------ |
