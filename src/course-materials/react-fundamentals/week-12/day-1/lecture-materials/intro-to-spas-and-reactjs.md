@@ -147,7 +147,7 @@ Adoption = Jobs !!!
 
 ### React in Action - A Minimal Example
 
-The React team has developed a wonderful CLI for starting a new React app. The command will be `create-react-app <app name>` - think of it as the express-generator for React apps.
+The React team has developed a wonderful CLI for starting a new React app. The command will be `npx create-react-app <app name>` - think of it as the express-generator for React apps.
 
 However, before we use `create-react-app` we will use a most excellent code playground, [CodeSandbox](https://codesandbox.io/) to take a first look at how React works...
 
