@@ -184,7 +184,7 @@ For now, let's briefly go through how this code is resulting in the view we are 
 
 When the app is run, this is what happens:
 
-1. "Tooling" is used to convert that stuff that looks like HTML in the JavaScript into pure JS - this process is called _transpiling_. That HTML-looking stuff is called JSX and it's a special syntax that we're going to cover later today.
+1. "Tooling" is used to convert that stuff that looks like HTML in the JavaScript into pure JS - this process is called _transpiling_. That HTML-looking stuff is called JSX and it's a special syntax that we're going to cover later.
 2. The `main: src/index.js` entry in **package.json** informs the tooling which JS file is the starting point for figuring out dependencies, module loading and code execution.
 3. The tooling then merges all of the JS modules (files) into a single  file that is loaded and executed by _index.html_.
 
