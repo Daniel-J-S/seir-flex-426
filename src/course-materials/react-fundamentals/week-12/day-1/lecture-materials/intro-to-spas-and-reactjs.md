@@ -41,8 +41,6 @@ type: "lecture"
 
 ### Review - What is a Single-Page App?
 
-We've talked about them quite a bit - **what are they?**
-
 <img src="https://i.imgur.com/m01TbLF.png">
 
 In a traditional web app, if we click a link, submit data via a form, or type in the address bar and press [enter], **what happens?**
@@ -60,7 +58,7 @@ There are three main concepts that make this possible:
 
 ### Concept 1: Client/Server Communication via AJAX
 
-As you've seen the `fetch` API and utilities such as Axios & jQuery's AJAX methods can be used to send HTTP requests to a server using JavaScript instead of the browser.
+As you've seen the `fetch` API & jQuery's AJAX methods can be used to send HTTP requests to a server using JavaScript instead of the browser.
 
 The server then responds with an HTTP response, which usually contains a JSON payload in the response body.
 

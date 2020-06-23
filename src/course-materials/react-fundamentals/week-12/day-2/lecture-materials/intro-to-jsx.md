@@ -149,6 +149,9 @@ Be sure to create a new React sandbox, then:
 	```html
 	<div id="root"></div>
 	```
+
+<br>
+<br>
 	
 2. In a future lesson we'll learn a lot about styling in React - and you'll see that like most things React - it's different.  CodeSandbox has already created a CSS stylesheet within the **src** folder. Thanks to tooling, it is able to be "imported" within the **index.js** like this:
 
@@ -160,6 +163,7 @@ import ReactDOM from "react-dom";
 import './styles.css';
 ```
 
+<br>
 Now, let's replace the existing CSS inside of **styles.css** with the following:
 
 ```css
@@ -172,6 +176,9 @@ html, body {
 }
 ```
 
+<br>
+<br>
+
 3. Let's cleanup the `<App>` component in **index.js** as follows:
 
 	```jsx
@@ -183,6 +190,9 @@ html, body {
 	  );
 	}
 	```
+
+<br>
+<br>
 
 4. Okay, let's create our own custom `<Greeter>` component by creating a **src/Greeter.js** (note that the naming convention is UpperCamelCase) and defining the component as a Function Component and exporting like this:
 
@@ -201,6 +211,9 @@ html, body {
 	```
 	Note how a **Function Component** (a component defined as a `function`) accepts "props" as an argument and must `return` its UI (defined using JSX).
 
+<br>
+<br>
+
 5. Now let's modify `<App>` to render the new `<Greeter>` component instead of the built-in `<h1>` React element:
 
 	```jsx
@@ -213,7 +226,10 @@ html, body {
 	}
 	```
 	We'll get an error because there's no `Greeter` defined - let's import it...
-	
+
+<br>
+<br>
+
 6. Add the following import below the others:
 
 	```js
@@ -223,7 +239,8 @@ html, body {
 	import Greeter from "./Greeter";
 	```
 
-You should now be seeing the text "Greeting Earthling" in the output:
+<br>
+You should now be seeing the text "Greetings Earthling" in the output:
 
 <img src="https://i.imgur.com/grr3D7S.png">
 
@@ -238,6 +255,8 @@ Besides these rules:
 - All "empty" components (components with just a start tag - no closing tag) must be self-closed using a forward slash.
 - **props** are camelCased like `cohortId='SEI-99'`, never kebob-cased - **why?**
 
+<br>
+<br>
 There are a few other syntax rules, etc.:
 
 - There are built-in React components, called React Elements, that correspond to each HTML element we're familiar with. These components are **always lowercased** - like the `<h1>` component used in the `<Greeter />` component.
@@ -256,7 +275,10 @@ There are a few other syntax rules, etc.:
 	}
 	```
 	Removing the `<div>` would create a syntax error.
-	
+
+<br>
+<br>
+
 **NEWS FLASH!**
 	
 Beginning with version 16.2, react has added support for "fragments" in JSX as detailed in [this blog post](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html?utm_campaign=React%2BNewsletter&utm_medium=email&utm_source=React_Newsletter_95)
@@ -393,6 +415,7 @@ Now let's use the `earthling` prop that was passed:
 
 `props.earthling` is a JavaScript expression and, as you can see, its result is being rendered in place.
 
+<br>
 Now let's add a more interesting expression:
 
 ```jsx

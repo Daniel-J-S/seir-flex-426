@@ -9,6 +9,9 @@ type: "lecture"
 
 # State and Props in React
 
+<br>
+<br>
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -18,6 +21,9 @@ type: "lecture"
 | Use `setState()` to update a component's state |
 | Pass props to a child component |
 | Render props passed to a component |
+
+<br>
+<br>
 
 
 ## Road Map
@@ -32,6 +38,9 @@ type: "lecture"
 8. `react-mastermind` Features Code-along
 9. Essential Questions
 
+<br>
+<br>
+
 ## Set Up
 
 The starter code is the code from the last lesson/lab with:
@@ -41,7 +50,7 @@ The starter code is the code from the last lesson/lab with:
 
 To be ready for this lesson, please:
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react-fundamentals.intro-to-react-state-and-props/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
@@ -51,7 +60,13 @@ Once the dev server opens a tab to `localhost:3000`, the page should have someth
 
 <img src="https://i.imgur.com/u7ykXKg.png">
 
+<br>
+<br>
+
 ## What is State?
+
+<br>
+<br>
 
 #### State In General
 
@@ -64,6 +79,9 @@ Examples of state includes:
 - A boolean representing whether a component's detail panel should be visible
 - A number representing the selected or current index of an item in an array
 
+<br>
+<br>
+
 #### State in React
 
 State in a React app is held in a class component's `state` property.
@@ -73,6 +91,9 @@ Since data/information can only be passed **down** the component hierarchy, not 
 Only class components have state (ignoring the new "hooks" feature for now).
 
 Let's add some state to the `<App>` component...
+
+<br>
+<br>
 
 #### State in react-mastermind
 
@@ -120,6 +141,9 @@ The above "guess" objects can be remembered by an array in the state. The array 
 
 If evaluating an application's state and data structures seems difficult, that's okay, it takes a bit of experience. Soon enough, you'll be able to recognize scenarios that you've seen before and apply those previous data structures and patterns previously used.
 
+<br>
+<br>
+
 ## Initializing State
 
 Now let's initialize some state by creating a constructor method:
@@ -157,6 +181,10 @@ To add state to a component, we create a property named `state` and set it to an
 
 So far, we've created a `this.state.selColorIdx` property and are temporarily rendering it on the page.
 
+
+<br>
+<br>
+
 #### Does All Information Belong in State?
 
 So the answer to the question: _Does All Information Belong in State?_ is "no", not if the information never changes or if it does change, you don't want to cause components to re-render.
@@ -186,6 +214,9 @@ Now let's update App's `render` method to render the color's hex instead of the 
   Selected color: {colors[this.state.selColorIdx]}
 ```
 
+<br>
+<br>
+
 #### 💪 Exercise - Initializing State (10 min)
 
 Okay, your turn to add a couple of more pieces of state to react-mastermind:
@@ -197,6 +228,8 @@ Okay, your turn to add a couple of more pieces of state to react-mastermind:
 	```js
 	return new Array(4).fill().map(() => Math.floor(Math.random() * colors.length));
 	```
+<br>
+<br>
 
 ## Updating State
 
@@ -261,6 +294,9 @@ setState(<object or function>, <optional callback>);
 
 We're going to be adding more state in a bit, but now let's turn our attention to **props**.
 
+<br>
+<br>
+
 ## What are Props?
 
 You should be somewhat familiar with props from the _Intro to JSX_ lesson.
@@ -270,6 +306,9 @@ A parent component uses props to pass data and references to methods/objects to 
 A prop looks much like an attribute=value pair in an HTML element.
 
 However, as discussed in the JSX lesson, you must use camelCasing to name your props instead of the kebob-casing preferred in HTML.
+
+<br>
+<br>
 
 ## Passing Props
 
@@ -292,6 +331,9 @@ After clicking on the **React** tab, you can explore the component hierarchy. Se
 <img src="https://i.imgur.com/K6GCbVQ.png">
 
 How exciting!
+
+<br>
+<br>
 
 #### Accessing Passed Props
 
@@ -323,6 +365,9 @@ Yup, once again, the `map` array iterator method is the go to for transforming a
 
 Check it out, they won't be pretty (yet), but you'll find a button for each color in the `props.colors` array!
 
+<br>
+<br>
+
 #### Props Cannot be Changed
 
 Props are immutable, their values are never to be changed.
@@ -330,6 +375,10 @@ Props are immutable, their values are never to be changed.
 Remember, the prop came from a component somewhere up the hierarchy and if the prop's value originated from state, it would be **that** component's responsibility to update its own state.
 
 However, a component can certainly pass down via props methods that can be used to update its state - but that's for another day.
+
+
+<br>
+<br>
 
 #### 💪 Exercise - Passing Props (5 mins)
 
@@ -343,6 +392,9 @@ Your turn to pass some props:
 
 Check your work using the React Developer Tools.
 
+<br>
+<br>
+
 ## Difference Between State & Props Summarized
 
 Let's summarize the key differences between state and props:
@@ -353,9 +405,15 @@ Let's summarize the key differences between state and props:
 | State can be modified with `this.setState` | Props cannot be modified |
 | When changed, causes a component and all of its children and their children to render | N/A<br>However, it is possible to call a method passed as a prop that updates state in the component that "owns" it |
 
+<br>
+<br>
+
 ## `react-mastermind` Features Code-along
 
 Let's add some functionality to react-mastermind which will give us some practice working with state, props and React in general...
+
+<br>
+<br>
 
 #### Seed a Couple of Guess Objects
 
@@ -392,6 +450,8 @@ this.state = {
   code: this.genCode()
 };
 ```
+<br>
+<br>
 
 React Developer Tools can confirm that `<GameBoard>` is now receiving the `guesses` prop with a guess object in it.
 
@@ -420,6 +480,9 @@ getNewGuess() {
   };
 }
 ```
+
+<br>
+<br>
 
 #### Code `<GameBoard>` to Display `<GuessRow>`s
 
@@ -531,6 +594,10 @@ const GuessRow = (props) => (
 
 Sweet. Make sure the page is not receiving any errors and let's move on to the `<GuessPegs>` component that we just passed some props to...
 
+
+<br>
+<br>
+
 #### Code `<GuessPegs>`/`<GuessPeg>` to Display the Color Values
 
 Currently, `<GuessPegs>` is rendering "GuessPegs" text and the four `<GuessPeg>` components in **GuessPegs.jsx**:
@@ -584,7 +651,11 @@ Checking the browser should put a smile on your face:
 
 <img src="https://i.imgur.com/ZnXMx2f.png">
 
-Tomorrow, we will use those color values to style the pegs!
+Later we will use those color values to style the pegs!
+
+<br>
+<br>
+
 
 #### Display Either the `<GuessScore>` or `<ScoreButton>`
 
@@ -665,6 +736,11 @@ Cool!
 
 Before the lab, let's put the student picker to work...
 
+<br>
+<br>
+<br>
+<br>
+
 ## ❓ Essential Questions
 
 Take a minute to review the following questions:
@@ -689,6 +765,9 @@ Take a minute to review the following questions:
 	```
 	
 5. **When passing a prop down several levels of the component hierarchy, do we _have_ to name the prop the same each time it is passed?**
+
+<br>
+<br>
 
 ## References
 

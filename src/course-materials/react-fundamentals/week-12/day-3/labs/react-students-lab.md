@@ -8,6 +8,9 @@ type: "lab"
 
 # React "Students" Lab
 
+<br>
+<br>
+
 ## Intro
 
 In the _State & Props in React_ lesson, you saw how to:
@@ -21,9 +24,15 @@ Time for some practice repeating what you know about React so far!
 
 **This lab is a DELIVERABLE**
 
+<br>
+<br>
+
 ## Set Up
 
 Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named "React Students".
+
+<br>
+<br>
 
 ## Minimum Requirements
 
@@ -102,6 +111,9 @@ Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named 
 	- Renders a `<Score>` component for each score object in the student's `scores` property.
 
 4. Code the `<Score>` component as a function component that renders the score object's `date` & `score` properties.
+
+<br>
+<br>
 
 #### Hints
 

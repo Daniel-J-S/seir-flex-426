@@ -9,6 +9,8 @@ type: "lecture"
 
 # Components in React
 
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -18,6 +20,8 @@ type: "lecture"
 | Define "presentational" (stateless) components as Function Components |
 | Define "container" (stateful) & "presentational" components as Class Components |
 
+<br>
+<br>
 
 ## Roadmap
 
@@ -32,17 +36,20 @@ type: "lecture"
 - Essential Questions
 - Lab: Define the Remaining Components for Mastermind
 
+<br>
+<br>
+
 ## "Component Thought"
 
 Components have become the fundamental building block of UIs created using modern-day front-end libraries/frameworks such as React, Angular, Vue, etc.
 
 To develop a React application, we construct the UI with a hierarchy of components.
 
-For example, take the following wireframe:
+**For example, take the following wireframe:**
 
 <img src="https://i.imgur.com/hL1T2tH.png">
 
-The above wireframe could be broken into the following components:
+**The above wireframe could be broken into the following components:**
 
 <img src="https://i.imgur.com/TqerRDf.png">
 
@@ -55,13 +62,18 @@ We must get used to thinking about our UI in terms of components. This "Componen
 
 Although most SPAs implement their functionality with multiple routes and "screens", until we learn about routing in React, we will concern ourselves with building only a single screen/page.
 
+<br>
+
 #### f(d) = V
 
 This is one way to think of components in React: `f(d) = V`, where a component is a function (`f`) that accepts data (`d`) and returns a view (`V`).
 
-Does `f(d) = V` help you write better code? 🤔 
+Does the idea of `f(d) = V` help you write better code? 🤔 
 
 Let's elaborate on this concept because its a good starting point in understanding how components work in React.
+
+<br>
+<br>
 
 ## Review of Built-in vs. User-defined Components
 
@@ -76,6 +88,10 @@ React components are lower-cased, for example "&lt;div&gt;".
 </strong></p>
 </details>
 
+<br>
+<br>
+
+
 #### User-defined Components
 
 Our user-defined "custom" components may consist of any combination of other user-defined components and/or React Elements.
@@ -88,6 +104,9 @@ The name of our user-defined components must be capitalized.
 React Elements like "&lt;div&gt;" - HTML is what the browser knows and loves.
 </strong></p>
 </details>
+
+<br>
+<br>
 
 ## Categorizing Components as _Presentational_ (stateless) or _Container_ (stateful) Components
 
@@ -104,11 +123,17 @@ State
 
 In a React app, state might also refer to data properties used to represent the "status" of a process or UI state. For example `state.isLoading` or `state.showDetails`.
 
+<br>
+<br>
+
 #### Where State is Held Matters
 
-Later today, you will learn about how **state** is held in certain components and passed to their child components via what's known as **props**.
+Later you will learn about how **state** is held in certain components and passed to their child components via what's known as **props**.
 
 How do we know which components _should_ have state or just props? That's what we're going to discuss next...
+
+<br>
+<br>
 
 #### Two Categories of Components
 
@@ -117,12 +142,18 @@ To build better UIs with components, experts like [Dan Abramov](https://twitter.
 - **Container** (formerly known as "smart components")
 - **Presentational** (formerly known as "dumb components")
 
+<br>
+<br>
+
 #### Characteristics of _Container_ Components
 
 - They hold state that pertains to the application.
 - They are concerned with how things work, not how they look.
 - Pass state and callback methods to presentational or other container components.
 - May need to use lifecycle methods to fetch data from the server, etc.
+
+<br>
+<br>
 
 #### Characteristics of _Presentational_ Components
 
@@ -140,11 +171,20 @@ A React app will have more presentational components than container components.
 </strong></p>
 </details>
 
+<br>
+<br>
+<hr>
+<br>
+<br>
+
 ## Start a New React App - `react-mastermind`
 
-<img src="https://i.imgur.com/1KRUhfi.jpg" height="300">
+<img src="https://i.imgur.com/1KRUhfi.jpg" height="400">
 
 #### Mastermind - _"A game of cunning and logic for two players"_
+
+<br>
+<br>
 
 Developing a game in React provides excellent practice designing and developing React components.
 
@@ -158,7 +198,10 @@ It normally takes two players to play Mastermind because one player had to set t
 
 Luckily, this app will make it possible for users to play Mastermind by themselves!
 
-Let's check out what we're going to build [here](https://seir-flex-mastermind.herokuapp.com/).
+Let's check out what we're going to build [here](https://seir-mastermind.herokuapp.com/).
+
+<br>
+<br>
 
 #### Generate the App
 
@@ -178,6 +221,9 @@ After the process completes:
 4. Spin up React's built-in development server: `$ npm start`, which will also automatically browse to the app.
 
 For the most part, you will be coding your React apps by modifying/adding code within the `src` folder.
+
+<br>
+<br>
 
 #### Ready the App for the Exercise
 
@@ -208,6 +254,9 @@ export default App;
 
 Notice that the `App` class extends from `Component`, which is a _named import_ from the `react` module. You could also just import `React` and extend from `React.Component`.
 
+<br>
+<br>
+
 Now let's clean up **App.css** also. Replace everything with the following:
 
 ```css
@@ -225,12 +274,18 @@ Now let's clean up **App.css** also. Replace everything with the following:
 }
 ```
 
+<br>
+<br>
+
 #### Additional Class/Function Differences
 
 A couple of other differences you need to be aware of between Function Components and Class Components are:
 
 - Function Components return their JSX from the function; whereas Class Components must define a `render` method that returns the JSX.
 - You access props in a Class Component as `this.props` instead of just `props`, which is the name of the parameter commonly used when defining Function Components.
+
+<br>
+<br>
 
 ## Exercise: Identify the App's Components
 
@@ -243,6 +298,9 @@ Because I've already written the app, I'm able to show you a screenshot of the a
 We're going to use the following screenshot as a hi-fidelity wireframe:
 
 <img src="https://i.imgur.com/vgmgR1P.png">
+
+<br>
+<br>
 
 #### Outline Components (Class Exercise)
 
@@ -266,6 +324,9 @@ As a class, let's identify the hierarchy and outline the above components in the
 
 > Let's ignore the **Difficulty** "button", because it's actually just a link (`<a>`) that routes to the difficulty screen.
 
+<br>
+<br>
+
 ## A React Development Approach
 
 We all know how challenging it can be to get started developing an app. Of course, this app is only a front-end app, so we don't need to be concerned about a database, server routes, etc.
@@ -285,6 +346,9 @@ Lastly, [Thinking in React](https://facebook.github.io/react/docs/thinking-in-re
 
 Let's start defining some components...
 
+<br>
+<br>
+
 ## Defining **Presentational** Components as Function Components
 
 ### Disclaimer
@@ -292,6 +356,9 @@ Let's start defining some components...
 Hooks now allow state, lifecycle methods (effects), etc., to be implemented in Function Components.
 
 However, as we initially learn about React and draw comparisons between Class and Function Components, we are going to set aside the addition of hooks which were added recently with version 16.8.0 of React.
+
+<br>
+<br>
 
 #### What Are They?
 
@@ -336,6 +403,9 @@ class ConcertCard extends React.Component {
 ```
 
 Hooks aside, Function Components cannot however have their own state and do not implement lifecycle methods (next week).
+
+<br>
+<br>
 
 #### Write Our First Mastermind Component
 
@@ -407,6 +477,9 @@ Now you'll be able to easily identify the component hierarchy as you create the 
 
 <img src="https://i.imgur.com/twrEKiv.png">
 
+<br>
+<br>
+
 #### YOU DO: Write Another Component as a Function Component (5 mins):
 
 Now it's your turn to code another component.
@@ -422,6 +495,10 @@ Don't forget to add the **component** CSS class to the outer React Element.
 Add `<ColorPicker>` to `<App>` and the display should look like this:
 
 <img src="https://i.imgur.com/Go0rQnI.png">
+
+
+<br>
+<br>
 
 ## Defining Components as Classes
 
@@ -442,6 +519,11 @@ Some observations:
 
 You'll be working with Class Components this afternoon when you start working with state.
 
+<br>
+<br>
+<br>
+<br>
+
 ## ❓ Essential Questions
 
 1. **A UI in React is a hierarchy of ____________.**
@@ -451,6 +533,9 @@ You'll be working with Class Components this afternoon when you start working wi
 3. **True or False: "Container" components hold state and may need need to use lifecycle methods to fetch data, etc.?**
 
 4. **True or False: Currently, the common approach is to define "container" components as classes and "presentational" components as functions?**
+
+<br>
+<br>
 
 ## Lab: Define the Remaining Components for Mastermind
 
@@ -464,11 +549,18 @@ Be sure to render the components in a hierarchy that results in a display lookin
 
 > Note that in the example, there are 2 `<GuessRow>` components being rendered within `<GameBoard>`.
 
+<br>
+<br>
+
 #### Bonus - Basic Layout
 
 As a bonus challenge, use CSS flexbox to rearrange the components into a basic layout as follows:
 
 <img src="https://i.imgur.com/IBcCuxZ.png">
+
+
+<br>
+<br>
 
 ## References
 
