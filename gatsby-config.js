@@ -8,7 +8,7 @@ module.exports = {
     title: 'SEIR Flex 04/07 Cyberpunk 2020',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
-    description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Program',
+    description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Program',
     keywords: 'software engineer, software engineering, coding, javascript, html, css',
     navigationLinks: [
       {title: 'Home', slug: '/'},
