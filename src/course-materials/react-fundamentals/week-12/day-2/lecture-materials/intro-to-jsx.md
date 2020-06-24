@@ -140,29 +140,24 @@ So, I ask you - **Which is a more clear and concise way of defining a component'
 
 #### Setting Up a React Playground
 
-Let's use [CodeSandbox](https://codesandbox.io/) to experiment further with JSX.
-
-Be sure to create a new React sandbox, then:
-
-1. We need an HTML element to append our React component to. This has already been provided within the **public/index.html** as follows:
-
-	```html
-	<div id="root"></div>
-	```
-
-<br>
-<br>
-	
+Let's create a new React Sandbox using [CodeSandbox](https://codesandbox.io/) to experiment further with JSX.
 
 
-2. In a future lesson we'll learn a lot about styling in React - and you'll see that like most things React - it's different.  CodeSandbox has already created a CSS stylesheet within the **src** folder. Thanks to tooling, it is able to be "imported" within the **index.js** like this:
+1. In a future lesson we'll learn a lot about styling in React - and you'll see that like most things React - it's different.  CodeSandbox has already created a CSS stylesheet within the **src** folder. Thanks to tooling, it is able to be "imported" within the **App.js** like this:
 
 
 ```js
 import React from "react";
-import ReactDOM from "react-dom";
-// Bring in the styling!
-import './styles.css';
+import "./styles.css"; // <- Already imported for us!
+
+export default function App() {
+  return (
+    <div className="App">
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+    </div>
+  );
+}
 ```
 
 <br>
@@ -185,15 +180,16 @@ html, body {
 
 3. Let's cleanup the `<App>` component in **index.js** as follows:
 
-	```jsx
-	function App() {
-	  return (
-	    <div>
-	      
-	    </div>
-	  );
-	}
-	```
+
+```jsx
+export default function App() {
+  return (
+    <div>
+      
+    </div>
+  );
+}
+```
 
 <br>
 <br>
@@ -234,12 +230,14 @@ html, body {
 <br>
 <br>
 
-6. Add the following import below the others inside of `App.js`:
+6. Add the following import below our import of `React` inside of `App.js`:
 
-	```js
-	import React from "react";
-	import Greeter from "./Greeter";
-	```
+```jsx
+import React from "react";
+import Greeter from "./Greeter";
+
+import "./styles.css";
+```
 
 <br>
 You should now be seeing the text "Greetings Earthling" in the output:
@@ -255,7 +253,7 @@ Besides these rules:
 
 - JSX uses XML syntax (elements within angle brackets) for defining components.
 - All "empty" components (components with just a start tag - no closing tag) must be self-closed using a forward slash.
-- **props** are camelCased like `cohortId='SEI-99'`, never kebob-cased - **why?**
+- **props** are camelCased like `cohortId='SEI-99'`, never kebob-cased.
 
 <br>
 <br>
@@ -282,9 +280,7 @@ There are a few other syntax rules, etc.:
 <br>
 <br>
 
-**NEWS FLASH!**
-	
-Beginning with version 16.2, react has added support for "fragments" in JSX as detailed in [this blog post](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html?utm_campaign=React%2BNewsletter&utm_medium=email&utm_source=React_Newsletter_95)
+Ever since the release of React version 16.2, new support was added for what is known as "fragments" in JSX, which is detailed in [this blog post](https://reactjs.org/blog/2017/11/28/react-v16.2.0-fragment-support.html?utm_campaign=React%2BNewsletter&utm_medium=email&utm_source=React_Newsletter_95).
 
 Essentially, they allow for multiple components to be "wrapped" with an empty tag, called a **Fragment**.  For example:
 
