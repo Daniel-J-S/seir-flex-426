@@ -9,6 +9,11 @@ type: "lab"
 
 # Floor Plan Lab
 
+<br>
+<br>
+
+
+
 ## Intro
 
 In the _Intro to JSX_ lesson, you saw the following React basics:
@@ -20,9 +25,19 @@ In the _Intro to JSX_ lesson, you saw the following React basics:
 
 **The minimum requirements are a deliverable.**
 
+<br>
+<br>
+
+
+
 ## Set Up
 
 Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named "Floor Plan".
+
+
+<br>
+<br>
+
 
 ## Minimum Requirements
 
@@ -46,6 +61,12 @@ Please complete this lab in a React [CodeSandbox](https://codesandbox.io) named 
  // Must export the component's function (or class)
  export default CodeSandbox;
 ```
+
+<br>
+<br>
+<br>
+
+
 
 3. Define the following components as functions and code them such that they fulfill their responsibilities:
 
@@ -73,15 +94,28 @@ With the minimum requirements complete, the output should resemble:
 
 <img src="https://i.imgur.com/K8eVbuC.png">
 
+
+<br>
+<br>
+<br>
+
+
 #### Hints
 
 - If a component accepts a prop, that prop must be passed to it by the component that renders it, in other words, parent components pass props to their children components.
+
+<br>
+<br>
+
 
 ## Bonus
 
 Style the components to make the output look like a floor plan:
 
 <img src="https://i.imgur.com/AHq1tCF.png">
+
+<br>
+<br>
 
 #### Hints
 
@@ -105,6 +139,8 @@ Style the components to make the output look like a floor plan:
 	<Bedroom bedNum={2} />
 	```
 
+<br>
+<br>
 
 ## Solution
 

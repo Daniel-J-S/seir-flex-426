@@ -153,6 +153,8 @@ Be sure to create a new React sandbox, then:
 <br>
 <br>
 	
+
+
 2. In a future lesson we'll learn a lot about styling in React - and you'll see that like most things React - it's different.  CodeSandbox has already created a CSS stylesheet within the **src** folder. Thanks to tooling, it is able to be "imported" within the **index.js** like this:
 
 
@@ -164,6 +166,8 @@ import './styles.css';
 ```
 
 <br>
+
+
 Now, let's replace the existing CSS inside of **styles.css** with the following:
 
 ```css
@@ -230,12 +234,10 @@ html, body {
 <br>
 <br>
 
-6. Add the following import below the others:
+6. Add the following import below the others inside of `App.js`:
 
 	```js
 	import React from "react";
-	import ReactDOM from "react-dom";
-	// Import the default export of the Greeter.js module
 	import Greeter from "./Greeter";
 	```
 
@@ -257,6 +259,7 @@ Besides these rules:
 
 <br>
 <br>
+
 There are a few other syntax rules, etc.:
 
 - There are built-in React components, called React Elements, that correspond to each HTML element we're familiar with. These components are **always lowercased** - like the `<h1>` component used in the `<Greeter />` component.
