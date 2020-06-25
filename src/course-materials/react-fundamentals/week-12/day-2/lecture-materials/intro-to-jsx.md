@@ -26,6 +26,13 @@ type: "lecture"
 <br>
 <br>
 
+
+[Click Here](https://generalassembly.zoom.us/rec/share/2sBuCK2r7TpJGq-Q9GbyUL4LIrW6aaa81XUb_KAJyEaBJg5CTn7rwLxcpFXSFa1o?startTime=1593041576000) to access recording
+
+
+<br>
+<br>
+
 ## Roadmap
 
 - JSX - What and Why?
