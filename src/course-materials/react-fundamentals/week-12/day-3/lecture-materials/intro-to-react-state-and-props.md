@@ -519,7 +519,7 @@ While we're at it, we're passing both the `guess` object and the `colors` array 
 
 We're also using `idx` to assign to `key` to make React happy. 
 
-> Note: Passing state and props down multiple levels of the component hierarchy is very common in React. However, state management alternatives, such as Redux and React's context, allow for "providing" state to components directly instead. Redux has a lot of set up overhead and is overkill for most apps, however, we'll be taking a look at React's context approach in a future lesson.
+> Note: Passing state and props down multiple levels of the component hierarchy is very common in React. However, state management alternatives, such as Redux and React's context, allow for "providing" state to components directly instead. Redux has a lot of set up overhead and is overkill for most apps.
 
 Okay, we should still be seeing two `<GuessRow>` components being rendered.
 
