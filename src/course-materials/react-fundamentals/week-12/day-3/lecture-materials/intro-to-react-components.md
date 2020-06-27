@@ -158,7 +158,7 @@ To build better UIs with components, experts like [Dan Abramov](https://twitter.
 - They receive state and callback methods via props.
 - They are highly reusable because they don't hold application state.
 - Rarely have their own state, and if they do, it’s UI-related state rather than application-related data, e.g., state used to represent whether the component's UI is collapsed or open.
-- Are written as function components unless they need UI-related state or lifecycle methods (for optimization purposes). Lifecycle methods will be discussed next week.
+- Are written as function components unless they need UI-related state or lifecycle methods (for optimization purposes). Lifecycle methods will be discussed in a later lesson.
 - May contain other presentational, and sometimes container components.
 
 <details>
