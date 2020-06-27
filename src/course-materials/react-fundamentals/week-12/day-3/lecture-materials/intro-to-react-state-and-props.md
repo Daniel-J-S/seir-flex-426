@@ -52,7 +52,7 @@ To be ready for this lesson, please:
 
 
 
-- Download the <a href="/downloads/react_fundamentals/intro-to-react-state-and-props/starter-code.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-react-state-and-props/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
