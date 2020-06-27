@@ -68,9 +68,6 @@ Although most SPAs implement their functionality with multiple routes and "scree
 
 This is one way to think of components in React: `f(d) = V`, where a component is a function (`f`) that accepts data (`d`) and returns a view (`V`).
 
-Does the idea of `f(d) = V` help you write better code? 🤔 
-
-Let's elaborate on this concept because its a good starting point in understanding how components work in React.
 
 <br>
 <br>
