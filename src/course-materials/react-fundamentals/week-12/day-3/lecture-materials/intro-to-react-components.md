@@ -9,8 +9,19 @@ type: "lecture"
 
 # Components in React
 
+
+
 <br>
 <br>
+
+[Click here](https://generalassembly.zoom.us/rec/share/9ONNAbv_9iBLRIX8wliHXbVxO9jAT6a8hnIWrvJcmk9P8D6gh1ZFD9Jqw061XtDA?startTime=1593270465000) to access recording
+
+<br>
+<br>
+
+
+
+
 
 ## Learning Objectives
 
