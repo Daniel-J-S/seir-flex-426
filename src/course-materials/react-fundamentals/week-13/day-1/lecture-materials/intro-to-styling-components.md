@@ -9,6 +9,13 @@ type: "lecture"
 
 # Intro to Styling React Components
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -18,6 +25,14 @@ type: "lecture"
 | Style components using CSS Modules |
 | Style components using inline styling |
 | Use Flexbox for basic layouts |
+
+
+
+<br>
+<br>
+<br>
+
+
 
 
 ## Roadmap
@@ -32,15 +47,32 @@ type: "lecture"
 - CSS Stylesheets or Inline Styling?
 - Essential Questions
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ## Set Up
 
 To get set up for this lesson:
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-styling-react-components/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
 - Start the dev server: `$ npm start`
+
+
+
+<br>
+<br>
+<br>
+
+
+
 
 
 ## Overview of Styling in React
@@ -48,6 +80,15 @@ To get set up for this lesson:
 Like many things React, styling is done a little differently than what we've become accustomed to.
 
 For example, when learning CSS we were told that inline styling should be avoided. Well, React actually encourages inline styling!
+
+
+<br>
+<br>
+<br>
+
+
+
+
 
 #### Options for Styling React Components
 
@@ -58,6 +99,16 @@ Today, we will look at a few of the more popular ways to style the components th
 2. **Using CSS Modules**: Similar to above, but different in a significant way.
 
 3. **Using Inline Styling**: This approach uses the `style` prop.
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
 
 ## The Starter Code
 
@@ -70,6 +121,17 @@ It's the Mastermind app from where we left off in the _React State and Props_ le
 - The `<GuessScore>` component is now being passed the guess object's `score` as a prop. The `score` object in turn is then being used to generate an array of **P**erfect, **A**lmost & **I**ncorrect characters that is then subsequently mapped and displayed using `<div>` components. 
 
 In this lesson we will begin to apply the above styling approaches to style react-mastermind. Today's lab will be completing the styling for the app.
+
+
+<br>
+<br>
+<br>
+
+
+
+
+
+
 
 ## Adding External CSS Frameworks to a React App
 
@@ -110,6 +172,14 @@ Let's fix the prob by updating **App.css** as follows:
 }
 ```
 
+<br>
+<br>
+<br>
+
+
+
+
+
 #### Using the Classes
 
 With the Bootstrap framework now loaded, all of the classes it defines are available for use.
@@ -122,6 +192,14 @@ If you inspect the elements in DevTools, you'll see that the `className` prop do
 
 > **KEY POINT**: Note that we can only style React's built-in HTML/DOM components (lowercase-named components). This is because they are the only components that actually get rendered to the DOM.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 #### 💪 Practice Exercise
 
 Quickly add Bootstrap's:
@@ -130,6 +208,13 @@ Quickly add Bootstrap's:
 
 - `btn` & `btn-default` classes to the `<NewGameButton>` component's UI. 
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Loading Via NPM Packages
 
 Using CDNs is usually the way to go, however, if you prefer enlarging your **bundle.js** and other static assets, increasing both load-time and bandwidth usage, you're in luck! Chances are your framework of choice is available as an NPM package.
@@ -137,6 +222,15 @@ Using CDNs is usually the way to go, however, if you prefer enlarging your **bun
 Look [here](https://www.npmjs.com/package/bootstrap) if you'd like to install Bootstrap.
 
 As a final note regarding external CSS frameworks, due to the popularity of React, component libraries that encapsulate a framework's styling into custom React components are available. Knowing how much you love Bootstrap, here's a [link to React-Bootstrap](https://react-bootstrap.github.io/).
+
+
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Global Styling in React
 
@@ -156,6 +250,14 @@ button:focus, .btn:focus {
 
 That `.btn:focus` selector is for Bootstrap buttons.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ## Importing CSS Stylesheets
 
 #### Benefits of Importing CSS Stylesheets
@@ -165,6 +267,15 @@ That `.btn:focus` selector is for Bootstrap buttons.
 - Great for better organizing CSS rules, usually grouping styles that pertain to a particular component.
 
 - Loaded once, and optimized by the browser.
+
+
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Implementation
 
@@ -178,6 +289,13 @@ That `.btn:focus` selector is for Bootstrap buttons.
 
 > **KEY POINT:** When we import a CSS stylesheet into a component as `create-react-app` did with **App.css**, those styles are actually merged into the application globally. This is just like when multiple external stylesheets are loaded in an _index.html_. So, it's important to prevent rules from conflicting and overriding each other.
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Importance of Namespacing
 
 CSS class names are like global variables, so it's a good idea to namespace them with the component's name to avoid _name collisions_.
@@ -185,6 +303,14 @@ CSS class names are like global variables, so it's a good idea to namespace them
 Look at how `create-react-app` namespaced the classes used for the `<App>` component, for example, `App-header`. Following this practice in your own imported stylesheets is highly recommended.
 
 As an alternative, we can use CSS Modules to avoid conflicts when naming classes. More on CSS Modules in a bit.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Import a Stylesheet
 
@@ -223,6 +349,12 @@ Let's create and import a CSS stylesheet for `<GuessPegs>` so that we can style 
 
 Now `<GuessPegs>` has a horizontal layout - I know, it's ugly, but it won't be for long!
 
+<br>
+<br>
+<br>
+
+
+
 #### 💪 Exercise: Import another CSS stylesheet (5 mins)
 
 Now it's your turn:
@@ -237,35 +369,46 @@ Now it's your turn:
 
 In a bit, when the `<div>`s for the individual scores are sized and styled, we will come back and further adjust the `width` to ensure they wrap in a 2-by-2 pattern.
 
-#### ❓ Review Questions: Importing CSS Stylesheets
 
-1. **True or False: Tooling is needed to import CSS stylesheets.**
+<br>
+<br>
+<br>
 
-2. **Where is the problem in the following two imported stylesheets:**
 
-	```css
-	/* CompA.css */
+### Review Questions: Importing CSS Stylesheets
+
+**❓ True or False: Tooling is needed to import CSS stylesheets.**
+
+**❓ Where is the problem in the following two imported stylesheets:**
+
+```css
+/* CompA.css */
+
+.CompA-header {
+	width: 100%;
+}
+
+button {
+	background-color: red;
+}
+```
 	
-	.CompA-header {
-		width: 100%;
-	}
-	
-	button {
-		background-color: red;
-	}
-	```
-	
-	```css
-	/* CompB.css */
-	
-	.CompB-header {
-		width: 50%;
-	}
-	
-	button {
-		background-color: blue;
-	}
-	```
+```css
+/* CompB.css */
+
+.CompB-header {
+	width: 50%;
+}
+
+button {
+	background-color: blue;
+}
+```
+<br>
+<br>
+<br>
+
+
 
 ## Importing CSS Modules
 
@@ -327,27 +470,41 @@ Okay, the button's sizing is better, but what if we want to also include other c
 
 Well, since `styles.button` is just a string, and `className={styles.button}` is just a JSX expression, we can use a template literal like so:
 
-```html
+```jsx
 <button className={`${styles.button} btn btn-default`}>
 ```
 
 That looks better!
 
-#### ❓ Review Questions
 
-1. **What's the difference when naming the files for CSS stylesheets vs. CSS Modules?**
+<br>
+<br>
+<br>
 
-2. **True or False: Importing CSS Modules results in an object where the keys are the names of the classes we defined in the module and the values are the unique class names generated by the tooling.**
 
-3. **What's wrong with the following code:**
 
-	```js
-	import styles from './SmallComponent.module.css';
-	
-	function SmallComponent(props) {
-	  return <div className='styles.small'>I'm Small</div>;
-	}
-	```
+### Review Questions
+
+**❓ What's the difference when naming the files for CSS stylesheets vs. CSS Modules?**
+
+**❓ True or False: Importing CSS Modules results in an object where the keys are the names of the classes we defined in the module and the values are the unique class names generated by the tooling.**
+
+**❓ What's wrong with the following code:**
+
+```js
+import styles from './SmallComponent.module.css';
+
+function SmallComponent(props) {
+	return <div className='styles.small'>I'm Small</div>;
+}
+```
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Inline Styling With JavaScript
 
@@ -356,6 +513,11 @@ That looks better!
 Contrary to what we've been told about avoiding styling elements inline using the `style` attribute in HTML, with React, inline styling is a common technique for **dynamic** styling!
 
 Inline styling in React uses the `style` prop, however, unlike the `style` attribute in HTML, we assign a JS object instead of a string.
+
+<br>
+<br>
+
+
 
 #### Adding Inline Styling to the `<GuessScore>` Component
 
@@ -395,6 +557,9 @@ const baseStyle = {
   borderRadius: '50%'
 };
 ```
+
+<br>
+
 
 As you can see, the JS objects we use for inline styling are just regular JS objects, where:
 
@@ -445,7 +610,18 @@ const pegStyles = {
 Then, we can _merge_ the styles into a new object using the [spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Spread_in_object_literals):
 
 
-<img src="https://i.imgur.com/lDa6VYA.png">
+```jsx
+return (
+	<div className="GuessScore">
+		{scores.map((score, idx) => 
+			<div
+				key={idx}
+				style={{...baseStyle, ...pegStyles[score]}}
+			/>
+		)}
+	</div>
+);
+```
 
 
 The spread operator, `...` is being used to "spread" each property of `baseStyle` into a new object literal, then the "selected" object within `pegStyles` is having its properties merged.
@@ -456,7 +632,11 @@ To test out the styling, let's use React Developer Tools to change the first gue
 
 <img src="https://i.imgur.com/jg1bjLO.png">
 
-Nice!
+### Nice!
+
+<br>
+<br>
+
 
 #### Advantages of Inline Styling
 
@@ -466,7 +646,21 @@ Here are some advantages of inline styling with JS objects:
 
 2. Again, because it's just JS, we can assign any valid JS expression to the `style` prop like what we just did. Opportunities for the ternary operator abound!<br>For example, let's update the `<GuessRow>` component to render the row number for the current row in `black` and all others in `lightgrey`:
 
-<img src="https://i.imgur.com/UyHoa0D.png">
+```jsx
+const GuessRow = (props) => (
+	<div className="GuessRow">
+		<div style={{color: props.currentGuess ? 'black' : 'lightgrey'}}>
+			{props.rowIdx + 1}
+		</div>
+		...
+	
+```
+
+
+<br>
+<br>
+<br>
+
 
 
 #### 💪 Exercise: Apply dynamic styling to `<ColorPicker>` (20 mins)
@@ -480,6 +674,12 @@ Currently, `<ColorPicker>`  is being rendered as grey buttons and display their 
 Time to use those hexadecimal values, and the `selColorIdx` prop to dynamically style them like this:
 
 <img src="https://i.imgur.com/1KUZ4pj.png">
+
+
+<br>
+<br>
+<br>
+
 
 ##### Hints
 
@@ -505,6 +705,12 @@ Time to use those hexadecimal values, and the `selColorIdx` prop to dynamically 
 
 3. You'll need to add a second parameter, e.g., `idx`, to `map`'s callback function so that you can compare it to the value of `props.selColorIdx`.
 
+<br>
+<br>
+<br>
+
+
+
 ## Import CSS or use Inline Styling?
 
 Generally, styling components in a React app requires a blended approach:
@@ -521,17 +727,28 @@ Regardless of what you do, as always, keep your eyes open for new approaches. Fo
 
 Lastly, there are several open-sourced libraries that make inline styling more powerful. For example, it's not easy to style pseudo-classes, such as `:hover` inline. One of the more popular libraries is [Radium](https://github.com/FormidableLabs/radium).
 
-## ❓ Essential Questions
+<br>
+<br>
+<br>
+
+
+## Essential Questions
 
 Take a minute to review...
 
-1. **What is the name of the prop used to style inline?**
+**❓ What is the name of the prop used to style inline?**
 
-2. **What data type is assigned to the above prop?**
+**❓ What data type is assigned to the above prop?**
 
-3. **When using CSS Stylesheets, it's important that class names be _______.**
+**❓ When using CSS Stylesheets, it's important that class names be _______.**
 
-4. **What styling approach is best to use if you need to compute styles dynamically?**
+**❓ What styling approach is best to use if you need to compute styles dynamically?**
+
+<br>
+<br>
+<br>
+
+
 
 ## References
 
