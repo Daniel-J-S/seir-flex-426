@@ -9,7 +9,7 @@ topics: "No Class Today"
 
 # Week 13 - Day 3
 
-#### There will be no class today for the July 4th Holiday
+#### There will be no class today in observance of Independence Day
 
 
 

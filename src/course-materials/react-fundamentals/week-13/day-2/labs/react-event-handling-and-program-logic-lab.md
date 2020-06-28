@@ -8,6 +8,11 @@ type: "lab"
 
 # React Event Handling & Program Logic Lab
 
+<br>
+<br>
+<br>
+
+
 
 ## Intro
 
@@ -35,7 +40,15 @@ The event handling code in the `handleColorSelection` method we wrote for changi
 
 We'll use the same version of mastermind we left off at from today's lesson.
 
-In case you don't have a working version to start with, you can download this <a href="./react-mastermind-starter.zip" download>Starter Code</a>
+In case you don't have a working version to start with, you can download this <a href="/downloads/react_fundamentals/intro-to-event-handling-with-react-lab/react-mastermind.zip" download>Starter Code</a>
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Exercises
 
@@ -65,6 +78,13 @@ In case you don't have a working version to start with, you can download this <a
 
 	Hint: This can be done by adding some additional logic in `<GuessRow>` to display `<ScoreButton>` not only if it's the current row (as it's currently doing), but also if that guess object's score's `perfect` property is not equal to 4 (winner).
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Hints
 
 - Baby steps, baby steps, baby steps! Check your code for each baby step!
@@ -78,8 +98,8 @@ BAM!
 <img src="https://i.imgur.com/zbUUDUs.png">
 
 
-#### Pssssst ... here's one possible solution to this lab (Please, only use if necessary) 
+#### Pssssst ... here's one possible solution to this lab (Please, only use as a last resort reference) 
 
-<a href="./react-mastermind-solution.zip" download>Solution Code</a>
+<a href="/downloads/react_fundamentals/intro-to-event-handling-with-react-lab-solution/react-mastermind.zip" download>Solution Code</a>
 
  

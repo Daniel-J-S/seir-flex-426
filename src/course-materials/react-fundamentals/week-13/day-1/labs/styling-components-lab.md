@@ -9,15 +9,25 @@ type: "lab"
 
 # Styling Components - Lab
 
+<br>
+<br>
+
+
 ## Set Up
 
 To get set up for this lesson:
 
-- Download the <a href="./react-mastermind-starter-code.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-styling-react-components-lab/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
 - Start the dev server: `$ npm start`
+
+
+<br>
+<br>
+<br>
+
 
 ## Intro
 
@@ -31,6 +41,15 @@ The purpose of this lab is to practice styling React components by:
 
 ##### This lab is a deliverable.
 
+Please create a repository on `GitHub Enterprise` for your work, then submit a URL to your repo using the homework tracker form as usual.
+
+
+<br>
+<br>
+<br>
+
+
+
 ## Goal
 
 When finished, the react-mastermind app should look something like this:
@@ -38,6 +57,11 @@ When finished, the react-mastermind app should look something like this:
 <img src="https://i.imgur.com/T4dN4UU.png">
 
 > Note: A couple of more bogus guesses were added to the `guesses` array in state to demonstrate how the app might look with multiple guess rows. 
+
+<br>
+<br>
+<br>
+
 
 
 ## Hints
@@ -102,10 +126,12 @@ When finished, the react-mastermind app should look something like this:
 
 	- Bringing up [A Visual Guide to CSS3 Flexbox](https://scotch.io/tutorials/a-visual-guide-to-css3-flexbox-properties?utm_content=bufferbb7b2&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer#comments-section) will help you with using flexbox as you continue to style react-mastermind.
 
-## Deliverable
+<br>
+<br>
+<br>
 
-When finished, please stage, commit and push your labs/homework repo and submit a link to your finished lab
 
-#### Pssssst ... here's one possible solution to this lab (Please, only use if necessary) 
 
-<a href="./react-mastermind-solution-code.zip" download>Solution Code</a>
+#### Pssssst ... here's one possible solution to this lab (Please, only use as a last resort reference) 
+
+<a href="/downloads/react_fundamentals/intro-to-styling-react-components-lab-solution/react-mastermind.zip" download>Solution Code</a>

@@ -9,6 +9,11 @@ type: "lecture"
 
 # Event Handling in React
 
+<br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -19,6 +24,11 @@ type: "lecture"
 | Ensure event handlers that need to modify state have `this` bound to the proper context (component) |
 | Use ES2017's Property Initializer syntax to efficiently and concisely bind methods |
 | Optionally pass arguments to event handlers |
+
+<br>
+<br>
+<br>
+
 
 
 ## Roadmap
@@ -34,17 +44,28 @@ type: "lecture"
 
 To get set up for this lesson:
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-event-handling-with-react/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
 - Start the dev server: `$ npm start`
+
+<br>
+<br>
+
 
 ## Review the Starter Code
 
 React's dev server will automatically open Mastermind in the browser, which should look like this:
 
 <img src="https://i.imgur.com/T4dN4UU.png">
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Refactoring the App's State
 
@@ -118,14 +139,21 @@ Yay, another opportunity to put the `currentGuess` prop to good use.
 
 But, the four `<GuessPeg>` components don't yet have access to the `currentGuess` prop...
 
----
+
+
+<br>
+<br>
+<br>
+
+
 
 #### 💪 Exercise - Passing Props
 
 **Beginning with the parent component of `<GuessPeg>`, keep going up the component hierarchy until you have access to the `currentGuess` prop. Then turn around and pass down the `currentGuess` prop to each `<GuessPeg>` component.** (Hint: React Developer Tools can help here)
 
 
----
+<br>
+
 
 Now that each `<GuessPeg>` has a `currentGuess` prop, we can add another property to the `style` object to set the CSS `cursor` property:
 
@@ -144,15 +172,30 @@ Note that React does not complain if we assign `false` to the `cursor` property 
 
 Excellent! Now we're ready to talk about events...
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Browser Events in React
 
-First, **what are some common browser events we've worked with during SEI so far?**
+First, **what are some common browser events we've worked with so far?**
 
 In case you need to be reminded, [here you go!](https://developer.mozilla.org/en-US/docs/Web/Events) .
 
 Like many things in React, event handling is a little different than what we are used to.
 
 Let's see how...
+
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Connecting Handler Code to Events in React
 
@@ -191,6 +234,14 @@ Event observations thus far:
 
 > One last observation - check out the best practice code formatting/indentation when a component has more than a couple of props!
 
+
+
+<br>
+<br>
+<br>
+
+
+
 #### The Synthetic Event Object
 
 You've seen how event handlers are automatically passed an event object as an argument. In a React app however, this event object is a React [`SyntheticEvent`](https://facebook.github.io/react/docs/events.html)  that wraps the browser's native event object.
@@ -203,6 +254,13 @@ React does this because React has its own event system that:
 Luckily though, React's event system is transparent to us - we don't need to know the nitty gritty details. 
 
 More importantly, the API of the Synthetic Event object is identical to the browser's, which means we can still invoke `preventDefault()`, `stopPropagation()`, access `target` & `clientX` properties, etc.
+
+
+
+<br>
+<br>
+<br>
+
 
 ## Event Handlers (methods)
 
@@ -226,6 +284,14 @@ Questions:
   From within the component that owns the state that's being updated
   </strong></p>
 </details>
+
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Defining a Method for Event Handling
 
@@ -257,6 +323,12 @@ render() {
 ```
 
 > It's not a bad idea to start the name of event handler methods with the word `handle`, e.g., `handleSomeInteraction`
+
+
+<br>
+<br>
+<br>
+
 
 #### Passing Event Handlers to Children Components
 
@@ -300,6 +372,14 @@ You should now see the alert when a color is clicked!
 
 Can it really be this easy? In most cases, the answer is "No" due to the reasons we are going to discuss next...
 
+
+
+<br>
+<br>
+<br>
+
+
+
 #### Providing Arguments to Methods
 
 We often need to pass arguments to method calls.
@@ -337,6 +417,13 @@ Wrap the code inside of a function - nice solution!
 Testing it out shows that `idx` is now being provided to the `handleColorSelection` method!
 
 However, there's a bug...
+
+
+
+<br>
+<br>
+<br>
+
 
 #### Context Binding
 
@@ -384,6 +471,13 @@ class App extends Component {
 ```
 
 That one line of code fixed the problem, however, there's a newer syntax that React devs are using...
+
+
+<br>
+<br>
+<br>
+
+
 
 #### ES2017's Property Initializer Syntax
 
@@ -448,6 +542,14 @@ handleColorSelection(colorIdx) {
 
 **Property initializer syntax** is already implemented natively in Chrome - and thanks to Babel and Webpack, you are free to use them without fear in your React apps today!
 
+
+
+<br>
+<br>
+<br>
+
+
+
 ## Summary
 
 Writing event handler code can be challenging and error prone until you get used to it.
@@ -458,19 +560,33 @@ Use React Developer Tools to check that methods, etc. are being passed correctly
 
 Also, instead of console.logging, use the `debugger` statement to programmatically set a breakpoint in the source code so that you can use the DevTools debugger to inspect the values of variables/expressions, and step through lines of code one at a time, etc.
 
-## ❓ Essential Questions
+
+<br>
+<br>
+<br>
+
+
+
+## Essential Questions
 
 Take a minute to review the following questions:
 
-1. **True or False: Does a method that contains code to update a component's state have to be defined within that component? Explain your answer.**
+**❓ True or False: Does a method that contains code to update a component's state have to be defined within that component? Explain your answer.**
 
-2. **How does a nested component obtain a reference to an ancestor component's methods?**
+**❓ How does a nested component obtain a reference to an ancestor component's methods?**
 
-3. **Is this code bogus or cool? Explain your answer.**
+**❓ Is this code bogus or cool? Explain your answer.**
 
-	```js
-	<Square handleClick={this.handleClick(5)} />
-	```
+```jsx
+<Square handleClick={this.handleClick(5)} />
+```
+
+
+<br>
+<br>
+<br>
+
+
 
 ## References
 
