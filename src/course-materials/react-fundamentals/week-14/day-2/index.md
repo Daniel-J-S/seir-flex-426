@@ -4,7 +4,7 @@ title: "Week 14 - Day 2"
 week: 14
 day: 2
 type: "homepage"
-topics: "Handling Input"
+topics: "Handling Input in React"
 ---
 
 
