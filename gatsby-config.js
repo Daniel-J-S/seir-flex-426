@@ -8,7 +8,7 @@ module.exports = {
     title: 'SEIR Flex 04/07 Cyberpunk 2020',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
-    description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Program',
+    description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Remote Flex Program',
     keywords: 'software engineer, software engineering, coding, javascript, html, css',
     navigationLinks: [
       {title: 'Home', slug: '/'},
@@ -23,13 +23,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet-async`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GOOGLE_TRACKING_ID,
-        head: true
-      }
-    },
     {
       resolve: `gatsby-plugin-html-attributes`,
       options: {
