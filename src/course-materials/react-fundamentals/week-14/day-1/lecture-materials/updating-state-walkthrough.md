@@ -8,6 +8,16 @@ type: "lecture"
 
 # Updating State Walkthrough
 
+<br>
+<br>
+
+[Click here](https://generalassembly.zoom.us/rec/share/5vQkIZfg7jpLAYXi4VDNc40hQNzgaaa80HdNqfAOy08DlzcQkq1TD08sw7mLt9jU?startTime=1594165523000) to access recording
+
+<br>
+<br>
+
+
+
 ## Learning Objectives
 
 | Students Will Be Able To |
