@@ -17,6 +17,14 @@ type: "lecture"
 | Use a `ref` to access a DOM element directly |
 
 
+<br>
+<br>
+<br>
+
+
+
+
+
 ## Road Map
 
 - Set Up
@@ -24,21 +32,22 @@ type: "lecture"
 - Controlled Inputs in React
 - Adding the New Skill to State
 
+<br>
+<br>
+
+
+
+
+
 ## Set Up
 
-Here's the project we'll work on in `codesandbox.io`
+Let's create a new React Project on [`codesandbox.io`](https://www.codesandbox.io)
 
-<iframe
-   src="https://codesandbox.io/embed/optimistic-shadow-g332b?fontsize=14&hidenavigation=1&theme=dark"
-   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-   title="optimistic-shadow-g332b"
-   allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media; usb"
-   sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin">
-</iframe>
 
-[![Edit optimistic-shadow-g332b](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/optimistic-shadow-g332b?fontsize=14&hidenavigation=1&theme=dark)
+<br>
 
-- Let's make it look okay by replacing the contents of **styles.css** with:
+
+- Let's replace the contents of **styles.css** with:
 		
 	```css
 	* {
@@ -125,6 +134,12 @@ The sandbox will look something like this once the above setup is complete:
 
 <img src="https://i.imgur.com/ntFDX0q.png">
 
+<br>
+<br>
+
+
+
+
 ## Review the Starter Code (Peer Discussion- 5 min)
 
 Currently the app is not functional - it doesn't add new Dev Skills to the list. 
@@ -134,6 +149,14 @@ We will implement this functionality during the lesson.
 Please review the code in the `App` class and discuss your observations amongst your peers in a breakout room.
 
 We will discuss any lingering questions you may have once we close the breakout rooms.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Controlled Inputs in React
 
@@ -187,6 +210,14 @@ As predicted, the `<select>` has been initialized to `"3"`:
 <img src="https://i.imgur.com/yjQL04t.png">
 
 **YOU DO: Try assigning a "default" string value to the `skill` property in `state`**
+
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Updating Inputs
 
@@ -255,6 +286,13 @@ Okay, let's add the event handler to the `<select>`:
 
 Now you know how "Controlled" inputs work in React!
 
+<br>
+<br>
+<br>
+
+
+
+
 #### 💪 Practice Exercise (10 min)
 
 When gathering data from the user using inputs, at some point you're going to want to do something with that data, for example:
@@ -275,6 +313,15 @@ Do the following refactor:
 2. Update the `handleChange` method so that it replaces, not mutates, the `newSkill` object when either `skill` or `level` are being changed.
 
 When finished, be sure to test it out by changing both inputs.	
+
+
+<br>
+<br>
+<br>
+
+
+
+
 
 ## Adding the New Skill to State
 
@@ -305,6 +352,15 @@ addSkill = () => {
 ```
 
 <img src="https://i.imgur.com/C6QvZQo.png">
+
+
+<br>
+<br>
+<br>
+
+
+
+
 
 #### Using Forms in React
 
@@ -337,6 +393,15 @@ addSkill = e => {
 Be sure to add a parameter (`e` in this case) to accept the event object.
 
 Problem solved!  The `preventDefault` method does just what it says, it prevents the default submit from happening.
+
+
+<br>
+<br>
+<br>
+
+
+
+
 
 #### Validating Inputs
 
@@ -377,6 +442,12 @@ handleChange = e => {
 Testing it shows that at least two characters need to be entered in the skill input before `true` is logged.
 
 Now that we've seen how we can check an individual input's validity, let's see what it takes to check the validity of the entire form...
+
+<br>
+<br>
+<br>
+
+
 
 #### Using a `ref` to Access DOM Elements
 
@@ -427,6 +498,13 @@ addSkill = e => {
 ```
 
 Take a moment to think about how you could use the `required` and `pattern` attributes to prevent bogus data from being processed.
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Disabling the Button if the Form is Invalid
 
@@ -481,15 +559,27 @@ button:disabled {
 
 Nice!
 
-## ❓ Essential Questions
+<br>
+<br>
+<br>
+
+
+
+## Essential Questions
 
 Take a moment to review the following questions:
 
-1. **Where does a "controlled" `<input>` get its value from?**
+**❓Where does a "controlled" `<input>` get its value from?**
 
-2. **True or False: All input-related components must be wrapped by a `<form>` component.**
 
-3. **A React "controlled" `<input>` requires both a `value` and an `________` prop.**
+**❓True or False: All input-related components must be wrapped by a `<form>` component.**
+
+**❓A React "controlled" `<input>` requires both a `value` and an `________` prop.**
+
+<br>
+<br>
+<br>
+
 
 
 ## References

@@ -25,11 +25,23 @@ type: "lecture"
 | Update a component's state using `setState` |
 | Properly Update Object or Array properties in `state` |
 
+
+<br>
+<br>
+
+
+
+
 ## Roadmap
 
 - Set Up
 - Review of Updating State using `setState` 
 - Updating Object/Array Properties in `state`
+
+<br>
+<br>
+
+
 
 ## Set Up
 
@@ -46,6 +58,12 @@ To get set up for this lesson, please:
 	  }
 	}
 	```
+
+<br>
+<br>
+<br>
+
+
 
 ## Review of Updating State using `setState`
 
@@ -93,6 +111,12 @@ The sandbox's browser should display something like this:
 <img src="https://i.imgur.com/6kgAgZS.png">
 
 Clicking the buttons should update the state and the display.
+
+<br>
+<br>
+
+
+
 
 #### Review of How `setState` Works
 
@@ -151,6 +175,13 @@ Here's a review of what we've learned about updating state so far:
 
 **Any questions?**
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Updating Object/Array Properties in `state`
 
 #### Set Up an Array on `state`
@@ -183,9 +214,21 @@ render() {
 }
 ```
 
+<br>
+<br>
+
+
+
+
 #### 💪 Exercise - Add New Emotions to `history` (5 min)
 
 Without peeking below, write the code to refactor the `updateEmotion` method to add the clicked emotion to the `history` array.
+
+<br>
+<br>
+
+
+
 
 #### Thou Shall Not Mutate State
 
@@ -202,6 +245,12 @@ updateEmotion(emotion) {
 ```
 
 The above will work in non-optimized components, however, we are mutating the array, which is a no, no...
+
+<br>
+<br>
+
+
+
 
 #### Always Replace Top-Level Objects & Arrays With New Ones
 
@@ -225,12 +274,24 @@ updateEmotion(emotion) {
 
 Notice that because we needed to access the current `history` array, we converted to the function signature of `setState`. 
 
+<br>
+<br>
+<br>
+
+
+
 ### Why Not Mutate State?
 
 There are two reasons to replace an object/array in state instead of mutating it:
 
 1. It provides for improved performance
 2. It enables features such as undo and time travel
+
+<br>
+<br>
+<br>
+
+
 
 #### 1. Performance 
 
@@ -257,6 +318,13 @@ updateEmotion(emotion) {
 ```
 
 Now, the component is optimized to trigger a render only if some top-level state has changed.  Thus, clicking a different emotion works okay, however, try clicking the same emotion several times, then click a different emotion - yikes!
+
+
+<br>
+<br>
+<br>
+
+
 
 #### 2. Features
 

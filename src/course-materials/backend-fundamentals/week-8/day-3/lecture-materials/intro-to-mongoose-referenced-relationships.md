@@ -245,7 +245,7 @@ The `find` method returns a **Query** object that is first logged, followed by t
 
 - We are going to implement the following data relationship:<br>
 
-**_A Movie has many Performers; A Performer has many Movies_** `Movie >--< Performer`** (Many-To-Many)
+**_A Movie has many Performers; A Performer has many Movies_** `Movie >--< Performer` (Many-To-Many)
 
 <br>
 <br>
