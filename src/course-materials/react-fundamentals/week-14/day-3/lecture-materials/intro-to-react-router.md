@@ -434,17 +434,29 @@ Okay, let's copy the entire contents of `<App>`'s `render` method,  paste it in 
 	}
 ```
 
-	Note that we are adding an additional `winTries` prop because the footer that uses it has been moved to `<GamePage>`.
-	
+
+
+**Note:** We are adding an additional `winTries` prop because the footer that uses it has been moved to `<GamePage>`.
+
+<br>	
+<br>	
+
+
 6. Back in `<GamePage>`, update the two references to the `colors` prop
 
 ```jsx
-	colors={colors}
+colors={colors}
 ```
-	to be
+
+<br>
+
+**to be**
+
+<br>
 	
+
 ```jsx
-	colors={props.colors}
+colors={props.colors}
 ```
 	
 1. Remove the `let winTries = this.getWinTries();` line and update the footer in two places to use `props.winTries` instead.
@@ -602,7 +614,28 @@ The `to` prop specifies what URL path to route to if the link is clicked.
 
 It looks good, except we need a little margin between the `<Link>` and `<NewGameButton>`.
 
-**YOU DO: Take a few minutes to create and import a regular CSS file in `<GamePage>`, then add a `GamePage-link-margin` class with a `margin-bottom: 10px;` CSS declaration.  Finally, add that as an additional class to the `<Link>`.**
+<br>
+<br>
+<br>
+
+
+
+**YOU DO:** Take a few minutes to add a style prop to `<Link>` with `margin-bottom` set to `'10px'`.
+
+<br>
+
+*So, for example:*
+
+
+```jsx
+
+<Link style={{ "margin-bottom": "10px" }} className="btn btn-default" to="/settings">Difficulty</Link>
+```
+
+<br>
+<br>
+
+
 
 When completed, the page should look like this:
 
@@ -631,7 +664,7 @@ When completed, the page should look like this:
 
 ## Defining Routes with URL Parameters
 
-Surely you remember routes we defined in Express and Django that included URL parameters similar to these...
+Surely you remember routes we defined in Express that included URL parameters similar to these...
 
 In Express:
 
@@ -639,7 +672,7 @@ In Express:
 router.get('/movies/:id', moviesCtrl.show);
 ```
 
-and Django:
+By the way, in Django, we define them like this:
 
 ```python
 path('movies/<int:id>/', views.movies_detail, name='movies_detail'),
