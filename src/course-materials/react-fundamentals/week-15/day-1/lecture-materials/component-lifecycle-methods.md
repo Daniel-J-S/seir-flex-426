@@ -252,7 +252,7 @@ Here's what we want the timer to look like when rendered:
 
 #### State
 
-With the **user stories** and **wireframe** done, let's turn out attention to **state**.
+With the **user stories** and **wireframe** done, let's turn our attention to **state**.
 
 Before starting to implement new features in a React app, we need to consider if a component needs to have its own state or will all of its "data" be passed to it via props?
 
