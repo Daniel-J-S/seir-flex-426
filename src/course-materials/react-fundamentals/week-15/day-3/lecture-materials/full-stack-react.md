@@ -8,6 +8,11 @@ type: "lecture"
 
 # Intro to Full-Stack React
 
+<br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -19,6 +24,9 @@ type: "lecture"
 | Configure an Express app to accommodate client-side routing |
 | Configure a React project for full-stack development |
 
+<br>
+<br>
+<br>
 
 ## Roadmap
 
@@ -31,15 +39,26 @@ type: "lecture"
 - Deploying to Heroku
 - Essential Questions
 
+<br>
+<br>
+<br>
+
+
+
 ## Set Up
 
 The starter code is the React Mastermind app that includes the timer implemented from the previous lesson.
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-full-stack-react/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
 - Start the dev server: `$ npm start`
+
+<br>
+<br>
+<br>
+
 
 ## Why Full-stack?
 
@@ -54,6 +73,11 @@ However, most SPAs rely on a backend server app for tasks such as:
 
 Such an app, where we write code that runs on the front-end and the backend, as you know, is a full-stack application.
 
+<br>
+<br>
+<br>
+
+
 ## Architecting a Full-stack React App
 
 Up until this point, we've taken for granted that full-stack apps, like your Express Projects, were single, integrated projects.
@@ -61,6 +85,12 @@ Up until this point, we've taken for granted that full-stack apps, like your Exp
 However, developing a MERN-stack (MongoDB, Express, React & Node) project involves complexities such as tooling, React's integrated development server, etc.
 
 Basically, there are complications in both **development and production** environments that have to be addressed.
+
+<br>
+<br>
+<br>
+
+
 
 #### Complications During Development 
 
@@ -78,6 +108,12 @@ If we're going to develop a MERN-stack app, we have to figure out how we're goin
 
 > Key Point: When developing a MERN-stack app, you will need to launch **both** React's development server (`$ npm start`) **and** the Express app (`$ nodemon server`) in separate terminal sessions.
 
+<br>
+<br>
+<br>
+
+
+
 #### Production Environment Complications
 
 As we develop our React app locally, we're writing source code that React's dev server builds and runs automatically.
@@ -87,6 +123,11 @@ However, the React dev server is a local tool that does not run in the cloud, i.
 We need a way to **build** our code on the web server that's hosting our app which will vary depending upon which hosting service is used.
 
 Basically, to be able to deploy our MERN-stack app, we're going to have to configure the Express app to serve that production code
+
+<br>
+<br>
+<br>
+
 
 #### Possible Full-stack Architectures
 
@@ -109,6 +150,11 @@ Again, two options:
 
 The second option is "cleaner". Plus, we already have react-mastermind eager to be made full-stack, so we'll opt for that approach...
 
+<br>
+<br>
+<br>
+
+
 ## Building the React App's Production Code
 
 If we want to be able to test locally how our full-stack application is going to run when deployed, we'll need to:
@@ -130,6 +176,12 @@ After building, examining our project's structure reveals a new **build** folder
 
 This **build** folder of production-ready goodness is ready to be served up by an Express backend...
 
+<br>
+<br>
+<br>
+
+
+
 ## Code the Express App
 
 We're going to code our own Express app from scratch since we want our Express app to be within the existing React project & repo. Using `express-generator` would have created a nested folder containing another **package.json** - which we're trying to avoid.
@@ -145,6 +197,12 @@ It simply needs to deliver the **production-ready** `index.html`, which will in 
 
 > Note: The `build` folder is git ignored because we will configure `package.json` to make Heroku build the React app in the cloud.
 
+<br>
+<br>
+<br>
+
+
+
 #### Install the Modules for the Express Server
 
 The full-stack architecture we decided on uses a single **package.json** file (the one that was created by `create-react-app`).
@@ -158,6 +216,11 @@ For now, we're only going to install a minimal number of modules for the Express
 > Note: We don't need a view engine because our server will be either serving static assets (index.html, CSS, JS, images, etc.) or responding to AJAX requests with JSON. There will not be any *.ejs templates rendered - just a single static _index.html_ - this is truly a SPA!
 
 In the lab, to add additional features such as database access, etc., you'll need to install additional modules like `mongoose`, `dotenv`, etc..
+
+<br>
+<br>
+<br>
+
 
 #### Create and Code the Express App (`server.js`)
 
@@ -231,6 +294,11 @@ Let's write our server:
 	});
 	```
 
+<br>
+<br>
+<br>
+
+
 #### Try It Out
 
 Again, to develop a MERN-stack app, you'll need two terminal sessions:
@@ -239,11 +307,21 @@ Again, to develop a MERN-stack app, you'll need two terminal sessions:
 
 2. For running React's dev server
 
+<br>
+<br>
+<br>
+
+
 ##### Start the Express Backend
 
 It's recommend that you start the Express backend first by typing<br>`$ nodemon server.js` or `$ nodemon server`
 
 We can no longer just type `$ nodemon` because when we do, nodemon uses the `start` script in **package.json**, however, the `start` script is configured for React's dev server.
+
+<br>
+<br>
+<br>
+
 
 ##### Checking out the PRODUCTION app
 
@@ -257,6 +335,11 @@ If we want to see how the app will behave when deployed, we need to:
 
 So, when you are hacking out code and nothing seems to be updating in the browser - be sure to verify that you are browsing `localhost:3000`!
 
+<br>
+<br>
+<br>
+
+
 ##### Start React's Dev Server
 
 Now that you've checked out the what the production code will look like when it's deployed, let's start up the development environment as usual:
@@ -265,11 +348,21 @@ Now that you've checked out the what the production code will look like when it'
 $ npm start
 ```
 
+<br>
+<br>
+<br>
+
+
 #### Review
 
 **When browsing to `localhost:3001`, what version of the app will you be viewing?**
 
 **What command must we run in Terminal to update the production code?**
+
+<br>
+<br>
+<br>
+
 
 ### <blink>IMPORTANT REMINDER - Backend Development</blink>
 
@@ -277,9 +370,15 @@ Just to be clear, the Express backend is fully configured and ready for addition
 
 When the time comes, be sure to add folders such as `config`, `routes`, `models` & `controllers` to keep your backend code organized.
 
-Additionally, in a SPA, the routes will be API-type routes, i.e., they should be namespaced using `/api` and respond with JSON, not EJS views. Refer to the [**Producing an API in Express**](https://seir-flex-blade-runner.surge.sh/unit_2/w11d03/lesson-materials/producing-api-with-express/) lesson for details.
+Additionally, in a SPA, the routes will be API-type routes, i.e., they should be namespaced using `/api` and respond with JSON, not EJS views.
 
 You will also want to refer to the Mongoose related lessons to refresh your recollection of how to define schemas and perform CRUD using Mongoose models.
+
+<br>
+<br>
+<br>
+
+
 
 ## Configure React for Full-stack Development
 
@@ -312,6 +411,14 @@ Now **during development**, the SPA can make AJAX calls to the server, such as `
 
 Welcome to the MERN-stack!
 
+<br>
+<br>
+<br>
+
+
+
+
+
 ## Deploying to Heroku
 
 ##### IMPORTANT: If your project is inside of an outer repo, you can't deploy it because you can't create a nested repo.  You'll need to move the project's folder outside of any existing repo before you can deploy.
@@ -321,6 +428,13 @@ You want to play Mastermind on your phone or have friends play it, right? Get it
 > It's recommended that you test the production app before deploying.  Again, do this by building the React app (`$ npm run build`) and browsing to `localhost:3001`.
 
 With the MERN-stack app tested, we're **almost** ready to deploy to Heroku...
+
+<br>
+<br>
+<br>
+
+
+
 
 ##### Add a `Procfile`
 
@@ -338,6 +452,12 @@ Then, adding a single line inside **Procfile** takes care of informing Heroku ho
 web: node server.js
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ##### Create the App in your Heroku Account
 
 Now let's use the Heroku CLI to create the project in your Heroku dashboard:
@@ -352,6 +472,12 @@ Now you are set to deploy to Heroku:
 
 2. Push to Heroku: `$ git push heroku master`
 
+<br>
+<br>
+<br>
+
+
+
 ##### Set the Environment Variables on Heroku
 
 The last step is to ensure that every KEY=VALUE pair in the `.env` file is set in the Heroku project.
@@ -362,6 +488,11 @@ No different than with the two previous projects deployed to Heroku. For each KE
 $ heroku config:set KEY=VALUE
 ```
 
+<br>
+<br>
+<br>
+
+
 
 ##### Open the App
 
@@ -369,12 +500,19 @@ $ heroku config:set KEY=VALUE
 
 <img src="https://i.imgur.com/jyfJ4gy.png">
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Essential Questions
 
-1. **What folder holds a React app's production-ready code?**
+**❓ What folder holds a React app's production-ready code?**
 
-2. **Why does a "catch all" route need to be mounted in Express?** 
+**❓ Why does a "catch all" route need to be mounted in Express?** 
 
-3. **True or False: API routes will need to be defined so that the React app can obtain data, create data in the database, etc.**
+**❓ True or False: API routes will need to be defined so that the React app can obtain data, create data in the database, etc.**
 
-4. **True or False: The React app should use a "service" module to communicate with the backend's API routes via AJAX.**
+**❓ True or False: The React app should use a "service" module to communicate with the backend's API routes via AJAX.**

@@ -9,6 +9,11 @@ type: "lecture"
 # Component Lifecycle Methods
 
 
+<br>
+<br>
+
+
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -16,6 +21,10 @@ type: "lecture"
 | Explain the use case for lifecycle methods |
 | List the three phases of a component's lifecycle |
 | Override/implement a lifecycle method |
+
+<br>
+<br>
+
 
 
 ## Road Map
@@ -28,13 +37,20 @@ type: "lecture"
 - Adding a Game Timer to Mastermind
 - Essential Questions
 
+
+<br>
+<br>
+
+
+
+
 ## Set Up
 
 The starter code for this lesson is the same as the solution code from the _Mastermind Settings Lab_.
 
 To get set up for this lesson:
 
-- Download the <a href="./react-mastermind.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-react-lifecycle-methods/starter-code/react-mastermind.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
@@ -48,7 +64,19 @@ There's also a `/settings` route that displays:
 
 <img src="https://i.imgur.com/YI6qBcX.png">
 
+<br>
+<br>
+<br>
+
+
 ## The Lifecycle of Components
+
+<br>
+<br>
+<br>
+
+
+
 
 #### What are Lifecycle Methods
 
@@ -59,6 +87,12 @@ React's `Component` has several methods that React automatically invokes during 
 When we subclass `Component` using `extends` our custom class component inherits those methods.
 
 For example, you are already familiar with a couple of them: `constructor` and `render`.
+
+<br>
+<br>
+<br>
+
+
 
 #### Why do Lifecycle Methods Exist?
 
@@ -75,11 +109,20 @@ Some use cases that require overriding certain lifecycle methods include:
 - Performance optimization
 - Creating/destroying resources such as timers
 
+<br>
+<br>
+
+
 ## The Lifecycle Methods
 
 First, a heads up that the release of React version 16.3 brought significant changes to React's lifecycle methods as React moves toward an [async rendering mode](https://reactjs.org/blog/2018/03/01/sneak-peek-beyond-react-16.html). A couple of lifecycle methods have been deprecated (marked for removal in a later version).
 
 In this lesson, we will not work with any of the deprecated lifecycle methods - so sleep well...
+
+<br>
+<br>
+<br>
+
 
 ### Common Lifecycle Methods
 
@@ -104,6 +147,11 @@ In the above diagram, there are five lifecycle methods (in bold):
 - **componentDidUpdate**: Called after subsequent renders.
 - **componentWillUnmount**: Called just before a component will be removed from the DOM.
 
+<br>
+<br>
+<br>
+
+
 ### Less-common Lifecycle Methods
 
 For completeness, the following diagram includes the **less-common** lifecycle methods:
@@ -111,6 +159,11 @@ For completeness, the following diagram includes the **less-common** lifecycle m
 <img src="https://i.imgur.com/xANapyE.png">
 
 As explained by [this React blog post](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html), you will rarely ever have to use these less-common lifecycle methods.
+
+<br>
+<br>
+<br>
+
 
 ## Overriding the Lifecycle Methods
 
@@ -138,6 +191,12 @@ class App extends Component {
 
 Checking the console of the browser should now show `App: componentDidMount` logged out.
 
+<br>
+<br>
+<br>
+
+
+
 #### 💪 Practice (5 mins)
 
 Continuing to modify **App.js**:
@@ -158,7 +217,17 @@ Note how the `constructor` and `componentDidMount` methods did not run a second 
 
 Instead, just as the diagram shows, the `render` and `componentDidUpdate` methods ran in response to `setState` being called.
 
+<br>
+<br>
+<br>
+
+
 ## Adding a Game Timer to Mastermind
+
+<br>
+<br>
+
+
 
 ### User Stories
 
@@ -167,6 +236,11 @@ It would be cool to implement the following user stories:
 - _As a player (AAP), I want to see how long it's taking to crack the code so that I can track my times._
 - _AAP, I want the timer to stop when I crack the code._
 - _AAP, I want the timer to reset to zero when a new game starts._
+
+<br>
+<br>
+
+
 
 ### Wireframe
 
@@ -194,6 +268,11 @@ We will then pass `elapsedTime` to `<GameTimer>` as a prop to be rendered.
 
 But how will `<App>` know when to increment `elapsedTime`? As usual, we'll also need to pass down a callback method that `<GameTimer>` can call with each "tick".
 
+<br>
+<br>
+
+
+
 #### Function or Class Component?
 
 If `<GameTimer>` had its own state, we would have to define it as a class component - **why?**
@@ -206,6 +285,11 @@ Since the `<GameTimer>` component will be using a timer, we want to make sure th
 
 The key to preventing a new timer from being created without the existing timer being "cleared" is to override the `componentDidMount` and `componentWillUnmount` lifecycle methods - again, only possible in class components.
 
+<br>
+<br>
+<br>
+
+
 ### Coding the `<GameTimer>` Component
 
 Let's get coding...
@@ -213,6 +297,11 @@ Let's get coding...
 #### YOU DO: Refactor `<GameTimer>` as a Class Component (3 mins)
 
 `<GameTimer>` exists as a Function Component - refactor it to be a Class Component.
+
+<br>
+<br>
+
+
 
 #### Add `elapsedTime` to `<App>`'s State and Pass as a Prop
 
@@ -233,6 +322,10 @@ getInitialState() {
 ```
 
 **YOU DO:** Pass `elapsedTime` down as a prop named `elapsedTime` to `<GameTimer>`.
+
+<br>
+<br>
+
 
 
 #### Make it Tick
@@ -274,6 +367,11 @@ handleTick = () => {
 
 `handleTimerUpdate` is a method that we're adding to **App.js** next. As you can see, we're calling it from `handleTick` with each tick.
 
+<br>
+<br>
+
+
+
 #### Incrementing `elapsedTime` in `<App>`
 
 We have to write that `handleTimerUpdate` callback method in **App.js**:
@@ -285,6 +383,11 @@ handleTimerUpdate = () => {
 ```
 
 **YOU DO:** You know the routine - pass it down! 😎
+
+<br>
+<br>
+
+
 
 #### Get Ticking
 
@@ -301,6 +404,10 @@ Finally, let's confirm that `elapsedTime` is being incremented by rendering it's
 ```
 
 Awesome!
+
+<br>
+<br>
+
 
 #### Formatting and Style `<GameTimer>`
 
@@ -350,23 +457,35 @@ After making a couple of guesses, we would be displaying something like this:
 
 <img src="https://i.imgur.com/xNzEDw1.png ">
 
+<br>
+<br>
+<br>
 
 
-## ❓ Essential Questions
+## Essential Questions
 
-1. **In your own words, what do lifecycle methods allow developers to do?**
+**❓ In your own words, what do lifecycle methods allow developers to do?**
 
-2. **Name two lifecycle methods.**
+**❓ Name two lifecycle methods.**
 
-3. **Explain how to update a component's state from a child component.**
+**❓ Explain how to update a component's state from a child component.**
+
+<br>
+<br>
+
 
 ## 💪 Bonus Challenge Exercises
 
 1. Make the timer stop ticking when the player has cracked the code.
 
-2. Reset the timer when a new game starts - maybe the easiest exercise of all time since it already does this. Just ensure that you know why it works 😊
+2. Reset the timer when a new game starts - maybe the easiest exercise of all time since it already does this. <br>Just ensure that you know why it works 😊
 
-Be sure to test that timer stops when the game has been won!
+*Be sure to test that timer stops when the game has been won!*****
+
+<br>
+<br>
+
+
 
 #### Hints
 
@@ -378,10 +497,15 @@ Be sure to test that timer stops when the game has been won!
 
 - There's a great place in **App.js** to update the `isTiming` state by adding a single line of code!
 
+
+<br>
+<br>
+
+
 ## References
 
 [React Docs - The Component Lifecycle](https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle)
 
 
 #### Psssst....don't use this unless you absolutely need to
-<a href="./react-mastermind-bonus-solution.zip" download>Bonus Solution Code</a>
+<a href="static/downloads/react_fundamentals/intro-to-react-lifecycle-methods/bonus-exercise-solution/react-mastermind.zip" download>Bonus Solution Code</a>

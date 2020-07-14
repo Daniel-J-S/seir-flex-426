@@ -9,6 +9,12 @@ type: "lab"
 
 # Star Wars API - React Lab
 
+<br>
+<br>
+
+
+
+
 ## Intro
 
 In the lesson earlier you:
@@ -17,9 +23,15 @@ In the lesson earlier you:
  
 2. Created a "service" module to organize `fetch` calls within.
 
-In this lab, you'll consume the [Star Wars API](https://swapi.co/) and render it's data.
+In this lab, you'll consume the [Star Wars API](https://swapi.dev/) and render it's data.
 
 **This lab is a DELIVERABLE**
+
+<br>
+<br>
+
+
+
 
 ## Set Up
 
@@ -31,11 +43,17 @@ To get set up for this lesson:
 - Open a terminal in VS Code.
 - Start the React Dev Server.
 
+<br>
+<br>
+
+
+
+
 ## Exercises
 
 > Styling in this lab is secondary to completing the functionality
 
-1. Research documentation of [SWAPI](https://swapi.co/documentation) to find the endpoint for the `starships` resource.
+1. Research documentation of [SWAPI](https://swapi.dev/documentation) to find the endpoint for the `starships` resource.
 
 2. Create a `services/sw-api.js` service module and ensure that all API/fetch calls are made from this module. Use named exports to expose AJAX functionality as needed, e.g., `export function getAllStarships() {...}`to obtain all starships.
 
@@ -48,6 +66,12 @@ To get set up for this lesson:
 	<img src="https://i.imgur.com/IjRwsHk.png">
 
 5. Because the data is being loaded asynchronously, there are times, such as if the user refreshes the page while viewing the `<StarshipPage>`, that the data won't be available to render, in this case, display a "Loading..." message instead.
+
+<br>
+<br>
+
+
+
 
 ## Hints
 
@@ -63,9 +87,22 @@ To get set up for this lesson:
 
 	3. The third approach would be to use the data service to fetch the specific starship from the `<StarshipPage>` component.  However, this approach is wasteful unless the data resource changes frequently, e.g., you want to display the latest comments.  In this case, a starship's data does not change and you already have the data stored in state, so this is not an efficient approach.
 
+<br>
+<br>
+<br>
+
+
+
 ## Deliverable
 
-Commit your code and provide a link to this lab using the ["Submit Homework"](https://forms.gle/ZhsdJF2JpgvAK41h6) form.
+Commit your code and provide a link to this lab using the ["Submit Homework"](https://forms.gle/2bZ7aAWu64pv39PUA) form.
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Bonus
 

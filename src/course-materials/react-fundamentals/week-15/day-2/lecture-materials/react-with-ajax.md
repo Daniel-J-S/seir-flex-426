@@ -16,6 +16,9 @@ type: "lecture"
 | Use third-party libraries such as Google Maps |
 | Modularize code using "service" modules |
 
+<br>
+<br>
+
 
 ## Roadmap
 
@@ -27,13 +30,18 @@ type: "lecture"
 - Implement the _As a Visitor..._ User Story
 - Essential Questions
 
+<br>
+<br>
+<br>
+
+
 ## Set Up
 
 This lesson has starter-code.
 
 To get set up for this lesson:
 
-- Download the <a href="./react-weather.zip" download>Starter Code</a>
+- Download the <a href="/downloads/react_fundamentals/intro-to-react-with-ajax/react-weather.zip" download>Starter Code</a>
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
 - Open the code in VS Code: `$ code .`
@@ -42,6 +50,12 @@ To get set up for this lesson:
 Shortly after starting React's Development Server, you should be greeted with:
 
 <img src="https://i.imgur.com/qj3bSlP.png">
+
+<br>
+<br>
+<br>
+
+
 
 ## Review the Functionality of the App
 
@@ -57,11 +71,22 @@ To demonstrate how to make AJAX calls from React, we're going to build an app th
 
 To focus on how to make an AJAX call in a React app, the app purposely is minimalistic - requiring no user interaction at all.
 
+<br>
+<br>
+<br>
+
+
+
 #### The Starter Code
 
 In the starter code, `<App>` is currently rendering only a `<header>` and the custom `<Map>` component which currently does not render a map because it's waiting for us to provide a couple of props, which we'll do in a bit.
 
 Also, take a peek at **index.css** & **App.css** to see how [CSS Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) (AKA CSS Variables) are being used. They are really cool addition to the CSS spec.
+
+<br>
+<br>
+<br>
+
 
 ## Including Third-Party Libraries
 
@@ -70,6 +95,11 @@ If you google how to use this or that library with React, many of the results re
 However, much of the time, using third-party libraries such as Google Maps without resorting to installing custom React-oriented modules/components is not difficult.
 
 To demonstrate this, we're going to use the Google Maps JavaScript library to load a map of the user's current location.
+
+<br>
+<br>
+<br>
+
 
 #### Including the Library
 
@@ -99,6 +129,11 @@ This is what we want:
 
 Note that Google Map's API keys are intended to be used client-side.
 
+<br>
+<br>
+<br>
+
+
 #### The Custom `<Map>` Component
 
 The starter code includes a simple `<Map>` function component that can be reused to render as many maps desired.
@@ -115,6 +150,11 @@ Since the library's `Map` constructor needs a reference to the DOM element to dr
 
 This allows us to use the ref (`mapDiv.current`) to provide the library a reference to the mounted `<div>` on line 11.
 
+<br>
+<br>
+<br>
+
+
 #### Accessing Libraries Loaded Outside of React
 
 Take note on how the Google Maps library is being referenced on line 10 (and also on line 18):
@@ -129,9 +169,19 @@ Normally, as shown in the docs, you would access the global `google` object crea
 
 The solution is to access `google`, as well as other global variables, such as `socket` or `$`, by prefacing the global variable with the `window` object, which we know to represent the global namespace.
 
+<br>
+<br>
+<br>
+
+
 ## Accessing the Browser's Current Coordinates
 
 The [Geolocation API](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) is a Web API available in the browser that can return an object that contains the current GPS coordinates of the browser.
+
+<br>
+<br>
+<br>
+
 
 #### Modularization Using Service Modules
 
@@ -159,11 +209,22 @@ export function getCurrentLatLng() {
 
 Let's see how to use this service to provide the coordinates to the `<Map>` component...
 
+<br>
+<br>
+<br>
+
+
 ## Making Asynchronous/AJAX Calls in React
 
 You may be wondering why we have a dedicated lesson to cover making AJAX calls from a React app.
 
 After all, we've already seen how to use `fetch` to make AJAX calls.
+
+<br>
+<br>
+<br>
+
+
 
 #### CORS Restrictions
 
@@ -178,6 +239,12 @@ To make `fetch` send the correct CORS headers to the server, we need to include 
 ```js
 fetch(someUrl, {mode: "cors"}).then(res => res.json())
 ```
+
+<br>
+<br>
+<br>
+
+
 
 #### Adding a `componentDidMount` Method
 
@@ -216,6 +283,11 @@ As usual, we're baby stepping our way to glory...
 
 <img src="https://i.imgur.com/T3BeGec.png">
 
+<br>
+<br>
+<br>
+
+
 #### Providing the Coordinates to `<Map>`
 
 Now that we have the latitude and longitude, we can add them to `state`, then pass them to `<Map>` as props:
@@ -245,6 +317,11 @@ Finally, we can now pass that state as props to `<Map>` within the `render` meth
 ```
 
 Oh so lovely - we have errors...
+
+<br>
+<br>
+<br>
+
 
 #### Refactoring `<Map>` into a Class Component
 
@@ -295,10 +372,20 @@ Okay, assuming the refactor went well, the `<Map>` component will be displaying 
 
 <img src="https://i.imgur.com/ZnIwsAt.png">
 
+<br>
+<br>
+<br>
+
+
 ## Implement the _As a Visitor..._ User Story
 
 Okay, let's implement the following User Story:<br>
 **_As a Visitor, when I browse to the app, I want to see the current weather conditions for my location_**
+
+<br>
+<br>
+<br>
+
 
 #### The OpenWeatherMap API
 
@@ -367,6 +454,11 @@ Let's checkout the JSON returned by pasting that URL into a browser tab.  You sh
 }
 ```
 
+<br>
+<br>
+<br>
+
+
 ### Exercise - Create a `weather-api.js` Service Module (15 min)
 
 Putting `fetch` calls in service/utility modules is a best practice - do not litter your components with `fetch` calls!
@@ -391,7 +483,12 @@ Using the **geolocation.js** module as an example, create a **weather-api.js** s
 - `console.log(weatherData)` and verify that the data is being logged:
 
 	<img src="https://i.imgur.com/y8JXo71.png">
-	
+
+<br>
+<br>
+<br>
+
+
 #### Add the Weather Data to State
 
 We're going to keep it simple and display:
@@ -443,6 +540,11 @@ React Developer Tools assure us that we're ready to move on to rendering:
 
 <img src="https://i.imgur.com/uaYgTCq.png">
 
+<br>
+<br>
+<br>
+
+
 #### Render the Temperature and Condition Icon
 
 Ignoring CSS for now, let's update the `<header>` in **App.js** as follows:
@@ -465,6 +567,11 @@ The ["How to get icon URL" section](https://openweathermap.org/weather-condition
 Note how we're using the `&&` operator within a JSX expression to prevent the rendering of a "broken image" tag that would show until the data arrives.
 
 Lastly, React will give a warning in the console if you don't include an `alt` prop in all `<img>` components.
+
+<br>
+<br>
+<br>
+
 
 #### Update the CSS for the `<header>`
 
@@ -494,15 +601,22 @@ Congrats!
 
 <img src="https://i.imgur.com/rUTkeVb.png">
 
+<br>
+<br>
+<br>
+
+
+
 ## Essential Questions
 
 Take a moment to review the following questions:
 
-1. **Assuming you loaded jQuery via a CDN in a React app's index.html, what object must you precede `$()` (jQuery function) with?**
+**❓ Assuming you loaded jQuery via a CDN in a React app's index.html, what object must you precede `$()` (jQuery function) with?**
 
-2. **What lifecycle method(s) do we typically initiate asynchronous calls from?**
+**❓ What lifecycle method(s) do we typically initiate asynchronous calls from?**
 
-3. **Why is the following code not a best practice?**
+**❓ Why is the following code not a best practice?**
+
 
 	```js
 	componentDidMount() {
@@ -511,6 +625,11 @@ Take a moment to review the following questions:
 	    .then(data => this.setState({ data }));
 	}
 	```
+
+<br>
+<br>
+<br>
+
 
 ## References
 

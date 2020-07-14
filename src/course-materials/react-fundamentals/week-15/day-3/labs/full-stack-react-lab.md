@@ -9,8 +9,6 @@ type: "lab"
 
 # Full-Stack React Lab
 
-## Guided Walkthrough Recording
-
 
 **This lab is not a deliverable**
 
@@ -18,7 +16,12 @@ You enjoy challenges - you've come to the right place!
 
 Now that we've taken Mastermind full-stack, you're ready to get some practice interacting with a backend's API by persisting high-scores!
 
-**(Optional) Just in case your codebase from the lecture didn't work you can use this <a href="./react-mastermind-starter.zip" download>Starter Code</a>**
+**(Optional) Just in case your codebase from the lecture didn't work you can use this <a href="/downloads/react_fundamentals/intro-to-full-stack-react-lab/starter-code/react-mastermind.zip" download>Starter Code</a>**
+
+<br>
+<br>
+<br>
+
 
 
 #### Hints:
@@ -43,6 +46,11 @@ Now that we've taken Mastermind full-stack, you're ready to get some practice in
 
 - Also, you'll need a hosted MongoDB if you want to deploy. You already have an MongoDB Atlas account, so go for it.
 
+<br>
+<br>
+<br>
+
+
 #### Bonus
 
 As a bonus, try limiting the number of high-scores to say, the top 20.
@@ -50,6 +58,11 @@ As a bonus, try limiting the number of high-scores to say, the top 20.
 On the client win the player wins, you'll want to check if their score made the list and persist the high score only if it has (or if there's less than 20 existing scores).
 
 On the server, you'll want to look into chaining the Mongoose `limit` query method to make sure that you don't return more than 20 scores.
+
+<br>
+<br>
+<br>
+
 
 #### Super Bonus
 
@@ -71,8 +84,13 @@ On the server, you'll want to look into chaining the Mongoose `limit` query meth
 	1. Verify that the high score sent by the client is indeed a worthy high score (better than the "worst" high-score in the database). This would be a great use case for a **custom validator** function in the schema.  Check out the **Custom** section of [the docs](http://mongoosejs.com/docs/validation.html). For further assistance, perhaps [this StackOverflow](https://stackoverflow.com/questions/43962430/mongoose-how-to-prevent-mongodb-to-save-duplicate-email-records-in-database) will help.
 	2. After adding the new high-score, remove the worst score if the collection grows larger than the number of high-scores you want to keep.  This would be a good use case for Mongoose **post save** [middleware](http://mongoosejs.com/docs/middleware.html) on the high score schema.
 
+<br>
+<br>
+<br>
 
-**Psssst... only use this if necessary, but here's the <a href="./react-mastermind-solution.zip" download>Solution Code</a> to this lab**
+
+
+**Psssst... only use this if necessary, but here's the <a href="/downloads/react_fundamentals/intro-to-full-stack-react-lab/solution-code/react-mastermind.zip" download>Solution Code</a> to this lab**
 
 
 

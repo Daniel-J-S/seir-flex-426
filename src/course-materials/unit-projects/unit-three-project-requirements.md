@@ -1,5 +1,10 @@
 # Project Three: A MERN Stack Application:
 
+<br>
+<br>
+<br>
+
+
 ## Overview
 
 **You’ve come a long way, and it's time to show it.** This will be your most advanced project to date.
@@ -8,6 +13,11 @@
 
 - **Meets the minimum requirements**, and
 - **Is reasonably scoped**
+
+<br>
+<br>
+<br>
+
 
 ## Necessary Deliverables
 
@@ -29,6 +39,11 @@ This project requires **planning** organized within a **Trello board** with the 
 
 > User stories need to be formed properly using this template:<br>`As a <role>, I want <feature> so that <reason>`. The _reason_ is optional if it's patently obvious.
 
+<br>
+<br>
+<br>
+
+
 #### 2) Project Source Control & README
 
 The project's source code must be hosted on a personal **GitHub repository**.
@@ -46,6 +61,11 @@ The project must include a **`README.md`** file with the following sections:
 - **Unsolved Problems**: List any unsolved issues.
 
 - **Future Enhancements**: Identify future features and enhancements planned for the project.
+
+<br>
+<br>
+<br>
+
 
 #### 3) Application Technical Requirements/Deliverables
 
@@ -68,6 +88,11 @@ The project must include a **`README.md`** file with the following sections:
 	- Consume a third-party API.
 	- Include _admin_ features.
 	- Utilize multi-user, real-time communications (difficult and time consuming)
+
+
+<br>
+<br>
+<br>
 
 
 #### 4) Project Presentation
@@ -96,6 +121,12 @@ You will have 10 minutes to present and demonstrate the following:
 
 Following your presentation, there will be a brief Q & A period and optional instructor feedback.
 
+<br>
+<br>
+<br>
+
+
+
 ## Project Assistance
 
 - At this stage of SEIR, being able to find the the answers to your development issues is of paramount importance. 
@@ -103,6 +134,13 @@ Following your presentation, there will be a brief Q & A period and optional ins
 - Feel free to use all resources available and collaborate with others.
 
 - If you do seek assistance in Slack, explain the issue, include screenshots, and explain what you've done to solve the issue on your own.
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Suggestions to Get Started
 
@@ -117,6 +155,13 @@ Following your presentation, there will be a brief Q & A period and optional ins
 - Follow the steps we've done in class to implement features, beginning with the user's interaction, identifying the proper route, etc. 
 
 - Read the docs for whatever technologies / frameworks / API’s you use.
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Best Practices
 
