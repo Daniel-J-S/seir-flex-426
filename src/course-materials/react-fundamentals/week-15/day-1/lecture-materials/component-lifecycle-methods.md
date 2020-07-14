@@ -508,4 +508,4 @@ After making a couple of guesses, we would be displaying something like this:
 
 
 #### Psssst....don't use this unless you absolutely need to
-<a href="static/downloads/react_fundamentals/intro-to-react-lifecycle-methods/bonus-exercise-solution/react-mastermind.zip" download>Bonus Solution Code</a>
+<a href="/downloads/react_fundamentals/intro-to-react-lifecycle-methods/bonus-exercise-solution/react-mastermind.zip" download>Bonus Solution Code</a>
