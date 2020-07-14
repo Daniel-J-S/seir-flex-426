@@ -480,7 +480,7 @@ After making a couple of guesses, we would be displaying something like this:
 
 2. Reset the timer when a new game starts - maybe the easiest exercise of all time since it already does this. <br>Just ensure that you know why it works 😊
 
-*Be sure to test that timer stops when the game has been won!*****
+*Be sure to test that timer stops when the game has been won!*
 
 <br>
 <br>
