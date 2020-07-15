@@ -38,7 +38,7 @@ In this lab, you'll consume the [Star Wars API](https://swapi.dev/) and render i
 To get set up for this lesson:
 
 - Use `create-react-app` to create a React app named `react-star-wars`
-- You can create this app inside a wk16 folder inside your homework and labs folder.
+- You can create this app inside a folder where you keep your homework and labs.
 - `cd` into `react-star-wars` and open VS Code.
 - Open a terminal in VS Code.
 - Start the React Dev Server.
@@ -95,7 +95,7 @@ To get set up for this lesson:
 
 ## Deliverable
 
-Commit your code and provide a link to this lab using the ["Submit Homework"](https://forms.gle/2bZ7aAWu64pv39PUA) form.
+Commit and push your code to Github (personal or enterprise) and provide a link to this lab using the ["Submit Homework"](https://forms.gle/2bZ7aAWu64pv39PUA) form.
 
 <br>
 <br>
