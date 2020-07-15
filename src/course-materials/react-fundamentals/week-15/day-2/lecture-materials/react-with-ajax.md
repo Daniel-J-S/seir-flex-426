@@ -618,13 +618,13 @@ Take a moment to review the following questions:
 **❓ Why is the following code not a best practice?**
 
 
-	```js
+```jsx
 	componentDidMount() {
 	  fetch('https//api.somehost.com/endpoint', {mode: 'cors'})
 	    .then(res => res.json())
 	    .then(data => this.setState({ data }));
 	}
-	```
+```
 
 <br>
 <br>
