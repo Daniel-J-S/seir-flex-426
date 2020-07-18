@@ -12,7 +12,7 @@ topics: "Full-Stack React"
 
 #### Full Stack-React & Introduce Project 3
 - [**Lecture:** Intro to Full-Stack React](/react-fundamentals/week-15/day-3/lecture-materials/full-stack-react)
-- [**Lab:** Full Stack React Lab](/react-fundamentals/week-15/day-3/labs/full-stack-react-lab/)
+- [**Lab:** Full Stack React Lab](/react-fundamentals/week-15/day-3/labs/full-stack-react-lab/) - **Non-Deliverable**
 - [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
 - **Activity:** Begin Project 3 Planning
 
