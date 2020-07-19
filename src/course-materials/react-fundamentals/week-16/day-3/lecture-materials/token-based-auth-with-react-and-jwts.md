@@ -9,6 +9,13 @@ type: "lecture"
 
 # Token-based Auth with React & JWTs
 
+<br>
+<br>
+<br>
+
+
+
+
 
 ## Learning Objectives
 
@@ -23,20 +30,24 @@ type: "lecture"
 | Protect "private" client-side routes |
 | Protect "private" server routes with middleware |
 
+<br>
+<br>
+<br>
+
+
 
 ## Roadmap
-
-#### Token-based Authentication:
 
 - Review of session-based authentication
 - What's a JSON Web Token (JWT)?
 - Flow of token-based authentication
 - Advantages of JWT-based authentication
-
-#### Review the Starter App:
-
 - Set up the code
 - Review the code
+
+<br>
+<br>
+
 
 #### Steps to Implement Token-based Authentication & Authorization:
 
@@ -52,15 +63,30 @@ type: "lecture"
 10. Verify JWTs sent by the client and add the `user` to the Express `request` object.
 11. Implement authorization: Protect the `/high-scores` client-side route.
 12. Implement authorization: Protect server-side routes with custom middleware.
-****
+
+
+<br>
+<br>
+<br>
+
 
 ## Token-based Authentication
+
+<br>
 
 ### Review of Session-based Authentication
 
 Before we talk about token-based authentication, let's review one of the types of auth that you've already used, session-based authentication.
 
 <img src="https://i.imgur.com/TZoeAVv.png" width="900">
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ### What's a JSON Web Token (JWT)?
 
@@ -71,6 +97,10 @@ The key points about a JWT are:
 - The token can contain whatever custom data (called _claims_) we want to put in it.
 - The token is cryptographically _signed_ by the server when it is created so that if the token is changed in any way, it is considered invalid.
 - The token is _encoded_, but **not encrypted**.  It is encoded using a standard known as _base64url encoding_ so that it can be easily serialized across the internet or even be included in a URL's _querystring_. It's easy to look at **encoded** data and think that its content cannot be read - this is not the case, as you'll soon see.
+
+<br>
+<br>
+
 
 Here is how a JWT is structured:
 
@@ -90,6 +120,14 @@ Allow me to take a JWT from the website and demonstrate the fact that the token 
 
 Okay, JWTs are cool, how does the client get one; and how do we use them?
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ### Flow of Token-based Authentication
 
 <img src="https://i.imgur.com/3quZxs4.png">
@@ -103,6 +141,11 @@ The diagram above shows that the client app:
 5. The server will then validate the token and respond to the request.
 
 What are some advantages of token-based vs. session-based auth...
+
+<br>
+<br>
+<br>
+
 
 ### Advantages of JWT-based Authentication
 
@@ -120,13 +163,22 @@ The stateless nature of token-based auth allows the implementation of single sig
 
 When making an HTTP request, a token can be sent in an HTTP header (or even the HTTP body). They don't have to be sent in a cookie, which are implemented by web browsers. Thus, you can use token-based authentication without a web browser - great news for _native mobile apps_.
 
+<br>
+<br>
+<br>
+
+
 ## Review the Starter Code
 
-The <a href="./react-mastermind-starter.zip" download>**Starter Code**</a> is the full-stack Mastermind app with some minor additions to aid our authentication implementation.
+The <a href="/downloads/react_fundamentals/intro-to-react-auth-with-jwts/react-mastermind.zip" download>**Starter Code**</a> is the full-stack Mastermind app with some minor additions to aid our authentication implementation.
 
 
 
-#### Set Up
+<br>
+<br>
+
+
+## Set Up
 
 - Extract the folder from the `.zip` file and `cd` into it
 - Install the Node modules: `$ npm i`
@@ -135,6 +187,12 @@ The <a href="./react-mastermind-starter.zip" download>**Starter Code**</a> is th
 Next, do `$ npm run build` so that the server can boot up without errors (it needs a favicon in the build folder).
 
 Also, there is a `config/database.js` module that connects to a hosted MongoDB. The `DATABASE_URL` is stored in a a **.env** file, which you will need to create because they are git ignored. I will provide the connection string or you can use your own.
+
+<br>
+<br>
+<br>
+
+
 
 #### Review the Code
 
@@ -159,6 +217,10 @@ Here are a few of the highlights of the starter code:
 	Later in the lesson, we will make these "protected" routes that require a user to be logged in.
 	
 	Note that the `highScores` method returns only 20 high scores by default, however, it's designed to accept a `limit` query parameter to override the default of 20. 
+
+<br>
+<br>
+
 
 **CLIENT CODE**
 
@@ -193,11 +255,21 @@ Here are a few of the highlights of the starter code:
 
 	Currently, it has a working `signup` method.
 
+<br>
+<br>
+<br>
+
+
 ## Implement Token-based Authentication & Authorization
 
 Implementing token-based auth will require plenty of code in both the Express server app and the React client app.
 
 There's lots to do, so let's get going!
+
+
+<br>
+
+
 
 ### Step 1: Refactor the server to hash the password when a user signs up
 
@@ -274,6 +346,11 @@ $ mongo mongodb://<user>:<pw>@ds064799.mlab.com:64799/mastermind
 The user's password should be hashed!
 
 Done with Step 1, on to Step 2...
+
+
+<br>
+<br>
+
 
 ### Step 2: Refactor the server to provide a JWT when a user signs up.
 
@@ -352,6 +429,10 @@ Open up the Network tab in Chrome's DevTools, clear the requests, and then sign 
 
 Moving on to Step 3...
 
+<br>
+<br>
+
+
 ### Step 3: Persist the token (JWT) in the client
 
 As discussed, token-based authentication requires the client to send the token when making a request to a server's API. To pull this off, we're going to have to persist it somewhere in the browser...
@@ -363,6 +444,10 @@ As discussed, token-based authentication requires the client to send the token w
 Keeping the token string stored in `localStorage` allows users to remain logged in until the token expires. We will be logged in, even if we close the browser and come back tomorrow! However, you get to determine how long the token is good for when you generate it on the server.
 
 We'll keep all token related code in it's own utility module, but first, let's do that quick refactor to **userService.js** I mentioned a bit ago...
+
+<br>
+<br>
+
 
 #### Refactor the `signup` method in **userService.js**
 
@@ -389,6 +474,10 @@ function signup(user) {
 ```
 
 This funky syntax, `.then(({token}) => ...`, is object parameter destructuring! Only array destructuring was part of ES2015, however most browsers can now destructure objects as well.
+
+<br>
+<br>
+
 
 #### Creating the `tokenService` utility module
 
@@ -419,6 +508,10 @@ export default {
 ```
 
 We'll add other methods in a bit, but for now, this is all we need to persist the token...
+
+<br>
+<br>
+
 
 #### Persisting the token to `localStorage`
 
@@ -454,11 +547,19 @@ Now sign up another user and go to **Local Storage** within the **Application** 
 
 Nice, Step 3 is done!
 
+<br>
+<br>
+
+
 ### Step 4: Update the `<App>` component's state to hold the authenticated user's info
 
 We will want to keep a `user` object in the `<App>` component's `state` so that it can be passed via props to components that need to be aware of the logged in user, such as `<NavBar>`.
 
 If there is no user logged in, we will set the `user` property on the `state` object to `null`.
+
+<br>
+<br>
+
 
 #### Add a `getUser` method to the `userService`
 
@@ -521,6 +622,10 @@ export default {
 
 Be sure to update the `export default` as shown above as well.
 
+<br>
+<br>
+
+
 #### Add `user` to `<App>`'s state
 
 Time to add a `user` property to `<App>`'s state.
@@ -544,6 +649,10 @@ this.state = {
 ```
 
 The last user we signed up should now be in the state of `<App>`. Use the React DevTool to check it out!
+
+<br>
+<br>
+
 
 ### Step 5: Refactor the `<NavBar>`'s display based on auth status
 
@@ -598,6 +707,10 @@ A tiny class added to **NavBar.css** for the welcome text:
 <img src="https://i.imgur.com/sih4Awf.png">
 
 Awesome!
+
+<br>
+<br>
+
 
 ### Step 6: Implement Log Out functionality
 
@@ -660,6 +773,11 @@ Sign up again and yikes, the nav bar didn't update!
 
 Let's fix this problem in the next step...
 
+<br>
+<br>
+
+
+
 ## Step 7: Updating the `user` in `<App>`'s State When Signing Up
 
 **Why didn't the display update?**
@@ -690,11 +808,19 @@ What's that? You're tired of signing up different users?
 
 We're here to please...
 
+<br>
+<br>
+
+
 ## Step 8: Implement Log In functionality
 
 I'm tied of signing up all these users too!
 
 To implement logging in, we need to write code on both the client and server...
+
+<br>
+
+
 
 ### Implement logging in on the client
 
@@ -814,6 +940,12 @@ As you can see, the `login` method is pretty similar to that of `signup`.
 
 Whew, that should take care of the client, on to the server...
 
+<br>
+<br>
+<br>
+
+
+
 ### Implement logging in on the server
 
 When adding functionality on the server, a great place to start is defining the route.
@@ -873,6 +1005,11 @@ Also note that we coded the `comparePassword`'s function to accept a callback fu
 
 Okay, now that we've implemented logging in on the client and server, try it out!
 
+
+<br>
+<br>
+
+
 ## Step 9: Provide the token when making AJAX requests
 
 The server is going to want to verify that a user has a token and that it's valid before allowing access to protected routes.
@@ -880,6 +1017,11 @@ The server is going to want to verify that a user has a token and that it's vali
 If we are logged in, we want to ensure that we send our JWT in a header.
 
 There exists a `POST /api/scores` route on the server used to create a high score. Later in the the lesson, we will protect this route by requiring a valid JWT.
+
+
+<br>
+<br>
+
 
 #### Refactor the **scoresService.js** service module
 
@@ -928,6 +1070,10 @@ Inspecting the Request Headers should make you feel warm & fuzzy:
 
 <img src="https://i.imgur.com/YHgLc1s.png">
 
+<br>
+<br>
+
+
 ## Step 10: Verify JWTs sent by the client and add the `user` to the Express `request` object
 
 Remember how **passport** added the logged in `user` object to Express' `request` (req) object?
@@ -939,6 +1085,11 @@ We've been sending the JWT in an `Authorization` header when requesting scores.
 The token we've been sending already contains the user's info that we can attach to the `req` object - we won't have to hit the database! No session, no querying the database - that's scalability!
 
 > Note, although we will have `req.user` like when we used **passport**, this `user` property will **not** be an actual Mongoose document, it's just a plain JS object that we're grabbing from the token. This is very lightweight and performant. However, if you need to perform any CRUD on an actual document for the logged in user, you will have to query the DB to obtain the user document first using `req.user._id` provided by the token.
+
+
+<br>
+<br>
+
 
 #### Create the Custom Middleware
 
@@ -990,6 +1141,11 @@ Again, we are checking for a token being sent in the request in three different 
 - In the body
 
 Adding this extra flexibility costs nothing and may allow our API to be accessed from other apps/devices more easily.
+
+
+<br>
+<br>
+
 
 #### Mount the Custom Middleware
 
@@ -1050,6 +1206,10 @@ Make sure you're logged in, then...
 
 Cheat again to add a high score - and terminal will display the user data from the token!
 
+
+<br>
+<br>
+
 ## Step 11: Protect the `/high-scores` client-side route
 
 In the client, it's usually a good idea to "hide" functionality that users should not be able to access.
@@ -1057,6 +1217,11 @@ In the client, it's usually a good idea to "hide" functionality that users shoul
 **In the previous units, how have we been "hiding" functionality from anonymous visitors?**
 
 Let's say that we don't want anonymous users to be able to view high-scores in react-mastermind.
+
+
+<br>
+<br>
+
 
 #### We're Talking About React Here...
 
@@ -1069,6 +1234,11 @@ A minor tweak, and poof, no more **[High Scores]** unless the user is logged in:
 ```
 
 <img src="https://i.imgur.com/zn3dYEk.png">
+
+
+<br>
+<br>
+
 
 #### But What About the Rebels?
 
@@ -1097,6 +1267,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 The final step, coming up!
 
+<br>
+<br>
+
+
 ## Step 12: Protect server-side routes with custom middleware
 
 We protected certain server routes back in the Express unit - remember `isLoggedIn`?  If you do, you have an amazing memory!
@@ -1124,9 +1298,20 @@ Well, feed the babies and wash my hair!
 
 We did it!
 
+<br>
+<br>
+<br>
+
+
+
 ## Essential Questions
 
 After what you just went through? No way!
+
+<br>
+<br>
+
+
 
 ## Lab
 
