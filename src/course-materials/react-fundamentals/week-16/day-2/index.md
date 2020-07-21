@@ -12,6 +12,6 @@ topics: "Hooks Bonus Lecture & Project 3 Planning/Approvals"
 
 #### Project 3 Planning & Catch up on Labs 
 - [**Bonus Lecture: React Hooks**](/react-fundamentals/week-16/day-2/lecture-materials/intro-to-react-hooks)
-- **Actvity:** Project 3 Planning
-- **Actvity:** Project 3 Approvals
+- **Actvity:** Project 3 Planning/Approvals
+
 
