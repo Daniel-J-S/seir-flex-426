@@ -8,9 +8,16 @@ topics: "Prepare For Second Language Unit"
 ---
 
 
-# Prepare or Second Language Unit
+# Prepare For Second Language Unit
 
 At this point, we're ready to move on to learning our second programming language and accompanying framework. However, before we get started, we need to ensure we have the proper tools installed on our machines.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## PostgreSQL
 
@@ -33,6 +40,15 @@ createdb
 ```
 
 
+<br>
+<br>
+<br>
+
+
+
+
+
+
 ## Installing Python 3
 
 > Note: Due to time constraints and for simplicity, we will not be using Python "virtual environments" during SEI.  If you are familiar with using virtual environments, you may continue to use them.  If you decide to continue to develop using Python beyond SEI, your next step would be to learn about using virtual environments.
@@ -44,6 +60,16 @@ Install **Python** using Homebrew with this command: `brew install python`.
 You can test the installation by running `python3 --version`.
 
 Python 3's package manager, `pip3` should have automatically been installed with Python 3.  Test that it was installed by running `pip3 --version`.
+
+
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Installing Django
 
