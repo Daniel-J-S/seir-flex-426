@@ -8,6 +8,10 @@ type: "lecture"
 
 # Intro to Python Control Flow
 
+<br>
+<br>
+<br>
+
 
 ## Learning Objectives
 
@@ -19,6 +23,11 @@ type: "lecture"
 | Use a **range** and a `for` statement to loop through a range of integers  |
 
 
+<br>
+<br>
+<br>
+
+
 
 ## Set Up
 
@@ -27,6 +36,13 @@ type: "lecture"
 3. Open the folder in VS Code: `$ code .`
 
 You should see an **exercise.py** file that will be used to enter Python code during the lesson's exercises.  
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Review of Control Flow
 
@@ -40,6 +56,13 @@ The good news is that most programming languages, including Python, share these 
 
 It's worth pointing out that programming concepts such as variables, data types, control flow, functions, etc. apply to programming languages in general thus making learning additional languages far easier than the first one!
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Conditional Expressions in Python
 
 Control flow typically comes down to different code paths executing according to the evaluation of **conditional expressions**.
@@ -48,11 +71,26 @@ In other words, if the **conditional expression** evaluates to _truthiness_, do 
 
 Let's review some of the logic and fundamentals of conditional expressions.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Boolean Values
 
 Python has two logical boolean values: `True` and `False`.
 
 Most logical operations result in one of these two values. They work exactly the same as in JS but are always written with a starting capital letter in Python.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ### Truthy & Falsey in Python
 
@@ -76,6 +114,14 @@ Here's what is **falsey** in Python:
 
 > Note the difference between Python's `[]` & `{}` and JavaScript. 
 
+
+<br>
+<br>
+<br>
+<br>
+
+
+
 ### Comparison Operators
 
 Python has all the same comparison operators as JavaScript:
@@ -88,6 +134,12 @@ Python has all the same comparison operators as JavaScript:
 - `!=` - not equal to
 
 Note that in Python, there's only one equality operator. The `==` in Python is the same as `===` in JavaScript.
+
+
+<br>
+<br>
+<br>
+
 
 #### Examples 
 
@@ -118,6 +170,13 @@ Note that in Python, there's only one equality operator. The `==` in Python is t
 # => True - 6 is less than or greater than 7.
 ```
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Logical Operators
 
 Luckily, the amazing logical operators we used in JavaScript work the same way in Python except Python uses English words instead of symbols:
@@ -126,6 +185,13 @@ Luckily, the amazing logical operators we used in JavaScript work the same way i
 - `and` is the same as `&&`
 
 Again, they work just like they did in JS, which means they always return either the **first** or the **second** operand as follows:
+
+
+<br>
+<br>
+<br>
+
+
 
 #### `or`
 
@@ -166,13 +232,29 @@ False and True
 # => 'tacos'
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ## Control Flow
+
+<br>
+
+
+
 
 ### Indentation!
 
 Before we start looking at control flow, it's important to realize that **Python uses indentation to define blocks of code** - not curly braces.
 
 It has always been recommended to use indentation in languages for readability purposes, however, in Python, proper indentation is mandatory!
+
+<br>
+<br>
+
+
 
 ### Branching with the `if` Statement
 
@@ -226,6 +308,13 @@ Also note that `else` is always optional.
 
 > There is no `switch` construct in Python
 
+
+<br>
+<br>
+<br>
+
+
+
 ### 💪 Branching Exercise (5 minutes)
 
 In the **exercise.py** file, you will find the following code that accepts text input from the user:
@@ -244,7 +333,19 @@ Below that code, write an `if...elif...else` statement that prints out one of th
 
 To run the code, open a terminal in VS Code by typing `control + backtick`, then type `$ python3 exercise.py`.
 
+<br>
+<br>
+<br>
+
+
+
 ## Looping
+
+<br>
+<br>
+
+
+
 
 ### The `for` Statement
 
@@ -278,6 +379,11 @@ for (name of names) {
 }
 ```
 
+<br>
+<br>
+<br>
+
+
 ### The `while` loop
 
 Python also has a `while` loop construct that will continue to iterate **while a given condition is truthy**.
@@ -294,15 +400,43 @@ while condition:
 
 > Beware of infinite loops! When using `while` loops, it's important to ensure that the condition will change to a falsey value so that the loop exits.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### The `break` Statement
 
 Just like in JavaScript, the `break` statement in Python can be used to immediately exit `for` and `while` loops and continue executing any statements that may follow them.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ### 💪 Looping Exercise (5 minutes)
 
 Wrap the code in **exercise.py** in a `while` loop such that it continues to prompt for a color until the word `quit` is entered.
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Python Ranges
+
+<br>
+<br>
+
+
+
 
 ### Purpose of Ranges
 
@@ -311,6 +445,13 @@ Python _**ranges**_ are a _sequence type_ like _lists_ and _tuples_.
 The **range** type represents an immutable sequence of numbers and is commonly used for looping a specific number of times in `for` loops.
 
 _Ranges_ have a class (type) of `range`.
+
+
+<br>
+<br>
+
+
+
 
 ### Ranges - Basic Syntax
 
@@ -352,6 +493,13 @@ print(odds)
 > (1, 3, 5, 7, 9)
 ```
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Ranges - Negative Step
 
 If the _step_ is a negative integer, the _sequence_ counts down:
@@ -366,6 +514,12 @@ for num in range(5, 0, -1):
 > 1
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ## Summary
 
 As you have seen today so far, Python is not all that different than JavaScript.
@@ -374,25 +528,36 @@ The remainder of the day will provide you with lab time to get some practice per
 
 But first...
 
-## ❓ Essential Questions
+## Essential Questions
 
 Take a minute to review before the picker shows up...
 
-1. **What are the two types of control flow discussed in this lesson.**
+**❓ What are the two types of control flow discussed in this lesson.**
 
-2. **Name three values in Python that are considered to be falsey.**
 
-3. **What is returned by the following expression:**
+**❓ Name three values in Python that are considered to be falsey.**
 
-	```python
-	25 or 50
-	```
-	
-4. **What is returned by the following expression:**
 
-	```python
-	25 and 50
-	```
+**❓ What is returned by the following expression:**
+
+```python
+25 or 50
+```
+
+<br>
+
+
+**❓ What is returned by the following expression:**
+
+```python
+25 and 50
+```
+
+<br>
+<br>
+<br>
+
+
 
 ## References
 
