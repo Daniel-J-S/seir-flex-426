@@ -10,7 +10,12 @@ type: "lab"
 <img src="https://i.imgur.com/qz8V0NX.png" width="400">
 
 # Data Modeling - Lab
----
+
+<br>
+<br>
+<br>
+
+
 
 ## Intro
 
@@ -22,9 +27,24 @@ In the _Relational Data Modeling_ lesson, you learned that:
 - Determining the conceptual **data model** is an important planning step for an application.
 - An **Entity Relationship Diagram (ERD)** documents the data model.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ## Goal
 
 The goal of this lab is to provide practice determining the **data model** for an application and documenting it using an **ERD**.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Process
 
@@ -33,6 +53,13 @@ The goal of this lab is to provide practice determining the **data model** for a
 2. Each group will draw an ERD using a sketch pad, zoom whiteboard, or lucid chart for one of applications below.
 
 3. When the ERD is complete, please take a picture and slack it in the class channel.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## List of Applications to Model
 
@@ -64,6 +91,11 @@ Choose an application from the following list to create and ERD for.  Note that 
 	- Allows artists to list unique pieces of art for sale.
 	- Allows customers to view purchase art listed for sale.
 	- Allows customers to search for art available for sale by a particular artist. 
+
+
+<br>
+<br>
+<br>
 
 
 ## Hints
