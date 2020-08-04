@@ -8,18 +8,28 @@ type: "lab"
 
 # Python Control Flow Lab
 
+<br>
+<br>
+
 ## Intro
 
 Let's get some practice working with control flow and logic in Python!
 
+<br>
+<br>
+
 
 ## To Get Started:
 
-Go to this [link](https://repl.it/@DanielJS/Python-Control-Flow-Lab) to solve the 6 exercises
+Go to this [link](https://repl.it/@DanielJS/Python-Control-Flow-Lab) to solve the 6 exercises.
 
 Possible solutions are [here](https://repl.it/@DanielJS/Python-Control-Flow-Lab-Solutions), but do your best not to peek.
 
+
+<br>
+<br>
+
+
 #### This lab is a DELIVERABLE
 
-
-Make sure you [submit a link to your repl.it](https://docs.google.com/forms/d/e/1FAIpQLSeAMUFZVddK5Am7pN6hsd6ZGfPkIyAqkTqUaxLfgXJH5dCD3g/viewform), so we can check your work.
+Make sure you [submit a link to your repl.it](https://forms.gle/aGLyBqABxeDLv18B9) so we can check your work.
