@@ -8,6 +8,13 @@ type: "lecture"
 
 # Intro to Python
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -20,13 +27,23 @@ type: "lecture"
 | Use and format Strings |
 
 
-## Intro to Python
+<br>
+<br>
+<br>
+
 
 ### History
 
 The Python programming language started in December 1989 as a hobby project for Dutch programmer Guido van Rossum. He was looking for a programming project to keep himself occupied during his Christmas break.
 
 Python was first released to the public in 1991.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Versions
 
@@ -35,6 +52,13 @@ Ten years after its release, Python 2.0 was introduced with many major new featu
 Python 3.0 was released in December 2008.
 
 Version 3.0 introduced many enhancements, however, it included changes that made Python 3 incompatible with much of the existing 2.0 code.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Type of Language
 
@@ -48,6 +72,13 @@ Python comes with a large standard library and is suitable for many types of pro
 
 However, if Python does not include functionality that you need, there is a huge repository, the [Python Package Index](https://pypi.org/), with over 169,000 third-party packages available for use.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Syntax & Semantics
 
 Python was designed to be an easy to read programming language.
@@ -56,9 +87,26 @@ Its formatting is visually uncluttered and it often uses English keywords where 
 
 Unlike many other languages, it does not use curly braces to define blocks of code, instead, it uses indentation.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ## Python Interpreter & REPL
 
 We'll be using **Python 3** at all times during SEIR.
+
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ### Ensure `Python 3` is Installed
 
@@ -69,6 +117,13 @@ If you receive an error, run `brew install python`, quit and re-open terminal, a
 Similar to what you saw with **Node.js**, Python comes with an interactive REPL (Read-Evaluate-Print-Loop) that provides a way to run Python code by typing in.
 
 For now, type `exit()` or press `control + d` to exit the REPL.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Running Python Scripts
 
@@ -88,6 +143,13 @@ You'll see that the print statements within the script output to the terminal.
 
 Unlike we saw with Node.js, providing the file extension (`.py`) is required.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### REPL
 
 During the remainder of this lesson, we'll be experimenting in the Python interpreter/REPL.
@@ -98,7 +160,20 @@ At the `>>>` prompt, type `help()`, then type `quit` to return to the REPL.
 
 Cool, let's explore Python a bit in its REPL...
 
+
+<br>
+<br>
+<br>
+
+
 ## The Python Language
+
+<br>
+<br>
+<br>
+
+
+
 
 ### Comments
 
@@ -128,11 +203,26 @@ multiline comment
 
 Multiline comments are often used to document what a function or module does, therefore, they are sometimes referred to as _docstrings_.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ### Python Variables
 
 Variables in Python work in much the same way that variables work in JavaScript.
 
 Variables hold the data an app needs when it runs.
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Declaring
 
@@ -152,6 +242,14 @@ my_variable
 NameError: name 'my_variable' is not defined
 ```
 
+
+<br>
+<br>
+<br>
+
+
+
+
 #### Naming Convention
 
 Variables are case sensitive - variables named `my_number` and `My_Number` would be two different variables.
@@ -168,6 +266,12 @@ var myNumber = 10;
 my_number = 10
 ```
 
+<br>
+<br>
+<br>
+
+
+
 #### Reassigning Variables
 
 Just like in JavaScript, we can freely assign a new value to a variable after it is declared.
@@ -183,11 +287,25 @@ Of course, reassignment replaces the current value and that previous value would
 
 > The `print()` function works very much like `console.log()` does in JavaScript.
 
+
+
+<br>
+<br>
+<br>
+
+
+
 ### Data Types
 
 Python is very object-oriented.
 
 Every piece of data in Python is an object that's an instance of a _class_.
+
+
+<br>
+<br>
+<br>
+
 
 #### Checking the Data Type (class) of an Object
 
@@ -204,6 +322,12 @@ We use the `type()` function to obtain the class used to instantiate the data:
 
 Python's data types are similar to those available in JavaScript, there's just more of them...
 
+<br>
+<br>
+<br>
+
+
+
 #### Integer Numbers (`<class 'int'>`)
 
 Unlike in JavaScript, Python distinguishes between integers (whole numbers) and floats (numbers with decimals).
@@ -218,6 +342,12 @@ When we don't follow a number literal with a decimal point, an integer is assume
 
 We can force numbers to act as integers in some mathematical operations, as we will see. Doing this can force an integer result which is usually the same as calling `Math.floor()` in JavaScript.
 
+
+<br>
+<br>
+<br>
+
+
 #### Floating-point Numbers (`<class 'float'>`)
 
 Numbers with a decimal point are stored in variables as floating-point numbers, usually just called a `float`.
@@ -231,6 +361,13 @@ Numbers with a decimal point are stored in variables as floating-point numbers, 
 <class 'float'>
 ```
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Complex Numbers (`<class 'complex'>`)
 
 Python even has a data type for complex numbers, i.e., numbers with an "imaginary" component usually obtained by taking the square root of a negative number.
@@ -242,6 +379,13 @@ The imaginary portion is represented by the letter 'j':
 >>> type(my_complex)
 <class 'complex'>
 ```
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Booleans (`<class 'bool'>`)
 
@@ -258,6 +402,12 @@ Just like in JS, we have `true` and `false` but spelled slightly differently:
 
 Notice how they start with capital letters! You must start them with capital letters in Python or they will not reflect the boolean values. 
 
+<br>
+<br>
+<br>
+
+
+
 #### Nothingness (`<class 'NoneType'>`)
 
 Similar to how JS has the `null` value to represent nothingness, Python has a similar value:
@@ -267,6 +417,13 @@ my_nothing = None
 ```
 
 The value `None` in Python, with a capital N, provides the same meaning as `null` does in JavaScript.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Math operations
 
@@ -281,6 +438,13 @@ Python has the normal math operators that you are used to from JavaScript:
 
 All work as you would expect. However, there few other things worth mentioning...
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Integer Division
 
 It was mentioned earlier that you could force operands to act like integers to get an integer result. This is specifically enabled for division:
@@ -291,6 +455,13 @@ It was mentioned earlier that you could force operands to act like integers to g
 2
 # 2 is printed, because the decimal ".5" is truncated
 ```
+
+
+<br>
+<br>
+<br>
+
+
 
 #### Shortcut Assignment Operators
 
@@ -318,6 +489,13 @@ num *= 3
 
 > IMPORTANT: A couple of our favorites in JS, the Increment (`++`) and Decrement (`--`) operators, do not exist in Python. Use `+= 1` and `-= 1` instead.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Ternary Expressions
 
 In JS we used the ternary expression to concisely return one of two values depending upon a conditional expression, for example:
@@ -342,6 +520,13 @@ The Python ternary expression equivalent to the JS example above is:
 ```python
 beverage = 'Beer' if age >= 21 else 'Milk'
 ```
+
+<br>
+<br>
+<br>
+
+
+
 
 ### Converting Between Data Types
 
@@ -371,6 +556,13 @@ list(item)       # Converts item to a list
 dict(item)       # Converts item to a dictionary
 ```
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Working with Strings
 
 Python also has strings for holding text, just like JavaScript:
@@ -388,6 +580,13 @@ multiline_string = '''This is my string that
                           for whatever reason'''
 ```
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Concatenating Strings
 
 One or more strings can be combined into a single string in the same way we do it in JS, by using the `+` operator:
@@ -399,6 +598,15 @@ long_string = medium_string + little_string
 print(long_string)
 # prints "superbad"
 ```
+
+<br>
+<br>
+<br>
+
+
+
+
+
 
 #### String Interpolation using f-Strings
 
@@ -425,6 +633,13 @@ template = "My name is {} and I like {}"
 print( template.format("Jim", "tacos") )
 # prints 'My name is Jim and I like tacos'
 ```
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Useful String Methods
 
@@ -469,6 +684,13 @@ len("Tacos")
 # => 5
 ```
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Python's Built-in Functions
 
 Notice above that we did not call `len()` as a method on the string - we didn't do this: `"Tacos".len()`.
@@ -496,18 +718,38 @@ Later we'll see other fancy uses of square brackets.
 
 Let's wrap up with a few questions...
 
-## ❓ Essential Questions
 
-1. **True or False: Every piece of data in Python is an object.**
+<br>
+<br>
+<br>
 
-2. **Will the following code run without error in Python?**
+
+## Essential Questions
+
+
+
+**❓ True or False: Every piece of data in Python is an object.**
+
+
+
+**❓ Will the following code run without error in Python?**
 
 	```python
 	num = 25
 	msg = "There are " + num + " tacos"
 	```
 
-3. **String interpolation can be performed in Python by using __-Strings or the ________ method.**
+
+**❓ String interpolation can be performed in Python by using __-Strings or the ________ method.**
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 ## Further Study
 
