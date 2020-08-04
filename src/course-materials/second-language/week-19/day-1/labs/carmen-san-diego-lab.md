@@ -11,15 +11,32 @@ type: "lecture"
 
 <img src="https://i.imgur.com/OGKTx2f.jpg">
 
+
+<br>
+<br>
+<br>
+
+
 ## Introduction
+
+<br>
+<br>
+
+
 
 #### Use SQL to find Carmen Sandiego
 
 We're going to use what we've learned already about querying a database using SQL commands to to chase down and capture an elusive and world-renowned thief, [Carmen Sandiego](https://en.wikipedia.org/wiki/Carmen_Sandiego)!
 
+
+<br>
+<br>
+<br>
+
+
 ## Set Up
 
-1. <a download href="carmen-sandiego-lab.zip">Download</a> the starter files
+1. <a download href="/downloads/second_language/carmen-san-diego-lab/02-sql-lab.zip">Download</a> the starter files
 
 2. Extract the folder from the `.zip` file and open in VS Code: `$ code .`
 
@@ -40,6 +57,12 @@ We're going to use what we've learned already about querying a database using SQ
 	\i world.sql
 	```
 
+<br>
+<br>
+<br>
+
+
+
 ## Exercise
 
 The goal is to figure out what city Carmen Sandiego is heading to so that she can be met by the proper authorities.
@@ -47,6 +70,12 @@ The goal is to figure out what city Carmen Sandiego is heading to so that she ca
 You'll be writing SQL queries within `clues.sql` to answer each clue.
 
 Run the queries in psql by typing `\i clues.sql`.
+
+
+<br>
+<br>
+<br>
+
 
 ## Hints
 
@@ -56,9 +85,22 @@ Run the queries in psql by typing `\i clues.sql`.
 
 - For example, you'll certainly need to know about the [ORDER BY](http://www.postgresqltutorial.com/postgresql-order-by/). clause.
 
+<br>
+<br>
+<br>
+
+
+
 ## Additional Resources
 
 - [PostgreSQL official documentation](http://www.postgresql.org/docs/).
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Encore 
 
