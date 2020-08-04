@@ -133,7 +133,7 @@ In terminal, we can execute any python script like this:
 $ python3 <filename>.py
 ```
 
-Let's test this out by running the <a download href="fizzbuzz.zip">included **fizzbuzz.py** script.</a>  <br>Make sure you unzip the folder, `cd` into it, open in `VS Code` and then run:
+Let's test this out by running the <a download href="/downloads/second_language/python-intro-exercises/python-intro.zip">included **fizzbuzz.py** script.</a>  <br>Make sure you unzip the folder, `cd` into it, open in `VS Code` and then run:
 
 ```
 python3 fizzbuzz.py
