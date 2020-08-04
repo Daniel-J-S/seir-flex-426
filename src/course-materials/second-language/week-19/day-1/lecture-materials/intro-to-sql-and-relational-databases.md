@@ -8,6 +8,12 @@ type: "lecture"
 
 # Intro to Relational Databases and SQL
 
+<br>
+<br>
+<br>
+
+
+
 ## Learning Objectives
 
 |Students will be able to:|
@@ -20,8 +26,19 @@ type: "lecture"
 |Use SQL to perform CRUD data operations|
 |Use a SQL `JOIN` clause to combine data from multiple tables|
 
+<br>
+<br>
+<br>
+
+
 
 ## Database Intro
+
+<br>
+<br>
+<br>
+
+
 
 ### What is a Database?
 
@@ -30,6 +47,13 @@ The vast majority of applications manipulate and display data.
 Early on, our programs held data in "memory" using data structures such as arrays and objects.  However, when the app was exited, any changes to the data were lost - databases avoid this...
 
 Simply put, **a database provides permanent storage for data**.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Different Types of Databases
 
@@ -46,7 +70,17 @@ Relational databases are by far the most popular type of database technology. Co
 
 In SEI, we'll be using [PostgreSQL](https://www.postgresql.org/)  since it's arguably the best open-source relational database management system (RDBMS) available.
 
+<br>
+<br>
+<br>
+
+
 ### Anatomy of a Relational Database
+
+<br>
+<br>
+
+
 
 #### Schema
 
@@ -57,6 +91,11 @@ Schemas define the database's:
 - Tables, including the number and data type of each column
 - Indexes for efficient access of data
 - Constraints (rules, such as whether a field can be null or not)
+
+<br>
+<br>
+
+
 
 #### Tables 
 
@@ -88,11 +127,20 @@ TABLE: **songs**
 
 The naming convention for tables is typically snake-cased and always plural.
 
+<br>
+<br>
+
+
 #### Rows (Records / Tuples)
 
 A row in a table represents a single instance of the data entity.
 
 For example a particular **artist** in the **artists** table.
+
+<br>
+<br>
+
+
 
 #### Columns (Fields)
 
@@ -121,23 +169,50 @@ Common constraints for a column include:
 - `NOT NULL`: column must have a value, it cannot be empty (null)
 - `UNIQUE`: data in this column must be unique among all rows in the table
 
+<br>
+<br>
+
+
 #### Primary Keys (PK) and Foreign Keys (FK)
 
 The field (or fields) that uniquely identify each row in table are know known as that table's **primary key (PK)**.
 
 Since only one type of data entity can be held in a single table, related data, for example, the **songs** for an **artist**, are stored in separate tables and "linked" via what is known as a **foreign key (FK)**.  Note that foreign key fields hold the value of its related parent's PK.
 
-### ❓ Database Review Questions
+<br>
+<br>
 
-1. **A __________ defines the structure of a particular database.**
 
-2. **A table in a database consists of __________ & __________.**
 
-3. **A __________ key uniquely identifies a row within a table.**
+### Database Review Questions
 
-4. **A __________ key references the primary key in a different table.**
+**❓ A __________ defines the structure of a particular database.**
+
+
+**❓ A table in a database consists of __________ & __________.**
+
+
+**❓ A __________ key uniquely identifies a row within a table.**
+
+
+**❓ A __________ key references the primary key in a different table.**
+
+
+
+<br>
+<br>
+
+
+
 
 ## SQL
+
+<br>
+<br>
+<br>
+
+
+
 
 ### What is SQL?
 
@@ -146,6 +221,13 @@ Since only one type of data entity can be held in a single table, related data, 
 SQL syntax is similar to the English language.
 
 Although SQL is fairly standard, it can vary from depending on the particular RDBMS. For example, the _SQLite_ RDBMS has a minimal implementation of SQL commands.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### The `psql` Interactive Terminal
 
@@ -177,6 +259,12 @@ help -- general help
 q    -- exits a psql list or dialogue
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ### Creating a Database and a Table
 
 Let's create a database named `music` and a `bands` table:
@@ -204,6 +292,13 @@ The backslash commands, e.g. `\d`, are psql commands.
 
 The `CREATE DATABASE` and `CREATE TABLE` are SQL commands.
 
+
+<br>
+<br>
+<br>
+
+
+
 ### Basic Querying and Inserting Data
 
 Now let's write some more SQL to query (`SELECT`) and create data (`INSERT INTO`):
@@ -220,6 +315,12 @@ SELECT * FROM bands; -- Use the up arrow to access previous commands
 ```
 
 Because the type of `id` is set to `serial`, the RDBMS automatically assigns it.
+
+
+<br>
+<br>
+<br>
+
 
 ### Creating a Table for a Related Data Entity
 
@@ -274,6 +375,12 @@ VALUES (
 > Note:  It's possible to insert multiple rows by providing comma separated value lists:<br>`...VALUES ('Geddy Lee', 2), ('Neil Peart', 2);`
 
 
+<br>
+<br>
+<br>
+
+
+
 ### Querying Data using a `JOIN` Clause
 
 The `JOIN` clause is used with a `SELECT` to query for data from more than one table.
@@ -298,6 +405,12 @@ FROM bands b
 LEFT JOIN musicians m ON b.id = m.band_id;
 ```
 
+
+<br>
+<br>
+<br>
+
+
 ### Querying Data using a `WHERE` Clause
 
 The [WHERE clause](http://www.postgresqltutorial.com/postgresql-where/) allows selecting records that meet a condition or conditions:
@@ -320,6 +433,12 @@ Conditions can be based on any column:
 SELECT * FROM musicians WHERE id > 1;
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ### Updating Data
 
 Time to give Geddy a quote by using the SQL `UPDATE` command:
@@ -329,6 +448,12 @@ UPDATE musicians
 SET quote = 'I love to write, it''s my first love.'
 WHERE name = 'Geddy Lee';
 ```
+
+
+<br>
+<br>
+<br>
+
 
 ### Deleting Data
 
@@ -342,6 +467,12 @@ DELETE FROM bands WHERE name LIKE '%Smiths';
 SELECT * FROM bands;
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ### SQL - Summary
 
 As much fun as it is to write SQL, most developers don't have many opportunities to do so because they use software known as an _Object Relational Mapper (ORM)_ to automatically write SQL and communicate with the database server.
@@ -350,17 +481,29 @@ Regardless, having an understanding of SQL always looks good on a resume!
 
 For additional practice after the lab, check out this interactive site: [PG Exercises](https://pgexercises.com/)
 
-## ❓ Essential Questions
+
+<br>
+<br>
+<br>
+
+
+## Essential Questions
 
 Before moving on to the lab, let's answer a few questions...
 
-1. **A database contains a _________ for each data entity that an application has.**
+**❓ A database contains a _________ for each data entity that an application has.**
 
-2. **True or False: In a relational database, all of the data in a given column must be of the same data type.**
+**❓ True or False: In a relational database, all of the data in a given column must be of the same data type.**
 
-3. **A single instance of a data entity is represented by a ______ in a table.**
+**❓ A single instance of a data entity is represented by a ______ in a table.**
 
-4. **The programming language used by relational databases is commonly referred to as ______.**
+**❓ The programming language used by relational databases is commonly referred to as ______.**
+
+
+<br>
+<br>
+<br>
+
 
 ## Further Study
 
