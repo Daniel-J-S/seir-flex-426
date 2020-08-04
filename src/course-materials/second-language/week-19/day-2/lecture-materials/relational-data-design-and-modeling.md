@@ -8,6 +8,11 @@ type: "lecture"
 
 # Relational Data Design & Modeling
 
+<br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -25,7 +30,11 @@ Students will be able to:
 - Create an **Entity Relationship Diagram (ERD)** for an application
 
 
-## Data Modeling
+<br>
+<br>
+<br>
+
+
 
 
 ### Data Modeling
@@ -39,8 +48,10 @@ Students will be able to:
 
 - The data model is typically visualized with an **Entity Relationship Diagram** (ERD).
 
+<br>
+<br>
+<br>
 
-## Data Entities
 
 
 ### What is a Data Entity?
@@ -53,6 +64,11 @@ Students will be able to:
 - Each entity type will have one or more **attributes**...
 
 
+<br>
+<br>
+<br>
+
+
 ### The Attributes for a Data Entity
 
 
@@ -60,13 +76,24 @@ Students will be able to:
 
 - Each attribute has a data type. For example, _string_, _numeric_, _datetime_
 
+
+<br>
+<br>
+<br>
+
+
+
 #### Exercise (2 minutes)
 
 
 - **Identify what other attributes a Book entity might have?** 
 
+<br>
+<br>
+<br>
 
-### Mapping Between an Entityand a Relational Database
+
+### Mapping Between an Entity and a Relational Database
 
 - Remember, the **conceptual data model** is used as a **blueprint** for how the actual database will be structured.
 
@@ -76,8 +103,20 @@ Students will be able to:
 
 - Each **row** in the table is logically an **instance** of the **entity**.
 
+<br>
+<br>
+<br>
+
+
+
 
 ## Designing an Entity Relationship Diagram
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 ### The Application
@@ -94,6 +133,13 @@ Students will be able to:
 	- The customer that bought a ticket
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### The Process
 
 
@@ -107,12 +153,25 @@ Students will be able to:
 - Since this application is supposed to track **tickets**, let's start with a preliminary **Ticket** entity...
 
 
+<br>
+<br>
+<br>
+
+
+
 ### Identifying Data Entities
 
 
 - Here's our first attempt at modeling the **Ticket** entity by including all the attributes you might see printed on a ticket:
 
 	<img src="https://i.imgur.com/jcpU8dF.png" height="400">
+
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Identifying Data Entities
@@ -125,6 +184,12 @@ Students will be able to:
 	- Or, be shared between other Tickets, again, a **Venue**.
 
 
+
+<br>
+<br>
+<br>
+
+
 ### Identifying Data Entities
 
 
@@ -135,6 +200,11 @@ Students will be able to:
 - On to the exercise...
 
 
+<br>
+<br>
+<br>
+
+
 ### Identifying Data Entities - Exercise
 
 
@@ -142,12 +212,34 @@ Students will be able to:
 
 #### The goal is to identify separate Data Entities and their attributes.
 
-#### We will review your findings in 5 minutes.Don't cheat by looking ahead 😊
+#### We will review your findings in 5 minutes.
+
+#### Don't cheat by looking ahead 😊
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 
 ### Data Entities Galore!
 
 <img src="https://i.imgur.com/4iq2IOu.png" style="height: 600px">
+
+<br>
+<br>
+<br>
+
+
+
 
 
 ### Database Normalization (Vocab)
@@ -158,6 +250,12 @@ Students will be able to:
 - A **relational** database is able to perform searching & updating of data much more efficiently when it is "normalized".
 
 - Okay, with the entities and their attributes set, let's talk about the third component of the ERD - **relationships** between the entities...
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 ### Relationships Between Entities
@@ -173,6 +271,13 @@ Students will be able to:
 - Let's take a look at each of these...
 
 
+
+<br>
+<br>
+<br>
+
+
+
 ### One-To-One Relationships
 
 
@@ -181,6 +286,13 @@ Students will be able to:
 - Although **1:1** relationships are not as common as **1:M** and **M:M** relationships, they have their purpose.
 
 - Let's see how we specify a one-to-one relationship in an ERD...
+
+
+
+<br>
+<br>
+<br>
+
 
 
 ### One-To-One Example
@@ -193,6 +305,13 @@ Students will be able to:
 - Let's discuss the connecting line and PK/FK stuff...
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### ERD Cardinality Lines
 
 
@@ -201,6 +320,13 @@ Students will be able to:
 	<img src="https://i.imgur.com/sEnNZyZ.png">
 
 - Note that these are the three main types of cardinality. There are more specific versions of these, such as _zero or many_, as [shown here](https://imgur.com/JtPQEOO).
+
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Primary Keys
@@ -215,6 +341,13 @@ Students will be able to:
 - Although not as common, a **PK** can be a _composite key_, where two or more columns are combined and uniquely identify the a row.
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Foreign Keys
 
 
@@ -227,28 +360,34 @@ Students will be able to:
 - It's **important** to note that foreign keys always exist on the **many** (child) side of a **1:M** relationship.  **Why would this be the case instead of the other way around?**
 
 
+<br>
+<br>
+<br>
+
+
+
 ### Determining the Cardinality Between Tables
 
 <img src="https://i.imgur.com/4iq2IOu.png" height="450">
 
 - Okay, back to modeling the relationships between the entities of the _ticket tracking_ application...
 	
-
-### Determining the Cardinality Between Tables
-
-
 - As a note, to save screen space, the entities are not going to show attributes for the primary and foreign keys.
 
 - However, be aware that as a default, primary keys are named `id` and foreign keys as `<parent_entity_name>_id`.
-
-
-### Determining the Cardinality Between Tables
 
 - Usually by focusing on two entities, [domain knowledge](https://en.wikipedia.org/wiki/Domain_knowledge) and common-sense will reveal the relationship (usually aone-to-many or many-to-many)
 
 - Beginning with **Concert** and **Ticket****What's the relationship?**
 
 - Let's see how this is diagramed...
+
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Creating the ERD
@@ -259,27 +398,34 @@ Students will be able to:
 
 - **Which of the two tables would have to contain the FK?**
 
-
-### Creating the ERD
-
-
 - Now for **Customer** and **Ticket****What's the relationship?**
 
 
-### Creating the ERD
+<br>
+<br>
+
+
 
 <img src="https://i.imgur.com/6Uc4wHF.png" height="400">
 
 - Reads as: **"A Customer has many Tickets"** and **"A Ticket belongs to a Customer"**.
 
+<br>
+<br>
+<br>
 
-### Creating the ERD
+
 
 
 #### Is there a relationship between the **Customer** and **Concert** entities? ...
 
 
-### Creating the ERD
+<br>
+<br>
+<br>
+
+
+### Creating the ERD - (cont)
 
 
 - Thanks to the way relational databases are designed, you can access other tables that are not directly joined by joining with others that are.
@@ -287,6 +433,12 @@ Students will be able to:
 - For example, you most certainly could access all of the _concerts_ purchased by a _customer_ by joining through _tickets_.
 
 - Although not shown on the ERD with a connecting line, you could say that **"A Customer has many Concerts through Tickets"**, as well as, **"A Concert has many Customers through Tickets"**.
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Creating the ERD - Exercise <small>(5 min)</small>
@@ -299,11 +451,24 @@ Students will be able to:
 - We'll review in 5 minutes... (don't peek)
 
 
+<br>
+<br>
+<br>
+
+
+
 ### ERD - Final Version
 
 <img src="https://i.imgur.com/qz8V0NX.png" height="400">
 
 - Note that **many-to-many** relationships, e.g., **Concert** and **Performer**, require a "hidden" join table to implement in the  database - **Why is this**?
+
+
+
+<br>
+<br>
+<br>
+
 
 
 ## In Summary
@@ -312,6 +477,12 @@ Students will be able to:
 - Modeling data is an important step during the planning of an application.  After all, _**data is the single source of truth**_!
 
 - In addition to what we covered in this lesson, there are several other notations/ways to diagram an application's data model.  Check out [this post](https://www.lucidchart.com/pages/er-diagrams) from _lucidchart.com's_ website for more info.  
+
+
+<br>
+<br>
+<br>
+
 
 
 ## Further Study
