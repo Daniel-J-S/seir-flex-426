@@ -4,14 +4,14 @@ title: "Week 18 - Day 3"
 week: 18
 day: 3
 type: "homepage"
-topics: "Project 3 Presentations and Prep for Second Language Unit"
+topics: "Project 3 Presentations"
 ---
 
 
 # Week 18 - Day 3
 
-#### Project 3 Presentations and Prep for Second Language Unit
+#### Project 3 Presentations
 - **Actvity:** Students Present Project 3
-- [**Activity:** Prepare for Second Language Unit](/react-fundamentals/week-18/day-3/lecture-materials/prepare-for-second-language-unit/)
+
 
 
