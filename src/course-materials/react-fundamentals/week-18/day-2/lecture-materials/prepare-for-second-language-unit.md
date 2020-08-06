@@ -15,6 +15,10 @@ At this point, we're ready to move on to learning our second programming languag
 
 <br>
 <br>
+
+[Click Here](https://generalassembly.zoom.us/rec/share/ucBtK5rR9ThIftbR92b4cPdiLMO9aaa82iMZ-_NbzBnWGprBLwaVG6Mxz3WAPHS7?startTime=1596670493000) to access recording
+
+<br>
 <br>
 
 
