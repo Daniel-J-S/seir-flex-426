@@ -12,4 +12,4 @@ topics: "Project 3 Week & Prepare for Second Language Unit"
 
 #### Project 3 Week & Prepare for Second Language Unit 
 - **Actvity:** Students Work on Project 3
-- [**Activity:** Prepare for Second Language Unit](/react-fundamentals/week-18/day-3/lecture-materials/prepare-for-second-language-unit/)
+- [**Activity:** Prepare for Second Language Unit](/react-fundamentals/week-18/day-2/lecture-materials/prepare-for-second-language-unit/)
