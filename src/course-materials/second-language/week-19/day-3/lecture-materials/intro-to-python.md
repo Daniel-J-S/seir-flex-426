@@ -740,10 +740,10 @@ Let's wrap up with a few questions...
 
 **❓ Will the following code run without error in Python?**
 
-	```python
+```python
 	num = 25
 	msg = "There are " + num + " tacos"
-	```
+```
 
 
 **❓ String interpolation can be performed in Python by using __-Strings or the ________ method.**

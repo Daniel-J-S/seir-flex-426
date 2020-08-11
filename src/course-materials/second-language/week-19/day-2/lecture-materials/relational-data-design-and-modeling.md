@@ -378,7 +378,7 @@ Students will be able to:
 
 - Usually by focusing on two entities, [domain knowledge](https://en.wikipedia.org/wiki/Domain_knowledge) and common-sense will reveal the relationship (usually aone-to-many or many-to-many)
 
-- Beginning with **Concert** and **Ticket****What's the relationship?**
+- Beginning with **Concert** and **Ticket** **...what's the relationship?**
 
 - Let's see how this is diagramed...
 
@@ -398,7 +398,7 @@ Students will be able to:
 
 - **Which of the two tables would have to contain the FK?**
 
-- Now for **Customer** and **Ticket****What's the relationship?**
+- Now for **Customer** and **Ticket** **...what's the relationship?**
 
 
 <br>
