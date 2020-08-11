@@ -36,7 +36,7 @@ We're going to use what we've learned already about querying a database using SQ
 
 ## Set Up
 
-1. <a download href="/downloads/second_language/carmen-san-diego-lab/02-sql-lab.zip">Download</a> the starter files
+1. <a download href="/downloads/second_language/carmen-san-diego-lab/sql-lab.zip">Download</a> the starter files
 
 2. Extract the folder from the `.zip` file and open in VS Code: `$ code .`
 
