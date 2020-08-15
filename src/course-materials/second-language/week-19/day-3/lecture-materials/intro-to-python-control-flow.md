@@ -165,9 +165,6 @@ Note that in Python, there's only one equality operator. The `==` in Python is t
 6 != 7
 # => True — 6 is not equal to 7.
 
-# Note that in addition to the != operator, you can also use this for inequality
-6 <> 7
-# => True - 6 is less than or greater than 7.
 ```
 
 
