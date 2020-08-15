@@ -31,7 +31,7 @@ type: "lecture"
 
 ## Set Up
 
-1. <a download href="python_control_flow_practice.zip">Download the exercises folder for this lecture</a>.
+1. <a download href="/downloads/second_language/python-intro-to-control-flow/intro-to-control-flow.zip">Download the exercises folder for this lecture</a>.
 2. Unzip the folder
 3. Open the folder in VS Code: `$ code .`
 
