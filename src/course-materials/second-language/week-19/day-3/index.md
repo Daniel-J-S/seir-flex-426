@@ -13,3 +13,5 @@ topics: "Intro to Python and Python Control Flow"
 - [**Lecture:** Intro to Python](/second-language/week-19/day-3/lecture-materials/intro-to-python/)
 - [**Lecture**: Python Control Flow](/second-language/week-19/day-3/lecture-materials/intro-to-python-control-flow/) 
 - [**Lab**: Python Control Flow Lab](/second-language/week-19/day-3/labs/python-control-flow-lab/) - **Deliverable**
+- [**Lab**: Python Challenges Lab](/second-language/week-19/day-3/labs/python-challenges-lab/) - **Non-Deliverable**
+- [**Bonus Group Lab:** Python - Py Pac Poe Lab](/second-language/week-19/day-3/labs/python-py-pac-poe-lab/) - **Non-Deliverable**

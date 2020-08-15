@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Python Py Pac Poe Group Lab"
-week: 20
+week: 19
 day: 3
 type: "lab"
 ---
@@ -9,12 +9,81 @@ type: "lab"
 
 # Python Py Pac Poe Group Lab
 
----
+
+<br>
+<br>
+<br>
+
 ## Getting Started
 
-Create a new python language [repl.it](https://repl.it/repls) named `Py-Pac-Poe`.
+First, your team will create a file inside a folder locally on a teammate's machine and push to Github, the rest of the team will fork and clone a copy. 
 
-## User Stories
+<br>
+<br>
+<br>
+
+## Pre-Reqs
+
+Although it's not entirely necessary, the usage of `python` **functions** and **dictionaries** will certainly help your team achieve success with this lab. We will have dedicated lessons on these soon, but to help you get some exposure to them, here are some examples:
+
+<br>
+<br>
+
+
+#### Python Dictionaries
+
+Dictionaries are to Python as objects are to JS.
+
+A dictionary provides a container for key: value pairs. We can refer to key: value pairs as items.
+
+Dictionaries have a class (type) of dict.
+
+<br>
+<br>
+
+**Dictionaries - Basic Syntax**
+
+Like objects in JS, a dictionary is created with a set of curly braces:
+
+```python
+ student = {
+   'name': 'Fred',
+   'course': 'SEI',
+   'current_week': 7
+ } 
+```
+
+Unlike in JS, strings used as keys must be quoted.
+
+If not quoted, Python expects the identifier to be a variable holding what you want to use as the key. This is similar to how computed properties work in JS.
+
+<br>
+<br>
+<br>
+
+### Python Functions
+
+Here's how we define a basic function in Python:
+
+![python functions](https://i.imgur.com/pixhxbF.png)
+
+
+As you can see:
+
+- The first line starts with the def keyword. This defines a function.
+- The next word is the name (identifier) of the function.
+- Following that is a parameter list inside parentheses.
+- The first line ends with a colon.
+- The first line is followed by an indented code block that we have become familiar with.
+- Python functions, like JS, optionally return a value using a return statement.
+
+
+<br>
+<br>
+<br>
+
+
+## Py Pac Poe User Stories
 
 - As a player (AAP), I want to see a welcome message at the start:
 
@@ -75,6 +144,10 @@ Create a new python language [repl.it](https://repl.it/repls) named `Py-Pac-Poe`
 	Another tie!
 	```
 
+<br>
+<br>
+<br>
+
 
 ## Hints
 
@@ -132,6 +205,11 @@ Create a new python language [repl.it](https://repl.it/repls) named `Py-Pac-Poe`
 - Modeling the board itself as a dictionary and naming the keys appropriately, can simplify updating the board based upon what the player types in. For example, assume you store the player's input in a variable named `move`, you can convert it to lower case using `.lower()`, and use it as the key to access the board, i.e., `board[move]`.
 
 - The `in` operator is a great way to check if the player has entered a valid coordinate (`a1`, `b1`, etc.).
+
+<br>
+<br>
+<br>
+
 
 ## Bonus User Stories
 
