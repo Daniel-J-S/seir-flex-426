@@ -8,6 +8,10 @@ type: "lecture"
 
 # Intro to Python Classes  
 
+<br>
+<br>
+
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -18,9 +22,20 @@ type: "lecture"
 | Explain the special `__init__` method |
 | Understand class vs. instance members |
 
+<br>
+<br>
+<br>
+
+
 ## Set Up
 
 Open a Python-based repl in [repl.it](https://repl.it).
+
+
+<br>
+<br>
+<br>
+
 
 ## Review of OOP
 
@@ -37,6 +52,10 @@ For example, the logged in user would be represented by a _user_ object. Or a _b
 Objects bundle related properties (attributes) and methods (behavior) together. We discussed this principle of OOP in the JS Classes lesson - **who remembers the name of this OOP principle?**
 
 Remember the analogy of a **class** being a blueprint for objects? In an OOP language, **classes** are used to create objects. We **instantiate** a _class_ to obtain an **instance** (object) of that _class_.
+
+<br>
+<br>
+
 
 #### Objects in Python
 
@@ -58,6 +77,9 @@ We'll be using the `__init__` dunder method shortly.
 
 When we start working with Django, we'll be defining quite a few classes, so let's see how to we do it...
 
+<br>
+<br>
+
 ## Writing a basic Python `class`
 
 Like many of you, I like dogs - let's define a `Dog` class to create doggies from:
@@ -78,7 +100,11 @@ Python automatically calls the `__init__` magic method when a new dog is created
 
 `__init__` is short for "initialize" because the method is used to initialize the properties of the new object.
 
+<br>
+
 **What method did we use in JS classes to perform the same thing?**
+
+<br>
 
 The `age = 0` in `__init__`'s parameter list is called a _default parameter_ and will be assigned the the result of the expression to the right of the `=` if the function is called without an argument for that positional parameter.
 
@@ -87,6 +113,10 @@ The attributes for a dog instance are `name` and `age`.
 `bark` is an _instance_ method in this Dog class.
 
 **What's an _instance_ method?**
+
+<br>
+<br>
+<br>
 
 ### What's this `self` business?
 
@@ -102,6 +132,10 @@ Ruby, Swift and others call it `self`.
 However, in Python, only by convention is it called `self` because it's just a parameter name...
 
 Take a look at the `__init__` and `bark` method definitions, notice how the first parameter is named `self`.  When we write code like `spot.bark()`, the object to the left of the dot is automatically assigned to the method's first parameter - which should be named `self`. This is how Python provides the "context" in both instance and class methods!
+
+<br>
+<br>
+<br>
 
 ## Creating Objects by Instantiating a Class
 
@@ -128,6 +162,11 @@ dog = Dog('Lassie')
 
 print(dog.name, dog.age) # -> Lassie 0
 ```
+
+<br>
+<br>
+<br>
+
 
 ## Overriding Methods
 
@@ -158,6 +197,10 @@ spot = Dog('Spot', 8)
 print(spot) # -> Dog named Spot is 8 years old
 ```
 
+<br>
+<br>
+<br>
+
 ## Exercise - Create a Class (15 min)
 
 At the top of the repl, define a class named `Vehicle` with the following members:
@@ -185,6 +228,10 @@ Time permitting, override the `__str__` method so that it returns a string forma
 ```
 Vehicle (<vin>) is a <make> model <model> 
 ```
+
+<br>
+<br>
+<br>
 
 ## Class vs. Instance Members
 
@@ -260,6 +307,11 @@ pup = Dog('Lassie')
 print(Dog.get_total_dogs())  # -> 2
 ```
 
+<br>
+<br>
+<br>
+
+
 ## Inheritance
 
 Maybe the following graphic will jog your memory in regards to what **inheritance** is:
@@ -310,21 +362,32 @@ Frameworks like Django and Rails have elaborate object hierarchies of their own.
 class Person(models.Model):
 ```
 
+<br>
+<br>
+<br>
+
+
 ## Essential Questions
 
 Take a couple of minutes to review these...
 
-1. **What's the difference between a class and an object?**
+**❓ What's the difference between a class and an object?**
 
-2. **What Python keyword is used to define a class?**
+**❓ What Python keyword is used to define a class?**
 
-3. **Another word for an object is an _________.**
+**❓ Another word for an object is an _________.**
 
-4. **How do we use a class to create objects?**
+**❓ How do we use a class to create objects?**
 
-5. **True or False: Class attributes are shared by all instances of that class.**
+**❓ True or False: Class attributes are shared by all instances of that class.**
 
-6. **What OOP principle refers to subclasses specializing superclasses?**
+**❓ What OOP principle refers to subclasses specializing superclasses?**
+
+
+<br>
+<br>
+<br>
+
 
 ## Practice Exercise
 
@@ -340,6 +403,11 @@ Create a `BankAccount` class with the following members:
 - **`deposit(amount)`**: (method) When called on an instance, increases the `balance` by the `amount` argument and returns the new balance
 - **`withdraw(amount)`**: (method) When called on an instance, decreases the `balance` by the `amount` argument and returns the new balance
 
+
+<br>
+<br>
+
+
 Here's how to generate a random integer for the in Python:
 
 ```python
@@ -353,6 +421,10 @@ self.account_no = random.randint(111111111, 999999999)
 
 Create two instances, make both deposits and withdrawals, and print the attributes to test them out.
 
+<br>
+<br>
+
+
 #### Bonus 1
 
 Override the `__str__` method to return the following formatted string:
@@ -361,15 +433,25 @@ Override the `__str__` method to return the following formatted string:
 Account <account_no> / Balance: xxxxx.xx
 ```
 
+<br>
+<br>
+
 #### Bonus 2
 
 Create a `SavingsAccount` class that subclasses `BankAccount` and specializes it so that the `withdraw` method no longer accepts any argument, does not change the balance, and returns a string of `No withdrawals permitted`.
+
+<br>
+<br>
 
 #### Bonus 3
 
 Add an additional `has_overdraft` attribute to the `BankAccount` class that accepts `True` or `False` at the time of instantiation, but defaults to `False` if not passed in (hint: review default parameters discussed above).
 
 When the `withdraw` method is called, do not allow the withdraw if the amount being withdrawn is greater than `balance`, unless `has_overdraft` is `True`.  `withdraw` should continue to return the `balance`.
+
+<br>
+<br>
+
 
 ## Further Study
 
