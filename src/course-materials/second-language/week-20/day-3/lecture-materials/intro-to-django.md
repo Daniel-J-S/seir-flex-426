@@ -9,6 +9,10 @@ type: "lecture"
 
 # Intro to Django
 
+<br>
+<br>
+
+
 ## Learning Objectives
 
 | Students Will Be Able To: |
@@ -19,6 +23,11 @@ type: "lecture"
 | Describe Django's routing methodology |
 | Install Django and psycopg2 |
 | Build Django's official tutorial app |
+
+<br>
+<br>
+<br>
+
 
 ## What is Django?
 
@@ -33,6 +42,12 @@ Compared to the minimalist web framework of Express, Django is a much higher-lev
 - A powerful Object-Relational-Mapper (ORM) for working with relational databases using Python code instead of SQL.
 - A built-in admin app for browsing and manipulating data in the database.
 - Built-in user management and authentication.
+
+<br>
+<br>
+<br>
+
+
 
 ## Django's MVT Architecture
 
@@ -53,6 +68,11 @@ When developing with Django, we'll just have to be careful to say:
 - **view** instead of **controller**, and
 - **template** instead of **view**
 
+<br>
+<br>
+<br>
+
+
 ## Components of a Django Project
 
 This diagram visualizes the relationship between the different components of a Django project:
@@ -67,6 +87,12 @@ Further, what we think of as part of an app's functionality, or **modules**, Dja
 
 A Django _project_ can have many _apps_, and a Django _app_ can belong to multiple _projects_. More on this later.
 
+
+<br>
+<br>
+<br>
+
+
 ## Django's Routing Methodology
 
 Because routing is so fundamental to developing web apps, it's worthwhile knowing in advance an important difference between Express and Django's routing methodology. 
@@ -77,7 +103,17 @@ Other frameworks, such as Django and ASP.NET Core, use just the URL when definin
 
 That's why the Python modules used to define routes in Django are named **urls.py** (see diagram above).
 
+<br>
+<br>
+<br>
+
+
 ## Installation & Set Up
+
+<br>
+<br>
+
+
 
 #### Prerequisite Installs
 
@@ -108,6 +144,11 @@ $ pip3 install psycopg2-binary
 
 `psycopg2` is a popular library that enables Python applications to interface with PostgreSQL.
 
+<br>
+<br>
+<br>
+
+
 #### Create a Database for the Project
 
 MongoDB automatically creates a database when you use it for the first time.
@@ -127,13 +168,16 @@ Also, depending upon how PostgreSQL was installed, you might need the database's
 
 With the database created, type `\q` to exit the psql shell.
 
-#### `cd` to Where You Should Be
+<br>
+<br>
+<br>
 
-The last thing to do is to move into this lesson's folder in the class repo so that you can commit your work and push to your fork for safe keeping.
 
-You excited?  Ready to build your first Django app?  Let's do this!
 
 ## Build Django's Official Tutorial App
+
+
+You excited?  Ready to build your first Django app?  Let's do this!
 
 Django, in so many words, is a beast! Its documentation is hundreds of times larger than that of Express.
 
@@ -144,6 +188,11 @@ As we work through the tutorial together, I'll be sure to draw analogies to Expr
 Next week, we'll be diving deeper into each of the topics we'll be touching upon during the tutorial, and more, like learning how to upload images to Amazon S3!
 
 Let's get started by clicking [here](https://docs.djangoproject.com/en/2.2/intro/tutorial01/)!
+
+<br>
+<br>
+<br>
+
 
 ## References
 
