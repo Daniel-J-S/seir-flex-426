@@ -8,6 +8,11 @@ type: "lecture"
 
 # Intro to Python Functions  
 
+<br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -18,9 +23,20 @@ type: "lecture"
 | Invoke functions in Python |
 | Use `*args` and `**kwargs` parameters |
 
+<br>
+<br>
+<br>
+
+
 ## Set Up
 
 To experiment with the code in this lesson, please use a Python-based repl in [repl.it](https://repl.it)
+
+<br>
+<br>
+<br>
+
+
 
 ## Review the Use Case of Functions - What & Why?
 
@@ -43,6 +59,12 @@ Functions provide:
 
 Functions are the building blocks of programming and all programming languages have them, including Python...
 
+
+<br>
+<br>
+<br>
+
+
 ## Defining Functions in Python
 
 Here's how we define a basic function in Python:
@@ -57,6 +79,12 @@ As you can see:
 - The first line ends with a colon.
 - The first line is followed by an indented code block that we have become familiar with.
 - Python functions, like JS, optionally return a value using a `return` statement.
+
+<br>
+<br>
+<br>
+
+
 
 ## A Minimal Function in Python
 
@@ -88,13 +116,26 @@ print(result)
 
 Good guess!
 
+<br>
+<br>
+<br>
+
+
 ## Key Differences Between Python & JS Functions
 
 Besides the obvious syntactical differences, here are a few other things to be aware of:
 
+
+<br>
+<br>
+
+
 #### Function expressions do not exist in Python
 
 Functions in Python are defined using the `def` keyword and these functions are never assigned to variables as in JavaScript.
+
+<br>
+<br>
 
 #### Python has a different sort of anonymous/inline function
 
@@ -106,6 +147,9 @@ Python does have a the concept of anonymous and/or inline functions - called `la
 - They can be assigned to a variable.
 
 However, they cannot have any code block - only a single expression that has its result implicitly returned.
+
+<br>
+<br>
 
 For example:
 
@@ -123,6 +167,10 @@ odds = list( filter(lambda num: num % 2, nums) )
 
 Lambda functions in Django are really nifty when using Python functions such as `map()`.
 
+
+<br>
+<br>
+
 #### Python does not "hoist" functions
 
 The last key difference between Python and JavaScript functions is that you cannot invoke a Python function before the code that defines it:
@@ -134,6 +182,11 @@ add(5, 10)
 def add(a, b):
   return a + b
 ```
+<br>
+<br>
+<br>
+<br>
+
 
 ## Calling Functions
 
@@ -155,6 +208,12 @@ print( compute(1, 2, add) )
 Yup, functions in Python can be passed to other functions - **callbacks** exist in Python!
 
 Let's learn more about Python's **parameters** & **arguments**...
+
+
+<br>
+<br>
+<br>
+<br>
 
 ## Parameters & Arguments
 
@@ -186,6 +245,12 @@ add()
 # Generates the following error:
 # TypeError: add() missing 2 required positional arguments: 'a' and 'b'
 ```
+
+<br>
+<br>
+<br>
+<br>
+
 
 ### Accepting a varying number of arguments
 
@@ -223,12 +288,18 @@ def f(*args):
     print(arg)
 
 f(1, 2, 'SEI')
-''' Output:
+
+```
+
+<br>
+
+**Output:**
+
+```bash
 <class 'tuple'>
 1
 2
 SEI
-'''
 ```
 
 The identifier used with `*`, i.e., `args`, can be anything, however **by convention use `args`**.
@@ -245,6 +316,9 @@ def dev_skills(dev_name, *args):
 print(dev_skills('Alex', 'HTML', 'CSS', 'JavaScript', 'Python'))
 # -> {'name': 'Alex', 'skills': ['HTML', 'CSS', 'JavaScript', 'Python']}
 ```
+<br>
+<br>
+
 
 #### Python's `**` Parameter Specifier (`**kwargs`)
 
@@ -261,6 +335,9 @@ def dev_skills(dev_name, **kwargs):
 print(dev_skills('Jackie', HTML=5, CSS=3, JavaScript=4, Python=2))
 ```
 
+<br>
+<br>
+
 #### Combining Positional, `*args` & `**kwargs`
 
 You can define all three types of parameters in a function, but you have to do it in this order:
@@ -276,8 +353,11 @@ def arg_demo(pos1, pos2, *args, **kwargs):
     print(f'  {keyword}: {value}')
 
 arg_demo('A', 'B', 1, 2, 3, color='purple', shape='circle')
+```
 
-'''Output:
+**Output:**
+
+```bash
 Positional params: A, B
 *args:
   1
@@ -286,28 +366,42 @@ Positional params: A, B
 **kwargs:
   color: purple
   shape: circle
-'''
 ```
 
-## ❓ Review Questions
+<br>
+<br>
+<br>
+
+
+## Review Questions
 
 Take a moment to review the following questions:
 
-1. **Assuming the following function:**
+<br>
 
-	```python
-	def add(a, b):
-	  return a + b
-	```
+**❓ Assuming the following function:**
+
+```python
+def add(a, b):
+    return a + b
+```
 	**Which of the following statements will result in an error?<br> (there could be more than one)**
 	
-	A) `add(10, 100.)` <br>
-	B) `add(10, '10')` <br>
-	C) `add(100)` <br>
-	D) `add('abc', 'def')` <br>
-	E) `add(10, 20, 30)` <br>
+**A)** `add(10, 100.)` <br>
 
-3. **What "feature" in Python would allow the `add` function above to accept any number of numbers to add together?**
+**B)** `add(10, '10')` <br>
+
+**C)** `add(100)` <br>
+
+**D)** `add('abc', 'def')` <br>
+
+**E)** `add(10, 20, 30)` <br>
+
+<br>
+<br>
+
+
+**❓ What "feature" in Python would allow the `add` function above to accept any number of numbers to add together?**
 
 ## References
 
