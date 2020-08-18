@@ -201,7 +201,7 @@ print(spot) # -> Dog named Spot is 8 years old
 <br>
 <br>
 
-## Exercise - Create a Class (15 min)
+## 💪 Exercise - Create a Class (15 min)
 
 At the top of the repl, define a class named `Vehicle` with the following members:
 
