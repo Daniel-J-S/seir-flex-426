@@ -9,6 +9,10 @@ type: "lab"
 
 # Python Functions Lab
 
+<br>
+<br>
+<br>
+
 
 ## Intro
 
@@ -16,10 +20,19 @@ Time to practice some Python by writing functions that solve the four challenges
 
 To test your functions, be sure to call each function at least once and `print` the returned value.
 
+<br>
+<br>
+<br>
+
 
 ## Set Up
 
-Create a new Python repl on [repl.it]()
+Create a new Python repl on [repl.it](https://repl.it)
+
+<br>
+<br>
+<br>
+
 
 ## Challenges
 
@@ -31,6 +44,9 @@ Create a new Python repl on [repl.it]()
 	sum_to(6)  # returns 21
 	sum_to(10) # returns 55
 	```
+<br>
+<br>
+
 
 2. Write a function named `largest` that takes a list of numbers as an argument and returns the largest number in that list.
 
@@ -40,6 +56,10 @@ Create a new Python repl on [repl.it]()
 	largest([1, 2, 3, 4, 0])  # returns 4
 	largest([10, 4, 2, 231, 91, 54])  # returns 231
 	```
+
+
+<br>
+<br>
 
 3. Write a function named `occurances` that takes two string arguments as input and counts the number of occurances of the second string inside the first string.
 
@@ -52,6 +72,12 @@ Create a new Python repl on [repl.it]()
 	occurances('fleep floop', 'fe')  # returns 0
 	```
 
+
+<br>
+<br>
+
+
+
 4. Write a function named `product` that takes an *arbitrary* number of numbers, multiplies them all together, and returns the product.<br>(HINT: Review your notes on `*args`).
 
 	For example:
@@ -61,6 +87,13 @@ Create a new Python repl on [repl.it]()
 	product(2, 5, 5) # returns 50
 	product(4, 0.5, 5) # returns 10.0
 	```
+
+
+<br>
+<br>
+<br>
+<br>
+
 
 ## Solution 
 
