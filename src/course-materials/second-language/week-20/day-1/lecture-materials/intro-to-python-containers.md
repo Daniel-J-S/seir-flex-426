@@ -8,6 +8,11 @@ type: "lecture"
 
 # Intro to Python Containers
 
+<br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -22,10 +27,22 @@ type: "lecture"
 - Create subsets of a _sequence_ using the _slice_ operator
 
 
+<br>
+<br>
+<br>
+
+
+
 ## Setup
 <br>
 
 - To test some of the examples and complete the exercises, please open a Python [_repl.it_](https://repl.it/)
+
+<br>
+<br>
+<br>
+
+
 
 
 ### General Purpose Containers
@@ -41,7 +58,20 @@ type: "lecture"
 	- **tuples**
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Dictionaries
+
+<br>
+<br>
+
+
+
 
 
 ### Dictionaries - Purpose
@@ -52,6 +82,13 @@ type: "lecture"
 - A **dictionary** provides a container for `key: value` pairs. We can refer to `key: value` pairs as **items**.
 
 - _Dictionaries_ have a class (type) of `dict`.
+
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Dictionaries - Basic Syntax
@@ -70,6 +107,11 @@ type: "lecture"
 
 - If not quoted, Python expects the identifier to be a variable holding what you want to use as the key. This is similar to how _computed properties_ work in JS.
 
+<br>
+<br>
+<br>
+
+
 
 ### Dictionaries - Features
 <br>
@@ -84,6 +126,11 @@ type: "lecture"
  	- Existing items can be deleted
  
 - Any immutable type can be used as a key, including _numbers_ and _tuples_ (which we'll cover in a bit).
+
+
+<br>
+<br>
+<br>
 
 
 ### Dictionaries - Getting/Setting Values
@@ -101,6 +148,13 @@ type: "lecture"
 	```
 
 - Unlike JS, you cannot access items in a Python dictionary using **dot notation** (dots are used to invoke methods).
+
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Dictionaries - <span style="text-transform: lowercase">get</span> Method
@@ -121,6 +175,13 @@ type: "lecture"
 	```
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Dictionaries - <span style="text-transform: lowercase">in</span> Operator
 <br>
 
@@ -133,6 +194,12 @@ type: "lecture"
 	    print( f"{student['name']} is not enrolled in a course")
 	```
 
+<br>
+<br>
+<br>
+
+
+
 
 ### Dictionaries - Adding Items
 <br>
@@ -142,6 +209,13 @@ type: "lecture"
 	```python
 	student['age'] = 21
 	```
+
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Dictionaries - Deleting Items
@@ -155,6 +229,11 @@ type: "lecture"
 	'age' in student
 	> False
 	```
+
+<br>
+<br>
+<br>
+
 
 
 ### Dictionaries - Number of Items
@@ -170,6 +249,11 @@ type: "lecture"
 	len({})
 	> 0
 	```
+
+<br>
+<br>
+<br>
+
 
 
 ### Dictionaries - Iterating Items
@@ -200,6 +284,11 @@ type: "lecture"
 
 - The `for` statement "unpacks" the tuples by assigning its values to multiple variables like with `key, val` above.
 
+<br>
+<br>
+<br>
+
+
 
 ## Dictionary - Practice Exercise<br><small>(10 minutes)</small>
 <br>
@@ -209,7 +298,18 @@ type: "lecture"
 - Write a `for` loop that iterates over the items in the dictionary and prints each one as _My [thing] is kept [location]_.
 
 
+<br>
+<br>
+<br>
+
+
+
 ## Lists
+
+<br>
+<br>
+<br>
+
 
 
 ### Lists - Purpose
@@ -222,6 +322,12 @@ type: "lecture"
 - **Lists** can contain items of different types, including _dictionaries_ and nested _lists_.
 
 - **Lists** have a class (type) of `list`.
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Lists - Basic Syntax
@@ -240,6 +346,12 @@ type: "lecture"
 	> 3
 	```
 
+<br>
+<br>
+<br>
+
+
+
 ### Lists - Features
 <br>
 
@@ -251,6 +363,12 @@ type: "lecture"
 
  	- Items within the _list_ can be replaced
  	- Items can be added and removed from a _list_
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Lists - Accessing Items
@@ -273,6 +391,11 @@ type: "lecture"
 	No need to write code like `colors[len(colors) - 1]` - yay!
 
 
+<br>
+<br>
+<br>
+
+
 
 ### Lists - Assigning Items
 <br>
@@ -284,6 +407,12 @@ type: "lecture"
 	print(colors)
 	> ['red', 'green', 'brown']
 	```
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Lists - Adding Items
@@ -303,6 +432,11 @@ type: "lecture"
 	colors.extend(['orange', 'black'])
 	```
 
+<br>
+<br>
+<br>
+
+
 
 ### Lists - Inserting Item
 <br>
@@ -315,6 +449,11 @@ type: "lecture"
 	colors.insert(1, 'yellow')
 	> ['red', 'yellow', 'green', 'brown', 'purple', 'orange', 'black']
 	```
+
+<br>
+<br>
+<br>
+
 
 
 ### Lists - Deleting Items
@@ -352,6 +491,13 @@ type: "lecture"
 	No value is returned by the `remove()` method.
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Lists - Clearing
 <br>
 
@@ -364,6 +510,11 @@ type: "lecture"
 	print(colors)
 	> []
 	```
+
+<br>
+<br>
+<br>
+
 
 
 ### Lists - Iteration
@@ -390,14 +541,19 @@ type: "lecture"
 	> 2 blue
 	```
 
+<br>
+<br>
+<br>
 
-## ❓ Dictionary & List Review Questions
 
-1. **What are _dictionaries_ similar to in JS?**
 
-2. **What are _lists_ similar to in JS?**
+## Dictionary & List Review Questions
 
-3. **Why won't the follow code work?**
+** ❓ What are _dictionaries_ similar to in JS?**
+
+** ❓ What are _lists_ similar to in JS?**
+
+** ❓ Why won't the follow code work?**
 
 	```python
 	menu = {
