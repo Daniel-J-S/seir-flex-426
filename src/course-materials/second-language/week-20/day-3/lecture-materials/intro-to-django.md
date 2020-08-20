@@ -57,7 +57,7 @@ Django's architecture is similar, but different than that of MVC:
 
 This chart compares MVC to Django's MVT:
 
-| Concern | MVC | Django<br>MVT |
+| Concern | MVC | MVT |
 |---|:-:|:-:|
 | Database access | Model | Model |
 | Code mapped to routes | Controller | View |
@@ -132,6 +132,10 @@ If it's not installed, do a one-time install of the Django framework using the f
 $ pip3 install Django
 ```
 
+<br>
+<br>
+
+
 By default, Django uses a lightweight database called SQLite. However, SQLLite is not appropriate for production use because it's considered not to be scalable (for example, only one user/request can access the database at a time).
 
 Therefore, from the start, we'll be following the better practice of using a more capable database by configuring each of our Django projects to work with PostgreSQL.
@@ -187,7 +191,7 @@ As we work through the tutorial together, I'll be sure to draw analogies to Expr
 
 Next week, we'll be diving deeper into each of the topics we'll be touching upon during the tutorial, and more, like learning how to upload images to Amazon S3!
 
-Let's get started by clicking [here](https://docs.djangoproject.com/en/2.2/intro/tutorial01/)!
+Let's get started by clicking [here](https://docs.djangoproject.com/en/3.1/intro/tutorial01/)!
 
 <br>
 <br>
