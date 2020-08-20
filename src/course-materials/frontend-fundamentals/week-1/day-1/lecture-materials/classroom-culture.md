@@ -20,8 +20,8 @@ type: "lecture"
 ## Instructors
 
 - Daniel Scott - Instructor Lead
-- Casey Harding - Instructor Lead
-- Veronica Ramirez - Instructional Associate (IA)
+- TBD - Instructor Lead
+- TDB - Instructional Associate (IA)
 
 
 
@@ -55,10 +55,10 @@ type: "lecture"
 
 #### 4 channels
 
-	- seirfx-47-classroom
-	- seirfx-47-outcomes
-	- seirfx-47-partytime
-	- seirfx-47-techtalk
+	- seirfx-nexus-classroom
+	- seirfx-nexus-outcomes
+	- seirfx-nexus-partytime
+	- seirfx-nexus-techtalk
 
 #### How To:
 
