@@ -97,7 +97,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `General Assembly - SEIR Flex 04/07 Cyberpunk 2020`,
+        name: `General Assembly - SEIR Flex 09/15/20 "Nexus"`,
         short_name: `GA`,
         description: `Our Student-Facing website expressed as a progressive web app!`,
         lang: `en`,
