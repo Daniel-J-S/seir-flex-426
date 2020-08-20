@@ -1,8 +1,7 @@
 ---
-title: "index"
+title: "Home"
 ---
 
-# SEIR-FLEX 04/07/2020 - "Cyberpunk 2020"
 
 This website contains assignments and materials for General Assembly's Software Engineering Immersive Flex Program. 
 
