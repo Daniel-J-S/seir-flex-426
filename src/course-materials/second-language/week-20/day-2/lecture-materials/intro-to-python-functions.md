@@ -385,7 +385,8 @@ Take a moment to review the following questions:
 def add(a, b):
     return a + b
 ```
-	**Which of the following statements will result in an error?<br> (there could be more than one)**
+
+**Which of the following statements will result in an error?<br> (there could be more than one)**
 	
 **A)** `add(10, 100.)` <br>
 
