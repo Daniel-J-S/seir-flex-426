@@ -22,66 +22,6 @@ First, your team will create a file inside a folder locally on a teammate's mach
 <br>
 <br>
 
-## Pre-Reqs
-
-Although it's not entirely necessary, the usage of `python` **functions** and **dictionaries** will certainly help your team achieve success with this lab. We will have dedicated lessons on these soon, but to help you get some exposure to them, here are some examples:
-
-<br>
-<br>
-
-
-#### Python Dictionaries
-
-Dictionaries are to Python as objects are to JS.
-
-A dictionary provides a container for key: value pairs. We can refer to key: value pairs as items.
-
-Dictionaries have a class (type) of dict.
-
-<br>
-<br>
-
-**Dictionaries - Basic Syntax**
-
-Like objects in JS, a dictionary is created with a set of curly braces:
-
-```python
- student = {
-   'name': 'Fred',
-   'course': 'SEI',
-   'current_week': 7
- } 
-```
-
-Unlike in JS, strings used as keys must be quoted.
-
-If not quoted, Python expects the identifier to be a variable holding what you want to use as the key. This is similar to how computed properties work in JS.
-
-<br>
-<br>
-<br>
-
-### Python Functions
-
-Here's how we define a basic function in Python:
-
-![python functions](https://i.imgur.com/pixhxbF.png)
-
-
-As you can see:
-
-- The first line starts with the def keyword. This defines a function.
-- The next word is the name (identifier) of the function.
-- Following that is a parameter list inside parentheses.
-- The first line ends with a colon.
-- The first line is followed by an indented code block that we have become familiar with.
-- Python functions, like JS, optionally return a value using a return statement.
-
-
-<br>
-<br>
-<br>
-
 
 ## Py Pac Poe User Stories
 
@@ -92,6 +32,10 @@ As you can see:
 	Let's play Py-Pac-Poe!
 	----------------------
 	```
+
+<br>
+<br>
+
 
 - AAP, before being prompted for a move, I want to see the board printed out in the console, so that I know what moves have been made:
 
@@ -106,7 +50,15 @@ As you can see:
 	  
 	```
 
+<br>
+<br>
+
+
 - AAP, I want to be prompted with which player's move it is.
+
+<br>
+<br>
+
 
 - AAP, I want to be prompted on how to enter a valid move so that I don't make mistakes:
 
@@ -121,8 +73,16 @@ As you can see:
 	
 	Player X's Move (example B2):  
 	``` 
-	
+
+<br>
+<br>
+
+
 - AAP, I want to be able to enter my move's column letter in upper or lower case (a/A, b/B or c/C) to make it easier to enter my move.
+
+<br>
+<br>
+
 
 - AAP, if I enter a move in an invalid format, or if I try to occupy a cell already taken, I want to see a message chastising me and be re-prompted:
 
@@ -132,6 +92,10 @@ As you can see:
 	
 	Player X's Move (example B2):
 	```
+
+<br>
+<br>
+
 
 - AAP, at the end of a game I want to see who won the game:
 
@@ -180,10 +144,16 @@ As you can see:
 	  }
 	  turn = 'X'
 	```
+
+<br>
+<br>
+
+
+**Using `global` is easy and works, however, it could be frowned upon by purists.**
+
+**Another approach would be to use a global dictionary named something like `state`, which could then be mutated (updated) without a problem:**
 	
-	Using `global` is easy and works, however, it could be frowned upon by purists. Another approach would be to use a global dictionary named something like `state`, which could then be mutated (updated) without a problem:
-	
-	```python
+```python
 	# Global variables
 	state = {}
 	
@@ -194,7 +164,10 @@ As you can see:
 	  	# etc
 	  }
 	  state['turn'] = 'X'
-	```
+```
+
+<br>
+<br>
 
 - Think through the game play of Tic-Tac-Toe and, if necessary, pseudocode it.
 
@@ -221,6 +194,10 @@ As you can see:
 	SCORE:
 	Player X: xx   Player O: xx   Ties: xx
 	```
+
+<br>
+<br>
+
 
 - AAP, I want to see a congratulatory message when either player achieves the entered number of wins to play to:
 
