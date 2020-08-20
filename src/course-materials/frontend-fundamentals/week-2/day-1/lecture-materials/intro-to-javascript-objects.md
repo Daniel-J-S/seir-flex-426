@@ -26,8 +26,6 @@ Students Will Be Able To:
 - Describe How a Variable References an Object
 
 
-## Lesson Recording
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QZLk5Sl7ruY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
    
 ### Roadmap

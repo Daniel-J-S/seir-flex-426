@@ -10,10 +10,6 @@ type: "lecture"
 
 <br>
 <br>
-
-[Click here](https://generalassembly.zoom.us/rec/share/2ZJJBYqs5GJOf6PE9FncfZwEE5a8T6a82iZMq_MPzEjIqjn4K66SaQB7mm4DYg_o?startTime=1597189348000) to access recording
-
-<br>
 <br>
 
 

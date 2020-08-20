@@ -19,9 +19,10 @@ type: "lecture"
 | Explain the benefits of Mobile First design |
 | Use CSS Media Queries to alter page layout and styling |
 
-## Walkthrough Recording
 
-[Click Here](https://generalassembly.zoom.us/rec/share/xc9cLbXwpm5IZqeOs23jQ40TH6m8aaa8gCkZ-vpZmBzdZIs1i4NaF2Ia0l1apiDW?startTime=1588809931000) to access recording
+<br>
+<br>
+<br>
 
 
 ## Roadmap

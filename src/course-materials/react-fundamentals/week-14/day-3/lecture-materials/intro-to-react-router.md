@@ -22,18 +22,6 @@ type: "lecture"
 
 <br>
 <br>
-
-
-
-[Click here](https://generalassembly.zoom.us/rec/share/putsDLrKrTtIbIXM5HrNUPQqGr7GT6a8gXUerqILmh5tbc73NCToakTVwWh-T7nw?startTime=1594479486000) to access recording 1
-
-<br>
-<br>
-
-
-[Click here](https://generalassembly.zoom.us/rec/share/putsDLrKrTtIbIXM5HrNUPQqGr7GT6a8gXUerqILmh5tbc73NCToakTVwWh-T7nw?startTime=1594495925000) to access recording 2
-
-<br>
 <br>
 
 

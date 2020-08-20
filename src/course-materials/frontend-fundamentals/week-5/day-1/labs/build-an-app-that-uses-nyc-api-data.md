@@ -15,9 +15,10 @@ Dougie the Donut and Pizza Rat have become best buds taking New York City by sto
 <br> Let's help them build it! 
 
 
-## Walkthrough Recording
+<br>
+<br>
+<br>
 
-[Click Here](https://generalassembly.zoom.us/rec/share/4sAkLoPwqz9JEtbkyUD0C-kkLMe7aaa80HAb-6Jbmk91NsRmfJolqLvDXrv4mbVI?startTime=1588722648000) to access recording
 
 
 

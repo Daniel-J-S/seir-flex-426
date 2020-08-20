@@ -25,9 +25,6 @@ type: "lecture"
 6. Scope
 7. Further Study
 
-## Lesson Recording
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yEhIwYq3rIA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 ### Lesson Setup  

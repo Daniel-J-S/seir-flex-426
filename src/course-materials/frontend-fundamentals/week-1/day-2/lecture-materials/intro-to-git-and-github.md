@@ -17,10 +17,6 @@ type: "lecture"
 | Describe the difference between Git and GitHub |
 | Distinguish between local and remote repositories |
 
-## Lesson Recording
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/92OZPkhqDVU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 
 ## What is version control, and why should you care?
 

@@ -8,9 +8,9 @@ type: "lecture"
 
 # Deploying Your Static App to GitHub-Pages
 
-## Walkthrough Recording
-
-[Click Here](https://generalassembly.zoom.us/rec/share/vJ1SMevaqzJJfq_KylzdcIsQOoDsX6a81SUeq6VexUbkHgefrvin1uUM2cp98Ng_?startTime=1589328003000) to access recording
+<br>
+<br>
+<br>
 
 
 ## Intro

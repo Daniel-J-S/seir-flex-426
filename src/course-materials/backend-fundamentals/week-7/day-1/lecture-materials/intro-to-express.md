@@ -8,9 +8,10 @@ type: "lecture"
 
 # Intro to Express 
 
-## Lesson Recording
-[Click Here](https://generalassembly.zoom.us/rec/share/-MtrcPLZ7mlJRYmd9FrYdI4ORK-iX6a8gyYaqKFcmE_XGyuhGTLND_zyfaNub1MS?startTime=1589933484000) to access recording
 
+<br>
+<br>
+<br>
 
 ### Learning Objectives
 

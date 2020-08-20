@@ -24,8 +24,9 @@ type: "lecture"
 - Use _extends_ to create a _subclass_
 - Use _super_ within a subclass
 
-## Lesson Recording
-<iframe width="560" height="315" src="https://www.youtube.com/embed/aFRFQDKnnb8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+<br>
 
 
 ### Lesson Setup  

@@ -127,15 +127,6 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 
 
 
-## Lesson Recordings
-
-Links to lesson recordings will be provided within 24-48 hours.
-
-<br>
-<br>
-
-
-
 ## Managing your Projects
 * At the end of each unit, you will create a repo in your personal github for your project... i.e. Unit One - Project One, Unit Two - Project Two ...etc
 * Pushing your labs/homework to your personal github is not recommended
