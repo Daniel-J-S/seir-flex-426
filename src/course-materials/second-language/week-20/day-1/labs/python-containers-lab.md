@@ -100,7 +100,7 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 ```python
 {
 	'student': 'Tina',
-	'fav_food' 'Cheeseburger'
+	'fav_food': 'Cheeseburger'
 }
 ```
 - Iterate over `cohort` printing out each element.
