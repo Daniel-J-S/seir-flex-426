@@ -18,7 +18,11 @@ module.exports = {
     homeworkSubmissionLink: {
       title: 'Submit Homework',
       href: 'https://forms.gle/EFuziohqKEd3wbkc9'
-    }
+    },
+    team: [
+      {name: "Daniel Scott", role: "(IL) Instructional Lead"}
+    ],
+    lessonRecordings: []
   },
   plugins: [
     `gatsby-plugin-sass`,
