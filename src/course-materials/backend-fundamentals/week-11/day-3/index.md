@@ -4,14 +4,14 @@ title: "Week 11 - Day 3"
 week: 11
 day: 3
 type: "homepage"
-topics: "Project 2 Presentations"
+topics: "Holiday - No Class"
 ---
 
 
 # Week 11 - Day 3
 
-#### Project 3 Presentations
+####  Holiday - No Class Today in Observance of Election Day
 
-- **Activity:** Students Present Project 2
+
 
 

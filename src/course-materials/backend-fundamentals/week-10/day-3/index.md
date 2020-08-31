@@ -12,6 +12,7 @@ topics: "Project 2 Week and Producing an API with Express"
 
 #### Project 2 Week
 
+- **Activity:** Students Work on Project 2
 - [**Guided Workshop:** Producing an API with Express](/backend-fundamentals/week-10/day-3/lecture-materials/producing-an-api-with-express/)
 
 
