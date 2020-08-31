@@ -4,13 +4,12 @@ title: "Week 26 - Day 3"
 week: 26
 day: 3
 type: "homepage"
-topics: "Project Presentations and Graduation"
+topics: "Project 4 Week"
 ---
 
 
 # Week 26 - Day 3
 
-#### Project Presentations and Graduation
-- **Activity:** Teams Present Project 4
-- **Activity:** Graduation!
+#### Project 4 Week
+- **Activity:** Teams Work on Project 4
 

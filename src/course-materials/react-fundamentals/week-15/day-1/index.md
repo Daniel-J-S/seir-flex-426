@@ -13,6 +13,5 @@ topics: "Component Lifecycle Methods"
 #### Component Lifecycle Methods 
 - [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
 - [**Lecture:** Intro To Component Lifecycle Methods](/react-fundamentals/week-15/day-1/lecture-materials/component-lifecycle-methods/)
-- **Activity:** Begin Project 3 Planning
 - **Activity:** Catch up on Labs
 

@@ -4,12 +4,13 @@ title: "Week 20 - Day 2"
 week: 20
 day: 2
 type: "homepage"
-topics: "Python Functions"
+topics: "Relational Data Design and Modeling"
 ---
 
 
 # Week 20 - Day 2
 
-#### Python Functions
-- [**Lecture:** Intro to Python Functions](/second-language/week-20/day-2/lecture-materials/intro-to-python-functions/)
-- [**Lab:** Python Functions Lab](/second-language/week-20/day-2/labs/python-functions-lab/) - **Non-Deliverable**
+#### Relational Data Design and Modeling
+
+- [**Lecture:** Relational Data Design and Modeling](/second-language/week-20/day-2/lecture-materials/relational-data-design-and-modeling/)
+- [**Lab:** Data Modeling Lab](/second-language/week-20/day-2/labs/data-modeling-lab/) - **Non-Deliverable**

@@ -4,12 +4,13 @@ title: "Week 12 - Day 2"
 week: 12
 day: 2
 type: "homepage"
-topics: "Intro to JSX"
+topics: "Intro to SPAs and React"
 ---
+
 
 
 # Week 12 - Day 2
 
 #### SPAs (Single Page Apps) and React.JS
-- [**Lecture:** Intro to JSX](/react-fundamentals/week-12/day-2/lecture-materials/intro-to-jsx/)
-- [**Lab:** React Floor Plan Lab](/react-fundamentals/week-12/day-2/labs/react-floor-plan-lab/) - **Deliverable**
+- [**Lecture:** Intro to SPAs and ReactJS](/react-fundamentals/week-12/day-2/lecture-materials/intro-to-spas-and-reactjs/)
+- [**Lab:** Official React Tutorial (Also Included at end of React lecture)](https://reactjs.org/tutorial/tutorial.html) - **Non-Deliverable**

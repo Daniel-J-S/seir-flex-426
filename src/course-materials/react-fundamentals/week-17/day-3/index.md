@@ -4,13 +4,13 @@ title: "Week 17 - Day 3"
 week: 17
 day: 3
 type: "homepage"
-topics: "Project 3 Week"
+topics: "Token Based Auth with React and JWTs"
 ---
 
 
 # Week 17 - Day 3
 
-#### Project 3 Week
-- [**Bonus Lecture:** Intro to Gatsby JS Workshop - Pt. 2](https://generalassembly.zoom.us/rec/share/6vJnCIqt-W5JebPiyhnDc596T4vKeaa8hiYd-qBcz6edGDV-ZU5FZaaonOVK5wQ?startTime=1596298572000)
-- **Actvity:** Students Work on Project 3
-
+#### Token Based Auth with React and JWTs
+- [**Lecture:** Intro to Token Based Auth with React and JWTs](/react-fundamentals/week-17/day-3/lecture-materials/token-based-auth-with-react-and-jwts)
+- [**Resources:** Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
+- **Activity:** Students Begin Project 3

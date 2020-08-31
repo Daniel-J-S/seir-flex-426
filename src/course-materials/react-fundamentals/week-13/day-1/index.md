@@ -1,15 +1,17 @@
 ---
 track: "React Fundamentals"
-title: "Week 13 - Day 1"
+title: "Week 12 - Day 3"
 week: 13
 day: 1
 type: "homepage"
-topics: "Adding CSS Styles to React Components"
+topics: "State, Props & Components"
 ---
 
 
-# Week 13 - Day 1
 
-#### Adding CSS Styles to React Components
-- [**Lecture:** Intro to Styling React Components](/react-fundamentals/week-13/day-1/lecture-materials/intro-to-styling-components/)
-- [**Lab:** Styling Components](/react-fundamentals/week-13/day-1/labs/styling-components-lab/) - **Deliverable**
+#### React Components, State & Props
+- [**Lecture:** Intro to React State & Props](/react-fundamentals/week-13/day-1/lecture-materials/intro-to-react-state-and-props/)
+- [**Lab:** React Students Lab](/react-fundamentals/week-13/day-1/labs/react-students-lab/) - **Deliverable**
+
+
+

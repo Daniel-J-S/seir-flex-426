@@ -4,18 +4,15 @@ title: "Week 22 - Day 3"
 week: 22
 day: 3
 type: "homepage"
-topics: "Image Upload to Amazon S3"
+topics: "Django Class Based Views & Realtime with Socket.io"
 ---
-
 
 # Week 22 - Day 3
 
-#### Image Upload to Amazon S3
-- [**Lecture:** Intro to AJAX and JavaScript Promises with jQuery](/second-language/week-22/day-3/lecture-materials/uploading-images-to-amazon-s3/)
-- **Lab:**
-<br>
-<br>
-_For practice, do everything we did in this lesson on your Finch Collector project!_
-<br>
-_Don't forget to make commits._
+#### Django Class Based Views & Realtime with Socket.io
+- [**Lecture:** Intro To Django Class-Based Views (CBVs)](/second-language/week-22/day-3/lecture-materials/intro-to-class-based-views)
+- [**Lecture:** Realtime With Socket.io](/second-language/week-22/day-3/lecture-materials/realtime-with-socket-io)
+
+
+
 

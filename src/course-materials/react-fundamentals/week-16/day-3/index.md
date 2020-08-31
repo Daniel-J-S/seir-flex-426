@@ -4,13 +4,25 @@ title: "Week 16 - Day 3"
 week: 16
 day: 3
 type: "homepage"
-topics: "Token Based Auth with React and JWTs"
+topics: "React With AJAX"
 ---
 
 
-# Week 16 - Day 3
+#### React With AJAX
+- [**Lecture:** React + AJAX](/react-fundamentals/week-16/day-3/lecture-materials/react-with-ajax/)
+- [**Lab:** React + AJAX Lab](/react-fundamentals/week-16/day-3/labs/star-wars-api-react-lab/) - **Deliverable**
+- [**Lecture:** Intro to Full-Stack React](/react-fundamentals/week-16/day-3/lecture-materials/full-stack-react)
+- [**Lab:** Full Stack React Lab](/react-fundamentals/week-16/day-3/labs/full-stack-react-lab/) - **Non-Deliverable**
+- [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
 
-#### Token Based Auth with React and JWTs
-- [**Lecture:** Intro to Token Based Auth with React and JWTs](/react-fundamentals/week-16/day-3/lecture-materials/token-based-auth-with-react-and-jwts)
-- [**Resources:** Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
-- **Activity:** Students Begin Project 3
+
+
+
+
+
+
+
+
+
+
+
