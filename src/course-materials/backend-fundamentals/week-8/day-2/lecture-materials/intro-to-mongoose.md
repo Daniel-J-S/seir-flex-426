@@ -2,11 +2,11 @@
 track: "Backend Fundamentals"
 title: "Intro to Mongoose"
 week: 8
-day: 1
+day: 2
 type: "lecture"
 ---
 
-# Intro To Mongoose Part 1 & 2
+# Intro To Mongoose 
 
 
 <br>

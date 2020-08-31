@@ -2,7 +2,7 @@
 track: "Backend Fundamentals"
 title: "Mongoose Flights - Part 1"
 week: 8
-day: 1
+day: 2
 type: "lab"
 ---
 
