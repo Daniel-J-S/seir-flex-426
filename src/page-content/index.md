@@ -5,9 +5,29 @@ title: "Home"
 
 This website contains assignments and materials for General Assembly's Software Engineering Immersive Flex Program. 
 
+<br>
+<br>
+
+
+## Course Schedule
+
+<iframe src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23949191&amp;ctz=America%2FNew_York&amp;src=Y19sYTR1ZGxwNTAxNXRrZ21scW5tbmswbW5hb0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%23B39DDB&amp;showNav=1&amp;showTabs=0&amp;showCalendars=0&amp;title=SEIR-%20Flex%20%22Nexus%22" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+
+
+<br>
+<br>
+<br>
+
+
+
 ## Curriculum Overview
 
 Curriculum schedule and content is subject to change at the instructor's discretion.
+
+<br>
+<br>
+<br>
+
 
 
 ### [Unit One: Frontend Fundamentals](/frontend-fundamentals)
