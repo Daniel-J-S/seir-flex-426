@@ -52,9 +52,10 @@ You will be required to meet 80% completion of homework assignments at the end o
 | Name  | Role |
 | ----- | ----- |
 | Daniel Scott  |  Lead Instructor 
-| TBD  |  Lead Instructor 
-| TBD | Instructional Associate 
-| TBD | Outcomes Coach
+| Joe Keohan  |  Lead Instructor 
+| Whitney Smith | Instructional Associate 
+| Leah Mattern | Instructional Associate 
+| Jason Schoch | Outcomes Coach
 
 <br>
 <br>
