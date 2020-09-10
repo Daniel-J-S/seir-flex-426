@@ -8,6 +8,12 @@ type: "lecture"
 
 # Intro to JavaScript Objects
 
+
+<br>
+<br>
+<br>
+
+
    
 ## Learning Objectives
  
@@ -26,6 +32,9 @@ Students Will Be Able To:
 - Describe How a Variable References an Object
 
 
+<br>
+<br>
+<br>
 
    
 ### Roadmap
@@ -47,12 +56,24 @@ Students Will Be Able To:
 15. Essential Questions
 16. Further Study
 
+
+<br>
+<br>
+<br>
+
+
 ### Lesson Setup  
 
 For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Objects Practice"`.`
    
+
+<br>
+<br>
+<br>
+
+
+
 ### What Are Objects?
- 
 
 - Objects are the most common data structure in _Object Oriented Programming_ (OOP)
 
@@ -64,6 +85,11 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 
 - <p>In computer science, collections of key/value pairs are commonly referred to as dictionaries - a good visualization of what an object is</p>
+
+<br>
+<br>
+<br>
+
 
    
 ### Why Objects?
@@ -84,6 +110,10 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 - Now does it make sense why it's called **Object Oriented Programming**?
 
    
+<br>
+<br>
+<br>
+
 ### Ways to Create Objects
 
 - There are three different ways we can create objects:
@@ -95,19 +125,28 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Later, we'll learn how _Classes_ are used
 
-- Using `Object.create` is not very common and won't be used during SEI, but as always, you're encouraged to research it
+- Using `Object.create` is not very common and won't be used during SEIR, but as always, you're encouraged to research it
+
+<br>
+<br>
+<br>
 
 
 ### Creating Objects with Object Literal Notation
 
 - Now let's create an object by using **Object Literal notation**, also known as an [Object Initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer):
 	
-	```js
+	```javascript
 	const game = {};
 	console.log(typeof game); // "object"
 	```
 
    
+
+<br>
+<br>
+
+
 ### Creating Objects with Object Literal Notation
  
 
@@ -117,7 +156,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Let's change the code so that `game` has a _property_:
 
-	```js
+	```javascript
 	const game = {title: 'Guess the Number!'};
 	console.log(game);
 	```
@@ -128,7 +167,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Properties are separated by commas:
 
-	```js
+	```javascript
 	const game = {
 	  title: 'Guess the Number!',
 	  biggestNum: 100
@@ -137,20 +176,25 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Syntactically, [trailing commas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas) are permitted (in arrays too):
 
-	```js
+	```javascript
 	const game = {
 	  title: 'Guess the Number!',
 	  biggestNum: 100,
 	};
 	```
 
-   
+
+<br>
+<br>
+<br>
+
+
 ### Properties - Review Questions
  
 
 - Considering:
 
-	```js
+	```javascript
 	const game = {
 	  title: 'Guess the Number!',
 	  biggestNum: 100,
@@ -163,7 +207,12 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 	- **What are the property values of `game`?**
 	- **What are the data types of the keys?**
 
-   
+
+<br>
+<br>
+<br>
+
+
 ### Adding Properties to an Existing Object Using Dot Notation
 
 - There are two different syntaxes available to access, add or modify an object's properties:
@@ -172,11 +221,16 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - We'll discuss why there are two syntaxes in a bit, for now, let's use _dot notation_ to add another property to the `game` object:
 	
-```js
+```javascript
 game.smallestNum = 0;
 ```
 
 - Using the _assignment operator_, if a property doesn't exist, it is created, otherwise it's updated.
+
+<br>
+<br>
+<br>
+
 
    
 ### Adding/Updating Properties Practice (3 min)
@@ -185,6 +239,10 @@ game.smallestNum = 0;
 - Using dot notation on the `game` object:
 	- Add a property with a key of `numGuesses` set to a value of `0`
 	- Update the `smallestNum` property's value to be `1`
+
+<br>
+<br>
+<br>
 
    
 ### Accessing Properties with Square Bracket Notation
@@ -197,33 +255,45 @@ game.smallestNum = 0;
 
 > Less common is to have to resort to using _square brackets_ to access properties when the key name contains a space.
 
-   
+
+
+<br>
+<br>
+<br>
+
+
 ### Square Bracket Notation
  
 
 - _Square bracket notation_ has the following syntax:
 
-	```js
+	```javascript
 	someObject[<any JS expression>]
 	```
 
 - For example to access the `game` object's `title` property, we could write this code:
 
-```js
+```javascript
 console.log(game['title']);
 ```
-	Note that using a string literal like above is being done just to demonstrate the syntax. More efficient code would be `console.log(game.title);`
+
+
+**Please note:** The above example is just a way to demonstrate the syntax. More efficient code would be `console.log(game.title);`
  
 
 - If the result of the expression between the brackets is not a string, JS will convert it to one. For example:
 
-```js
+```javascript
 const weirdObj = {};
 weirdObj[null] = true;
 console.log(weirdObj) // {'null': true}
 ```
 
 - Again, the expression between the square brackets can be any expression - even a function call!
+
+<br>
+<br>
+<br>
 
    
 ### Square Bracket Notation - Practice
@@ -241,7 +311,7 @@ console.log(weirdObj) // {'null': true}
    
 - Now let's code a price lookup loop:
 
-	```js
+	```javascript
 	let sku = '';
 	while (sku !== 'quit') {
 	  sku = prompt('Enter SKU or "quit" to exit: ');
@@ -251,6 +321,10 @@ console.log(weirdObj) // {'null': true}
 	```
 
 - That string in the `alert` is called a **template literal** and is delimited using back-tick characters (it's above the _tab_ key). One of its benefits is that we can use _string interpolation_ to embed the results of JS expressions right into the string using the `${<exp>}` syntax!
+
+<br>
+<br>
+<br>
 
    
 ### Checking if an Object has a Property
@@ -266,7 +340,7 @@ console.log(weirdObj) // {'null': true}
 
 - Let's tweak the code to use the `in` operator to check if the user has entered a valid key (SKU):
 
-	```js
+	```javascript
 	let sku = '';
 	while (sku !== 'quit') {
 	  sku = prompt('Enter SKU or "quit" to exit: ');
@@ -281,24 +355,35 @@ console.log(weirdObj) // {'null': true}
 
 - Nice!
 
+<br>
+<br>
+<br>
    
+
 ### Deleting a Property
  
 
 - To completely remove a property from an object, we use the `delete` operator:
 
-	```js
+	```javascript
 	const geniuses = {
+		Jemison: true,
+		Hopper: true,
 		Einstein: true,
-		Newton: true,
-		Snooki: false
+		McNair: true,
+		Lovelace: true,
+		carrotTop: false
 	};
 	
 	// see ya!
-	delete geniuses.Snooki;
+	delete geniuses.carrotTop;
 	```
 
 - **Try it out!** Use the `delete` operator to remove one of the items from your `catalog` object
+
+<br>
+<br>
+<br>
 
    
 ### Iterating Over an Object's Properties
@@ -310,7 +395,7 @@ console.log(weirdObj) // {'null': true}
 
 - We can iterate over the _keys_ of the properties using a `for...in` loop:
 
-	```js
+	```javascript
 	for (let key in game) {
 	  console.log(`The value of the ${key} property is ${game[key]}`);
 	}
@@ -327,7 +412,7 @@ console.log(weirdObj) // {'null': true}
 
 - Each of those methods mentioned returns an array that we can iterate over, for example:
 
-	```js
+	```javascript
 	Object.values(game).forEach(function(val) {
 		console.log(val);
 	});
@@ -336,13 +421,22 @@ console.log(weirdObj) // {'null': true}
 > Note: The ECMAScript specification does not dictate how properties should be ordered, however, all browsers currently iterate over them in the order they are defined/added.
 
    
+
+<br>
+<br>
+<br>
+
+
 ### Property Shorthand Syntax
  
 
 - It's a common scenario to want to pass the values of variables as properties (having the same name as the variable) in an object:
 
-	```js
-	// assume latitude and longitude are existing variables
+	```javascript
+
+	const latitude = getLat('Disneyland');
+	const longitude = getLng('Disneyland');
+	
 	const location = {
 		name: 'Disneyland',
 		latitude: latitude,
@@ -355,8 +449,11 @@ console.log(weirdObj) // {'null': true}
 
 - Thanks to ES2015's **Property Shorthand** syntax, we can now do this
 
-	```js
-	// assume latitude and longitude are existing variables
+	```javascript
+
+	const latitude = getLat('Disneyland');
+	const longitude = getLng('Disneyland');
+
 	const location = {
 		name: 'Disneyland',
 		latitude,
@@ -366,6 +463,10 @@ console.log(weirdObj) // {'null': true}
 
 - Again, note how the variable name determines the name of the property
 
+<br>
+<br>
+<br>
+
    
 ### Methods
  
@@ -374,7 +475,7 @@ console.log(weirdObj) // {'null': true}
 
 - Let's add a `play` _method_ to the `game` object:
 
-	```js
+	```javascript
 	game.play = function() {
 	  this.secretNum = Math.floor(Math.random() * 
 	    (this.biggestNum - this.smallestNum + 1)) + this.smallestNum;
@@ -393,6 +494,11 @@ console.log(weirdObj) // {'null': true}
 - We'll have a dedicated lesson on `this`
 
 - **IMPORTANT:** Due to how `this` is set within _arrow functions_, it's best to avoid using them as methods in objects
+
+<br>
+<br>
+<br>
+
 
    
 ### How Variables Reference an Object
@@ -414,7 +520,7 @@ console.log(weirdObj) // {'null': true}
 - Objects, including Arrays, Functions, etc. are stored in a separate part of memory known as the _heap_. A variable for an object has as its value a "reference" (think pointer):
 
 	```shell
-	                        var | value
+	                        var | value/ref
 	                                   -
 	       let x = 25  -->   x  |  25
 	var msg = 'hello'  -->  msg | 'hello'        HEAP 
@@ -427,7 +533,7 @@ console.log(weirdObj) // {'null': true}
 
 <p>Now this all makes sense:</p>
 
-```js
+```javascript
 const arr1 = [];
 const arr2 = [];
 const arr3 = arr1;
@@ -435,24 +541,36 @@ arr1 === arr2  // false!
 arr3 === arr1 // true!
 ```
 
+<br>
+<br>
+<br>
+
    
 ### Essential Questions
 
-- **An object is a collection of zero or more ___________.**
+**❓ An object is a collection of zero or more ___________.**
 
-- **Properties are _____: ______ pairs.**
+**❓ Properties are _____: ______ pairs.**
 
-- **Is it more efficient to access properties via dot or square bracket notation?**
+**❓ Is it more efficient to access properties via dot or square bracket notation?**
 
-- **What type of `for` loop is used to iterate over the keys of an object?**
+**❓ What type of `for` loop is used to iterate over the keys of an object?**
 
-- **Is the following valid code?**
+**❓ Is the following valid code?**
 
-	```js
-		const name = prompt('Enter your name: ');
-		const age = prompt('Enter your age: ');
-		const person = {name, age};
-	```
+
+
+```javascript
+const name = prompt('Enter your name: ');
+const age = prompt('Enter your age: ');
+const person = {name, age};
+```
+
+
+
+<br>
+<br>
+<br>
 
    
 ### Further Study

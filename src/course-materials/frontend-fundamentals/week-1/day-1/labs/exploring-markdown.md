@@ -6,7 +6,12 @@ day: 1
 type: "lecture"
 ---
 
+
 # Exploring Markdown 
+
+<br>
+<br>
+<br>
 
 ## Intro
 
@@ -18,6 +23,10 @@ Typically, _markdown_ is converted by applications into HTML and often allows th
 
 You will use _markdown_ to write README files which are used to document your projects
 
+<br>
+<br>
+
+
 
 ## Tasks
 
@@ -26,6 +35,12 @@ You will use _markdown_ to write README files which are used to document your pr
 2. Install a _Markdown_ editor/viewer
 
 3. Create a cheatsheet for Bash Commands using Markdown -- _your first piece of technical documentation in this program_
+
+
+<br>
+<br>
+
+
 
 ### Research
 
@@ -37,9 +52,21 @@ Here are a few links that will help you learn _Markdown_:
 
 - [Markdown Tutorial](http://markdowntutorial.com/)
 
+
+<br>
+<br>
+
+
+
 ### Install a _Markdown_ Editor
 
 For editing and viewing _Markdown_, use VS Code or a dedicated markdown editor such as [MacDown](http://macdown.uranusjr.com/).
+
+
+<br>
+<br>
+
+
 
 ### Create a Cheatsheet for Bash Commands
 
@@ -48,3 +75,19 @@ Although you can find numerous cheatsheets for Bash (Terminal) commands, why not
 Note that a cheatsheet need not be an exhaustive reference - so feel free to exclude commands that are used infrequently.
 
 
+<br>
+<br>
+
+
+### Publish to your personal Github (optional)
+
+For additional practice, you can publish your markdown git commands cheatsheet to your personal github. 
+
+Here are the steps you'll need to take to make this happen:
+
+1. Place your markdown file inside a folder. 
+2. Initialize a local repository inside of it. 
+3. Create a remote repository for it on Github.com.
+4. Add the remote URL to your local repository.
+5. Stage, Commit & push to Github.
+6. Profit!

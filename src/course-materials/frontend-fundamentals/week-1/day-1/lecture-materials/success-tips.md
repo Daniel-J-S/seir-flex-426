@@ -8,6 +8,14 @@ type: "lecture"
 
 # How to Successfully Learn in this Bootcamp
 
+<br>
+<br>
+<br>
+
+
+
+
+
 ## Learning Objectives
 
 - General advice and how to prepare yourself emotionally
@@ -15,6 +23,8 @@ type: "lecture"
 - Classroom culture
 - Overview of common student concerns
 
+<br>
+<br>
 
 ## Emotional Framing
 
@@ -25,6 +35,9 @@ type: "lecture"
 - Make a friend with discomfort
 - The maximum point of learning is right at the edge of learning and panic
 - This experience is a rollercoaster
+
+<br>
+<br>
 
 ## Successful students
 
@@ -45,6 +58,9 @@ it's about developing a mindset to solve unforeseen problems
 
 - Be open and ready to receive constructive criticism
 
+<br>
+<br>
+
 ## Classroom Culture
 
 - Open safe environment
@@ -54,6 +70,9 @@ it's about developing a mindset to solve unforeseen problems
 - Be courteous calm and patient with others; don't let the stress get to you!
 - Don't compare yourself to others, compare yourself to who you were yesterday
 
+<br>
+<br>
+
 ### Mentorship / Collaborative Culture in the Classroom
 
 - Take care of each other
@@ -61,15 +80,21 @@ it's about developing a mindset to solve unforeseen problems
 - Teaching is the best way of truly solidifying your understanding of a concept
 - Your classmates will be the best foundation for establishing a professional network in tech!
 
+<br>
+<br>
 
 ## Common Student Concerns
 
 - I'm making a lot of mistakes
 	- Mistakes are a part of life as a developer
 
+<br>
+
 - I don't feel comfortable with the material
 	- You probably will never feel the material is easy, but you should be able to do the work
 	- By the end of each unit project, you should feel mostly comfortable with applying the material
+
+<br>
 
 - I feel good during class, but it's difficult to innovate on my own
 	- There are three stages to learning something:
@@ -77,13 +102,22 @@ it's about developing a mindset to solve unforeseen problems
 		- Assimilation (repetitive simple tasks: homework and labs)
 		- Innovation (build something new on your own - project time)
 
+<br>
+
 - Everyone at work will realize I know nothing
 	- This is called the imposter syndrome, and it's very common
 	- Nobody knows everything, it's about how well you learn
 
+
+<br>
+
+
 - I don't "do" math
 	- That's why we have the computer do it for us!
 	- Programming is more about thinking logically than doing equations
+
+<br>
+
 
 - What's the best practice? What's the one "correct" answer?
 	- Best practices change constantly and from company to company
@@ -92,10 +126,17 @@ it's about developing a mindset to solve unforeseen problems
 		- A company that hires someone with 3 months of experience doesn't care too much about code quality
 		- Use your time to learn new technology or strengthen your problem solving
 
+<br>
+
+
 - I don't have a perfect understanding of everything
 	- Class is set up to accommodate students of all abilities
 	- We make sure you understand at least the most important concepts
 	- Only the people who write the specifications for the language understand everything about the language
+
+<br>
+
+
 
 - I want an amazing portfolio and to complete all my labs/assignments
 	- You won't be happy with how your first projects look/function; what matters is the ability to think
@@ -103,4 +144,9 @@ it's about developing a mindset to solve unforeseen problems
 		- They're there as an exercise in thinking with enough material for all
 		- Completing and sleeping for 2 hours is worse than sleeping and not completing
 
+<br>
+<br>
+<br>
 
+
+**In summary, we ask you to trust the process and know that if you practice what you learn long enough, the skills will come.**

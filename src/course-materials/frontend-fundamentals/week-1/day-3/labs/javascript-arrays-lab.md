@@ -9,27 +9,38 @@ type: "lab"
 
 # JavaScript Arrays Lab
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Introduction
 
 This lab provides an opportunity to practice defining, accessing and manipulating arrays.
 
 > **Note:** Feel free to reference the arrays lesson, collaborate, google, etc.
 
-This lab **is a deliverable**. When completed, please fill out the [Google Form](https://forms.gle/aGLyBqABxeDLv18B9) or click the link above **(it's the same form)** in the navbar to submit your work to your instructional team for review.
+This lab **is a deliverable**. When completed, please fill out the [Google Form](https://forms.gle/zboNDxW7v3jxKczw7) or click the link above **(it's the same form in the navbar)** to submit your work to your instructional team for review.
+
+<br>
+<br>
 
 ## Setup & Instructions
 
 For the exercises in this lab, create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Arrays lab"`.
 
-As a reminder, this lab is a **Deliverable**
+<br>
+<br>
 
 ## Exercise
 
 Copy the exercises below into the included **script.js** file and code away!
 
-> Please note, you will most likely need to comment out the console.logs for the exercises you've yet to complete to avoid getting a Reference Error
+**Please note:** ***You will most likely need to comment out the `console.logs` for the exercises you've yet to complete to avoid getting a*** **<span style="color: crimson;">Reference Error</span>**
 
-```js
+```javascript
 /*
 Exercise 1:
   - Define an empty array named foods
@@ -216,6 +227,8 @@ Exercise 15:
 console.log('Exercise 15 Result: ', total);
 ```
 
+<br>
+<br>
 
 ## Additional Resources
 

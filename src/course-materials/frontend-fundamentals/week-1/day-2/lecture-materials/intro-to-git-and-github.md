@@ -9,6 +9,15 @@ type: "lecture"
 
 # Intro to Git and Github
 
+<br>
+<br>
+<br>
+
+
+
+
+
+
 ## Learning Objectives
 
 | Student will be able to: |
@@ -17,6 +26,9 @@ type: "lecture"
 | Describe the difference between Git and GitHub |
 | Distinguish between local and remote repositories |
 
+
+<br>
+<br>
 
 ## What is version control, and why should you care?
 
@@ -31,9 +43,12 @@ More specifically, a VCS allows you to:
 - Collaborate on a set of files with others
 - Create separate "branches" of the codebase to develop new features on without impacting the "master", or production, branch.
 
-In SEIR, we'll be using the world's most popular version control system - **git**.
+In this program, we'll be using the world's most popular version control system - **git**.
 
 Git was created by Linus Torvolds in 2005 to help with the development of his main project at the time - developing Linux.
+
+<br>
+<br>
 
 ## Git vs. GitHub
 
@@ -48,6 +63,8 @@ In summary:
 - A local repository is "linked" to a remote repository by adding a "remote" with this command `$ git remote add <name of remote> <URL of repo on GitHub>`
 
 
+<br>
+<br>
 
 ## Summary of Common Git Commands
 
@@ -75,6 +92,9 @@ This following diagrams the flow of making changes to a repo:
 This is the most simple workflow, things get a bit more complex when you start sharing code and manage larger codebases.
 
 > IMPORTANT: Do not create a repo within an existing repo!  If you find your computer very sluggish, it might be because you have "nested" repos. It's not uncommon for students to accidentally make their home folder (`~`) a repo - so start there if you suspect something is wrong.
+
+<br>
+<br>
 
 # Conclusion
 

@@ -10,6 +10,12 @@ type: "lab"
 
 Now, let's get in a little bit of JavaScript practice; specifically, more loops! 
 
+<br>
+<br>
+<br>
+
+
+
 ## Setup
 
 For this lab, create an `HTML, CSS & JS` [repl.it](https://repl.it) and name it **`Loops and Conditionals Lab`** 

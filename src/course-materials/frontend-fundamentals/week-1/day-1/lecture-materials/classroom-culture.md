@@ -9,6 +9,10 @@ type: "lecture"
 
 # Introduction to Learning at GA and Classroom Culture
 
+<br>
+<br>
+<br>
+
 ## Learning Objectives
 
 - Introduction to the classroom, instructors and roles
@@ -20,8 +24,13 @@ type: "lecture"
 ## Instructors
 
 - Daniel Scott - Instructor Lead
-- TBD - Instructor Lead
-- TDB - Instructional Associate (IA)
+- Joe Keohan - Instructor Lead
+- Whitney Smith - Instructional Associate (IA)
+- Leah Mattern - Instructional Associate (IA)
+
+
+<br>
+<br>
 
 
 
@@ -45,11 +54,19 @@ type: "lecture"
 
 >**Note:** These roles define who *leads* a section, and whom you should go to if you have a question on a certain topic, but each of these roles are shared responsibilities.
 
+<br>
+<br>
+<br>
+
+
 # Communication
 - Feedback goes both directions, we love getting/giving feedback at GA
 - Let us know how you're doing and how we can improve your experience
 
 ## Communication Tools
+
+<br>
+
 
 ### Slack
 
@@ -60,7 +77,17 @@ type: "lecture"
 	- seirfx-nexus-partytime
 	- seirfx-nexus-techtalk
 
+<br>
+<br>
+<br>
+
+
+
 #### How To:
+
+<br>
+
+
 
 ##### Communicate in one of the outrun channels:
 
@@ -70,15 +97,34 @@ type: "lecture"
 		- sends a notification to everyone / everyone currently online
     - DO NOT use these unless absolutely necessary (usually only instructors/TAs use this)
 
+
+<br>
+<br>
+<br>
+
+
 ##### Communicate privately:
 
 - Direct messages are one-on-one messages nobody else can see
 - In addition, you can make group direct messages to talk to multiple people at once, privately
 
+<br>
+<br>
+<br>
+
+
+
 ##### Other:
 
 	- You can mute channels that you no longer need (e.g. Fundamentals)
 	- You can adjust the sound / notifications of your messages
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Zoom
 

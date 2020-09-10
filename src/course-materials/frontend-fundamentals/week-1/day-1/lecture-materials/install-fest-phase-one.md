@@ -20,9 +20,20 @@ For the first phase of "install-fest", we'll install or verify the installation 
 - Spectacle
 - Imgur
 
+<br>
+<br>
+<br>
+
+
+
+**PLEASE NOTE:** ***if you have a linux machine, [here are some resources](/additional-resources/install-fest-linux) that might be more ideal for your computer***
+
 ## Slack
 
 We'll use slack to communicate throughout the course. <br>By the time you are reading this, you should have received an invite to the relevant channels via e-mail. <br>Although you can login via the web browser, downloading / installing the app is highly recommended.
+
+<br>
+<br>
 
 ## Zoom
 
@@ -31,6 +42,9 @@ We'll use slack to communicate throughout the course. <br>By the time you are re
 [Download Slack](https://slack.com/downloads)
 
 Remember to drag the Slack app into the Applications folder when you open the downloaded archive.
+
+<br>
+<br>
 
 ## Homebrew
 
@@ -48,6 +62,9 @@ After the installation process, run the command `brew doctor`. If any warnings o
 
 Lastly, make sure to run `brew update` to make sure you have the latest lists of available software.
 
+<br>
+<br>
+
 ## Xcode
 
 We do not use Xcode in class but some other applications that we do use require some Xcode libraries. Normally, all you need is the Xcode CLI which should have already been installed when you installed Homebrew. If it didn't get installed, you can use this command:
@@ -58,6 +75,8 @@ xcode-select --install
 
 If you need to, you can install Xcode through the App Store. (You probably don't need to.) [Link here](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
 
+<br>
+<br>
 
 ## Visual Studio Code
 
@@ -69,6 +88,9 @@ Download and install VS Code from [https://code.visualstudio.com/](https://code.
 
 **Important**: Be sure that VS Code is in your Mac's `Applications` folder.
 
+<br>
+<br>
+
 #### Add Ability to Launch VS Code by typing `code`
 
 1. Launch VS Code using spotlight (`command + space` - then start typing `vs c` until you see the app, then press enter).
@@ -79,6 +101,9 @@ Download and install VS Code from [https://code.visualstudio.com/](https://code.
 6. You should now be able to open a folder to edit by typing `code .`
 
 Check [this link](https://code.visualstudio.com/docs/setup/mac) for troubleshooting if you run into issues.
+
+<br>
+<br>
 
 ## Git
 
@@ -92,11 +117,17 @@ If it's not installed, we can use Homebrew to install it:
 brew install git
 ```
 
+<br>
+<br>
+
 #### Github
 
 [Github](https://github.com/) provides a way to host Git repos in the cloud.  It enables collaboration and is wildly popular.
 
 You should have already opened a personal Github account, however, you need to have a General Assembly Github Enterprise account as well. <br>You can get one by signing up here: [https://git.generalassemb.ly/join](https://git.generalassemb.ly/join)
+
+<br>
+<br>
 
 #### Configuring a Global git ignore
 
@@ -215,11 +246,17 @@ tags
 __pycache__/
 ```
 
+<br>
+<br>
+
 ## Installing Spectacle
 
 Install [Spectacle](https://www.spectacleapp.com/) for resizing windows.
 
 This free "productivity" tool is invaluable when it comes to minimizing the time spent sizing windows using the mouse.
+
+<br>
+<br>
 
 ## Installing Imgur
 

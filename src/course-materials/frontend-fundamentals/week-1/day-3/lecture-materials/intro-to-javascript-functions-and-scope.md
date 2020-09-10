@@ -8,12 +8,11 @@ type: "lecture"
 
 # JavaScript Functions & Scope
 
-| Learning Objectives - SWBAT |
-| :--- |
-| Understand the Use Case of Functions |
-| Define Functions With & Without Parameters |
-| Call Functions With & Without Arguments |
-| Describe Scope |
+
+<br>
+<br>
+<br>
+
 
 
 ## Roadmap
@@ -25,12 +24,19 @@ type: "lecture"
 6. Scope
 7. Further Study
 
+<br>
+<br>
+
 
 
 ### Lesson Setup  
 
 For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Functions and Scope Practice"`.
   
+<br>
+<br>
+
+
 ### 1. What is a function?
 
 A function is a reusable block of code designed to perform a single purpose.
@@ -52,7 +58,15 @@ In addition to the functions we write, programming languages typically include n
 
 Functions commonly call other functions.
 
+<br>
+<br>
+
+
+
 ### 2. Why Functions Anyway?
+
+<br>
+
 
 #### Tackle Complexity
 
@@ -60,13 +74,19 @@ There's no better way to tackle a complex problem than by breaking it into small
 
 Functions allow us to break up programs into more manageable blocks of code.
 
+<br>
+
 #### Code Reuse
 
 Functions provide code reuse because they can be called over and over.
 
 Without functions, we might have to write the same code in multiple places of the app which violates a key principle known as **DRY** - Don't Repeat Yourself!
 
-**❓What would be the downside of violating the DRY principle by repeating the same code in multiple places throughout a program?**
+**❓ What would be the downside of violating the DRY principle by repeating the same code in multiple places throughout a program?**
+
+<br>
+<br>
+
 
 #### Documentation & Debugging
 
@@ -74,13 +94,18 @@ Simply naming functions appropriately, e.g., `renderBoard`, documents what the p
 
 Organizing code into functions also makes it easier to find and fix code that's not working as expected, a process known as **debugging**.
 
+<br>
+<br>
+
+
 #### Summary
 
 In summary, it would be impractical to create applications without breaking up the application into functions.
 
 Here's a simple example of how an app that sends out a daily business report might be broken up into functions:
 
-```js
+```javascript
+let date = new Date();
 let sales = getSalesData(date);
 let labor = getLaborCosts(date);
 let budget = getBudget(date);
@@ -117,43 +142,64 @@ function sendReport(report) {
 
 ```
 
+<br>
+<br>
+
+
 #### Review
 
-**Take a minute to discuss with a partner which would be a better programming practice:**
+**❓ Which would be a better programming practice:**
 
 - **Code numerous, smaller functions**<br>-or-<br>
 - **Code fewer, larger functions**
 
+<br>
+<br>
+
+
 ### 3. Defining and Calling Functions
+
+<br>
+<br>
 
 
 #### Defining Functions
 
 There are three primary ways to define functions in JS:
 
+<br>
+
+
+
 ##### 1) Function Declaration (AKA Function Definitions)
 
-```js
+```javascript
 function sayHello(name) {
     console.log('Hello ' + name + '!');
 }
 ```
 
+<br>
+
+
 ##### 2) Function Expression
 
-```js
-var sayHello = function(name) {
+```javascript
+const sayHello = function(name) {
     console.log('Hello ' + name + '!');
 };
 ```
 
 **What similarities and differences do you see between the two approaches?**
 
+<br>
+<br>
+
 ##### Primary Difference Between Function Declarations & Expressions
 
 For all practical purposes, the difference between them is that _function expressions_ cannot be invoked before they are defined; whereas _function declarations_ are **hoisted** to the top of their scope and can therefore be invoked even if they are defined later in the source code. <br><br>For example:
 
-```js
+```javascript
 fnDeclaration();  // thank you function declarations :)
 fnExpression();  // TypeError: fnExpression is not a function
 
@@ -168,13 +214,17 @@ const fnExpression = function() {
 
 > Note: Attempting to execute a function expression before it's been assigned to its variable is the source of many an error for JS developers!
 
+<br>
+<br>
+
+
 ##### 3) Arrow Functions
 
 ES2015 delivered a third approach to defining functions - **Arrow Functions**.
 
 The following function declaration:
 
-```js
+```javascript
 // Function Declaration
 function add(a, b) {
 	return a + b;
@@ -183,7 +233,7 @@ function add(a, b) {
 
 and the following arrow function are equivalent:
 
-```js
+```javascript
 // Arrow Function
 const add = (a, b) => a + b;
 ```
@@ -192,27 +242,36 @@ Arrow Functions offer:
 
 - A more concise syntax
 - Implicit return of a single expression
-- A single rule for binding the `this` keyword (more on this next week)
+- A single rule for binding the `this` keyword 
 
 However, as cool as Arrow Functions are, they cannot be used in every scenario due to the way they bind `this`.
 
 Rest assured we'll be using Arrow Functions during this course, however, for this lesson we'll focus on Function Declarations and Expressions which have served the language well for over 20 years...
 
+<br>
+<br>
+
+
+
 #### Calling Functions
 
 Regardless of which of the three approaches are used to define functions, we call them the same way:
 
-```js
+```javascript
 add(25, 100);  // returns 125
 ```
 
 > **Developer Vocab:** Developers might say **call**, **execute**, **invoke** or "**run** a function" - they all mean the thing.
 
+<br>
+<br>
+
+
 ##### Let's Write Another Function
 
 Let's write the following function together in our `script.js` file:
 
-```js
+```javascript
 function areBothEven(n1, n2) {
   return !(n1 % 2) && !(n2 % 2);
 }
@@ -222,7 +281,7 @@ The `areBothEven` function is defined to accept two arguments. <br><br>These arg
 
 The `return` keyword returns the result of the expression that follows it - which looks kind of crazy, but isn't as intimidating as it appears when you break it down.
 
-> Note: In the real world, much of the code you write will be code designed prevent and handle error conditions. For example, in the `areBothEven` function above, it would be important to ensure that both of the inputs are numbers.  However, in SEI, we will minimize the amount of error handling code so that we can focus more on what it is we're trying to teach.  There just isn't enough time, so we must prioritize.
+> Note: In the real world, much of the code you write will be code designed prevent and handle error conditions. For example, in the `areBothEven` function above, it would be important to ensure that both of the inputs are numbers.  However, in SEIR, we will minimize the amount of error handling code so that we can focus more on what it is we're trying to teach.  There just isn't enough time, so we must prioritize.
 
 Let's invoke the function a couple of times to try it out.
 
@@ -230,11 +289,22 @@ Let's invoke the function a couple of times to try it out.
 
 Now it's your turn... 
 
+<br>
+<br>
+
+
+
 #### Practice Writing Functions
 
 You're going to write two functions, one as a function declaration & the other as a function expression.
 
 This will be an individual exercise, however, feel free to seek guidance from a partner via direct message or posting a question in the classroom Slack channel if you get stuck.
+
+
+<br>
+<br>
+<br>
+
 
 ##### EXERCISE 1: Write a Function Declaration
 
@@ -248,6 +318,11 @@ It will compute the area of a rectangle (_width_ X _height_) and return a string
 
 Invoke the function to test it.
 
+<br>
+<br>
+<br>
+
+
 ##### EXERCISE 2: Write a Function Expression
 
 Write a function named `planetHasWater` using the function expression syntax.
@@ -260,11 +335,21 @@ Bonus points if you ensure the function will work regardless of the casing of th
 
 Invoke the function a couple of times to test it!
 
+<br>
+<br>
+<br>
+
+
 ##### FUNCTION REVIEW QUESTIONS
 
 **❓ How many different ways are there to define a function?**
 
 **❓ What's the only practical difference between a function definition and a function expression?**
+
+<br>
+<br>
+<br>
+
 
 ### 4. Parameters/Arguments
 
@@ -282,6 +367,12 @@ There are a few tidbits about parameters/arguments to ponder:
 
 - Arguments are assigned to their respective parameter positionally. In the example above, the `bottle` parameter would be assigned the string "green bottle" because they are the first parameter and argument respectively.
 
+<br>
+<br>
+<br>
+
+
+
 ##### Fewer Arguments
 
 JavaScript is very flexible and won't complain when the number of arguments is not the same as the number of parameters defined.
@@ -290,18 +381,24 @@ If fewer arguments are passed than parameters defined, then the parameter variab
 
 > Note: Unlike some other programming languages, JavaScript won't complain if fewer (or extra) arguments are passed to a function.  However, the function that depends on certain arguments to do its job might raise an error or return an unexpected result if it doesn't receive the proper arguments.
 
+
+<br>
+<br>
+<br>
+
+
 ##### Extra Arguments
 
 Let's pretend you need to write a function that accepts an unknown number of arguments.
 
 For example, let's say we would like to be able to call a function that accepts a developer's name and any number of their job skills, something like the following:
 
-```js
+```javascript
 let maria = getDevObject('Maria', 'HTML', 'CSS', 'JavaScript', 'jQuery');
 ```
 and want that function to return a JS object shaped like this:
 
-```js
+```javascript
 {
 	devName: 'Maria',
 	jobSkills: ['HTML', 'CSS', 'JavaScript', 'jQuery']
@@ -314,7 +411,7 @@ A non-arrow function can access all of its arguments using a "hidden" variable i
 
 This is how we could use the `arguments` object to code the function:
 
-```js
+```javascript
 function getDevObject(name) {
   let skills = [];
   for (let i = 1; i < arguments.length; i++) {
@@ -333,7 +430,7 @@ Although the above function works, ES2015 delivered a better approach to working
 
 Using _rest parameters_, the above function can be written as follows:
 
-```js
+```javascript
 function getDevObject(name, ...skills) {
   return {
     devName: name,
@@ -351,25 +448,30 @@ When writing new code, devs should  use **rest parameters** instead of `argument
 - The existence of the rest parameter in the parameter list better documents the function
 - The rest parameter is a true array and thus includes all of the nifty methods that arrays have
 
+<br>
+<br>
+<br>
+
+
 ##### ES2015 Default Parameters
 
 What if your function requires certain arguments and you want to provide a default value for the parameter if an argument is not supplied when the function is invoked?
 
 Prior to ES2015, here is trivial example of what we had to do:
 
-```js
+```javascript
 function setColor(bicycle, color) {
 	// set color to 'purple' if not provided
 	bicycle.color = color || 'purple';
 }
 
-var bike = new Bicycle();
+const bike = new Bicycle();
 setColor(bike, 'blue');  // sets color to blue
 setColor(bike);  // sets color to purple by default
 ```
 Now, using **default parameters**, we can do this:
 
-```js
+```javascript
 function setColor(bicycle, color = 'purple') {
 	bicycle.color = color;
 }
@@ -377,15 +479,26 @@ function setColor(bicycle, color = 'purple') {
 
 Any expression can be provided as a default, including objects, etc.
 
+<br>
+<br>
+<br>
+
+
 #### Functions as Arguments
 
 In JavaScript, it's easy to pass around functions like data -  because they are - they're objects!
   
+
+<br>
+<br>
+<br>
+
+
 ##### Passing an Anonymous Function
 
 Often functions or methods (functions attached to an object) will require a function be provided as an argument.<br><br>For example, the `forEach` method on arrays:
 	
-```js
+```javascript
 var a = ['red', 'green', 'blue'];
 	
 a.forEach(function(color) {
@@ -395,13 +508,25 @@ a.forEach(function(color) {
 	
 Since the function provided to the `forEach` will never be called anywhere else in the code, why create a separate named function and pass it in? <br><br>**Anonymous functions** like shown above can really come in handy!
 
+<br>
+<br>
+<br>
+
 ##### PARAMETER/ARGUMENT REVIEW QUESTIONS
 
 **❓ What's the difference between an _argument_ and a _parameter_?**
 
 **❓ Explain how _arguments_ and _parameters_ are "matched up".**
   
+
+<br>
+<br>
+
+
+
 ### 5. Scope
+
+<br>
 
 #### What is Scope?
 
@@ -413,6 +538,11 @@ JavaScript has three types of scope:
 - **function scope**, also known as **local scope**
 - and, **block scope** which was added by ES2015's `let` & `const`
 
+<br>
+<br>
+<br>
+
+
 #### Why the Different Types of Scope?
 
 There's a concept in programming known as **The Principle of Least Access**.
@@ -421,6 +551,12 @@ The principle is based on the idea that limiting the accessibility of variables 
 
 A practical benefit of having different scope, however, is being able to use the same names for variables in different functions!  If there were only one scope, this wouldn't be possible.
 
+
+<br>
+<br>
+<br>
+
+
 #### Examples of Scope
 
 Ignoring _block scope_ for the moment, let's review the following diagram demonstrates both _global_ and _function_ scope:
@@ -428,6 +564,12 @@ Ignoring _block scope_ for the moment, let's review the following diagram demons
 ![](https://i.imgur.com/UtIoe7F.png)
 
 The diagram identifies 3 different scopes along with the identifiers (variables and functions) that live within each scope.
+
+
+<br>
+<br>
+<br>
+
 
 ##### You can look out, but you can't look in!
 
@@ -438,6 +580,13 @@ Basically, when a line of code accesses a variable (or function), JS will traver
 If the JS runtime engine gets to the _global scope_ (which is the top of the food chain in the scope hierarchy) and still can't find what it's looking for, that's when your program ceases due to a **ReferenceError**.
 
 **❓ Does the function `foo` have access to the variable `c`?**
+
+
+<br>
+<br>
+<br>
+
+
 
 ##### Global Scope
 
@@ -455,13 +604,23 @@ If we define a variable (or a function) within the global scope, it becomes a pr
 
 **Any questions before moving on the lab where you'll practice writing several functions?**
 
-### 6. Local Review & Further Study
+
+<br>
+<br>
+<br>
+
+
+### 6. Further Study
+
+
+<br>
+
 
 ##### Immediately Invoked Function Expressions (IIFE)
 
 One way we can prevent our code from leaking into the global scope is by wrapping it with a construct known as an **Immediately Invoked Function Expression**, or "IIFE" (pronounced "iffy").  It looks like this:
 
-```js
+```javascript
 (function() {
 	'use strict';
 
@@ -471,6 +630,11 @@ One way we can prevent our code from leaking into the global scope is by wrappin
 ```
 **❓ Why does this construct virtually prevent variables and functions from being created in the global scope?**
 
+<br>
+<br>
+<br>
+
+
 ##### Block Scope
 
 Both `let` and `const` define variables that can only be accessed within the **code block** they are defined in.
@@ -479,7 +643,7 @@ A _code block_ is created by using curly braces.
 
 The following code from [MDN's docs about let](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let) demonstrates differences between `let` and `var`:
 
-```js
+```javascript
 function varTest() {
   var x = 1;
   if (true) {
@@ -503,6 +667,12 @@ and another example of their differences:
 
 <img src="https://i.imgur.com/K0uJx2P.jpg">
 
+
+<br>
+<br>
+<br>
+
+
 ##### Hoisting
 
 Remember how we can call function declarations before they are defined thanks to _hoisting_?
@@ -511,7 +681,7 @@ As shown above, similarly, a variable's **declaration** (but not its assignment)
 
 For example, when we write code like this:
 
-```js
+```javascript
 function hoist() {
 	console.log(x);  // outputs undefined, not a ReferenceError
 	var x = 25;
@@ -521,7 +691,7 @@ function hoist() {
 
 Internally, the JS engine actually sees this:
 
-```js
+```javascript
 function hoist() {
 	var x;
 	console.log(x);  // outputs undefined, not a ReferenceError
@@ -529,6 +699,11 @@ function hoist() {
 	console.log(x);  // outputs 25
 }
 ```
+
+<br>
+<br>
+<br>
+
 
 #### Nesting Functions
 
@@ -538,7 +713,7 @@ Why would we want to do this? Well, Perhaps an outer function needs a "helper" f
 
 For example (no need to execute this):
 
-```js
+```javascript
 function openNewAccount(name, openingBalance) {
   let acctNum = generateAcctNum();
   
@@ -555,6 +730,9 @@ function openNewAccount(name, openingBalance) {
 
 As you can see, there's a nifty `generateAcctNum` function in there and it's only relevant to when a new account is opened, so it's nested within the `openNewAcount` function.
 
+<br>
+<br>
+<br>
 
 ## References
 
