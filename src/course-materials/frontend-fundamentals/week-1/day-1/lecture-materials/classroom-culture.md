@@ -72,10 +72,10 @@ type: "lecture"
 
 #### 4 channels
 
-	- seirfx-nexus-classroom
-	- seirfx-nexus-outcomes
-	- seirfx-nexus-partytime
-	- seirfx-nexus-techtalk
+- **`seir-nexus-classroom`**
+- **`seir-nexus-outcomes`**
+- **`seir-nexus-techtalk`**
+- **`seir-nexus-partytime`**
 
 <br>
 <br>
@@ -91,11 +91,12 @@ type: "lecture"
 
 ##### Communicate in one of the outrun channels:
 
-	- @username
-		- sends a notification to a specific user
-	- @channel / @here
-		- sends a notification to everyone / everyone currently online
-    - DO NOT use these unless absolutely necessary (usually only instructors/TAs use this)
+**`@username`**
+  - sends a notification to a specific user
+
+**`@channel / @here`**
+  - sends a notification to everyone / everyone currently online
+  - DO NOT use these unless absolutely necessary (usually only instructors/TAs use this)
 
 
 <br>
@@ -116,8 +117,8 @@ type: "lecture"
 
 ##### Other:
 
-	- You can mute channels that you no longer need (e.g. Fundamentals)
-	- You can adjust the sound / notifications of your messages
+- You can mute channels that you no longer need (e.g. Fundamentals)
+- You can adjust the sound / notifications of your messages
 
 
 <br>
