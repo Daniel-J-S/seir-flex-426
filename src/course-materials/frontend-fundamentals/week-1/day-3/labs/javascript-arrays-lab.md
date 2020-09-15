@@ -22,7 +22,7 @@ This lab provides an opportunity to practice defining, accessing and manipulatin
 
 > **Note:** Feel free to reference the arrays lesson, collaborate, google, etc.
 
-This lab **is a deliverable**. When completed, please fill out the [Google Form](https://forms.gle/zboNDxW7v3jxKczw7) or click the link above **(it's the same form in the navbar)** to submit your work to your instructional team for review.
+This lab **is a deliverable**. When completed, please click the link in the navbar to submit your work to your instructional team for review.
 
 <br>
 <br>
@@ -232,4 +232,5 @@ console.log('Exercise 15 Result: ', total);
 
 ## Additional Resources
 
-- [MDN Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+
+[MDN Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
