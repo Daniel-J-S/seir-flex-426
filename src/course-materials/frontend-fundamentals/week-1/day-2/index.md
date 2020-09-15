@@ -14,6 +14,5 @@ topics: "Intro Git/Github and JavaScript"
 
 - [**Lecture:** Intro to Git/Github](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-git-and-github)
 - [**Lecture:** Intro to JavaScript](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-javascript/)
-- [**Lecture:** Intro to JavaScript Control Flow](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-javascript-control-flow/)
-- [**Lab:** Loops and Conditionals Lab](/frontend-fundamentals/week-1/day-2/labs/loops-and-conditionals-lab/) - **Non-Deliverable**
+- **Activity:** Intro to HTML & CSS (Build a Personal Website Code Along)
 - [**Lab:** Git/Github and the Terminal Lab](/frontend-fundamentals/week-1/day-2/labs/git-github-and-the-terminal/) - **Non-Deliverable**
