@@ -326,18 +326,22 @@ The `splice` method always returns an array containing the removed elements.
 ### Essential Questions
  
 
-- **In your own words, what's an array?**
+**❓ In your own words, what's an array?**
 
-- **What will be the value of the variable `color`:**
+**❓ What will be the value of the variable `color`:**
 
-	```javascript
-	const colors = ['red', 'green', 'blue'];
-	let color = colors[1];
-	```
 
-- **What's the best method to use to iterate through an entire array?**
+```javascript
+const colors = ['red', 'green', 'blue'];
+let color = colors[1];
+```
 
-- **What method is used to copy a number of elements into a new array?**
+<br>
+<br>
+
+**❓ What's the best method to use to iterate through an entire array?**
+
+**❓ What method is used to copy a number of elements into a new array?**
 
 	
 
