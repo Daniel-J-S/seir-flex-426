@@ -2,7 +2,7 @@
 track: "Frontend Fundamentals"
 title: "Loops and Conditionals Lab"
 week: 1
-day: 2
+day: 3
 type: "lab"
 ---
 

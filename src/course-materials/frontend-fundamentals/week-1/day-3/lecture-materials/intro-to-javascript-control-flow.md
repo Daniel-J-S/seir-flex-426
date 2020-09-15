@@ -2,7 +2,7 @@
 track: "Frontend Fundamentals"
 title: "Intro to JavaScript Control Flow"
 week: 1
-day: 2
+day: 3
 type: "lecture"
 ---
 
