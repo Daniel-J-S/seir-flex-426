@@ -101,4 +101,5 @@ Here are the functions:
 
 ## Additional Resources
 
-- [MDN Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+
+[MDN Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
