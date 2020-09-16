@@ -12,7 +12,7 @@ topics: "Intro Git/Github and JavaScript"
 
 #### Intro Git/Github and JavaScript
 
-- [**Lecture:** Intro to Git/Github](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-git-and-github)
 - [**Lecture:** Intro to JavaScript](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-javascript/)
+- [**Lecture:** Intro to Git/Github](/frontend-fundamentals/week-1/day-2/lecture-materials/intro-to-git-and-github)
 - **Activity:** Intro to HTML & CSS (Build a Personal Website Code Along)
 - [**Lab:** Git/Github and the Terminal Lab](/frontend-fundamentals/week-1/day-2/labs/git-github-and-the-terminal/) - **Non-Deliverable**
