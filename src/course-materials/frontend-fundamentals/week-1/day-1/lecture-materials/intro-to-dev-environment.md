@@ -9,9 +9,22 @@ type: "lecture"
 
 # Intro to the Dev Environment
 
+
+
 <br>
 <br>
 <br>
+<br>
+
+### [Click here](https://generalassembly.zoom.us/rec/share/Z7DQYutCZL2lItBHq6cfpPWKTGp5wpPDOv0qbvK_pGz-gQXfGvgfoMPhP-D67MCs.1OmDzeAQxZU0pL7m?startTime=1600221654000) to access recording
+
+<br>
+<br>
+<br>
+<br>
+
+
+
 
 
 
@@ -428,31 +441,6 @@ Students will be able to:
 
 <br>
 <br>
-
-### Edit a File in VS Code
-
-
-- To edit a specific file in VS Code, we can simply type the file after `code`, so for example:
-
-```shell
-$ code ~/.bash_profile
-```
-
-- Let's add a simple function called `motivation` to our `.bash_profile` using VS Code
-
-```shell
-motivation(){
-	echo 'Yesterday you said tomorrow!'
-	say 'Yesterday you said tomorrow!'
-	echo 'You can do it!'
-	say 'You can do it!'
-}
-```
-
-- Pressing `cmd-s` will save the file
-
-- Close Terminal then re-open it and type `repo` to test it out
-
 <br>
 <br>
 
