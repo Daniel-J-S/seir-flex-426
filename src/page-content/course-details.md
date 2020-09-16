@@ -79,7 +79,7 @@ You will be required to meet 80% completion of homework assignments at the end o
 * You will be 10 or more minutes late to class
 * You need to leave early
 * You will be submitting your homework late
-* We will get back to you within 12hrs on weekdays! On weekends, expect responses by Monday morning!
+* We will get back to you within 24 hrs on weekdays! On weekends, expect responses by Monday morning!
 * You are having trouble completing your assignments
 * You're struggling with the material
 * You'd like some bonus tasks
@@ -120,6 +120,7 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 * Fill out this [Google Form](https://forms.gle/EFuziohqKEd3wbkc9) with a link for that specific homework. It will be the same Google Form for each homework
 * **Homework is due one week from the day it was assigned**
 * If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
+* **Homework Feedback is generally administered within one week from the due date**
 
 <br>
 <br>
