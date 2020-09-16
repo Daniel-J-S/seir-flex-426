@@ -17,7 +17,7 @@ You will be required to meet 80% completion of homework assignments at the end o
 - End date: 03/17/2021
 - Tuesday/Wednesday 6:30 pm - 10:45 pm EST  
 - Sat 10 am - 6 pm EST
-- Holidays: 11/11, 11/25, 11/28, 12/23, 12/26, 12/29, 12/30, 12/31, 1/03
+- Holidays: 11/11, 11/25, 11/28, 12/23, 12/26, 12/29, 12/30, 12/31, 1/02
 
 <br>
 <br>
