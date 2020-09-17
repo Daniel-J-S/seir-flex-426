@@ -9,9 +9,20 @@ type: "lecture"
 # Intro to JavaScript 
 
 
+
+
 <br>
 <br>
 <br>
+<br>
+
+### [Click here](https://generalassembly.zoom.us/rec/share/tMbtDFNXTs3uotIJCWAJ-HF-HxtQx3xu9uQigyZsD3O-MzCJDy_LiyW1IA7D3kaw.kZtbCdgx94P0eLqy?startTime=1600295572000) to access recording
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 
