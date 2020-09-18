@@ -73,7 +73,7 @@ Fundamentals, class, or that you find on your own.
 
 * Open the **Terminal app**
 
-* Inside your homework folder, git-github-and-terminal, create another folder called: `galaxy-far-far-away`
+* Inside the git-github-and-terminal folder, create another folder called: `galaxy-far-far-away`
 
 * Then create a file inside `galaxy-far-far-away` called `commands.txt`
 
