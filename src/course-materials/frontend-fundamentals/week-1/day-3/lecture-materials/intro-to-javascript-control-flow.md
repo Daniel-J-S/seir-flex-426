@@ -210,13 +210,13 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 ## Review Questions
    
 
-1. **Is the value of 0 (zero) truthy or falsey?**
+**❓ Is the value of 0 (zero) truthy or falsey?**
 
-2. **Is an empty string truthy or falsey**
+**❓ Is an empty string truthy or falsey**
 
-3. **Is an "empty" object (an object with no properties) truthy or falsey?**
+**❓ Is an "empty" object (an object with no properties) truthy or falsey?**
 
-4. **What value does `!!0` evaluate to?**
+**❓ What value does `!!0` evaluate to?**
 
 <br>
 <br>
@@ -418,11 +418,11 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 ## Closing Questions
 
-- **In your own words, how would you describe _Control Flow_?**
+**❓ In your own words, how would you describe _Control Flow_?**
 
-- **The three primary types of _control flow_ are:   1) Sequence   2) ___________   3) ___________**
+**❓ The three primary types of _control flow_ are:   1) Sequence   2) ___________   3) ___________**
 
-- **What does expression `'happy' || 'sad'` return?**
+**❓ What does expression `'happy' || 'sad'` return?**
 
 <br>
 <br>
