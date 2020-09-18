@@ -409,9 +409,9 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 ### Question - Looping Statements
    
 
-- **When using a `while` or `do...while` loop, we must be careful not put the program's execution into an __________ loop.**
+**❓ When using a `while` or `do...while` loop, we must be careful not put the program's execution into an __________ loop.**
 
-- **How can we avoid the above scenario?**
+**❓ How can we avoid the above scenario?**
 
 <br>
 <br>
