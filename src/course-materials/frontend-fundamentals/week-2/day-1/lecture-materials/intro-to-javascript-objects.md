@@ -136,10 +136,12 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Now let's create an object by using **Object Literal notation**, also known as an [Object Initializer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer):
 	
-	```javascript
-	const game = {};
-	console.log(typeof game); // "object"
-	```
+
+
+```javascript
+const game = {};
+console.log(typeof game); // "object"
+```
 
    
 
@@ -147,19 +149,16 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 <br>
 
 
-### Creating Objects with Object Literal Notation
- 
-
 - As you can see, _Object Literal notation_ consists of a set of opening  and closing curly braces, `{}`
 
 - We just used curly braces to create an empty `game` object. **We consider it to be empty because it contains no _________?**
 
 - Let's change the code so that `game` has a _property_:
 
-	```javascript
-	const game = {title: 'Guess the Number!'};
-	console.log(game);
-	```
+```javascript
+const game = {title: 'Guess the Number!'};
+console.log(game);
+```
 
 - Stylistically, defining an object with a single property or a couple of "short" properties on a single line of code like this `let point = {x: 10, y: -5};` isn't a problem (unless it is with your boss)
 
@@ -167,32 +166,34 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 
 - Properties are separated by commas:
 
-	```javascript
-	const game = {
-	  title: 'Guess the Number!',
-	  biggestNum: 100
-	};
-	```
+```javascript
+const game = {
+ title: 'Guess the Number!',
+ biggestNum: 100
+};
+```
 
 - Syntactically, [trailing commas](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Trailing_commas) are permitted (in arrays too):
 
-	```javascript
-	const game = {
-	  title: 'Guess the Number!',
-	  biggestNum: 100,
-	};
-	```
+```javascript
+const game = {
+ title: 'Guess the Number!',
+ biggestNum: 100,
+};
+```
 
 
 <br>
 <br>
 <br>
+<br>
+<br>
 
 
-### Properties - Review Questions
+### 💪 Properties - Review Questions
  
 
-- Considering:
+**Considering:**
 
 	```javascript
 	const game = {
@@ -201,13 +202,19 @@ For this lesson, we're going to code along using an `HTML, CSS & JS` `REPL` from
 	};
 	```
 	
-- Let's answer the following questions:
-	- **How many properties does `game` contain?**
-	- **What are the keys (AKA property names)?**
-	- **What are the property values of `game`?**
-	- **What are the data types of the keys?**
+*Let's answer the following questions:*
+
+**❓ How many properties does `game` contain?**
+
+**❓ What are the keys (AKA property names)?**
+
+**❓ What are the property values of `game`?**
+
+**❓ What are the data types of the keys?**
 
 
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -233,13 +240,14 @@ game.smallestNum = 0;
 
 
    
-### Adding/Updating Properties Practice (3 min)
+### 💪 Adding/Updating Properties Practice (3 min)
  
+*Using dot notation on the `game` object:*
 
-- Using dot notation on the `game` object:
-	- Add a property with a key of `numGuesses` set to a value of `0`
-	- Update the `smallestNum` property's value to be `1`
+1. Add a property with a key of `numGuesses` set to a value of `0`
+1. Update the `smallestNum` property's value to be `1`
 
+<br>
 <br>
 <br>
 <br>
@@ -264,12 +272,12 @@ game.smallestNum = 0;
 
 ### Square Bracket Notation
  
+_Square bracket notation_ has the following syntax:
 
-- _Square bracket notation_ has the following syntax:
 
-	```javascript
-	someObject[<any JS expression>]
-	```
+```javascript
+someObject[<any JS expression>]
+```
 
 - For example to access the `game` object's `title` property, we could write this code:
 
@@ -280,8 +288,12 @@ console.log(game['title']);
 
 **Please note:** The above example is just a way to demonstrate the syntax. More efficient code would be `console.log(game.title);`
  
+<br>
+<br>
 
-- If the result of the expression between the brackets is not a string, JS will convert it to one. For example:
+
+
+If the result of the expression between the brackets is not a string, JS will convert it to one. For example:
 
 ```javascript
 const weirdObj = {};
@@ -289,36 +301,39 @@ weirdObj[null] = true;
 console.log(weirdObj) // {'null': true}
 ```
 
-- Again, the expression between the square brackets can be any expression - even a function call!
+*Again, the expression between the square brackets can be any expression - even a function call!*
 
 <br>
 <br>
 <br>
 
    
-### Square Bracket Notation - Practice
+### 💪 Square Bracket Notation - Practice
 
-- Consider an object that represents a catalog of items where:
-	- Each property in the object represents an item for sale
-	- The _key_ of each property represents the item's SKU (Stock Keeping Unit - a retail store's unique ID for an item)
-	- The _value_ of the property represents the price of the item
+*Consider an object that represents a catalog of items where:*
+- Each property in the object represents an item for sale
+- The _key_ of each property represents the item's SKU (Stock Keeping Unit - a retail store's unique ID for an item)
+- The _value_ of the property represents the price of the item
 
-- For this practice activity we're going to create another object named `catalog` that includes a few items - but don't delete your `game` object.
+- For this practice activity we're going to create another object named `catalog` that includes a few items - but don't delete your `game` object
 - Again, each item is a _property_ with it's _key_ set to a unique alphanumeric string (a SKU) and its value to a number representing its price
 
 - **Note:** If you want to include special characters in the key, just be sure to use quotes
 
+<br>
+<br>
    
-- Now let's code a price lookup loop:
 
-	```javascript
-	let sku = '';
-	while (sku !== 'quit') {
-	  sku = prompt('Enter SKU or "quit" to exit: ');
-	  let price = catalog[sku];
-	  if (sku !== 'quit') alert(`The price of ${sku} is ${price}`);
-	}
-	```
+*Now let's code a price lookup loop:*
+
+```javascript
+let sku = '';
+while (sku !== 'quit') {
+	sku = prompt('Enter SKU or "quit" to exit: ');
+ 	let price = catalog[sku];
+ 	if (sku !== 'quit') alert(`The price of ${sku} is ${price}`);
+}
+```
 
 - That string in the `alert` is called a **template literal** and is delimited using back-tick characters (it's above the _tab_ key). One of its benefits is that we can use _string interpolation_ to embed the results of JS expressions right into the string using the `${<exp>}` syntax!
 
@@ -353,7 +368,7 @@ console.log(weirdObj) // {'null': true}
 	}
 	```
 
-- Nice!
+**Nice!**
 
 <br>
 <br>
@@ -363,23 +378,23 @@ console.log(weirdObj) // {'null': true}
 ### Deleting a Property
  
 
-- To completely remove a property from an object, we use the `delete` operator:
+*To completely remove a property from an object, we use the `delete` operator:*
 
-	```javascript
-	const geniuses = {
-		Jemison: true,
-		Hopper: true,
-		Einstein: true,
-		McNair: true,
-		Lovelace: true,
-		carrotTop: false
-	};
-	
-	// see ya!
-	delete geniuses.carrotTop;
-	```
+```javascript
+const geniuses = {
+	Jemison: true,
+	Hopper: true,
+	Einstein: true,
+	McNair: true,
+	Lovelace: true,
+	carrotTop: false
+};
 
-- **Try it out!** Use the `delete` operator to remove one of the items from your `catalog` object
+// see ya!
+delete geniuses.carrotTop;
+```
+
+**Try it out!** Use the `delete` operator to remove one of the items from your `catalog` object
 
 <br>
 <br>

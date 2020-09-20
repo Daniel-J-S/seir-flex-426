@@ -9,13 +9,28 @@ type: "lab"
 
 # JavaScript Classes Lab
 
+<br>
+<br>
+
+
 ## Intro
 
 Now that you've learned about using **classes** in JavaScript to create objects, it's time for some practice! <br>In this lab, you will choose one of the object hierarchies below, **Bank Accounts** or **People**, and write the classes to implement it.
 
+
+<br>
+<br>
+
+
+
 ## Setup   
 
 Create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Classes Lab"`.`
+
+
+<br>
+<br>
+
 
 ### Bank Accounts
 
@@ -36,6 +51,10 @@ Create a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it 
 | Derived From | Additional Properties | Additional Methods |
 | :---: | :---: | :---: |
 | `BankAccount` | None |  Override `withdraw` to disallow withdrawals completely :) |
+
+
+<br>
+<br>
 
 
 ### People

@@ -9,10 +9,15 @@ type: "lab"
 
 # Space Battle OOP Lab
 
+<br>
+<br>
+<br>
+
+
 
 ![star wars](https://camo.githubusercontent.com/cffbbbbaf197f376c3d8462e7037b408365a52a7/687474703a2f2f7669676e65747465342e77696b69612e6e6f636f6f6b69652e6e65742f73746172776172732f696d616765732f362f36352f426174746c655f6f665f456e646f722e706e672f7265766973696f6e2f6c61746573743f63623d3230313231323136313635323339)
 
-All day today, you will be using your knowledge of OOP, loops, and functions to build a rudimentary **space battle** game. <br>The game will be programmed for, and played in the Chrome console. You will need to use pop-up prompts to get user input.
+Today, you will be using your knowledge of OOP, loops, and functions to build a rudimentary **space battle** game. <br>The game will be programmed for, and played in the Chrome console. You will need to use pop-up prompts to get user input.
 
 Today's task is to **build something according to specification**. <br> Pretend you have received the **specification** below for a class project. <br>Planning your program is a challenge unto itself. START SIMPLE. Break the problem down as far as you can and don't move on until the smallest piece works.
 
@@ -20,6 +25,10 @@ Once you've figured out the basics, it's up to you to make the game you want, bu
 
 <br>
 <hr>
+
+<br>
+<br>
+
 
 ## &#x1F680; SPECIFICATIONS
 
@@ -30,6 +39,11 @@ Earth has been attacked by a horde of aliens! You are the captain of the USS Ass
 Battle the aliens as you try to destroy them with your lasers.
 
 There are six alien ships. The aliens' weakness is that they are too logical and attack one at a time: they will wait to see the outcome of a battle before deploying another alien ship. Your strength is that you have the initiative and get to attack first. However, you do not have targeting lasers and can only attack the aliens in order. After you have destroyed a ship, you have the option to make a hasty retreat.
+
+<br>
+<br>
+<br>
+
 
 
 ### A game round would look like this:
@@ -46,6 +60,15 @@ There are six alien ships. The aliens' weakness is that they are too logical and
 - You win the game if you destroy all of the aliens
 
 - You lose the game if you are destroyed
+
+
+<br>
+<br>
+<br>
+
+
+
+
 
 ### Ship Properties
 
@@ -78,7 +101,16 @@ if (Math.random() < alien[0].accuracy) {
 ```
 
 <br>
+<br>
+<br>
+
+
 <hr>
+
+<br>
+<br>
+<br>
+
 
 ## &#x1F47E; Setup
 
@@ -93,6 +125,11 @@ This lab was meant to be completed by a team, so make sure you organize your tea
 
 > We will go over this demonstration in class to show you how to set up your files
 
+<br>
+<br>
+<br>
+
+
 
 ## &#x1F47E; Where to begin?
 
@@ -102,17 +139,31 @@ This lab was meant to be completed by a team, so make sure you organize your tea
 
 From [these programming principles](http://www.artima.com/weblogs/viewpost.jsp?thread=331531)
 
-![](https://i.imgur.com/G8gyTJU.png)
 
-Use **pseudo code** to get a sketch of your game first.
+
+1. Use **pseudo code** to get a sketch of your game first.
+2. Avoid Creating a **YAGNI** (You aren't going to need it) - You should not try to add functionality until you need it.
+3. **Do the simplest thing that could possibly work.**
 
 Often, beginning something is an act of **creative inspiration** to find the **simplest possible case**. The first step is not necessarily a matter of logical deduction. Once you have a few 'clues' you can follow the trail of crumbs to a logical conclusion.
+
+<br>
+<br>
+<br>
+
+
 
 ## &#x1F47E; Actors and then actions
 
 A good rule of thumb is start with the **actors** and then the **actions**. What actors do we need? In this case, we need our spaceship and the alien spaceships. An action these ships can take is to attack something. Perhaps a ship object (an actor) could therefore have an **attack** method (an action). 
 
 A repeating action in the game is that these ships attack each other until one of them has been destroyed. This might necessitate a loop or multiple loops.
+
+<br>
+<br>
+<br>
+
+
 
 ## &#x1F47E; Start simpler than the instructions suggest
 
@@ -127,9 +178,19 @@ Keep these five things in mind when planning and coding your game:
 4. When you have a piece of functionality tested and working, **commit it**. Try not to commit broken code. Unsure of when to commit? **Commit when something works**. You want to save working code.
 
 <br>
+<br>
+<br>
+
+
 <hr>
 
-## &#x1F47E; &#x1F47E; &#x1F47E; Code quality and code sharing
+<br>
+<br>
+<br>
+
+
+
+## &#x1F47E; Code quality and code sharing
 
 From the beginning, you will be writing your code **for other developers.**
 
@@ -145,7 +206,17 @@ What does this mean for your coding practices?
 Your code should be as coherent to another developer as possible.  
 
 <br>
+<br>
+<br>
+
+
 <hr>
+
+<br>
+<br>
+<br>
+
+
 
 # &#x1F680; Bonuses
 
@@ -162,7 +233,17 @@ Your code should be as coherent to another developer as possible.
 * Evil alien scientists have created an alien mega-ship. This mega-ship contains a number of "weapon pods" that each have their own individual hit points. These "weapon-pods" ( objects ) must all be destroyed before you can begin doing damage to the main ship, which also has its own hit points.
 
 <br>
+<br>
+<br>
+
+
 <hr>
+
+<br>
+<br>
+<br>
+
+
 
 # &#x1F680; Bonus Bonuses
 
@@ -177,69 +258,99 @@ Your code should be as coherent to another developer as possible.
 * Distribute medals and power ups to the player depending on points
 
 <br>
+<br>
+<br>
+
 <hr>
+
+<br>
+<br>
+<br>
+
+
 
 ### Cheat codes &#x2B06; &#x2197; &#x27A1;
  
-<details><summary>👈Don't read these steps if you want to figure this out on your own.</summary>
+<details><summary> 👈&nbsp;&nbsp;<b>Don't read these steps if you want to figure this out on your own.</b></summary>
 
-These are just suggestions, not answers, and will change the nature of the game that you would have made had you not read these.
+<br>
+<br>
+
+<i>These are just suggestions, not answers, and will change the nature of the game that you would have made had you not read these.</i>
 
 
-<hr>
 
-Make the USS_Assembly object.
-
-Make a single alien ship object.
-
-Simulate a battle between your ship and a single alien ship first.
-
-Make a method for the USS Assembly that will attack a given target. The target can be an input to the method.
-
-Run the method and pass it the alien ship.
-
-Make it so the method reduces the target's hull by the firepower of the USS Assembly.
+<br>
+<br>
 
 <hr>
 
-Make a game object
+<br>
+<br>
 
-Make a method in the game object that will run a 'check win' for the health of the alien(s) and/or the USS Assembly. If the hull is 0 or less, display a message that the ship went kabloo-ey.
 
-Make it so the alien will only be hit if a Math.random call is below the accuracy threshold.
 
-Make a method for the alien ship to attack a target.
+<b>✅&nbsp;&nbsp;Make the USS_Assembly object.</b>
 
-At a status console log for the end of the round.
 
-PROBLEM: If you make the alien ship go kabloo-ey, then the alien should not then be able to  attack you. Fix this.
+<b>✅&nbsp;&nbsp;Make a single alien ship object.</b>
 
-Make it so the attacks will keep occuring until someone's hull is at 0. Isolate what it is that you want to repeat.
+<b>✅&nbsp;&nbsp;Simulate a battle between your ship and a single alien ship first.</b>
 
-<hr>
+<b>✅&nbsp;&nbsp;Make a method for the USS Assembly that will attack a given target. The target can be an input to the method.</b>
 
-Make many alien ships with a Class. Make each object slightly different . . .
+<b>✅&nbsp;&nbsp;Run the method and pass it the alien ship.</b>
 
-Hull can be a random number between 3 and 6, firepower between 2 and 4, accuracy between 0.6 and 0.8.
-
-Make a loop that calls the Class and generates alien ships. Push those constructed objects into a predefined array. Start with 6 ships (the loop should run 6 times).
-
-Try out the game with the first alien ship in the array.
-
-Run the battle with all ships in turn.
+<b>✅&nbsp;&nbsp;Make it so the method reduces the target's hull by the firepower of the USS Assembly.</b>
 
 <hr>
 
-Move functions into the game object.
+<b>✅&nbsp;&nbsp;Make a game object</b>
 
-Move on to the bonuses.
+<b>✅&nbsp;&nbsp;Make a method in the game object that will run a 'check win' for the health of the alien(s) and/or the USS Assembly. If the hull is 0 or less, display a message that the ship went kabloo-ey.</b>
+
+<b>✅&nbsp;&nbsp;Make it so the alien will only be hit if a Math.random call is below the accuracy threshold.</b>
+
+<b>✅&nbsp;&nbsp;Make a method for the alien ship to attack a target.</b>
+
+<b>✅&nbsp;&nbsp;At a status console log for the end of the round.</b>
+
+<b>🔴&nbsp;&nbsp;PROBLEM: If you make the alien ship go kabloo-ey, then the alien should not then be able to  attack you. Fix this.</b>
+
+<b>✅&nbsp;&nbsp;Make it so the attacks will keep occuring until someone's hull is at 0. Isolate what it is that you want to repeat.</b>
+
+<hr>
+
+<b>✅&nbsp;&nbsp;Make many alien ships with a Class. Make each object slightly different . . .</b>
+
+<b>✅&nbsp;&nbsp;Hull can be a random number between 3 and 6, firepower between 2 and 4, accuracy between 0.6 and 0.8.</b>
+
+<b>✅&nbsp;&nbsp;Make a loop that calls the Class and generates alien ships. Push those constructed objects into a predefined array. Start with 6 ships (the loop should run 6 times).</b>
+
+<b>✅&nbsp;&nbsp;Try out the game with the first alien ship in the array.</b>
+
+<b>✅&nbsp;&nbsp;Run the battle with all ships in turn.</b>
+
+<hr>
+
+<b>✅&nbsp;&nbsp;Move functions into the game object.</b>
+
+<b>🎉&nbsp;&nbsp;Move on to the bonuses&nbsp;&nbsp;🎉.</b>
 
 <br>
 <hr>
 
 </details>
 
-# Extra fun: style the console
+
+<br>
+<br>
+<br>
+
+<hr>
+
+
+### Extra fun: style the console
 
 Output in Chrome console: 
 

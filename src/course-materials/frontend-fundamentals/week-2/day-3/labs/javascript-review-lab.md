@@ -9,10 +9,20 @@ type: "lab"
 
 # JavaScript Review Lab
 
+<br>
+<br>
+<br>
+<br>
+
+
 
 ## Setup  
 
 For this lab, create a `HTML, CSS & JS` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Review Lab"`.
+
+<br>
+<br>
+<br>
 
 
 ## I. Variables & Datatypes
@@ -29,6 +39,12 @@ To answer these questions, you can add them in a multiline comment section insid
 */
 
 ```
+
+<br>
+<br>
+<br>
+
+
 ### A. Q + A
 
 1. How do we assign a value to a variable? 
@@ -39,6 +55,11 @@ To answer these questions, you can add them in a multiline comment section insid
 6. What percentage of time should be spent thinking about how you're going to solve a problem vs actually typing in code to solve it?
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
 
 ### B. Strings
 
@@ -56,6 +77,12 @@ For all other questions that involve writing code, you can solve them via the fo
 >ex: `Hello, my name is Jean Valjean`
   
 **Commit.**
+
+<br>
+<br>
+<br>
+
+
 
 ### C. Booleans
 - Using the provided variable definitions, replace the blanks so that all log statements print `true` in the console. Answers should be all be valid JS syntax and not weird things that don't make sense but happen to print `true` to the console
@@ -82,6 +109,11 @@ For all other questions that involve writing code, you can solve them via the fo
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 ### D. The farm
 
 1. Declare a variable `animal`.  Set it to be either "cow" or something else
@@ -90,6 +122,11 @@ For all other questions that involve writing code, you can solve them via the fo
 4. Commit
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
 
 
 ### E. Driver's Ed
@@ -101,6 +138,12 @@ For all other questions that involve writing code, you can solve them via the fo
 **Commit.**
 
 
+<br>
+<br>
+<br>
+
+
+
 ## II. Loops
 
 Remember: **USE `let` when you initialize your for loops!**
@@ -108,6 +151,12 @@ Remember: **USE `let` when you initialize your for loops!**
 This is GOOD: for(**let i = 0;** i < 100; i++)
 
 This is NO GOOD: for(i = 0; i < 100; i++)
+
+
+<br>
+<br>
+<br>
+
 
 ### A. The basics
 
@@ -119,6 +168,12 @@ This is NO GOOD: for(i = 0; i < 100; i++)
 
 **Commit.**
 
+
+<br>
+<br>
+<br>
+
+
 ### B. Get even
 
 1. Print out the numbers that are within the range of 1 - 100
@@ -126,6 +181,10 @@ This is NO GOOD: for(i = 0; i < 100; i++)
 2. Adjust your code to add a message next to even numbers only that says: "<-- is an even number"
 
 **Commit.**
+
+<br>
+<br>
+<br>
 
 
 ### C. Give me Five
@@ -138,7 +197,11 @@ I found a 5. High five!
 I found a 10. High five!
 ```
 
-2. Add to the code from above to print out "I found a `number`. Three is a crowd" if the number is a multiple of three
+<br>
+<br>
+
+
+1. Add to the code from above to print out "I found a `number`. Three is a crowd" if the number is a multiple of three
 
 >Example Output:
 ```shell
@@ -149,9 +212,17 @@ I found a 9. Three is a crowd
 I found a 10. High five!
 ```
 
-3. For numbers divisible by _both three and five_, be sure your code prints both messages
+<br>
+<br>
+
+
+1. For numbers divisible by _both three and five_, be sure your code prints both messages
 
 **Commit.**
+
+<br>
+<br>
+<br>
 
 
 ### D. Savings account
@@ -166,8 +237,18 @@ I found a 10. High five!
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 
 ## III. Arrays & Control flow
+
+<br>
+<br>
+<br>
+
 
 ### A. Talk about it:
 
@@ -179,12 +260,25 @@ I found a 10. High five!
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
+
 
 ### B. Easy Does It
 
 1. Create an array that contains three quotes and store it in a variable called `quotes`
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
+
+
 
 ### C. Accessing elements
 
@@ -199,6 +293,12 @@ Given the following array `const randomThings = [1, 10, "Hello", true]`
 **Commit.**
 
 
+<br>
+<br>
+<br>
+
+
+
 ### D. Change values
 
 Given the following array `const ourClass = ["Salty", "Zoom", "Sardine", "Slack", "Github"]`
@@ -210,6 +310,11 @@ Given the following array `const ourClass = ["Salty", "Zoom", "Sardine", "Slack"
 3. Add a new element, "Cloud City" to the array
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
 
 
 ### E. Mix It Up
@@ -230,6 +335,12 @@ Given the following array: `const myArray = [5, 10, 500, 20]`
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
+
 
 ### F. Biggie Smalls
 
@@ -243,6 +354,12 @@ Write an `if ... else` statement that:
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
+
 
 ### G. Monkey in the Middle
 
@@ -255,6 +372,10 @@ Write an `if ... else if ... else` statement:
 3. Otherwise, log "monkey". <br>
 
 **Commit.**
+
+<br>
+<br>
+<br>
 
 
 ### H. What's in Your Closet?
@@ -312,8 +433,16 @@ const thomsCloset = [
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
 
 ## IV. Functions
+
+<br>
+<br>
+
 
 
 ### A. `printGreeting`
@@ -331,6 +460,11 @@ You think you could? I think so too. Feel free to skip this problem, because you
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 
 ### B. `printCool`
 
@@ -343,6 +477,10 @@ console.log(printCool("Captain Reynolds"));
 > `=> "Captain Reynolds is cool";`
 
 **Commit.**
+
+<br>
+<br>
+<br>
 
 
 ### C. `calculateCube`
@@ -357,6 +495,11 @@ console.log(calculateCube(5));
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 
 ### D. `isVowel`
 
@@ -369,6 +512,12 @@ console.log(isVowel("a"));
 > `=> true`
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
+
 
 
 ### E. `getTwoLengths`
@@ -383,6 +532,13 @@ console.log(getTwoLengths("Hank", "Hippopopalous"));
 **Commit.**
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ### F. `getMultipleLengths`
 
 Write a function `getMultipleLengths` that accepts a single parameter as an argument: an **array** of **strings**. The function should **return** an **array** of **numbers** where each number is the length of the corresponding string.
@@ -394,6 +550,12 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 > `=> [5, 4, 2, 2, 4]`
 
 **Commit.**
+
+<br>
+<br>
+<br>
+
+
 
 
 ### G. `maxOfThree`
@@ -410,6 +572,11 @@ Did you use Google and find `Math.max()`?  If so, great job! Very resourceful—
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 
 ### H. `printLongestWord`
 
@@ -423,10 +590,21 @@ console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanut
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
 
 ## Objects
 
 Let's set up an object data structure. Let's say we have a website that sells products, and we have a user of our website, and we want to store that user's data. The object data structure is a good way to organize the data from our user.
+
+<br>
+<br>
+<br>
+
+
 
 ### A. Make a user object
 
@@ -435,12 +613,24 @@ Let's set up an object data structure. Let's say we have a website that sells pr
 
 **Commit.**
 
+<br>
+<br>
+<br>
+
+
+
 ### B. Update the user
 
 1. Our user has changed his or her email address. Without changing the original `user` object, update the `email` value to a new email address.
 2. Our user has had a birthday! Without changing the original `user` object, increment the `age` value using the postfix operator. Hint: `age++`
 
 **Commit.**
+
+
+<br>
+<br>
+<br>
+
 
 
 ### C. Adding keys and values
@@ -452,6 +642,12 @@ You have decided to add your user's location to the data that you want to collec
 **Commit.**
 
 
+<br>
+<br>
+<br>
+
+
+
 ### D. Shopaholic!
 
 1. Our user has purchased an item! They have purchased some "carbohydrates". Using `.push()`, add the string "carbohydrates" to the `purchased` array.
@@ -460,6 +656,11 @@ You have decided to add your user's location to the data that you want to collec
 4. Console.log just the "Merino jodhpurs" from the `purchased` array.
 
 **Commit.**
+
+
+<br>
+<br>
+<br>
 
 
 ### E. Object-within-object
@@ -488,12 +689,24 @@ When we console.log `user`, we would see the `friend` object added to our user o
 **Commit.**
 
 
+<br>
+<br>
+<br>
+
+
+
 ### F. Loops
 
 1. Write a _for loop_ that iterates over the User's `purchased` array (NOT the friend's purchased array), and prints each element to the console.
 2. Write a _for loop_ that iterates over the Friend's `purchased` array, and prints each element to the console.
 
 **Commit.**
+
+
+<br>
+<br>
+<br>
+
 
 
 ### G. Functions can operate on objects
@@ -511,11 +724,32 @@ When we console.log `user`, we would see the `friend` object added to our user o
 **Commit.**
 
 <br>
+<br>
+<br>
+
+
 <hr>
 
-# Requirements Complete! Hungry for More?
+<br>
+<br>
+<br>
+
+### Requirements Complete! Hungry for More?
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Cat Combinator
+
+
+<br>
+<br>
+<br>
+
 
 ### 1. Mama cat
 * Define an object called `cat1` that contains the following properties:
@@ -527,11 +761,22 @@ When we console.log `user`, we would see the `friend` object added to our user o
 * console.log the cat's breed
 
 
+<br>
+<br>
+<br>
+
+
+
 ### 2. Papa cat
 * Define an object called `cat2` that also contains the properties:
     * name
     * breed
     * age (a number)
+
+<br>
+<br>
+<br>
+
 
 
 ### 3. Combine Cats!
@@ -581,7 +826,14 @@ Result:
 **This is to demonstrate that a function can return an object**
 
 <br>
+<br>
+
 <hr>
+
+
+<br>
+<br>
+
 
 ## 4. Cat brain bender
 
