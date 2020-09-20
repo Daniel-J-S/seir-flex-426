@@ -10,9 +10,19 @@ type: "lecture"
 # Intro to JavaScript Control Flow
 
 
+
 <br>
 <br>
 <br>
+<br>
+
+### [Click here](https://youtu.be/WL6POLIarfg) to access recording
+
+<br>
+<br>
+<br>
+<br>
+
 
 
 
