@@ -195,12 +195,16 @@ const game = {
 
 **Considering:**
 
-	```javascript
-	const game = {
-	  title: 'Guess the Number!',
-	  biggestNum: 100,
-	};
-	```
+```javascript
+const game = {
+	title: 'Guess the Number!',
+	biggestNum: 100,
+};
+```
+
+<br>
+<br>
+
 	
 *Let's answer the following questions:*
 
@@ -308,7 +312,7 @@ console.log(weirdObj) // {'null': true}
 <br>
 
    
-### 💪 Square Bracket Notation - Practice
+### 💪 Square Bracket Notation - (Guided Practice)
 
 *Consider an object that represents a catalog of items where:*
 - Each property in the object represents an item for sale
@@ -410,11 +414,11 @@ delete geniuses.carrotTop;
 
 - We can iterate over the _keys_ of the properties using a `for...in` loop:
 
-	```javascript
-	for (let key in game) {
-	  console.log(`The value of the ${key} property is ${game[key]}`);
-	}
-	```
+```javascript
+for (let key in game) {
+ console.log(`The value of the ${key} property is ${game[key]}`);
+}
+```
 
 
 - There's a couple of nifty ES2017 methods that can be used to iterate over the keys & **values** of an object's properties:
