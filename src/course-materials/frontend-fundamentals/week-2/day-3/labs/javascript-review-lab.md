@@ -54,7 +54,7 @@ To answer these questions, you can add them in a multiline comment section insid
 5. What is pseudocoding and why should you do it?
 6. What percentage of time should be spent thinking about how you're going to solve a problem vs actually typing in code to solve it?
 
-**Commit.**
+
 
 <br>
 <br>
@@ -76,7 +76,7 @@ For all other questions that involve writing code, you can solve them via the fo
   
 >ex: `Hello, my name is Jean Valjean`
   
-**Commit.**
+
 
 <br>
 <br>
@@ -107,7 +107,7 @@ For all other questions that involve writing code, you can solve them via the fo
   console.log(48 __ '48');
 ```
 
-**Commit.**
+
 
 <br>
 <br>
@@ -121,7 +121,7 @@ For all other questions that involve writing code, you can solve them via the fo
 3. Change your code so that if the variable `animal` is anything other than a cow, it will print "Hey! You're not a cow."
 4. Commit
 
-**Commit.**
+
 
 <br>
 <br>
@@ -135,7 +135,7 @@ For all other questions that involve writing code, you can solve them via the fo
 
 2. Write code that will print out "Here are the keys!", if the age is 16 years or older, or, if the age is younger than 16, a message should print "Sorry, you're too young."
 
-**Commit.**
+
 
 
 <br>
@@ -166,7 +166,7 @@ This is NO GOOD: for(i = 0; i < 100; i++)
 
 3. Write a loop that will print out every third number starting with 12 and going no higher than 4000
 
-**Commit.**
+
 
 
 <br>
@@ -180,7 +180,7 @@ This is NO GOOD: for(i = 0; i < 100; i++)
 
 2. Adjust your code to add a message next to even numbers only that says: "<-- is an even number"
 
-**Commit.**
+
 
 <br>
 <br>
@@ -218,7 +218,7 @@ I found a 10. High five!
 
 1. For numbers divisible by _both three and five_, be sure your code prints both messages
 
-**Commit.**
+
 
 <br>
 <br>
@@ -235,7 +235,7 @@ I found a 10. High five!
 
 >Check your work! Your banck_account should have $10,100 in it.
 
-**Commit.**
+
 
 <br>
 <br>
@@ -258,7 +258,7 @@ I found a 10. High five!
 
 3. What real-life thing could you model with an array?
 
-**Commit.**
+
 
 <br>
 <br>
@@ -271,7 +271,7 @@ I found a 10. High five!
 
 1. Create an array that contains three quotes and store it in a variable called `quotes`
 
-**Commit.**
+
 
 <br>
 <br>
@@ -290,7 +290,7 @@ Given the following array `const randomThings = [1, 10, "Hello", true]`
 
 3. Check the value of the array to make sure it updated the array.  How?  Why, yes! `console.log()`;
 
-**Commit.**
+
 
 
 <br>
@@ -309,7 +309,7 @@ Given the following array `const ourClass = ["Salty", "Zoom", "Sardine", "Slack"
 
 3. Add a new element, "Cloud City" to the array
 
-**Commit.**
+
 
 <br>
 <br>
@@ -333,7 +333,7 @@ Given the following array: `const myArray = [5, 10, 500, 20]`
 
 5. Reverse this array using `Array.prototype.reverse()`.  Did you mutate the array? What does _mutate_ mean? Did the `.reverse()` method return anything?
 
-**Commit.**
+
 
 <br>
 <br>
@@ -352,7 +352,7 @@ Write an `if ... else` statement that:
 
 2. `console.log()`s `big number` if the number is greater than or equal to 100.
 
-**Commit.**
+
 
 <br>
 <br>
@@ -371,7 +371,7 @@ Write an `if ... else if ... else` statement:
 
 3. Otherwise, log "monkey". <br>
 
-**Commit.**
+
 
 <br>
 <br>
@@ -431,7 +431,7 @@ const thomsCloset = [
 
 8. Get more specific about what kind of PJs Thom's wearing this winter. Modify the name of his PJ pants to `Footie Pajamas`.
 
-**Commit.**
+
 
 <br>
 <br>
@@ -458,7 +458,7 @@ console.log(printGreeting("Slimer"));
 
 You think you could? I think so too. Feel free to skip this problem, because you've already done it. If you've done the problem twice, **read entire problems carefully before doing them from now on**.  
 
-**Commit.**
+
 
 <br>
 <br>
@@ -476,7 +476,7 @@ console.log(printCool("Captain Reynolds"));
 
 > `=> "Captain Reynolds is cool";`
 
-**Commit.**
+
 
 <br>
 <br>
@@ -493,7 +493,7 @@ console.log(calculateCube(5));
 
 > => 125
 
-**Commit.**
+
 
 <br>
 <br>
@@ -511,7 +511,7 @@ console.log(isVowel("a"));
 
 > `=> true`
 
-**Commit.**
+
 
 <br>
 <br>
@@ -529,7 +529,7 @@ console.log(getTwoLengths("Hank", "Hippopopalous"));
 ```
 > `=> [4, 13]`
 
-**Commit.**
+
 
 
 <br>
@@ -549,7 +549,7 @@ console.log(getMultipleLengths(["hello", "what", "is", "up", "dude"]));
 
 > `=> [5, 4, 2, 2, 4]`
 
-**Commit.**
+
 
 <br>
 <br>
@@ -570,7 +570,7 @@ console.log(maxOfThree(6, 9, 1));
 
 Did you use Google and find `Math.max()`?  If so, great job! Very resourceful—keep looking stuff up!  However, for this particular question, we need you to submit a solution that **does not** use `Math.max()`.
 
-**Commit.**
+
 
 <br>
 <br>
@@ -588,7 +588,7 @@ console.log(printLongestWord(["BoJack", "Princess", "Diane", "a", "Max", "Peanut
 
 > `=> "Peanutbutter"`
 
-**Commit.**
+
 
 <br>
 <br>
@@ -611,7 +611,7 @@ Let's set up an object data structure. Let's say we have a website that sells pr
 1. Create an object called `user`.
 2. Write in to the object the key-value pairs for `name`, `email`, `age`, and `purchased`. Set the value of `purchased` to an empty array `[]`. Set the other values to whatever you would like.
 
-**Commit.**
+
 
 <br>
 <br>
@@ -624,7 +624,7 @@ Let's set up an object data structure. Let's say we have a website that sells pr
 1. Our user has changed his or her email address. Without changing the original `user` object, update the `email` value to a new email address.
 2. Our user has had a birthday! Without changing the original `user` object, increment the `age` value using the postfix operator. Hint: `age++`
 
-**Commit.**
+
 
 
 <br>
@@ -639,7 +639,7 @@ You have decided to add your user's location to the data that you want to collec
 
 1. Without changing the original `user` object, add a new key `location` to the object, and give it a value or some-or-other location (a string).
 
-**Commit.**
+
 
 
 <br>
@@ -655,7 +655,7 @@ You have decided to add your user's location to the data that you want to collec
 3. Our user has purchased an item! They have purchased some "Merino jodhpurs". Using `.push()`, add the string "Merino jodhpurs" to the `purchased` array.
 4. Console.log just the "Merino jodhpurs" from the `purchased` array.
 
-**Commit.**
+
 
 
 <br>
@@ -686,7 +686,7 @@ When we console.log `user`, we would see the `friend` object added to our user o
 6. The `friend` has purchased "A latte". Use `.push()` to add "A latte" to the friend's `purchased` array.
 7. Console.log just "A latte" from the friend's `purchased` array.
 
-**Commit.**
+
 
 
 <br>
@@ -700,7 +700,7 @@ When we console.log `user`, we would see the `friend` object added to our user o
 1. Write a _for loop_ that iterates over the User's `purchased` array (NOT the friend's purchased array), and prints each element to the console.
 2. Write a _for loop_ that iterates over the Friend's `purchased` array, and prints each element to the console.
 
-**Commit.**
+
 
 
 <br>
@@ -721,7 +721,7 @@ When we console.log `user`, we would see the `friend` object added to our user o
 2. Write a function `oldAndLoud` that performs the exact same tasks as `updateUser`, but instead of hard-coding it to only work on our `user` object, make it take a parameter `person`, and have it modify the object that is passed in as an argument when the function is called. Call your `oldAndLoud` function with `user` as the argument. 
 
 
-**Commit.**
+
 
 <br>
 <br>
