@@ -229,11 +229,11 @@ I found a 10. High five!
 
 1. Write code that will save the sum of all the numbers between 1 - 10 to a variable called `bank_account`.
 
->Check your work! Your banck_account should have $55 in it.
+>Check your work! Your bank_account should have $55 in it.
 
 2. You got a bonus! Your pay is now doubled each week. Write code that will save the sum of all the numbers between 1 - 100 multiplied by 2.
 
->Check your work! Your banck_account should have $10,100 in it.
+>Check your work! Your bank_account should have $10,100 in it.
 
 
 
@@ -721,7 +721,7 @@ When we console.log `user`, we would see the `friend` object added to our user o
 2. Write a function `oldAndLoud` that performs the exact same tasks as `updateUser`, but instead of hard-coding it to only work on our `user` object, make it take a parameter `person`, and have it modify the object that is passed in as an argument when the function is called. Call your `oldAndLoud` function with `user` as the argument. 
 
 
-
+****
 
 <br>
 <br>
