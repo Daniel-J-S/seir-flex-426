@@ -8,6 +8,14 @@ type: "lecture"
 
 # Intro to DOM Events
 
+<br>
+<br>
+<br>
+
+
+
+
+
 
 ## Learning Objectives
   
@@ -20,7 +28,8 @@ type: "lecture"
 
 <br>
 <br>
-<br>
+
+
 
 ## Roadmap
   
@@ -32,6 +41,12 @@ type: "lecture"
 - Creating a new element
 - Event bubbling
 - Event delegation
+
+
+<br>
+<br>
+
+
 
 ### Lesson Setup  
 
@@ -62,6 +77,11 @@ intro-to-dom-events/
 </html>
 ```
 
+<br>
+<br>
+
+
+
 ### Setup
   
 
@@ -78,6 +98,11 @@ intro-to-dom-events/
 - The `defer` attribute ensures the DOM is ready before the script executes.
 
 - Putting a temporary `alert('js loaded)` will verify `script.js` is being loaded.
+
+<br>
+<br>
+
+
 
   
 ### What are DOM Events?
@@ -96,7 +121,12 @@ intro-to-dom-events/
 
 - Take a gander [here](https://developer.mozilla.org/en-US/docs/Web/Events) at the type and sheer number of events.
 
-  
+
+<br>
+<br>
+
+
+
 ### What's an Event Listener?
   
 
@@ -121,6 +151,11 @@ intro-to-dom-events/
 	- **callback** is the function we want executed when the event happens.  When called by the JS engine, it will be passed an _event object_ as an argument.
 	- **use-capture** is a boolean and is optional. It has to do with _event phases_. We won't need to worry about it in SEI but if you want to know more, read the [Event Phases section of this article](https://www.smashingmagazine.com/2013/11/an-introduction-to-dom-events/). 
 
+<br>
+<br>
+
+
+
   
 ### Our first Event Listener
   
@@ -143,7 +178,7 @@ intro-to-dom-events/
 
 - <p>We're going to use an anonymous callback function in this first example:</p>
 
-	```js
+	```javascript
 	const btn = document.querySelector('button');
 	btn.addEventListener('click', function(evt) {
 	  // testing!
@@ -156,17 +191,29 @@ intro-to-dom-events/
 
 - Congrats, registering an event listener is that easy!
 
-  
+
+ <br>
+ <br>
+ <br>
+
+
+
 ### Review Questions
   
 
-1. **What is the name of the method used to attach event listeners to elements?**
+**❓ What is the name of the method used to attach event listeners to elements?**
 
-2. **What is that method's _signature_ (a method's name, the number & type of arguments it takes, and what it returns)?**
+**❓ What is that method's _signature_ (a method's name, the number & type of arguments it takes, and what it returns)?**
 
-3. **Name three events that might be triggered in the browser.**
+**❓ Name three events that might be triggered in the browser.**
 
-  
+
+<br>
+<br>
+<br>
+
+
+
 ### The _event object_
   
 
@@ -177,20 +224,32 @@ intro-to-dom-events/
 	- The `target` property, which holds a reference to the DOM element that triggered (dispatched) the event.
 	- Note that JS's `this` keyword within the listener function will be set to the DOM element that `addEventListener` was called on.
 
-  
+
+<br>
+<br>
+<br>
+
+
+
 ### Creating a new `li` element
 
 - If we want to add a new comment, we're going to need to create a new `<li>` element.
 
 - Here's how we can do it using the `document.createElement` method:
 
-	```js
+	```javascript
 	btn.addEventListener('click', function(evt) {
 	  const li = document.createElement('li');
 	  console.log(li)
 	});
 	```
 	> Note: At this point, the element is "in memory" only and is not part of the DOM (yet).
+
+<br>
+<br>
+<br>
+
+
 
   
 ### Creating a new Comment
@@ -207,7 +266,7 @@ intro-to-dom-events/
 
 - So, now we can set the `textContent` of the new `<li>`:
 
-	```js
+	```javascript
 	btn.addEventListener('click', function(evt) {
 	  const li = document.createElement('li');
 	  const inp = document.querySelector('input');
@@ -224,7 +283,7 @@ intro-to-dom-events/
 
 - A common way to add new elements to another element is by using the `appendChild` method like this:
 
-	```js
+	```javascript
 	  li.textContent = inp.value;
 	  // new code below
 	  document.querySelector('ul').appendChild(li);
@@ -238,7 +297,13 @@ intro-to-dom-events/
 
 - One line of code is all it takes - you got this!
 
-  
+
+<br>
+<br>
+<br>
+
+
+
 ### Event bubbling
   
 
@@ -250,7 +315,12 @@ intro-to-dom-events/
 
 - Why does JS bubble up (propagate) its events?...
 
-  
+<br>
+<br>
+<br>
+
+
+
 ### Event Delegation
   
 
@@ -267,7 +337,7 @@ intro-to-dom-events/
 
 - Let's register a listener (this time for kicks we'll use a named function) on the `<ul>` that can respond to clicks on any of its `<li>`s:
 
-	```js
+	```javascript
 	document.querySelector('ul')
 	  .addEventListener('click', handleClick);
 	
@@ -282,6 +352,13 @@ intro-to-dom-events/
 
 - Without event delegation, you would have to register a listener every time a new element, such as our comment `<li>` is added. 
 
+<br>
+<br>
+<br>
+
+
+
+
   
 ### Event Delegation (Practice)
   
@@ -290,29 +367,47 @@ intro-to-dom-events/
 
 - Hint: DOM elements have a `style` property that's an object with the CSS properties (named using camel-casing), e.g., `myLi.style.fontSize`.
 
+<br>
+<br>
+<br>
+
+
+
   
 ### Removing event listeners
   
 
 - It's possible to remove an added event listener, however, only if a named function was used as the callback:
 
-	```js
+	```javascript
 	btn.removeEventListener('click', handleClick);
 	```
 	This would remove the 'click' event listener (`handleClick`) that was registered on the `btn` element like this:  
 	`btn.addEventListener('click', handleClick);`
 
-  
+
+<br>  
+<br>  
+<br>
+
+
+
 ### Essential Questions
   
 
-1. **What is the argument that JS passes to an event listener when it calls it?**
+**❓ What is the argument that JS passes to an event listener when it calls it?**
 
-2. **What is the name of the property on the above argument that represents the DOM element that dispatched the event?**
+**❓ What is the name of the property on the above argument that represents the DOM element that dispatched the event?**
 
-3. **Let's say you needed to have an event listener respond to a `click` event on the `<td>`s within a `<table>` - would you have to add event listeners to each `<td>`?  Support your answer.**
+**❓ Let's say you needed to have an event listener respond to a `click` event on the `<td>`s within a `<table>` - would you have to add event listeners to each `<td>`?  Support your answer.**
 
-  
+<br> 
+<br> 
+<br> 
+
+
+
+
 ## References
   
 

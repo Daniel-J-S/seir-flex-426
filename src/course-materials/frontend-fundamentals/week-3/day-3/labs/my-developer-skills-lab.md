@@ -8,11 +8,22 @@ type: "lab"
 
 # My Developer Skills Lab
 
+
+<br>
+<br>
+
+
+
+
 ## Introduction
 
 This lab provides an opportunity to practice working with jQuery.
 
-This lab **is not a deliverable**.
+This lab **is a deliverable**.
+
+
+<br>
+<br>
 
 
 ### Setup  
@@ -46,6 +57,12 @@ dev-skills-lab/
 
 5. Code away!
 
+<br>
+<br>
+<br>
+
+
+
 ### Requirements
 
 1. Add HTML and CSS as necessary to implement an application that looks close to this wireframe:
@@ -60,11 +77,17 @@ dev-skills-lab/
 
 	- AAU, I want to be able to remove an individual skill one at a time in case I make a mistake.
 
-## Deliverable
 
-When completed, please submit the appropriate like via the "Homework Submissions" link. 
+<br>
+<br>
+<br>
+
+
 
 ## Bonus
+
+
+<br>
 
 ##### Replace the first user story above with the following story:
 

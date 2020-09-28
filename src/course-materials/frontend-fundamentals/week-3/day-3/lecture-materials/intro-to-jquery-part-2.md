@@ -8,6 +8,10 @@ type: "lecture"
 
 # Intro to jQuery - Part 2 
 
+<br>
+<br>
+
+
 | Learning Objectives - SWBAT | 
 | :---:| 
 | Use jQuery to add & remove classes |
@@ -15,6 +19,7 @@ type: "lecture"
 | Use jQuery to add and remove DOM elements|
 | Bind to events with jQuery|
 
+<br>
 <br>
 <br>
 <br>
@@ -30,7 +35,15 @@ type: "lecture"
 - More on DOM Manipulation
 - Practice Challenge - Add New Homes
 
+<br>
+<br>
+
+
+
 ## Page Setup
+
+<br>
+
 
 ### Create a `./js/script.js` File
 
@@ -49,6 +62,12 @@ intro-to-jquery/
   js/
     script.js
 ```
+
+<br>
+<br>
+<br>
+
+
 
 ### Load Order Matters
 
@@ -73,6 +92,12 @@ Let's take the above's advice and add our `app.js` **after** jQuery:
   <script defer src="./js/script.js"></script>
 </head>
 ```
+
+
+<br>
+<br>
+<br>
+
 
 ### Sprinkle in Some CSS - Bootstrap
 
@@ -99,6 +124,11 @@ Here's what we should have so far:
 ```
 
 [Bootstrap](http://getbootstrap.com/) also changes the default styling of most elements thus making your site more eye-pleasing out of the box.
+
+<br>
+<br>
+<br>
+
 
 ### Starting HTML
 
@@ -155,13 +185,19 @@ Here's some HTML to get us started - **replace** the existing `<body>` tags with
 </body>
 ```
 
+
+<br>
+<br>
+<br>
+
+
 ### Ensuring that the DOM is Ready
 
 We've used the [defer Attribute](https://www.w3schools.com/tags/att_script_defer.asp) in the `<script>` tag in the `<head>` to ensure that the DOM is built before the JS runs.
 
 However, jQuery has another option that you should be aware of:
 
-```js
+```javascript
 // the "document ready" approach 
 $(document).ready(function() {
   // all of your app's js goes within this function
@@ -175,13 +211,31 @@ $(function(){
 });
 ```
 
+<br>
+<br>
+
+
 **❓ Since all of the app's code will be within the callback function, what impact does this have in terms of scope?**
+
+
+<br>
+<br>
+<br>
+
 
 ### Open it Up!
 
 We're all set to get started. If you have the _Open in Browser_ VS Code extension installed, you can right-click anywhere on `index.html` and select `Open in Browser`, or better yet press `[option] + B`.
 
 Your page should load and the alert should appear.
+
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Adding & Removing Classes
 
@@ -191,18 +245,35 @@ Somebody messed up and styled our _Add Home_ button with Bootstrap's `btn-danger
 
 Change the button from red to green by removing the `btn-danger` class and adding the `btn-success` class with jQuery:
 
-```js
+```javascript
 $('#addHome').removeClass('btn-danger').addClass('btn-success');
 ```
 That's better!
 
+<br>
+<br>
+
+
 **❓ What's it called when we call a method immediately after a previous method like we did above?**
 
-##### 💪 PRACTICE EXERCISE
+
+<br>
+<br>
+<br>
+
+
+
+#### 💪 &nbsp; PRACTICE EXERCISE
 
 **Using jQuery, add the Bootstrap class named "text-center" to the `<h1>` tag.**
 
-> Note: In case you're wondering, "NO", we would not ordinarily style our page using jQuery :) We're doing this just to learn about jQuery. jQuery should be used to change styling dynamically as needed by the app.
+*Note: In case you're wondering, "NO", we would not ordinarily style our page using jQuery :) We're doing this just to learn about jQuery. jQuery should be used to change styling dynamically as needed by the app.*
+
+<br>
+<br>
+<br>
+
+
 
 ### Does an Element have a class?
 
@@ -210,7 +281,7 @@ jQuery's has a `hasClass('<the class(es) as a string>')` method that returns `tr
 
 For example:
 
-```js
+```javascript
 var isStyled = $('p').hasClass('left-aligned big');
 // the isStyled var will be true if any <p> elements have 
 // the classes of "left-aligned" and "big"
@@ -218,9 +289,21 @@ var isStyled = $('p').hasClass('left-aligned big');
 
 There's also a `toggleClass(<the class as a string>)` method used to toggle a class.
 
+
+<br>
+<br>
+<br>
+
+
 ## Creating New Elements
 
 jQuery makes creating new elements easy. Lets add a hyperlink (`<a>`) to our page that, when clicked, takes our users to Zillow's website!
+
+
+<br>
+<br>
+<br>
+
 
 ### New Element from an HTML String
 
@@ -228,7 +311,7 @@ As you've seen, the jQuery function performs different functionality depending u
 
 One way is to just provide a string representing the HTML to the jQuery function:
 
-```js
+```javascript
 // returns a jQuery set of new DOM elements
 var $newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit Zillow.com</a>' );
 ```
@@ -237,25 +320,32 @@ var $newLink = $( '<br><br><a id="zillowLink" href="http://www.zillow.com">Visit
 
 Remember that in programming, there are usually multiple ways to accomplish the same thing, for example, these three code examples are all equivalent ways of creating a`<p class="bold"></p>` element:
 
-```js
+```javascript
 var $p = $('<p class="bold">');
 ```
 
-```js
+```javascript
 var $p = $('<p>', {class: 'bold'});
 ```
 
-```js
+```javascript
 var $p = $('<p>').addClass('bold');
 ```
 
 Which approach you use is up to you (or your boss).
 
+<br>
+<br>
+<br>
+
+
+
+
 ### Adding the Element to the DOM
 
 The `$newLink` variable now holds our newly created elements in memory, however, we still need to add them to the page. One of the ways is to use the `append()` method:
 
-```js
+```javascript
 $('body').append($newLink);
 ```
 
@@ -273,11 +363,26 @@ Other methods available include:
 
 The practice challenge will provide an opportunity to practice adding elements...
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ### Check it Out
 
 Refresh your page and there's the link!
 
 However, we have a UX problem - the link navigates us away from our app. Wouldn't it be better instead to open Zillow in another tab? We'll do that in the next section!
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Modifying Attributes
 
@@ -285,18 +390,36 @@ jQuery makes it easy to add/modify the attributes of an element with the `attr()
 
 Lets use it to add a `target` attribute to our link:
 
-```js
+```javascript
 $('#zillowLink').attr( "target", "_blank" );
 ```
 Refresh - Yay!!!
 
 There's also a `removeAttr()` method we can use to remove attributes.
 
+<br>
+<br>
+<br>
+
+
+
 ##### PAIR UP TO ANSWER THE FOLLOWING QUESTION
 
 What line of code would `console.log` the value of the Zillow link's `href` attribute?
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Adding Event Listeners
+
+
+<br>
+
+
 
 ### Basic Event Listeners
 
@@ -304,7 +427,7 @@ When our shiny green _Add Home_ button is clicked, we want to add one of the hom
 
 Here is how we can add a _click_ event listener to the _Add Home_ button:
 
-```js
+```javascript
 $('#addHome').on('click', function(evt) {
   console.log(evt);
 });
@@ -314,11 +437,17 @@ Refresh the page and open the console to see what the `evt` argument (jQuery's _
 
 jQuery's _event_ object is pretty much the same as native JavaScript's - yes, it has all of the useful properties...
 
+<br>
+<br>
+
 **❓ What property on the event object references the element that dispatched the event?**
+
+<br>
+<br>
 
 When googling, you will find plenty of jQuery code using a different syntax for adding a event listeners similar to this:
 
-```js
+```javascript
 $('#addHome').click(function(evt){
   console.log(evt, this);
 });
@@ -330,17 +459,29 @@ This syntax in fact uses the `.on` method internally.
 
 [These docs](http://api.jquery.com/category/events/) has a complete list of event methods.
 
+<br>
+<br>
+<br>
+
+
+
 ### Event Delegation
 
 We already learned about _event delegation_ in native JavaScript.
 
-**❓ Who can remind us what _event delegation_ is it?**
+<br>
+<br>
+
+**❓ Who can remind us what _event delegation_ is?**
+
+<br>
+<br>
 
 _Event delegation_ in jQuery is a bit more powerful because we can tell jQuery **which specific descendants** we're interested in listening to by specifying another CSS selector.
 
 For example, if you would like to listen for clicks on only `<div>` elements with a class of `circle`, you could use jQuery to set a delegated event listener on the `<body>` as follows:
 
-```js
+```javascript
 $('body').on('click', 'div.circle', function() {
   // 'this' will be a <div> with a class of 'circle'
 });
@@ -356,19 +497,31 @@ We just need to decide on which **ancestor** element to attach the delegated eve
 
 Our best bet would be the `<tbody>` element within the `<table>` because it's the nearest common element of the buttons we want to listen to:
 
-```js
+```javascript
 $('#homes tbody').on('click', 'button', function() {
   console.log(this);
 });
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ## More on DOM Manipulation
+
+<br>
+<br>
+<br>
+
+
 
 ### Removing Elements
 
 If our users click on the _Remove_ button, we obviously want to remove that home's row from the table:
 
-```js
+```javascript
 $('#homes tbody').on('click', 'button', function() {
   $(this).closest('tr').remove();
 });
@@ -380,11 +533,19 @@ Pretty cool!
 
 > Take a look at the `.find()` and `.children()` methods if you need to look for the nearest descendent going down the DOM instead of up the DOM like we just saw using the `closest()` method.
 
+
+<br>
+<br>
+<br>
+
+
+
+
 ### Removing Elements "Gracefully"
 
 Currently, the sudden disappearance of the home's row is a little harsh. Let's use one of jQuery's built-in [effects](http://learn.jquery.com/effects/intro-to-effects/) to help us out:
 
-```js
+```javascript
 $('#homes tbody').on('click', 'button', function() {
   $(this).closest('tr').fadeOut(1000, function() {
     // now that the tr is hidden, let's completely remove it from the DOM
@@ -397,11 +558,22 @@ Here, we are taking advantage of the fact that we can provide a callback functio
 
 That's better!
 
-## 💪 Practice Exercise - Add New Homes
 
-Now for a fun challenge.
+<br>
+<br>
+<br>
 
-You've already seen everything you need to make this happen! jQuery's there for you and Google and your fellow students are your friend.
+
+
+### 💪 Practice Exercise - Add New Homes
+
+**Now for a fun challenge.**
+
+**You've already seen everything you need to make this happen! jQuery's there for you and Google and your fellow students are your friend.**
+
+
+<br>
+
 
 ### Goal
 
@@ -412,7 +584,7 @@ When the "Add Home" button is clicked:
 
 First, copy this array of new home data to your script:
 
-```js
+```javascript
 var newHomes = [
   {address: "27569 Cedarwood Drive", sf: "2,535", bedrooms: 3, baths: 2.5, price: "$496,500"},
   {address: "316 Annandale Drive", sf: "1,326", bedrooms: 4, baths: 2, price: "$275,000"},
@@ -421,6 +593,12 @@ var newHomes = [
 ];
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ### Hints:
 
 - Don't forget that the jQuery function can create HTML by passing in a string that looks like HTML - just like we did when we added the Zillow hyperlink earlier in the lesson. This string of HTML can include everything you want to be inserted, the cells, classes, content, button, etc.
@@ -428,15 +606,32 @@ var newHomes = [
 - Consider using a template literal to interpolate the values of the home object's properties into the string before passing to the jQuery function.
 - It always helps to pseudocode (write the coding steps in plain, non-technical English).
 
+
+<br>
+<br>
+
 ### Bonus Challenge
 
 - Disable the _Add Home_ button if there are no more homes in the array.
+
+<br>
+<br>
+
+
+
 
 ### Super Bonus Challenge
 
 - Add a button, that when clicked, restores all previously removed homes and appends them to the bottom of the table.
 
 	Hint: When you remove an element like we did with the `<tr>`s, they are returned by the `remove` method.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## References
 

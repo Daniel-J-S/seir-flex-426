@@ -8,6 +8,12 @@ type: "lecture"
 
 # Intro to jQuery Part One
 
+<br>
+<br>
+<br>
+
+
+
 | Learning Objectives - SWBAT |
 | :---: | 
 | Explain the use case for jQuery|
@@ -16,6 +22,13 @@ type: "lecture"
 | Access the elements in a jQuery Object/Set|
 | Use jQuery to modify content of elements|
 | Use jQuery to modify the CSS of elements|
+
+<br>
+<br>
+<br>
+<br>
+
+
 
 
 ## Roadmap
@@ -28,7 +41,18 @@ type: "lecture"
 6. Modifying the CSS of Elements
 7. Further Study
 
+<br>
+<br>
+<br>
+
+
+
 ## 1. What is jQuery?
+
+<br>
+<br>
+
+
 
 ### JavaScript Library
 
@@ -45,6 +69,10 @@ BTW, you'll see the terms _library_ and _framework_ often used interchangably. Y
 - Frameworks often use libraries to implement their features. But, you'll never find a library using a framework.
 - For an analogy, you can think of libraries as the tools and frameworks as the construction crew.
 
+<br>
+<br>
+<br>
+
 ### Why Use jQuery?
 
 - **Browser Incompatibility**: jQuery provides a layer of abstraction that allows us not to worry about cross-browser compatibility issues. This, more than anything else, led to the widespread adoption of jQuery.  Developers no longer had to detect what browser their app was running in and code a bunch of if-else statements containing different code to do the same thing. However, today's modern browsers's Web APIs are very compatible.
@@ -52,6 +80,10 @@ BTW, you'll see the terms _library_ and _framework_ often used interchangably. Y
 - **Satisfaction**: Many developers consider using jQuery to be more "fun" than writing plain vanilla JS.
 
 > Today's vanilla JS, the Fetch API, CSS animations, and the popularity of front-end frameworks such as React have resulted in a huge decline in jQuery's usage on new projects.  However, as of now, it's still a skill that you want on your resume.
+
+<br>
+<br>
+<br>
 
 ### What Can jQuery Do?
 
@@ -64,17 +96,30 @@ Okay, so _what_ can it do?
 - Make binding to events more powerful.
 - Communicate with servers via AJAX (asynchronous JS and XML).
 
+<br>
+<br>
+<br>
+
 ### jQuery Documentation
 
 [jQuery's main documentation](http://api.jquery.com/) can be unwieldy.
 
 Those new to jQuery are best served by jQuery's newer [Learning Center](http://learn.jquery.com/) as the first reference.
 
+<br>
+<br>
+<br>
+
 ##### REVIEW QUESTIONS
 
 **❓ What is the difference between a _library_ and a _framework_?**
 
 **❓ What is the use case for jQuery? (what and when/why...)**
+
+<br>
+<br>
+<br>
+
 
 
 ## 2. Setup
@@ -102,6 +147,13 @@ intro-to-jquery/
 </body>
 </html>
 ```
+
+<br>
+<br>
+<br>
+
+
+
 ### Including jQuery
 
 To use any JavaScript library in our web app, we need to ensure that the script files are included in _index.html_.
@@ -110,12 +162,12 @@ There are two ways we can include jQuery:
 
 - [Download jQuery](http://jquery.com/download/) and save it somewhere within our project folder. Then use the familiar `<script>` tag like this:
   
-```js
+```javascript
   <script src="js/jquery-3.2.1.min.js"></script>
 ```
 - Use a [CDN](https://en.wikipedia.org/wiki/Content_delivery_network) (content delivery network) like this:
 
-```js
+```javascript
   <script
    src="https://code.jquery.com/jquery-3.2.1.min.js"
    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
@@ -136,6 +188,11 @@ Let's use a CDN to load the jQuery library:
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 </head>
 ```
+
+<br>
+<br>
+<br>
+
 
 ### Sample HTML
 
@@ -160,6 +217,10 @@ Now let's throw in some meaningless HTML that we can play with during the lesson
   <li>Make it easier to create apps that use AJAX (asynchronous JS and XML), in other words dynamically get data from, and send data to, servers.</li>
 </ul>
 ```
+<br>
+<br>
+<br>
+
 
 ## 3. Selecting Elements with jQuery
 
@@ -167,13 +228,23 @@ Before we can change the properties of DOM elements, we must first _select_ them
 
 You've already had some practice doing this with native JavaScript.
 
-**Q: What native JS methods have we used to select elements in the DOM?**
+**❓ What native JS methods have we used to select elements in the DOM?**
+
+<br>
+<br>
+<br>
+
 
 ### The _jQuery_ Function, aka - `$()`
 
 The _jQuery function_ provides different functionality - depending upon what we pass to it.
 
 The function `$()` is actually a shorthand alias for a function named `jQuery()`.
+
+<br>
+<br>
+<br>
+
 
 ### Using `$()` to Select Elements
 
@@ -189,11 +260,22 @@ To select elements by the _type_ of the element, use the name of the tag, just l
 All CSS3 selectors rules apply. For example, this is how you could select just the first `<li>` tag using the `:first-child` _psuedo class selector_<br>
 `$('li:first-child')`
 
-##### 💪 PRACTICE EXERCISE
+<br>
+<br>
+<br>
 
-In Chrome's console (`cmd-opt-J`), use jQuery to select the `<div>` that have a class of `big-and-round`.
 
-Unlike selection using `querySelectorAll`, which returns a `NodeList`, the jQuery `$()` returns something a little more powerful...
+### 💪 &nbsp;PRACTICE EXERCISE
+
+**In Chrome's console (`cmd-opt-J`), use jQuery to select the `<div>` that have a class of `big-and-round`.**
+
+**Unlike selection using `querySelectorAll`, which returns a `NodeList`, the jQuery `$()` returns something a little more powerful...**
+
+<br>
+<br>
+<br>
+
+
 
 ## 4. The jQuery Object/Set
 
@@ -230,11 +312,22 @@ Let's see what an element within the _jQuery Object_ array holds:
 
 Aha! Each element in the array is a **native DOM element just like the ones we worked with in vanilla JS last week.**.
 
-##### REVIEW QUESTIONS
+<br>
+<br>
+<br>
+
+
+#### REVIEW QUESTIONS
 
 **❓ What does the jQuery function return when it is passed a string representing a CSS3 selector rule?**
 
 **❓ The _jQuery Object_ contains an array of zero or more native _____ ______.**
+
+<br>
+<br>
+<br>
+
+
 
 ### Accessing the Native DOM Elements in a jQuery Object
 
@@ -242,9 +335,21 @@ As we've seen, the _jQuery Object_ contains an array of the selected native DOM 
 
 Those DOM elements can be accessed using bracket notation like with any other array.
 
-##### 💪 PRACTICE EXERCISE
+<br>
+<br>
+<br>
 
-Assuming you don't know how many `<li>` DOM elements are contained in the `$li` jQuery set, assign the last `<li>` in `$li` to a variable named `lastLi`.
+
+
+#### 💪 &nbsp; PRACTICE EXERCISE
+
+**Assuming you don't know how many `<li>` DOM elements are contained in the `$li` jQuery set, assign the last `<li>` in `$li` to a variable named `lastLi`.**
+
+<br>
+<br>
+<br>
+
+
 
 ### Adding jQuery Powers to Native DOM Elements
 
@@ -257,7 +362,7 @@ Although native DOM elements have numerous useful methods and properties by defa
 
 Luckily, we can turn any regular DOM element into a super-powered jQuery object by wrapping it in the jQuery function.  Still in the console, type...
 
-```js
+```javascript
 // Set a var to reference a raw DOM element
 var li = $li[0];
 
@@ -280,13 +385,19 @@ $el.toggle(function() {
 });
 ```
 
+
+<br>
+<br>
+<br>
+
+
 ### Iterating Elements in a jQuery Object
 
 Although the jQuery object is an array-like object, it does not have the built-in handy array methods like `forEach()`. However, jQuery usually provides it's own methods, typically named using less characters :)
  
 Instead of `forEach()`, jQuery provides the `each()` method on the jQuery set that can be used to iterate over each raw DOM element:
 
-```js
+```javascript
 $('li').each(function(idx) {
   console.log( idx + ': ' + this.innerHTML );
 });
@@ -296,20 +407,38 @@ Note that the `each()` method passes in an argument to the callback representing
 
 Additionally, jQuery has set the `this` keyword to point to the iteration's current native DOM element.
 
+
+<br>
+<br>
+<br>
+
+
 ### The jQuery `eq()` Method
 
 The `eq()` method can be used to index into the array of DOM elements like we did using square brackets.  However, `eq()` automatically wraps the DOM element in a jQuery object with all of the magic:
 
-```js
+```javascript
 var $li = $('li');
 
 // Fade out just the second <li>
 $li.eq(1).fadeOut();
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ## 5. Modifying the Content of Elements
 
 [This page from the Learning Center](http://learn.jquery.com/using-jquery-core/manipulating-elements/) contains methods and techniques we can use to manipulate elements.
+
+
+<br>
+<br>
+<br>
+
 
 ### The `html()` Method
 
@@ -317,13 +446,13 @@ jQuery's `html()` method is used for both getting & setting a DOM element's `inn
 
 Here's how we can use jQuery to change the text of the "inner" `<div>` from "Inner div" to "jQuery Rocks!":
 
-```js
+```javascript
 $('#inner').html('jQuery Rocks!');
 ```
 
 When using a setter to modify the DOM, the change applies to **all elements in the jQuery set**. For example:
 
-```js
+```javascript
 // Change the content of all <li>'s
 $('li').html('Hello SEI');
 ```
@@ -331,6 +460,13 @@ $('li').html('Hello SEI');
 That's pretty powerful stuff and would have required a little more code to accomplish without jQuery.
 
 > Note that native JS uses a **_data property_**, `innerHTML`, whereas jQuery uses the `html()` **_method_**.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Getters & Setters
 
@@ -345,7 +481,17 @@ For example, the `html()` method:
 
 > Note: In programming, when the same method performs different functionality when a different number and/or type of argument(s) are provided, we say that the method has been **overloaded**.
 
+
+<br>
+<br>
+<br>
+
+
+
 ## 6. Modifying the CSS of Elements
+
+<br>
+
 
 ### The `css()` Method
 
@@ -353,7 +499,7 @@ jQuery has a `css()` method used to get and set the CSS properties of elements.
 
 Here's how we can change the `color` and `font-weight` on all of the `<li>` elements:
  
-```js
+```javascript
 $('li').css( { color: 'green', 'font-weight': 'bold' } );
 ```
 
@@ -363,45 +509,72 @@ Notice how we had to write the key `font-weight` as a string - **why is this?**
 
 You can also use the _normalized_ names of the properties we've seen on the `style` property of DOM elements:
 
-```js
+```javascript
 $('li').css( { color: 'green', fontWeight: 'bold' } );
 ```
 
 The `css()` method also has a different _signature_ that can be used to set a single CSS property at a time:
 
-```js
+```javascript
 $('p').css('font-size', '30px');
 ```
 
-##### 💪 PRACTICE EXERCISE
+<br>
+<br>
+<br>
 
-In the console, write the code that will set the background color of _only the last_ `<li>` element to yellow.
+
+#### 💪 &nbsp; PRACTICE EXERCISE
+
+**In the console, write the code that will set the background color of _only the last_ `<li>` element to yellow.**
+
+
+<br>
+
 
 ### Chaining Methods
 
 Each jQuery method, **when used as a setter**, returns the updated jQuery object.  This allows us to **"chain"** methods like this:
 
-```js
+```javascript
 // Change our <p> tag's content and color
 $('p').html('Awesome things jQuery can do:').css('background-color', 'peachpuff');
 ```
 
 Often, you will see method chaining indented like this to enhance readability:
 
-```js
+```javascript
 // Change our <p> tag's content and color
 $('p')
   .html('Awesome things jQuery can do:')
   .css('background-color', 'peachpuff');
 ```
 
-##### REVIEW QUESTIONS
+<br>
+<br>
+<br>
+
+
+#### REVIEW QUESTIONS
 
 **❓ What jQuery method can be used to both get & set the content of the elements held in a jQuery object?**
 
 **❓ What jQuery method is used to change the styling of the elements held in a jQuery object?**
 
+
+<br>
+<br>
+<br>
+
+
 ## 7. Further Study
+
+
+<br>
+<br>
+<br>
+
+
 
 ### jQuery Plugins
 
@@ -409,6 +582,13 @@ There are lots of "plugins" available for jQuery that provide all sorts of funct
 
 
 [jQuery Plugin Registry](https://plugins.jquery.com/)
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Code Minification
 
@@ -419,6 +599,12 @@ Minification is the process of making a javascript file smaller by removing all 
 The **benefits** of using minified versions of libraries is that they use less memory; and take less time to load, parse and execute since they are significantly smaller - usually around a third in size.
 
 The **downside** of using minified code is that it can't easily be understood or debugged. We won't have to worry about debugging jQuery, but reading source code is a great way to learn coding techniques and in this case you would want to use the non-minified versions.
+
+
+<br>
+<br>
+<br>
+
 
 ## References
 
