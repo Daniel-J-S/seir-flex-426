@@ -12,6 +12,7 @@ topics: "JavaScript Review Weekend"
 #### JavaScript Review Weekend
 - [**Group Lab:** Space Battle OOP Lab](/frontend-fundamentals/week-2/day-3/labs/space-battle-oop-lab/)
 - [**Lab:** JavaScript Review Lab](/frontend-fundamentals/week-2/day-3/labs/javascript-review-lab/) - **Deliverable**
+- [**Bonus Activity:** Personal Website Code-Along Part 3](https://youtu.be/Ljj-n6r2H6o)
 
 
 
