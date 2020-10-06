@@ -1,11 +1,29 @@
+---
+track: "Frontend-Fundamentals"
+title: "Project One"
+type: "Project Prompt"
+topics: "Unit Projects"
+---
+
+
 # Project One: Your First Web Application
+
+<br>
+<br>
+
 
 ## Attendance
 
-There are typically no classes taught during project periods with the exception of optional review time or bonus lectures. However, we still take normal attendance for scheduled classroom days that fall on project periods, so you are still expected to be virtually present in our usual Zoom call. 
+There are typically no classes taught during project periods with the exception of optional review time or bonus workshops. 
+
+However, we still take normal attendance for scheduled classroom days that fall on project periods, so you are still expected to be virtually present in our usual Zoom call. 
 
 
 In most cases we'll place you in breakout rooms to work on your project, but it's your responsibility to be available for meetings with instructors as needed. 
+
+<br>
+<br>
+
 
 
 ## Project Details
@@ -21,9 +39,23 @@ In most cases we'll place you in breakout rooms to work on your project, but it'
   4. A `README.md` file with explanations of the technologies used, the approach taken, a link to your live site, installation instructions, unsolved problems, etc.
   5. Use AJAX to make a request to an external data source like OMDBapi and insert some of the data retrieved into the DOM
 
+
+<br>
+<br>
+
+
+
 #### Here are some "bonus features" but not required:
   1. Have one or more complex user interface modules such as a carousel, drag and drop, a sticky nav, tooltips, etc
   2. Look into <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">localstorage</a> so you can save data to the user's browser 
+
+
+
+<br>
+<br>
+
+
+
 
 ### 📋 List of API's
 
@@ -47,6 +79,11 @@ Lastly, the following sites congregates a bunch of API's together, so you can ta
   1. <a href="https://rapidapi.com/" target="_blank">https://rapidapi.com/</a>
    
 
+<br>
+<br>
+
+
+
 ## Final Note on Selecting an API
 
 Please be extremely thorough when finding an API you'd like to use for your project. In other words, please ensure you have properly vetted your API, by taking the time to read it's documentation and even "hitting a few endpoints". 
@@ -54,6 +91,10 @@ Please be extremely thorough when finding an API you'd like to use for your proj
 Do this **BEFORE** you decide to seek instructor approval. 
 
 This ensures you're taking the time to test the API and see how you can get it to respond with data and what that data looks like.
+
+<br>
+<br>
+
 
 
 ## Make A New Repo
@@ -76,13 +117,33 @@ From there, follow the instructions outlined by github themselves on [github.io]
 You can also host your github pages with your own domain name.<br>[Here is a walkthrough from namecheap, one web hosting service](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages)
 
 
+<br>
+<br>
+
+
+
+
 ## How to Submit Your Project
-Your project is due on Wednesday, May 13th at 7:30 EST. You will present your project and show your code to classmates and instructors.
+You will present your project and show your code to classmates and instructors.
+
+
+
+<br>
+<br>
+
+
 
 ## Where to go for help during project week
 1. Seek out help online
 2. Seek out help with your classmates
 3. Seek out help with our class Instructor Associate 
+
+
+
+<br>
+<br>
+
+
 
 ## Suggested Ways to Get Started
 
@@ -93,6 +154,11 @@ Your project is due on Wednesday, May 13th at 7:30 EST. You will present your pr
 * **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
 
 * **Consult documentation resources** (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
+
+<br>
+<br>
+
+
 
 ### Think about...
 
@@ -105,6 +171,10 @@ Did you follow code style guidance and best practices covered in class, such as 
 - **Problem Solving**  
 Are you able to defend why you implemented your solution in a certain way? <br> Can you demonstrate that you thought through alternative implementations?
 
+<br>
+<br>
+
+
 ## Example Project Functionality
 
 Below is a very simple project idea using OMDB and jQuery, notice how functionality was emphasized over style? <br>**(please note, your project should include more styling than this):** 
@@ -112,6 +182,12 @@ Below is a very simple project idea using OMDB and jQuery, notice how functional
 ![Example Project](https://i.imgur.com/L6hwHMR.gif)
 
 Consider framing your project around a problem. For example, if I were to create an app similar to the one above, maybe the problem is my friends and I always have weekly movie nights and we're starting to run out of movies to watch. So, I thought about creating an app where I can search for movies and see their summaries. Or just thought about creating an app to help schedule the movie nights with what movie we'll be watching, etc. 
+
+
+<br>
+<br>
+
+
 
 ## Useful Resources
 

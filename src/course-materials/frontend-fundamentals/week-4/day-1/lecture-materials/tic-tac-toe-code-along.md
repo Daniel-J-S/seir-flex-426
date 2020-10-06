@@ -24,12 +24,26 @@ Build a Tic-Tac-Toe game incorporating the three web app technologies you've wor
 - JavaScript
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Minimum Requirements
 - Display an empty tic-tac-toe board when the page is initially displayed.
 - A player can click on the nine cells to make a move.
 - Every click will alternate between marking an `X` and `O`.
 - Once occupied with an `X` or `O`, the cell cannot be played again.
 - Provide a `Reset Game` button that will clear the contents of the board.
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Getting Started
 
@@ -52,6 +66,13 @@ Build a Tic-Tac-Toe game incorporating the three web app technologies you've wor
 - Wire up your click event listener(s). Using a single listener with event bubbling is recommended but not required.
 
 - Lots of little functions!
+
+
+<br>
+<br>
+<br>
+
+
 
 ### Pseudocode
 Pseudocode is a detailed description of what an application must do, written in natural language instead of a particular programming language.
@@ -118,11 +139,25 @@ Now we can start filling some more detailed steps:
 ```
 Using a numbered outline is not required but helps organize the more complex steps into detailed steps.
 
+
+<br>
+<br>
+<br>
+
+
+
 ## Bonuses
 - Display whose turn it is ("X" or "O").
 - Provide win logic and display a winning message.
 - Provide logic for a cat's game (tie), also displaying a message.
 - Add your personal touch with unique styling.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Resources
 [DOM Events](http://www.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/)

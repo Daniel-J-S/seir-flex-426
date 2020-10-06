@@ -10,6 +10,12 @@ type: "lab"
 
 ![example](https://imgur.com/ulqJdjc.gif)
 
+
+<br>
+<br>
+<br>
+
+
 **The Lab is a Deliverable**
 
 - Create an app that uses a search form to show the weather in any city the user searches for.
@@ -23,6 +29,13 @@ type: "lab"
 - Create a project folder with the usual setup ... i.e. `.html`, `.css`, and `.js` files in their appropriate sub folders.
 
 - If the user searches for another city, make sure the page is only showing ONE city's forecast at a time (i.e. make sure the previous results don't stay on the page).
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Bonus
 
@@ -39,6 +52,11 @@ type: "lab"
   - User Stories
   - Wireframes (you place hosted images in your README)
   - Stretch Goals/Future Goals
+
+<br>
+<br>
+<br>
+
 
 ## Super Bonus
 

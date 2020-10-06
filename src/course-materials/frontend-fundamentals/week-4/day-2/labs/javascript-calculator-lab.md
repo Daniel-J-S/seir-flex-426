@@ -10,9 +10,15 @@ type: "lab"
 # JavaScript Calculator Lab
 
 
-![loop](https://i.imgur.com/LxaKMCj.png)
+![calculator](https://i.imgur.com/LxaKMCj.png)
 
 Build a calculator in your browser as a group! This Lab is **not a Deliverable**.
+
+<br>
+<br>
+<br>
+
+
 
 ## User Stories
 
@@ -25,9 +31,21 @@ User stories are a great way to break down what the different features of the we
 5. A user should be able to multiply numbers together.
 6. A user should be able to see the output.
 
+
+<br>
+<br>
+<br>
+
+
 ### Hungry for more?
 
 7. A user should be able to clear all operations and start from 0.
+
+
+<br>
+<br>
+<br>
+
 
 
 ## Setup  
@@ -49,17 +67,35 @@ calculator-lab/
 **Use your `README.md` to provide a description of your calculator project**
 
 
+<br>
+<br>
+<br>
+
+
+
 ## Design your calculator.
 
 1. Before you type out your HTML, draw out how you want your calculator to look and start thinking about how to structure your html. <br>Don't spend more than 10 minutes thinking through this part, but put something on paper before you code. This is your chance to create a [wireframe](http://www.creativebloq.com/web-design/jargon-wireframes-mockups-prototypes-51514898)!
 
 2. Think about where the input and output needs to be (buttons and display screen).
 
+
+<br>
+<br>
+<br>
+
+
 ## Write the html needed for the calculator
 
 1. Now that you have your wireframe drawn, use it to write the html needed for your calculator.
 
 2. Think about using ids and/or classes to help you select your elements.
+
+
+<br>
+<br>
+<br>
+
 
 
 ## Initial CSS
@@ -75,6 +111,13 @@ div {
 - Set a height and width on your elements
 
 
+<br>
+<br>
+<br>
+
+
+
+
 ## JS: Things to think about
 
 1. You can use jQuery or Vanilla JavaScript
@@ -87,6 +130,13 @@ div {
 
 
 **GOTCHA** `event.currentTarget` is a vanilla JS object. To make it into a jQuery object, you must 'wrap it in money' `$(event.currentTarget)` if you're using jQuery.
+
+
+<br>
+<br>
+<br>
+
+
 
 ## More
 

@@ -9,11 +9,13 @@ type: "lecture"
 
 # Intro to CSS Flexbox & Grid
 
+<br>
+<br>
+<br>
+<br>
 
 
-<br>
-<br>
-<br>
+
 
 
 ## Learning Objectives
@@ -27,6 +29,11 @@ type: "lecture"
 - Use CSS Grid for Two-Dimensional Layout 
 
 
+<br>
+<br>
+<br>
+
+
 ## Roadmap
 
 
@@ -38,6 +45,10 @@ type: "lecture"
 - Why use CSS Grid?
 - CSS Grid Fundamentals
 - Your First CSS Grid
+
+<br>
+<br>
+
 
 
 ### Setup
@@ -60,6 +71,11 @@ type: "lecture"
 	}
 	```
 
+<br>
+<br>
+<br>
+
+
 
 ### Intro to Flexbox & CSS Grid
 
@@ -75,7 +91,16 @@ type: "lecture"
 <img src="https://i.imgur.com/2ie45ct.png">
 
 
+<br>
+<br>
+<br>
+
+
+
 ## Flexbox
+
+
+<br>
 
 
 ### Why Use Flexbox?
@@ -88,6 +113,11 @@ type: "lecture"
 	- Spacing child elements within a container uniformly
 	
 	- Making the height of child elements laid out in columns the same even though they have a different amount of content.
+
+<br>
+<br>
+<br>
+
 
 
 ### Flexbox Fundamentals
@@ -103,6 +133,12 @@ type: "lecture"
 	The above would make all `<section>` elements **flex containers** and all direct children become **flex items**.
 
 - Let's open in a separate tab and briefly review what has become the [de facto guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Your First Flexbox
@@ -210,19 +246,31 @@ type: "lecture"
 	```
 	
 
+<br>
+<br>
+<br>
+
+
+
 ### Review Questions - Flexbox
 
 
-- **When an element has a CSS property of `display: flex;`, that element becomes a flex __________.**
+**❓ When an element has a CSS property of `display: flex;`, that element becomes a flex __________.**
 
-- **When an element has a CSS property of `display: flex;`, its direct children become flex __________.**
+**❓ When an element has a CSS property of `display: flex;`, its direct children become flex __________.**
 
-- **What value is the default for the `flex-direction` property?**
+**❓ What value is the default for the `flex-direction` property?**
 
-- **Is it `justify-content` or `align-items` that controls the alignment along the _cross axis_?**
+**❓ Is it `justify-content` or `align-items` that controls the alignment along the _cross axis_?**
+
+<br>
+<br>
+<br>
 
 
 ## CSS Grid
+
+<br>
 
 
 ### Why use CSS Grid?
@@ -232,6 +280,10 @@ type: "lecture"
 	1. A page layout like this (or as complex as you'd like):
 	<img src="https://i.imgur.com/tkBPUd0.png">
 	2. Any other "components" that would benefit from a grid-type layout such as a "profile card", in other words, CSS Grid doesn't have to apply to the whole page - it can be useful for laying out smaller "components" as well.
+
+<br>
+<br>
+
 
 
 ### CSS Grid Fundamentals
@@ -258,6 +310,11 @@ type: "lecture"
 
 - Let's open it up in a new tab and take a peek.
 
+<br>
+<br>
+<br>
+
+
 
 ### Your First CSS Grid
 
@@ -279,6 +336,10 @@ type: "lecture"
 
 - Using `height: 100vh;` will make the `<body>` fill the height of the browser window so that the `<footer>` is at the bottom.
 
+<br>
+<br>
+
+
 
 - Let's add the additional HTML required by the UI:
 
@@ -295,6 +356,11 @@ type: "lecture"
 	  <footer>FOOTER</footer>
 	</body>
 	```
+
+<br>
+<br>
+
+
 
 - Now for a touch of styling...
 
@@ -326,6 +392,10 @@ type: "lecture"
 	}
 	```
 
+<br>
+<br>
+
+
 - With the class defined - **go ahead and add it to the `<aside>`, `<main>` & `<footer>` elements.**
 
 - Using Chrome DevTools to explore the page's elements, we can make the following observations:
@@ -335,6 +405,8 @@ type: "lecture"
 - Now let's define the columns and rows necessary to layout our page as desired.  Go back, look at the UI we want to layout and answer these questions:
 	- **How many columns will we need to define?**
 	- **How many rows?**
+
+<br>
 
 - Okay, let's define those column and rows:
 
@@ -403,14 +475,23 @@ type: "lecture"
 - Note that the grid gaps cannot be styled - the grid's background simply shows through.
 
 
+<br>
+<br>
+<br>
+
+
 ### Flexbox & CSS Grid Practice Sites
 
 
 - We've covered the key properties of these two fine additions to CSS, but...
 
 - Here are a couple of really fun ways to learn more about them:
-	- [FLEXBOX FROGGY](https://flexboxfroggy.com/)
-	- [GRID GARDEN](https://cssgridgarden.com/)
+  - [Flexbox Froggy](https://flexboxfroggy.com/)
+  - [Grid Garden](https://cssgridgarden.com/)
+
+
+<br>
+<br>
 
 
 ### References

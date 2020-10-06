@@ -8,10 +8,13 @@ type: "lecture"
 
 # Intro to AJAX and JavaScript Promises with jQuery
 
+<br>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
+
+
 
 ## Lesson Objectives
 
@@ -19,6 +22,12 @@ type: "lecture"
 2. Explain promises
 3. Populate the DOM with AJAX data
 4. Make dynamic AJAX requests
+
+
+<br>
+<br>
+<br>
+
 
 
 ## Explain AJAX
@@ -34,6 +43,11 @@ type: "lecture"
 >When these technologies are combined in the Ajax model, web applications are able to make quick, incremental updates to the user interface without reloading the entire browser page. This makes the application faster and more responsive to user actions.
 
 >Although X in Ajax stands for XML, JSON is used more than XML nowadays because of its many advantages such as being lighter and a part of JavaScript. Both JSON and XML are used for packaging information in Ajax model.
+
+
+<br>
+<br>
+<br>
 
 
 ### Lesson Setup  
@@ -124,6 +138,13 @@ $.ajax({
 );
 ```
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Populate the DOM with AJAX data
 
 Now that we have successfully made an AJAX request, let's use the response from OMDB to populate the DOM. 
@@ -133,14 +154,14 @@ Let's add the below `html` to our practice project.
 
 ```html
 <h1>Movie Info</h1>
-<dl>
-  <dt>Title</dt>
-  <dd id="title"></dd>
-  <dt>Year</dt>
-  <dd id="year"></dd>
-  <dt>Rating</dt>
-  <dd id="rated"></dd>
-</dl>
+<main>
+  <h3>Title</h3>
+  <p id="title"></p>
+  <p>Year</p>
+  <p id="year"></p>
+  <p>Rating</p>
+  <p id="rated"></p>
+</main>
 ```
 
 Now let's use the data to populate the DOM:
@@ -168,6 +189,12 @@ $.ajax({
   });
 })
 ```
+<br>
+<br>
+<br>
+
+
+
 
 ## Make dynamic AJAX requests
 
@@ -176,12 +203,12 @@ Currently, we're getting data for Frozen every time the page loads.
 
 Let's let the user choose the movie:
 
-We'll use the below `html` to begin adding this functionality. Go ahead and place this form below the closing `<dl>` tag
+We'll use the below `html` to begin adding this functionality. Go ahead and place this form below the closing `<main>` tag
 
 ```html
 <!-- existing code above -->
 ...
-</dl>
+</main >
 
 <form>
   <input type="text" placeholder="Movie Title"/>
@@ -281,13 +308,26 @@ function render() {
  }
 ```
 
+<br>
+<br>
+<br>
+
+
+
 ## Review Questions
 
-❓**In your own words describe a JavaScript Promise**
+**❓ In your own words describe a JavaScript Promise**
 
-❓**What is AJAX?**
+**❓ What is AJAX?**
 
-❓**What jQuery method do we use to make AJAX requests**
+**❓ What jQuery method do we use to make AJAX requests**
+
+
+<br>
+<br>
+<br>
+
+
 
 ## Resources
 
