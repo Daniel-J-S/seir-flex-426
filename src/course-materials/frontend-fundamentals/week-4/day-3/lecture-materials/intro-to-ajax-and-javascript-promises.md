@@ -180,9 +180,9 @@ $.ajax({
   url:'https://www.omdbapi.com/?apikey=53aa2cd6&t=Frozen'
   }).then(
     (data) => {
-    $title.html(data.Title);
-    $year.html(data.Year);
-    $rated .html(data.Rated);
+    $title.text(data.Title);
+    $year.text(data.Year);
+    $rated .text(data.Rated);
   },
     (error) => {
    console.log('bad request: ', error);
@@ -258,9 +258,9 @@ function handleGetData(event) {
     
 
 function render() {
-    $title.html(movieData.Title);
-    $year.html(movieData.Year);
-    $rated.html(movieData.Rated);
+    $title.text(movieData.Title);
+    $year.text(movieData.Year);
+    $rated.text(movieData.Rated);
  }
 
 ```
@@ -302,9 +302,9 @@ function handleGetData(event) {
 }
 
 function render() {
-    $title.html(movieData.Title);
-    $year.html(movieData.Year);
-    $rated.html(movieData.Rated);
+    $title.text(movieData.Title);
+    $year.text(movieData.Year);
+    $rated.text(movieData.Rated);
  }
 ```
 
