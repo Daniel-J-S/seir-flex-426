@@ -18,7 +18,7 @@ type: "lab"
 
 Time for some practice laying out elements using Flexbox and CSS Grid!
 
-This lab is a **deliverable**.
+This lab is **not a deliverable**.
 
 <br>
 <br>
