@@ -6,9 +6,19 @@ day: 3
 type: "lecture"
 ---
 
+
 # JavaScript Callbacks and Arrow Functions
 
 This material was meant to be a resource for students to refer to later, but we'll briefly introduce/review these concepts, so we're familiar with them.
+
+
+
+<br>
+<br>
+<br>
+<br>
+
+
 
 
 ### What's a Callback Function and when Are They Used?
@@ -20,7 +30,7 @@ Since you've already used the array `forEach` method before, you've already used
 
 Don't run the following, let's just read the code...
 
-```js
+```javascript
 const colors = ['red', 'green', 'blue'];
 
 colors.forEach(function(color, idx) {
@@ -61,12 +71,19 @@ let result2 = compute(10, 5, subtract);
 
 **Review Question**
 
-❓ When the add and subtract functions are passed as arguments to the compute function - they are ___ functions.
+**❓ When the add and subtract functions are passed as arguments to the compute function - they are ___ functions.**
 
 Also, note that we are passing named functions `(add& sum)` instead of using an anonymous inline function like with the `forEach` earlier.
 
-
 ##### One of the best ways to learn about callbacks is to first understand their use-cases.
+
+
+
+<br>
+<br>
+
+
+
 
 **Here are three use-cases for callback functions:**
 
@@ -75,6 +92,14 @@ Also, note that we are passing named functions `(add& sum)` instead of using an 
 2. To provide a function to be executed each time an event happens - just like with the `addEventListener` example above.
 
 3. To provide a function to be executed when an _asynchronous_ process has completed.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ### Using Callbacks with Array Iterator Methods
 
@@ -90,13 +115,19 @@ JavaScript has designed the `forEach` method to:
 
 How many times would the anonymous callback function below be called?**:
 
-```js
+```javascript
 const flowers = ['rose', 'orchid', 'daisy'];
 	
 flowers.forEach(function(flower, idx) {
   console.log(`${idx + 1}) ${flower}`);
 });
 ```
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Using Callbacks with Asynchronous Functions
@@ -105,15 +136,21 @@ _What's an "asynchronous" method?_
 
 Before we can clearly understand what "asynchronous" means, it will help to confirm what **synchronous** code is.
 
+<br>
+<br>
+<br>
+
+
+
 #### Synchronous Code Execution
 
-So far, most of the code we've written **(...with the exception of the code we wrote for performing `AJAX` requests)** is **synchronous** code.
+So far, most of the code we've written is **synchronous** code.
 
 **Synchronous** code is when a line of code **completely finishes executing** before the next line of code runs.
 
 For example:
 
-```js
+```javascript
 const colors = ['red', 'green', 'blue'];
 
 console.log('BEFORE the forEach...');
@@ -127,13 +164,19 @@ console.log('AFTER the forEach...');
 
 This is exactly what you would expect - right?
 
+<br>
+<br>
+<br>
+
+
+
 #### Asynchronous Code
 
 Unlike the synchronous code we saw above, the code following an **asynchronous** function call continues to run before the async function finishes.
 
 For example:
 
-```js
+```javascript
 console.log('Code before the asynchronous function call');
 
 setTimeout(function() {
@@ -144,6 +187,13 @@ console.log('Code after the asynchronous function call');
 ```
 
 > We use `setTimeout` to "simulate" asynchronous code.
+
+<br>
+<br>
+<br>
+
+
+
 
 #### Why do Asynchronous Functions exist?
 
@@ -159,7 +209,13 @@ A good example of JavaScript's asynchronous programming model is the browser its
 
 How does the browser know when an image has been retrieved and is ready to be painted? By implementing **callbacks** and something known as the [event loop](https://www.youtube.com/watch?v=cCOL7MC4Pl0) (in this video, Jake Archibald from Google does an amazing job demonstrating the browser's event loop).
 
-##### Using Callbacks to Work with Asynchronous Code
+<br>
+<br>
+<br>
+
+
+
+#### Using Callbacks to Work with Asynchronous Code
 
 JavaScript provides two ways to run a function **after** an asynchronous operation completes its long running process:
 
@@ -167,11 +223,18 @@ JavaScript provides two ways to run a function **after** an asynchronous operati
 - **Promises**
 
 
-##### A Simulated Asynchronous Example
+<br>
+<br>
+<br>
+
+
+
+
+#### A Simulated Asynchronous Example
 
 The `getFriends()` function below is _synchronous_. It returns an array of friends immediately when invoked, and everything works just peachy:
 
-```js
+```javascript
 // Synchronous function
 function getFriends() {
   return ['Fred', 'Barney'];
@@ -189,7 +252,7 @@ friends.forEach(function(friend) {
 
 Now let's use a `setTimeout` within `getFriends()` to simulate a long-running asynchronous function (as if we were fetching the data across a network):
 
-```js
+```javascript
 // asynchronous function
 function getFriendsAsync() {
   // Using setTimeout to make getFriendsAsync
@@ -213,11 +276,19 @@ Running the above code will generate an error because the `friends` variable wil
 
 What's a programmer to do?
 
-##### Callbacks to the Rescue 
+
+<br>
+<br>
+<br>
+
+
+
+
+#### Callbacks to the Rescue 
 
 We're going to make it possible to work with the `getFriendsAsync` function by refactoring it to accept a callback function as follows:
 
-```js
+```javascript
 // Refactor to accept a callback function
 // to be called when the data is ready
 function getFriendsAsync(cb) {
@@ -247,28 +318,46 @@ Functions that are asynchronous must be **designed** to either:
 
 <hr>
 
+<br>
+<br>
+
+
+
+
 ### Intro to Arrow Functions:
 
 Arrow functions have a more terse syntax than regular functions (`function` keyword)
 
-```js
+```javascript
 // regular function
 let squares = [1, 2, 3].map(function (x) { return x * x });
 // arrow function
 let squares = [1, 2, 3].map(x => x * x);
 ```
+<br>
+<br>
+<br>
 
-##### A single parameter need not be wrapped in parens:
 
-```js
+
+
+#### A single parameter need not be wrapped in parens:
+
+```javascript
 x => { ... }  // one parameter
 () => { ... }  // no parameters
 (x, y) => { ... }  // two or more parameters
 ```
 
-##### The statement block of an arrow function behaves just like that of a regular function:
+<br>
+<br>
 
-```js
+
+
+
+#### The statement block of an arrow function behaves just like that of a regular function:
+
+```javascript
 const getGrade = score => {
   if (score === 100) return 'A+';
   score = Math.floor(score / 10);
@@ -276,16 +365,28 @@ const getGrade = score => {
 };
 ```
 
-##### If there's only a single **expression** (not a statement), curly braces are optional:
 
-```js
+<br>
+<br>
+
+
+
+#### If there's only a single **expression** (not a statement), curly braces are optional:
+
+```javascript
 const logThis = () => { console.log(this) };
 const logThis = () => console.log(this);
 ```
 
-##### Arrow functions will implicitly return the result of an **expression** without a block (braces):
+<br>
+<br>
 
-```js
+
+
+
+#### Arrow functions will implicitly return the result of an **expression** without a block (braces):
+
+```javascript
 const add = (x, y) => { return x + y };
 
 // Ideal single-statement arrow function
@@ -298,9 +399,15 @@ const add = (x, y) => { x + y };
 const add = (x, y) => return x + y;
 ```
 
-##### To implicitly return a JS object, wrap it in parens to avoid the curly braces of the object being interpreted as a statement block:
 
-```js
+<br>
+<br>
+
+
+
+#### To implicitly return a JS object, wrap it in parens to avoid the curly braces of the object being interpreted as a statement block:
+
+```javascript
 let todos = ['Buy milk', 'Mow lawn'];
 
 // Below line of code won't work - looks like a statement block
@@ -310,9 +417,16 @@ let todos = ['Buy milk', 'Mow lawn'];
 let todoObjects = todos.map(todo => ({todo: todo, done: false}));
 ```
 
-##### All arrow functions are expressions.  There's no such thing as an arrow function definition/declaration.
+<br>
+<br>
 
-```js
+
+
+
+
+#### All arrow functions are expressions.  There's no such thing as an arrow function definition/declaration.
+
+```javascript
 // Nope, syntax error (no declarations for arrow functions)
 add(x, y) => x + y;
 
@@ -322,7 +436,10 @@ const add = (x, y) => x + y;
 
 **Review Question**
 
-❓ In your own words describe what the term "implicit return" means.
+**❓ In your own words describe what the term "implicit return" means.**
+
+
+<br>
 
 
 ### Resources

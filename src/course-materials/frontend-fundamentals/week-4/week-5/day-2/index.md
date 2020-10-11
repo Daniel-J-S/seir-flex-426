@@ -13,5 +13,5 @@ topics: "Review Yesterday's AJAX Project - Official Start of Project 1"
 #### Review Yesterday's AJAX Project - Official Start of Project 1
 
 - **Activity:** *Final Approvals of All Projects Are Due This Evening*
-- [**Review:** Build An App That Uses NYPD API Data](/frontend-fundamentals/week-5/day-1/labs/build-an-app-that-uses-nyc-api-data/)
+- **Optional Review:** Build Another App That Uses AJAX
 - **Activity:** Students Start Project 1

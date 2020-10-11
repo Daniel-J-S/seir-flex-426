@@ -12,5 +12,6 @@ topics: "Build Another Project That Uses AJAX"
 
 #### Build Another Project That Uses AJAX
 - **Activity:** *Project 1 Approvals Begin* - _**(All Approvals Are Due Tomorrow)**_
-- [**Partially Guided Activity:** Build An App That Uses NYPD API Data](/frontend-fundamentals/week-5/day-1/labs/build-an-app-that-uses-nyc-api-data/)
+- **Guided Activity:** Build Another App That Uses AJAX
+- [**Activity:** Review Project One Requirements](/unit-projects/unit-one-project-requirements/)
 
