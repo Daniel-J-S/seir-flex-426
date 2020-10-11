@@ -8,12 +8,19 @@ type: "lab"
 
 # Build a Weather App With AJAX
 
-![example](https://imgur.com/ulqJdjc.gif)
+<br>
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/y4yKwJjOEnk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <br>
 <br>
 <br>
+<br>
+
+
+
 
 
 **The Lab is a Deliverable**
@@ -33,7 +40,20 @@ type: "lab"
 
 <br>
 <br>
+
+
+### Here's an example of the functionality:
+
 <br>
+<br>
+
+
+![example](https://imgur.com/ulqJdjc.gif)
+
+
+<br>
+<br>
+
 
 
 
