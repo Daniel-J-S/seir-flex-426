@@ -8,6 +8,15 @@ type: "lecture"
 
 # Intro to AJAX and JavaScript Promises with jQuery
 
+
+
+<br>
+<br>
+<br>
+<br>
+
+### [Click here](https://generalassembly.zoom.us/rec/share/UIi39u5b7v3QXQ_MzB0ZY2O6rIZ4XIoEfhyo5FhmAHFS73bEv5sMpPmuQGzXtCLt.pTBriulq87qAV5Hq?startTime=1602354040000) to access recording
+
 <br>
 <br>
 <br>
