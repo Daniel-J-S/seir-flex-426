@@ -18,5 +18,7 @@ topics: "Build Another Project That Uses AJAX"
 <br>
 <br>
 
-- [**Walk-through Recording:** Build Another App That Uses AJAX](https://generalassembly.zoom.us/rec/share/ZoZs4G7qZ6LhisPhNac2zEMmYz5JKn9dySefmtOpIXETZOTPFb4mOUCaajVsweYs.VyR4JRGBjLNiFOQ2?startTime=1602630251000)
+#### Recordings
+
+[**Walk-through Recording:** Build Another App That Uses AJAX](https://generalassembly.zoom.us/rec/share/ZoZs4G7qZ6LhisPhNac2zEMmYz5JKn9dySefmtOpIXETZOTPFb4mOUCaajVsweYs.VyR4JRGBjLNiFOQ2?startTime=1602630251000)
 
