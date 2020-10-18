@@ -1,13 +1,17 @@
 ---
 track: "Frontend Fundamentals"
 title: "JavaScript Callbacks and Arrow Functions"
-week: 5
-day: 3
+week: 6
+day: 1
 type: "lecture"
 ---
 
 
 # JavaScript Callbacks and Arrow Functions
+
+<br>
+<br>
+
 
 This material was meant to be a resource for students to refer to later, but we'll briefly introduce/review these concepts, so we're familiar with them.
 
@@ -30,6 +34,11 @@ Since you've already used the array `forEach` method before, you've already used
 
 Don't run the following, let's just read the code...
 
+<br>
+<br>
+
+
+
 ```javascript
 const colors = ['red', 'green', 'blue'];
 
@@ -37,6 +46,10 @@ colors.forEach(function(color, idx) {
   console.log(`${idx + 1} - ${color}`);
 });
 ```
+
+
+<br>
+<br>
 
 In the above, the _anonymous inline function_ being passed to `forEach` as its one and only argument - is a callback function.
 
@@ -46,9 +59,19 @@ Of course, when a function takes a callback as input, it is likely doing so with
 
 In addition to using callbacks functions with forEach, you also used them when you added event listeners in your `Tic-Tac-Toe` game like so:
 
+
+<br>
+<br>
+
+
 ```javascript
 gameboard.addEventListener('click', handleClick);
 ```
+
+
+<br>
+<br>
+
 
 Now let's look at a more comprehensive example of how we can use callbacks by trying out this code:
 
@@ -68,6 +91,11 @@ function compute(a, b, op) {
 let result1 = compute(10, 5, add);
 let result2 = compute(10, 5, subtract);
 ```
+
+
+<br>
+<br>
+
 
 **Review Question**
 
@@ -115,6 +143,10 @@ JavaScript has designed the `forEach` method to:
 
 How many times would the anonymous callback function below be called?**:
 
+<br>
+<br>
+
+
 ```javascript
 const flowers = ['rose', 'orchid', 'daisy'];
 	
@@ -150,6 +182,11 @@ So far, most of the code we've written is **synchronous** code.
 
 For example:
 
+
+<br>
+<br>
+
+
 ```javascript
 const colors = ['red', 'green', 'blue'];
 
@@ -175,6 +212,11 @@ This is exactly what you would expect - right?
 Unlike the synchronous code we saw above, the code following an **asynchronous** function call continues to run before the async function finishes.
 
 For example:
+
+<br>
+<br>
+
+
 
 ```javascript
 console.log('Code before the asynchronous function call');
@@ -272,6 +314,11 @@ friends.forEach(function(friend) {
 })
 ```
 
+<br>
+<br>
+
+
+
 Running the above code will generate an error because the `friends` variable will not be an array of data before we call `forEach` on it.
 
 What's a programmer to do?
@@ -306,6 +353,10 @@ getFriendsAsync(function(friends) {
   });
 });
 ```
+
+<br>
+<br>
+
 
 The `getFriendsAsync` function has been refactored to accept a callback function, which it invokes at the appropriate time - in this case, when the `setTimeout` times out.
 
@@ -434,11 +485,23 @@ add(x, y) => x + y;
 const add = (x, y) => x + y;
 ```
 
+<br>
+<br>
+<br>
+<br>
+
+
+
 **Review Question**
+
+
+<br>
 
 **❓ In your own words describe what the term "implicit return" means.**
 
 
+<br>
+<br>
 <br>
 
 
