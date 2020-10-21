@@ -15,7 +15,6 @@ type: "lecture"
 <br>
 
 
-
 ## Learning Objectives
 
 
@@ -26,6 +25,12 @@ type: "lecture"
 - Create and Use Node Modules
 
 - Use NPM to Install External Packages
+
+
+<br>
+<br>
+<br>
+
 
 
 ## Roadmap
@@ -41,6 +46,11 @@ type: "lecture"
 - Essential Questions
 - Node.js Module Practice
 
+<br>
+<br>
+<br>
+
+
 #### Setup
 
 
@@ -50,10 +60,16 @@ type: "lecture"
    
 3. Open the folder in `VS Code`
 
-```
+```shell
 node-practice/
      script.js
 ```        
+
+<br>
+<br>
+<br>
+
+
 
 ### What is Node.js?
 
@@ -89,6 +105,12 @@ node-practice/
 - Node's package ecosystem is the largest open source ecosystem in the world.
 
 
+<br>
+<br>
+<br>
+
+
+
 #### Node's REPL
 
 
@@ -119,6 +141,11 @@ node-practice/
 - Press `control-c` twice to exit REPL.
 
 
+<br>
+<br>
+
+
+
 ## Why the Enthusiasm for Node.js?
 
 
@@ -136,6 +163,11 @@ node-practice/
 
 <p>Most importantly, wide adoption of Node.js results in strong demand for Node developers!</p>
 
+<br>
+<br>
+<br>
+
+
 
 ## Why is Node.js so Performant?
 
@@ -144,6 +176,9 @@ node-practice/
 - A typical Node server is capable of supporting _tens of thousands_ of concurrent connections!
 
 - For more information regarding perfomance, check the references at the end of this lesson.
+
+
+<br>
 
 
 #### Asynchronous Programming Model
@@ -157,18 +192,21 @@ node-practice/
 <br>
 <br>
 
-#### ❓ Review Questions - What is Node.js?
+
+#### Review Questions - What is Node.js?
 
 
-1. **Is Node.js a programming language?**
+**❓ Is Node.js a programming language?**
 
-2. **What is the primary reason why Node/Express applications are so performant?**
+**❓ What is the primary reason why Node/Express applications are so performant?**
 
-3. **Is...`const el = document.getElementById('my-list');`a valid JavaScript statement in a Node app?**
+**❓ Is...`const el = document.getElementById('my-list');`a valid JavaScript statement in a Node app?**
 
 
 <br>
 <br>
+
+
 
 #### Now that you've learned how awesome Node is, let's see how it runs JavaScript programs
 
@@ -178,7 +216,7 @@ node-practice/
 
 - Let's type the following JavaScript in **script.js**:
 
-	```js
+	```javascript
 	const multiply = (a, b) => a * b;
 		
 	let n = multiply(5, 8);
@@ -197,8 +235,13 @@ node-practice/
 	
 - Yes, running a Node app is that easy!
 
+<br>
+<br>
+<br>
 
-#### So far, so good!Now let's learn aboutNode Modules
+
+
+#### So far, so good! <br> Now let's learn about Node Modules
 
 
 #### Node Modules
@@ -213,7 +256,7 @@ node-practice/
 
 - Let's use the core `fs` module to create a file. Replace the code in **script.js** with this:
 
-	```js
+	```javascript
 	const fs = require('fs');
 	console.log(typeof fs);
 	
@@ -247,7 +290,7 @@ node-practice/
 
 - Let's see what the `module` object it looks like:
 
-	```js
+	```javascript
 	// days-of-week.js
 	
 	console.log(module);
@@ -267,10 +310,10 @@ node-practice/
 
 - Let's verify this by assigning a string to it:
 
-	```js
+	```javascript
 	// days-of-week.js
 	
-	module.exports = 'SEIR-FLEX';
+	module.exports = 'SEI';
 	```
 
 - Now let's require the module inside of **script.js**...
@@ -278,7 +321,7 @@ node-practice/
 
 - Replace the code in **script.js** with this:
 
-	```js
+	```javascript
 	// script.js
 	
 	let daysOfWeek = require('./days-of-week');
@@ -291,16 +334,27 @@ node-practice/
 - It is convention to name the variable the same as, or similar to, the name of the module being required. 
 
 
+<br>
+<br>
+<br>
+
+
 #### Node Modules - Practice
 
 
 - **You Do:** Instead of exporting a string, change **days-of-week.js** to export the following array instead:
 
-	```js
+	```javascript
 	['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
 	```
 
 - Run **script.js** to check it out.
+
+
+<br>
+<br>
+<br>
+
 
 
 #### Node Modules
@@ -317,7 +371,7 @@ node-practice/
 
 - Let's try it out:
 
-	```js	
+	```javascript	
 	module.exports.weekdays = 
 		['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 	
@@ -330,7 +384,7 @@ node-practice/
 
 - Now let's test it in **script.js**:
 
-	```js
+	```javascript
 	let daysOfWeek = require('./days-of-week');
 	
 	let day = daysOfWeek.getWeekday(5);
@@ -349,20 +403,25 @@ node-practice/
 <br>
 <br>
 
-#### ❓ Review Questions - Modules
+#### Review Questions - Modules
 
 
-1. **What are modules used for in Node?**
+**❓ What are modules used for in Node?**
 
-2. **How many modules can be defined in a single file?**
+**❓ How many modules can be defined in a single file?**
 
-3. **What is the special object we use in our module to attach or assign functionality to?**
+**❓ What is the special object we use in our module to attach or assign functionality to?**
 
-4. **How many times can we `require` a module in our program?**
+
+**❓ How many times can we `require` a module in our program?**
 
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Now that you've created and used your own modules, let's see how we can install open-source packages and use the modules they contain
 
@@ -407,7 +466,7 @@ node-practice/
 
 - We can now require the `request` module in **script.js** and make HTTP requests:
 
-	```js
+	```javascript
 	// Don't specify path when module is in node_modules
 	const request = require('request');
 	request(
@@ -428,7 +487,7 @@ node-practice/
 
 - Examining the `packages.json` file reveals that it's structured something like this:
 
-	```js
+	```javascript
 	{
 	  "name": "first-node",
 	  "version": "1.0.0",
@@ -452,6 +511,12 @@ node-practice/
 
 - To demonstrate this, first delete the `node_modules` file, then...
 
+<br>
+<br>
+<br>
+
+
+
 
 
 ### NPM - Node Package Manager (cont.)
@@ -463,6 +528,12 @@ node-practice/
 	$ npm install
 	```
 	Witness the return of `node_modules`!
+
+
+<br>
+<br>
+<br>
+
 
 
 
@@ -484,7 +555,7 @@ node-practice/
 <p style="text-align:left">A module named "random" that has a function <strong>assigned</strong> to the <em>module.exports</em> and returns a random number, as an integer, between two numbers provided, inclusive, as arguments; so that we could use it in our program like this:</p>
 
 
-```js
+```javascript
   const random = require('./utilities/random');
   for (let i = 0; i < 10; i++) {
   	console.log( random(100, 200) );
@@ -505,7 +576,7 @@ node-practice/
 - `circumference`: Computes the circumference of a circle (radius X 2 X Pi), with the radius provided as an argument. 
 - Hint: This is JS, so `Math.PI` is available.
 
-```js
+```javascript
   const circle = require('./utilities/circle');
   console.log( circle.area(50) );  // 7853.98...
   console.log( circle.circumference(75) );  // 471.23...

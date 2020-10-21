@@ -45,7 +45,7 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### Unit Two: Backend Fundamentals - (Locked)
+### [Unit Two: Backend Fundamentals](/backend-fundamentals)
 
 | Week  | Topics |
 | ----- | ------ |

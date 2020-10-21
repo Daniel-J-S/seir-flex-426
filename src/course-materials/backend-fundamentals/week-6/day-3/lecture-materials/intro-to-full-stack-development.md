@@ -29,6 +29,12 @@ type: "lecture"
 - Describe a Process for Building a Full-stack App
 
 
+<br>
+<br>
+<br>
+
+
+
 ## Roadmap
 
 
@@ -46,6 +52,11 @@ type: "lecture"
 - How HTTP Requests Run Code on the Server
 - Essential Questions
 
+<br>
+<br>
+<br>
+
+
 
 ## Full-Stack Web Development
 
@@ -53,11 +64,17 @@ type: "lecture"
 #### Why Learn Full-Stack Web Development?
 
 
-- According to [this report by U.S. News](https://www.usnews.com/info/blogs/press-room/articles/2018-01-10/us-news-announces-the-2018-best-jobs) the best job to have is that of a **Software Developer**!
+- According to [this report by U.S. News](https://money.usnews.com/careers/best-jobs/rankings/the-100-best-jobs) the best job to have is that of a **Software Developer**!
 
-- Further, according to [this StackOverflow Developer Survey](https://insights.stackoverflow.com/survey/2017#developer-roles), **the role of Web Developer is by far the most popular** as compared to other developer roles.
+- Further, according to [this StackOverflow Developer Survey](https://insights.stackoverflow.com/survey/2020#overview), **the role of Web Developer is by far the most popular** as compared to other developer roles.
 
 - The bottom-line is: **Web Developers are in demand**!
+
+
+<br>
+<br>
+<br>
+
 
 
 #### What is a Full-Stack Developer?
@@ -73,12 +90,22 @@ type: "lecture"
 
 - Is a graduate of SEI!
 
+<br>
+<br>
+<br>
+
+
 
 #### Web Technology Stack 
 
 - In this unit, we'll learn 3 of the 4 technologies that comprise the MERN Stack, one of the most popular technology stacks in the industry.
 
 	<img src="https://i.imgur.com/FKGehuM.jpg" style="display: inline-block;margin:auto;height:400px">
+
+
+<br>
+<br>
+
 
 
 ## Client/Server Architecture
@@ -99,6 +126,11 @@ type: "lecture"
 - Note that during development, your computer will plays the role of BOTH client and web server.
 
 - The PostgreSQL & MongoDB database servers will also be running on your computer, however, we will move to a cloud-based MongoDB server as soon as it's practical.
+
+<br>
+<br>
+<br>
+
 
 
 ## HTTP
@@ -129,6 +161,12 @@ type: "lecture"
 - HTTP itself does not maintain any information regarding previous requests between client and server - this makes HTTP a _stateless_ protocol. However, it is possible to remember "state" using cookies or by sending data in the request's body (data payload).
 
 
+<br>
+<br>
+<br>
+
+
+
 #### Let's Make an HTTP Request
 
 
@@ -143,6 +181,10 @@ type: "lecture"
 - In the pane on the right you will find all of the information about a particular HTTP request. Select the _Headers_ tab and explore!:
 
 	<img src="https://i.imgur.com/44W3zEE.png" style="width:80%">
+
+<br>
+<br>
+
 
 
 #### Anatomy of an HTTP Request Message
@@ -182,6 +224,12 @@ type: "lecture"
 - Although the HTTP protocol is text-based, the content in the body can be binary, for example, images are typically transferred in binary format.
 
 
+<br>
+<br>
+<br>
+
+
+
 #### The Two Key Components of an HTTP Request 
 
 
@@ -194,6 +242,11 @@ type: "lecture"
 - **The two key components of any HTTP request are**:
 	- The **HTTP method** (`GET` in the example above), and
 	- The _request target_, which is usually a **URL** (the above example is more accurately a **URI**)
+
+
+<br>
+<br>
+<br>
 
 
 #### HTTP Methods
@@ -211,6 +264,11 @@ type: "lecture"
 	| POST | The POST method is used to create a resource on the server. |
 	| PUT | The PUT method replaces a resource with the request payload(data in the body). |
 	| DELETE | The DELETE method deletes the specified resource. |
+
+
+<br>
+<br>
+<br>
 
 
 #### URL
