@@ -1,8 +1,8 @@
 ---
-track: "Frontend Fundamentals"
+track: "Backend Fundamentals"
 title: "JavaScript Callbacks and Arrow Functions"
 week: 6
-day: 1
+day: 3
 type: "lecture"
 ---
 

@@ -12,7 +12,7 @@ topics: "Project 1 Presentations"
 
 #### Project 1 Presentations
 - **Activity:** Students Present Project 1
-- [**Activity:** "Install-Fest" Phase Two](/frontend-fundamentals/week-6/day-2/lecture-materials/install-fest-phase-two/)
+
 
 
 
