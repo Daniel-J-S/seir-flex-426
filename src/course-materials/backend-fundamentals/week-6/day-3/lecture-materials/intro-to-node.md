@@ -15,6 +15,23 @@ type: "lecture"
 <br>
 
 
+### [Click Here](https://generalassembly.zoom.us/rec/share/16v82jPBYnqsHHzrWW45Cna77H1ZO3acg96ijqM-BiQVDPRCMen5NhedilPcBpBQ.5TnVnIjjuR3EAAJp?startTime=1603566186000) to access recording
+
+
+<br>
+<br>
+<br>
+
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/16v82jPBYnqsHHzrWW45Cna77H1ZO3acg96ijqM-BiQVDPRCMen5NhedilPcBpBQ.5TnVnIjjuR3EAAJp?startTime=1603575830000) to access exercise walk-through
+
+
+<br>
+<br>
+<br>
+
+
+
 ## Learning Objectives
 
 
