@@ -8,6 +8,11 @@ type: "lab"
 
 # My Dev Skills - Part 2
 
+<br>
+<br>
+<br>
+
+
 
 ## Intro
 
@@ -24,6 +29,10 @@ This lab builds upon the `express-dev-skills` project you created in the _My Dev
 
 <br>
 <br>
+<br>
+
+
+
 
 ## Exercises
 
@@ -43,6 +52,10 @@ Note: All routes should follow those described in the [RESTful/Resourceful routi
 
 <br>
 <br>
+<br>
+
+
+
 
 ## Bonus Exercises
 
@@ -52,6 +65,9 @@ Note: All routes should follow those described in the [RESTful/Resourceful routi
 
 <br>
 <br>
+<br>
+
+
 
 ##### Hints
 

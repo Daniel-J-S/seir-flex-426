@@ -8,6 +8,10 @@ type: "lecture"
 
 # Express Routers & Controllers
 
+<br>
+<br>
+<br>
+
 
 
 ### Learning Objectives
@@ -17,6 +21,12 @@ type: "lecture"
 	- Get More Practice Building An Express App
 	- Implement Best Practice Routing
 	- Organize App Logic Into Controllers
+
+
+<br>
+<br>
+<br>
+
 
 
 ### Roadmap
@@ -46,6 +56,8 @@ For today's setup, we'll create a new express project name `express-todos`
 
 <br>
 <br>
+<br>
+
 
 **This is what your directory structure should look like**
 
@@ -57,6 +69,9 @@ express-todos/
 
 <br>
 <br>
+<br>
+
+
 
 - Now, let's install express...
 
@@ -67,10 +82,13 @@ express-todos/
 
 <br>
 <br>
+<br>
+
+
 
 - let's set up our initial boilerplate code...
 
-```js
+```javascript
 // Require Modules
 const express = require('express');
 
@@ -116,6 +134,10 @@ app.listen(3000, function() {
 
 <br>
 <br>
+<br>
+
+
+
 
 - Let's add this boilerplate to `index.ejs`
 
@@ -151,6 +173,10 @@ express-todos/
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Starting the Application
 
@@ -172,6 +198,10 @@ Express is listening on port 3000
 ```
 <br>
 <br>
+<br>
+
+
+
 
 #### MVC Code Organization
 
@@ -200,6 +230,10 @@ Express is listening on port 3000
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Best Practice Routing
 
@@ -234,6 +268,10 @@ Express is listening on port 3000
 
 <br>
 <br>
+<br>
+
+
+
 
 #### The Express <em>Router</em> Object
 
@@ -241,7 +279,7 @@ Express is listening on port 3000
 - This router object comes exported from the `express` module. 
 - We'll also need to export our index router's functionality so we can require and mount it to `server.js`.
 
-```js
+```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -252,11 +290,15 @@ module.exports = router;
 
 <br>
 <br>
+<br>
+
+
+
 
 
 - Now, we're going to remove route handler from `server.js` and place it inside of `routes/index.js`.
 
-```js
+```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -270,7 +312,7 @@ module.exports = router;
 
  Next, we'll `require` our router module inside of `server.js`
 
-```js
+```javascript
 // Require Modules
 const express = require('express');
 const indexRouter = require('./routes/index');
@@ -285,7 +327,7 @@ const app = express();
 
 - Then we'll mount our router to the bottom of the middleware stack with the `app.use` method.
 
-```js
+```javascript
 // Mount Routes
 app.use('/', indexRouter);
 ```
@@ -294,6 +336,10 @@ app.use('/', indexRouter);
 
 <br>
 <br>
+<br>
+
+
+
 
 ...Oh no! There's an error now! It's coming from `routes/index.js` **does anybody see it?**
 
@@ -312,7 +358,7 @@ ReferenceError: app is not defined
 For router objects created by `express.Router()`, we can also call `.get()`
 
 
-```js
+```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -326,40 +372,53 @@ module.exports = router;
 
 <br>
 <br>
+<br>
+
+
+
 
 
 
 Let's say you have a `router` object inside of `routes/todos.js` that defines a route like this:
 
-```js
+```javascript
 router.get('/', function(req, res) {...
 ```
 
 and mounted like this:
 
-```js
+```javascript
 app.use('/todos', todoRouter);
 ```
-	**What is the actual path of the route?**
+
+**What is the actual path of the route?**
 
 <br>
 <br>
+<br>
+
+
+
 
 - Another example, let's say you have a `router` object that defines a route like this:
 
-```js
+```javascript
 router.get('/today', function(req, res) {...
 ```
 
 and mounted like this:
 
-```js
+```javascript
 app.use('/calendar', calendarRouter);
 ```
 	**What is the actual path of that route?**
 
 <br>
 <br>
+<br>
+
+
+
 
 #### To-Do Redo
 
@@ -372,6 +431,10 @@ _As you probably noticed, we're building another todo app for more practice -- t
 
 <br>
 <br>
+<br>
+
+
+
 
 #### To-Do Redo - <span style="text-transform:lowercase">index.ejs</span>
 
@@ -390,6 +453,11 @@ $ touch views/todos/index.ejs
 
 <br>
 <br>
+<br>
+
+
+
+
 
 - Here's the EJS from our last lesson, but a slight polishing touch.
 
@@ -408,6 +476,10 @@ $ touch views/todos/index.ejs
 
 <br>
 <br>
+<br>
+
+
+
 
 #### To-Do Redo - Todo Model
 
@@ -424,7 +496,7 @@ $ touch models/todo.js
 
 - Here's the code from our last lesson, just slightly refactored:
 
-```js
+```javascript
 module.exports = {
  getAll
 };
@@ -442,6 +514,10 @@ function getAll() {
 
 <br>
 <br>
+<br>
+
+
+
 
 #### To-Do Redo - Routing
 
@@ -455,6 +531,10 @@ touch routes/todos.js
 
 <br>
 <br>
+<br>
+
+
+
 
 #### The set up for the todos router module will be a practice activity for you to try and create on your own.
 
@@ -473,7 +553,7 @@ module.exports = router;
 
 Require it inside of `server.js` ...
 
-```js
+```javascript
 // Require modules
 const express = require('express');
 const indexRouter = require('./routes/index');
@@ -483,7 +563,7 @@ const todosRouter = require('./routes/todos');
 
 Then mount it inside of `server.js` ...
 
-```js
+```javascript
 // Mount routes
 app.use('/', indexRouter);
 app.use('/todos', todosRouter); 
@@ -491,13 +571,17 @@ app.use('/todos', todosRouter);
 
 <br>
 <br>
+<br>
+
+
+
 
 Let's add an `index` route for our todos resource inside of `routes/todos.js` ... by the way, an **"index"** route is simply a route designed to map to a response that shows all the instances of a resource in a single view.
 
 
 - We'll place the code below inside of **routes/todos.js** right below our `require` statements, but right above our `module.exports`.
 
-```js
+```javascript
 
 router.get('/', function(req, res) {
  res.render('todos/index');
@@ -512,7 +596,7 @@ router.get('/', function(req, res) {
 
 - We first need to require the Todo model as follows:
 
-```js
+```javascript
 const express = require('express');
 const router = express.Router();
 // require the Todo model
@@ -524,7 +608,7 @@ It's convention to name model variables singularly and with upper-camel-casing.
 
 - With the model required, we can now update our route handler
 
-```js
+```javascript
 router.get('/', function(req, res) {
  res.render('todos/index', {
    todos: Todo.getAll()
@@ -563,6 +647,10 @@ router.get('/', function(req, res) {
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Controllers
 
@@ -585,7 +673,7 @@ router.get('/', function(req, res) {
 
 - Let's copy **just the function part** of the following route definition:
 
-```js
+```javascript
 router.get('/', function(req, res) {
  res.render('todos/index', {
    todos: Todo.getAll()
@@ -599,7 +687,7 @@ router.get('/', function(req, res) {
 
 - The pasted and refactored code should look like:
 
-```js
+```javascript
 module.exports = {
  index
 };
@@ -618,23 +706,24 @@ function index(req, res) {
 
 - But, the controller does! Let's go cut it from **routes/todos.js** and paste it at the top of **controllers/todos.js**:
 
-```js
+```javascript
 const Todo = require('../models/todo');
 ```
 
 
 - Back in **routes/todos.js**, we need to require the controller in order to have access to its actions (methods):
 
-```js
+```javascript
 const todosCtrl = require('../controllers/todos');
 ```
 
 - Now, the refactor:
 
-```js
+```javascript
 router.get('/', todosCtrl.index);
 ```
-	How clean is that?!?!
+
+**How clean is that?!?!**
 
 - Refresh and everything should be hunky-dory!
 
@@ -656,6 +745,10 @@ router.get('/', todosCtrl.index);
 
 <br>
 <br>
+<br>
+
+
+
 
 #### URL/Route Parameters
 
@@ -704,7 +797,8 @@ GET /todos/:id
      <li>
        <a href="/todos/<%= idx %>"><%= todo.text %></a>
 ```
-	Don't forget to add the `idx` parameter in the callback function
+
+**Don't forget to add the `idx` parameter in the callback function**
 
 
 - Refresh the page and hover over the links. Looking at the bottom-left of the window will verify the paths look correct!
@@ -721,7 +815,7 @@ GET /todos/:id
 
 - Add the **show** route below the **index** route as follows:
 
-```js
+```javascript
 router.get('/', todosCtrl.index);
 router.get('/:id', todosCtrl.show);
 ```
@@ -732,7 +826,7 @@ router.get('/:id', todosCtrl.show);
 
 - Add the `show` action inside of **controllers/todos.js** and don't forget to export it!
 
-```js
+```javascript
 function show(req, res) {
  res.render('todos/show', {
    todo: Todo.getOne(req.params.id),
@@ -746,7 +840,7 @@ function show(req, res) {
 
 - A route defined like this:
 
-```js
+```javascript
 router.get('/category/:catName/page/:pageNo', ...);
 ```
 and a link like this:
@@ -756,7 +850,7 @@ and a link like this:
 ```
 would have a `req.params` available in the controller of:
 
-```js
+```javascript
 console.log(req.params.catName) //=> "socks"
 console.log(req.params.pageNo) //=> "2"
 ```
@@ -768,7 +862,7 @@ console.log(req.params.pageNo) //=> "2"
 
 - Let's fix that error! In **models/todo.js**:
 
-```js
+```javascript
 module.exports = {
  getAll,
  getOne
@@ -807,12 +901,20 @@ function getOne(id) {
 
 <br>
 <br>
+<br>
+
+
+
 
 ### Routing Review
 #### Use This Routing Guide and feel free to quiz yourself as necessary...
 
 <br>
 <br>
+<br>
+
+
+
 
 # RESTful Routes to CRUD Mapping
 
@@ -829,6 +931,9 @@ DELETE  | /posts/:id      | Delete specified _post_ | delete | No
 
 <br>
 <br>
+<br>
+
+
 
 
 # Additional Common Non-RESTful (CRUD-less) Routes
@@ -859,6 +964,10 @@ need that particular _comment's_ `id`.
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Routing Review
 
@@ -887,6 +996,9 @@ need that particular _comment's_ `id`.
 7. Write the line of code that defines the proper route that would handle the cat form being submitted and creates a new cat (cats **create** route).
 
 
+<br>
+<br>
+<br>
 
 ## References
 

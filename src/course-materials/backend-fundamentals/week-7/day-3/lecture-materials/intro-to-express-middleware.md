@@ -8,9 +8,12 @@ type: "lecture"
 
 # Express Middleware
 
+
 <br>
 <br>
 <br>
+
+
 
 ### Learning Objectives
 
@@ -19,6 +22,12 @@ type: "lecture"
 	- Describe the Purpose of Middleware
 	- Use `method-override` Middleware and HTML Forms to Add, Update & Delete Data on the Server
 	- Use Query Strings to Provide Additional Information to the Server
+
+<br>
+<br>
+<br>
+
+
 
 
 ### Roadmap
@@ -37,6 +46,8 @@ type: "lecture"
 
 <br>
 <br>
+<br>
+
 
 #### Setup
 
@@ -44,6 +55,10 @@ type: "lecture"
 
 <br>
 <br>
+<br>
+
+
+
 
 #### What is Middleware?
 
@@ -60,7 +75,7 @@ type: "lecture"
 
 - A middleware is simply a function with the following signature:
 
-```js
+```javascript
 function(req, res, next) {}
 ```
 
@@ -80,12 +95,12 @@ function(req, res, next) {}
 
 - Open **server.js** and add this "do nothing" middleware:
 
-```js
+```javascript
 app.set('view engine', 'ejs');
 
 // add middleware below the above line of code
 app.use(function(req, res, next) {
- console.log('Hello Cyberpunk!');
+ console.log('Hello Intrepid Learner!');
  next();
 });
 ```
@@ -93,6 +108,10 @@ app.use(function(req, res, next) {
 
 <br>
 <br>
+<br>
+
+
+
 
 
 #### Our First Middleware
@@ -102,9 +121,9 @@ app.use(function(req, res, next) {
 
 - Let's add a line of code that modifies the `req` object: 
 
-```js
+```javascript
 app.use(function(req, res, next) {
- console.log('Hello Cyberpunk!');
+ console.log('Hello Intrepid Learner!');
  // Add a time property to the req object
  req.time = new Date().toLocaleTimeString();
  next();
@@ -118,7 +137,7 @@ app.use(function(req, res, next) {
 
 - Let's update the `index` action in **controllers/todos.js** so that it passes `req.time`:
 
-```js
+```javascript
 function index(req, res) {
  res.render('todos/index', {
    todos: Todo.getAll(),
@@ -141,12 +160,12 @@ function index(req, res) {
 
 - In **server.js**, let's move our custom middleware below where the routers are being mounted:
 
-```js
+```javascript
 app.use('/', indexRouter);
 app.use('/todos', todosRouter);
 
 app.use(function(req, res, next) {
- console.log('Hello SEI!');
+ console.log('Hello Intrepid Learner!');
  req.time = new Date().toLocaleTimeString();
  next();
 });
@@ -158,6 +177,10 @@ app.use(function(req, res, next) {
 
 <br>
 <br>
+<br>
+
+
+
 
 
 #### Key Middleware
@@ -178,20 +201,31 @@ app.use(function(req, res, next) {
 
 Now we require `morgan` and mount it as middleware
 
-```js
+```javascript
 const morgan = require('morgan');
 ```
 
 <br>
+
+
 **We'll mount Morgan like this**
 
-```js
+```javascript
 app.use(morgan('dev'));
 ```
 
-**This is what our "Middleware Stack" should look like**
+**Next, we'll mount our static asset middleware and bodyparser middleware**
 
-```js
+
+```javascript
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
+```
+
+
+**...by the end, is what our "Middleware Stack" should look like**
+
+```javascript
 
 // Mount middleware (app.use)
 app.use(morgan('dev'));
@@ -208,7 +242,7 @@ This is where our stylesheets, images and front-end javascript will live!
 
 <br>
 
-While we're at it, let's make sure all of our templates have this link tag so they can use any CSS rules we've defined in `style.css`
+While we're at it, let's make sure all of our templates have a link tag so they can use any CSS rules we've defined in `style.css`
 
 <br>
 
@@ -220,6 +254,10 @@ While we're at it, let's make sure all of our templates have this link tag so th
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Express Request-Response Cycle
 
@@ -259,7 +297,7 @@ GET /todos/new
 
 - Let's add the `new` route in **routes/todos.js** as follows:
 
-```js
+```javascript
 router.get('/', todosCtrl.index);
 router.get('/new', todosCtrl.new);
 router.get('/:id', todosCtrl.show);
@@ -271,7 +309,7 @@ router.get('/:id', todosCtrl.show);
 
 - In **controllers/todos.js**:
 
-```js
+```javascript
 module.exports = {
  index,
  show,
@@ -304,6 +342,10 @@ function newTodo(req, res) {
 
 <br>
 <br>
+<br>
+
+
+
 
 
 #### Creating To-Dos
@@ -338,7 +380,7 @@ Same process:
 
 - In **routes/todos.js**:
 
-```js
+```javascript
 router.get('/:id', todosCtrl.show);
 router.post('/', todosCtrl.create);  // add this route
 ```
@@ -359,7 +401,7 @@ Same process:
 
 In **controllers/todos.js**:
 
-```js
+```javascript
   	  ...
   	  create
   	};
@@ -377,7 +419,7 @@ In **controllers/todos.js**:
 
 - `req.body` is courtesy of this middleware in **server.js**:
 	
-```js
+```javascript
 app.use(express.urlencoded({ extended: false }));
 ```
 
@@ -392,7 +434,7 @@ app.use(express.urlencoded({ extended: false }));
 
 - All we need is that `create` in **models/todo.js**:
 
-```js
+```javascript
 module.exports = {
  getAll,
  getOne,
@@ -419,6 +461,10 @@ function create(todo) {
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ### <span style="text-transform:lowercase">method-override</span> Middleware
@@ -442,14 +488,14 @@ function create(todo) {
 
 - Require it below `morgan` in **server.js**:
 
-```js
+```javascript
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 ```
 
 - Now let's add `method-override` to the middleware pipeline:
 
-```js
+```javascript
 app.use(express.static('public'));
 app.use(methodOverride('_method'));  // add this
 ```
@@ -458,12 +504,16 @@ app.use(methodOverride('_method'));  // add this
 
 <br>
 <br>
+<br>
+<br>
+
+
 
 
 #### Delete a To-Do
 
 
-- The user story reads:_As a User, I want to delete a To Do from the list_
+- The user story reads:&nbsp;&nbsp;&nbsp;_As a User, I want to delete a To Do from the list_
 
 - Same process:
 	1. Determine proper route
@@ -510,6 +560,7 @@ DELETE /todos/:id
 
 li {
  list-style: none;
+ margin-bottom: 10px;
 }
 ```
 
@@ -526,7 +577,7 @@ li {
 
 - In **routes/todos.js**:
 
-```js
+```javascript
 router.post('/', todosCtrl.create);
 router.delete('/:id', todosCtrl.delete);
 ```
@@ -541,7 +592,7 @@ Same process:
 
 - Similar to `newTodo`, we can't name a function `delete`, so...
 
-```js
+```javascript
  create,
  delete: deleteTodo
 };
@@ -555,7 +606,7 @@ function deleteTodo(req, res) {
 
 - All that's left is to add the `deleteOne` method to the `Todo` model:
 
-```js
+```javascript
 module.exports = {
  getAll,
  getOne,
@@ -580,6 +631,10 @@ function deleteOne(id) {
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ### 💪 Exercises: Update a To-Do
@@ -592,33 +647,44 @@ function deleteOne(id) {
 
 
 <br>
+<br>
+
+
 
 #### Update a To-Do
 
 
-- Exercise #1:
-	- _As a User, when viewing the show page for a To-Do, I want to be able to click a link to edit the text of the To-Do_
-- Exercise #2:
-	- _As a User, when editing a To-Do, I want to be able to toggle whether or not it's done_
+##### Exercise #1:
+
+**_As a User, when viewing the show page for a To-Do, I want to be able to click a link to edit the text of the To-Do_**
 
 
-- Hints:
+##### Exercise #2:
+
+**_As a User, when editing a To-Do, I want to be able to toggle whether or not it's done_**
+
+
+- **Hints:**
 	- Follow the same steps we followed multiple times for adding functionality!
 	- Be sure to reference the Routing Chart to determine the proper routes!
 	- You will want to pre-fill the `<input>` with the todo text - use the `value` attribute and some EJS to pull this off.
 	- Don't forget that the controller action will first have to get the To-Do being edited so that it can be sent to the view.
 
 
-- Hints for Exercise #2 (Toggling `done`):
+- **Hints for Exercise #2 (Toggling `done`):**
 	- Use an `<input type="checkbox" ...>`
 	- Checkboxes are checked when a `checked` attribute exists (no value is assigned).
 	- Use a ternary expression to write in the `checked` attribute, or an empty string.
 	- If the checkbox is checked when submitted, `req.body.done` will have the value of `"on"`, otherwise there won't even be a `req.body.done` property.
 
-- Enjoy!
+- **Enjoy!**
 
 <br>
 <br>
+<br>
+
+
+
 
 ## References
 

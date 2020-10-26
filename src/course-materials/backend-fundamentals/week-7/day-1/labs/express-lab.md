@@ -52,7 +52,7 @@ The key to implementing this feature is **route parameters** documented in the *
 
 Basically, you can define a route as follows:
 
-```js
+```javascript
 app.get('/students/:id', function(req, res) {
   console.log(`The value for the :id route parameter is: ${req.params.id}`);
   res.render('students/show', {student: studentDb.getOne(req.params.id)});

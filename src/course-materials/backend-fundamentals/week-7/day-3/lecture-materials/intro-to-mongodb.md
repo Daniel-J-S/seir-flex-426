@@ -8,6 +8,11 @@ type: "lecture"
 
 # Intro to MongoDB
 
+<br>
+<br>
+<br>
+
+
 | Learning Objectives - SWBAT: |
 | :--- |
 | Describe the Use Case of Databases |
@@ -18,6 +23,10 @@ type: "lecture"
 <br>
 <br>
 <br>
+<br>
+
+
+
 
 ## Roadmap
 
@@ -32,8 +41,13 @@ type: "lecture"
 	- Embedding Subdocuments
 	- Referencing Documents
 
+
 <br>
 <br>
+<br>
+
+
+
 
 ## What's a Database?
 
@@ -53,6 +67,10 @@ There are several varieties of NoSQL databases. MongoDB is of the **document-bas
 
 <br>
 <br>
+<br>
+
+
+
 
 ## MongoDB vs. Relational SQL Databases
 
@@ -65,6 +83,10 @@ As diagramed above, there is a one-to-one mapping of the key concepts of a datab
 
 <br>
 <br>
+<br>
+
+
+
 
 ### Key Differences
 
@@ -80,6 +102,10 @@ However, in general:
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## More About MongoDB
@@ -92,6 +118,10 @@ You're going to see that working with **data** in MongoDB is like working with J
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## MongoDB Documents
@@ -100,7 +130,7 @@ In MongoDB, we save and retrieve _documents_ to and from a _collection_.
 
 Lets take a look of what a MongoDB _document_ might look like:
 
-```js
+```javascript
 {
     _id: ObjectId("5099803df3f4948bd2f98391"),
     name: { first: "Alan", last: "Turing" },
@@ -114,6 +144,11 @@ Lets take a look of what a MongoDB _document_ might look like:
 As you can see, this format looks very much like a JavaScript object.
 
 In fact, you'll be working with documents using JavaScript, therefore they absolutely **are** JS objects!
+
+<br>
+<br>
+
+
 
 ### The Document `_id`
 
@@ -130,6 +165,10 @@ The value that MongoDB creates for the `_id` is guaranteed to be _globally uniqu
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## Creating a Database and Inserting Documents
@@ -142,6 +181,10 @@ However, after this first look at MongoDB, you will be better off using _Mongoos
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ### The Mongo Shell
@@ -165,24 +208,34 @@ Let's switch to the `local` database: `> use local`
 Show the collections of the current database `> show collections`
 
 <br>
+<br>
+<br>
+
+
+
 
 
 ### Creating a new Database
 
 To create a new database in the Mongo Shell, we simply have to `use` the database.  Lets create a database named _myDB_:
 
-```
+```shell
 > use myDB
 ```
 
 <br>
+<br>
+<br>
+
+
+
 
 
 ### Inserting Data into a Collection
 
 This is how we can create and insert a document into a collection named _people_:
 
-```
+```shell
 > db.people.insert({
 ... name: "Fred",	// Don't type the dots, they are from the 
 ... age: 21			// shell, indicating multi-line input mode
@@ -195,7 +248,7 @@ __YOU DO: Let's add another person to the _people_ collection. But this time, ad
 
 To list all documents in a collection, we can use the _find_ method on the collection without any arguments:
 
-```
+```shell
 > db.people.find({})
 ```
 
@@ -203,6 +256,10 @@ The argument is called a _query object_ and is used to specify criteria.  If we 
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## Data Modeling - Intro
@@ -214,6 +271,11 @@ A **data entity** represents a certain _type_ of data in an application.
 Examples include:  **User**, **Account**, **Post**, **Comment**, etc.
 
 <br>
+<br>
+
+
+
+
 
 ### Relationships
 
@@ -228,6 +290,9 @@ There is also a less common **one-to-one** relationship. For example, _A User ha
 You will be asked to model the relationships as part the planning for your CRUD projects.  Here's a [link](https://www.lucidchart.com/pages/er-diagrams?a=0) that talks more about data relationships and how to create what's called an Entity Relationship Diagram (ERD).
 
 <br>
+<br>
+
+
 
 ### Database Implementation
 
@@ -248,6 +313,10 @@ The reason is that some _entities_ are better off being **embedded** with its pa
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## Data Modeling in MongoDB
@@ -261,6 +330,10 @@ There are two ways to model related data in MongoDB:
 Both approaches can be used simultaneously in the same document.
 
 <br>
+<br>
+
+
+
 
 ### Embedded Documents
 
@@ -268,7 +341,7 @@ Here's what an embedding looks like:
 
 A document in the `people` collection:
 
-```js
+```javascript
 // assume a document from a people collection
 {
   _id: ObjectId("5099803df3f4948bd2e983a4"),
@@ -293,12 +366,16 @@ Embedding data is more efficient than referencing data because it takes extra qu
 FYI, when we use Mongoose, even those subdocuments will automatically have their own `_id`.
 
 <br>
+<br>
+
+
+
 
 ### Referencing Documents (linking)
 
 Here's how the above `person --< contact` model would be implemented via **referencing**:
 
-```js
+```javascript
 // assume a document from a people collection
 {
   _id: ObjectId("5099803df3f4948bd2e983a4"),
@@ -312,7 +389,7 @@ Here's how the above `person --< contact` model would be implemented via **refer
 
 Two referenced documents in the `contacts` collection:
 
-```js
+```javascript
 {
   _id: ObjectId("5099803df3f4948bd2f98391"),
   type: "mobile",
@@ -322,7 +399,7 @@ Two referenced documents in the `contacts` collection:
 
 and
 
-```js
+```javascript
 {
   _id: ObjectId("5099803df3f4948bd1f97203"),
   type: "email",
@@ -335,6 +412,10 @@ As you can see, the related _contacts_ are separate documents.
 We would have to make separate queries to get to that data, although, Mongoose can do this automatically using the `populate` method.
 
 <br>
+<br>
+
+
+
 
 ### Which Document Should Hold the "Reference"?
 
@@ -343,6 +424,10 @@ When referencing data in MongoDB, you can hold the `ObjectId` in either document
 The decision depends upon the design and functionality of your application and it's not always clear-cut.
 
 <br>
+<br>
+
+
+
 
 ### If Embedding is More Efficient, Why Reference at All?
 
@@ -356,6 +441,10 @@ For more details regarding data modeling in MongoDB, start with [this section of
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## References

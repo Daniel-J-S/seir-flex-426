@@ -9,11 +9,24 @@ type: "lab"
 # My Dev Skills - Part 1
 
 
+<br>
+<br>
+
+
+
 ## Intro
 
 You've now seen how we can build an Express application and implement the **index** & **show** functionality for a **resource** (To Dos).
 
 Now it's time to practice by doing the very same thing, but for a different data resource - _developer skills_.
+
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Setup
 
@@ -32,15 +45,19 @@ express-dev-skills-lab/
   server.js
 ```
 
-> You will need to add additional files (& possibly folders) as your progress in this lab (just as we've done in the lesson)
+<br>
 
 
-**You will then need to create a repository for this lab on Github Enterprise**
+**1) You will need to add additional files (& possibly folders) as your progress in this lab (just as we've done in the lesson)**
 
-**You will continue working on this same project for both parts 1 & 2 -- the final version will be submitted via a link to your github repo using the homework submission form**
+**2) You will then need to create a repository for this lab on Github Enterprise**
 
-##### This lab, combined with Part 2, is a Deliverable
+**3) You will continue working on this same project for both parts 1 & 2 -- the final version will be submitted via a link to your github repo using the homework submission form**
 
+**4) This lab, combined with Part 2, is a Deliverable**
+
+
+<br>
 <br>
 <br>
 
