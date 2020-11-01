@@ -20,7 +20,14 @@ type: "lecture"
 | Save and Retrieve MongoDB Documents using the Mongo Shell |
 | Describe Embedding & Referencing |
 
+
+
 <br>
+<br>
+<br>
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/fRZWtAS7Zys799Ke_LRBtz2p8vo6_zqI6rOS4U9aR5cRVFuxO4LZoLgPdVfPUUMA.Orz2BpNTYysb5uNE?startTime=1604175620000) to access recording
+
 <br>
 <br>
 <br>
