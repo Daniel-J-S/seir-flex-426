@@ -8,6 +8,11 @@ type: "lab"
 
 # Mongoose "Flights" Lab - Part 3
 
+<br>
+<br>
+<br>
+
+
 ## Intro
 
 Today in the _Mongoose - Referencing Related Data_ lesson you:
@@ -26,7 +31,18 @@ Today in the _Mongoose - Referencing Related Data_ lesson you:
 
 Similar to what we did in the lesson, in this lab you'll be adding functionality to the `mongoose-flights` project you created in _part 1_ and have continued to work on in _part 2_ of the lab.
 
+<br>
+<br>
+<br>
+
+
+
 #### The final version of `mongoose-flights`, as a result of completing parts 1 - 3 of this lab, is a deliverable
+
+<br>
+<br>
+
+
 
 ## Goal
 
@@ -39,6 +55,13 @@ The relationship between the data entities is:<br>
 _A flight has many tickets_
 
 Styling is secondary, spend time on it only after the functionality has been implemented.
+
+<br>
+<br>
+<br>
+
+
+
 
 ## Exercises
 
@@ -64,13 +87,18 @@ Define the `seat` property as follows:<br>`seat: {type: String, match: /[A-F][1-
 
 That regex pattern will match the following characters:
 
-	- An `A` thru `F` character, followed by
+- An `A` thru `F` character, followed by
 - a `1` thru `9` character, followed by
 - zero or one `0` thru `9` character.
 
 We'll cover more about regular expressions later in SEIR, but this opportunity to preview them was too hard to pass up! Combined with the HTML `pattern` attribute, they provide an excellent way to perform _client-side_ validation of inputs.
 
 2. Modify the `show` view for a _flight_ to render, as you see fit (table, grid, etc.), a list of _tickets_ that have been created for that _flight_.
+
+<br>
+<br>
+
+
 
 
 **Hints**
@@ -100,6 +128,11 @@ Ticket.findById(req.params.id)
 
 3. Also on the flight's `show` view, display a **New Ticket** link (perhaps styled to look like a button) that when clicked, shows the ticket's `new` view used to create a _ticket_ for the _flight_. When the form is submitted, create the _ticket_ on the server and redirect back to the _flight's_ `show` view.
 
+<br>
+<br>
+
+
+
 
 **Hints**
 
@@ -110,6 +143,12 @@ To display the view/form for adding a ticket, the path of the `href` for the **N
 If you use the "proper" route for the ticket form's `action` attribute, the `ticketsCtrl.create` action will have access to the `_id` of the _flight_ the _ticket_ is being created for.
 
 In the controller action, there **will not** be a `flight` property on the `req.body` object. You must add that property yourself before using `req.body` to create the _ticket_. Failure to do so will result in the _ticket_ being created without a `flight` property that references the _flight_ it belongs to - so if newly added tickets are not showing up with the flight, this is probably the cause.
+
+<br>
+<br>
+<br>
+
+
  
 ## More Hints
 
@@ -119,6 +158,9 @@ In the controller action, there **will not** be a `flight` property on the `req.
 	- Define the route on the server and map it to a controller action.
 	- Code and export the controller action.
 	- `res.render` a view in the case of a GET request, or `res.redirect` if data was changed.
+
+<br>
+<br>
 
 ## Bonuses
 

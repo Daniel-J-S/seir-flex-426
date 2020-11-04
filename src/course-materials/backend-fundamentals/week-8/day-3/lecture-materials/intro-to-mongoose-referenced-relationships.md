@@ -19,7 +19,6 @@ type: "lecture"
 <p>Students Will Be Able To:</p>
 
 - Use Referencing to Implement 1:M & M:M Data Relationships
-- Explain the Difference Between 1:M & M:M Relationships
 - "Populate" Referenced Documents 
 
 <br>
@@ -28,15 +27,14 @@ type: "lecture"
 ## Roadmap
 
 1. Setup
-2. Review the Starter Code
-3. Use a Node REPL session to perform CRUD using Mongoose Models
-4. A New Data Resource: _Performers_
-5. Create the `Performer` Model
-6. Referencing _Performers_ in the _Movie_ Model
-7. Creating _Performers_
-8. Associating Movies and Performers
-9. _AAU, when viewing a movie's detail page, I want to see a list of the current cast and add a new performer to the list_
-10. Essential Questions
+2. Use a Node REPL session to perform CRUD using Mongoose Models
+3. A New Data Resource: _Performers_
+4. Create the `Performer` Model
+5. Referencing _Performers_ in the _Movie_ Model
+6. Creating _Performers_
+7. Associating Movies and Performers
+8. _AAU, when viewing a movie's detail page, I want to see a list of the current cast and add a new performer to the list_
+9.  Essential Questions
 
 
 <br>
@@ -129,7 +127,7 @@ type: "lecture"
 #### 4) Temporarily "comment out" the cast property in the `models/movie.js`
 
 ```javascript
-onst movieSchema = new Schema({
+const movieSchema = new Schema({
   title: {
     type: String,
     required: true
@@ -230,7 +228,7 @@ The `find` method returns a **Query** object that is first logged, followed by t
 
 
 
-- For future reference, here's a gist that documents how to do what we just did:[Perform CRUD Using Mongoose Models in a Node REPL](https://gist.github.com/myDeveloperJourney/1f3c01e199913b09e90988dce3384bb1)
+- For future reference, here's a gist that documents how to do what we just did: [Perform CRUD Using Mongoose Models in a Node REPL](https://gist.github.com/myDeveloperJourney/1f3c01e199913b09e90988dce3384bb1)
 
 <br>
 <br>
@@ -240,7 +238,9 @@ The `find` method returns a **Query** object that is first logged, followed by t
 
 - We are going to implement the following data relationship:<br>
 
-**_A Movie has many Performers; A Performer has many Movies_** `Movie >--< Performer` (Many-To-Many)
+**_A Movie has many Performers; A Performer has many Movies_**
+
+**`Movie >--< Performer`** *(Many-To-Many)*
 
 <br>
 <br>
@@ -477,12 +477,6 @@ $ touch views/performers/new.ejs
 - Find and update in **public/stylesheets/style.css**:
 
 ```css
-#add-review-form,
-#add-performer-form {
- display: grid;
- ...
-}	
-
 #new-form *,
 #add-review-form *,
 #add-performer-form * {
@@ -490,9 +484,17 @@ $ touch views/performers/new.ejs
  ...
 }
 
+
+#add-review-form,
+#add-performer-form {
+ display: grid;
+ ...
+}	
+
+
 #add-review-form input[type="submit"],
 #add-performer-form input[type="submit"] {
- width: 10rem;
+ width: 10rem; /* <-- change to from 8 to 10rem*/
  ...
 }	
 ``` 
@@ -524,11 +526,6 @@ module.exports = {
 };
 
 function create(req, res) {
-  // Hack to "fix" date formatting to prevent possible day off by 1
-  // https://stackoverflow.com/questions/7556591/is-the-javascript-date-object-always-one-day-off
- var s = req.body.born;
- req.body.born = 
-   `${s.substr(5,2)}-${s.substr(8,2)}-${s.substr(0,4)}`;
  Performer.create(req.body, function(err, performer) {
    res.redirect('/performers/new');
  });
@@ -774,23 +771,22 @@ function addToCast(req, res) {
 <br>
 <br>
 
-### ❓ Essential Questions
+### Essential Questions
 
 
 <p>Take a couple of minutes to review...</p>
 
-1. **What property type is used in schemas to reference other documents?**
+**❓ What property type is used in schemas to reference other documents?**
 
-2. **Describe the difference between 1:M & M:M relationships.**
+**❓ Describe the difference between 1:M & M:M relationships.**
 
-3. **What's the name of the method used to replace an `ObjectId` with the document it references?**
+**❓ What's the name of the method used to replace an `ObjectId` with the document it references?**
 
 <br>
 <br>
 
 
 ## References
-
 
 - [MongooseJS Docs - Populate](https://mongoosejs.com/docs/populate.html)
 

@@ -12,6 +12,10 @@ type: "lecture"
 <br>
 <br>
 <br>
+<br>
+
+
+
 
 ## Learning Objectives
 
@@ -25,6 +29,13 @@ type: "lecture"
 - Define default values in a Schema
 
 - Define validations in a Schema
+
+
+<br>
+<br>
+<br>
+
+
 
 
 
@@ -42,6 +53,13 @@ type: "lecture"
 1. Defining default values for a Property
 1. Defining validations for a Property
 1. Essential Questions
+
+
+<br>
+<br>
+<br>
+
+
 
 
 #### Setup 
@@ -80,7 +98,7 @@ npm i express ejs morgan
 
 5. Set up boilerplate for `server.js`
 
-```js
+```javascript
 // Require modules
 const express = require('express');
 const morgan = require('morgan');
@@ -149,7 +167,7 @@ touch views/index.ejs routes/index.js controllers/index.js public/css/style.css
 10. Let's set up our routes and controller actions for our root routes
 
 
-```js
+```javascript
 // inside of routes/index.js
 
 const express = require('express');
@@ -162,7 +180,7 @@ router.get('/', indexCtrl.index);
 module.exports = router;
 ```
 
-```js
+```javascript
 // inside of controllers/index.js
 module.exports = {
     index
@@ -176,7 +194,7 @@ function index(req, res) {
 
 11. Now we require and mount our index router inside of `server.js`
 
-```js
+```javascript
 // Require modules
 const express = require('express');
 const morgan = require('morgan');
@@ -189,7 +207,7 @@ const indexRouter = require('./routes/index');
 ```
 **...don't forget to mount your router**
 
-```js
+```javascript
 
 // more code above
 
@@ -202,6 +220,10 @@ app.use('/', indexRouter);
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ## Intro to Mongoose
@@ -222,6 +244,9 @@ app.use('/', indexRouter);
 
 <br>
 <br>
+<br>
+
+
 
 
 #### What is Mongoose?
@@ -245,6 +270,10 @@ _"Mongoose provides a straight-forward, **schema-based** solution to model your 
 
 <br>
 <br>
+<br>
+
+
+
 
 
 **Mongoose also provides lots of other useful functionality:**
@@ -259,6 +288,10 @@ _"Mongoose provides a straight-forward, **schema-based** solution to model your 
 
 <br>
 <br>
+<br>
+
+
+
 
 #### The Big Picture 
 
@@ -272,37 +305,48 @@ _"Mongoose provides a straight-forward, **schema-based** solution to model your 
 
 - Assuming the following schema:
 
-```js
+```javascript
 const postSchema = new mongoose.Schema({
-content: String
+  content: String
 });
 ```
 
 - It can be compiled into a model and that model exported like this:
 
-```js
+```javascript
 module.exports = mongoose.model('Post', postSchema);
 ```
 
 - The model can then be required and used to perform CRUD on the `posts` collection in the MongoDB:
 
-```js
+```javascript
 const Post = require('./models/post');
 Post.create({content: 'Amazing post...'});
 ```
 
+<br>
+<br>
+<br>
 
-### ❓ Review Questions
 
 
-1. **In your own words, describe the use case for Mongoose (what is it's purpose and when might you choose to use it?).**
+### Review Questions
 
-2. **A Mongoose _________ is compiled into a Mongoose Model.**
 
-3. **We use a Mongoose  _________ to perform CRUD operations on a MongoDB.**.
+**❓ In your own words, describe the use case for Mongoose (what is it's purpose and when might you choose to use it?).**
+
+**❓ A Mongoose _________ is compiled into a Mongoose Model.**
+
+**❓ We use a Mongoose  _________ to perform CRUD operations on a MongoDB.**.
+
+
 
 <br>
 <br>
+<br>
+
+
+
 
 ### Including Mongoose in an App
 
@@ -315,6 +359,11 @@ Post.create({content: 'Amazing post...'});
 
 <br>
 <br>
+<br>
+
+
+
+
 
 #### Install Mongoose
 
@@ -327,6 +376,10 @@ $ npm i mongoose
 
 <br>
 <br>
+<br>
+
+
+
 
 	
 #### Configure Mongoose in a module
@@ -341,7 +394,7 @@ $ touch config/database.js
 
 - Then in `database.js`, let's connect to a database named `movies`:
 
-```js
+```javascript
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/movies', {
@@ -356,7 +409,7 @@ mongoose.connect('mongodb://localhost/movies', {
 
 - In order for the code in `database.js` to run and connect to the database, we must require it in `server.js`:
 
-```js
+```javascript
 const express = require('express');
 const morgan = require('morgan');
 const port = 3000; 
@@ -374,6 +427,10 @@ require('./config/database');
 **Note that we aren't assigning our module to a variable. That's because there's no need to because:**
 
 <br>
+<br>
+
+
+
 
 - We're not exporting anything of use - why assign to a variable?
 - Calling `require('./config/database')` is all it takes to make the code run
@@ -381,12 +438,16 @@ require('./config/database');
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Start up the App 
 
 **Time to check if our app starts up without errors...**
 
-- Ensure that the MongoDB engine is running. You will have to run `mongod` in a separate terminal session if you haven't already told MongoDB to start automatically with`brew services start mongodb`.
+- Ensure that the MongoDB engine is running. If you haven't already told MongoDB to start automatically with`brew services start mongodb`.
 
 
 
@@ -398,6 +459,11 @@ require('./config/database');
 
 <br>
 <br>
+<br>
+
+
+
+
 
 #### Adding event listeners to the Mongoose connection
 
@@ -409,12 +475,17 @@ require('./config/database');
 
 <br>
 <br>
+<br>
+
+
+
+
 
 #### Adding event listeners 
 
 - Let's modify our _database.js_ module as follows:
 
-```js
+```javascript
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/movies', {
@@ -436,17 +507,23 @@ console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
 
 <br>
 <br>
+<br>
 
 
-### ❓Review Questions
 
 
-1. **What is the advantage of creating a `database.js` module?**
+### Review Questions
 
-2. **What method on the Mongoose object connects to a MongoDB database?**
+**❓ What is the advantage of creating a `database.js` module?**
+
+**❓ What method on the Mongoose object connects to a MongoDB database?**
+
 
 <br>
 <br>
+<br>
+
+
 
 
 ### Defining Schemas in Mongoose
@@ -459,6 +536,10 @@ console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
 
 <br>
 <br>
+<br>
+
+
+
 
 
 #### Create a module for the Schema/Model
@@ -475,6 +556,12 @@ $ mkdir models
 $ touch models/movie.js
 ```
 
+<br>
+<br>
+<br>
+
+
+
 
 #### Define a basic Schema for a _Movie_ model
 
@@ -487,7 +574,7 @@ $ touch models/movie.js
 
 - In the schema/model module, we will always do this:
 
-```js
+```javascript
 const mongoose = require('mongoose');
 // optional shortcut to the mongoose.Schema class
 const Schema = mongoose.Schema;
@@ -497,13 +584,19 @@ const Schema = mongoose.Schema;
 
 - Now let's define our schema...
 
+<br>
+<br>
+<br>
+
+
+
 
 #### Define a basic Schema 
 
 
 - Here's our basic _Movie_ schema:
 
-```js
+```javascript
 const Schema = mongoose.Schema;
 	
 const movieSchema = new Schema({
@@ -520,6 +613,9 @@ const movieSchema = new Schema({
 	- A **property** may be referred to as a "**path**", or "**field**".
 
 <br>
+<br>
+
+
 
 **💪 YOU DO:**
 - Add an additional property named `nowShowing` with a type of `Boolean` (make sure that it's uppercased so that it refers to JavaScript's built-in `Boolean` object wrapper).
@@ -532,6 +628,10 @@ const movieSchema = new Schema({
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Built-in Types for Properties
 
@@ -560,6 +660,10 @@ const movieSchema = new Schema({
 
 <br>
 <br>
+<br>
+
+
+
 
 
 ### Compiling Schemas into Models
@@ -572,7 +676,7 @@ const movieSchema = new Schema({
 
 - Compiling a schema into a model is as easy as calling the `mongoose.model` method:
 
-```js
+```javascript
 const Schema = mongoose.Schema;
 		
 const movieSchema = new Schema({
@@ -594,6 +698,11 @@ module.exports = mongoose.model('Movie', movieSchema);
 
 <br>
 <br>
+<br>
+
+
+
+
 
 #### Use a Model to Create data
 
@@ -648,11 +757,10 @@ $ node
 
 <br>
 <br>
-
-## Begin Part 2
-
 <br>
-<br>
+
+
+
 
 **As we build out our CRUD functionality, here is the process we will repeat:**
 
@@ -680,7 +788,7 @@ touch routes/movies.js
 
 - Inside of `routes/movies.js`, set up the router and code our first route responsible for showing a form for entering a movie:
 
-```js
+```javascript
 const express = require('express');
 const router = express.Router();
 const moviesCtrl = require('../controllers/movies');
@@ -693,21 +801,29 @@ module.exports = router;
 
 - Don't forget to require and mount our router inside of `server.js`
 
-```js
+```javascript
 const moviesRouter = require('./routes/movies');
 ```
 
-```js
+```javascript
 app.use('/movies', moviesRouter);
 ```
 
 > You will most likely getting errors in your terminal at this point - we need a controller
 
 <br>
+<br>
+
+
+
 
 **💪 YOU DO: Create the controller, export the `new` action & create the view!**
 
 <br>
+<br>
+
+
+
 
 Start by creating `controllers/movies.js`
 
@@ -716,13 +832,17 @@ touch controllers/movies.js
 ```
 
 <br>
+<br>
+
+
+
 
 **The `new` action is just the first of several that are going to be exported from this module.**
 
 
 The code in the `new` action is pretty simple:
 
-```js
+```javascript
 module.exports = {
     new: newMovie
 };
@@ -738,7 +858,7 @@ function newMovie(req, res) {
 
 - As we've discussed, organizing views for a certain model into a dedicated folder makes sense:
 
-```
+```shell
 $ mkdir views/movies
 $ touch views/movies/new.ejs
 ```
@@ -763,6 +883,10 @@ $ touch views/movies/new.ejs
 
 <br>
 <br>
+<br>
+
+
+
 
 **Here's our awesome but ugly form; we'll add this inside of the body of our html**
 
@@ -796,6 +920,9 @@ $ touch views/movies/new.ejs
 ```
 
 <br>
+<br>
+
+
 
 #### Use a Model to Create data 
 
@@ -874,6 +1001,11 @@ Movie.find({mpaaRating: 'PG'})
 
 <br>
 <br>
+<br>
+
+
+
+
 
 ### Here are the useful methods on a Model for querying data:
 
@@ -885,6 +1017,11 @@ Movie.find({mpaaRating: 'PG'}, function(err, movies) {...
 
 <br>
 <br>
+<br>
+
+
+
+
 
 - `findById`: Find a document based on it's `_id`
 	
@@ -919,7 +1056,7 @@ Movie.findOne({releaseYear: 2000}, function(err, movie) {...
 
 - Hint: In the view, use the array `join` method to concatenate the names inside of the `cast` array.
 
-**We'll review in 20 minutes.**
+**We'll review shortly.**
 
 <br>
 <br>
@@ -1255,14 +1392,20 @@ const movieSchema = new mongoose.Schema({
 <br>
 <br>
 
-## ❓ Essential Questions
+## Essential Questions
 
 
-1. **True or False:  In our code, a document's structure is _defined_ in a Mongoose model.**
+**❓ True or False:  In our code, a document's structure is _defined_ in a Mongoose model.**
 
-2. **Name at least two Model methods used to read data from a MongoDB collection.**
+**❓ Name at least two Model methods used to read data from a MongoDB collection.**
 
-3. **Can a single Model be used to query more than one MongoDB collection?**
+**❓ Can a single Model be used to query more than one MongoDB collection?**
+
+
+<br>
+<br>
+<br>
+
 
 
 

@@ -8,7 +8,12 @@ type: "lab"
 
 # Mongoose "Flights" Lab - Part 1
 
-> Please note, due to the nature of the longer "Intro to Mongoose" lesson, you will need to proportion your work for this lab over the next couple days only practicing what we're able to cover on days 2 & 3 of week 8
+
+<br>
+<br>
+<br>
+
+
 
 ## Intro
 
@@ -20,7 +25,19 @@ Similar to what we did in the lesson, you'll start by creating a `mongoose-fligh
 
 FYI, future lessons will expand upon the `mongoose-movies` project, and the labs will expand upon the `mongoose-flights` project!
 
-#### The final version of `mongoose-flights` will be a deliverable, so do each part so you don't fall behind.
+<br>
+<br>
+<br>
+
+
+
+#### The final version of `mongoose-flights` will be a deliverable, so be sure you're pacing yourself so you don't fall behind.
+
+<br>
+<br>
+
+
+
 
 ## Exercises
 
@@ -31,22 +48,41 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 5. Create a **config/database.js** module inside your project that connects to a database named `flights` -- Be sure to require the module in **server.js**
 
 6. Create a `Flight` Model with the following properties:
+   
+<br>
+<br>
 
-	| Property | Type | Validations | Default Value |
-	|---|---|---|---|
-	| `airline`| `String`| `enum` to include 'American', 'Southwest' & 'United' | n/a | 
-	| `flightNo`| `Number`| Required<br>Between `10` and `9999` | n/a | 
-	| `departs`| `Date`| n/a | One year from date created | 
 
-4. Implement the following User Stories **(_"As A User"_ == AAU)**:
+| Property | Type | Validations | Default Value |
+|---|---|---|---|
+| `airline`| `String`| `enum` to include 'American', 'Southwest' & 'United' | n/a | 
+| `flightNo`| `Number`| Required<br>Between `10` and `9999` | n/a | 
+| `departs`| `Date`| n/a | One year from date created | 
+
+<br>
+<br>
+
+
+1. Implement the following User Stories **(_"As A User"_ == AAU)**:
 	- AAU, I want to view a list of all flights (index view) that displays each flight's airline, flight no., and departure date/time
 	
 	- AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it
+
+<br>
+<br>
+
+
 
 #### Hints:
 
 - Checkout the [`<input type="datetime-local">`
 ](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) to assist users in entering valid date/time values
+
+<br>
+<br>
+<br>
+
+
 
 
 ## Bonuses
@@ -61,6 +97,10 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 
 3. Although an input of type="datetime-local" will display a date assigned to its value attribute, that date value needs to be formatted as a string matching this format: yyyy-MM-ddThh:mm (yes, a “T” character is used to separate the date portion from the time portion). One way of obtaining the properly formatted string is to use the toISOString() method and use slice() to return only the first 16 characters, for example:
 
+<br>
+<br>
+
+
 ```javascript
 	const newFlight = new Flight();
 	// Obtain the default date
@@ -69,6 +109,9 @@ FYI, future lessons will expand upon the `mongoose-movies` project, and the labs
 	const departsDate = dt.toISOString().slice(0, 16);
 	res.render('flights/new', {departsDate});
 ```
+
+<br>
+<br>
 
 
 1. Code these additional User Stories:

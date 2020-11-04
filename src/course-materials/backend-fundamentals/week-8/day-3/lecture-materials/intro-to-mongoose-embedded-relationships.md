@@ -12,6 +12,8 @@ type: "lecture"
 <br>
 <br>
 
+
+
 ## Learning Objectives
 
 Students Will Be Able To:
@@ -20,6 +22,7 @@ Students Will Be Able To:
 - Define schemas for embedding Subdocuments
 - Embed a Subdocument in its related document
 
+<br>
 <br>
 <br>
 
@@ -42,7 +45,7 @@ Students Will Be Able To:
 #### Setup
 
 
-1. <a href="/downloads/backend_fundamentals/mongoose-embedded-relationships/starter-code/mongoose-movies.zip" download>Download</a> the starter code to get started
+1. <a href="/downloads/backend_fundamentals/mongoose-embedded-relationships/mongoose-movies.zip" download>Download</a> the starter code to get started
 
 2. `cd` inside the project folder in your code editor.
 
@@ -57,6 +60,9 @@ $ npm install
 
 <br>
 <br>
+<br>
+
+
 
 #### Review the Starter Code
 
@@ -77,6 +83,10 @@ $ npm install
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Related Data Entities - Review
 
@@ -95,10 +105,14 @@ $ npm install
 
 - In a SQL Database, how we model data for an application is usually obvious - there isn't much flexibility, for example, there would **have** to be a `Review` model that maps to a _reviews_ table.
 
-- However, modeling data in MongoDB/Mongoose is more flexible, less strict, and  left up to the developer to decide,andthose decisions should be based on how best to implement the features of an application...
+- However, modeling data in MongoDB/Mongoose is more flexible, less strict, and  left up to the developer to decide,and those decisions should be based on how best to implement the features of an application...
 
 <br>
 <br>
+<br>
+
+
+
 
 #### Adding Movie Reviews
 
@@ -258,7 +272,7 @@ const reviewsRouter = require('./routes/reviews');
 ```
 and mount it like this:
 
-```js
+```javascript
 app.use('/movies', moviesRouter);
 // mount the reviews router
 app.use('/', reviewsRouter);
@@ -383,16 +397,16 @@ function create(req, res) {
 <br>
 
 
-### ❓ Essential Questions
+### Essential Questions
 
 
 <p>Take a minute to review...</p>
 
-1. **True or False: All schemas must be compiled into a Model.**
+**❓ True or False: All schemas must be compiled into a Model.**
 
-2. **Is it more efficient to embed or reference related data?**
+**❓ Is it more efficient to embed or reference related data?**
 
-3. **True or False: An embedded subdocument must have its `save` method called to be persisted to the database.**
+**❓ True or False: An embedded subdocument must have its `save` method called to be persisted to the database.**
 
 <br>
 <br>

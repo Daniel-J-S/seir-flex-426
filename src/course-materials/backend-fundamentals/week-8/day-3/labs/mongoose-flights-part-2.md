@@ -8,6 +8,13 @@ type: "lab"
 
 # Mongoose "Flights" Lab - Part 2
 
+<br>
+<br>
+<br>
+
+
+
+
 ## Intro
 
 Today in the _Mongoose - Embedding Related Data_ lesson you:
@@ -22,13 +29,29 @@ Today in the _Mongoose - Embedding Related Data_ lesson you:
 
 Similar to what we did in the lesson, in this lab you'll be adding functionality to the `mongoose-flights` project you created in the _part 1_ lab.
 
+<br>
+<br>
+<br>
+
+
+
 #### The final version of `mongoose-flights` will be a deliverable, so be sure to do each part so you don't fall behind.
+
+<br>
+<br>
+
+
 
 ## Goal
 
 The goal of this lab is to add the ability to specify the `airport` that the flight is originating from; and a list (array) of `destinations` for the flight.
 
 Styling is secondary, spend time on it only after the functionality has been implemented.
+
+<br>
+<br>
+
+
 
 ## Exercises
 
@@ -53,6 +76,11 @@ Styling is secondary, spend time on it only after the functionality has been imp
 5. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to be able to add a destination for that flight, including its `arrival` date/time & one of the established airport codes_
 
 6. Implement the following User Story:<br>_AAU, when viewing the details page (`show` view) for a flight, I want to see a list of that flight's `destinations` (`airport` & `arrival`)_
+
+<br>
+<br>
+
+
 
 
 ## Bonuses
