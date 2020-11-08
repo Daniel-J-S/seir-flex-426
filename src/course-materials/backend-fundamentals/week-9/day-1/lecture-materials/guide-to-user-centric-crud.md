@@ -8,6 +8,8 @@ type: "lecture"
 
 
 # Guide to User-Centric CRUD using Express & Mongoose
+
+<br>
 <br>
 <br>
 
@@ -23,12 +25,21 @@ This guide will show an example of how to handle the above scenario...
 
 <br>
 <br>
+<br>
 
 ## Example Data Model
 
 Here's the ERD we'll use as an example:
 
+<br>
+<br>
+
 <img src="https://i.imgur.com/hU1PVHI.png">
+
+<br>
+<br>
+<br>
+
 
 ### User Has Two Different Relationships with Books
 
@@ -44,11 +55,13 @@ Because comments are being embedded within the book documents, there is no Comme
 
 <br>
 <br>
+<br>
 
 #### Restricting Updating and/or Deleting of Comments Functionality
 
 Each comment needs to know the user that submitted it.  Not just for display purposes, but to restrict the ability to update and/or delete a comment to that of the user that submitted it.  The `userId` property in the comment schema holds the `_id` of the user that submitted the comment and can therefore be compared to the logged in user's `_id` to render the additional UI for updating/deleteing.
 
+<br>
 <br>
 <br>
 
@@ -62,6 +75,10 @@ Copying over the user's name from `req.user` in the comment `create` action will
 <br>
 
 ## Example Routing
+
+<br>
+<br>
+
 
 #### Books
 
@@ -79,6 +96,10 @@ Copying over the user's name from `req.user` in the comment `create` action will
 
 <br>
 <br>
+<br>
+<br>
+
+
 
 #### Comments
 
@@ -94,8 +115,14 @@ Copying over the user's name from `req.user` in the comment `create` action will
 
 <br>
 <br>
+<br>
 
 ## Example Controller Code
+
+<br>
+<br>
+
+
 
 #### Creating a book
 
@@ -112,6 +139,11 @@ function create(req, res) {
 }
 ```
 
+<br>
+<br>
+<br>
+
+
 #### Edit a book
 
 ```javascript
@@ -123,6 +155,11 @@ function edit(req, res) {
   });
 }
 ```
+
+<br>
+<br>
+<br>
+
 
 #### Adding a book to a user's reading list
 
@@ -140,6 +177,12 @@ function addReading(req, res) {
   });
 }
 ```
+
+<br>
+<br>
+<br>
+
+
 
 #### View all books or based upon a name search
 
@@ -161,6 +204,9 @@ function allBooks(req, res) {
 ```
 <br>
 <br>
+<br>
+
+
 
 #### Add a comment
 
@@ -194,6 +240,10 @@ function create(req, res) {
 ```
 <br>
 <br>
+<br>
+<br>
+
+
 
 #### Update a comment
 
@@ -230,6 +280,10 @@ function update(req, res) {
 ```
 <br>
 <br>
+<br>
+<br>
+
+
 
 #### Delete a comment
 
@@ -284,6 +338,10 @@ function delete(req, res) {
 
 <br>
 <br>
+<br>
+<br>
+
+
 
 ## Avoiding Having to Pass `user` Every `render`
 

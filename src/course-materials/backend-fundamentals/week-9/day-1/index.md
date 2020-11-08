@@ -14,5 +14,5 @@ topics: "Catch up on Labs & Project 2 Planning"
 - **Activity:** Finish Mongoose Flights Labs
 - **Activity:** Planning and Approvals For Project 2
 - [**Optional Reading Material: Guide to Add a Feature to a Web App**](/backend-fundamentals/week-9/day-1/lecture-materials/guide-to-add-a-feature-to-a-web-app/)
-- [**Optional Reading Material: Guide to User-Centric CRUD with node/express & Momgoose**](/backend-fundamentals/week-9/day-1/lecture-materials/guide-to-user-centric-crud/)
+- [**Optional Reading Material: Guide to User-Centric CRUD with node/express & Mongoose**](/backend-fundamentals/week-9/day-1/lecture-materials/guide-to-user-centric-crud/)
 

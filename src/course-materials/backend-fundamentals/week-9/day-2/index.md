@@ -10,7 +10,7 @@ topics: "Holiday - No Class"
 
 # Week 9 - Day 2
 
-#### Holiday - No Class Today in Observance of Election Day
+#### Holiday - No Class Today in Observance of Veterans Day
 
 
 
