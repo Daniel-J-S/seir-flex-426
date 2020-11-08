@@ -1,5 +1,10 @@
 # Project Two: Your First Full Stack Application
 
+<br>
+<br>
+<br>
+
+
 ## Overview
 
 This second project is your first foray into **building a full-stack 
@@ -13,10 +18,15 @@ You get to decide what you want to build - as long as it meets the technical req
 Once you've decided what you will build, please contact your instructional team for approval of your idea and then begin working on the **Planning & Presentation Requirements** below.
 
 
+<br>
+<br>
+<br>
+
+
 
 ## Planning & Presentation Requirements
 
-- By Wednesday Jun 3rd, EOD (End of Day), you need to have turned in the following:
+- To receive a passing grade on this project, you need to have turned in the following:
 
 - A **[Trello](https://trello.com/) board** with:
     
@@ -32,6 +42,9 @@ Once you've decided what you will build, please contact your instructional team 
 The _reason_ is optional if it's blatantly obvious.
 
 <br>
+<br>
+
+
 
 > **Note:** Prioritize your user stories within the Ice Box with your "wish list" stories at the bottom.
     
@@ -40,6 +53,10 @@ The _reason_ is optional if it's blatantly obvious.
 - An **ERD** showing the attributes of each model (or schema in the case of embedding) and the associations between them. 
 
 <br>
+<br>
+
+
+
 
 Here's a [YouTube video to show you how](https://www.youtube.com/watch?v=QpdhBUYk7Kk).
 
@@ -81,6 +98,11 @@ You will have a maximum of 10 minutes to present your project following these gu
 	
 5. **Q & A + Feedback**
 
+<br>
+<br>
+<br>
+
+
 
 
 ## Technical Requirements
@@ -99,11 +121,23 @@ You will have a maximum of 10 minutes to present your project following these gu
 
 ☐ Be **deployed online** (Heroku) - _We will show you how to do this_.
 
+<br>
+<br>
+<br>
+
+
+
 ### Optionally, Your App May:
 
 ☐ Consume a third-party API.
 
 ☐ Expose its own API where it returns data resources as JSON. (You will need to research how to do this ... hint `res.json()`)
+
+<br>
+<br>
+<br>
+
+
 
 
 ## Necessary Deliverables
@@ -126,6 +160,11 @@ You will have a maximum of 10 minutes to present your project following these gu
 
 ☐ **Frequent commits dating back to the very beginning of the project**. Commit messages should be in the present tense, e.g., "Style landing page" instead of "Styled landing page".
 
+<br>
+<br>
+<br>
+
+
 
 
 ## Suggested Ways to Get Started
@@ -134,17 +173,34 @@ You will have a maximum of 10 minutes to present your project following these gu
 - **Discuss your app idea with an instructor to get their feedback before you dive too deep into user stories and wireframes.**
 - **Remember to keep things small and focus on the MVP** – feature creep can doom a project!
 
+<br>
+<br>
+<br>
+
+
 
 ## Project Idea Guidance
 
 Nearly all of the applications you interact with on a daily basis
 would do for this project as most are "full-stack" CRUD apps. 
 
+<br>
+<br>
+<br>
+
+
+
 #### Do Not Do Non-CRUD Applications Such As:
 
 - Games
 - Portfolio, or presentational pages
 - Marketing or content oriented websites
+
+<br>
+<br>
+<br>
+
+
 
 #### Good Examples
 
@@ -171,17 +227,23 @@ Many simple apps can have their functionality enhanced by implementing the abili
 
 Another piece of advice:  If you choose to develop an app that has the concept of a shopping cart (storefront), do not attempt to implement the actual payment functionality.
 
+<br>
+<br>
+<br>
+
+
 #### Actual Recent Student Projects
 
-- [Cookbook](https://cookbook-app-project.herokuapp.com/)
-- [Aberrant Barter](https://aberrant-barter.herokuapp.com/)
-- [Eat Me](https://eat-me-recipes.herokuapp.com/)
+- [SEIR Ice Creams](https://seir-ice-creams.herokuapp.com/)
+- [Book Worms United](https://bookworms-united.herokuapp.com/)
+- [Mana Autisim](https://mana-autism-resource.herokuapp.com/)
 - [NIGHTOWL Coffee](https://nightowl-coffee.herokuapp.com)
-- [Works For Me](http://works-for-me.herokuapp.com/login)
-- [CampShare](https://campshare.herokuapp.com/)
-- [Hiking With Friends](https://hikingwithfriends.herokuapp.com/)
-- [Is It Fun?](https://isitfun.herokuapp.com/)
 - [Cat Instagram](https://nyanstagram.herokuapp.com/)
+
+<br>
+<br>
+<br>
+
 
 
 
@@ -194,6 +256,12 @@ Another piece of advice:  If you choose to develop an app that has the concept o
   
 - If there is a specific section of code that you would like an instructor to provide feedback, please ask!
   
+
+<br>
+<br>
+<br>
+
+
 
 ### Useful Resources
 
