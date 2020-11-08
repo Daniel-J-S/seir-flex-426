@@ -17,4 +17,11 @@ topics: "Intro to Mongoose Embedded & Referenced Relationships"
 - [**Activity:** Introduce Project 2](/unit-projects/unit-two-project-requirements)
 
 
+<br>
+<hr>
+<br
+
+#### Lesson Recordings
+
+[**Embedded and Referenced Relationships With Mongoose**](https://generalassembly.zoom.us/rec/share/C0zddD-Cq7N_2Gh97BGktdmBZ_ObKASxqUIHw7lR_7mRqtosQwdEW3nrf7ZcE2CT.E-kWhchKOLqKMiWO?startTime=1604761003000)
 
