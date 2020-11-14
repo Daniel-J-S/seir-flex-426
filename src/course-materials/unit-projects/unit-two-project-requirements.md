@@ -10,8 +10,7 @@
 This second project is your first foray into **building a full-stack 
 application.** You'll be **building a Node/Express/MongoDB app** from the ground up yourself.
 
-**You will be working individually for this project;** you'll be 
-designing and coding the app yourself. 
+**You will be working individually for this project;**
 
 You get to decide what you want to build - as long as it meets the technical requirements outlined below.
 
@@ -65,7 +64,7 @@ Here's a [YouTube video to show you how](https://www.youtube.com/watch?v=QpdhBUY
 
 ### Finished Project Presentation 
 
-You will have a maximum of 10 minutes to present your project following these guidelines:
+You will have a maximum of 7 minutes to present your project following these guidelines:
 
 
 1. **Introduce the Project:**
@@ -109,13 +108,11 @@ You will have a maximum of 10 minutes to present your project following these gu
 
 ### Your App Must:
 
-☐ **Have at least 2 data entities in addition to the "User" Model**.  One entity that represents the main functional idea for your app and another with a **1:M** or **M:M** relationship with that main entity (embedded or referenced).
+☐ **Have at least 2 data entities in in total, so one "User" schema and another schema that represents the main functional idea for your app (relationships between entities are encouraged, but not required)**
 
 ☐ **Use OAuth authentication**. 
 
-☐ **Implement basic authorization** by restricting access to certain features, such as editing and deleting a resource, to an authenticated user, or the user that created that resource.
-
-☐ Have **complete CRUD data operations** between all data entities. For example, you can have functionality that **C**reates & **U**pdates a _post_ (data entity) and satisfy **D**elete functionality by implementing the ability to delete _comments_ (data entity).
+☐ Have **complete CRUD data operations** on one of your data entities. 
 
 ☐ Use a CSS stylesheet **(Additional Use of a CSS Framework such as Bootstrap or Materialize is optional, however your must have your own stylesheet with some styles defined as well)**
 
