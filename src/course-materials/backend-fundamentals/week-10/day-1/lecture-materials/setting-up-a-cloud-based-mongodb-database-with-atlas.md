@@ -14,6 +14,15 @@ type: "lecture"
 <br>
 <br>
 
+### [Click here for recording](https://generalassembly.zoom.us/rec/share/-YtWE6jRrHxObKvGsV2GVpwdI631X6a80CQZ8vBcmEg0XHscYeHbubrFUIqcpDQl?startTime=1596212392000)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 ## Intro
 
 While developing an application that requires a MongoDB, you can only connect to your local MongoDB engine for so long.  This is because the application, once deployed, will have to connect to a MongoDB engine accessible via the Internet.

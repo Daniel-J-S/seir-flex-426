@@ -12,6 +12,15 @@ type: "lecture"
 <br>
 <br>
 
+### [Click here for recording](https://generalassembly.zoom.us/rec/share/-YtWE6jRrHxObKvGsV2GVpwdI631X6a80CQZ8vBcmEg0XHscYeHbubrFUIqcpDQl?startTime=1596215764000)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 ## Intro
 
 Project 1 was a static application that required no code to run on a server.  However, SEIR-Flex's Project 2 and beyond are full-stack web applications that need to run code on a backend server.
