@@ -9,3 +9,8 @@
 - Adds scroll progress bar 
 - Adds header links
 - Adds change log 😎
+
+**v2.1.1** 
+- Adds developer guides
+
+
