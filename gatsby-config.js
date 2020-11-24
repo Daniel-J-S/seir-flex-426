@@ -28,6 +28,14 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet-async`,
     {
+      resolve: `gatsby-plugin-scroll-indicator`,
+      options: {
+        color: '#dc143c',
+        height: '4px',
+        zIndex: `9999`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-html-attributes`,
       options: {
         lang: `en`
@@ -51,6 +59,12 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         plugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+            options: {
+              offsetY: `100`,
+            }
+          },
           {
             resolve: `gatsby-remark-responsive-iframe`
           },
