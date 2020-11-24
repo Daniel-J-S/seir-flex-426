@@ -1,46 +1,16 @@
 ---
 track: "Backend Fundamentals"
 title: "Week 10 - Day 3"
-week: 10
-day: 3
+week: 11
+day: 1
 type: "lecture"
 topics: "Producing an API in Express"
 ---
 
-# Producing an API in Express
+# Producing an API in Express Developer Guide
 
 <br>
 <br>
-<br>
-
-# Learning Objectives
-
-
-- Explain why we would want to add an API to an app
-
-- Create name-spaced routes dedicated to an API
-
-- Respond to API requests with JSON and appropriate status codes
-
-<br>
-<br>
-
-# Roadmap
-
-
-- Why expose API access to an app?
-- Views not required
-- Postman
-- We need an Express app
-- Install Mongoose and connect to a DB
-- Model?  Puppies, of course!
-- API RESTful routes
-- Proper response codes
-- Set up the routes for the API
-- Responding with JSON and a Status Code
-- CORS
-- Essential Questions
-
 <br>
 <br>
 
@@ -80,22 +50,11 @@ topics: "Producing an API in Express"
 <br>
 <br>
 
-### 💪 Practice Exercise (15 Min)
-
+### 💪 We need an Express app
 
 - You've created several Express apps and Mongoose Models - time to do it again!
 
-- Try to complete this exercise with minimal collaboration.
-
 - Be "assertive" and code with a purpose - in other words, complete this exercise as quickly as you can!
-
-- Follow the instructions in the next 4 slides...
-
-<br>
-<br>
-<br>
-
-### 💪 We need an Express app
 
 - If you haven't done so already, install the [express generator](https://www.npmjs.com/package/express-generator)
 
@@ -369,11 +328,12 @@ The express generator provides us with the `express` command, then we simply pro
 <br>
 <br>
 
-### ❓ Essential Questions
+<!-- 
+### ❓ Essential Questions 
 
 1. How would these two routes be expected to behave differently?
 	`GET /accounts` and`GET /api/accounts`
 	
 2. In addition to responding with JSON, it is proper to set the HTTP Response's _______ _______ as well.
 
-3. What is the use case for exposing an API from a server app?
+3. What is the use case for exposing an API from a server app? -->

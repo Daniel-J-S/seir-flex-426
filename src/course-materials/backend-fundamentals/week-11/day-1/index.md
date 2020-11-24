@@ -17,4 +17,5 @@ topics: "Intro Developer Guides - Project 2 - Holiday Week Send Off"
 - [**Developer Guide:** Deploying a Node/Express App to Heroku](/backend-fundamentals/week-11/day-1/lecture-materials/deploying-a-node-express-app-to-heroku/)
 - [**Developer Guide:** Add a Feature to a Web App](/backend-fundamentals/week-11/day-1/lecture-materials/guide-to-add-a-feature-to-a-web-app/)
 - [**Developer Guide:** User-Centric CRUD with node/express & Mongoose](/backend-fundamentals/week-11/day-1/lecture-materials/guide-to-user-centric-crud)
+- [**Developer Guide:** Producing an API with Express](/backend-fundamentals/week-11/day-1/lecture-materials/producing-an-api-with-express)
 
