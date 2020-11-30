@@ -10,6 +10,10 @@ type: "lecture"
 
 <br>
 <br>
+<br>
+<br>
+
+
 
 ## Learning Objectives
 
@@ -82,7 +86,7 @@ const student = <Student>Jose<br />jose@email.com</Student>;
 You will see the above transpiled into this JS:
 
 
-```js
+```javascript
 const student = React.createElement(
   Student,
   null,
@@ -113,7 +117,7 @@ const student = <Student cohortId='SEI-99'>Jose<br/>jose@email.com</Student>;
 
 Now the transpiled JS looks like this:
 
-```js
+```javascript
 const student = React.createElement(
   Student,
   { "cohortId": "SEI-99" },
@@ -125,7 +129,7 @@ const student = React.createElement(
 
 In summary, in React, JSX is just syntactic sugar for:
 
-```js
+```javascript
 React.createElement(component, props, ...children);
 ```
 
@@ -147,7 +151,7 @@ Let's create a new React Sandbox using [CodeSandbox](https://codesandbox.io/) to
 1. In a future lesson we'll learn a lot about styling in React - and you'll see that like most things React - it's different.  CodeSandbox has already created a CSS stylesheet within the **src** folder. Thanks to tooling, it is able to be "imported" within the **App.js** like this:
 
 
-```js
+```javascript
 import React from "react";
 import "./styles.css"; // <- Already imported for us!
 
@@ -210,15 +214,17 @@ export default function App() {
 	
 	export default Greeter;
 	```
-	Note how a **Function Component** (a component defined as a `function`) accepts "props" as an argument and must `return` its UI (defined using JSX).
+
+Note how a **Function Component** (a component defined as a `function`) accepts "props" as an argument and must `return` its UI (defined using JSX).
 
 <br>
 <br>
+
 
 5. Now let's modify `<App>` to render the new `<Greeter>` component instead of the built-in `<h1>` React element:
 
 	```jsx
-	function App() {
+	export default function App() {
 	  return (
 	    <div>
 	      <Greeter />
@@ -359,7 +365,7 @@ However, most of the props we use will be custom props that are unique to the ap
 Let's pass a prop named `earthling`to the `<Greeter />` component:
 
 ```jsx
-function App() {
+export default function App() {
   return (
     <div>
       <Greeter earthling='Wilma'/>
@@ -373,7 +379,7 @@ Note that we can assign a string value to a prop as shown above using single or 
 
 ```jsx
 
-function App() {
+export default function App() {
   const character = {name: 'Wilma', town: 'Roswell'};
   return (
     <div>
@@ -407,7 +413,7 @@ You can embed and render the result of any JavaScript **expression** in JSX by w
 
 Now let's use the `earthling` prop that was passed:
 
-```js
+```javascript
 <div>
   <h1>Greetings Earthling {props.earthling}</h1>
 </div>
@@ -469,7 +475,7 @@ Considering that JSX is a JS expression, leads us to the fact that JSX can be:
 
 For example, here's a component that returns different JSX depending upon the value of `props.user`:
 
-```js
+```javascript
 const Greeting = (props) => {
   if (props.user) return <h1>Hello, {formatName(props.user)}!</h1>;
   return <h1>Hello, Stranger.</h1>;
@@ -490,7 +496,7 @@ We just have to be careful not to try to write _JS statements_ within the JSX.
 
 #### When & How Components Get Rendered
 
-Components can be defined as either a `class` or a `function`.
+In this Unit, we'll learn more about components and how they can be defined as either a `class` or a `function`; the latter is becoming more popular nowadays and soon enough you'll see why.
 
 A **Function Component** must `return` its JSX.
 
@@ -515,7 +521,7 @@ Quite often we need to render "lists" of components, for example, a list of To D
 
 How about an array of things the aliens want from Earth:
 
-```js
+```javascript
 function Greeter(props) {
   const things = ["Water", "Cattle", "Plutonium", "Gold"];
   // Create an array of <li> components
@@ -564,16 +570,17 @@ Note that a `key` prop has been added. Whenever React has a list of components, 
 <br>
 <br>
 
-## ❓ Essential Questions
+## Essential Questions
 
-1. **In your own words, what is JSX and why do we use it?**
+**❓ In your own words, what is JSX and why do we use it?**
 
-2. **How many component nodes can be returned from a function component or the `render` method in the case of a class component?**
+**❓ How many component nodes can be returned from a function component or the `render` method in the case of a class component?**
 
-3. **We use _______ to pass information as key/value pairs to a component.**
+**❓ We use _______ to pass information as key/value pairs to a component.**
 
-4. **To embed JS expressions within JSX, we wrap the expressions with ________?**
+**❓ To embed JS expressions within JSX, we wrap the expressions with ________?**
 
+<br>
 <br>
 <br>
 

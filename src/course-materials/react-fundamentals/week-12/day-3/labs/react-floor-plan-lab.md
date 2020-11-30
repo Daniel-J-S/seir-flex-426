@@ -11,6 +11,8 @@ type: "lab"
 
 <br>
 <br>
+<br>
+<br>
 
 
 
@@ -125,17 +127,17 @@ Style the components to make the output look like a floor plan:
 
 - Use props being passed in to generate a unique `id` on an element that can be used to target that element for custom styling. For example:
 
-	```js
+	```javascript
 	<div className='bedroom' id={`bed-${props.bedNum}`}>
 	```
 	Would result in this `<Bedroom>` having a wrapping `<div>` like:
 	
-	```js
+	```javascript
 	<div class="bedroom" id="bed-2">
 	```
 	if it was rendered as:
 	
-	```js
+	```javascript
 	<Bedroom bedNum={2} />
 	```
 

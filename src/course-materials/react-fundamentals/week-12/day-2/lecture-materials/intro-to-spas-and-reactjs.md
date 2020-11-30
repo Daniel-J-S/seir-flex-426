@@ -11,7 +11,7 @@ type: "lecture"
 <br>
 <br>
 <br>
-
+<br>
 
 
 ## Learning Objectives
@@ -106,11 +106,12 @@ The undisputed champ of client-side rendering today is React!
 <br>
 <br>
 
-### ❓ Review Questions
+### Review Questions
 
-1. **What's the key difference between a traditional web app and a single-page app?**
+**❓ What's the key difference between a traditional web app and a single-page app?**
 
-2. **What development concepts enable the creation of comprehensive single-page applications?**
+
+**❓ What development concepts enable the creation of comprehensive single-page applications?**
 
 <br>
 <br>
@@ -206,7 +207,7 @@ At this point, the takeaway should be that:
 - React apps consist of **components** that we code using JavaScript (and a special syntax known as JSX). You will not be creating any *.html files when developing a React app.
 - The line of code that causes all of the components to be rendered for the first time is:
 
-```js
+```javascript
 ReactDOM.render(<App />, rootElement);
 ```
 
@@ -282,11 +283,11 @@ Yeah, rendering happens frequently in a React app (whenever state changes), but 
 <br>
 <br>
 
-### ❓ Review Questions
+### Review Questions
 
-1. **The User Interface in a React app is built using c____________s.**
+**❓ The User Interface in a React app is built using c____________s.**
 
-2. **When ________ changes in a component, that component, and all of its children components are rendered.**
+**❓ When ________ changes in a component, that component, and all of its children components are rendered.**
 
 
 <br>
@@ -374,9 +375,8 @@ We will be using `create-react-app` to start all React apps in SEI from this poi
 
 [React's official tutorial](https://reactjs.org/tutorial/tutorial.html) assumes no existing React knowledge and is therefore a great place to get your feet wet.
 
-Note that the tutorial has two different setup options.  Please use the [starter code for Option 1](https://codepen.io/gaearon/pen/oWWQNa?editors=0010).
+Note that the tutorial has two different setup options. Please complete [Option 2](https://reactjs.org/tutorial/tutorial.html).
 
-After opening the starter code (a CodePen), start the tutorial [here](https://reactjs.org/tutorial/tutorial.html#inspecting-the-starter-code).
 
 This lab is not a deliverable.
 
