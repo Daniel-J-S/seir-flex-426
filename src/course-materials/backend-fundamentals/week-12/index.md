@@ -12,7 +12,7 @@ topics: "Project 2 Presentations"
 
 ####  Project 2 Presentations
 
-- **Activity:** Students Present Project 2
+- [**Recording:** Project 2 Presentations](https://generalassembly.zoom.us/rec/share/Y6bBFTNBNLSnuONqT_R9ZQAjnB6vUBcu4t1XaItVBk8yyVigXMKm-F08YBS0RByO.sTbtMPN4XpcqmpUM?startTime=1606868230000)
 
 
 
