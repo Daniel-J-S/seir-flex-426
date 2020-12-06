@@ -63,8 +63,8 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 | Week  | Topics |
 | ----- | ------ |
-| 12 | Intro to React, JSX, State, Props & Components  |
-| 13 | CSS + React & Handling Events |
+| 12 | Intro to React, JSX & Components  |
+| 13 | State, Props, CSS, Event Handling & AJAX with React |
 | 14 | Handling Input, Updating State & React Router |
 | 15 | Lifecycle Methods, React + AJAX & Full-Stack React|
 | 16 | Project 3 Planning, Catch up on Labs & Authentication with React + JWTs |
