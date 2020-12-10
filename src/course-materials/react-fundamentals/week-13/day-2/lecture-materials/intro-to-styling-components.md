@@ -9,7 +9,19 @@ type: "lecture"
 
 # Intro to Styling React Components
 
+
+
+# Components in React
+
+
 <br>
+<br>
+<br>
+
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/0_7xAuzOhubtp5M1UtLk3rgt_lxO1OY7ppSXFGCckcZ-PZCqfnvCDUZfeByZmBzD.Ocl_X70mLGTd8Bqp?startTime=1607556768000) to access recording
+
+
 <br>
 <br>
 <br>
