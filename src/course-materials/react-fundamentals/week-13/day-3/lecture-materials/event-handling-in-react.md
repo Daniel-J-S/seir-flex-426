@@ -389,7 +389,7 @@ If things aren't working, be sure to closely read the error messages and use Rea
 Take a minute to review the following questions:
 
 
-**❓ How do w providing arguments to functions in event props?**
+**❓ How do we providing arguments to functions in event props?**
 
 **❓ Is this code bogus or cool? Explain your answer.**
 
