@@ -121,7 +121,7 @@ When completed, clicking the "Difficulty" link (styled as a button) will display
 
 	- You'll want to create a helper function inside `settingsPage.js` to perform the steps listed above.
 	
-	- To accomplish programatic routing, you can use the technique shown in the [**further reading section**](/react-fundamentals/week-2/day-3/lecture-materials/intro-to-react-router/#routing-programmatically) of _React Router_ lesson to programmatically route to `/`.
+	- To accomplish programatic routing, you can use the technique shown in the [**further reading section**](/react-fundamentals/week-14/day-1/lecture-materials/intro-to-react-router/#routing-programmatically) of _React Router_ lesson to programmatically route to `/`.
 
    - As always, use React Developer Tools to browse components and check/modify state & props.
 
