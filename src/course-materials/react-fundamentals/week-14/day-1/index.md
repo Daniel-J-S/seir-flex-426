@@ -13,4 +13,4 @@ topics: "Intro to Client-Side Routing"
 #### Intro to Client-Side Routing
 
 - [**Lecture:** Intro to React Router](/react-fundamentals/week-14/day-1/lecture-materials/intro-to-react-router/)
-- [**Lab:** React Router Lab](/react-fundamentals/week-14/day-1/labs/react-router-lab/)
+- [**Lab:** React Router Lab](/react-fundamentals/week-14/day-1/labs/react-router-lab/) - **Non-Deliverable**
