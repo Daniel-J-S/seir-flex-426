@@ -447,7 +447,42 @@ import { fetchScoreData } from './services/scoresService';
 
 <br>
 <br>
+
+Oops, you should see a CORS error in the console. Let's fix that now.
+
+Eventually, we'll have to address [`Cross Origin Resource Sharing` or `CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), which is a security feature implemented by modern browsers to prevent attacks such as `Cross Site Scripting` or `XSS`.
+
+To solve this issue, we can introduce a middleware package called `cors`, which is avaiable for installation from `npm`, we can learn more about it [here](https://expressjs.com/en/resources/middleware/cors.html)
+
 <br>
+<br>
+<br>
+
+**First go to your Express App and install it:**
+
+```shell
+npm i cors
+```
+
+<br>
+<br>
+<br>
+
+**Then, inside of `server.js` we can add a simple configuration to allow access from any origin.**
+
+```javascript
+// first require it
+const cors = require('cors');
+
+// then mount it
+app.use(cors());
+```
+
+<br>
+<br>
+
+Awesome! We should see some data come through on the frontend now
+
 <br>
 <br>
 
@@ -490,7 +525,7 @@ import { fetchScoreData } from './services/scoresService';
 
 Try to verify that our state is there using the react dev tools extension
 
-Oops, you should see a CORS error in the console. Let's fix that now.
+
 
 
 
@@ -502,38 +537,7 @@ Oops, you should see a CORS error in the console. Let's fix that now.
 
 ### IMPORTANT REMINDER - Backend Development
 
-Eventually, we'll have to address [`Cross Origin Resource Sharing` or `CORS`](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS), which is a security feature implemented by modern browsers to prevent attacks such as `Cross Site Scripting` or `XSS`.
-
-To solve this issue, we can introduce a middleware package called `cors`, which is avaiable for installation from `npm`, we can learn more about it [here](https://expressjs.com/en/resources/middleware/cors.html)
-
-<br>
-<br>
-<br>
-
-**First we install it:**
-
-```shell
-npm i cors
-```
-
-<br>
-<br>
-<br>
-
-**Then, add a simple configuration to allow access from any origin.**
-
-```javascript
-// first require it
-const cors = require('cors');
-
-// then mount it
-app.use(cors());
-```
-
-<br>
-<br>
-
-Also, just to be clear, the Express backend is fully configured and ready for additional backend functionality to be coded.
+Just to be clear, the Express backend is fully configured and ready for additional backend functionality to be coded.
 
 When the time comes, be sure to add folders such as `config`, `routes`, `models` & `controllers` to keep your backend code organized.
 
