@@ -186,11 +186,6 @@ The <a href="/downloads/react_fundamentals/token-based-auth-with-react/full-stac
 - Open both apps in their own VS Code window
 - Install the `node_modules`: `$ npm i`
 - Inside `config/database.js`, an environment variable is referenced for connecting to a cloud-hosted MongoDB; we need to create the `.env` file, and then add the variable that references our own MongoDB Connection URI
-- Here's a connection URI you can use, just replace `<username>`, `<password>` & `<dbname>` with your own values
-
-```shell
-mongodb+srv://<username>:<password>@cluster0.oc1n0.mongodb.net/<dbname>?retryWrites=true&w=majority
-```
 
 <br>
 <br>
@@ -373,7 +368,7 @@ const jwt = require('jsonwebtoken');
 Creating a JWT requires a "secret" string used for "signing" the JWT. Let's define one in our **.env** file:
 
 ```shell
-DATABASE_URL=mongodb://<user>:<pw>@ds064799.mlab.com:64799/mastermind
+DATABASE_URL=mongodb://someusername:somepassword@ds064799.mlab.com:64799/mastermind
 SECRET=SEIRocks!
 ```
 
@@ -978,7 +973,7 @@ async function login(req, res) {
   try {
     const user = await User.findOne({email: req.body.email});
     if (!user) return res.status(401).json({err: 'bad credentials'});
-    user.comparePassword(req.body.pw, (err, isMatch) => {
+    user.comparePassword(req.body.password, (err, isMatch) => {
       if (isMatch) {
         const token = createJWT(user);
         res.json({token});
