@@ -337,7 +337,7 @@ userSchema.pre('save', function(next) {
 Let's check our code by signing up a new user and using the Mongo Shell to check that the password has been hashed:
 
 ```shell
-$ mongo mongodb://<user>:<pw>@ds064799.mlab.com:64799/mastermind
+$ mongo mongodb://someusername:somepassword@ds064799.mlab.com:64799/mastermind
 > use mastermind
 > db.users.find({})
 ```
@@ -377,7 +377,7 @@ const jwt = require('jsonwebtoken');
 Creating a JWT requires a "secret" string used for "signing" the JWT. Let's define one in our **.env** file:
 
 ```shell
-DATABASE_URL=mongodb://<user>:<pw>@ds064799.mlab.com:64799/mastermind
+DATABASE_URL=mongodb://someusername:somepassword@ds064799.mlab.com:64799/mastermind
 SECRET=SEIRocks!
 ```
 
@@ -964,7 +964,7 @@ async function login(req, res) {
   try {
     const user = await User.findOne({email: req.body.email});
     if (!user) return res.status(401).json({err: 'bad credentials'});
-    user.comparePassword(req.body.pw, (err, isMatch) => {
+    user.comparePassword(req.body.password, (err, isMatch) => {
       if (isMatch) {
         const token = createJWT(user);
         res.json({token});
