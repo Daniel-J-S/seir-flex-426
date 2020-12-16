@@ -486,6 +486,8 @@ Awesome! We should see some data come through on the frontend now
 <br>
 <br>
 
+### Put Score Data Into State
+
 
 **Once we get our scores data using AJAX, we'll need a piece of state to remember it with, let's initialize it**
 
@@ -523,10 +525,7 @@ Awesome! We should see some data come through on the frontend now
 <br>
 <br>
 
-Try to verify that our state is there using the react dev tools extension
-
-
-
+**Try to verify that our state is there using the react dev tools extension**
 
 
 <br>
@@ -549,10 +548,6 @@ You will also want to refer to the Mongoose related lessons to refresh your reco
 <br>
 <br>
 <br>
-
-
-
-**Awesome, we can now verify that our state is there using the react dev tools extension. Since we set up a CORS header in our backend, it should not be blocked anymore.**
 
 
 ## Deployment of Express App
