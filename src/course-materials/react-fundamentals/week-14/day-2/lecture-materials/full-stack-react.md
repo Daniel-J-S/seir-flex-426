@@ -362,7 +362,9 @@ Now that everything is working, let's double check that our React app is running
 
 Make sure to shut down the static server we had running earlier and switch back to our development server with `npm start`.
 
-During the **"Add a Timer Feature code-along"**, we created a `services` directory inside our `src` directory to organize our `service/utility` modules; we're going to use that same folder for this next step.
+In the starter code, you'll notice we created a `services` directory inside our `src` directory to organize our `service/utility` modules.
+
+Let's organize our code in that same folder for this next step.
 
 
 **Let's add a "scores service" module to `services` for getting high scores data from Express**
