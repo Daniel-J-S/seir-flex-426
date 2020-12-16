@@ -446,9 +446,6 @@ import { fetchScoreData } from './services/scoresService';
 ```
 
 <br>
-
-**We should see some data in our browser console 🤔**
-
 <br>
 <br>
 <br>
