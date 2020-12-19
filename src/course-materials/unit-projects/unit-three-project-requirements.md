@@ -9,10 +9,11 @@
 
 **You’ve come a long way, and it's time to show it.** This will be your most advanced project to date.
 
-**Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
+**🚨 Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
 
-- **Meets the minimum requirements**, and
-- **Is reasonably scoped**
+✅ **Meets the minimum requirements**
+
+✅ **Is reasonably scoped**
 
 <br>
 <br>
@@ -46,7 +47,7 @@ This project requires **planning** organized within a **Trello board** with the 
 
 #### 2) Project Source Control & README
 
-The project's source code must be hosted on a personal **GitHub repository**.
+The project's source code for both your **Express Backend** and **React Frontend** must be hosted on a personal **GitHub repository**.
 
 The repo is to contain **frequent commits** dated from the beginning of the project through its completion.
 
@@ -69,25 +70,31 @@ The project must include a **`README.md`** file with the following sections:
 
 #### 3) Application Technical Requirements/Deliverables
 
-- A **working** full-stack, single-page application hosted on Heroku.
+1. A **functioning** full-stack, single-page application hosted on Heroku for **(Express)** and a CDN service like Netlify for **(React)**.
 
-- Incorporate the technologies of the **MERN-stack**:
+2. Incorporate the technologies of the **MERN-stack**:
 	- MongoDB/Mongoose
 	- Express
 	- React
 	- Node
 
-- **Have a well-styled interactive front-end** that communicates with the **Express** backend via AJAX.
+3. **Have a well-styled interactive front-end** that communicates with the **Express** backend via AJAX.
 
-- Implement token-based **authentication**.  Including the ability of a user to sign-up, log in & log out.
+4. Implement token-based **authentication** - *"...a user can sign-up, log in & log out"*.
 
-- Implement **authorization** by restricting CUD data functionality to authenticated users. Also, navigation should respond to the login status of the user.
+5. Implement **authorization** by restricting functionality to authenticated users. 
+6. Navigation should respond to the login status of the user.
+7. One ***User*** data entity minimum, which will be used for Auth; other data entities can be added and related if desired but are not required.
 
-- **Have a comprehensive feature-set**. For example, **if the app does not include full-CRUD** data operations, **ensure the addition** of one or more of the following:
-	
-	- Consume a third-party API.
-	- Include _admin_ features.
-	- Utilize multi-user, real-time communications (difficult and time consuming)
+8. **Have a comprehensive feature-set**. 
+   1. **Full CRUD distributed across all Data Entities** 
+
+		**Or**
+   
+   2. **One of the following features instead:**
+   	- **(Easy)** - Consume a third-party API and display API data in components.
+   	- **(Moderate)** - Include an _admin_ interface w/features.
+   	- **(Hard)** - Utilize multi-user, real-time communications (difficult and time consuming)
 
 
 <br>
@@ -97,7 +104,7 @@ The project must include a **`README.md`** file with the following sections:
 
 #### 4) Project Presentation
 
-You will have 10 minutes to present and demonstrate the following:
+You will have 7 minutes to present and demonstrate the following:
 
 1. Introduce your project by paraphrasing its README.
 
