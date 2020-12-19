@@ -356,6 +356,19 @@ Let's install the one for Node apps:
 `$ npm install jsonwebtoken`
 
 
+Creating a JWT requires a "secret" string used for "signing" the JWT. Let's define one in our **.env** file:
+
+```shell
+DATABASE_URL=mongodb://someusername:somepassword@ds064799.mlab.com:64799/mastermind
+SECRET=SEIRocks!
+```
+
+🚨 **NOTE:** You will need to restart express for the new `SECRET` env var to be added to server memory
+
+<br>
+<br>
+<br>
+
 With **jsonwebtoken** installed, **controllers/users.js** is where we're going to use it:
 
 ```javascript
@@ -365,12 +378,6 @@ const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 ```
 
-Creating a JWT requires a "secret" string used for "signing" the JWT. Let's define one in our **.env** file:
-
-```shell
-DATABASE_URL=mongodb://someusername:somepassword@ds064799.mlab.com:64799/mastermind
-SECRET=SEIRocks!
-```
 
 Let's create a shortcut variable in our controller to hold the SECRET:
 
@@ -518,7 +525,7 @@ import { setToken } from './tokenService';
 const BASE_URL = 'http://localhost:3001/api/users/';
 ```
 
-Now, the refactor of `signup`:
+Then the refactor of `signup`:
 
 ```javascript
 function signup(user) {
@@ -557,7 +564,9 @@ Anytime the app is loaded or refreshed, we're going to want to check to see if t
 
 In addition, apps from time-to-time, will need to obtain the logged in user's info or check if there is a user logged in. A function for this purpose in `userService` would make sense.
 
-Let's add a `getUser` function to **userService.js**, but first we need to import something that doesn't exist yet, a `getUserFromToken` function... you'll probably see an error if you save your file at this point ... don't worry, we'll create it soon:
+Let's add a `getUser` function to **userService.js**, but first we need to import something that doesn't exist, a `getUserFromToken` function... 
+
+... you'll probably see an error if you save your file at this point ... don't worry, we'll create it soon:
 
 ```javascript
 // inside of src/services/userService.js
@@ -569,9 +578,13 @@ import { setToken, getUserFromToken } from './tokenService';
 <br>
 <br>
 
-**Now we can define our `getUser` function**
+**Now we can define our `getUserfunction` below our `signup` function**
 
 ```javascript
+// inside of usersService.js
+
+// signup function above
+
 function getUser() {
   return getUserFromToken();
 }
@@ -610,6 +623,10 @@ function getToken() {
 Next, let's code the `getUserFromToken` function that decodes the token, then extracts and returns the `user` object:
 
 ```javascript
+// inside of userService.js
+
+// other code above ... 
+
 function getUserFromToken() {
   const token = getToken();
   return token ? JSON.parse(atob(token.split('.')[1])).user : null;
@@ -986,6 +1003,11 @@ async function login(req, res) {
   }
 }
 
+```
+
+**... one more thing:**
+
+```javascript
 // don't forget this:
 module.exports = {
   signup,
