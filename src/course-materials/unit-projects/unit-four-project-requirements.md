@@ -26,16 +26,16 @@ Working in a team is going to require more upfront planning to ensure the team i
 
 #### Pitch Deck
 
-☐ **Pitch your project** to the class with a [pitch deck](https://pitchdeck.improvepresentation.com/what-is-a-pitch-deck){:target="_blank"} that includes:
+☐ **Pitch your project** to the class with a [pitch deck](https://pitchdeck.improvepresentation.com/what-is-a-pitch-deck) that includes:
 
 - The application name.
 - Your team members and their roles.
 - The problem you are going to solve with your app.
-- Check out previous decks: [Meal Ticket](https://docs.google.com/presentation/d/1CsBuC-a_AZ1yXJEE-EbptPIdgj1MktiNALyQyhaFfrM/edit#slide=id.p){:target="_blank"}, [Tripio](https://docs.google.com/presentation/d/1gvOypLc4VjKqJzdAW68iwh28uGDSH4Sp1KnA5grDo2g/edit#slide=id.p){:target="_blank"}, [Pantry](https://docs.google.com/presentation/d/1WvHoN5MNaRembgcoog5p0GtivVCOZSzvfPyeevzy08g/edit){:target="_blank"}, [ArtWorld](https://docs.google.com/presentation/d/1yGy2Mh3n6IhPxFu4XKnnMtPPi4OGFPpf-Z_TMYw6wQY/edit#slide=id.g7ba109823e_2_7){:target="_blank"}
+- Check out previous decks: [Meal Ticket](https://docs.google.com/presentation/d/1CsBuC-a_AZ1yXJEE-EbptPIdgj1MktiNALyQyhaFfrM/edit#slide=id.p), [Tripio](https://docs.google.com/presentation/d/1gvOypLc4VjKqJzdAW68iwh28uGDSH4Sp1KnA5grDo2g/edit#slide=id.p), [Pantry](https://docs.google.com/presentation/d/1WvHoN5MNaRembgcoog5p0GtivVCOZSzvfPyeevzy08g/edit), [ArtWorld](https://docs.google.com/presentation/d/1yGy2Mh3n6IhPxFu4XKnnMtPPi4OGFPpf-Z_TMYw6wQY/edit#slide=id.g7ba109823e_2_7)
 
 #### Trello Board
 
-- A **[Trello](https://trello.com/){:target="_blank"} board** with:
+- A **[Trello](https://trello.com/) board** with:
     
     ☐ **User Stories**, each moving from left to right in the following 
       three lists in your board:<br>
@@ -110,9 +110,9 @@ You will have approximately 15 minutes to present your project following these g
 
 ☐ Your team must **manage team contributions and collaboration** using Git, GitHub and a standard team work-flow.  Here are some references:
 
-- [Team Workflow Video](https://www.youtube.com/watch?v=oFYyTZwMyAg){:target="_blank"}
-- [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/){:target="_blank"}
-- [Cheatsheet in Class Repo](../../resources/git_workflow_team_cheatsheet.md){:target="_blank"}
+- [Team Workflow Video](https://www.youtube.com/watch?v=oFYyTZwMyAg)
+- [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/)
+- [Cheatsheet in Class Repo](../../resources/git_workflow_team_cheatsheet.md)
 
 ☐ All team members need to contribute to the project via git commits.
 
@@ -158,7 +158,7 @@ You will have approximately 15 minutes to present your project following these g
 
 8. **Pair programming** can be a great way for team members to share knowledge and contribute to the project.
 
-9. Consider following a [Mob Programming](https://en.wikipedia.org/wiki/Mob_programming){:target="_blank"} approach where the team is always developing together on a single computer.  Read [this post](http://underthehood.meltwater.com/blog/2016/06/01/mob-programming/){:target="_blank"} for more information.
+9. Consider following a [Mob Programming](https://en.wikipedia.org/wiki/Mob_programming) approach where the team is always developing together on a single computer.  Read [this post](http://underthehood.meltwater.com/blog/2016/06/01/mob-programming/) for more information.
 
 
 
