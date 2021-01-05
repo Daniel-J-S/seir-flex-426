@@ -9,11 +9,11 @@
 
 **You’ve come a long way, and it's time to show it.** This will be your most advanced project to date.
 
-**🚨 Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
+**🚨&nbsp;&nbsp; Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
 
-✅ **Meets the minimum requirements**
+**✅&nbsp;&nbsp; Meets the minimum requirements**
 
-✅ **Is reasonably scoped**
+**✅&nbsp;&nbsp; Is reasonably scoped**
 
 <br>
 <br>
