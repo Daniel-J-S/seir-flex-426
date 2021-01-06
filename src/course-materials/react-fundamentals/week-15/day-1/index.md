@@ -15,3 +15,11 @@ topics: "Final Review of React Auth/Authorization"
 - [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements/)
 - **Activity:** Project 3 Planning & Catch up on Labs
 
+<br>
+<hr>
+<br>
+
+#### Recordings
+
+- [**Final Review of Auth - Adding Authorization to React Mastermind**](https://generalassembly.zoom.us/rec/share/hajIVQ31Oeia-TkN-qb2-ijP924aYOOAIcdp_7DYknw13gJFjnKp-ib1U84oqrh4.MZZaYj7gQ80--rA5?startTime=1608685976000)
+
