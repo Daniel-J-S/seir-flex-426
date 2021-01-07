@@ -13,3 +13,10 @@ topics: "Project 3 Planning & Approvals"
 #### Project 3 Planning & Approvals
 - **Actvity:** Students work on Project 3 planning & getting proposals approved
 
+<br>
+<hr>
+<br>
+
+#### Recordings
+- [**MERN Workshop - Build the Frontend**](https://generalassembly.zoom.us/rec/share/OKaFgllBgQfX7asb4Kf3Ol6kCgsihsDeDlOsaHho2_EnqzTQRBEjdvQ9JfJKlPxG.bU4TLOBAB8XOAg9E?startTime=1609976396000)
+
