@@ -67,17 +67,16 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### Unit Four: Second Language - (Locked)
+### [Unit Four: Second Language](/second-language)
 
 | Week  | Topics |
 | ----- | ------ |
-| 19  | Intro SQL/Relational Databases & Python  |
-| 20  | Intro to Python Container, Functions, Classes & Django |
-| 21  | Django URLs, Views, Templates & Models |
-| 22  | Django Model Relationships & Photo Upload to Amazon S3|
-| 23 | Lab Catch Up, Introduce Project 4/Planning, Git Workflow & Django Auth|
-| 24  | Project Planning & Start Group Project 4 |
-| 25  | Students Work on Group Project 4 |
-| 26  | Students Finish Group Project 4 & Graduation |
+| 20  | Intro SQL/Relational Databases & Python  |
+| 21  | Intro to Python Container, Functions, Classes & Django |
+| 22  | Django URLs, Views, Templates & Models |
+| 23  | Django Model Relationships & Photo Upload to Amazon S3|
+| 24 | Lab Catch Up, Introduce Project 4/Planning, Git Workflow & Django Auth|
+| 25  | Project Planning & Start Group Project 4 |
+| 26  | Students Work on Group Project 4 & Graduation |
 
 
