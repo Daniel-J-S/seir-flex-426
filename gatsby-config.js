@@ -19,10 +19,6 @@ module.exports = {
       title: 'Submit Homework',
       href: 'https://forms.gle/EFuziohqKEd3wbkc9'
     },
-    team: [
-      {name: "Daniel Scott", role: "(IL) Instructional Lead"}
-    ],
-    lessonRecordings: []
   },
   plugins: [
     `gatsby-plugin-sass`,
@@ -111,7 +107,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `General Assembly - SEIR Flex 09/15/20 "Nexus"`,
+        name: `General Assembly - SEIR Flex Course Site`,
         short_name: `GA`,
         description: `Our Student-Facing website expressed as a progressive web app!`,
         lang: `en`,
