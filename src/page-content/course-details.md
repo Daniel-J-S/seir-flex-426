@@ -1,11 +1,20 @@
+---
+title: "Course Details"
+---
+
+
 # Course Details
 
-<hr>
+<br>
+<br>
+<br>
+
 
 ## Graduation Requirements
 
 You will be required to meet 80% completion of homework assignments at the end of each unit, and complete all project requirements. As this is an intense, fast-paced course, only 3 absences will be allowed.
 
+<br>
 <br>
 <br>
 
