@@ -10,6 +10,8 @@ topics: "Intro to Python and Python Control Flow"
 # Week 20 - Day 3
 
 #### Intro to Python and Python Control Flow
+- [**Lecture:** Relational Data Design and Modeling](/second-language/week-20/day-3/lecture-materials/relational-data-design-and-modeling/)
+- [**Lab:** Data Modeling Lab](/second-language/week-20/day-3/labs/data-modeling-lab/) - **Non-Deliverable**
 - [**Lecture:** Intro to Python](/second-language/week-20/day-3/lecture-materials/intro-to-python/)
 - [**Lecture**: Python Control Flow](/second-language/week-20/day-3/lecture-materials/intro-to-python-control-flow/) 
 - [**Lab**: Python Control Flow Lab](/second-language/week-20/day-3/labs/python-control-flow-lab/) - **Deliverable**
