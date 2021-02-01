@@ -16,3 +16,4 @@ topics: "Intro to Python and Python Control Flow"
 - [**Lecture**: Python Control Flow](/second-language/week-20/day-3/lecture-materials/intro-to-python-control-flow/) 
 - [**Lab**: Python Control Flow Lab](/second-language/week-20/day-3/labs/python-control-flow-lab/) - **Deliverable**
 - [**Lab**: Python Challenges Lab](/second-language/week-20/day-3/labs/python-challenges-lab/) - **Non-Deliverable**
+- [**Recording:** Intro to Big O Notation](https://generalassembly.zoom.us/rec/share/JNBzyTtyGP_rSrOga3Pj3kFQ8_xWj4sOR9wF4wZu0KggpTK1sh73pizzatmsJJ2Y.miqrjuMmr_LnpDCU?startTime=1612046354000)
