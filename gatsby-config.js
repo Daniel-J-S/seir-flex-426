@@ -5,7 +5,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'SEIR Flex 09/16/2021 - "Alita"',
+    title: 'SEIR Flex 02/16/2021 - "Alita"',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Remote Flex Program',
