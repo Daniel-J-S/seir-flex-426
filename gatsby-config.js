@@ -5,7 +5,7 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: 'SEIR Flex 09/15/2020 - "Nexus"',
+    title: 'SEIR Flex 09/16/2021 - "Alita"',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Remote Flex Program',
@@ -13,11 +13,11 @@ module.exports = {
     navigationLinks: [
       {title: 'Home', slug: '/'},
       {title: 'Course Details', slug: '/course-details'},
-      {title: 'Coding Challenges', slug: '/coding-challenges'},
+      // {title: 'Coding Challenges', slug: '/coding-challenges'},
     ],
     homeworkSubmissionLink: {
       title: 'Submit Homework',
-      href: 'https://forms.gle/EFuziohqKEd3wbkc9'
+      href: 'https://forms.gle/F825PRGGdT6VcDyz9',
     },
   },
   plugins: [
