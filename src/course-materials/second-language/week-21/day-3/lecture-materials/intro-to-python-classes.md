@@ -209,12 +209,12 @@ print(spot) # -> Dog named Spot is 8 years old
 
 At the top of the repl, define a class named `Vehicle` with the following members:
 
-- **`vin`**: attribute for the vehicle's identification
-- **`make`**: attribute for the vehicle's make
-- **`model`**: attribute for the vehicle's model
-- **`running`**: attribute for maintaining whether or not the vehicle is running.  This should be set to `False` within the `__init__` method instead of being passed in at the time of instantiation.
-- **`start`**: method for changing `running` to `True`
-- **`stop`**: method for changing `running` to `False`
+1. **`vin`**: attribute for the vehicle's identification
+1. **`make`**: attribute for the vehicle's make
+1. **`model`**: attribute for the vehicle's model
+1. **`running`**: attribute for maintaining whether or not the vehicle is running.  This should be set to `False` within the `__init__` method instead of being passed in at the time of instantiation.
+1. **`start`**: method for changing `running` to `True`
+1. **`stop`**: method for changing `running` to `False`
 
 Test out the class by instantiating it a couple of times, calling `start`/`stop` methods and printing some of its attributes:
 
@@ -413,7 +413,7 @@ Take a couple of minutes to review these...
 <br>
 
 
-## Practice Exercise
+##💪 Practice Exercise
 
 Looking for some practice building an object hierarchy in Python?  Good!
 
@@ -421,11 +421,11 @@ In a separate Python repl...
 
 Create a `BankAccount` class with the following members:
 
-- **`owner`**: (attribute) The owner's name as a string
-- **`balance`**: (attribute) The amount of money in the account
-- **`account_no`**: (attribute) A number to be randomly generated and assigned within `__init__` - not passed in at time of instantiation
-- **`deposit(amount)`**: (method) When called on an instance, increases the `balance` by the `amount` argument and returns the new balance
-- **`withdraw(amount)`**: (method) When called on an instance, decreases the `balance` by the `amount` argument and returns the new balance
+1. **`owner`**: (attribute) The owner's name as a string
+1. **`balance`**: (attribute) The amount of money in the account
+1. **`account_no`**: (attribute) A number to be randomly generated and assigned within `__init__` 1. not passed in at time of instantiation
+1. **`deposit(amount)`**: (method) When called on an instance, increases the `balance` by the `amount` argument and returns the new balance
+1. **`withdraw(amount)`**: (method) When called on an instance, decreases the `balance` by the `amount` argument and returns the new balance
 
 
 <br>
