@@ -16,13 +16,15 @@ type: "lecture"
 <br>
 <br>
 
+<!-- 
+
 ### [Click here](https://youtu.be/WL6POLIarfg) to access recording
 
 <br>
 <br>
 <br>
 <br>
-
+ -->
 
 
 
@@ -37,6 +39,7 @@ type: "lecture"
 
 - Use the `while` statement to perform looping
 
+<br>
 <br>
 <br>
 
@@ -59,6 +62,7 @@ type: "lecture"
 
 <br>
 <br>
+<br>
 
 ## Lesson Setup  
 
@@ -70,6 +74,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 >#### "The execution sequence of instructions in a program determined at run time with the use of control structures".
 
   
+<br>
 <br>
 <br>
 
@@ -99,6 +104,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
 
 ### What is True/Truthy & What is False/Falsey?
 
@@ -124,6 +130,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
   
 
   
@@ -139,6 +146,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 - **Take a couple of minutes to test a few of the above**
 
+<br>
 <br>
 <br>
 
@@ -164,6 +172,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### Boolean Logic   <small><em>Comparison Operators</em></small>
 
@@ -196,6 +206,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### Conditional Expressions
    
@@ -216,6 +228,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ## Review Questions
    
@@ -230,6 +244,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ## The <span style="text-transform:lowercase">if..else</span> Branching Statement 
    
@@ -238,6 +254,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### The <span style="text-transform:lowercase">if</span> Branching Statement <small>Single Path</small>
 
@@ -260,6 +278,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### The <span style="text-transform:lowercase">if..else</span> <small>(dual path)</small>
    
@@ -276,6 +296,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### The <span style="text-transform:lowercase">if..else..if</span> <small>(three or more paths)</small>
 
@@ -299,8 +321,9 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
 
-  
+
 ### 💪 Exercise - Branching Statements <small>(5 mins)</small>
 
 - Write the `if...else..if` statement that console.logs the following based upon the value of a variable named `color`:
@@ -315,7 +338,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
-
+<br>
 
 ## Looping Statements 
    
@@ -332,7 +355,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
-  
+<br>  
 
 
 ### Looping Statements   <small><em>while</em></small>
@@ -355,8 +378,10 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
 
-  
+
+
 ### Looping Statements   <small><em>do...while</em></small>
 
 - You may choose to use the `do...while` statement instead of `while` to force the code block to always execute at least once
@@ -375,7 +400,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
-  
+<br>  
 
 ### Looping Statements   <small><em>for</em></small>
 
@@ -395,6 +420,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ### Looping Statements   <small><em>break</em></small>
 
@@ -414,7 +441,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
-
+<br>
 
 ### Question - Looping Statements
    
@@ -425,6 +452,8 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
+<br>
+
 
 ## Closing Questions
 
@@ -436,12 +465,14 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 
 <br>
 <br>
-
+<br>
 
 ## 💪 Practice Exercises <small>(15 mins)</small>
 
 <br>
 <br>
+<br>
+
 
 ### Practice Exercises
 
@@ -455,7 +486,7 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 	let choice = prompt('Enter a, b or c');
 	```
 
-- **Write an `if` statement that 	`console.logs` the following messages**:
+- Write an `if` statement that 	`console.logs` the following messages:
 	- _a_ entered - "a is for apple"
 	- _b_ entered - "b is for banana"
 	- _c_ entered - "c is for cantaloupe"
@@ -464,19 +495,19 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
   
 <br>
 <br>
-
-### Practice Exercises
-
 <br>
+
 
 #### Exercise 2 - Looping
    
 
-- **Use one of the looping statements to continue to execute the code you wrote in the previous exercise until the phrase _no more fruit_ is entered by the user**
+- Use one of the looping statements to continue to execute the code you wrote in the previous exercise until the phrase _no more fruit_ is entered by the user
 
   
 <br>
 <br>
+<br>
+
 
 ## Bonus Material
 
@@ -512,6 +543,6 @@ For this lesson, we're going to code along using an `HTML, CSS & JS`[repl.it](ht
 ### Switch Statement
    
 
-- Look into using the `switch` statement instead of `if...else` if you have more than three code paths and your conditionals always check the same variable
+Look into using the `switch` statement instead of `if...else` if you have more than three code paths and your conditionals always check the same variable
 
-- Here's the documentation for the [switch statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
+Here's the documentation for the [switch statement](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch)
