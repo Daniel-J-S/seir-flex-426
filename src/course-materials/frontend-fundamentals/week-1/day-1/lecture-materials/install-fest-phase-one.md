@@ -17,8 +17,8 @@ For the first phase of "install-fest", we'll install or verify the installation 
 - VS Code
 - Git / Github / Github Enterprise
 - Global Gitignore
-- Spectacle
-- Imgur
+- Spectacle - **(optional)**
+- Imgur - **(optional)**
 
 
 
