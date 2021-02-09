@@ -14,13 +14,14 @@ type: "lecture"
 <br>
 <br>
 
+<!-- 
 ### [Click here](https://generalassembly.zoom.us/rec/share/Z7DQYutCZL2lItBHq6cfpPWKTGp5wpPDOv0qbvK_pGz-gQXfGvgfoMPhP-D67MCs.1OmDzeAQxZU0pL7m?startTime=1600211751000) to access recording
 
 <br>
 <br>
 <br>
 <br>
-
+ -->
 
 
 ## Learning Objectives
@@ -35,8 +36,9 @@ type: "lecture"
 
 - Daniel Scott - Instructor Lead
 - Joe Keohan - Instructor Lead
-- Whitney Smith - Instructional Associate (IA)
 - Leah Mattern - Instructional Associate (IA)
+- Mike Bocon - Instructional Associate (IA)
+- Ray Velasquez - Teaching Assistant (TA)
 
 
 <br>
@@ -82,10 +84,10 @@ type: "lecture"
 
 #### 4 channels
 
-- **`seir-nexus-classroom`**
-- **`seir-nexus-outcomes`**
-- **`seir-nexus-techtalk`**
-- **`seir-nexus-partytime`**
+- **`seirflex-alita-classroom`**
+- **`seirflex-alita-outcomes`**
+- **`seirflex-alita-techtalk`**
+- **`seirflex-alita-partytime`**
 
 <br>
 <br>
