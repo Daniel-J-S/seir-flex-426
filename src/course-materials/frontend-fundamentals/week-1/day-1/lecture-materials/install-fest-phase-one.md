@@ -289,6 +289,16 @@ _Some of these options below might not work properly on your machine depending o
 <br>
 
 
+
+### Installing Imgur
+
+Create an account on [imgur.com](https://imgur.com/) and install [mac2imgur](https://github.com/mileswd/mac2imgur) to ease uploading screenshots and other images from your computer to your imgur account.
+
+<br>
+<br>
+<br>
+
+
 ### Installing Spectacle
 
 Install [Spectacle](https://www.spectacleapp.com/) for resizing windows.
@@ -297,8 +307,21 @@ This free "productivity" tool is invaluable when it comes to minimizing the time
 
 <br>
 <br>
+<br>
 
-### Installing Imgur
 
-Create an account on [imgur.com](https://imgur.com/) and install [mac2imgur](https://github.com/mileswd/mac2imgur) to ease uploading screenshots and other images from your computer to your imgur account.
+### _Spectacle_'s Basic Default Hotkeys
+
+- Here are the most popular hotkeys:
+
+	- Make window full-size — `opt + cmd + F`
+	- Move to the left half — `opt + cmd + ←`
+	- Move to the right half — `opt + cmd + →`
+	- Move to the top half — `opt + cmd + ↑`
+	- Move to the bottom half — `opt + cmd + ↓`
+
+- Pressing the same hotkey will size the window by thirds!
+
+- You can find more info about Spectacle [here](https://github.com/eczarny/spectacle).
+
 
