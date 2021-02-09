@@ -14,12 +14,17 @@ type: "lecture"
 <br>
 <br>
 
+<!-- 
 ### [Click here](https://generalassembly.zoom.us/rec/share/MA7fvFJm77M6GX9_RbTtVGvBsAnvKwC1c09G3l-ETfvUCW18qPYyqKw12Iaq01B6.5JkoJPMHtR_hhqQL?startTime=1600544452000) to access recording
 
 <br>
 <br>
 <br>
-<br>
+<br>  
+
+-->
+
+
 
 
 
