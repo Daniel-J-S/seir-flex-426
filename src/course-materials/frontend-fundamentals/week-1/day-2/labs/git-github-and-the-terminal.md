@@ -14,11 +14,13 @@ type: "lab"
 <br>
 <br>
 
+<!-- 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oIEuhZUriCg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 <br>
-<br>
+<br> 
+-->
 
 
 ## Setup Instructions
@@ -66,6 +68,7 @@ Fundamentals, class, or that you find on your own.
 
 <br>
 <br>
+<br>
 
 
 
@@ -83,6 +86,7 @@ Fundamentals, class, or that you find on your own.
 
 <br>
 <br>
+<br>
 
 ## Part I: Set the Scene
 
@@ -95,6 +99,8 @@ Complete all work inside the `galaxy-far-far-away` folder.
 3. Inside of `tatooine` make a directory called `millenium_falcon`, and in it create: `han_solo.txt`, `chewbaca.txt`
 
 <br>
+<br>
+<br>
 
 ## Part II: `mv` - rename
 
@@ -102,6 +108,8 @@ You can rename a file using the `mv` command.
 
 4. Rename `ben_kenobi.txt` to `obi_wan.txt`
 
+<br>
+<br>
 <br>
 
 ## Part II: `cp` - copy
@@ -112,6 +120,8 @@ You can copy a file from one location to another using the `cp` command. (`man c
 
 5. Copy `storm_trooper.txt` from `death_star` to `tatooine`
 
+<br>
+<br>
 <br>
 
 ## Part IV: `mv` - move
@@ -127,6 +137,8 @@ You can use the `mv` command to move files from one location to another. `mv` ca
 9. Move `princess_leia.txt` into the `millenium_falcon`
 
 <br>
+<br>
+<br>
 
 
 ## Part V: `rm` - remove
@@ -138,6 +150,8 @@ You can use `rm` to delete a file.
 
 10. Delete `obi_wan.txt`.
 
+<br>
+<br>
 <br>
 
 ## Part VI: all together
@@ -161,6 +175,8 @@ You can use `rm` to delete a file.
 19. Move all of the `tie_fighters` out of the `death_star` and into `galaxy-far-far-away`
 
 <br>
+<br>
+<br>
 
 ## Part VII: `rm -r`: remove directories and everything they contain
 
@@ -176,6 +192,8 @@ This command will not typically ask you if you "really want to delete." It will 
 20. Remove `tie_fighter_2` and `tie_fighter_3`
 
 <br>
+<br>
+<br>
 
 
 ## Part VIII:
@@ -189,6 +207,8 @@ This command will not typically ask you if you "really want to delete." It will 
 
 ### Celebrate. You've reached the end of this homework :)
 
+<br>
+<br>
 <br>
 
 ## Commit and push your updated code:
