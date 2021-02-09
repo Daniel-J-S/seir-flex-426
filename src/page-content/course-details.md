@@ -22,11 +22,11 @@ You will be required to meet 80% completion of homework assignments at the end o
 
 ## Schedule and Holidays
 
-- Start date: 02/16/2020
-- End date: TBT
-- Tuesday/Wednesday 6:30 pm - 10:45 pm EST  
-- Sat 10 am - 6 pm EST
-- Holidays: TBT
+- Start date: 02/16/2021
+- End date: 08/07/2021
+- Tuesday/Wednesday 8:30 pm - 12:45 am EST  
+- Sat 12 pm - 8 pm EST
+- Holidays: 5/29, 7/03
 <br>
 <br>
 <br>
@@ -58,11 +58,12 @@ You will be required to meet 80% completion of homework assignments at the end o
 
 | Name  | Role |
 | ----- | ----- |
+| Audrey Galo | Outcomes Coach
 | Daniel Scott  |  Lead Instructor 
 | Joe Keohan  |  Lead Instructor 
-| TBT | Instructional Associate 
 | Leah Mattern | Instructional Associate 
-| TBT | Outcomes Coach
+| Mike Bocon | Instructional Associate 
+| Ray Velasquez | Teaching Assistant 
 
 <br>
 <br>
@@ -125,7 +126,7 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 
 ### We will walk through this together the first time!
 * Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
-* Fill out this [Google Form](https://forms.gle/vQgomETQziQNjf1y8) with a link for that specific homework. It will be the same Google Form for each homework
+* Fill out this [Google Form](https://forms.gle/gsfM8Q1VpwRr9ZvX9) with a link for that specific homework. It will be the same Google Form for each homework
 * **Homework is due one week from the day it was assigned**
 * If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
 * **Homework Feedback is generally administered within one week from the due date**
