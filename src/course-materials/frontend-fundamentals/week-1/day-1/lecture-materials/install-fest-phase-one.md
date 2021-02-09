@@ -29,13 +29,14 @@ For the first phase of "install-fest", we'll install or verify the installation 
 <br>
 <br>
 
+<!-- 
 ### [Click here](https://generalassembly.zoom.us/rec/share/Z7DQYutCZL2lItBHq6cfpPWKTGp5wpPDOv0qbvK_pGz-gQXfGvgfoMPhP-D67MCs.1OmDzeAQxZU0pL7m?startTime=1600218864000) to access recording
 
 <br>
 <br>
 <br>
 <br>
-
+ -->
 
 
 
@@ -43,6 +44,7 @@ For the first phase of "install-fest", we'll install or verify the installation 
 **PLEASE NOTE:** ***if you have a linux machine, [here are some resources](/additional-resources/install-fest-linux) that might be more ideal for your computer***
 
 
+<br>
 <br>
 <br>
 
@@ -54,6 +56,7 @@ We'll use slack to communicate throughout the course. <br>By the time you are re
 
 <br>
 <br>
+<br>
 
 ## Zoom
 
@@ -63,6 +66,7 @@ We'll use slack to communicate throughout the course. <br>By the time you are re
 
 Remember to drag the Slack app into the Applications folder when you open the downloaded archive.
 
+<br>
 <br>
 <br>
 
@@ -84,6 +88,7 @@ Lastly, make sure to run `brew update` to make sure you have the latest lists of
 
 <br>
 <br>
+<br>
 
 ## Xcode
 
@@ -97,6 +102,7 @@ If you need to, you can install Xcode through the App Store. (You probably don't
 
 <br>
 <br>
+<br>
 
 ## Visual Studio Code
 
@@ -108,6 +114,7 @@ Download and install VS Code from [https://code.visualstudio.com/](https://code.
 
 **Important**: Be sure that VS Code is in your Mac's `Applications` folder.
 
+<br>
 <br>
 <br>
 
@@ -139,6 +146,7 @@ brew install git
 
 <br>
 <br>
+<br>
 
 #### Github
 
@@ -146,6 +154,7 @@ brew install git
 
 You should have already opened a personal Github account, however, you need to have a General Assembly Github Enterprise account as well. <br>You can get one by signing up here: [https://git.generalassemb.ly/join](https://git.generalassemb.ly/join)
 
+<br>
 <br>
 <br>
 
@@ -268,8 +277,19 @@ __pycache__/
 
 <br>
 <br>
+<br>
+<br>
 
-## Installing Spectacle
+## Optional Installs
+
+_Some of these options below might not work properly on your machine depending on how old or new your computer is, so use at your own risk. However, the tradeoff is that these tools offer powerful conveniences_
+
+<br>
+<br>
+<br>
+
+
+### Installing Spectacle
 
 Install [Spectacle](https://www.spectacleapp.com/) for resizing windows.
 
@@ -278,7 +298,7 @@ This free "productivity" tool is invaluable when it comes to minimizing the time
 <br>
 <br>
 
-## Installing Imgur
+### Installing Imgur
 
 Create an account on [imgur.com](https://imgur.com/) and install [mac2imgur](https://github.com/mileswd/mac2imgur) to ease uploading screenshots and other images from your computer to your imgur account.
 
