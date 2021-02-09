@@ -16,12 +16,15 @@ type: "lecture"
 <br>
 <br>
 
+<!-- 
 ### [Click here](https://generalassembly.zoom.us/rec/share/tMbtDFNXTs3uotIJCWAJ-HF-HxtQx3xu9uQigyZsD3O-MzCJDy_LiyW1IA7D3kaw.kZtbCdgx94P0eLqy?startTime=1600303365000) to access recording
 
 <br>
 <br>
 <br>
-<br>
+<br> 
+
+-->
 
 
 
@@ -37,6 +40,7 @@ type: "lecture"
 | Distinguish between local and remote repositories |
 
 
+<br>
 <br>
 <br>
 
@@ -75,6 +79,7 @@ In summary:
 
 <br>
 <br>
+<br>
 
 ## Summary of Common Git Commands
 
@@ -84,6 +89,11 @@ In SEIR, you'll get plenty of practice using git, especially during project week
 
 
 For your convenience, <a href="/downloads/frontend_fundamentals/github-git-cheat-sheet.pdf" download>Click Here</a> for a Git Cheatsheet.
+
+<br>
+<br>
+<br>
+
 
 However for a quick reference, the following summary of commands will "git" you far:
 
@@ -95,7 +105,11 @@ However for a quick reference, the following summary of commands will "git" you 
 | `git add -A`| Adds all changes within the repo to the staging are for next commit. |
 | `git commit -m "<message>"`| Commits all staged changes to the local repo. The message should be in worded such that it describes what the commit **does**, not what it **did**. For example, "Style nav bar" instead of "Styled nav bar".|
 
-This following diagrams the flow of making changes to a repo:
+<br>
+<br>
+<br>
+
+This graph diagrams the flow of making changes to a repo:
  
 <img src="https://i.imgur.com/MGQoFYo.png">
 
@@ -103,6 +117,8 @@ This is the most simple workflow, things get a bit more complex when you start s
 
 > IMPORTANT: Do not create a repo within an existing repo!  If you find your computer very sluggish, it might be because you have "nested" repos. It's not uncommon for students to accidentally make their home folder (`~`) a repo - so start there if you suspect something is wrong.
 
+<br>
+<br>
 <br>
 <br>
 
