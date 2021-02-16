@@ -106,6 +106,7 @@ Students will be able to:
 
 <br>
 <br>
+<br>
 
 ### Imgur
 
@@ -149,21 +150,6 @@ Students will be able to:
 	- A certain window: `shift-cmd-4`, then `spacebar` to toggle window mode
 
 
-<br>
-<br>
-
-## Using _Spectacle_ to<br>Move and Size Windows
-<br>
-
-
-
-### What is _Spectacle_?
-
-- _Spectacle_ is a free utility that resizes and snaps into position app windows
-
-- If you don't see the "spectacles" in your menubar, launch _Spectacle_ using _Spotlight_
-
-- When running, _Spectacle_ will listen to the keyboard for certain key combinations (hotkeys) and will resize/position the active application accordingly...
 
 
 <br>
@@ -218,6 +204,8 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
+<br>
 
 #### Change Directories
 
@@ -240,6 +228,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 #### List a Directory's Contents
 
@@ -249,6 +238,8 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 - `tree` is a nice utility for displaying a graphical representation of a directory and its nested directories.<br/>Install it by typing `brew install tree`
 
+<br>
+<br>
 <br>
 <br>
 
@@ -267,6 +258,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 #### Using Tab Auto-Completion
 
@@ -277,6 +269,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 - You can cycle between matching directory names by continuing to press `tab`
 
 
+<br>
 <br>
 <br>
 
@@ -298,6 +291,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 
 #### Practice Creating Directories and Files
@@ -307,6 +301,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 2. Create two files in the new `pjs` folder named `warm.pjs` and `favorite.socks`
 
 
+<br>
 <br>
 <br>
 
@@ -325,6 +320,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 #### Moving Directories
 
@@ -335,6 +331,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 	2. Move the newly created `shorts` directory into the `drawers` directory
 
 
+<br>
 <br>
 <br>
 
@@ -354,6 +351,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 #### Deleting Files
 
@@ -370,6 +368,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 #### Deleting Directories
 
@@ -382,6 +381,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 	```
 
 
+<br>
 <br>
 <br>
 
@@ -397,6 +397,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 - Now, without changing directories, return the socks files back to where they belong
 
 
+<br>
 <br>
 <br>
 
@@ -417,12 +418,14 @@ That said, here are some screenshots to show how your instructor has set up thei
 	
 <br>
 <br>
+<br>
 
 #### Command History & Clearing the Window
 - Pressing the up and down arrows in Terminal will cycle through previously entered commands.  This can be a huge time saver!
 
 - If you'd like to clear the Terminal window, simply press `cmd+k`
 
+<br>
 <br>
 <br>
 
@@ -445,6 +448,7 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 <br>
 <br>
+<br>
 
 ### Add _VS Code_ to <code>$PATH</code>
 
@@ -460,6 +464,26 @@ That said, here are some screenshots to show how your instructor has set up thei
 
 
 <br>
+<br>
+<br>
+<br>
+
+
+
+## (Optional-Bonus) Using _Spectacle_ to<br>Move and Size Windows
+<br>
+
+
+
+### What is _Spectacle_?
+
+- _Spectacle_ is a free utility that resizes and snaps into position app windows
+
+- If you don't see the "spectacles" in your menubar, launch _Spectacle_ using _Spotlight_
+
+- When running, _Spectacle_ will listen to the keyboard for certain key combinations (hotkeys) and will resize/position the active application accordingly...
+
+
 <br>
 <br>
 <br>
