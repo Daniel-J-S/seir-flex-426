@@ -12,18 +12,14 @@ type: "lecture"
 <br>
 <br>
 <br>
-<br>
 
-<!-- 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/w6JN3FvEltg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+### [Click here](https://generalassembly.zoom.us/rec/share/DyllEgQeyvNoguKc0O-MzJjh_hecAxGD4GruuopH2ywLCBOJ07eqoWRkwoVXLOZd.fYZ9-MUXeu1eA7OB?startTime=1613503392000) to access walkthrough recording
 
 <br>
 <br>
-<br> 
+<br>
 
--->
+
 
 ## Intro
 
