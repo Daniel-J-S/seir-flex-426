@@ -37,8 +37,12 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
+<div style="color: grey;">
+
 <!-- ### [Unit Two: Backend Fundamentals](/backend-fundamentals) -->
-### Unit Two: Backend Fundamentals - **Locked**
+
+
+### 🔒 Unit Two: Backend Fundamentals - **Locked**
 
 | Week  | Topics |
 | ----- | ------ |
@@ -54,7 +58,7 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 <!-- ### [Unit Three: React Fundamentals](/react-fundamentals) -->
 
-### Unit Three: React Fundamentals - **Locked**
+### 🔒 Unit Three: React Fundamentals - **Locked**
 
 | Week  | Topics |
 | ----- | ------ |
@@ -71,7 +75,7 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 
 <!-- ### [Unit Four: Second Language](/second-language) -->
-### Unit Four: Second Language - **Locked**
+### 🔒 Unit Four: Second Language - **Locked**
 
 | Week  | Topics |
 | ----- | ------ |
@@ -83,4 +87,5 @@ Curriculum schedule and content is subject to change at the instructor's discret
 | 25  | Project Planning & Start Group Project 4 |
 | 26  | Students Work on Group Project 4 & Graduation |
 
+</div>
 
