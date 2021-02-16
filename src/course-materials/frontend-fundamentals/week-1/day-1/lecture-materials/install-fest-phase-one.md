@@ -29,14 +29,6 @@ For the first phase of "install-fest", we'll install or verify the installation 
 <br>
 <br>
 
-<!-- 
-### [Click here](https://generalassembly.zoom.us/rec/share/Z7DQYutCZL2lItBHq6cfpPWKTGp5wpPDOv0qbvK_pGz-gQXfGvgfoMPhP-D67MCs.1OmDzeAQxZU0pL7m?startTime=1600218864000) to access recording
-
-<br>
-<br>
-<br>
-<br>
- -->
 
 
 
