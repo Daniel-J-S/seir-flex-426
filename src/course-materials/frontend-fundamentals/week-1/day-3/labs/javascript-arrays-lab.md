@@ -14,14 +14,11 @@ type: "lab"
 <br>
 <br>
 
-<!-- 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xlKTc1z_xuY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+### [Click here](https://generalassembly.zoom.us/rec/share/zpgG4dRZhZywXzBOoGhonXzifM7E9zDhOEkHMvr3nXn50p9H9PPuxy2rEUXHiDnw.J039KsWMt0wBMpZu?startTime=1613669670000) to access walkthrough recording
 
 <br>
 <br>
 <br>
- -->
 
 
 

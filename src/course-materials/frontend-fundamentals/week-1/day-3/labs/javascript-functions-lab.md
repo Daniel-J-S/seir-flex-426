@@ -9,19 +9,16 @@ type: "lab"
 
 # JavaScript Functions Lab
 
+<br>
+<br>
+<br>
+
+### [Click here](https://generalassembly.zoom.us/rec/share/zpgG4dRZhZywXzBOoGhonXzifM7E9zDhOEkHMvr3nXn50p9H9PPuxy2rEUXHiDnw.J039KsWMt0wBMpZu?startTime=1613671039000) to access walkthrough recording
 
 <br>
 <br>
 <br>
 
-<!-- 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Q4_HGERJ3AM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-<br>
-<br>
-<br>
- -->
 
 
 
