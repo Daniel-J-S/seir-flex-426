@@ -10,21 +10,19 @@ type: "lecture"
 
 
 
-<br>
-<br>
-<br>
-<br>
-
-<!-- 
-
-### [Click here](https://generalassembly.zoom.us/rec/share/MA7fvFJm77M6GX9_RbTtVGvBsAnvKwC1c09G3l-ETfvUCW18qPYyqKw12Iaq01B6.5JkoJPMHtR_hhqQL?startTime=1600533906000) to access recording
 
 <br>
 <br>
 <br>
-<br> 
 
--->
+
+
+### [Click here](https://generalassembly.zoom.us/rec/share/Gy_VmN8SPk7jH9uwJDuOHvr_TQfIBjWj_6GSHVkSBqOe--8Qa_Deow7RgERGrjMB.PHN2O28oS35Aa18E?startTime=1613857003000) to access recording
+
+<br>
+<br>
+<br>
+
 
 
 

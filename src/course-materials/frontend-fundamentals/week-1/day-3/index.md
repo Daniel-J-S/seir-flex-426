@@ -16,3 +16,4 @@ topics: "JavaScript Basics"
 - [**Lab**: JavaScript Arrays Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-arrays-lab/) - **Deliverable**
 - [**Lecture**: JavaScript Functions and Scope](/frontend-fundamentals/week-1/day-3/lecture-materials/intro-to-javascript-functions-and-scope/) 
 - [**Lab**: JavaScript Functions Lab](/frontend-fundamentals/week-1/day-3/labs/javascript-functions-lab/) - **Non-Deliverable**
+- [**Bonus Recording**: Setting up an Alternative Environment for Lab Work](https://generalassembly.zoom.us/rec/share/Gy_VmN8SPk7jH9uwJDuOHvr_TQfIBjWj_6GSHVkSBqOe--8Qa_Deow7RgERGrjMB.PHN2O28oS35Aa18E?startTime=1613868388000)

@@ -14,17 +14,22 @@ type: "lecture"
 <br>
 <br>
 <br>
-<br>
 
-<!-- 
 
-### [Click here](https://youtu.be/WL6POLIarfg) to access recording
+### [Click here](https://generalassembly.zoom.us/rec/share/Gy_VmN8SPk7jH9uwJDuOHvr_TQfIBjWj_6GSHVkSBqOe--8Qa_Deow7RgERGrjMB.PHN2O28oS35Aa18E?startTime=1613841434000) to access recording
 
 <br>
 <br>
 <br>
+
+
+### [Click here](https://generalassembly.zoom.us/rec/share/Gy_VmN8SPk7jH9uwJDuOHvr_TQfIBjWj_6GSHVkSBqOe--8Qa_Deow7RgERGrjMB.PHN2O28oS35Aa18E?startTime=1613852628000) to access ending exercises recording
+
+
 <br>
- -->
+<br>
+<br>
+
 
 
 
