@@ -14,14 +14,15 @@ type: "lab"
 <br>
 <br>
 
+<!-- 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0T8CUxaf8aU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
 <br>
 <br>
 <br>
 
+ -->
 
 
 
@@ -146,8 +147,8 @@ dom-menu-lab/
 
 
 
-2. Lastly, be sure to initialize a local repository inside `dom-menu-lab`, then create a remote repository on your github account that you can push your commits to.
-3. Once you are done with parts 1 and 2 of these labs, you can copy and paste a link to your repo using the [homework submittal form](https://forms.gle/aGLyBqABxeDLv18B9)
+2. Lastly, be sure to initialize a local repository inside dom-menu-lab, then create a remote repository on your github account that you can push your commits to.
+3. Once you are done with parts 1 and 2 of these labs, you can copy and paste a link to your repo using the homework submittal form.
 
 Take five minutes to familiarize yourself with [CSS Custom Properties (variables)](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) - they are an amazing new addition to CSS. If you're familiar with using variables with SASS/LESS pre-processors, CSS Custom Properties are similar, but far more powerful because they are dynamic (their values can be changed during runtime) - and they are built into the CSS language!
 

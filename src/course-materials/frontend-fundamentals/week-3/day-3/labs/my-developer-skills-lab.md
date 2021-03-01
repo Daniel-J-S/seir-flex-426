@@ -15,13 +15,15 @@ type: "lab"
 <br>
 
 
+<!-- 
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/F0o_H5z2Fss" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br>
 <br>
 <br>
 <br>
-
+ -->
 
 
 
@@ -30,7 +32,7 @@ type: "lab"
 
 This lab provides an opportunity to practice working with jQuery.
 
-This lab **is not a deliverable**.
+This lab is **Deliverable**.
 
 
 <br>
@@ -52,12 +54,12 @@ dev-skills-lab/
 ```
 
 
-1. Do the usual when setting up a front-end project:
+2. Do the usual when setting up a front-end project:
 	- Add the HTML boilerplate to `index.html`
 	- Link in `./js/script.js` - don't forget the `defer` attribute!
 	- Link in `./css/script.css`
 
-4. Load jQuery from the CDN by adding the following **before** your `script.js`:
+3. Load jQuery from the CDN by adding the following **before** your `script.js`:
 	
 	```html
 	<script
@@ -66,7 +68,11 @@ dev-skills-lab/
 	crossorigin="anonymous"></script>
 	```
 
-5. Code away!
+4. You'll want to create a repo for this assignment on [Github Enterprise](https://git.generalassemb.ly)
+
+5. You'll turn in a link to your repo using the homework submission form to submit this assignment for evaluation
+
+6. Code away!
 
 <br>
 <br>
