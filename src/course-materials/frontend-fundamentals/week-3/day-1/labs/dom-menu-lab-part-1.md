@@ -13,16 +13,19 @@ type: "lab"
 <br>
 <br>
 <br>
+<br>
 
-<!-- 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0T8CUxaf8aU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### [Click here](https://generalassembly.zoom.us/rec/share/xh4fRDZFYG3Xus2s54d8mS13FOqvxzCYBhdQdQvB0ZjsqMAY6mo1AOZHosBwXPVP.i2TKRpSH9fYJ-bhu?startTime=1614746757000) to access walk through recording 
+
 
 <br>
 <br>
 <br>
+<br>
 
- -->
 
 
 
