@@ -14,9 +14,9 @@ type: "lecture"
 <br>
 
 
-<!-- 
 
-### [Click here](https://generalassembly.zoom.us/rec/share/xmfudzRjmZIAa9BO4HWxIEPTY21PqzcbGPmfIt4uJ072Yj7Ecibc-q9Z9ILqYLe4.v9MFmFVijwGXHgLV?startTime=1601420169000) to access recording 
+
+### [Click here](https://generalassembly.zoom.us/rec/share/xh4fRDZFYG3Xus2s54d8mS13FOqvxzCYBhdQdQvB0ZjsqMAY6mo1AOZHosBwXPVP.i2TKRpSH9fYJ-bhu?startTime=1614735331000) to access recording 
 
 
 <br>
@@ -24,7 +24,7 @@ type: "lecture"
 <br>
 <br>
 
--->
+
 
 
 ## Learning Objectives
