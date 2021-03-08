@@ -13,16 +13,14 @@ type: "lecture"
 <br>
 <br>
 
-<!-- 
 
-### [Click here]() to access parts 1 & 2 of recording
+### [Click here](https://generalassembly.zoom.us/rec/share/9HHFHM6Xm8nW6CfDUIG1hnxleYwcnDy1xcetsxANz2TpqcYWFjr6ex-OTAVlfv0.XaHnpn1H_LSZfKaw?startTime=1615050487000) to access recording
 
 <br>
 <br>
 <br>
 <br>
 
- -->
 
 
 | Learning Objectives - SWBAT |
