@@ -10,17 +10,29 @@ topics: "Unit Projects"
 
 <br>
 <br>
+<br>
+<br>
 
 
-## Attendance
+## Expectations & Attendance During Project Periods
 
 There are typically no classes taught during project periods with the exception of optional review time or bonus workshops. 
 
-However, we still take normal attendance for scheduled classroom days that fall on project periods, so you are still expected to be virtually present in our usual Zoom call. 
+That said, during project periods, the classroom will be broken down into groups called "squads". 
+
+Each group will have a squad leader consisted of your instructor lead or one of your instructor associates.
+
+**Please Note:** We still take normal attendance for scheduled classroom days that fall on project periods. 
+
+So, you are expected to be available via Slack/Zoom for check'ins and stand up/stand down. 
 
 
-In most cases we'll place you in breakout rooms to work on your project, but it's your responsibility to be available for meetings with instructors as needed. 
+Squad leaders will regularly check on your progress to ensure you're on track to reach MVP. 
 
+🚨 <strong style="color: crimson;">However it still is your responsibility to proactively communicate when you get behind pace or find yourself struggling to reach MVP</strong>.
+
+<br>
+<br>
 <br>
 <br>
 
@@ -31,17 +43,39 @@ In most cases we'll place you in breakout rooms to work on your project, but it'
 ### &#x1F534; Mandatory To Pass:
 #### MVP - Minimum Viable Product
 
-#### Your application must meet these requirements:
+#### Necessary Deliverables (_Your application must meet these requirements_):
 
-  1. Built with HTML, CSS, JavaScript and *jQuery* 
-  2. Hosted on github pages<br>
-  3. Frequent Commits to github<br>
-  4. A `README.md` file with explanations of the technologies used, the approach taken, a link to your live site, installation instructions, unsolved problems, etc.
-  5. Use AJAX to make a request to an external data source like OMDBapi and insert some of the data retrieved into the DOM
+1. Built with HTML, CSS, JavaScript and *jQuery* 
+2. Hosted on github pages
+3. Use AJAX to make a request to an external data source like OMDBapi and insert some of the data retrieved into the DOM
+3. Frequent Commits to github dating back to the very beginning of the project
+4. **A ``README.md`` file** with these sections:
+
+  ☐ **\<Your app's title\>**: A description of your app.  Background info of the app is a nice touch.
+  
+  ☐ **Technologies Used**: List of the technologies used, e.g., JavaScript, HTML, CSS...
+  
+  ☐ **Screenshot(s):** Images of your actual app.
+  
+  ☐ **Getting Started**: In this section include the link to your deployed app and any instructions you deem important. 
+  
+  ☐ **Future Enhancements**: Features you plan to implement later.
+  
+  > Note: Don't underestimate the value of a well crafted `README.md`. <br> The `README.md` introduces your project to prospective employers and forms their first impression of your work!
 
 
 <br>
 <br>
+
+
+## Example README.md
+
+![Example Readme](https://imgur.com/Xyu5ngf.png)
+
+<br>
+<br>
+<br>
+
 
 
 
@@ -61,30 +95,28 @@ In most cases we'll place you in breakout rooms to work on your project, but it'
 
 Below is a non-exhaustive list of some free API's you can use. There are _many_ API's out there, however, so if you find one not on this list that you'd like to use, feel free! Please note that some may require signing up for an API key (e.g. the Marvel API).
 
-  1. Marvel: <a href="https://developer.marvel.com/" target="_blank">https://developer.marvel.com/</a>
+  1. Super Hero API: <a href="https://superheroapi.com/" target="_blank">https://superheroapi.com/</a>
   2. Weather: <a href="https://openweathermap.org/api" target="_blank">https://openweathermap.org/api</a>
   3. News: <a href="https://newsapi.org/" target="_blank">https://newsapi.org/</a>
   4. Giphy: <a href="https://developers.giphy.com/">https://developers.giphy.com/</a>
-  5. Pokemon: <a href="http://pokeapi.co/">http://pokeapi.co/</a>
+  5. Pokemon: <a href="https://pokeapi.co/">https://pokeapi.co/</a>
   6. Card Deck: <a href="https://deckofcardsapi.com/" target="_blank">https://deckofcardsapi.com/</a>
   7. Google Books: <a href="https://developers.google.com/books/" target="_blank">https://developers.google.com/books/</a>
   8. City of Chicago: <a href="https://data.cityofchicago.org/" target="_blank">https://data.cityofchicago.org/</a>
   9.  Beer: <a href="https://www.brewerydb.com/developers" target="_blank">https://www.brewerydb.com/developers</a>
-  10. Chuck Norris: <a href="http://www.icndb.com/" target="_blank">http://www.icndb.com/</a>
-  11. Rick and Morty: <a href="https://rickandmortyapi.com/documentation/#rest" target="_blank">https://rickandmortyapi.com/documentation/#rest</a>
+  10. Rick and Morty: <a href="https://rickandmortyapi.com/documentation/#rest" target="_blank">https://rickandmortyapi.com/documentation/#rest</a>
+  11. Open Trivia DB: <a href="https://opentdb.com/" target="_blank">https://opentdb.com/</a>
   
-Lastly, the following sites congregates a bunch of API's together, so you can take a look through their libraries and try to find an API that interests you! <br>Note, however, that not all API's are free and many listed may require payment. <br>We **highly suggest** to use a free API for your first project dealing with one. 
+Note, not all API's are free and many listed may require payment. <br>We **highly suggest** to use a free API for your first project. 
 
-  1. <a href="https://github.com/toddmotto/public-apis" target="_blank">https://github.com/toddmotto/public-apis<a>
-  1. <a href="https://rapidapi.com/" target="_blank">https://rapidapi.com/</a>
-   
-
+<br>
+<br>
 <br>
 <br>
 
 
 
-## Final Note on Selecting an API
+## 🚨 Final Note on Selecting an API 🚨 
 
 Please be extremely thorough when finding an API you'd like to use for your project. In other words, please ensure you have properly vetted your API, by taking the time to read it's documentation and even "hitting a few endpoints". 
 
@@ -94,6 +126,7 @@ This ensures you're taking the time to test the API and see how you can get it t
 
 <br>
 <br>
+<br>
 
 
 
@@ -101,16 +134,8 @@ This ensures you're taking the time to test the API and see how you can get it t
 
 You will be using GitHub, **not** GitHub Enterprise!
 
-**Do not** begin your project within the class repo.
 
-**Do not** clone your project into the class repo.
-
-1. After your project has been approved, [make a new github repo for your project](https://help.github.com/articles/create-a-repo/). You will be deploying this project onto github pages, so you **must** name your repo `yourgithubusername.github.io` (for example, if my github username was octocat I would do: octocat.github.io)
-
-![](https://i.imgur.com/bzBJdZ5.png)
-
-From there, follow the instructions outlined by github themselves on [github.io](https://pages.github.com/)
-
+After your project has been approved, [make a new github repo for your project](https://help.github.com/articles/create-a-repo/).
 
 **Extra: want your own domain name?**
 
@@ -119,27 +144,49 @@ You can also host your github pages with your own domain name.<br>[Here is a wal
 
 <br>
 <br>
-
-
-
-
-## How to Submit Your Project
-You will present your project and show your code to classmates and instructors.
-
-
-
 <br>
 <br>
 
 
 
-## Where to go for help during project week
+
+## Submitting Your Project and Project Presentations
+
+You will use the Homework Submission link to "submit" the URL to your Project's repo on Github
+
+<br>
+
+You will recieve 5 minutes to present your project and show your code to classmates and instructional team.
+
+<br>
+
+#### Here are the main points you'll want to cover when presenting your project
+
+1. Intro your project by paraphrasing the README on GitHub.
+2. Launch your project clicking the deployed project link in the README.
+3. Showcase your feature set and basic functionality
+4. Briefly show the HTML & CSS.
+5. Show the JavaScript and discuss your favorite code blocks.
+6. Share your biggest challenge.
+7. Share your key learnings/takeaways.
+
+
+
+<br>
+<br>
+<br>
+
+
+
+## How to get help during project periods
+
 1. Seek out help online
+2. Post a question in the teach talk channel
 2. Seek out help with your classmates
-3. Seek out help with our class Instructor Associate 
+3. Asking your instructional team for assistant should be the last resort
 
 
-
+<br>
 <br>
 <br>
 
@@ -155,6 +202,7 @@ You will present your project and show your code to classmates and instructors.
 
 * **Consult documentation resources** (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
 
+<br>
 <br>
 <br>
 
@@ -173,6 +221,7 @@ Are you able to defend why you implemented your solution in a certain way? <br> 
 
 <br>
 <br>
+<br>
 
 
 ## Example Project Functionality
@@ -186,14 +235,6 @@ Consider framing your project around a problem. For example, if I were to create
 
 <br>
 <br>
-
-## Example README.md
-
-Here's an example README for inspiration:
-![Example Readme](https://imgur.com/Xyu5ngf.png)
-
-<br>
-<br>
 <br>
 
 
@@ -202,7 +243,7 @@ Here's an example README for inspiration:
 ## Useful Resources
 
 * **[MDN Javascript Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript)**
-* **[jQuery Docs](http://api.jquery.com)**
+* **[jQuery Docs](https://api.jquery.com)**
 * **[GitHub Pages](https://pages.github.com)**
 * **[Trello](trello.com)**
 
