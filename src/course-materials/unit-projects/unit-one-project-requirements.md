@@ -247,4 +247,4 @@ Consider framing your project around a problem. For example, if I were to create
 * **[GitHub Pages](https://pages.github.com)**
 * **[Trello](trello.com)**
 
-<hr>  
+
