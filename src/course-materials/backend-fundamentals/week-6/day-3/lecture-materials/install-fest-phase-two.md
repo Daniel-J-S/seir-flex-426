@@ -8,20 +8,18 @@ type: "lecture"
 
 # Install-fest Phase Two
 
-<br>
-<br>
-<br>
-
 For the Second phase of "install-fest", we'll install or verify the installation of the following tools on our machines:
 
 - Node.js/npm & nodemon
-- MongoDB
 - Postman
 - Heroku/Heroku CLI
-- Robo3T (Robomongo) - (Optional)
 
 <br>
 <br>
+<br>
+
+**PLEASE NOTE:** ***if you have a linux machine, [here are some resources](/additional-resources/install-fest-linux) that might be more ideal for your computer***
+
 <br>
 
 
@@ -45,37 +43,7 @@ The above commands should display versions without any errors. To verify that al
 
 <br>
 <br>
-<br>
-
-
-## Installing MongoDB
-Install MongoDB using Homebrew using the following commands:
-
-`brew tap mongodb/brew`
-
-The above command might take a moment or two to complete. When finished, install MongoDB with:
-
-`brew install mongodb-community`
-
-
-<br>
-<br>
-<br>
-
-
-### Starting the MongoDB Server
-You start the Mongo database server with the following command:
-
-`brew services start mongodb-community`
-
-The above command also ensures that the MongoDB engine runs after restarting your computer.
-
-More info about installing MongoDB using Homebrew can be found [here](https://github.com/mongodb/homebrew-brew).
-
-
-<br>
-<br>
-<br>
+<br> 
 
 
 ## Installing Postman
@@ -85,6 +53,7 @@ Postman is a collaboration platform for API development. We can use it to design
 We'll mostly use Postman to test API's in SEIR-Flex.
 
 [Click here](https://www.postman.com/downloads/) to navigate to the download page for Postman.
+
 
 
 <br>
@@ -109,12 +78,10 @@ _Heroku is a platform as a service based on a managed container system, with int
 
 
 ### Installing the Heroku CLI
-> The following instructions are sourced from devcenter.heroku.com
 
-You must have node and npm installed already.
+The Heroku CLI makes it easy to create and manage apps in your Heroku account.
 
-`npm install -g heroku`
-
+Click [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) to find the links to download and install it for your operating system.
 
 <br>
 <br>
@@ -129,7 +96,6 @@ heroku --version
 heroku/7.0.0 (darwin-x64) node-v8.0.0
 ```
 You should see `heroku/x.y.z` in the output. 
-
 
 <br>
 <br>
@@ -174,9 +140,3 @@ Now you’re ready to create your first Heroku app! We'll learn how to do this l
 <br>
 <br>
 
-
-## Robo 3T (Robomongo)
-
- Robo 3T is a visual tool helping you manage MongoDB Databases; some might refer to it as a GUI (Graphical User Interface). It is a part of free open source software supporting MacOS & Linux!
-
-[Click here](https://robomongo.org/download) to navigate to the download page

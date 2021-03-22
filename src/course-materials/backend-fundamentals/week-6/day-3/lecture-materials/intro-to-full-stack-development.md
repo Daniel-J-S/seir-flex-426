@@ -9,13 +9,14 @@ type: "lecture"
 # Intro to Full-Stack Development 
 
 
-
+<!-- 
 <br>
 <br>
 <br>
 
 
-### [Click Here](https://generalassembly.zoom.us/rec/share/16v82jPBYnqsHHzrWW45Cna77H1ZO3acg96ijqM-BiQVDPRCMen5NhedilPcBpBQ.5TnVnIjjuR3EAAJp?startTime=1603558485000) to access recording
+### [Click Here]() to access recording 
+-->
 
 
 <br>
