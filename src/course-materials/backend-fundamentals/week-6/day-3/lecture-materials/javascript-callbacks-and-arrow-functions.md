@@ -11,13 +11,11 @@ type: "lecture"
 
 <br>
 <br>
-
-
-This material was meant to be a resource for students to refer to later, but we'll briefly introduce/review these concepts, so we're familiar with them.
-
-
-
 <br>
+
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/g5NiVd1EBEptfhW0Ch-HY4r-H1GcNuwj37hOAstOUQqhv8lYWa7GZ8PiolCQEU3M.iLkwwrGZKxH960dP?startTime=1616860942000) to access recording 
+
 <br>
 <br>
 <br>
