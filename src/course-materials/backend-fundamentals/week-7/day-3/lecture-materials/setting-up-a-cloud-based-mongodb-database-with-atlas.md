@@ -1,8 +1,8 @@
 ---
 track: "Backend Fundamentals"
 title: "Create a cloud-based MongoDB Database with Atlas"
-week: 10
-day: 1
+week: 7
+day: 3
 type: "lecture"
 ---
 
@@ -14,6 +14,7 @@ type: "lecture"
 <br>
 <br>
 
+<!-- 
 ### [Click here for recording](https://generalassembly.zoom.us/rec/share/-YtWE6jRrHxObKvGsV2GVpwdI631X6a80CQZ8vBcmEg0XHscYeHbubrFUIqcpDQl?startTime=1596212392000)
 
 <br>
@@ -21,7 +22,7 @@ type: "lecture"
 <br>
 <br>
 <br>
-
+ -->
 
 ## Intro
 
