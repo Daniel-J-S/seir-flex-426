@@ -2,7 +2,7 @@
 track: "Backend Fundamentals"
 title: "Intro to Mongoose"
 week: 8
-day: 2
+day: 1
 type: "lecture"
 ---
 
@@ -13,11 +13,14 @@ type: "lecture"
 <br>
 <br>
 
-### [Click Here](https://generalassembly.zoom.us/rec/share/42AaFtOE_IF7iYcIUP_SCFogpz8rgIzWo2DZec70shHqmDShJ2hyxIKgh0uKWuH4.AG_6FgiuzYC3_kuW?startTime=1604532975000) to access recording
+<!-- 
+
+### [Click Here]() to access recording
 
 <br>
 <br>
-<br>
+<br> 
+-->
 
 
 

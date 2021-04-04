@@ -2,7 +2,7 @@
 track: "Backend Fundamentals"
 title: "Mongoose Flights - Part 1"
 week: 8
-day: 2
+day: 1
 type: "lab"
 ---
 
@@ -10,11 +10,6 @@ type: "lab"
 
 
 <br>
-<br>
-<br>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/a6FP90ViLvE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 <br>
 <br>
 <br>

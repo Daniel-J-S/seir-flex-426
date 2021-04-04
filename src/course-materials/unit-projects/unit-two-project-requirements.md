@@ -1,3 +1,11 @@
+---
+track: "Full-Stack Development"
+title: "Project Two"
+type: "Project Prompt"
+topics: "Unit Projects"
+---
+
+
 # Project Two: Your First Full Stack Application
 
 <br>
@@ -10,11 +18,72 @@
 This second project is your first foray into **building a full-stack 
 application.** You'll be **building a Node/Express/MongoDB app** from the ground up yourself.
 
-**You will be working individually for this project;**
+**You will be working individually for this project**, which means you'll be designing and coding the app yourself. 
 
-You get to decide what you want to build - as long as it meets the technical requirements outlined below.
+You get to decide what you want to build - as long as it meets the **Technical Requirements** outlined below.
 
-Once you've decided what you will build, please contact your instructional team for approval of your idea and then begin working on the **Planning & Presentation Requirements** below.
+Once you've decided what you will build, please contact your instructional team for approval of your idea and then begin working on the **Planning Requirements**.
+
+
+<br>
+<br>
+<br>
+
+
+## Technical Requirements
+
+### Your App Must:
+
+☐ **Have at least 1 data entity (_A Model_)**. This entity must represent the main functional idea for your app.
+
+☐ Have **complete CRUD data operations** on one of your data entities. 
+
+☐ Use a CSS stylesheet **(Additional Use of a CSS Framework such as Bootstrap or Materialize is optional, however your must have your own stylesheet with some styles defined as well)**
+
+☐ Be **deployed online** (Heroku) - _We will show you how to do this_.
+
+<br>
+<br>
+<br>
+
+
+
+### Optionally, Your App May:
+
+☐ **Use authentication**. 
+
+☐ **Implement basic authorization** by restricting access to certain features, such as editing and deleting a resource, to an authenticated user, or the user that created that resource.
+
+☐ Consume a third-party API.
+
+☐ Expose its own API where it returns data resources as JSON. (You will need to research how to do this ... hint `res.json()`)
+
+<br>
+<br>
+<br>
+
+
+
+
+## Necessary Deliverables
+
+☐ **A working full-stack app that meets or exceeds the above technical requirements, built by you, and hosted on Heroku**.
+
+- **A Project `README.md` file** with these sections:
+
+  ☐ **\<Your app's title\>**: A description of your app.  Background info of the app is a nice touch.
+  
+  ☐ **Screenshot(s):** Images of your actual app.
+  
+  ☐ **Technologies Used**: List of the technologies used, e.g., JavaScript, HTML, CSS...
+  
+  ☐ **Getting Started**: In this section include the link to your deployed app and any instructions you deem important. 
+  
+  ☐ **Next Steps**: Planned future enhancements (icebox items).
+  
+  > Note: Don't underestimate the value of a well crafted `README.md`. The `README.md` introduces your project to prospective employers and forms their first impression of your work!
+
+☐ **Frequent commits dating back to the very beginning of the project**. Commit messages should be in the present tense, e.g., "Style landing page" instead of "Styled landing page".
 
 
 <br>
@@ -23,9 +92,10 @@ Once you've decided what you will build, please contact your instructional team 
 
 
 
-## Planning & Presentation Requirements
+## Planning Requirements
 
-- To receive a passing grade on this project, you need to have turned in the following:
+- You need to have turned in the following **before starting Project Week**:
+
 
 - A **[Trello](https://trello.com/) board** with:
     
@@ -62,9 +132,15 @@ Here's a [YouTube video to show you how](https://www.youtube.com/watch?v=QpdhBUY
 
 [**Click here for an example you can use for inspiration**](https://trello.com/b/igfMN4t1/mongoose-movies)
 
-### Finished Project Presentation 
+<br>
+<br>
+<br>
 
-You will have a maximum of 7 minutes to present your project following these guidelines:
+
+
+### Presentation Requirements
+
+You will have a maximum of 5 minutes to present your project following these guidelines:
 
 
 1. **Introduce the Project:**
@@ -75,9 +151,9 @@ You will have a maximum of 7 minutes to present your project following these gui
 
 	☐ Launch the app by clicking the link in the README.
 	
-	☐ Sign up a new user, then immediately log out.
+	☐ (**If auth added**) - sign up a new user, then immediately log out.
 	
-	☐ Log in with your preferred user and demonstrate the features of the app.
+	☐ (**If auth added**) - log in with your preferred user and demonstrate the features of the app.
 	
 	☐ Be sure to demo full-CRUD data operations.
 	
@@ -104,69 +180,7 @@ You will have a maximum of 7 minutes to present your project following these gui
 
 
 
-## Technical Requirements
-
-### Your App Must:
-
-☐ **Have at least 2 data entities in in total, so one "User" schema and another schema that represents the main functional idea for your app (relationships between entities are encouraged, but not required)**
-
-☐ **Use OAuth authentication**. 
-
-☐ Have **complete CRUD data operations** on one of your data entities. 
-
-☐ Use a CSS stylesheet **(Additional Use of a CSS Framework such as Bootstrap or Materialize is optional, however your must have your own stylesheet with some styles defined as well)**
-
-☐ Be **deployed online** (Heroku) - _We will show you how to do this_.
-
-<br>
-<br>
-<br>
-
-
-
-### Optionally, Your App May:
-
-☐ Consume a third-party API.
-
-☐ Expose its own API where it returns data resources as JSON. (You will need to research how to do this ... hint `res.json()`)
-
-<br>
-<br>
-<br>
-
-
-
-
-## Necessary Deliverables
-
-☐ **A working full-stack app that meets or exceeds the above technical requirements, built by you, and hosted on Heroku**.
-
-- **A ``README.md`` file** with these sections:
-
-  ☐ **\<Your app's title\>**: A description of your app.  Background info of the app is a nice touch.
-  
-  ☐ **Screenshot(s):** Images of your actual app.
-  
-  ☐ **Technologies Used**: List of the technologies used, e.g., JavaScript, HTML, CSS...
-  
-  ☐ **Getting Started**: In this section include the link to your deployed app and any instructions you deem important. 
-  
-  ☐ **Next Steps**: Planned future enhancements (icebox items).
-  
-  > Note: Don't underestimate the value of a well crafted `README.md`. The `README.md` introduces your project to prospective employers and forms their first impression of your work!
-
-☐ **Frequent commits dating back to the very beginning of the project**. Commit messages should be in the present tense, e.g., "Style landing page" instead of "Styled landing page".
-
-<br>
-<br>
-<br>
-
-
-
-
 ## Suggested Ways to Get Started
-
-- Because your app's functionality revolves around the logged in user, **implement authentication and basic navigation first!**
 - **Discuss your app idea with an instructor to get their feedback before you dive too deep into user stories and wireframes.**
 - **Remember to keep things small and focus on the MVP** – feature creep can doom a project!
 
