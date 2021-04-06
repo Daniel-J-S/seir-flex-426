@@ -407,13 +407,14 @@ $ touch config/database.js
 const mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/movies', {
-	useNewUrlParser: true, 
-	useCreateIndex: true,
-	useUnifiedTopology: true 
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
 });
 ```
 	
-- The `{useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true}` options avoid deprecation warnings.
+- The `{useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true}` options avoid deprecation warnings.
 
 
 - In order for the code in `database.js` to run and connect to the database, we must require it in `server.js`:
