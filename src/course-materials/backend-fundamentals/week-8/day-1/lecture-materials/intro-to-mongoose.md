@@ -13,14 +13,13 @@ type: "lecture"
 <br>
 <br>
 
-<!-- 
 
-### [Click Here]() to access recording
+### [Click Here](https://generalassembly.zoom.us/rec/share/1-ZwyWoPrNaCKZ2EOZ7eRh3j6NUVId4vnrLavVXwFJF4WFX_NOQaDYOJc7yE4Zp3.4mk2ivd60oM55Akg?startTime=1617755716000) to access recording
 
 <br>
 <br>
 <br> 
--->
+
 
 
 
@@ -498,10 +497,13 @@ require('./config/database');
 ```javascript
 const mongoose = require('mongoose');
 
+const connectionString = 'mongodb+srv://username:password@somecluster.101010.mongodb.net/mongoose-movies?retryWrites=true&w=majority';
+
 mongoose.connect('mongodb://localhost/movies', {
-  	useNewUrlParser: true, 
-  	useCreateIndex: true, 
-  	useUnifiedTopology: true
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
 });
 
 // shortcut to mongoose.connection object
@@ -972,17 +974,17 @@ module.exports = {
 function create(req, res) {
   // convert nowShowing's checkbox of nothing or "on" to boolean
   req.body.nowShowing = !!req.body.nowShowing;
-  // remove whitespace next to commas
-  req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
-  // split if it's not an empty string
-  if (req.body.cast) req.body.cast = req.body.cast.split(',');
-  
-  const movie = new Movie(req.body);
+  // make sure value was provided
+  if (req.body.cast) {
+    // remove whitespace next to commas
+    req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
+    // split if it's not an empty string
+    req.body.cast = req.body.cast.split(',');
+  }
 
-  movie.save(function(err) {
+  Movie.create(req.body, function(err, movie) {
     // one way to handle errors
-    if (err) return res.render('movies/new');
-    console.log(movie);
+    if(err) return res.redirect('/movies/new');
     // for now, redirect right back to new.ejs
     res.redirect('/movies/new');
   });
@@ -1023,6 +1025,12 @@ Movie.find({mpaaRating: 'PG'})
 		
 ```javascript
 Movie.find({mpaaRating: 'PG'}, function(err, movies) {...
+```
+
+- We can also pass in an empty _query object_ to get all the documents
+		
+```javascript
+Movie.find({}, function(err, movies) {...
 ```
 
 <br>
@@ -1209,11 +1217,10 @@ touch views/movies/index.ejs
 **Now that we have an `index` view, let's update the `redirect` in the `create` action:**
 
 ```javascript
- movie.save(function(err) {
-   if (err) return res.render('movies/new');
-   console.log(movie);
-   res.redirect('/movies');  // update this line
- });
+  Movie.create(req.body, function(err, movie) {
+    if(err) return res.redirect('/movies/new');
+    res.redirect('/movies'); // update this line
+  });   
 ```
 
 <br>
@@ -1271,7 +1278,11 @@ const movieSchema = new mongoose.Schema({
 - We can fix this in the `create` action by deleting any property in `req.body` that is an empty string:
 
 ```javascript
-if (req.body.cast) req.body.cast = req.body.cast.split(',');
+  // inside the movies.js controller "create" function
+  if(req.body.cast) {
+      req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
+      req.body.cast = req.body.cast.split(',');
+  }
 	// remove empty properties
 	for (let key in req.body) {
  	  if (req.body[key] === '') delete req.body[key];
