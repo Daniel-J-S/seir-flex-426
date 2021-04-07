@@ -45,9 +45,9 @@ Students Will Be Able To:
 #### Setup
 
 
-1. <a href="/downloads/backend_fundamentals/mongoose-embedded-relationships/mongoose-movies.zip" download>Download</a> the starter code to get started
+1. [Clone this repo](https://git.generalassemb.ly/Instructional-Materials/STARTER-CODE-INTRO-TO-MONGOOSE-EMBEDDED-DATA) to get the starter code.
 
-2. `cd` inside the project folder in your code editor.
+2. `cd` inside the project folder in your text editor.
 
 
 3. Install the node modules:
@@ -56,7 +56,33 @@ Students Will Be Able To:
 $ npm install
 ```
 
-4. Use `nodemon` to start the server.
+<br>
+
+**🚨 Important, Please Read!**
+
+4. Before running this code, you will need to update `./config/database.js`
+
+```js
+const connectionString = 'YOUR CONNECTION URI';
+
+mongoose.connect(connectionString, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false
+});
+```
+
+<br>
+
+As you can see above, 👆 this starter code is missing the MongoDB Atlas connection URI it needs to connect to your database.
+
+Grab that from your working code from the previous lesson and replace the placeholder string with that value instead 😅
+
+<br>
+
+
+5. Use `nodemon` to start the server.
 
 <br>
 <br>
@@ -84,7 +110,6 @@ $ npm install
 <br>
 <br>
 <br>
-
 
 
 
