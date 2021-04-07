@@ -285,13 +285,14 @@ _"Mongoose provides a straight-forward, **schema-based** solution to model your 
 
 
 **Mongoose also provides lots of other useful functionality:**
-	- Default property values
-	- Validation
-	- Automatic related model population via the `populate` method
-	- _Virtual properties_ - create properties like "fullName" that are not persisted in the database
-	- Custom _Instance methods_ which operate on a document
-	- _Static methods_ which operate on the entire collection 
-	- `pre` and `post` event lifecycle hooks (Mongoose "middleware")
+
+- Default property values
+- Validation
+- Automatic related model population via the `populate` method
+- _Virtual properties_ - create properties like "fullName" that are not persisted in the database
+- Custom _Instance methods_ which operate on a document
+- _Static methods_ which operate on the entire collection 
+- `pre` and `post` event lifecycle hooks (Mongoose "middleware")
 
 
 <br>
@@ -510,7 +511,7 @@ mongoose.connect('mongodb://localhost/movies', {
 const db = mongoose.connection;
 
 db.on('connected', function() {
-console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
+  console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
 });
 
 ```
