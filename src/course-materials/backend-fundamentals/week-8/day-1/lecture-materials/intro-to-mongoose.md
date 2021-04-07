@@ -406,7 +406,9 @@ $ touch config/database.js
 ```javascript
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/movies', {
+const connectionString = 'mongodb+srv://username:password@somecluster.101010.mongodb.net/mongoose-movies?retryWrites=true&w=majority';
+
+mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
@@ -500,7 +502,7 @@ const mongoose = require('mongoose');
 
 const connectionString = 'mongodb+srv://username:password@somecluster.101010.mongodb.net/mongoose-movies?retryWrites=true&w=majority';
 
-mongoose.connect('mongodb://localhost/movies', {
+mongoose.connect(connectionString, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
