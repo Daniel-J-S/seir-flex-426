@@ -42,14 +42,22 @@ type: "lecture"
 
 #### Setup
 
-- Today's starter code is the final code from our _Mongoose - Embedding Related Data_ lesson, however, to make this lesson flow better, let's make a few small changes:
+To prepare for this lesson, let's clone down the [starter code](https://git.generalassemb.ly/Instructional-Materials/STARTER-CODE-INTRO-TO-MONGOOSE-REFERENCED-DATA) - FYI its the final code from our _Mongoose - Embedding Related Data_ lesson. However, to make this lesson flow better, we made a few small changes.
 
 <br>
+<br>
 
-#### 1) We're going to add a feature to `show.ejs` that shows the average rating:
+## Here are the changes we made
+
+
+<br>
+<br>
+<br>
+
+
+1) We added a feature to `show.ejs` that shows the average rating:
 
 ```html
-
 <% if (movie.reviews.length) { %>
   <table>
     <thead>
@@ -82,9 +90,13 @@ type: "lecture"
   <h5>No Reviews Yet</h5>
 <% } %>
 ```
+
+<br>
+<br>
 <br>
 
-#### 2) Remove the "Cast" input tag from `/views/movies/new.ejs`
+
+2) We removed the "cast" input tag from `/views/movies/new.ejs`
 
 ```html
 <form id="new-form" action="/movies" method="POST">
@@ -104,10 +116,12 @@ type: "lecture"
   <input type="submit" value="Add Movie">
 </form>
 ```
-
+<br>
+<br>
 <br>
 
-#### 3) Remove the `<div>` elements for displaying the movie "Cast" input tag from `/views/movies/show.ejs`
+
+3) We removed the `<div>` elements for displaying the movie "cast" input tag from `/views/movies/show.ejs`
 
 ```html
 <section id="show-page">
@@ -123,10 +137,13 @@ type: "lecture"
 ```
 
 <br>
+<br>
+<br>
 
-#### 4) Temporarily "comment out" the cast property in the `models/movie.js`
 
-```javascript
+4) We temporarily commented out the cast property in the `models/movie.js`
+
+```js
 const movieSchema = new Schema({
   title: {
     type: String,
@@ -149,21 +166,29 @@ const movieSchema = new Schema({
 
 <br>
 <br>
+<br>
 
 
-#### 5) Remove the following lines from the **`create` action** inside of `controllers/movies.js`
+5) We then removed the following lines from the create action inside of `controllers/movies.js`
 
-```javascript
 
+```js
+if(req.body.cast) {
   req.body.cast = req.body.cast.replace(/\s*,\s*/g, ',');
 
   if (req.body.cast) req.body.cast = req.body.cast.split(',');
+}
+
 ```
 
 <br>
 <br>
+<hr>
+<br>
+<br>
 
-#### Perform CRUD Using Mongoose Models in a Node REPL
+
+## Perform CRUD Using Mongoose Models in a Node REPL
 
 
 - Because of the eventual refactor of the `cast` property, we will want to start fresh by deleting the existing _movie_ documents.
