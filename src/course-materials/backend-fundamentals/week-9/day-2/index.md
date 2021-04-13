@@ -4,13 +4,13 @@ title: "Week 9 - Day 2"
 week: 9
 day: 2
 type: "homepage"
-topics: "Holiday - No Class"
+topics: "Project 2 Planning and Approvals"
 ---
 
 
 # Week 9 - Day 2
 
-#### Holiday - No Class Today in Observance of Veterans Day
+#### Project 2 Planning and Approvals
 
 
 
