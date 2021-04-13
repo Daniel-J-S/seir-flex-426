@@ -24,7 +24,7 @@ When the time comes to implement a user story (feature) in a typical web applica
 
 If there's a RESTful/Resourceful route that's applicable - use it!
 
-Use [this guide](https://gist.github.com/jim-clark/17908763db7bd3c403e6) to identify the CRUD operation or purpose similar to the feature you are implementing to find the proper route.
+Use [this guide](https://gist.github.com/myDeveloperJourney/dfb5b8728c54fce5e0e997ac3ce466a0) to identify the CRUD operation or purpose similar to the feature you are implementing to find the proper route.
 
 Of course, you will substitute the data resource you are CRUDing.  For example:  `GET /students` would be the proper route if I wanted to see a list of the _students_ resource.
 
