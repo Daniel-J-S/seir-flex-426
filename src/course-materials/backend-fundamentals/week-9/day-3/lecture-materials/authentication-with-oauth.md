@@ -69,10 +69,10 @@ Students will be able to:
 
 - Authentication is what enables an application to know the **identity** of the person using it.
 
-- In SEIR, we're going to learn 3 types of **authentication**:
-	- **Unit 2**: Logging in via a third-party provider - _OAuth_
-	- **Unit 3**: Token-based username/password login
-	- **Unit 4**: Session-based username/password login
+- There are several types of **authentication**, here are 3 of the most common ones:
+	- Third-party providers via [_OAuth_](https://oauth.net/) 
+	- Token-based with [JSON Web Tokens](https://jwt.io/)
+	- Session-based
 
 <br>
 <br>
@@ -256,7 +256,9 @@ $ npm install
 
 - Use `nodemon` to start the server.
 
-- The app has one server-side view: **views/students/index.ejs**.
+- The app has two server-side views: 
+	- **views/index.ejs**
+	- **views/students/index.ejs**
 
 - The app uses the [_Materialize_ CSS framework](http://materializecss.com/) based upon [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html).
 
@@ -264,6 +266,7 @@ $ npm install
 <br>
 <br>
 
+<!-- 
 #### Review the Starter Code:  <small>Config</small>
 
 
@@ -289,7 +292,7 @@ const morgan = require('morgan');
 const port = 3000;
 
 // We'll need to load the env vars
-require('dotenv').config()
+require('dotenv').config();
 
 //.....more code below....
 ```
@@ -317,17 +320,20 @@ require('dotenv').config()
 
 - For Project 2, you'll want to use a hosted database as well; don't worry about not knowing how to set this up yet, we have a dedicated lesson on it. 😎 
 
-- FYI, we get our hosted database from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), which is our goto for cloud-based MongoDB databases.
+- FYI, we get our hosted database from [MongoDB Atlas](https://www.mongodb.com/cloud/atlas), which is our goto for cloud-based MongoDB databases. 
+
+
 
 <br>
 <br>
 <br>
 
+ -->
 
-#### Review the Starter Code:  <small>The View</small>
+#### Review the Starter Code:  <small>The Views</small>
 
 
-- Reviewing **students/index.ejs** shows that several [Materialize CSS](https://materializecss.com/about.html) classes are being used for layout and styling.
+- Several [Materialize CSS](https://materializecss.com/about.html) classes are being used for layout and styling.
 
 - EJS is being used to render a "card" for each student.
 
@@ -361,15 +367,14 @@ require('dotenv').config()
 #### Review the Starter Code:  <small>Routing</small>
 
 
-- We have two separate route files: **routes/index.js** & **routes/students.js**.
+- We have two separate router files: **routes/index.js** & **routes/students.js**.
 
-- **routes/index.js** currently has only the root route defined that redirects to `'/students'`.
+- **routes/index.js** currently has only the root route defined that immediately renders the Home/Landing "index" page.
 
-- **routes/students.js** has four routes defined for the following actions:
+- **routes/students.js** has three routes defined for the following actions:
 
 	| Purpose | Method | Path |
 	|:-------|:-------|:-------|
-	| Redirect to `/students` | `GET` | `/` |
 	| Display all students | `GET` | `/students` |
 	| Create a fact for a student | `POST` | `/facts` |
 	| Delete a fact | `DELETE`| `/facts/:id` |
@@ -377,7 +382,7 @@ require('dotenv').config()
 - **Why aren't we using `POST /students/:id/facts` to create a fact?**
 
 
-- In this lecture, we'll learn to access the "logged in" student on the server, therefore we would not make a `POST` request to `/students/:id/facts`.
+- In this lecture, we'll learn to access the "logged in" student on the server, therefore we would not make a `POST` request to `/students/:id/facts` ... _think of this as "user-centric" CRUD_.
   
 - Please note, this is one of the few exceptions we'd make to our typical RESTful routing convention.
 
@@ -391,6 +396,8 @@ require('dotenv').config()
 
 
 - The `index` action in **controllers/students.js** is querying the `Student` model and providing the array of students to the **students/index.ejs** view.
+
+- **NOTE:** There are two incomplete controller actions, `addFact` & `delFact` that we'll need to work on later; one of these will left to you as a challenge exercise.
 
 
 <br>
@@ -542,10 +549,10 @@ require('dotenv').config()
 
 - Let's put **YOUR** credentials, along with that callback we provided, in our `.env` file so that it looks something like this:
 
-> EXAMPLE ONLY - DO NOT COPY AND PASTE 
+> **EXAMPLE ONLY - DO NOT COPY AND PASTE**
 
 ```shell
-DATABASE_URL=mongodb+srv://someusername:abc1234@seir-students-1btwt.azure.mongodb.net/seir-students?retryWrites=true
+DATABASE_URI=mongodb+srv://someusername:abc1234@seir-students-1btwt.azure.mongodb.net/students?retryWrites=true
 GOOGLE_CLIENT_ID=245025414219-2r7f4bvh3t88s3shh6hhagrki0f6op8t.apps.googleusercontent.com
 GOOGLE_SECRET=Yn9T_2BKzxr4zgprzKDGI5j3
 GOOGLE_CALLBACK=http://localhost:3000/oauth2callback
@@ -651,7 +658,7 @@ $ npm install express-session
 	// new code below
 	const session = require('express-session');
 
-	const port = 3000;
+	const port = process.env.PORT || 3000;
 	```
 
 <br>
@@ -662,7 +669,7 @@ $ npm install express-session
 - Now, we can configure and mount the session middleware below our `body-parsing` middleware:
 
 	```javascript
-	app.use(express.urlencoded({ extended: true }));
+	app.use(express.urlencoded({ extended: false }));
 	// new code below
 	app.use(session({
 	  secret: 'SEIRRocks!',
@@ -948,7 +955,7 @@ passport.use(new GoogleStrategy({
 	  email: String,
 	  avatarURL: String,
 	  facts: [factSchema],
-	  googleId: String
+	  googleId: String // 👈 Let's add this
 	}, {
 	  timestamps: true
 	});
@@ -1185,7 +1192,7 @@ passport.use(new GoogleStrategy({
 #### Step 9 - Add Login/Logout UI
 
 
-- We want the nav bar in **students/index.ejs** to update dynamically depending upon whether there's an authenticated user or not:
+- We want the navbars in **views/index.ejs** & **views/students/index.ejs** to update dynamically depending upon whether there's an authenticated user or not:
 
 	<img src="https://i.imgur.com/t3tQIML.png">
 	<br>
@@ -1206,9 +1213,27 @@ passport.use(new GoogleStrategy({
 
 #### Step 9 - Add Login/Logout UI
 
-- Let's update the `router` in **controllers/students.js** and also pass in `req.user` :
+- First we need to update the logic inside of **routes/index.js** & **controllers/students.js** to pass in `req.user` :
 
 ```javascript
+// inside of ./routes/index.js 
+
+router.get('/', function(req, res) {
+  	res.render('index', {
+    	user: req.user
+	});
+});
+```
+
+<br>
+<br>
+<br>
+
+
+```javascript
+
+// inside of ./controllers/students.js
+
 function index(req, res) {
   Student.find({}, function(err, students)
    res.render('students/index', {
@@ -1219,7 +1244,9 @@ function index(req, res) {
 }
 ```
 
-- Now the logged in student is in a `user` variable that's available inside of **views/students/index.ejs**. If nobody is logged in, `user` will be `undefined` (falsey).
+- Now the logged in student will be the `user` variable that's available inside of **views/index.ejs** & **views/students/index.ejs**. 
+
+- If nobody is logged in, `user` will be `undefined` (falsey).
 
 <br>
 <br>
@@ -1234,7 +1261,7 @@ function index(req, res) {
 - We're going to need a link for the user to click to login/out.
 
 
-- Lets modify **views/students/index.ejs** as follows:
+- Lets modify **views/index.ejs** & **views/students/index.ejs** as follows:
 
 ```html
 <nav>
@@ -1267,7 +1294,7 @@ function index(req, res) {
 
 - We've finally got to the point where you can test out our app's authentication!
 
-- May the force be with us!
+- May the force be with us! 
 
 
 <br>
@@ -1298,7 +1325,9 @@ function index(req, res) {
 
 #### Step 10.1 - Add Dynamic UI
 
-- Let's add some dynamic UI to add a fact. Ensure it's added in the correct location!
+- Let's add some dynamic UI to add a fact inside of **views/students/index.ejs**. Ensure it's added in the correct location 
+
+- **NOTE:** There are pre-defined place holders to show you where to add this.
 
 	```html
 	<!-- More Code Above... -->
