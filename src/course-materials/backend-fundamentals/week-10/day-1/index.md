@@ -1,14 +1,14 @@
 ---
 track: "Backend Fundamentals"
-title: "Week 10 - Day 2"
+title: "Week 10 - Day 1"
 week: 10
-day: 2
+day: 1
 type: "homepage"
 topics: "Project 2 Week"
 ---
 
 
-# Week 10 - Day 2
+# Week 10 - Day 1
 
 #### Project 2 Week
 
