@@ -4,13 +4,13 @@ title: "Week 11 - Day 3"
 week: 11
 day: 3
 type: "homepage"
-topics: "Holiday - No Class"
+topics: "Project 2 Week - Final Wrap Up"
 ---
 
 
 # Week 11 - Day 3
 
-####  Holiday - No Class Today in Observance of Election Day
+####  Project 2 Week - Students Finish Working On Project 2
 
 
 
