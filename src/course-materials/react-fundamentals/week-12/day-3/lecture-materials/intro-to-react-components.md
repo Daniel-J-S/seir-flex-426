@@ -15,13 +15,14 @@ type: "lecture"
 <br>
 
 
-### [Click Here](https://generalassembly.zoom.us/rec/share/FFx5BkGn-eezoSqKjK92o672fH4M8usTLFxyIP2KU8xHEdsL7Ml_1h9-B_BW6eg.1De9mC8PnXSChILn?startTime=1607182095000) to access recording
+<!-- 
+### [Click Here]() to access recording
 
 
 <br>
 <br>
 <br>
-
+ -->
 
 
 
