@@ -10,19 +10,19 @@ type: "lecture"
 # Components in React
 
 
+
 <br>
 <br>
 <br>
 
 
-<!-- 
-### [Click Here]() to access recording
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/l4aZfuIyOkmNQ0qaDnen9mty23v4RwBmvE9wYbYrZ8BtYywsrAfQnX_p0tgKH1iH.dT-IvOGE9G6fv0Xk?startTime=1620490804000) to access recording - Includes Both JSX & Components Lessons
 
 
 <br>
 <br>
 <br>
- -->
 
 
 
