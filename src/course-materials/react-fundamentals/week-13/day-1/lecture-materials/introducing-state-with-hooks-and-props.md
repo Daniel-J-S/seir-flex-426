@@ -427,7 +427,7 @@ So the answer to the question: _Does All Information Belong in State?_ is "no", 
 
 When you have data that doesn't change, or don't want to re-render if it changes, we can define that data:
 
-1. In a variable outside of the component 
+1. In a variable outside or inside of the component definition 
 2. Exported from a seperate utility module
 
 As discussed, we intend to use the `selColorIdx` state to hold the index of the selected within a `colors` array.
