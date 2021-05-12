@@ -14,15 +14,15 @@ type: "lecture"
 <br>
 <br>
 
-<!-- 
 
-### [Click Here]() to access recording
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/1H-MwxANqHqmudZetwaLgVI3FEIVp3od18vYun5K3_4eOJOWVEGupMC3Q9XXcplf.06nzi6jqsX2gaKkI?startTime=1620779396000) to access recording
 
 
 <br>
 <br>
 <br>
- -->
+
 
 
 ## Learning Objectives
