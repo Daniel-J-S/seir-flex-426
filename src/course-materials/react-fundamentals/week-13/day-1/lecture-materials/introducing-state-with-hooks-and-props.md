@@ -14,15 +14,15 @@ type: "lecture"
 <br>
 <br>
 
-<!-- 
 
-### [Click Here]() to access recording
+
+### [Click Here](https://generalassembly.zoom.us/rec/share/1H-MwxANqHqmudZetwaLgVI3FEIVp3od18vYun5K3_4eOJOWVEGupMC3Q9XXcplf.06nzi6jqsX2gaKkI?startTime=1620779396000) to access recording
 
 
 <br>
 <br>
 <br>
- -->
+
 
 
 ## Learning Objectives
@@ -427,7 +427,7 @@ So the answer to the question: _Does All Information Belong in State?_ is "no", 
 
 When you have data that doesn't change, or don't want to re-render if it changes, we can define that data:
 
-1. In a variable outside of the component 
+1. In a variable outside or inside of the component definition 
 2. Exported from a seperate utility module
 
 As discussed, we intend to use the `selColorIdx` state to hold the index of the selected within a `colors` array.
