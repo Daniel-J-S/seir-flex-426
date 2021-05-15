@@ -20,7 +20,6 @@ type: "lecture"
 <br>
 <br>
 <br> 
--->
 
 
 
@@ -55,6 +54,8 @@ type: "lecture"
 <br>
 <br>
 
+
+-->
 
 ## Set Up
 
@@ -680,7 +681,7 @@ This param tells the API to return the temperature in Fahrenheit (the default is
 <br>
 
 
-### 💪 Exercise - Create a `weather-api.js` Service Module (15 min)
+### 💪 Activity - Create a `weather-api.js` Service Module
 
 Putting `fetch` calls in service/utility modules is a best practice - do not litter your components with `fetch` calls!
 
@@ -858,6 +859,7 @@ All that's left is to add a touch of CSS to style the temp and image:
 <br>
 <br>
 
+<!-- 
 
 
 ## Essential Questions
@@ -868,6 +870,7 @@ Take a moment to review the following questions:
 
 **❓ What React hook do we initiate asynchronous calls from?**
 
+-->
 
 <br>
 <br>
