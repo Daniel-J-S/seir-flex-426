@@ -15,3 +15,4 @@ topics: "Intro to Client-Side Routing"
 - [**Lecture:** Intro to React Router](/react-fundamentals/week-14/day-3/lecture-materials/intro-to-react-router/)
 - [**Lab:** React Router Lab](/react-fundamentals/week-14/day-3/labs/react-router-lab/) - **Non-Deliverable**
 - [**Afternoon Lab:** React Themed "Take Home Coding Challenge"](/react-fundamentals/week-14/day-3/labs/take-home-react-coding-challenge) - **Non-Deliverable**
+- [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements)
