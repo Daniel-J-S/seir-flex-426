@@ -17,11 +17,9 @@ type: "lab"
 
 ## Intro
 
-In the lesson earlier you:
-
-1. Learned to consume a third-party API in React and invoke the call to that API using the `useEffect` hook.
+In the lesson earlier you learned to consume a third-party API in React and invoke the call to that API using the `useEffect` hook.
  
-2. Created a "service" module to organize `fetch` calls within.
+<!-- 2. Created a "service" module to organize `fetch` calls within. -->
 
 In this lab, you'll consume the [Star Wars API](https://swapi.dev/) and render it's data.
 
@@ -52,13 +50,9 @@ To get set up for this lesson:
 **Styling in this lab is secondary to completing the functionality**
 
 1. Research documentation of [SWAPI](https://swapi.dev/documentation) to find the endpoint for the `starships` resource.
-
-2. Create a `services/sw-api.js` service module and ensure that all API/fetch calls are made from this module. 
-
-3. Use named exports to expose AJAX functionality as needed, e.g., `export function getAllStarships() {...}`to obtain all starships.
-
-4. Obtain all of the starships from the API and render in `<App>` a card for each starship. 
-
+2. Start by writing everything in `App.js`; the creation of additional components can come later as you scale the project.
+3. Use the `useEffect` hook to fetch all the `"starship"` data from the API and store that data in component state using the `useState` hook.
+4. Map over the array of starship objects in component state and render a card for each starship. 
 5. Cards should contain the text of the starship's name.  
 
 <br>
@@ -81,9 +75,7 @@ To get set up for this lesson:
 
 - Once the starship data comes from the API, be sure to update state with the setter function.
 
-- Create and import a `StarShipCard` component into `App.js`.
-
-- `.map()` over each starship object in state to transform them into a `<StarshipCard />` component
+- `.map()` over each starship object in state to transform them into JSX, or consider creating a new component for your starship cards, a `<StarshipCard />` component.
 
 - CORS issue? Try changing your `/starships` endpoint to `/starships/`  **👈 *trust us on that one* 😎**.
 
