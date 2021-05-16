@@ -2,7 +2,7 @@
 track: "React Fundamentals"
 title: "React Router Lab"
 week: 14
-day: 1
+day: 3
 type: "lab"
 ---
 
