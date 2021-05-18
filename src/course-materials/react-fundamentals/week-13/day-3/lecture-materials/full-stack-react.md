@@ -286,6 +286,7 @@ app.use(express.json());
 
 
 app.use('/api/skills', skillsRouter);
+// notice how we mount this router at /api/skills - this is considered a best practice when serving JSON
 
 module.exports = app;
 
@@ -407,9 +408,9 @@ to trigger the effect to run again when they change
 
 `useEffect` is an extremely useful feature of React, because it **"automatically"** calls it's effect function on page load, or in other words, as soon as the component loads (get's rendered to the DOM).
 
-We can also configure it to run whenever values change, by adding them to the dependency array!
+We can also configure `useEffect` to call it's effect function whenever certain values change, by adding them to the dependency array (**FYI**, these can be props or values in state).
 
-If we remove the array, the effect function gets called each time state changes by default 🤔
+If we remove the array, the effect function gets called each time state changes by default; sometimes, this can cause problems. 🤔
 
 Let's see how to use it!
 
@@ -423,7 +424,7 @@ import { useState, useEffect } from "react";
 <br>
 
 
-Next, we'll need to call `useEffect` passing in an **"effect"** function to perform the effect we need when the component loads, we'll also need to pass the empty dependency array as as a second argument to `useEffect` otherwise the effect will run each time state changes resulting in an inifinite loop 😬
+Next, we invoke `useEffect` and pass in an **"effect"** function to perform the effect we need when the component loads. We also need to pass a dependency array as as a second argument. We'll leave this array empty, otherwise the effect will run each time state changes resulting in an inifinite loop 😬
 
 
 ```jsx
@@ -451,14 +452,14 @@ export default function App() {
       ).catch(err => console.log(err))
     }
     getAppData();
-  }, []); // 👈 empty dependency array as a second argument to useEffect, ensures effect only runs on initial load
+  }, []); // 👈 empty dependency array as a second argument to useEffect, this ensures effect function only gets called on initial load
 
   // ....more code below
 ```
 <br>
 <br>
 
-Awesome! Try to verify that our state is there using the react dev tools extension
+Awesome! Try to verify that our skills state was set using the react dev tools extension
 
 Oops, you should see a CORS error in the console. Let's fix that now.
 
@@ -496,7 +497,7 @@ npm i cors
 // first require it
 const cors = require('cors');
 
-// then mount it
+// then mount it as middleware
 app.use(cors());
 ```
 
