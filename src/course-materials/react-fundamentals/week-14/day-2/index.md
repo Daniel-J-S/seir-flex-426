@@ -12,5 +12,5 @@ topics: "(Workshop) Adding Authentication to React with Google Firebase"
 
 #### (Workshop) Adding Authentication to React with Google Firebase
 
-- **Lecture:** React with Google Firebase
 - [**Activity:** Review Project 3 Requirements](/unit-projects/unit-three-project-requirements)
+- **Lecture:** React with Google Firebase
