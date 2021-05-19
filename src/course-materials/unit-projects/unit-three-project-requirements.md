@@ -1,3 +1,10 @@
+---
+track: "React-Fundamentals"
+title: "Project Three"
+type: "Project Prompt"
+topics: "Unit Projects"
+---
+
 # Project Three: A MERN Stack Application:
 
 <br>
@@ -9,11 +16,10 @@
 
 **You’ve come a long way, and it's time to show it.** This will be your most advanced project to date.
 
-**🚨&nbsp;&nbsp; Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
+**Before you start working** on the planning for your project, be sure to review your idea with an instructional team to ensure that it both:
 
-**✅&nbsp;&nbsp; Meets the minimum requirements**
-
-**✅&nbsp;&nbsp; Is reasonably scoped**
+- **Meets the minimum requirements**, and
+- **Is reasonably scoped**
 
 <br>
 <br>
@@ -47,7 +53,7 @@ This project requires **planning** organized within a **Trello board** with the 
 
 #### 2) Project Source Control & README
 
-The project's source code for both your **Express Backend** and **React Frontend** must be hosted on a personal **GitHub repository**.
+The project's source code must be hosted on a personal **GitHub repository**.
 
 The repo is to contain **frequent commits** dated from the beginning of the project through its completion.
 
@@ -70,31 +76,24 @@ The project must include a **`README.md`** file with the following sections:
 
 #### 3) Application Technical Requirements/Deliverables
 
-1. A **functioning** full-stack, single-page application hosted on Heroku for **(Express)** and a CDN service like Netlify for **(React)**.
+- A **working** full-stack, single-page application hosted on Heroku.
 
-2. Incorporate the technologies of the **MERN-stack**:
+- Incorporate the technologies of the **MERN-stack**:
 	- MongoDB/Mongoose
 	- Express
 	- React
 	- Node
 
-3. **Have a well-styled interactive front-end** that communicates with the **Express** backend via AJAX.
+- **Have a well-styled interactive front-end** that communicates with the **Express** backend via AJAX.
 
-4. Implement token-based **authentication** - *"...a user can sign-up, log in & log out"*.
+- **Include at least two of the four CRUD (Create, Retrieve, Update & Delete) data operations/actions (having all four are optional)**
 
-5. Implement **authorization** by restricting functionality to authenticated users. 
-6. Navigation should respond to the login status of the user.
-7. One ***User*** data entity minimum, which will be used for Auth; other data entities can be added and related if desired but are not required.
-
-8. **Have a comprehensive feature-set**. 
-   1. **Full CRUD distributed across all Data Entities** 
-
-		**Or**
-   
-   2. **One of the following features instead:**
-   	- **(Easy)** - Consume a third-party API and display API data in components.
-   	- **(Moderate)** - Include an _admin_ interface w/features.
-   	- **(Hard)** - Utilize multi-user, real-time communications (difficult and time consuming)
+- **(OPTIONAL)** you can try to implement one or more of the following:
+	- Consume a third-party API.
+	- Include _admin_ features.
+	- Client side routing to show multiple page-level components with React Router
+	- Authentication, i.e. the ability of a user to log in & log out.
+	- Authorization, by restricting functionality to authenticated users. Also, navigation should respond to the login status of the user.
 
 
 <br>
@@ -104,7 +103,7 @@ The project must include a **`README.md`** file with the following sections:
 
 #### 4) Project Presentation
 
-You will have 7 minutes to present and demonstrate the following:
+You will have 5-7 minutes to present and demonstrate the following:
 
 1. Introduce your project by paraphrasing its README.
 
@@ -116,17 +115,12 @@ You will have 7 minutes to present and demonstrate the following:
 
 5. Share/discuss the following code (not line-by-line):
 
-	- The main/central Mongoose model
-	- Your "favorite" Express controller method
 	- Your "favorite" React component
-	- The client-side routing
 
 6. Share the experience by answering the following:
 
 	- What was your biggest challenge?
 	- What are your key learnings/takeaways?
-
-Following your presentation, there will be a brief Q & A period and optional instructor feedback.
 
 <br>
 <br>
@@ -153,8 +147,6 @@ Following your presentation, there will be a brief Q & A period and optional ins
 
 - Don’t get too caught up in too many awesome features – simple is better. Favor fewer features that look/feel impressive over numerous clunky/sloppy features.
 
-- Implement the `User` model and authentication first. Then implement the "As a visitor, when I browse to the app, I want..." user story.
-
 - Prioritize user stories and code them accordingly.
 
 - When implementing a feature, think through the steps that it takes in plain language first. If necessary, write and/or diagram the steps to help guide your coding.
@@ -174,7 +166,7 @@ Following your presentation, there will be a brief Q & A period and optional ins
 
 -  **Write DRY code.**
 
-- In a SPA, communication with the backend is via AJAX.  Build **RESTful APIs to CRUD your data entities (resources)** and perform other functionality via AJAX.  In a React app, those AJAX calls should be made from "service" modules, not components.
+- In a SPA, communication with the backend is via AJAX.  Build **RESTful APIs to CRUD your data entities (resources)** and perform other functionality via AJAX.  In a React app, the best practice for AJAX related logic should be organized in "service" modules, not component modules.
 
 - **Be consistent** with your code style.
 
