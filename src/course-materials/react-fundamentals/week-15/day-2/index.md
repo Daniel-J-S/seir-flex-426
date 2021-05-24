@@ -8,7 +8,7 @@ topics: "Project 3 Planning/Approvals & React w/Firebase Workshop II"
 ---
 
 
-# Week 15 - Day 1
+# Week 15 - Day 2
 
 #### Project 3 Planning/Approvals & React w/Firebase Workshop II
 
