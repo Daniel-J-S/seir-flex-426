@@ -10,5 +10,5 @@ topics: "Holiday - No Class"
 
 # Week 15 - Day 3
 
-#### Holiday - No Class Today For Christmas Week
+#### Holiday - No Class Today In Observance of Memorial Day
 
