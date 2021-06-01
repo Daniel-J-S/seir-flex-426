@@ -4,13 +4,13 @@ title: "Week 16 - Day 3"
 week: 16
 day: 3
 type: "homepage"
-topics: "New Years Weekend"
+topics: "Project 3"
 ---
 
 
 # Week 16 - Day 3
 
-#### Holiday - No Class Today For The New Years Holiday Weekend
+#### Students Work on Project 3
 
 
 

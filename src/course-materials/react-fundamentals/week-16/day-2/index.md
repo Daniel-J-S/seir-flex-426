@@ -4,12 +4,12 @@ title: "Week 16 - Day 2"
 week: 16
 day: 2
 type: "homepage"
-topics: "Holiday - No Class"
+topics: "Project 3"
 ---
 
 
 # Week 16 - Day 2
 
-#### Holiday - No Class Today For Christmas Week
+#### Students Work on Project 3
 
 
