@@ -1,12 +1,12 @@
 ---
 track: "React Fundamentals"
-title: "React with AJAX"
+title: "Self-Paced Weekend Tutorial: React with AJAX (Build a Weather App)"
 week: 13
 day: 3
 type: "lecture"
 ---
 
-# React with AJAX
+# Self-Paced Weekend Tutorial: <br> React with AJAX (Build a Weather App)
 
 
 <br>
