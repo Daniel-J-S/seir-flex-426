@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Data Modeling Lab"
-week: 20
+week: 18
 day: 3
 type: "lab"
 ---
