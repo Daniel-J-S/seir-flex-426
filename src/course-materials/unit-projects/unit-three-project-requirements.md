@@ -63,7 +63,7 @@ The project must include a **`README.md`** file with the following sections:
 
 - **Technologies Used**: A list of all technologies, libraries, APIs, etc. used in the project.
 
-- **Getting Started**: Links to the project's planning (Trello board)  and the **deployed app** on Heroku.
+- **Getting Started**: Links to the project's planning (Trello board)  and the **deployed app** on Netlify.
 
 - **Unsolved Problems**: List any unsolved issues.
 
@@ -76,7 +76,7 @@ The project must include a **`README.md`** file with the following sections:
 
 #### 3) Application Technical Requirements/Deliverables
 
-- A **working** full-stack, single-page application hosted on Heroku.
+- A **working** full-stack, single-page application hosted on Heroku & Netlify.
 
 - Incorporate the technologies of the **MERN-stack**:
 	- MongoDB/Mongoose
@@ -107,7 +107,7 @@ You will have 5-7 minutes to present and demonstrate the following:
 
 1. Introduce your project by paraphrasing its README.
 
-2. Click the link in the README to open the deployed app on Heroku.
+2. Click the link in the README to open the deployed app on Netlify.
 
 3. Demonstrate the application's authentication features by signing up a new user, logging out that user, then logging in with your preferred user.
 
