@@ -109,7 +109,7 @@ You will have 5-7 minutes to present and demonstrate the following:
 
 2. Click the link in the README to open the deployed app on Netlify.
 
-3. Demonstrate the application's authentication features by signing up a new user, logging out that user, then logging in with your preferred user.
+3. Demonstrate the application's authentication features (if authentication added).
 
 4. Demonstrate your app's main features.
 
