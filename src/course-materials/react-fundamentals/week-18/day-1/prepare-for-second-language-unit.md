@@ -17,6 +17,12 @@ At this point, we're ready to move on to learning our second programming languag
 <br>
 <br>
 
+### [Click Here](https://generalassembly.zoom.us/rec/share/oEYwr6vWDCumFqhS8PFUekF9MXBKFQHUuN4JHhXuLDjibLvr3AsrfTJxvqV0XXc_.oKqKmqHm9iPl1k_M?startTime=1623813642000) to access recording
+
+<br>
+<br>
+<br>
+
 
 
 ## PostgreSQL
