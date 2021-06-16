@@ -4,13 +4,13 @@ title: "Week 18 - Day 2"
 week: 18
 day: 2
 type: "homepage"
-topics: "SQL, Relational Data Design and Data Modeling"
+topics: "Into to SQL and Relational Databases"
 ---
 
 
 # Week 18 - Day 2
 
-#### SQL, Relational Data Design and Data Modeling
+#### Into to SQL and Relational Databases
 
 - [**Lecture:** Intro to SQL and Relational Databases](/second-language/week-18/day-2/lecture-materials/intro-to-sql-and-relational-databases/)
 - [**Lab:** Carmen San Diego Lab](/second-language/week-18/day-2/labs/carmen-san-diego-lab/) - **Non-Deliverable**
