@@ -146,13 +146,13 @@ However, there will now be a FK constraint on cats, which means that every cat r
 
 Here we go:
 
-```
+```shell
 $ python3 manage.py makemigrations
 ```
 
 Which then presents us with this message:
 
-```
+```text
 You are trying to add a non-nullable field 'user' to cat without a default;
 we can't do that (the database needs something to populate existing rows).
 Please select a fix:
@@ -165,7 +165,7 @@ Option `1)` is our best option because it will allow us to enter the `id` of a u
 
 Go ahead and press `1` and `[enter]`, which will then prompt us to enter the value:
 
-```
+```text
 Please enter the default value now, as valid Python
 The datetime and django.utils.timezone modules are available,
 so you can do e.g. timezone.now
@@ -177,7 +177,7 @@ Our superuser's `id` should be `1`, so type `1` and press `[enter]`.
 
 The migration file will then be created.  Let's migrate the changes:
 
-```
+```shell
 $ python3 manage.py migrate
 ```
 
@@ -237,19 +237,19 @@ As we just saw, the default `LoginView` is trying to render a **registration/log
 
 Let's get rid of the error by first creating the folder (make sure "registration" is spelled correctly):
 
-```
+```shell
 $ mkdir main_app/templates/registration
 ```
 
 Now create **login.html**:
 
-```
+```shell
 $ touch main_app/templates/registration/login.html
 ```
 
 Let's put a bit of markup in **login.html** so that we can see things are working:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -258,7 +258,7 @@ Let's put a bit of markup in **login.html** so that we can see things are workin
 
 {% endblock %}
 ```
-{% endraw %}
+
 
 Refresh!
 
@@ -266,7 +266,7 @@ Refresh!
 
 When `LoginView` renders the **login.html** template, it passes in the context a default `form` object we can display in **login.html**:
 
-{% raw %}
+
 ```html
 <h1>Log In</h1>
 
@@ -278,15 +278,15 @@ When `LoginView` renders the **login.html** template, it passes in the context a
   <input type="hidden" name="next" value="{{ next }}">
 </form>
 ```
-{% endraw %}
+
 
 The
 
-{% raw %}
+
 ```html
 <input type="hidden" name="next" value="{{ next }}">
 ```
-{% endraw %}
+
 
 is really cool.  It is a feature of Django's authentication that will automatically redirect a user that tries to access a protected route back to that route after they log in!
 
@@ -338,7 +338,7 @@ To check if the user is logged in, we simply use `user.is_authenticated`, which 
 
 With this knowledge in hand, let's make the nav bar dynamic in **base.html**:
 
-{% raw %}
+
 ```html
 <ul class="right">
     <!-- changes below -->
@@ -354,7 +354,7 @@ With this knowledge in hand, let's make the nav bar dynamic in **base.html**:
   {% endif %}
 </ul>
 ```
-{% endraw %}
+
 
 Note how the **Log In** and **Log Out** links are using the `url` template tag along with the built-in named URL patterns (listed above).
 
@@ -494,7 +494,7 @@ There's really no way to remember that code, so just refer to this lesson, the d
 
 Now that we know the URL, we can add a **Sign Up** link to the nav in **base.html**:
 
-{% raw %}
+
 ```html
 {% else %}
   <!-- New link below -->
@@ -502,20 +502,20 @@ Now that we know the URL, we can add a **Sign Up** link to the nav in **base.htm
   <li><a href="{% url 'login' %}">Log In</a></li>
 {% endif %}
 ```
-{% endraw %}
+
 
 #### Create the **signup.html** Template
 
 As a start, let's copy the **login.html** file as **signup.html**
 
-```
+```shell
 $ cp main_app/templates/registration/login.html main_app/templates/registration/signup.html
 ```
 
 If you use VS Code's UI to copy it, just make sure **signup.html** is within the **registration** folder.
 
 Make the necessary changes to **signup.html**:
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -532,7 +532,7 @@ Make the necessary changes to **signup.html**:
 
 {% endblock %}
 ```
-{% endraw %}
+
 
 With the above template, clicking the **Sign Up** in the nav should show a page like the following:
 

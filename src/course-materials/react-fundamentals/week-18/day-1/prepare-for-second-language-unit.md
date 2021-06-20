@@ -103,14 +103,3 @@ Brew is also used to install Python 3. (_Python 2 is already installed on your M
 
 At this point, these are all the items we need for now, but eventually we'll end up installing Django and some other packages along the way.
 
-<!-- 
-
-
-## Installing Django
-
-We will use `pip3` to install Django, a robust web framework for Python. We will be installing the latest version (3.x.x):
-
-```
-pip3 install Django
-``` 
--->

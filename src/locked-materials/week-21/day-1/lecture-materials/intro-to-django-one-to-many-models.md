@@ -316,7 +316,7 @@ Our imaginary wireframe calls for a cat's _feedings_ to be displayed to the righ
 
 Here's the new content of **detail.html**. Best to copy/paste this new markup, then we'll review:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -360,7 +360,7 @@ Here's the new content of **detail.html**. Best to copy/paste this new markup, t
 </div>
 {% endblock %}
 ```
-{% endraw %}
+
 
 A refresh results in this:
 
@@ -388,7 +388,7 @@ There's several steps we're going to need to complete, so let's get started...
 
 We could define the ModelForm inside of the _models.py_ module, but we're going to follow a best practice of defining it inside of a _forms.py_ module instead:
 
-```
+```shell
 $ touch main_app/forms.py
 ```
 
@@ -444,7 +444,7 @@ We're going to display a `<form>` at the top of the feedings column in **detail.
 
 This is how we can "render" the ModelForm's inputs within `<form>` tags in **templates/cats/detail.html**:
 
-{% raw %}
+
 ```html
 <div class="col s6">
   <!-- new code below -->
@@ -457,9 +457,9 @@ This is how we can "render" the ModelForm's inputs within `<form>` tags in **tem
   <table class="striped">
   ...
 ```
-{% endraw %}
 
-As always, we need to include the {% raw %}`{% csrf_token %}`{% endraw %} for security purposes.
+
+As always, we need to include the `{% csrf_token %}` for security purposes.
 
 A form's `action` attribute determines the URL that a form is submitted to. For now, we'll leave it out and come back to it in a bit.
 
@@ -479,7 +479,7 @@ Luckily we can use Materialize to solve both problems. However, solving the prob
 
 First, update _base.html_ to include the Materialize JS library:
 
-{% raw %}
+
 ```html
 <head>
   ...
@@ -488,7 +488,7 @@ First, update _base.html_ to include the Materialize JS library:
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   ...
 ```
-{% endraw %}
+
  
 ##### Using a Date-picker for _Feeding Date_
 
@@ -498,7 +498,7 @@ Materialize requires us to "initialize" certain inputs using a bit of JavaScript
 
 Let's add `<script>` tags at the bottom of of **detail.html**:
 
-{% raw %}
+
 ```html
 </div>
 
@@ -508,7 +508,7 @@ Let's add `<script>` tags at the bottom of of **detail.html**:
 </script>
 {% endblock %}
 ```
-{% endraw %}
+
 
 Using Materialize, it takes two steps to get the inputs the way we want them:
 
@@ -517,7 +517,7 @@ Using Materialize, it takes two steps to get the inputs the way we want them:
 
 Now let's add the JS to inside of the `<script>` tags to initialize the date-picker:
 
-{% raw %}
+
 ```js
 </div>
 
@@ -532,7 +532,7 @@ Now let's add the JS to inside of the `<script>` tags to initialize the date-pic
 </script>
 {% endblock %}
 ```
-{% endraw %}
+
 
 As you can see, the `ModelForm` automatically generated an `id` attribute for each `<input>`.  Always be sure to use Devtools to figure out how to select elements for styling, etc.
 
@@ -552,7 +552,7 @@ But, `<select>` dropdowns also need to be initialized when using Materialize.
 
 It doesn't require any options, just select it and init it:
 
-{% raw %}
+
 ```html
 </div>
 
@@ -571,7 +571,7 @@ It doesn't require any options, just select it and init it:
 </script>
 {% endblock %}
 ```
-{% endraw %}
+
 
 Refresh and the _Meal_ `<select>` is looking good:
 
@@ -600,7 +600,7 @@ The above route is basically saying that the `<form>`'s **action** attribute wil
 
 Now that we have a _named URL_, let's add the `action` attribute to the `<form>` in **detail.html**:
 
-{% raw %}
+
 ```html
 <div class="col s6">
   <!-- add the action attribute as follows -->
@@ -610,7 +610,7 @@ Now that we have a _named URL_, let's add the `action` attribute to the `<form>`
     <input type="submit" class="btn" value="Add Feeding">
   </form>
 ```
-{% endraw %}
+
 
 Once again, we're using the better practice of using the `url` template tag to write out the correct the URL for a route.
 
@@ -755,7 +755,7 @@ because this code would return all objects from the database when all we need is
 
 All that's left is to sprinkle in a little template code like this:
 
-{% raw %}
+
 ```html
 ...
   <div class="col s6">
@@ -775,7 +775,7 @@ All that's left is to sprinkle in a little template code like this:
     <table class="striped">
 
 ```
-{% endraw %}
+
 
 Congrats on using a custom Model method to implement business logic!
 

@@ -307,7 +307,7 @@ The express generator provides us with the `express` command, then we simply pro
 
 - Install the [CORS](https://www.npmjs.com/package/cors) module:
 
-	```
+	```shell
 	$ npm install cors
 	```
 

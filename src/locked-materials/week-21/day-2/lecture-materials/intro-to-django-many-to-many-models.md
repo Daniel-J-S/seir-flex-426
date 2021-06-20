@@ -41,13 +41,13 @@ This way, we can focus on how to implement the actual `Cat >--< Toy` relationshi
 
 Because a new `Toy` model has been added, there are migration files in the starter code that have not yet been migrated to the database on your computer. Let's do that now:
 
-```
+```shell
 $ python3 manage.py migrate
 ```
 
 Now start up the server:
 
-```
+```shell
 $ python3 manage.py runserver
 ```
 
@@ -112,19 +112,19 @@ Because we've made a change to a Model that impacts the database's schema, we mu
 
 First, make the migration:
 
-```
+```shell
 $ python3 manage.py makemigrations
 ```
 
 Here's how we can check the status of migrations:
 
-```
+```shell
 python3 manage.py showmigrations
 ```
 
 Now, let's migrate the created migration to update the schema:
 
-```
+```shell
 python3 manage.py migrate
 ```
 
@@ -134,13 +134,13 @@ We're ready to test drive the new relationship!
 
 We'll use the shell to check out the `Cat >--< Toy` relationship:
 
-```
+```shell
 $ python3 manage.py shell
 ```
 
 Now let's import everything from **models.py**:
 
-```
+```shell
 $ from main_app.models import *
 ```
 
@@ -245,7 +245,7 @@ _As a User, when viewing the detail page of a cat, I want to see a list of toys 
 ### Displaying a List of Associated Toys
 
 Displaying a cat's toys is just a matter of updating **templates/cats/detail.html**:
-{% raw %}
+
 ```html
 <!-- This is all new markup to be added just above the <script> tag -->
 	<hr>
@@ -269,7 +269,7 @@ Displaying a cat's toys is just a matter of updating **templates/cats/detail.htm
   <!-- Available toys will come after this line -->
 </div>
 ```
-{% endraw %}
+
 
 After saving and viewing the detail page for a cat, you'll see something like this:
 
@@ -316,7 +316,7 @@ Finally, we are passing the toys to the template by adding it to the context dic
 
 Now for more markup to display the toys the cat doesn't have:
 
-{% raw %}
+
 ```html
   </div>
   <!-- Available toys will come after this line -->
@@ -343,7 +343,7 @@ Now for more markup to display the toys the cat doesn't have:
     {% endif %}
   </div>
 ```
-{% endraw %}
+
 
 Yup, pretty much like what we just added previously, except for a couple of changes.
 
@@ -372,7 +372,7 @@ As you can see, we've created two route parameters:  `cat_id` and `toy_id`.
 Now let's make sure the form will post to this route.
 
 Now that we know have defined the route and named it, we can use the `url` template tag to write out the proper URL in the form's `action`:
-{% raw %}
+
 ```html
 <div class="card-action">
   <form action="{% url 'assoc_toy' cat.id toy.id %}" method="post">
@@ -381,7 +381,7 @@ Now that we know have defined the route and named it, we can use the `url` templ
   </form>
 </div>
 ```
-{% endraw %}
+
 
 Note how we need to provide both `id`s as space-separated parameters in the order that they were defined in the path (first the cat's id, then the toy's).
 
@@ -416,7 +416,7 @@ Although Django automatically creates a "hidden" join table to implement a many-
 
 As an example, a `Ticket` Model provides the role of a join table between a `Concert` and a `Customer`:
 
-```
+```shell
 Concert --< Ticket >-- Customer
 ```
 

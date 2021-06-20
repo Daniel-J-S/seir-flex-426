@@ -141,25 +141,25 @@ $ python3 manage.py migrate
 
 To checkout the tables we have in our database, open psql:
 
-```
+```shell
 $ psql
 ```
 
 List all databases:
 
-```sql
+```shell
 \l
 ```
 
 Connect to the `catcollector` database:
 
-```sql
+```shell
 \c catcollector
 ```
 
 List the tables:
 
-```sql
+```shell
 \d
 ```
 
@@ -217,13 +217,13 @@ Django refers to the ORM functions available as its [database API](https://docs.
 
 After creating a new Model, you can take it for a test drive using a Python shell that loads the Django environment:
 
-```
+```shell
 $ python3 manage.py shell
 ```
 
 Any model you want to work with must be imported just like you will have to do in the application:
 
-```python
+```shell
 >>> from main_app.models import Cat
 ```
 
@@ -587,13 +587,13 @@ The `cats_detail` view function is passing a dictionary of data (called the _con
 
 Create that **detail.html** template:
 
-```
+```shell
 $ touch main_app/templates/cats/detail.html
 ```
 
 Now let's add the following template code:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -615,20 +615,20 @@ Now let's add the following template code:
 
 {% endblock %}
 ```
-{% endraw %}
+
 
 It's basically the same cat "card" from **index.html**, except the wrapping `<a>` tags have been removed.
 
 **What's this business about?**
 
-{% raw %}
+
 
 ```html
 
 {% extends 'base.html' %}{% block content %}
 
 ```
-{% endraw %}
+
 
 Okay, let's refresh and check it out!
 
@@ -670,13 +670,13 @@ In **index.html**, replace this code:
 
 With this code:
 
-{% raw %}
+
 ```html
 
 <a href="{% url 'detail' cat.id %}">
 
 ```
-{% endraw %}
+
 
 The above is the Django way.
 

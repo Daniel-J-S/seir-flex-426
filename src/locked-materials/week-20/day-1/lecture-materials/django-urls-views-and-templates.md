@@ -89,15 +89,17 @@ Databases are not automatically created by Django.
 
 Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
 
-```
+
+```shell
 $ createdb catcollector
 ```
+
 
 #### Start the Project
 
 There is no starter-code for this lesson. Move into this lesson's folder and run the following command to create the Django project:
 
-```
+```shell
 $ django-admin startproject catcollector
 ```
 
@@ -119,7 +121,7 @@ For catcollector, as well as for your project 3, you will need an app to impleme
 
 It makes sense to name the main app generically, so let's do it:
 
-```
+```shell
 $ python3 manage.py startapp main_app
 ```
 
@@ -143,7 +145,7 @@ INSTALLED_APPS = [
 
 Let's check to make sure the project starts up:
 
-```
+```shell
 $ python3 manage.py runserver
 ```
 
@@ -172,7 +174,7 @@ DATABASES = {
 
 Now let's test our database connection by getting rid of the red unapplied migration message:
 
-```
+```shell
 $ python3 manage.py migrate
 ```
 
@@ -202,7 +204,7 @@ So, let's start by setting up **main_app**'s own **urls.py**:
 
 1. Create the URLconf module:
 
-	```
+	```shell
 	$ touch main_app/urls.py
 	```
 
@@ -327,7 +329,7 @@ By default, a Django project is configured to look for templates inside of a `te
 
 Let's create that `templates` folder for `main_app` to hold all of its template files:
 
-```
+```shell
 $ mkdir main_app/templates
 ```
 
@@ -337,7 +339,7 @@ Let's start with a simple template for the About page:
 
 1. Create the template:
 
-	```
+	```shell
 	touch main_app/templates/about.html
 	```
 	Note that Django templates have a simple `.html` file extension.
@@ -404,7 +406,7 @@ The reason Django calls it template _inheritance_ is because:
 
 Here's how it works in practice. First let's create a **base.html** template (named by convention):
 
-```
+```shell
 $ touch main_app/templates/base.html
 ```
 
@@ -412,7 +414,7 @@ This is the template that will hold all of the boilerplate and markup that belon
 
 This will be our sweet boilerplate for now:
 
-{% raw %}
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -446,28 +448,28 @@ This will be our sweet boilerplate for now:
 </body>
 </html>
 ```
-{% endraw %}
+
 
 Note that we'll once again be using the [Materialize CSS Framework](https://materializecss.com/) for quick styling.
 
 However, the most important part of the boilerplate in regards to template inheritance is:
 
-{% raw %}
+
 ```html
 {% block content %}
 {% endblock %}
 ```
-{% endraw %}
 
-Hey, that's our first look at DTL **template tags**, `block` & `endblock`, enclosed within the template tag delimiters {% raw %}`{% %}`{% endraw %}.
+
+Hey, that's our first look at DTL **template tags**, `block` & `endblock`, enclosed within the template tag delimiters `{% %}`.
 
 Django [template tags](https://docs.djangoproject.com/en/2.1/ref/templates/builtins/#ref-templates-builtins-tags) control logic within a template.  Depending upon the tag, they may, or may not, result in content being emitted in the page. 
 
-Whenever another template **extends** this **base.html**, that other template's {% raw %}`{% block content %}`{% endraw %} will replace the same block in **base.html**.
+Whenever another template **extends** this **base.html**, that other template's `{% block content %}` will replace the same block in **base.html**.
 
 To see template inheritance in action, let's update **about.html** so that it extends **base.html**:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -478,7 +480,7 @@ To see template inheritance in action, let's update **about.html** so that it ex
 
 {% endblock %}
 ```
-{% endraw %}
+
 
 Refresh. Yeah, it's not great (yet), but the template inheritance is working and we can stay nice and DRY.
 
@@ -494,19 +496,19 @@ At the bottom of **settings.py**, there is a `STATIC_URL = '/static/'` variable 
 
 We need that, so let's create it:
 
-```
+```shell
 $ mkdir main_app/static
 ```
 
 Next, let's create a folder within `static` dedicated to CSS:
 
-```
+```shell
 $ mkdir main_app/static/css
 ```
 
 Now let's create a `style.css`:
 
-```
+```shell
 $ touch main_app/static/css/style.css
 ```
 
@@ -520,7 +522,7 @@ body {
 
 All we have to do is tweak **base.html** by first adding the `load` template tag at the top:
 
-{% raw %}
+
 ```html
 {% load static %}
 
@@ -532,7 +534,7 @@ Finally, add this `<link>` below the Materialize CDN:
 ```html
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 ```
-{% endraw %}
+
 
 The `static` DTL template tag ensures that the correct URL is assigned to the `href`.
 
@@ -654,19 +656,19 @@ However, we need to create the **cats/index.html** template we want to render.
 
 First we need the `templates/cats` folder we'll use to organize cat related templates:
 
-```
+```shell
 $ mkdir main_app/templates/cats
 ```
 
 Now create the **cats/index.html** template file:
 
-```
+```shell
 $ touch main_app/templates/cats/index.html
 ```
 
 Now the fun stuff. We'll type it in if there's time, otherwise we'll copy/paste and review:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 {% block content %}
@@ -690,18 +692,18 @@ Now the fun stuff. We'll type it in if there's time, otherwise we'll copy/paste 
 
 {% endblock %}
 ```
-{% endraw %}
+
 
 There are two control flow template tag constructs you'll use quite a bit:
 
-- The {% raw %}`{% for %}` / `{% endfor %}`{% endraw %} block used to perform looping
-- The {% raw %}`{% if %}` / `{% elif %} / {% else %} / {% endif %}`{% endraw %} block used for branching.
+- The `{% for %}` / `{% endfor %}` block used to perform looping
+- The `{% if %}` / `{% elif %} / {% else %} / {% endif %}` block used for branching.
 
 > Important: Django template tags are designed to mimic very closely their Python counterparts, however, they are not embedding Python the way EJS embedded JavaScript.
 
 For example, Python does not have `endfor` or `endif` as part of the language.
 
-Next notice how double curly brace syntax {% raw %}`{{}}`{% endraw %} is used to print the values of variables and object properties.
+Next notice how double curly brace syntax `{{}}` is used to print the values of variables and object properties.
 
 > Note: If the property on an object is a method, it is automatically invoked by the template engine without any arguments and we **do not** put parens after the method name.  For example, assuming a person object has a `getFullName` method, it would be used like this `{{ person.getFullName }}` in the template. This is another example of how DTL is its own language and not Python.
 

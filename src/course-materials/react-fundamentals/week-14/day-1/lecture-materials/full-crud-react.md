@@ -146,7 +146,7 @@ This also means we need to install the [`dotenv` npm package](https://www.npmjs.
 So let's `touch` `.env`, `npm i dotenv` and add our connection string as an environment variable to our `.env` file:
 
 
-```txt
+```shell
 DATABASE_URI=mongodb+srv://someuser:testpassword@cluster0.test.mongodb.net/react-dev-skills?retryWrites=true&w=majority
 ```
 

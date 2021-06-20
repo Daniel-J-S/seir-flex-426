@@ -246,7 +246,7 @@ Note that there is no file extension on the _credentials_ file.
 
 Now let's open it and put our keys in there:
 
-```
+```shell
 $ code ~/.aws/credentials
 ```
 

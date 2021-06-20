@@ -136,7 +136,7 @@ For now, type `exit()` or press `control + d` to exit the REPL.
 
 In terminal, we can execute any python script like this:
 
-```
+```shell
 $ python3 <filename>.py
 ```
 
@@ -145,7 +145,7 @@ $ python3 <filename>.py
 
 Let's test this out by running the <a download href="/downloads/second_language/python-intro-exercises/python-intro.zip">included **fizzbuzz.py** script.</a>  <br>Make sure you unzip the folder, `cd` into it, open in `VS Code` and then run:
 
-```
+```shell
 python3 fizzbuzz.py
 ```
 

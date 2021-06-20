@@ -33,14 +33,14 @@ This lesson continues to build-out Cat Collector beginning from where the _Intro
 
 The starter code is the same as the completed code from that lesson except that the nav in **base.html** has been updated to use the `url` template tag instead of hardcoding the URL in the links:
 
-{% raw %}
+
 ```html
 <!-- <li><a href="/about">About</a></li> -->
 <li><a href="{% url 'about' %}">About</a></li>
 <!-- <li><a href="/cats">View All My Cats</a></li> -->
 <li><a href="{% url 'index' %}">View All My Cats</a></li>
 ```
-{% endraw %}
+
 
 ❓ **What enables us to use the `url` template tag to automatically generate the proper URL?**
 
@@ -153,14 +153,14 @@ We'll need to add the `views.CatCreate` CBV to make the server happy, but first 
 
 Now that we know the path used to create cats, let's update **base.html** to add a link to the nav:
 
-{% raw %}
+
 ```html
 <li><a href="{% url 'about' %}">About</a></li>
 <!-- new link below -->
 <li><a href="{% url 'cats_create' %}">Add a Cat</a></li>
 <li><a href="{% url 'index' %}">View All My Cats</a></li>
 ```
-{% endraw %}
+
 
 On to the view!
 
@@ -209,19 +209,19 @@ All CBVs by default will use a folder inside of the `templates` folder with a na
 
 Let's give `CatCreate` the template it wants by first creating the `templates/main_app` folder:
 
-```
+```shell
 $ mkdir main_app/templates/main_app
 ```
 
 Now create the template file:
 
-```
+```shell
 $ touch main_app/templates/main_app/cat_form.html
 ```
 
 There's not too much so we'll review as we type it in:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 
@@ -238,9 +238,9 @@ There's not too much so we'll review as we type it in:
   </form>
 {% endblock %}
 ```
-{% endraw %}
 
-The {% raw %}`{% csrf_token %}`{% endraw %} is a security measure that makes it difficult to perform a [cross-site-request-forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) by writing a CSRF (pronounced "see-surf") token that is validated on the server.
+
+The `{% csrf_token %}` is a security measure that makes it difficult to perform a [cross-site-request-forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) by writing a CSRF (pronounced "see-surf") token that is validated on the server.
 
 Let's refresh and click the **Add a Cat** link.
 
@@ -326,7 +326,7 @@ We need to see EDIT and DELETE links on a cat's detail page.
 
 Let's update **templates/cats/detail.html** by adding to a cat's "card" a `<div>` with a Materialize class of `card-action`:
 
-{% raw %}
+
 ```html
       <p>Age: Kitten</p>
     {% endif %}
@@ -339,7 +339,7 @@ Let's update **templates/cats/detail.html** by adding to a cat's "card" a `<div>
   <!-- New markup above -->
 </div>
 ```
-{% endraw %}
+
 
 Now for the views...
 
@@ -391,7 +391,7 @@ The CBVs that work with a single model instance automatically pass as part of th
 
 Let's leverage this new knowledge to modify **templates/main_app/cat_form.html** to show the cat's name only when we are editing, not creating, a cat:
 
-{% raw %}
+
 ```html
 {% block content %}
   <!-- New if/else block -->
@@ -401,7 +401,7 @@ Let's leverage this new knowledge to modify **templates/main_app/cat_form.html**
     <h1>Add Cat</h1>
   {% endif %}
 ```
-{% endraw %}
+
 
 Looking good:
 
@@ -415,13 +415,13 @@ It's usually wise to perform some type of confirmation when deleting data and Dj
 
 All we have to do is create it named as follows:
 
-```
+```shell
 $ touch main_app/templates/main_app/cat_confirm_delete.html
 ```
 
 Now for its content:
 
-{% raw %}
+
 ```html
 {% extends 'base.html' %}
 
@@ -437,7 +437,7 @@ Now for its content:
   </form>
 {% endblock %}
 ```
-{% endraw %}
+
 
 Note how we are allowing the user to cancel the delete by providing a link back to the _detail_ page.
 
