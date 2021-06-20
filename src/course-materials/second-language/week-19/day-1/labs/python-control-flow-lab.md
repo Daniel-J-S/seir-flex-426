@@ -2,7 +2,7 @@
 track: "Second Language"
 title: "Python Control Flow Lab"
 week: 19
-day: 3
+day: 1
 type: "lab"
 ---
 

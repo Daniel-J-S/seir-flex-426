@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Python Functions Lab"
-week: 21
-day: 2
+week: 19
+day: 3
 type: "lab"
 ---
 
@@ -88,7 +88,7 @@ Create a new Python repl on [repl.it](https://repl.it)
 	product(4, 0.5, 5) # returns 10.0
 	```
 
-
+<!-- 
 <br>
 <br>
 <br>
@@ -97,4 +97,5 @@ Create a new Python repl on [repl.it](https://repl.it)
 
 ## Solution 
 
-[Here's some possible solutions to these](https://repl.it/@DanielJS/Python-Functions-Lab-Solutions) (don't peek unless you absolutely have to!)
+[Here's some possible solutions to these](https://repl.it/@DanielJS/Python-Functions-Lab-Solutions) (don't peek unless you absolutely have to!) 
+->

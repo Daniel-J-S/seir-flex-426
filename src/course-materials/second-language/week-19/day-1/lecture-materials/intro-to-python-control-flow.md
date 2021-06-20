@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Intro to Python Control Flow"
-week: 20
-day: 3
+week: 19
+day: 1
 type: "lecture"
 ---
 
@@ -12,12 +12,14 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/JNBzyTtyGP_rSrOga3Pj3kFQ8_xWj4sOR9wF4wZu0KggpTK1sh73pizzatmsJJ2Y.miqrjuMmr_LnpDCU?startTime=1612035966000) to access recording
+<!-- ### [Click here]() to access recording 
+
 
 <br>
 <br>
 <br>
 
+-->
 
 ## Learning Objectives
 

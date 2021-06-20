@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Python Challenges Lab"
-week: 18
-day: 3
+week: 19
+day: 1
 type: "lab"
 ---
 
@@ -17,7 +17,7 @@ type: "lab"
 ## Getting Started
 
 * Create a file locally on your machine called `python_challenges.py` to complete the following exercises <br>*(you can place this file in a working folder if you choose)*
-* **NOTE:** While you're solving each challenge, you can run `python_challenges.py` to check your work
+* **NOTE:** While you're solving each challenge, you can run `python3 python_challenges.py` to check your work
 
 
 <br>

@@ -133,13 +133,13 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 
 
 
-
+<!-- 
 ## Solution
 
 A solution can be found [here](https://repl.it/@DanielJS/Python-Containers-Solution).
 
 
-
+ -->
 
 
 
