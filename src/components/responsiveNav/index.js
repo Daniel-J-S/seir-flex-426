@@ -30,7 +30,10 @@ export default ({
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1065px)");
+    
     mediaQuery.addEventListener('change', handleMediaQueryChange);
+
+    handleMediaQueryChange(mediaQuery);
 
     return () => {
       mediaQuery.removeEventListener('change', handleMediaQueryChange);
