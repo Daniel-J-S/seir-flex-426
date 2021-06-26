@@ -123,23 +123,18 @@ Good guess!
 
 ## Key Differences Between Python & JS Functions
 
-Besides the obvious syntactical differences, here are a few other things to be aware of:
+Besides the obvious syntactical differences, here are a few other things to be aware of
 
 
-<br>
-<br>
-
-
-#### Function expressions do not exist in Python
-
-Functions in Python are defined using the `def` keyword and these functions are never assigned to variables as in JavaScript.
 
 <br>
 <br>
 
 #### Python has a different sort of anonymous/inline function
 
-Python does have a the concept of anonymous and/or inline functions - called `lambda` functions.
+Python function declarations are defined using the `def` keyword and these functions are never assigned to variables as in JavaScript.
+
+However, Python does have a the concept of anonymous and/or inline functions - called `lambda` functions.
 
 `lambda` functions are very much like _Arrow Functions_ in JavaScript:  
 
