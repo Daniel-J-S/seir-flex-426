@@ -11,8 +11,8 @@ topics: "Python Functions, Classes & Intro to Django"
 
 #### Python Functions, Classes & Intro to Django
 - [**Lecture:** Intro to Python Functions](/second-language/week-19/day-3/lecture-materials/intro-to-python-functions/)
-- [**Lecture:** Intro to Python Classes](/second-language/week-19/day-3/lecture-materials/intro-to-python-classes/)
 - [**Lab:** Python Functions Lab](/second-language/week-19/day-3/labs/python-functions-lab/) - **Deliverable**
+- [**Lecture:** Intro to Python Classes](/second-language/week-19/day-3/lecture-materials/intro-to-python-classes/)
 - [**Group Lab:** Py Pac Poe Lab](/second-language/week-19/day-3/labs/python-py-pac-poe-lab/) - **Non-Deliverable**
 - [**Lecture:** Intro to Django](/second-language/week-19/day-3/lecture-materials/intro-to-django/)
 
