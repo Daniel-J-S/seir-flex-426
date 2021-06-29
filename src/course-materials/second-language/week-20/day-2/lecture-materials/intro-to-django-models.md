@@ -111,25 +111,33 @@ It's important to note that the Field types for a Model don't just determine the
 <br>
 <br>
 
-#### Review Questions
+### ❓ Review Questions
 
 <details>
 	<summary>
-		In Django, what is used to perform CRUD database operations?
+		<strong>1)</strong> In Django, what is used to perform CRUD database operations? <strong>(Click For Answer)</strong>
 	</summary>
 	<p><strong>A Model</strong></p>
 </details>
 
+
+<br>
+<br>
+
 <details>
 	<summary>
-		How is a Model defined in Django?
+		<strong>2)</strong> How is a Model defined in Django? <strong>(Click For Answer)</strong>
 	</summary>
 	<p><strong>With a Python class</strong></p>
 </details>
 
+
+<br>
+<br>
+
 <details>
 	<summary>
-		An ERD Entity maps to a _____ in Django, which maps to a _____ in the database.
+		<strong>3)</strong> An ERD Entity maps to a _____ in Django, which maps to a _____ in the database. <strong>(Click For Answer)</strong>
 	</summary>
 	<p>An ERD Entity maps to a <strong>Model</strong> in Django, which maps to a <strong>table</strong> in the database.</p>
 </details>
@@ -236,23 +244,43 @@ Finally, there's our `main_app_cat` table that maps to our `Cat` Model. It's emp
 <br>
 <br>
 
-#### Review Questions
+### ❓ Review Questions
+
+
 
 <details>
 	<summary>
-		What are used to update a database's schema over time as an application's functionality evolves?
+		<strong>1)</strong> What are used to update a database's schema over time as an application's functionality evolves? <strong>(Click For Answer)</strong>
 	</summary>
 	<p><strong>Migrations</strong></p>
 </details>
 
+
+
+<br>
+<br>
+
+
 <details>
 	<summary>
-		When is it necessary to make and run migrations?
+		<strong>2)</strong> When is it necessary to make and run migrations? <strong>(Click For Answer)</strong>
 	</summary>
 	<p><strong>Whenever a Model is added or updated in a way that impacts the database's schema.</strong></p>
 </details>
 
+
+
+<br>
+<br>
+<br>
+
 ## Performing CRUD Using Django's ORM
+
+
+<br>
+<br>
+<br>
+
 
 #### What's an ORM?
 
