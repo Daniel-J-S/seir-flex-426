@@ -1,12 +1,17 @@
 ---
 track: "Second Language"
 title: "Intro to Django Models"
-week: 22
+week: 20
 day: 2
 type: "lecture"
 ---
 
 # Intro to Django Models
+
+
+<br>
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -16,6 +21,13 @@ type: "lecture"
 | Generate migrations when Models are added or updated |
 | Run pending migrations |
 | Implement a Details page for a single model instance |
+
+
+
+<br>
+<br>
+<br>
+
 
 ## Roadmap
 
@@ -29,17 +41,32 @@ type: "lecture"
 8. I am the Admin!
 9. Adding a Cat "Details" Page
 
+
+<br>
+<br>
+<br>
+
 ## The Model Layer in the Django Architecture
 
 <img src="https://i.imgur.com/1fFg7lz.png">
 	
 This lesson focuses on the **Model layer** which provides **Views** with access to the **database**.
 
+
+<br>
+<br>
+<br>
+
 ## Review the Starter Code
 
 The only change to the starter code from where the last lesson left off is that the `home` view now renders a **home.html** template instead of using `HttpResponse` to send back a string.
 
 Note that since the `HttpResponse` function is no longer being used in **views.py**, its import has been removed.
+
+
+<br>
+<br>
+<br>
 
 ## What's a Model?
 
@@ -54,6 +81,11 @@ Thus, a Model has a one-to-one mapping with a table in the database and is what 
 When we retrieve data from the database (using a Model of course), we will have **model objects**, each of which represents a row in a database table. Model objects are also called _instances_ of the Model.  We can work with these instances of the Model just like how we worked with Mongoose documents.
 
 > Note: Since a "model" can technically refer to the Model class or an instance of that class, we will try to use "Model" (capitalized) to refer to a Model class we use to perform CRUD with and "model" (lowercased) to refer to a model instance.
+
+
+<br>
+<br>
+<br>
 
 ## Models in Django
 
@@ -73,6 +105,11 @@ It's important to note that the Field types for a Model don't just determine the
 
 - To implement some validation in automatically-generated forms.
 - To determine the default HTML [widget](https://docs.djangoproject.com/en/2.1/ref/forms/widgets/) to render in forms for the Model. For example, a `CharField` uses a `<input type="text">` as its _widget_, whereas, a `TextField` uses a `<textarea>`.
+
+
+<br>
+<br>
+<br>
 
 #### Review Questions
 
@@ -97,7 +134,17 @@ It's important to note that the Field types for a Model don't just determine the
 	<p>An ERD Entity maps to a <strong>Model</strong> in Django, which maps to a <strong>table</strong> in the database.</p>
 </details>
 
+
+<br>
+<br>
+<br>
+
 ## Making and Running Migrations
+
+
+<br>
+<br>
+<br>
 
 #### What are Migrations?
 
@@ -106,6 +153,11 @@ It's important to note that the Field types for a Model don't just determine the
 Migrations are used to evolve a database over time - as the requirements of the application change.  However, they can be "destructive" (cause a loss of data), so be careful with migrations if you're working with an application in _production_.
 
 Migrations in Django are Python files that are created by running a command Django in Terminal.
+
+
+<br>
+<br>
+<br>
 
 #### Making Migration Files
 
@@ -125,6 +177,11 @@ You don't have to do anything with the migration files, but since this is the fi
 
 > You should rarely need to edit migration files by hand, but it’s entirely possible to do so if you ever need to.
 
+
+<br>
+<br>
+<br>
+
 #### Running Migrations
 
 Simply creating migration files does not update the database's schema.
@@ -136,6 +193,11 @@ $ python3 manage.py migrate
 ```
 
 `OK` messages are a good thing 😊
+
+
+<br>
+<br>
+<br>
 
 #### What Exactly Was Created in the Database?
 
@@ -169,6 +231,11 @@ You'll also find several tables named like `auth_*`.  These were created by the 
 
 Finally, there's our `main_app_cat` table that maps to our `Cat` Model. It's empty now - we'll change that in a bit, but first...
 
+
+<br>
+<br>
+<br>
+
 #### Review Questions
 
 <details>
@@ -201,6 +268,11 @@ The fact is, the ORM in Django can generate SQL that even the most experienced d
 
 Another benefit is that the ORM & Model layer abstracts away the differences between the flavors of SQL that exists - we get to write the same Python code to perform CRUD operations, regardless of which database is being used.
 
+<br>
+<br>
+<br>
+
+
 #### Django's ORM
 
 The Django ORM is automatically going to generate, a plethora of methods for each Model.
@@ -212,6 +284,10 @@ Django's ORM includes methods for performing:
 - Even accessing the data from related Models!
 
 Django refers to the ORM functions available as its [database API](https://docs.djangoproject.com/en/2.1/topics/db/queries/). Additional documentation can be [found here](https://docs.djangoproject.com/en/2.1/ref/models/).
+
+<br>
+<br>
+<br>
 
 #### Performing CRUD in a Python Interactive Shell
 
@@ -236,11 +312,21 @@ To retrieve all of the Cat objects, enter this command:
 <QuerySet []>
 ```
 
+
+<br>
+<br>
+<br>
+
 ##### Django Model Manager
 
 Any time you want to perform query operations on a **Model** to retrieve _model objects_ (rows) from a database table, it is done via a **Manager** object.
 
 By default, Django adds a Manager to every Model class - this is the `objects` attribute attached to `Cat` above.
+
+<br>
+<br>
+<br>
+
 
 ##### **The `<QuerySet>`**
 
@@ -249,6 +335,11 @@ The `<QuerySet []>` returned represents a database query that can be refined by 
 Ultimately though, when the app needs the data, for example, to iterate over cats, the query will be sent to the database and the result is a list-like object that represents a collection of model instances (rows) from the database.
 
 Besides `Cat.objects.all()`, let's see some of the other common ORM operations...
+
+
+<br>
+<br>
+<br>
 
 #### Give Me a "C"
 
@@ -279,6 +370,11 @@ If you call `Cat.objects.all()` again you'll see a `Cat` object exists now:
 <QuerySet [<Cat: Cat object (1)>]>
 ```
 
+
+<br>
+<br>
+<br>
+
 ##### Your Turn
 
 Create another `Cat` with attribute values of your choice.
@@ -286,6 +382,11 @@ Create another `Cat` with attribute values of your choice.
 Note that you can re-use the variables in your code, such as `c` above, unless there's a reason you have to "remember" the current object held by `c`.
 
 Check that your cat was added by using `Cat.objects.all()`.
+
+<br>
+<br>
+<br>
+
 
 ##### Adding a `__str__` Method
 
@@ -305,6 +406,11 @@ For the `Cat` model, we'll code `__str__` to return the cat's `name` attribute:
 
 Note that changes to a Model do not become active in the shell unless you `exit()`, re-launch, and re-import the Models.
 
+<br>
+<br>
+<br>
+
+
 #### Give Me a "U"
 
 A single attribute value can be updated by simply assigning the new value and calling `save()`:
@@ -319,6 +425,11 @@ A single attribute value can be updated by simply assigning the new value and ca
 >>> c
 <Cat: Rubber Biscuit>
 ```
+
+
+<br>
+<br>
+<br>
 
 #### Filtering (querying) for Records
 
@@ -366,6 +477,11 @@ Filters can even be chained!
 
 Like most things in SEI, learning how to use `filter()` will take practice.
 
+
+<br>
+<br>
+<br>
+
 #### Read One Record
 
 You've seen how `Cat.objects.all()` and `Cat.objects.filter()` returns a list of objects.
@@ -381,6 +497,11 @@ Cat.objects.get(id=1)
 The `get()` method can also be called with multiple `field=value` arguments to query multiple columns.
 
 Be sure to use error handling if there's a chance that `get()` won't find what you're looking for because if Django doesn't find it, an error is raised.
+
+
+<br>
+<br>
+<br>
 
 #### What About Ordering (sorting)?
 
@@ -403,6 +524,11 @@ Poor old cat:
 ```python
 >>> Cat.objects.order_by('-age')[0]
 ```
+
+
+<br>
+<br>
+<br>
 
 ## Let's Get Coding!
 
@@ -436,6 +562,11 @@ Refresh the page and you should see something like this:
 <img src="https://i.imgur.com/FN26kDm.png">
 
 Nice!
+
+<br>
+<br>
+<br>
+
 
 ## I am the Admin!
 
@@ -478,11 +609,21 @@ No need to restart the server - just refresh that beauty portal!
 
 We can add, edit, and remove data objects anytime we need to by browsing to `/admin`. Neat!
 
+<br>
+<br>
+<br>
+
+
 ## Adding a Cat "Details" Page
 
 Typically, the _index_ page showing all cats would only show a "summary" of each cat's info.  For example, just their "name" perhaps.
 
 Then, it would be commonplace to show the "details" for a data object using a separate page that results from the user clicking on that summary info - in this case, the cat's "card" in **index.html**.
+
+<br>
+<br>
+<br>
+
 
 #### Typical Process to Add Functionality to an App
 
@@ -498,6 +639,12 @@ When adding additional functionality to a web app we need to do the following:
 
 Make it a habit to follow the steps above anytime you need new functionality in your app.
 
+
+<br>
+<br>
+<br>
+
+
 ##### Step 1
 
 In Django, we don't worry about the HTTP method (verb), unless we're writing a `<form>` to do searching, in which case, we would switch from the form's default method of `POST` to a `GET`.
@@ -509,6 +656,11 @@ For sure we need to "capture" the `id` of the cat we want the details for in the
 Let's go with this: `cats/<int:cat_id>/`
 
 The `int:` part is called a converter and it's used to match and convert the captured value from a string into, in this case, an integer. If the info in the segment does not look like an integer, then it will not be matched - this is different than what we saw in Express where the type of info in a segment didn't matter.
+
+
+<br>
+<br>
+<br>
 
 ##### Step 2
 
@@ -541,6 +693,11 @@ After refreshing the page, hover over a cat card and check the URL in the bottom
 
 Cool, on to the next step...
 
+
+<br>
+<br>
+<br>
+
 ##### Step 3
 
 Now that clicking a cat card is going to send a request like `GET /cats/1`, we need to add a new route entry to the `urlpatterns` list in **urls.py** that will match this request:
@@ -556,6 +713,11 @@ urlpatterns = [
 ```
 
 We've decided that the newly added route will invoke an appropriately named _view function_, `cats_detail`.  That's next...
+
+
+<br>
+<br>
+<br>
 
 ##### Step 4
 
@@ -578,6 +740,11 @@ The `cats_detail` function is using the `get` method to obtain the cat object by
 > Django will pass any captured URL parameters as a named argument to the view function!
 
 **What determined the parameter name of cat_id in the cars_detail view function?**
+
+
+<br>
+<br>
+<br>
 
 ##### Step 5
 
@@ -634,6 +801,11 @@ Okay, let's refresh and check it out!
 
 <img src="https://i.imgur.com/mee5Cxv.png">
 
+
+<br>
+<br>
+<br>
+
 ##### Removing Hand-coded URLs in Templates
 
 Although everything works nicely, hand-coding the URLs in templates, is not considered a good practice because during development, URL's may change.
@@ -682,11 +854,21 @@ The above is the Django way.
 
 **Congrats on coding the Django `Cat` Model and adding the _detail_ functionality for the Cat Collector.**
 
+
+<br>
+<br>
+<br>
+
 ## Lab
 
 For practice, do everything we did in this lesson on your Finch Collector project!
 
 Don't forget to make commits.
+
+
+<br>
+<br>
+<br>
 
 ## Resources
 

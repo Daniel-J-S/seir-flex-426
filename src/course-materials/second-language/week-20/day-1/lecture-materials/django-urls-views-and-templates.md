@@ -1,12 +1,16 @@
 ---
 track: "Second Language"
 title: "Django URLs, Views & Templates"
-week: 22
+week: 20
 day: 1
 type: "lecture"
 ---
 
 # Django URLs, Views & Templates
+
+<br>
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -20,6 +24,11 @@ type: "lecture"
 | Use template inheritance (partial templates) |
 | Include static files in a template |
 | Render data in a template |
+
+
+<br>
+<br>
+<br>
 
 ## Learning Django Game Plan
 
@@ -43,7 +52,18 @@ Here's an overview of the high-level topics we'll be covering this week, in orde
 
 Let's get on with part 1...
 
+
+<br>
+<br>
+<br>
+
 ## Minimalist vs. Full-featured Frameworks
+
+
+
+<br>
+<br>
+<br>
 
 #### Review The Philosophy of Express
 
@@ -54,6 +74,11 @@ It gave us a way to define routes, map controller actions to those routes, and r
 Express didn't have many rules, for example, we could name files anything and put them anywhere we wanted.
 
 If we did need additional capability, it usually meant installing and configuring additional middleware.
+
+
+<br>
+<br>
+<br>
 
 #### The Philosophy of Django
 
@@ -66,6 +91,11 @@ You will find that Django has all sorts of _helper_ classes, methods, etc.
 What Express has to offer can be grasped in a matter of days, whereas Django could take weeks to feel comfortable with what it has to offer.
 
 Luckily for us though, the basics aren't too bad though, as long as you don't try to learn every little detail about each helper, etc.
+
+
+<br>
+<br>
+<br>
 
 ## The Request/Response Cycle in Django
 
@@ -81,7 +111,17 @@ Once again, let's review this diagram that shows how a request flows through a D
 
 <img src="https://i.imgur.com/1fFg7lz.png">
 
+
+<br>
+<br>
+<br>
+
 ## Start the **CatCollector** Project
+
+
+<br>
+<br>
+<br>
 
 #### Create the database
 
@@ -95,6 +135,11 @@ $ createdb catcollector
 ```
 
 
+<br>
+<br>
+<br>
+
+
 #### Start the Project
 
 There is no starter-code for this lesson. Move into this lesson's folder and run the following command to create the Django project:
@@ -106,6 +151,11 @@ $ django-admin startproject catcollector
 The above command generates and configures a Django project in a folder named **catcollector**.
 
 Change into the **catcollector** folder just created and open the folder in your text editor.
+
+
+<br>
+<br>
+<br>
 
 #### Create the App
 
@@ -155,6 +205,10 @@ Browse to `localhost:8000` and make sure you see the rocket on the page:
 
 <img src="https://i.imgur.com/RozMgJ0.png">
 
+<br>
+<br>
+<br>
+
 #### Connecting to the Database
 
 Earlier we created a dedicated `catcollector` PostgreSQL database.
@@ -182,6 +236,11 @@ The `migrate` command is used to update the database schema over time as the app
 
 Nice.  Now let's code our first feature: a HOME page.
 
+
+<br>
+<br>
+<br>
+
 ## Defining Routes - URLs
 
 As you learned with Express, there needs to be a route defined that matches each HTTP request coming from the browser.
@@ -191,6 +250,11 @@ Also, we know that the purpose of a route is to map an HTTP request to code.
 We also know that Django's routing system matches the URL (path) of the request **only** and ignores the HTTP method/verb.
 
 For the HOME page functionality, we'll use the root route (`http://localhost:8000`) - let's see how...
+
+
+<br>
+<br>
+<br>
 
 #### One-time URL Setup
 
@@ -243,6 +307,11 @@ So, let's start by setting up **main_app**'s own **urls.py**:
 	
 	We've also created the required `urlpatterns` list that will hold each route we define for `main_app`.
 
+
+<br>
+<br>
+<br>
+
 #### Define `main_app`'s Home Page URL & View
 
 With the setup done, we're ready to define the route to display the Home page.
@@ -260,6 +329,11 @@ The above code defines a root path using an **empty string** and maps it to the 
 The `name='home'` kwarg is optional but will come in handy for referencing the URL in other parts of the app, especially from within templates.
 
 The Home page route has been defined!  On to the view...
+
+
+<br>
+<br>
+<br>
 
 ## Defining View Functions
 
@@ -292,6 +366,11 @@ We will learn some more powerful ways to respond shortly when we start rendering
 
 Now when browsing to `localhost:8000`, we should see our welcoming cat instead of seeing the rocket page!
 
+
+<br>
+<br>
+<br>
+
 ### Practice - Define another URL and View Function
 
 Take 5 minutes to:
@@ -308,6 +387,11 @@ Test it by browsing to `localhost:8000/about`:
 
 <img src="https://i.imgur.com/K8jpo14.png">
 
+
+<br>
+<br>
+<br>
+
 ## Using Django Templates
 
 So, we just finished responding to requests by using `HttpResponse()` to send back a string of HTML (just like we did when using Express for the first time using `res.send()`).
@@ -323,6 +407,11 @@ Django has two templating engines built-in:
 
 Not surprisingly, a Django project is pre-configured to use DTL, which is very capable, so we'll be using it throughout.
 
+
+<br>
+<br>
+<br>
+
 #### One-time Template Setup
 
 By default, a Django project is configured to look for templates inside of a `templates` folder within each app's folder (`main_app` in this case).
@@ -332,6 +421,12 @@ Let's create that `templates` folder for `main_app` to hold all of its template 
 ```shell
 $ mkdir main_app/templates
 ```
+
+
+<br>
+<br>
+<br>
+
 
 #### Create an `about.html` Template
 
@@ -390,6 +485,11 @@ Browsing to `localhost:8000/about` will now render the new **about.html** templa
 So far, so good, but we haven't yet used any of DTL's power to dynamically render data, perform control flow, etc.
 
 Next, before we go any further and break the DRY principle by repeating the boilerplate in future templates, let's see how we can use what Django calls **template inheritance**.
+
+
+<br>
+<br>
+<br>
 
 ## Template Inheritance (Partials)
 
@@ -484,6 +584,11 @@ To see template inheritance in action, let's update **about.html** so that it ex
 
 Refresh. Yeah, it's not great (yet), but the template inheritance is working and we can stay nice and DRY.
 
+
+<br>
+<br>
+<br>
+
 ## Including Static Files in a Template
 
 As you know, web apps usually have static files such as `.css`, `.js`, image files, etc.
@@ -561,6 +666,11 @@ That's better!
 
 <img src="https://i.imgur.com/ChPjvKm.png">
 
+
+<br>
+<br>
+<br>
+
 ## Render Data in a Template
 
 To see how data is rendered dynamically using Django templating, we're going to implement the following user story:
@@ -569,13 +679,23 @@ _As a User, when I click the **View All My Cats** link, I want to see a page lis
 
 Luckily the [process of how to add a feature to a web application](https://gist.github.com/jim-clark/9f9bd19d60d9ce2ec57be8242b6aee96) from the previous unit you had tattooed applies to all web frameworks!
 
+
+<br>
+<br>
+<br>
+
 #### Step 1 - Identify the "Proper" Route
 
 First, let's be clear on the fact that Django's URL-based routing is **not** RESTful routing - **why is this the case?**
 
 For this **index** page user story, what would have been the RESTful path works for Django's URL only routing as well: `cats/`
 
-#### Step 2 - Create the UI
+
+
+<br>
+<br>
+<br>#### Step 2 - Create the UI
+
 
 For the UI, it makes sense to add the **View All My Cats** link to the navigation bar in **base.html**:
 
@@ -590,6 +710,11 @@ For the UI, it makes sense to add the **View All My Cats** link to the navigatio
 A quick refresh and we have our link:
 
 <img src="https://i.imgur.com/4DZVGiI.png">
+
+
+<br>
+<br>
+<br>
 
 #### Step 3 - Define the Route
 
@@ -607,6 +732,11 @@ urlpatterns = [
 We only have a single **views.py**, so by naming the view `cat_index` we're anticipating that there might be another _index_ view for a different resource in the future (_toys_ maybe?).
 
 Of course, by referencing a nonexistent view, the server's not happy.
+
+
+<br>
+<br>
+<br>
 
 #### Step 4 - Code the View (Controller Action)
 
@@ -647,6 +777,11 @@ cats = [
 ```
 
 > Note: Everything in a Python module is automatically exported, thus, the `Cat` class and the `cats` list will be accessable in other modules.
+
+
+<br>
+<br>
+<br>
 
 #### Step 5 - Respond to the Client's HTTP Request
 
@@ -711,6 +846,11 @@ Some of you have probably already clicked the link and are understandably grinni
 
 <img src="https://i.imgur.com/Aak87k4.png">
 
+
+<br>
+<br>
+<br>
+
 ## Summary
 
 You now have a minimal but functional application that renders an **index** page that dynamically displays a hardcoded list of Cat objects.
@@ -721,6 +861,11 @@ However, we've only touched upon the basics of views and DTL templating.
 
 We're going to get our first look at Models in the next lesson where we'll use one to replace the current `Cat` class so that we can save cats in the database!
 
+
+<br>
+<br>
+<br>
+
 ## Lab
 
 The lab for this lesson is repeating everything we just did, except you'll collect something else like Finches and call the project something like finchcollector, or whatever.
@@ -728,6 +873,11 @@ The lab for this lesson is repeating everything we just did, except you'll colle
 The final version of your "Finch Collector" project will be a deliverable.
 
 Because your completed Finch Collector app will be fairly comprehensive and be a nice addition to your portfolio, you should **create it outside of the class repo** so that you can make it a repo in your personal GitHub account.
+
+
+<br>
+<br>
+<br>
 
 ## References
 

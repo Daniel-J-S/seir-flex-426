@@ -1,17 +1,17 @@
 ---
 track: "Second Language"
-title: "Week 22 - Day 1"
-week: 22
+title: "Week 20 - Day 1"
+week: 20
 day: 1
 type: "homepage"
 topics: "Django URLs, Views & Templates"
 ---
 
 
-# Week 22 - Day 1
+# Week 20 - Day 1
 
 #### Django URLs, Views & Templates
-- [**Lecture:** Django URLs, Views & Templates](/second-language/week-22/day-1/lecture-materials/django-urls-views-and-templates/)
+- [**Lecture:** Django URLs, Views & Templates](/second-language/week-20/day-1/lecture-materials/django-urls-views-and-templates/)
 - **Lab:** 
 <br>
 <br>

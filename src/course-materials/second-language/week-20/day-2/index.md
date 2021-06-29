@@ -1,17 +1,17 @@
 ---
 track: "Second Language"
-title: "Week 22 - Day 2"
-week: 22
+title: "Week 20 - Day 2"
+week: 20
 day: 2
 type: "homepage"
 topics: "Django Models"
 ---
 
 
-# Week 22 - Day 2
+# Week 20 - Day 2
 
 #### Django Models
-- [**Lecture:** Intro to Django Models](/second-language/week-22/day-2/lecture-materials/intro-to-django-models/)
+- [**Lecture:** Intro to Django Models](/second-language/week-20/day-2/lecture-materials/intro-to-django-models/)
 - **Lab:**
 <br>
 <br>
