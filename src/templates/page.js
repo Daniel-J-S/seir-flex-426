@@ -9,6 +9,7 @@ export default ({ data, location }) => {
     const { markdownRemark } = data;
     return (
         <Layout
+            centerContent={true}
             pageTitle={markdownRemark.frontmatter.title} 
             location={location}
             crumbLabel={markdownRemark.frontmatter.title}

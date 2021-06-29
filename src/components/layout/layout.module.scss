@@ -8,6 +8,7 @@
 .inner-container {
     padding: 10rem 5rem 2rem 5rem;
     min-height: 80vh;
+    width: 50rem;
     flex-grow: 1;
     a {
         text-decoration: none;
@@ -21,11 +22,18 @@
     margin: 1rem 0 1.5rem 0;
 }
 
+@media (max-width: 768px) {
+    .inner-container {
+        max-width: 35rem;
+    }
+} 
+
 @media (max-width: 600px) {
     .inner-container {
         padding-top: 7rem;
         padding-left: 1rem;
         padding-right: 1rem;
+        max-width: 21rem;
         margin: 0;
     }
 } 
