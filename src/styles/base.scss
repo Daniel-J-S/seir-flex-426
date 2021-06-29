@@ -46,3 +46,16 @@
     font-size: 1.7rem;
   }
  }
+
+ input:focus {
+   border-color: crimson !important;
+ }
+
+ .ais-SearchBox-input {
+   color: black;
+   caret-color: black !important
+ }
+
+ .ais-SearchBox-input::placeholder {
+   color: black !important;
+ }
