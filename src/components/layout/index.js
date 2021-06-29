@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Head from '../head/';
 import NavBar from '../responsiveNav';
 import Footer from '../footer';
+import Search from '../search';
 
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
@@ -48,6 +49,7 @@ export default ({
                 <div 
                     style={centerContent ? {margin: '0 auto'} : {}}
                     className={styles.innerContainer}>
+                    <Search />
                     <div className={styles.breadContainer}>
                         <Breadcrumb 
                             location={location} 
