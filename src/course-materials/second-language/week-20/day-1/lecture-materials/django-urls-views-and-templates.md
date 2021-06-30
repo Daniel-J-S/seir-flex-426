@@ -172,10 +172,8 @@ For catcollector, as well as for your project 3, you will need an app to impleme
 It makes sense to name the main app generically, so let's do it:
 
 ```shell
-$ python3 manage.py startapp main_app
+$ python manage.py startapp main_app
 ```
-
-> Note:  During SEI, to save time and keep things simple, we are not going to mess with Python _virtual environments_.  So, whenever you see the commands `python` and `pip`, you will always type `python3` and `pip3` instead.  If you have already used virtual environments and are familiar with their use, feel free to continue using them.
 
 You'll now find a **main_app** folder within the top-level project folder. That folder has been configured to be a Python module.
 
@@ -196,7 +194,7 @@ INSTALLED_APPS = [
 Let's check to make sure the project starts up:
 
 ```shell
-$ python3 manage.py runserver
+$ python manage.py runserver
 ```
 
 Ignore the red message about unapplied migrations, we'll take care of those in a bit.
@@ -229,7 +227,7 @@ DATABASES = {
 Now let's test our database connection by getting rid of the red unapplied migration message:
 
 ```shell
-$ python3 manage.py migrate
+$ python manage.py migrate
 ```
 
 The `migrate` command is used to update the database schema over time as the application evolves - we will cover migrations in more detail this afternoon.

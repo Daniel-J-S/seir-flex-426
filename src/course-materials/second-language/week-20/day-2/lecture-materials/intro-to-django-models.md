@@ -174,7 +174,7 @@ Okay, we've defined a `Cat` Model, but the database does not yet have a table to
 The following command creates migration files for all Models that have been added or changed since the last migration:
 
 ```bash
-$ python3 manage.py makemigrations
+$ python manage.py makemigrations
 ```
 
 The output in the terminal informs us that the following migration file was created: `main_app/migrations/0001_initial.py`
@@ -197,7 +197,7 @@ Simply creating migration files does not update the database's schema.
 To synchronize the database with the code in the migration files, we "migrate" using this command:
 
 ```bash
-$ python3 manage.py migrate
+$ python manage.py migrate
 ```
 
 `OK` messages are a good thing 😊
@@ -322,7 +322,7 @@ Django refers to the ORM functions available as its [database API](https://docs.
 After creating a new Model, you can take it for a test drive using a Python shell that loads the Django environment:
 
 ```shell
-$ python3 manage.py shell
+$ python manage.py shell
 ```
 
 Any model you want to work with must be imported just like you will have to do in the application:
@@ -605,7 +605,7 @@ A _super user_ is an administrator for the site. When you are logged in to this 
 Run this command in the terminal:
 
 ```bash
-$ python3 manage.py createsuperuser
+$ python manage.py createsuperuser
 ```
 
 Django will want you to create a password that's at least 3 characters long and complex, however, you can bypass it by typing `y` at the warning prompt.
@@ -617,7 +617,7 @@ Now go to your webpage and head over to the `/admin` route to see an _administra
 Did you mess up your password? It's okay - no big fish. Go back to your terminal and use this handy command:
 
 ```bash
-python3 manage.py changepassword <user_name>
+python manage.py changepassword <user_name>
 ```
 
 But I don't see **Cats**!  That's because in order to manipulate Cat data, we need to "register" the `Cat` Model so that the admin portal knows about.
