@@ -10,7 +10,7 @@ export default ({ data, location }) => {
     const { title } = site.siteMetadata;
 
     return (
-        <Layout centerContent={true} pageTitle={"Home"} location={location} crumbLabel={"Home"}>
+        <Layout  pageTitle={"Home"} location={location} crumbLabel={"Home"}>
             <h1>{title}</h1>
             <main dangerouslySetInnerHTML={{__html: html}} />
         </Layout>

@@ -22,7 +22,7 @@ export default({ data, location }) => {
 
     return (
         <Layout
-          centerContent={true} 
+           
           pageTitle="Frontend Fundamentals" 
           location={location} 
           crumbLabel={"Frontend Fundamentals"}>

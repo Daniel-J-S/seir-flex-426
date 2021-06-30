@@ -17,7 +17,6 @@
     grid-area: logo;
     height: 5rem;
     margin-bottom: 0;
-    animation: fadeIn 800ms linear forwards;
   }
   
   .nav {
@@ -34,7 +33,7 @@
     transition: 0.5s;
     text-decoration: none;
     text-transform: uppercase;
-    animation: fadeIn 800ms linear forwards;
+    animation: fadeIn 1800ms linear forwards;
   }
   .nav a:hover {
     transform: scale(1.1);
