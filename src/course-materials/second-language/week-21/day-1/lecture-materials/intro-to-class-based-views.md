@@ -1,12 +1,16 @@
 ---
 track: "Second Language"
 title: "Intro to Django Class-Based Views (CBVs)"
-week: 22
-day: 3
+week: 21
+day: 1
 type: "lecture"
 ---
 
 # Intro to Django Class-Based Views (CBVs)
+
+<br>
+<br>
+<br>
 
 
 ## Learning Objectives
@@ -19,6 +23,11 @@ type: "lecture"
 | Use a CBV to Delete data |
 | Use a CBV to Update data |
 
+<br>
+<br>
+<br>
+
+
 ## Road Map
 
 1. Set up
@@ -27,25 +36,19 @@ type: "lecture"
 4. Creating Data Using a CBV
 5. Updating & Deleting Data Using a CBV
 
+<br>
+<br>
+<br>
+
+
 ## 1. Set Up
 
 This lesson continues to build-out Cat Collector beginning from where the _Intro to Django Models_ lesson left off.
 
-The starter code is the same as the completed code from that lesson except that the nav in **base.html** has been updated to use the `url` template tag instead of hardcoding the URL in the links:
+<br>
+<br>
+<br>
 
-
-```html
-<!-- <li><a href="/about">About</a></li> -->
-<li><a href="{% url 'about' %}">About</a></li>
-<!-- <li><a href="/cats">View All My Cats</a></li> -->
-<li><a href="{% url 'index' %}">View All My Cats</a></li>
-```
-
-
-❓ **What enables us to use the `url` template tag to automatically generate the proper URL?**
-
-
-Please move into the **starter-code/catcollector** folder and open the folder in VS Code.
 
 ## 2. What are Class-based Views?
 
@@ -60,6 +63,10 @@ from django.views.generic import ListView
 class BookList(ListView):
     model = Book
 ```
+<br>
+<br>
+<br>
+
 
 Then, in **urls.py**, we invoke the `as_view()` method of the `BookList` CBV (which returns a view function) and connect it to a route as usual:
 
@@ -73,6 +80,11 @@ urlpatterns = [
 ]
 ```
 
+<br>
+<br>
+<br>
+
+
 `ListView` is a built-in generic CBV that provides a Model's data to a template to be rendered.
 
 We extended the generic `ListView` to create a `BookList` and used 
@@ -84,16 +96,26 @@ to inform `BookList` that it is to access the `Book` Model.
 
 Notice that there's not even a call to render? By default, the CBV  will expect to render a template named **templates/\<name of app\>/book_list.html**. This convention can of course be overridden.
 
+<br>
+<br>
+<br>
+
+
 In addition to the `ListView` used to display the index page for a Model, there are also:
 
-- `DetailView` - used to implement the "detail" page for an instance of a Model
-- `CreateView` - used to create an instance of a Model
-- `DeleteView` - used to delete an instance of a Model
-- `UpdateView` - used to update an instance of a Model
+1. `DetailView` - used to implement the "detail" page for an instance of a Model
+1. `CreateView` - used to create an instance of a Model
+1. `DeleteView` - used to delete an instance of a Model
+1. `UpdateView` - used to update an instance of a Model
 
 In this lesson, we will be extending the `CreateView`, `DeleteView` and `UpdateView` CBVs to CUD cats!  
 
 We also could easily replace the existing `cats_index` and `cats_detail` view functions with CBVs, however, we won't as a reminder of how they are structured.
+
+<br>
+<br>
+<br>
+
 
 ## 3. Why use Class-based Views?
 
@@ -105,6 +127,11 @@ CBVs can save time thus making us more productive developers.
 
 CBVs are highly configurable by adding class attributes, overriding methods and using decorators.
 
+<br>
+<br>
+<br>
+
+
 For example, here's how we could have used the `template_name` attribute in the above `BookList` to render a template other than the default:
 
 ```python
@@ -113,22 +140,36 @@ class BookList(ListView):
   template_name = 'books/index.html'
 ``` 
 
+<br>
+<br>
+<br>
+
+
 ## 4. Creating Data Using a CBV
 
 We need a way to create cats in Cat Collector!
+
+<br>
+<br>
+<br>
+
 
 #### Add the Route
 
 If this was an Express app, we would need to code two separate routes and controller actions like:
 
-- `router.get('/cats/new', catsCtrl.new);` to view the form, and
-- `router.post('/cats', catsCtrl.create);` to add the cat to the database and then redirect
+1. `router.get('/cats/new', catsCtrl.new);` to view the form, and
+1. `router.post('/cats', catsCtrl.create);` to add the cat to the database and then redirect
 
 However, using Django, we only need a single URL-based route because a `CreateView` CBV will automatically:
 
-- Create a Django [ModelForm]() used to automatically create the form's inputs for the Model. 
-- If the request is a `GET`, render a template (where we'll include a `<form>`)  and
-- In the case of a `POST`, use the posted form's contents to automatically and transparently create data and perform a redirect.
+1. Create a Django [ModelForm]() used to automatically create the form's inputs for the Model. 
+1. If the request is a `GET`, render a template (where we'll include a `<form>`)  and
+1. In the case of a `POST`, use the posted form's contents to automatically and transparently create data and perform a redirect.
+
+<br>
+<br>
+<br>
 
 Let's add that new URL pattern to **main_app/urls.py**
 
@@ -143,11 +184,20 @@ urlpatterns = [
 ]
 ```
 
+<br>
+<br>
+<br>
+
 The `path()` function still needs a view **function** as its second argument, not a class, and that's what a CBV's `as_view()` method returns.
 
 > Did you notice that we didn't have to put that route above the `cats/<int:cat_id>/'`?  Django won't match that route unless there's something that looks like an integer in the second segment, thus it ignores `cats/create/`
 
 We'll need to add the `views.CatCreate` CBV to make the server happy, but first let's add a link to the nav for adding a cat...
+
+<br>
+<br>
+<br>
+
 
 #### Update the UI
 
@@ -164,6 +214,11 @@ Now that we know the path used to create cats, let's update **base.html** to add
 
 On to the view!
 
+<br>
+<br>
+<br>
+
+
 #### Extending the Generic `CreateView`
 
 First, to use anything in Django, it needs to be imported:
@@ -177,6 +232,11 @@ from django.views.generic.edit import CreateView
 from .models import Cat
 ```
 
+<br>
+<br>
+<br>
+
+
 Now we can inherit from `CreateView` to create our own CBV used to create cats:
 
 ```python
@@ -187,6 +247,11 @@ class CatCreate(CreateView):
 
 The `fields` attribute is required and can be used to limit or change the ordering of the attributes from the `Cat` model are generated in the `ModelForm` passed to the template.
 
+<br>
+<br>
+<br>
+
+
 We've taken advantage of the special `'__all__'` value to specify that the form should contain all of the `Cat` Model's attributes. Alternatively, we could have listed the fields in a list like this:
 
 ```python
@@ -195,11 +260,21 @@ class CatCreate(CreateView):
   fields = ['name', 'breed', 'description', 'age']
 ```
 
+<br>
+<br>
+<br>
+
+
 That's all of the code we need to write to display a template (where we will have the form) and create a Cat when form is submitted (the request is a `POST` instead of a `GET`).
 
 It won't always be quite this easy as we'll see in the future when we need to add some additional attributes or override methods in the CBV.
 
 On to the template!
+
+<br>
+<br>
+<br>
+
 
 #### Create the Template for Creating Cats
 
@@ -213,11 +288,21 @@ Let's give `CatCreate` the template it wants by first creating the `templates/ma
 $ mkdir main_app/templates/main_app
 ```
 
+<br>
+<br>
+<br>
+
+
 Now create the template file:
 
 ```shell
 $ touch main_app/templates/main_app/cat_form.html
 ```
+
+<br>
+<br>
+<br>
+
 
 There's not too much so we'll review as we type it in:
 
@@ -239,8 +324,18 @@ There's not too much so we'll review as we type it in:
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
+
+
 
 The `{% csrf_token %}` is a security measure that makes it difficult to perform a [cross-site-request-forgery](https://en.wikipedia.org/wiki/Cross-site_request_forgery) by writing a CSRF (pronounced "see-surf") token that is validated on the server.
+
+<br>
+<br>
+<br>
+
 
 Let's refresh and click the **Add a Cat** link.
 
@@ -248,13 +343,23 @@ Not too bad:
 
 <img src="https://i.imgur.com/DPxY8um.png">
 
+<br>
+<br>
+<br>
+
+
 Use Devtools to explore the DOM. You'll see how Django's ModelForm wrote the inputs in table rows and columns because we used `{{ form.as_table }}`.  Other options include:
 
-- `{{ form }}` - No wrapper around the `<label>` & `<input>` tags
-- `{{ form.as_p }}` - Wraps a `<p>` tag around the `<label>` & `<input>` tags
-- `{{ form.as_ul }}` - Wraps an `<li>` tag around the `<label>` & `<input>` tags
+1. `{{ form }}` - No wrapper around the `<label>` & `<input>` tags
+1. `{{ form.as_p }}` - Wraps a `<p>` tag around the `<label>` & `<input>` tags
+1. `{{ form.as_ul }}` - Wraps an `<li>` tag around the `<label>` & `<input>` tags
 
 > Note: To ease custom styling, you can add an `id` or `class` to your `<table>` and/or `<form>` tags.  Also note how Django automatically assigns an id to each input.
+
+<br>
+<br>
+<br>
+
 
 #### Redirecting
 
@@ -268,6 +373,11 @@ class CatCreate(CreateView):
   fields = '__all__'
   success_url = '/cats/'
 ```
+
+<br>
+<br>
+<br>
+
 
 However, we would need to write a method if we wanted to redirect to the cat that was just created, and for better code reuse, Django recommends adding a `get_absolute_url` method to the **Model** instead.
 
@@ -287,6 +397,10 @@ class Cat(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'cat_id': self.id})
 ```
+<br>
+<br>
+<br>
+
 
 The `reverse` function builds a path string. The above will return the correct path for the `detail` named route.  However, since that route requires a `cat_id` route parameter, its value must provided as a shown above.
 
@@ -298,14 +412,29 @@ from django.db import models
 from django.urls import reverse
 ```
 
+<br>
+<br>
+<br>
+
+
 We've covered all of the fundamentals of class-based views above so we'll be a little more brief while adding the functionality to delete and update cats by combining their steps together...
+
+<br>
+<br>
+<br>
+
 
 ## 5. Updating & Deleting Data Using a CBV
 
 Here are the user stories we want to implement:
 
-- _AAU, when viewing a cat's detail page, I want to click EDIT to update that cat's information._
-- _AAU, when viewing a cat's detail page, I want to click DELETE to remove that cat from the database._
+1. _AAU, when viewing a cat's detail page, I want to click EDIT to update that cat's information._
+1. _AAU, when viewing a cat's detail page, I want to click DELETE to remove that cat from the database._
+
+<br>
+<br>
+<br>
+
 
 #### Add the Routes
 
@@ -318,7 +447,17 @@ path('cats/<int:pk>/update/', views.CatUpdate.as_view(), name='cats_update'),
 path('cats/<int:pk>/delete/', views.CatDelete.as_view(), name='cats_delete'),
 ```
 
+<br>
+<br>
+<br>
+
+
 By default, CBVs that work with individual model instances will expect to find a named parameter of `pk`. This is why we didn't use `cat_id` as we did in the _detail_ entry.
+
+<br>
+<br>
+<br>
+
 
 #### Update the UI
 
@@ -340,8 +479,18 @@ Let's update **templates/cats/detail.html** by adding to a cat's "card" a `<div>
 </div>
 ```
 
+<br>
+<br>
+<br>
+
+
 
 Now for the views...
+
+<br>
+<br>
+<br>
+
 
 #### Subclass the `DeleteView` & `UpdateView`
 
@@ -353,6 +502,11 @@ But first we'll need to import the two additional generic CBVs to extend from:
 # Add UdpateView & DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 ```
+<br>
+<br>
+<br>
+
+
 
 Now for the amazingly minimal new code:
 
@@ -367,15 +521,30 @@ class CatDelete(DeleteView):
   success_url = '/cats/'
 ```
 
+<br>
+<br>
+<br>
+
+
 Note that if we delete a cat, we'll need to redirect to the cats _index_ page since that cat doesn't exist anymore.
 
 Now the server should be back up and clicking on a cat should result in a page that looks something like this:
 
 <img src="https://i.imgur.com/yTyYWva.png">
 
+<br>
+<br>
+<br>
+
+
 Updating a cat is working, however, we'll need to add an extra template to implement delete functionality, which we'll do in a moment.
 
 First though, to enhance the UX, it would be nice to see the name of the cat we're editing...
+
+<br>
+<br>
+<br>
+
 
 #### Customize the `cat_form.html` Template
 
@@ -389,6 +558,11 @@ The CBVs that work with a single model instance automatically pass as part of th
 
 > FYI, in a `ListView`, the _queryset_ of model instances will be available via attributes named `object_list` and `cat_list` (again, the lowercase name of the Model with `_list` appended to it).
 
+<br>
+<br>
+<br>
+
+
 Let's leverage this new knowledge to modify **templates/main_app/cat_form.html** to show the cat's name only when we are editing, not creating, a cat:
 
 
@@ -401,13 +575,28 @@ Let's leverage this new knowledge to modify **templates/main_app/cat_form.html**
     <h1>Add Cat</h1>
   {% endif %}
 ```
+<br>
+<br>
+<br>
+
+
 
 
 Looking good:
 
 <img src="https://i.imgur.com/LEEiTN9.png">
 
+<br>
+<br>
+<br>
+
+
 Okay, let's get delete functionality working then we're done!
+
+<br>
+<br>
+<br>
+
 
 #### Adding a `cat_confirm_delete.html` Template
 
@@ -418,6 +607,11 @@ All we have to do is create it named as follows:
 ```shell
 $ touch main_app/templates/main_app/cat_confirm_delete.html
 ```
+
+<br>
+<br>
+<br>
+
 
 Now for its content:
 
@@ -438,18 +632,38 @@ Now for its content:
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
+
+
 
 Note how we are allowing the user to cancel the delete by providing a link back to the _detail_ page.
+
+<br>
+<br>
+<br>
+
 
 Let's check it out by refreshing:
 
 <img src="https://i.imgur.com/zbw2HTU.png">
+
+<br>
+<br>
+<br>
+
 
 Congrats for implementing full CRUD for cats!
 
 In the next lesson we'll see how to work with One-Many data relationships.
 
 As usual, your lab is to implement the same class-based views in you Finch Collector project.
+
+<br>
+<br>
+<br>
+
 
 ## ❓ Essential Questions
 
@@ -461,6 +675,11 @@ Take a minute to review the following questions:
 
 3. **Every CBV we used in this lesson had a ________ attribute defined to inform the CBV what Model its for.**
 
+<br>
+<br>
+<br>
+
+
 ## Challenge Exercise
 
 This challenge exercise is for those of you who don't need to rest and would like some additional reps in addition to the Finch Collector lab.
@@ -468,6 +687,11 @@ This challenge exercise is for those of you who don't need to rest and would lik
 So far in the Cat Collector, we've implemented full-CRUD for the Cat Model.  Tomorrow we will be learning how to implement a many-to-many association between cats and toys:<br>`Cat >---< Toy`
 
 The starter code for the many-to-many lesson will have full-CRUD implemented for the Toy Model.
+
+<br>
+<br>
+<br>
+
 
 For practice, feel free to implement full-CRUD on the Toy Model yourself.  The Toy Model has the following attributes:
 
@@ -479,6 +703,11 @@ class Toy(models.Model):
   
   # Other goodness such as 'def __str__():' below
 ```
+
+<br>
+<br>
+<br>
+
 
 Enjoy!
 

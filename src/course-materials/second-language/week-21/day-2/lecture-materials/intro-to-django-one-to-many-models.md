@@ -1,12 +1,16 @@
 ---
 track: "Second Language"
 title: "Intro to Django One-to-Many Models"
-week: 23
+week: 21
 day: 1
 type: "lecture"
 ---
 
 # Intro to Django One-to-Many Models
+
+<br>
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -17,6 +21,10 @@ type: "lecture"
 | Use a `ModelForm` to generate form inputs for a Model |
 | Assign the foreign key when creating a new "child" model instance |
 | Add a custom method to a Model |
+
+<br>
+<br>
+<br>
 
 ## Roadmap
 
@@ -32,21 +40,26 @@ type: "lecture"
 10. Essential Questions
 11. Bonus: Adding a Custom Method to Check the Feeding Status
 
+<br>
+<br>
+<br>
+
 ## Ready the Starter Code
 
 This lesson will pick up from where the last lesson left off.
 
-**Be sure to be inside of this lesson's `starter-code/catcollector` directory, NOT the `starter-code` directory** before you open VS Code with `code .`.
+<br>
+<br>
+<br>
 
-Then you can start the web server with:
-
-```bash
-$ python3 manage.py runserver
-```
 
 ## A Cat's Got to Eat!
 
 In this lesson we're going to look at how to add another model that demonstrates working with **one-to-many** relationships in Django.
+
+<br>
+<br>
+<br>
 
 Since a cat's got to eat, let's go with this relationship:
 
@@ -54,19 +67,28 @@ Since a cat's got to eat, let's go with this relationship:
 
 <details>
 	<summary>
-		How does the above relationship "read"?
+		How does the above relationship "read"? <strong>(Click For Answer)</strong>
 	</summary>
 	<p><strong>"A Cat has many Feedings" -and- "A Feeding belongs to a Cat"</strong></p>
 </details>
+
+<br>
+<br>
+<br>
 
 ## Add the New `Feeding` Model
 
 <details>
 	<summary>
-		What file are we going to add the new Feeding Model in?
+		What file are we going to add the new Feeding Model in?<strong>(Click For Answer)</strong>
+	</summary>
 	</summary>
 	<p><strong>main_app/models.py</strong></p>
 </details>
+
+<br>
+<br>
+<br>
 
 #### Creating the basics for Model
 
@@ -79,11 +101,23 @@ class Feeding(models.Model):
   meal = models.CharField(max_length=1)
 ```
 
+<br>
+<br>
+<br>
+
 Note that we're going to use just a single character to represent what meal the feeding is for: **B**reakfast, **L**unch or **D**inner.
+
+<br>
+<br>
+<br>
 
 #### Field.choices
 
 Django has a feature, Field.choices, that will make the single-characters more user-friendly by automatically generating a select dropdown in the form using descriptions we will define next...
+
+<br>
+<br>
+<br>
 
 The first step is to define a tuple of 2-tuples.  Because we might need to access this tuple within the `Cat` class also, let's define it above both of the Model classes:
 
@@ -98,8 +132,15 @@ MEALS = (
 
 class Cat(models.Model):
 ``` 
+<br>
+<br>
+<br>
 
 As you can see, the first item in each 2-tuple represents the value that will be stored in the database. The second item represents the human-friendly "display" value.
+
+<br>
+<br>
+<br>
 
 Now let's enhance the `meal` field as follows:
 
@@ -115,6 +156,10 @@ class Feeding(models.Model):
   )
 ```
 
+<br>
+<br>
+<br>
+
 #### Add the `__str__` Method
 
 As always, we should add a `__str__` method to Models so that they provide more meaningful output when they are printed:
@@ -129,11 +174,23 @@ class Feeding(models.Model):
     return f"{self.get_meal_display()} on {self.date}"
 ```
 
+<br>
+<br>
+<br>
+
 Check out the convenient `get_meal_display()` method Django automagically creates to access the human-friendly value of a Field.choice like we have on `meal`.
+
+<br>
+<br>
+<br>
 
 #### Add the Foreign Key
 
 Since a `Feeding` **belongs to** a `Cat`, it must hold the `id` of the cat object it belongs to - yup, it needs a **foreign key**!
+
+<br>
+<br>
+<br>
 
 Here's how it's done - Django style:
 
@@ -152,6 +209,10 @@ class Feeding(models.Model):
     return f"{self.get_meal_display()} on {self.date}"
 ```
 
+<br>
+<br>
+<br>
+
 As you can see, the `ForeignKey` field-type is used to create a one-to-many relationship.
 
 The first argument provides the parent Model.
@@ -160,32 +221,48 @@ In a _one-to-many_ relationship, the `on_delete=models.CASCADE` is required.  It
 
 > In the database, the column in the `feedings` table for the FK will actually be called `cat_id` because Django by default appends `_id` to the name of the attribute we use in the Model.
 
+<br>
+<br>
+<br>
+
 ## Make and Run the Migration
 
 We added/updated a new Model, so it's that time again...
 
 ```bash
-$ python3 manage.py makemigrations
+$ python manage.py makemigrations
 ```
 
 <details>
 	<summary>
 		Now what do we need to type?
 	</summary>
-	<p><strong>python3 manage.py migrate</strong></p>
+	<p><strong>python manage.py migrate</strong></p>
 </details>
 
 After creating a Model, especially one that relates to another, it's always a good idea to test drive the Model and relationships in the shell.
+
+<br>
+<br>
+<br>
 
 ## Test the Models in the Shell
 
 Besides testing Models and their relationships, the following will demonstrate how to work with the ORM in views.
 
+<br>
+<br>
+<br>
+
 First, open the shell:
 
 ```bash
-$ python3 manage.py shell
+$ python manage.py shell
 ```
+
+<br>
+<br>
+<br>
 
 Now let's import everything _models.py_ has to offer:
 
@@ -198,6 +275,10 @@ Now let's import everything _models.py_ has to offer:
 ```
 
 So far, so good!
+
+<br>
+<br>
+<br>
 
 #### May the Test Drive Commence
 
@@ -259,10 +340,18 @@ So far, so good!
 <QuerySet [<Feeding: Breakfast on 2018-10-07>, <Feeding: Lunch on 2018-10-07>]>
 exit()
 ```
+<br>
+<br>
+<br>
+
 
 Now how much would you pay for that ORM?
 
 Behind the scenes, an enormous amount of SQL was being generated and sent to the database.
+
+<br>
+<br>
+<br>
 
 ## Don't Forget the Admin Portal
 
@@ -280,11 +369,23 @@ admin.site.register(Cat)
 admin.site.register(Feeding)
 ```
 
+<br>
+<br>
+<br>
+
 Now browse to `localhost:8000/admin` and click on the `Feeding` link.
 
 <img src="https://i.imgur.com/S1w9o0N.png">
 
+<br>
+<br>
+<br>
+
 Check out those select drop-downs for assigning both the Meal and the Cat!
+
+<br>
+<br>
+<br>
 
 #### Custom Field Labels
 
@@ -300,11 +401,24 @@ class Feeding(models.Model):
   ...
 ```
 
+<br>
+<br>
+<br>
+
 Refresh and...
 
 <img src="https://i.imgur.com/KMKlEgA.png">
 
+<br>
+<br>
+<br>
+
 What's cool is that the custom labels will be used in all of Django's ModelForms too!
+
+
+<br>
+<br>
+<br>
 
 ## Displaying a Cat's Feedings
 
@@ -314,7 +428,12 @@ No additional views or templates necessary.  All we have to do is update the **d
 
 Our imaginary wireframe calls for a cat's _feedings_ to be displayed to the right of the cat's details. We can do this using Materialize's grid system to define layout columns.
 
+<br>
+<br>
+<br>
+
 Here's the new content of **detail.html**. Best to copy/paste this new markup, then we'll review:
+
 
 
 ```html
@@ -361,10 +480,17 @@ Here's the new content of **detail.html**. Best to copy/paste this new markup, t
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
 
 A refresh results in this:
 
 <img src="https://i.imgur.com/J7H9yiE.png">
+
+<br>
+<br>
+<br>
 
 ## Adding New Feeding Functionality
 
@@ -384,6 +510,10 @@ Because we want to be able to show a form for adding a feeding on the _detail_ p
 
 There's several steps we're going to need to complete, so let's get started...
 
+<br>
+<br>
+<br>
+
 #### Create the ModelForm for the `Feeding` Model
 
 We could define the ModelForm inside of the _models.py_ module, but we're going to follow a best practice of defining it inside of a _forms.py_ module instead:
@@ -391,6 +521,10 @@ We could define the ModelForm inside of the _models.py_ module, but we're going 
 ```shell
 $ touch main_app/forms.py
 ```
+
+<br>
+<br>
+<br>
 
 Let's open it and add this code:
 
@@ -404,15 +538,27 @@ class FeedingForm(ModelForm):
     fields = ['date', 'meal']
 ```
 
+<br>
+<br>
+<br>
+
 Note that our custom form inherits from `ModelForm` and has a nested `class Meta:` to declare the Model being used and the fields we want inputs generated for. Confusing? Absolutely, but it's just the way it is, so accept it and sleep well.
 
 Many of the attributes in the `Meta` class are in common with CBVs because the CBV was using them behind the scenes to create a ModelForm as we've already mentioned.
 
 For more options, check out the [Django ModelForms documentation](https://docs.djangoproject.com/en/2.1/topics/forms/modelforms/#modelform).
 
+<br>
+<br>
+<br>
+
 #### Passing an Instance of `FeedingForm`
 
 `FeedingForm` is a class that needs to be instantiated in the `cats_detail` view function so that it can be "rendered" inside of _detail.html_.
+
+<br>
+<br>
+<br>
 
 Here's the updated `cats_detail` view function in _views.py_:
 
@@ -434,7 +580,16 @@ def cats_detail(request, cat_id):
   })
 ```
 
+<br>
+<br>
+<br>
+
 `feeding_form` is set to an instance of `FeedingForm` and then it's passed to _detail.html_ just like `cat`.
+
+
+<br>
+<br>
+<br>
 
 #### Displaying `FeedingForm` Inside of **detail.html**
 
@@ -458,6 +613,10 @@ This is how we can "render" the ModelForm's inputs within `<form>` tags in **tem
   ...
 ```
 
+<br>
+<br>
+<br>
+
 
 As always, we need to include the `{% csrf_token %}` for security purposes.
 
@@ -465,17 +624,33 @@ A form's `action` attribute determines the URL that a form is submitted to. For 
 
 The `{{ feeding_form.as_p }}` will generate the `<input>` tags wrapped in `<p>` tags for each field we specified in `FeedingForm`.
 
+<br>
+<br>
+<br>
+
 Let's see what it looks like - not perfect but it's a start:
 
 <img src="https://i.imgur.com/KGb0FcW.png">
+
+<br>
+<br>
+<br>
 
 Unfortunately, the _Feeding Date_ field is just a basic text input. This is what Django uses by default for `DateField`s.
 
 Also, we don't see a drop-down for the _Meal_ field as expected.  However, it's in the HTML, but it's not rendering correctly due to the use of Materialize.
 
+<br>
+<br>
+<br>
+
 ##### Add Materialize's JavaScript Library
 
 Luckily we can use Materialize to solve both problems. However, solving the problems will require that we include Materialize's JavaScript library and add a bit of our own JavaScript to "initialize" the inputs.
+
+<br>
+<br>
+<br>
 
 First, update _base.html_ to include the Materialize JS library:
 
@@ -489,12 +664,20 @@ First, update _base.html_ to include the Materialize JS library:
   ...
 ```
 
+<br>
+<br>
+<br>
+
  
 ##### Using a Date-picker for _Feeding Date_
 
 Okay now let's make the `<input>` for _Feeding Date_ a sweet date-picker using Materialize.
 
 Materialize requires us to "initialize" certain inputs using a bit of JavaScript.  We want this JS to run after the elements are in the DOM, so we'll just put the JS at the bottom of the template.
+
+<br>
+<br>
+<br>
 
 Let's add `<script>` tags at the bottom of of **detail.html**:
 
@@ -509,11 +692,19 @@ Let's add `<script>` tags at the bottom of of **detail.html**:
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
+
 
 Using Materialize, it takes two steps to get the inputs the way we want them:
 
-- Select the element(s)
-- "Initialize" the element(s) using Materialize's library
+1. Select the element(s)
+1. "Initialize" the element(s) using Materialize's library
+
+<br>
+<br>
+<br>
 
 Now let's add the JS to inside of the `<script>` tags to initialize the date-picker:
 
@@ -533,6 +724,9 @@ Now let's add the JS to inside of the `<script>` tags to initialize the date-pic
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
 
 As you can see, the `ModelForm` automatically generated an `id` attribute for each `<input>`.  Always be sure to use Devtools to figure out how to select elements for styling, etc.
 
@@ -542,13 +736,25 @@ Refresh and test it out by clicking inside of _Feeding Date_ - you should see a 
 
 <img src="https://i.imgur.com/eEIRrA1.png">
 
+<br>
+<br>
+<br>
+
 Now let's fix the dropdown...
+
+<br>
+<br>
+<br>
 
 ##### Fix the _Meal_ `<select>`
 
 Because we used `choices=MEALS` in the `Feeding` model, `FeedingForm` generated a `<select>` instead of the typical `<input type="text">` for a `CharField`.
 
 But, `<select>` dropdowns also need to be initialized when using Materialize.
+
+<br>
+<br>
+<br>
 
 It doesn't require any options, just select it and init it:
 
@@ -572,18 +778,34 @@ It doesn't require any options, just select it and init it:
 {% endblock %}
 ```
 
+<br>
+<br>
+<br>
+
 
 Refresh and the _Meal_ `<select>` is looking good:
 
 <img src="https://i.imgur.com/7GKa6DB.png">
 
+<br>
+<br>
+<br>
+
 Now with the UI done, let's think about the URL to `POST` the form to...
+
+<br>
+<br>
+<br>
 
 #### Add Another `path(...)` to `urls.py`
 
 Every `Feeding` object needs a `cat_id` that holds the primary key of the cat object that it belongs to.
 
 Therefore, we need to ensure that the route includes a _URL parameter_ for capturing the cat's `id` like we've done in other routes.
+
+<br>
+<br>
+<br>
 
 Okay, let's add a route to the `urlpatterns` list in _urls.py_ like this:
 
@@ -594,7 +816,15 @@ urlpatterns = [
 ]
 ```
 
+<br>
+<br>
+<br>
+
 The above route is basically saying that the `<form>`'s **action** attribute will need to look something like `/cats/2/add_feeding`. Let's go there now...
+
+<br>
+<br>
+<br>
 
 #### Add the `action` Attribute to the `<form>`
 
@@ -611,6 +841,10 @@ Now that we have a _named URL_, let's add the `action` attribute to the `<form>`
   </form>
 ```
 
+<br>
+<br>
+<br>
+
 
 Once again, we're using the better practice of using the `url` template tag to write out the correct the URL for a route.
 
@@ -619,6 +853,10 @@ If the URL requires values for named parameters such as `<int:cat_id>`, the `url
 > Note that arguments provided to template tags are always separated using a space character, not a comma. 
 
 We won't be able to refresh and check it out until we add the `views.add_feeding` function...
+
+<br>
+<br>
+<br>
 
 #### Add the `views.add_feeding` View Function to `views.py`
 
@@ -632,13 +870,26 @@ def add_feeding(request, cat_id):
   pass
 ```
 
+<br>
+<br>
+<br>
+
 Using `pass` is a way to define an "empty" Python function.
 
 Refreshing and inspecting the elements using DevTools shows that our `<form>` is looking good:
 
 <img src="https://i.imgur.com/ENEb2d0.png">
 
+
+<br>
+<br>
+<br>
+
 Now let's turn our attention back to the `add_feeding` function. 
+
+<br>
+<br>
+<br>
 
 Here it is:
 
@@ -655,10 +906,18 @@ def add_feeding(request, cat_id):
     new_feeding.save()
   return redirect('detail', cat_id=cat_id)
 ```
+<br>
+<br>
+<br>
+
 
 After ensuring that the form contains valid data, we save the form with the `commit=False` option, which returns an in-memory model object so that we can assign the `cat_id` before actually saving to the database.
 
 Always be sure to `redirect` instead of `render` if data has been changed in the database.
+
+<br>
+<br>
+<br>
 
 We also need to import `redirect` by adding after `render`:
 
@@ -667,15 +926,27 @@ We also need to import `redirect` by adding after `render`:
 from django.shortcuts import render, redirect
 ```
 
+<br>
+<br>
+<br>
+
 Add a feeding and rejoice!
 
 <img src="https://i.imgur.com/QP1Kfv1.png">
+
+<br>
+<br>
+<br>
 
 Well, almost...
 
 It would be nice to have the most recent dates displayed at the top.
 
 Yup, _a Model is the single, definitive source of truth..._
+
+<br>
+<br>
+<br>
 
 The answer lies in adding a `class Meta` with the `ordering` _Model Meta option_ within the `Feeding` Model:
 
@@ -691,11 +962,23 @@ class Feeding(models.Model):
     ordering = ['-date']
 ```
 
+<br>
+<br>
+<br>
+
 Feed the cats!
 
 Be sure to check out the BONUS section on your own.
 
+<br>
+<br>
+<br>
+
 Let's wrap up with a few questions...
+
+<br>
+<br>
+<br>
 
 ## ❓ Essential Questions
 
@@ -707,6 +990,10 @@ Take a moment to review, then on to the student picker!
 
 **3. What technique did we use to pass the `id` of the cat to the `add_feeding` _view function_?** 
 
+<br>
+<br>
+<br>
+
 ## BONUS: Adding a Custom Method to Check the Feeding Status
 
 When adding _business logic_ to an application, always consider adding that logic to the Models first.
@@ -715,13 +1002,25 @@ This approach is referred to as "fat models / skinny views" and results in keepi
 
 We're going to add a custom method to the `Cat` Model that help's enable the following messaging based upon whether or not the cat has had at least the number of feedings for the current day as there are MEALS.
 
+<br>
+<br>
+<br>
+
 When a cat does not have at least the number of MEALS: 
 
 <img src="https://i.imgur.com/3TEZ8nl.png">
 
+<br>
+<br>
+<br>
+
 And when the cat has been completely fed for the day:
 
 <img src="https://i.imgur.com/E1yCDHr.png">
+
+<br>
+<br>
+<br>
 
 #### The `fed_for_today` Custom Model Method
 
@@ -740,16 +1039,35 @@ class Cat(models.Model):
     return self.feeding_set.filter(date=date.today()).count() >= len(MEALS)
 ```
 
+<br>
+<br>
+<br>
+
 Be sure to add the import at the top of _models.py_.
 
 The `fed_for_today` method demonstrates the use of `filter()` to obtain a `<QuerySet>` for today's feedings, then `count()` is chained on to the query to return the actual number of objects returned.
+
+<br>
+<br>
+<br>
 
 The above approach in more efficient than this similar code:
 
 ```python
 len( self.feeding_set.filter(date=date.today()) )
 ```
+
+<br>
+<br>
+<br>
+
 because this code would return all objects from the database when all we need is the number of objects returned by `count()`. In other words, don't return data from the database if you don't need it.
+
+
+<br>
+<br>
+<br>
+
 
 #### Update the **detail.html** Template
 
@@ -776,8 +1094,16 @@ All that's left is to sprinkle in a little template code like this:
 
 ```
 
+<br>
+<br>
+<br>
+
 
 Congrats on using a custom Model method to implement business logic!
+
+<br>
+<br>
+<br>
 
 ## Resources
 

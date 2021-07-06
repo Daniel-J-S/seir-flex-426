@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Data Modeling Lab"
-week: 18
+week: 21
 day: 3
 type: "lab"
 ---
@@ -9,7 +9,7 @@ type: "lab"
 
 <img src="https://i.imgur.com/qz8V0NX.png" width="400">
 
-# Data Modeling - Lab
+# Data Modeling Group Lab
 
 <br>
 <br>

@@ -1,12 +1,16 @@
 ---
 track: "Second Language"
 title: "Intro to Django Many-to-Many Models"
-week: 23
-day: 2
-type: "lab"
+week: 21
+day: 3
+type: "lecture"
 ---
 
 # Intro to Django Many-to-Many Models
+
+<br>
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -15,6 +19,11 @@ type: "lab"
 | Use Django's `ManyToManyField` to Implement a M:M Relationship |
 | Add an Association in a M:M Relationship |
 | Remove an Association in a M:M Relationship |
+
+<br>
+<br>
+<br>
+
 
 ## Road Map
 
@@ -27,11 +36,14 @@ type: "lab"
 7. Practice Exercise
 8. Further Study
 
+<br>
+<br>
+<br>
+
+
 ## 1. Set Up
 
-**Be sure to be inside of this lesson's `starter-code/catcollector` directory, NOT the `starter-code` directory** before you open VS Code with `code .`
-
-The starter code for this lesson has had quite a bit of code added to it since you last saw the Cat Collector.
+The <a href="/downloads/second_language/django-many-to-many-models/cat_collector.zip" download>starter code</a> for this lesson has had quite a bit of code added to it since you last saw the Cat Collector.
 
 However, none of the additional code has anything that you haven't worked with already.
 
@@ -39,17 +51,33 @@ Because many-to-many relationships require a Model that is independent of other 
 
 This way, we can focus on how to implement the actual `Cat >--< Toy` relationship in this lesson.
 
+
+<br>
+<br>
+<br>
+
 Because a new `Toy` model has been added, there are migration files in the starter code that have not yet been migrated to the database on your computer. Let's do that now:
 
 ```shell
-$ python3 manage.py migrate
+$ python manage.py migrate
 ```
+
+
+<br>
+<br>
+<br>
+
 
 Now start up the server:
 
 ```shell
-$ python3 manage.py runserver
+$ python manage.py runserver
 ```
+
+<br>
+<br>
+<br>
+
 
 ## 2. Review the Starter Code
 
@@ -61,9 +89,14 @@ Go ahead and create a few toys so that you have them to assign to cats later.
 
 After you're done, let's take a look at the `Toy`-related Django modules in `main_app`:
 
-- **models.py**
-- **urls.py**
-- **views.py**
+1. **models.py**
+1. **urls.py**
+1. **views.py**
+
+<br>
+<br>
+<br>
+
 
 ## 3. Many-to-Many Relationships in RDBMs
 
@@ -77,6 +110,11 @@ Each row in the join table contains _foreign keys_ for the other two tables' _pr
 
 Note that in practice, the "associating" of a cat and toy is a matter of adding an additional row in the join table.  Similarly, to "unassociate" a cat and toy, the corresponding row in the join table is deleted - not a cat row, not a toy row! 
 
+<br>
+<br>
+<br>
+
+
 ## 4. Many-to-Many Relationship in Django
 
 As usual, the Django framework handles a lot of the heavy lifting when it comes to working with many-to-many Relationships between Models.
@@ -87,6 +125,10 @@ Forms and templates aside, all we need to do to implement a many-to-many relatio
 2. Create the migration and migrate it to update the database
 
 Django will ensure that a "hidden" join table is created that links the rows of the other two tables together.
+
+<br>
+<br>
+<br>
 
 #### Add a `ManyToManyField` on One Side of the Relationship
 
@@ -106,43 +148,81 @@ class Cat(models.Model):
   toys = models.ManyToManyField(Toy)
 ```
 
+<br>
+<br>
+<br>
+
 #### Make and Run the Migration
 
 Because we've made a change to a Model that impacts the database's schema, we must make a migration and migrate it to update the database.
 
+
+<br>
+<br>
+<br>
+
+
 First, make the migration:
 
 ```shell
-$ python3 manage.py makemigrations
+$ python manage.py makemigrations
 ```
+
+
+<br>
+<br>
+<br>
+
 
 Here's how we can check the status of migrations:
 
 ```shell
-python3 manage.py showmigrations
+python manage.py showmigrations
 ```
+
+
+<br>
+<br>
+<br>
+
 
 Now, let's migrate the created migration to update the schema:
 
 ```shell
-python3 manage.py migrate
+python manage.py migrate
 ```
 
 We're ready to test drive the new relationship!
+
+<br>
+<br>
+<br>
+
 
 #### Open the Interactive Sheel
 
 We'll use the shell to check out the `Cat >--< Toy` relationship:
 
 ```shell
-$ python3 manage.py shell
+$ python manage.py shell
 ```
+
+
+<br>
+<br>
+<br>
+
 
 Now let's import everything from **models.py**:
 
 ```shell
 $ from main_app.models import *
 ```
+
+<br>
+<br>
+<br>
+
 
 #### The "Related Manager"
 
@@ -155,11 +235,23 @@ When we perform CRUD using a Model in Django, we've used the the `objects` manag
 
 However, when a one-to-many or many-to-many relationship exists, Django also creates a [related manager](https://docs.djangoproject.com/en/2.1/ref/models/relations/) used to access the data related to a model instance.
 
+
+<br>
+<br>
+<br>
+
+
 To check this out, let's query for a cat and save it in a variable:
 
 ```python
 >>> cat = Cat.objects.get(name='Maki')
 ```
+
+<br>
+<br>
+<br>
+
+
 
 Now, thanks to the `toys = models.ManyToManyField(Toy)` field we added, we can use the `toys` _related manager_ like this:
 
@@ -167,6 +259,12 @@ Now, thanks to the `toys = models.ManyToManyField(Toy)` field we added, we can u
 >>> cat.toys.all()
 <QuerySet []>   # Maki has no toys associated with it yet
 ```
+
+
+<br>
+<br>
+<br>
+
 
 Let's grab the first toy:
 
@@ -185,9 +283,20 @@ Although we didn't add another field on the `Toy` Model, Django still created a 
 
 > Note the naming convention Django used for naming the related manager - the related model's name (lower cased) and append `_set`.
  
+<br>
+<br>
+<br>
+
+
 #### Adding Associated Data
 
 To add an association, use the related manager's `add` method.
+
+
+<br>
+<br>
+<br>
+
 
 Let's associate the `cat` and the `first_toy`:
 
@@ -199,6 +308,12 @@ Let's associate the `cat` and the `first_toy`:
 
 > Alternatively, `first_toy.cat_set.add(cat)` would have created the same association.
  
+
+<br>
+<br>
+<br>
+
+
 Let's get crazy and associate the last cat with both the first and last toy:
 
 ```python
@@ -208,6 +323,11 @@ Let's get crazy and associate the last cat with both the first and last toy:
 ```
 
 Behind the scenes, there's an amazing amount of SQL being sent to the database!
+
+<br>
+<br>
+<br>
+
 
 #### Removing Associated Data
 
@@ -225,6 +345,12 @@ Let's remove the association between the `cat` and the `first_toy`, but this tim
 <QuerySet [<Cat: Maki>]>    # No more Morris
 ```
 
+
+<br>
+<br>
+<br>
+
+
 Here's how we can use a `for...in` loop and the `clear()` method to remove all associations between cats and toys:
 
 ```python
@@ -236,11 +362,26 @@ Here's how we can use a `for...in` loop and the `clear()` method to remove all a
 
 Fun stuff!  Exit the shell by typing `control + D` or `exit()`
 
+<br>
+<br>
+<br>
+
+
 ## 5. Implement the Cat & Toy Association in Cat Collector
+
+<br>
+<br>
+<br>
+
 
 ### User Stories
 
 _As a User, when viewing the detail page of a cat, I want to see a list of toys the cat has and be able to add toys to the list that the cat doesn't already have_
+
+<br>
+<br>
+<br>
+
 
 ### Displaying a List of Associated Toys
 
@@ -279,6 +420,11 @@ Let's use the Django admin app (`localhost:8000/admin`) to add a toy or two then
 
 <img src="https://i.imgur.com/xTWN8b9.png">
 
+<br>
+<br>
+<br>
+
+
 ### Displaying a List of Unassociated Toys
 
 The next step would be to display toys that the cat is not associated with.
@@ -288,6 +434,12 @@ Each toy should include an ADD button that will add the toy to the list (impleme
 To be able to display the list of unassociated toys, we'll need to query for them in the `cats_detail` view function and add them to the context being passed to the template.
 
 The query to find all toys that a cat doesn't have is a bit complicated, but it demonstrates the power of the Django ORM.
+
+
+<br>
+<br>
+<br>
+
 
 In **views.py** update `cats_detail as follows`:
 
@@ -313,6 +465,12 @@ cat.toys.all().values_list('id')
 ```
 
 Finally, we are passing the toys to the template by adding it to the context dictionary.
+
+
+<br>
+<br>
+<br>
+
 
 Now for more markup to display the toys the cat doesn't have:
 
@@ -353,6 +511,11 @@ Here's what the updated UI looks like:
 
 <img src="https://i.imgur.com/Lbhq1Ff.png">
 
+<br>
+<br>
+<br>
+
+
 ### Making the Association
 
 The app is looking good and all that's left is to handle the form being submitted to associate a toy with the cat.
@@ -385,6 +548,12 @@ Now that we know have defined the route and named it, we can use the `url` templ
 
 Note how we need to provide both `id`s as space-separated parameters in the order that they were defined in the path (first the cat's id, then the toy's).
 
+
+<br>
+<br>
+<br>
+
+
 We're done as soon as we write the `views.assoc_toy`:
 
 In **views.py**:
@@ -400,15 +569,30 @@ We saw something similar to this earlier in when testing out the relationship in
 
 Congrats on implementing a many-to-many relationship between cats and toys!
 
+<br>
+<br>
+<br>
+
+
 ## 6. Lab Assignment
 
 Lab time is to be spent implementing the same feature in your Finch Collector project :)
+
+<br>
+<br>
+<br>
+
 
 ## 7. Practice Exercise
 
 Implement the following user story:
 
 _AAU, when viewing the detail page for a cat, I want to be able to remove a toy for that cat_
+
+<br>
+<br>
+<br>
+
 
 ## 8. Further Study
 
@@ -444,6 +628,12 @@ class Ticket(models.Model):
 ```
 
 For more information regarding _many-to-many through relationships_, start [here](https://docs.djangoproject.com/en/2.1/topics/db/models/#intermediary-manytomany) in the docs.
+
+<br>
+<br>
+<br>
+
+
 
 ## References
 
