@@ -133,12 +133,13 @@ Each attribute has a data type. For example, _string_, _numeric_, _datetime_
 Let's design an ERD for a Concert Ticket tracking application.
 
 The application should track:
-	- The tickets for a concert
-	- The seat and price of the ticket
-	- The date of the concert
-	- The performer of the concert
-	- The venue of the concert
-	- The customer that bought a ticket
+
+1. The tickets for a concert
+1. The seat and price of the ticket
+1. The date of the concert
+1. The performer of the concert
+1. The venue of the concert
+1. The customer that bought a ticket
 
 
 <br>
@@ -154,9 +155,12 @@ The application should track:
 Reviewing an application's **user stories** is a good first step to creating the conceptual data model.
 
 There are three components that must be identified:
-	1. The **data entities** (tables)
-	2. The **attributes** (columns) for each entity
-	3. The **relationships** between the entities.
+
+1. The **data entities** (tables)
+
+2. The **attributes** (columns) for each entity
+
+3. The **relationships** between the entities.
 
 Since this application is supposed to track **tickets**, let's start with a preliminary **Ticket** entity...
 
@@ -172,7 +176,8 @@ Since this application is supposed to track **tickets**, let's start with a prel
 
 Here's our first attempt at modeling the **Ticket** entity by including all the attributes you might see printed on a ticket:
 
-	<img src="https://i.imgur.com/jcpU8dF.png" height="400">
+
+<img src="https://i.imgur.com/jcpU8dF.png" height="400">
 
 
 <br>
@@ -188,8 +193,10 @@ Here's our first attempt at modeling the **Ticket** entity by including all the 
 Now let's identify which attributes the **Ticket** entity currently has that should be their own entity.
 
 To do this, we can look for current attributes that:
-	- Could have attributes of their own, e.g., a **Venue**. 
-	- Or, be shared between other Tickets, again, a **Venue**.
+
+1. Could have attributes of their own, e.g., a **Venue**. 
+
+1. Or, be shared between other Tickets, again, a **Venue**.
 
 
 
