@@ -12,14 +12,12 @@ type: "lecture"
 <br>
 <br>
 
-<!-- 
+### [Click here](https://generalassembly.zoom.us/rec/share/Jg3te358I3Moo6nLObrOLX6cNSzbGsV9rc6DzGTxfTy5PdWxoSbUyxdRCihLkHbG.QWX-8Cbytf4WJ8VV?startTime=1625932753000) to access recording - (Recording Also Includes Intro to Django Many to Many Models)
 
-### [Click here]() to access recording
 
 <br>
 <br>
 <br>
- -->
 
 
 ## Learning Objectives
