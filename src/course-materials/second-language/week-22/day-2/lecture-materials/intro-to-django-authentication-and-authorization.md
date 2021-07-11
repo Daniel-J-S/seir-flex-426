@@ -1,13 +1,16 @@
 ---
 track: "Second Language"
 title: "Intro to Django Authentication and Authorization"
-week: 24
-day: 3
+week: 22
+day: 2
 type: "lecture"
 ---
 
 # Intro to Django Authentication and Authorization
 
+<br>
+<br>
+<br>
 
 ## Learning Objectives
 
@@ -20,6 +23,12 @@ type: "lecture"
 | Dynamically render HTML based upon auth status |
 | Access data that belongs to a logged in user only |
 | Protect routes from unauthorized access |
+
+
+<br>
+<br>
+<br>
+
 
 ## Road Map
 
@@ -35,6 +44,11 @@ type: "lecture"
 10. Displaying only the User's Cats
 11. Implement Authorization
 12. Further Study - Customizing the `User` Model
+
+
+<br>
+<br>
+<br>
 
 ## 1. Set Up
 
@@ -52,6 +66,10 @@ Once inside the **catcollector** directory, spin up the Django development serve
 $ python3 manage.py runserver
 ```
 
+<br>
+<br>
+<br>
+
 ## 2. Intro to Authentication in Django
 
 By default, Django creates projects with authentication and authorization capabilities pre-installed!
@@ -62,6 +80,11 @@ Two review questions for you:
 - **What is authorization?**
 
 Django's built-in authentication functionality is provided by the `'django.contrib.auth'` app included within the `INSTALLED_APPS` list in `settings.py`:
+
+
+<br>
+<br>
+<br>
 
 ```python
 INSTALLED_APPS = [
@@ -79,6 +102,11 @@ Django provides the common **user** authentication where the user signs up and l
 
 Django relies on server-side sessions, implemented by the `'django.contrib.sessions'` app, to track when a user is logged in or out.
 
+
+<br>
+<br>
+<br>
+
 #### The `User` Model
 
 At the core of Django's authentication, is the provided `User` Model which by default has the following attributes:
@@ -91,7 +119,15 @@ At the core of Django's authentication, is the provided `User` Model which by de
 
 Although these attributes are fine for the Cat Collector, some projects may need additional attributes such as `birthdate`, `favorite_color`, etc. The _Further Study_ section will point you in the right direction should you need this functionality.
 
+<br>
+<br>
+<br>
+
+
 ## 3. Creating the `User ---< Cat` Relationship
+
+
+<br>
 
 #### Cat Collector's Functionality is Changing
 
@@ -102,6 +138,11 @@ The functionality of Cat Collector is about to change!
 By the end of this lesson, with authentication implemented, all cats will belong to a user.
 
 Ordinarily, it's important to implement an app's authentication up front to avoid having to make the changes to the code we're going to have to make in Cat Collector.
+
+<br>
+<br>
+<br>
+
 
 #### Update the `Cat` Model
 
@@ -128,6 +169,10 @@ One of the Model's needs a _Foreign Key_ - `User` or `Cat`...
 	</strong></p>
 </details>
 
+<br>
+<br>
+<br>
+
 Now let's add the field linking a `Cat` to a `User`:
 
 ```python
@@ -137,6 +182,11 @@ class Cat(models.Model):
   # Add the foreign key linking to a user instance
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 ```
+
+
+<br>
+<br>
+<br>
 
 #### Migrate the Change
 
@@ -182,6 +232,11 @@ $ python3 manage.py migrate
 ```
 
 Congrats, the one-to-many relationship between User and Cat has been created and all existing cats have been collected by the superuser!
+
+<br>
+<br>
+<br>
+
 
 ## 4. Adding URLs for Authentication
 
@@ -229,7 +284,15 @@ What's happening is that the `django.contrib.auth` app is doing its job!  It's u
 
 Now let's implement logging in...
 
+<br>
+<br>
+<br>
+
 ## 5. Logging In
+
+<br>
+<br>
+<br>
 
 #### Create the **login.html** Template
 
@@ -296,6 +359,10 @@ is really cool.  It is a feature of Django's authentication that will automatica
 
 You can log in now, but you'll get an error because by default, the login view redirects to **/accounts/profile**, but we can change this...
 
+<br>
+<br>
+<br>
+
 #### Specifying the Default Redirect After Logging In
 
 In Cat Collector, when a user logs in, we want them to see their cat _index_ page.
@@ -312,6 +379,11 @@ LOGIN_REDIRECT_URL = '/cats/'
 The `django.contrib.auth` app uses that value of the `LOGIN_REDIRECT_URL` variable, if it exists, to redirect to after the user logs in.
 
 Test it out - sweet!
+
+<br>
+<br>
+<br>
+
 
 ## 6. Updating the Nav Bar Dynamically
 
@@ -372,6 +444,11 @@ Nice!
 
 Logging out even works, but it doesn't redirect to our _Home_ page (root route)...
 
+<br>
+<br>
+<br>
+
+
 ## 7. Logging Out
 
 Thanks again to the `django.contrib.admin` app's built-in `LogOut` view, we didn't have to do a thing to implement logging out!
@@ -388,6 +465,11 @@ LOGOUT_REDIRECT_URL = '/'
 ```
 
 That was easy!
+
+<br>
+<br>
+<br>
+
 
 ## 8. Update the `CatCreate` View to Assign a New Cat to the Logged in User
 
@@ -423,9 +505,18 @@ Okay, let's check out the refactor by:
 
 Moving right along...
 
+<br>
+<br>
+<br>
+
 ## 9. Sign Up New Users
 
 Unfortunately, Django's built-in auth does not provide a URL or view for signing up new users.
+
+
+<br>
+<br>
+<br>
 
 #### Add a URL
 
@@ -441,6 +532,11 @@ path('accounts/signup/', views.signup, name='signup'),
 To stay consistent with Django's auth-related URLs, we'll preface the pattern with `accounts/`.
 
 There's no generic view available to help us out, so we're going to write the new view function named `signup` that the server is waiting for.
+
+<br>
+<br>
+<br>
+
 
 #### Add the `signup` View Function
 
@@ -490,6 +586,11 @@ def signup(request):
 
 There's really no way to remember that code, so just refer to this lesson, the docs, or Google.
 
+<br>
+<br>
+<br>
+
+
 #### Add the **Sign Up** Link to the Nav
 
 Now that we know the URL, we can add a **Sign Up** link to the nav in **base.html**:
@@ -502,6 +603,11 @@ Now that we know the URL, we can add a **Sign Up** link to the nav in **base.htm
   <li><a href="{% url 'login' %}">Log In</a></li>
 {% endif %}
 ```
+
+
+<br>
+<br>
+<br>
 
 
 #### Create the **signup.html** Template
@@ -552,6 +658,11 @@ If you want to remove some or all of the password validations, you can comment t
 
 You should now be able to sign up!
 
+<br>
+<br>
+<br>
+
+
 ## 10. Displaying Only the User's Cats
 
 If you sign up or log in with a different user, you'll notice that all of the cats in the database are still showing up on the _index_ page.
@@ -577,6 +688,11 @@ def cats_index(request):
 
 Last step, coming up!
 
+<br>
+<br>
+<br>
+
+
 ## 11. Implement Authorization
 
 Now that authentication has been implemented, the last step is to protect the routes that are dependent upon a user being logged in.
@@ -584,6 +700,12 @@ Now that authentication has been implemented, the last step is to protect the ro
 Yes, the dynamic nav bar helps prevent access, but users can still type something like `localhost:8000/cats` in the address bar when nobody is logged in, which will raise an error.
 
 Of course Django provides an easy way to protect both function and class-based views...
+
+
+<br>
+<br>
+<br>
+
 
 #### Implement Authorization on View Functions
 
@@ -615,6 +737,11 @@ Be sure to add the `@login_required` to these remaining view functions:
 - `add_photo`
 - `assoc_toy`
 - `unassoc_toy`
+
+<br>
+<br>
+<br>
+
 
 #### Implement Authorization on Class-based Views
 
@@ -650,6 +777,11 @@ Be sure to add `LoginRequiredMixin` to these remaining classes:
 
 Wow, that was a blast - congrats!
 
+<br>
+<br>
+<br>
+
+
 ## Summary
 
 Authentication is incredibly important to virtually every application.
@@ -660,15 +792,29 @@ This is why it's **so important** to implement authentication in your projects u
 
 No time to waste, Finch Collector is waiting to have authenticated users!
 
+<br>
+<br>
+<br>
+
 ## Suggested Practice Exercise
 
 Wouldn't it be nice to see the username of the logged in user displayed in the nav bar?
 
 It sure would - "Make it so number one"
 
+<br>
+<br>
+<br>
+
+
 ## 12. Further Study - Customizing the `User` Model
 
 There are a couple of options when it comes to adding additional attributes and/or behavior to the "user" in a Django app.
+
+<br>
+<br>
+<br>
+
 
 #### APPROACH 1:  "Extending" the Existing `User` Model
 
@@ -684,6 +830,11 @@ class Profile(models.Model):
 
 Start [here](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#extending-the-existing-user-model) for more info about using this approach.
 
+<br>
+<br>
+<br>
+
+
 #### APPROACH 2:  Custom `User` Model
 
 > Note:  This approach is more complex and requires more effort to implement - it is recommended that the first approach be followed.
@@ -698,6 +849,11 @@ class User(AbstractUser):
 ```
 
 Start [here](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#using-a-custom-user-model-when-starting-a-project) for more information about using this approach.
+
+<br>
+<br>
+<br>
+
 
 ## References
 
