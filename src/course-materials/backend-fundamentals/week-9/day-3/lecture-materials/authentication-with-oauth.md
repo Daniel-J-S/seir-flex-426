@@ -1499,9 +1499,11 @@ function index(req, res) {
 
 ### References
 
+- [Completed Version of This Project - SEIR Students](https://git.generalassemb.ly/Instructional-Materials/SOLUTION-CODE-SEIR-STUDENTS)
 
 - [Google OAuth2](https://developers.google.com/identity/protocols/OAuth2)
 
 - [Mongoose](http://mongoosejs.com/)
 
 - [Materialize CSS](http://materializecss.com/)
+
