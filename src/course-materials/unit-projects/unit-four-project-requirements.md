@@ -1,4 +1,16 @@
+---
+track: "Second-Language"
+title: "Project Four"
+type: "Project Prompt"
+topics: "Unit Projects"
+---
+
+
 # Project 4:<br>Build a Full-stack Django App as a Team
+
+<br>
+<br>
+<br>
 
 ### Overview
 
@@ -18,11 +30,18 @@ During this project, your instructors are going to be evaluating **your ability 
 
 In fact, **your ability to work in a team during this project is more important to your instructors than the project itself**.
 
+<br>
+<br>
+<br>
 
 
 ## Planning & Presentation Requirements
 
 Working in a team is going to require more upfront planning to ensure the team is "on the same page"...
+
+<br>
+<br>
+<br>
 
 #### Pitch Deck
 
@@ -32,6 +51,10 @@ Working in a team is going to require more upfront planning to ensure the team i
 - Your team members and their roles.
 - The problem you are going to solve with your app.
 - Check out previous decks: [Meal Ticket](https://docs.google.com/presentation/d/1CsBuC-a_AZ1yXJEE-EbptPIdgj1MktiNALyQyhaFfrM/edit#slide=id.p), [Tripio](https://docs.google.com/presentation/d/1gvOypLc4VjKqJzdAW68iwh28uGDSH4Sp1KnA5grDo2g/edit#slide=id.p), [Pantry](https://docs.google.com/presentation/d/1WvHoN5MNaRembgcoog5p0GtivVCOZSzvfPyeevzy08g/edit), [ArtWorld](https://docs.google.com/presentation/d/1yGy2Mh3n6IhPxFu4XKnnMtPPi4OGFPpf-Z_TMYw6wQY/edit#slide=id.g7ba109823e_2_7)
+
+<br>
+<br>
+<br>
 
 #### Trello Board
 
@@ -49,6 +72,10 @@ Working in a team is going to require more upfront planning to ensure the team i
     ☐ **Wireframes of the main pages of functionality**, e.g. Landing Page, Posts Index Page, Favorite Posts Page, Add Post Page, etc.
     
     ☐ An **ERD** showing the attributes of each entity and the relationships between them. Refer to the Data Modeling lesson for assistance.
+
+<br>
+<br>
+<br>
 
 ### Presentations
 
@@ -87,8 +114,15 @@ You will have approximately 15 minutes to present your project following these g
 5. **Q & A + Feedback**
 
 
+<br>
+<br>
+<br>
 
 ## Technical Requirements
+
+<br>
+<br>
+<br>
 
 ### Your App Must:
 
@@ -102,9 +136,16 @@ You will have approximately 15 minutes to present your project following these g
 
 ☐ Be **deployed online** using **Heroku**.
 
+<br>
+<br>
+<br>
+
 #### The app may optionally:
 
 ☐ Consume data from a third-party API.
+<br>
+<br>
+<br>
 
 ### Workflow:
 
@@ -125,7 +166,9 @@ You will have approximately 15 minutes to present your project following these g
 - A link to your **deployed app on Heroku**.
 - Description of any **future enhancements** planned.
 
-
+<br>
+<br>
+<br>
 
 ## Suggestions for Success
 
@@ -161,6 +204,10 @@ You will have approximately 15 minutes to present your project following these g
 9. Consider following a [Mob Programming](https://en.wikipedia.org/wiki/Mob_programming) approach where the team is always developing together on a single computer.  Read [this post](http://underthehood.meltwater.com/blog/2016/06/01/mob-programming/) for more information.
 
 
+<br>
+<br>
+<br>
+
 
 ## Potential Project Ideas
 
@@ -169,6 +216,10 @@ You will have approximately 15 minutes to present your project following these g
 - One of the best questions to ask yourself is, "Why would I want to use this app?"
 
 
+<br>
+<br>
+<br>
+
 
 ## Obtaining Assistance from an Instructor
 
@@ -176,7 +227,9 @@ You will have approximately 15 minutes to present your project following these g
 
 - **All requests for assistance should be slacked to the class support channel, not individual instructors**.  This approach will provide the best and quickest response for your team, as well as be helpful to other teams that may be faced with the same issue.
 
-
+<br>
+<br>
+<br>
 
 ## Project Feedback + Evaluation
 
