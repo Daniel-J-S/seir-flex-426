@@ -12,5 +12,5 @@ topics: "Intro to the Team Git Workflow & Project 4 Planning"
 
 #### Intro to the Team Git Workflow & Project 4 Planning
 
-- [**Lecture:** Intro to the Team Git Workflow](/frontend-fundamentals/week-22/day-3/lecture-materials/intro-to-the-team-git-workflow) 
+- [**Lecture:** Intro to the Team Git Workflow](/second-language/week-22/day-3/lecture-materials/intro-to-the-team-git-workflow) 
 - **Activity:** Project 4 Planning & Approvals

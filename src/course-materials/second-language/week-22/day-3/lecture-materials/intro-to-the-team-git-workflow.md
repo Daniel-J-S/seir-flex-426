@@ -7,11 +7,22 @@ type: "lecture"
 ---
 # Intro To The Team Git Workflow
 
+<br>
+<br>
+<br>
+<br>
+
 ## Team Workflow
 
 To help illustrate collaborating on a project using Git/GitHub, consider the following two roles you can fulfill: **programmer** and **manager**.
 
 **Programmers** will contribute code and issue pull requests, while **managers** integrate the code by merging the pull requests into the repo.
+
+
+<br>
+<br>
+<br>
+
 
 ### Creating the Repo (One-time Setup)
 
@@ -31,6 +42,11 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 5. Now add a link to the manager's repo as well: `$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git`
 6. Ensure that you have two remotes named `origin` & `upstream`: `$ git remote -v`
 7. Ensure you are notified of changes to the project by clicking the **Watch** button near the top right of the manager's repo.  Then make sure you GitHub account's notification settings are adjusted to notify you via email, etc.
+
+
+<br>
+<br>
+<br>
 
 ### Working on Feature Branches
 
@@ -52,6 +68,11 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 6. FYI, multiple commits are grouped within a single open pull request.
 7. Go back to step #2.
 
+
+<br>
+<br>
+<br>
+
 ### Accepting and Merging A Pull Request
 
 **Manager**:
@@ -60,6 +81,11 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 2. If GitHub states there will be conflicts, and the merge is smallish, it is still possible to merge online by following the instructions.
 3. If the request is very comprehensive and may cause plenty of merge conflicts, the manager may decide to test and merge the pull request locally/manually by clicking **command line instructions** and following the steps listed.
 4. After a merge, ensure your team members pull the recent changes into their local repo ASAP.
+
+
+<br>
+<br>
+<br>
 
 ### Minimizing Merge Conflicts
 
@@ -71,6 +97,11 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 	- `$ git checkout <feature_branch_name>`
 	- `$ git merge master` This brings the latest code into your feature branch so that you are always developing with the latest and greatest.
 3. Making frequent and small commits and pull requests will help minimize merge conflicts.
+
+
+<br>
+<br>
+<br>
 
 ### Fixing Merge Conflicts Locally (especially for programmers)
 
@@ -84,6 +115,11 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 	- `$ git commit -m "Fix merge conflicts"`
 5. Continue developing as usual.
 
+
+<br>
+<br>
+<br>
+
 ### Checking the Logs
 
 To visualize the history of commits made to the repo we use the `git log` command. There are several options, but this format works well:
@@ -92,7 +128,16 @@ To visualize the history of commits made to the repo we use the `git log` comman
 
 ---
 
+
+<br>
+<br>
+<br>
+
 ## Git Command Reference
+
+
+<br>
+<br>
 
 #### Creating Repos
 
@@ -105,7 +150,16 @@ To visualize the history of commits made to the repo we use the `git log` comman
   a new remote at the given URL, via the given connection format
   (SSH or HTTPS), and names it with the given name.
 
+
+<br>
+<br>
+<br>
+
 #### Working on Repos
+
+
+<br>
+<br>
 
 ##### Branching and Merging
 
@@ -116,6 +170,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
   out, all in one!
 - **`$ git merge <branch_name>`** Merges the branch cwith the given name into
   the current branch.
+
+
+<br>
+<br>
+<br>
 
 ##### Staging Changes
 
@@ -128,6 +187,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
 - **`$ git add -p`** Adds updates in all staged files to the staging area,
   but runs you through all the changes step by step.
 
+
+<br>
+<br>
+<br>
+
 ##### Committing Snapshots
 
 - **`$ git commit -m "awesome commit message"`** Saves a snapshot of the
@@ -136,6 +200,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
   `-m`.
 - **`$ git commit`** Commits as above, but takes you to a text editor (`nano`)
   to edit the commit's *message*.
+
+
+<br>
+<br>
+<br>
 
 ##### Exploring Repos
 
@@ -154,6 +223,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
   the current commit and the given commit (or the most current commit in the
   given branch).
 
+
+<br>
+<br>
+<br>
+
 #### Collaborating with Other Repos (Remotes)
 
 - **`$ git push (-u) (<remote_name> <branch_name>)`** Push, or send, commits to
@@ -165,6 +239,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
 - **`$ git pull <remote_name> <branch_name>`** Performs a `git fetch` into a new
   branch, then merges it into the current branch and removes the fetched
   branch.
+
+
+<br>
+<br>
+<br>
 
 ## Resources
 
