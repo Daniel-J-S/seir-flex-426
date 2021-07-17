@@ -59,7 +59,7 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
    pull when you are on `master`.*
 	- Now you can `$ git pull upstream master`. **Managers** will always use `origin` in place of `upstream`.
 2. **Use a feature branch** with `$ git checkout <feature_branch_name>`;
-   add `-b` to create a new branch if necessary. In WDI, most students will use their name as the name of the branch. **You should never write code while in the `master` branch**.
+   add `-b` to create a new branch if necessary. Most students will use their name as the name of the branch. **You should never write code while in the `master` branch**.
 3. Write some code!
 4. **When you have completed a feature:**
 	- Commit your code as usual...
