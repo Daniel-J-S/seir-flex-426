@@ -10,7 +10,16 @@ type: "lecture"
 <br>
 <br>
 <br>
+
+
+### [Click here](https://generalassembly.zoom.us/rec/share/3ZMmQR7dvswco0HnliTR4rPQTfoukY7c3kObg1FVOIArZO2o5WdBFRC3yJ75ytit.exF6BGCjpY-YVQ4Y?startTime=1626553867000) to access recording
+
 <br>
+<br>
+<br>
+
+
+
 
 ## Team Workflow
 
@@ -59,7 +68,7 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
    pull when you are on `master`.*
 	- Now you can `$ git pull upstream master`. **Managers** will always use `origin` in place of `upstream`.
 2. **Use a feature branch** with `$ git checkout <feature_branch_name>`;
-   add `-b` to create a new branch if necessary. In WDI, most students will use their name as the name of the branch. **You should never write code while in the `master` branch**.
+   add `-b` to create a new branch if necessary. Most students will use their name as the name of the branch. **You should never write code while in the `master` branch**.
 3. Write some code!
 4. **When you have completed a feature:**
 	- Commit your code as usual...
