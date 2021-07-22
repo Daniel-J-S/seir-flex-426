@@ -16,13 +16,13 @@ type: "walk-thru"
 <br>
 <br>
 
-<!-- 
-[Click here]() to access recording
+
+[Click here](https://generalassembly.zoom.us/rec/share/cAjclB1d2DNGfibCb8-JsbVnfMhQZ_pL8GM5yNRGa14MEWTgnp9_3MSZkXf9mvu1.JjYFCAv51FeHACFW?startTime=1626913960000) to access recording
 
 <br>
 <br>
 <br>
- -->
+
 
 
 
