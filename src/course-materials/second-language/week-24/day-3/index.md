@@ -12,6 +12,6 @@ topics: "Team Project Presentations"
 
 #### Team Project Presentations!
 - **Activity:** Teams Present Project 4
-- [**Resource:** Guide to building a Portfolio](/second-language/week-24/day-3/lecture-materials/guide-to-building-a-portfolio)
+- [**Resource:** Guide to Building a Portfolio](/second-language/week-24/day-3/lecture-materials/guide-to-building-a-portfolio)
 
 
