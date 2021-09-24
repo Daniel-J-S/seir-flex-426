@@ -4,7 +4,7 @@ import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, Hits, SearchBox, connectStateResults, Configure } from 'react-instantsearch-dom';
 import logo from '../../../static/ga-logo.svg';
 
-const searchClient = algoliasearch('84320GPYCI', '0086520d69f9b1c47d3094adc06411ec')
+const searchClient = algoliasearch('AW46ICEW1Y', '41979fdbbd9692353d4ce6447eb71555');
 
 const Results = connectStateResults(({ searchState, searchResults, children }) => {
     if(searchState && searchState.query && children) {
