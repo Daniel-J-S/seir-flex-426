@@ -6,23 +6,12 @@ day: 1
 type: "lecture"
 ---
 
-
 # Introduction to Learning at GA and Classroom Culture
 
 <br>
 <br>
 <br>
 <br>
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/YzxXuG4AgcE2WqlyajSY5ZJoCrFyfLtrQeHL9zdcVVETfaPgTgque2LpOtMns3dn.e7aOmPjOz0bQQZkA?startTime=1613525999000) to access recording
-
-<br>
-<br>
-<br>
-<br>
- 
-
 
 ## Learning Objectives
 
@@ -36,19 +25,17 @@ type: "lecture"
 
 - Daniel Scott - Instructor Lead
 - Joe Keohan - Instructor Lead
-- Leah Mattern - Instructional Associate (IA)
+- Swaroop Uprety - Instructional Associate (IA)
 - Mike Bocon - Instructional Associate (IA)
-- Ray Velasquez - Teaching Assistant (TA)
-
+  <!-- - Ray Velasquez - Teaching Assistant (TA) -->
 
 <br>
 <br>
-
-
 
 ## Roles
 
 - Instructor Lead (IL)
+
   - Lesson Blocks
   - Code-alongs
   - Labs
@@ -57,6 +44,7 @@ type: "lecture"
   - Creating Homework
 
 - Instructor Associate (IA)
+
   - will give you feedback on your homework and score if it is complete or incomplete
 
 - Outcomes
@@ -64,14 +52,14 @@ type: "lecture"
   - Post-class job placement questions
   - Out-of-class Interview Prep
 
->**Note:** These roles define who *leads* a section, and whom you should go to if you have a question on a certain topic, but each of these roles are shared responsibilities.
+> **Note:** These roles define who _leads_ a section, and whom you should go to if you have a question on a certain topic, but each of these roles are shared responsibilities.
 
 <br>
 <br>
 <br>
-
 
 # Communication
+
 - Feedback goes both directions, we love getting/giving feedback at GA
 - Let us know how you're doing and how we can improve your experience
 
@@ -79,42 +67,37 @@ type: "lecture"
 
 <br>
 
-
 ### Slack
 
 #### 4 channels
 
-- **`seirflex-alita-classroom`**
-- **`seirflex-alita-outcomes`**
-- **`seirflex-alita-techtalk`**
-- **`seirflex-alita-partytime`**
+- **`seirflex-928-classroom`**
+- **`seirflex-928-outcomes`**
+- **`seirflex-928-resources`**
+- **`seirflex-928-partytime`**
 
 <br>
 <br>
 <br>
-
-
 
 #### How To:
 
 <br>
 
-
-
 ##### Communicate in one of the outrun channels:
 
 **`@username`**
-  - sends a notification to a specific user
+
+- sends a notification to a specific user
 
 **`@channel / @here`**
-  - sends a notification to everyone / everyone currently online
-  - DO NOT use these unless absolutely necessary (usually only instructors/TAs use this)
 
+- sends a notification to everyone / everyone currently online
+- DO NOT use these unless absolutely necessary (usually only instructors/TAs use this)
 
 <br>
 <br>
 <br>
-
 
 ##### Communicate privately:
 
@@ -125,19 +108,14 @@ type: "lecture"
 <br>
 <br>
 
-
-
 ##### Other:
 
 - You can mute channels that you no longer need (e.g. Fundamentals)
 - You can adjust the sound / notifications of your messages
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Zoom
 

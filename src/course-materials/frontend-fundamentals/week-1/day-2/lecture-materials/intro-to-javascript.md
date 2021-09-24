@@ -6,38 +6,25 @@ day: 2
 type: "lecture"
 ---
 
-# Intro to JavaScript 
-
-
-
+# Intro to JavaScript
 
 <br>
 <br>
 <br>
 <br>
-
-### [Click here](https://generalassembly.zoom.us/rec/share/jTSFugjQevWbdJulyepoEJflmnzlx16CsE1G39xkx1GNxRLNh8c11SW_YS9b5Gqx.vRPyPeMoclLhxA6-?startTime=1613621319000) to access recording
-
-<br>
-<br>
-<br>
-<br>
-
-
-
-
 
 ## Learning Objectives
 
-| Students will be able to: |
-| :--- |
+| Students will be able to:                        |
+| :----------------------------------------------- |
 | Define Variables Using Proper Naming Conventions |
-| Identify JavaScript's Data Types |
+| Identify JavaScript's Data Types                 |
 
 <br>
 <br>
 
 ## Roadmap
+
 1. Intro to JavaScript
 2. Variables
 3. Explore JavaScript's Data Types
@@ -50,10 +37,9 @@ type: "lecture"
 ## 1. Intro to JavaScript
 
 > _Atwood's Law:_<br>
-> "Any application that can be written in JavaScript will eventually be written in JavaScript."<br>
-> _\- Jeff Atwood, co-founder of Stack Overflow_
+> "Any application that can be written in JavaScript will eventually be written in JavaScript."<br> > _\- Jeff Atwood, co-founder of Stack Overflow_
 
-*Languages on GitHub - Percentage of Monthly Active Users:*
+_Languages on GitHub - Percentage of Monthly Active Users:_
 ![](https://i.imgur.com/HJapAIF.png)
 
 The popularity of JavaScript has grown with the growth of web-based applications because it is the only language included in web browsers.
@@ -127,21 +113,21 @@ The difference between `var` and `let`/`const` is what we call _scope_. Scope in
 The difference between `let` and `const` is that a `const` variable cannot be re-assigned to - you can assign data to it once, and that's it:
 
 ```javascript
-let x = 25;
-x = 100;  // no problem
+let x = 25
+x = 100 // no problem
 
-const z = 25;
-z = 100;  // Uncaught TypeError: Assignment to constant variable
+const z = 25
+z = 100 // Uncaught TypeError: Assignment to constant variable
 ```
 
-As we'll learn later,  objects (or an object sub-type like array, function, etc.) is a reference type.
+As we'll learn later, objects (or an object sub-type like array, function, etc.) is a reference type.
 
-Objects are reference types because, if we assign an object to a variable, that variable does not actually hold the object, rather it holds a "reference" that points to the object in memory.  As such, when you assign an object to a `const`, you **can** make changes to the object itself, you just can't re-assign to the `const`:
+Objects are reference types because, if we assign an object to a variable, that variable does not actually hold the object, rather it holds a "reference" that points to the object in memory. As such, when you assign an object to a `const`, you **can** make changes to the object itself, you just can't re-assign to the `const`:
 
 ```javascript
-const person = {name: 'Fred'};
-person.age = 25;  // no error
-person = {name: 'Barney'}  // Uncaught TypeError: Assignment to constant variable
+const person = { name: "Fred" }
+person.age = 25 // no error
+person = { name: "Barney" } // Uncaught TypeError: Assignment to constant variable
 ```
 
 #### Identifiers & Defining Variables
@@ -149,35 +135,37 @@ person = {name: 'Barney'}  // Uncaught TypeError: Assignment to constant variabl
 _Identifiers_ are used to name variables, as well as named functions:
 
 ```javascript
-let points;  // the identifier is "points" and names the variable "points"
+let points // the identifier is "points" and names the variable "points"
 ```
 
 We can also assign a value to a variable at the time we declare it by using the `=` (assignment) operator:
 
 ```javascript
-let name = "Fred Flintstone";  // two birds with one stone!
+let name = "Fred Flintstone" // two birds with one stone!
 ```
 
 and change it's value later...
 
 ```javascript
-name = "Barney";  // note that we only declare a variable once
+name = "Barney" // note that we only declare a variable once
 ```
 
 Multiple variables can be defined in a single statement, separated by commas:
 
 ```javascript
-let name = 'Wilma', age, town = 'Bedrock';
+let name = "Wilma",
+  age,
+  town = "Bedrock"
 
 // above is equivalent to
-let name = 'Wilma';
-let age;
-let town = 'Bedrock';
+let name = "Wilma"
+let age
+let town = "Bedrock"
 ```
 
 ##### Identifier Naming Rules
 
-In JavaScript, when naming variables, the convention is to name the identifiers using lowerCamelCase, e.g.,  `numActivePlayers`.
+In JavaScript, when naming variables, the convention is to name the identifiers using lowerCamelCase, e.g., `numActivePlayers`.
 
 Identifiers in JS:
 
@@ -188,7 +176,6 @@ Identifiers in JS:
 ❓ **Is `car-3` a valid variable identifier?**
 
 **Any questions regarding variables?**
-
 
 <br>
 <br>
@@ -205,11 +192,10 @@ For example, in JavaScript we can do this:
 
 ```javascript
 // Declare variable named data and initialize with a number
-var data = 123;
+var data = 123
 
 // Reassigning a different type of data is allowed
-data = 'Hello';
-
+data = "Hello"
 ```
 
 However, statically-typed languages such as Java and C++ required a variable's type to be declared and cannot be changed:
@@ -222,7 +208,7 @@ int data = 123;
 data = "Hello";  // NOT ALLOWED
 ```
 
-> There is a newer language called _TypeScript_ you might hear about - this language is a superset of JS and adds strong typing to JS.  Many developers agree that strong typing makes code less error prone and is worth the extra effort to code in.
+> There is a newer language called _TypeScript_ you might hear about - this language is a superset of JS and adds strong typing to JS. Many developers agree that strong typing makes code less error prone and is worth the extra effort to code in.
 
 <br>
 <br>
@@ -246,7 +232,7 @@ Note that an object can be one of JavaScript's [built-in object sub-types](https
 <img src="https://i.imgur.com/02XLHjQ.png">
 
 > **KEY POINT: If a variable does not hold one of the six primitive values, it is an object!**
- 
+
 Okay, let's briefly go through the data types...
 
 <br>
@@ -265,7 +251,7 @@ A **string** represents textual data with zero or more characters wrapped by sin
 
 Note that the `typeof` operator itself always returns a string describing the data type.
 
-> ES2015 Note: In addition to using single and double quotes to delimit a string, ES2015 adds a third way by using the back-tick character to create what's called a _template literal_.  We'll learn more about _template literals_ later in the course.
+> ES2015 Note: In addition to using single and double quotes to delimit a string, ES2015 adds a third way by using the back-tick character to create what's called a _template literal_. We'll learn more about _template literals_ later in the course.
 
 <br>
 <br>
@@ -285,7 +271,7 @@ Internally, JS represents all numbers as floating-point values.
 < "number"
 > typeof 12.34
 < "number"
-> typeof '12.34'  // what will this return as the type?  
+> typeof '12.34'  // what will this return as the type?
 ```
 
 <br>
@@ -317,7 +303,6 @@ Before moving on to review the other data types, let's identify a couple of exam
 	</tbody>
 </table>
 
-
 Now let's continue looking at the other data types...
 
 <br>
@@ -333,16 +318,16 @@ We often assign the value _null_ to a variable to represent the fact that it has
 > typeof null
 < "object"  // Fail! Remember, JS was written in 10 days by one dude!
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 #### undefined
 
-A variable that has not been assigned a value is of type `undefined`.  For example:
+A variable that has not been assigned a value is of type `undefined`. For example:
 
 ```javascript
-let cohort;  // cohort currently holds undefined
+let cohort // cohort currently holds undefined
 ```
 
 In addition, a function by default returns `undefined` if a value was not explicitly returned using the `return` keyword.
@@ -366,12 +351,10 @@ The _symbol_ data type was added with ES2015 and is primarily used to create uni
 
 Their use is rare in general JavaScript programming.
 
-
 <br>
 <br>
 
 #### object
-
 
 The six data types that we've looked at thus far are classified as **_primitive_/_value_** data types because they hold only a **single value**.
 
@@ -409,15 +392,14 @@ Yay, we've covered all six data types!
 
 ## 4. Review Questions
 
-1) **Do all variables have a data type?**
+1. **Do all variables have a data type?**
 
-2) **Is `var _save = '';` a valid statement?**
+2. **Is `var _save = '';` a valid statement?**
 
-3) **If a variable is not a string, number, boolean, null, undefined or a symbol, it must be an __________.**
+3. **If a variable is not a string, number, boolean, null, undefined or a symbol, it must be an ****\_\_****.**
 
 <br>
 <br>
-
 
 ## 5. Further Study
 
@@ -428,9 +410,10 @@ Yay, we've covered all six data types!
 JavaScript is very relaxed when it comes to data types. Contrary to non-dynamic languages, a variable can change its type.
 
 ```javascript
-let m = 15;  // I'm a number
-m = 'hey';   // Now I'm a string!
+let m = 15 // I'm a number
+m = "hey" // Now I'm a string!
 ```
+
 <br>
 <br>
 
@@ -438,15 +421,15 @@ m = 'hey';   // Now I'm a string!
 
 JavaScript is friendly and tries to help us whenever it can. However, we all know that sometimes it's better to be left alone.
 
-__Try adding a string to a number.  What did JS do?__
+**Try adding a string to a number. What did JS do?**
 
-__Now try comparing a number and a string containing the same digits using the equality (`==`) comparison operator__
+**Now try comparing a number and a string containing the same digits using the equality (`==`) comparison operator**
 
 ```javascript
-13 == "13"  // returns true!
+13 == "13" // returns true!
 ```
 
-This is why, unless there's a reason not to do so, we use the _strict equality operator_ (`===`) as it will not perform type conversion. 
+This is why, unless there's a reason not to do so, we use the _strict equality operator_ (`===`) as it will not perform type conversion.
 
 <br>
 <br>
@@ -456,18 +439,19 @@ This is why, unless there's a reason not to do so, we use the _strict equality o
 We can easily convert a number to a string using the `toString()` and `toFixed()` methods:
 
 ```javascript
-let n = 123.456;
-let s1 = n.toString();  // "123.456"
-let s2 = n.toFixed(2);  // "123.46"
+let n = 123.456
+let s1 = n.toString() // "123.456"
+let s2 = n.toFixed(2) // "123.46"
 ```
 
 There are a couple of handy methods used to convert strings to numbers: `parseInt()` and `parseFloat()`
 
 ```javascript
-let s = "1234.567";
-let n1 = parseInt(s);  // 1234
-let n2 = parseFloat(s);  // 1234.456
+let s = "1234.567"
+let n1 = parseInt(s) // 1234
+let n2 = parseFloat(s) // 1234.456
 ```
+
 Remember however, that the data type for both flavors, integer and float (short for floating-point), is _number_.
 
 <br>
@@ -476,4 +460,3 @@ Remember however, that the data type for both flavors, integer and float (short 
 ## References
 
 [MDN JavaScript Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-

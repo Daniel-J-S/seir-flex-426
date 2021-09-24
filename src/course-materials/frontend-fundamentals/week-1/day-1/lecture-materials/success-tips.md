@@ -8,25 +8,10 @@ type: "lecture"
 
 # How to Successfully Learn in this Bootcamp
 
-
-
 <br>
 <br>
 <br>
 <br>
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/YzxXuG4AgcE2WqlyajSY5ZJoCrFyfLtrQeHL9zdcVVETfaPgTgque2LpOtMns3dn.e7aOmPjOz0bQQZkA?startTime=1613529783000) to access recording
-
-<br>
-<br>
-<br>
-<br> 
-
-
-
-
-
 
 ## Learning Objectives
 
@@ -54,17 +39,17 @@ type: "lecture"
 ## Successful students
 
 - The most successful students find programming fascinating; they don't think
-of it as an obligation or chore
+  of it as an obligation or chore
 
 - The most successful students go above and beyond what we teach; if there is
-something they feel they should know, they will go and learn it
+  something they feel they should know, they will go and learn it
 
 - If there is a problem for which they think they need more information to solve, they go and find that information
 
 - The most successful students don't wait for instructors to hand them the answer
 
--  Successful students quickly see that programming is not about learning a recipe,
-it's about developing a mindset to solve unforeseen problems
+- Successful students quickly see that programming is not about learning a recipe,
+  it's about developing a mindset to solve unforeseen problems
 
 - Hard Work: the equivalent of another full-time job (~40 hrs per week)
 
@@ -112,29 +97,30 @@ it's about developing a mindset to solve unforeseen problems
 
 **I feel good during class, but it's difficult to innovate on my own**
 
-*There are three stages to learning something:*
-  - Imitation (follow along)
-  - Assimilation (repetitive simple tasks: homework and labs)
-  - Innovation (build something new on your own - project time)
+_There are three stages to learning something:_
+
+- Imitation (follow along)
+- Assimilation (repetitive simple tasks: homework and labs)
+- Innovation (build something new on your own - project time)
 
 <br>
 
 **Everyone at work will realize I know nothing**
+
 - This is called the imposter syndrome, and it's very common
 - Nobody knows everything, it's about how well you learn
 
-
 <br>
 
-
 **I don't "do" math**
+
 - That's why we have the computer do it for us!
 - Programming is more about thinking logically than doing equations
 
 <br>
 
-
 **What's the best practice? What's the one "correct" answer?**
+
 - Best practices change constantly and from company to company
 - If you think properly, you'll probably naturally arrive at a best practice
 - All that matters is "Does it work?"
@@ -143,17 +129,16 @@ it's about developing a mindset to solve unforeseen problems
 
 <br>
 
-
 **I don't have a perfect understanding of everything**
+
 - Class is set up to accommodate students of all abilities
 - We make sure you understand at least the most important concepts
 - Only the people who write the specifications for the language understand everything about the language
 
 <br>
 
-
-
 **I want an amazing portfolio and to complete all my labs/assignments**
+
 - You won't be happy with how your first projects look/function; what matters is the ability to think
 - Don't worry about completing every lab/homework
   - They're there as an exercise in thinking with enough material for all
@@ -162,6 +147,5 @@ it's about developing a mindset to solve unforeseen problems
 <br>
 <br>
 <br>
-
 
 **In summary, we ask you to trust the process and know that if you practice what you learn long enough, the skills will come.**

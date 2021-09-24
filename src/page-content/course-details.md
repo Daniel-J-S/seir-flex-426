@@ -2,13 +2,11 @@
 title: "Course Details"
 ---
 
-
 # Course Details
 
 <br>
 <br>
 <br>
-
 
 ## Graduation Requirements
 
@@ -18,103 +16,82 @@ You will be required to meet 80% completion of homework assignments at the end o
 <br>
 <br>
 
-
-
 ## Schedule and Holidays
 
-- Start date: 02/16/2021
-- End date: 08/07/2021
-- Tuesday/Wednesday 8:30 pm - 12:45 am EST  
-- Sat 12 pm - 8 pm EST
-- Holidays: 5/29, 7/03
-<br>
-<br>
-<br>
-
-
-
+- Start date: 09/28/2021
+  <!-- - End date: 08/07/2021 -->
+  <!-- - Tuesday/Wednesday 8:30 pm - 12:45 am EST   -->
+  <!-- - Sat 12 pm - 8 pm EST -->
+  <!-- - Holidays: 5/29, 7/03 -->
+  <br>
+  <br>
+  <br>
 
 ## In Class
-* Before class:
-  * Find the zoom link for the day sent out in the classroom slack channel
-  * Let IA know if you are running late!
-* In class:
-  * Review where we are in the course
-  * Work through lesson modules
-  * Preview upcoming projects/homework
-  * Fill out exit ticket
-* After class (optional):
-  * Ask additional questions on Slack
 
-
-<br>
-<br>
-<br>
-
-
-
-
-## Instructors 
-
-| Name  | Role |
-| ----- | ----- |
-| Audrey Galo | Outcomes Coach
-| Daniel Scott  |  Lead Instructor 
-| Joe Keohan  |  Lead Instructor 
-| Leah Mattern | Instructional Associate 
-| Mike Bocon | Instructional Associate 
-| Ray Velasquez | Teaching Assistant 
+- Before class:
+  - Find the zoom link for the day sent out in the classroom slack channel
+  - Let IA know if you are running late!
+- In class:
+  - Review where we are in the course
+  - Work through lesson modules
+  - Preview upcoming projects/homework
+  - Fill out exit ticket
+- After class (optional):
+  - Ask additional questions on Slack
 
 <br>
 <br>
 <br>
 
+## Instructors
 
+| Name           | Role                    |
+| -------------- | ----------------------- |
+| Audrey Galo    | Outcomes Coach          |
+| Daniel Scott   | Lead Instructor         |
+| Joe Keohan     | Lead Instructor         |
+| Swaroop Uprety | Instructional Associate |
+| Mike Bocon     | Instructional Associate |
+| <!--           | Ray Velasquez           | Teaching Assistant --> |
 
-
-
+<br>
+<br>
+<br>
 
 ## Communication
 
 <br>
 <br>
 
-
-
-
 ##### Send us a message if:
-* You know in advance that you will be missing a class or multiple classes
-* You're sick, overloaded at work, or something comes up and you can't make it to class last minute
-* You will be 10 or more minutes late to class
-* You need to leave early
-* You will be submitting your homework late
-* We will get back to you within 24 hrs on weekdays! On weekends, expect responses by Monday morning!
-* You are having trouble completing your assignments
-* You're struggling with the material
-* You'd like some bonus tasks
+
+- You know in advance that you will be missing a class or multiple classes
+- You're sick, overloaded at work, or something comes up and you can't make it to class last minute
+- You will be 10 or more minutes late to class
+- You need to leave early
+- You will be submitting your homework late
+- We will get back to you within 24 hrs on weekdays! On weekends, expect responses by Monday morning!
+- You are having trouble completing your assignments
+- You're struggling with the material
+- You'd like some bonus tasks
 
 **Remember we are here to help you! Please reach out with any questions**
 
 <br>
 <br>
 
-
-
-
 ## Course Overview
+
 Learn to code in JavaScript, the native language of the web used by developers the world over.
 
 Build a single-page web app that persists user data and connects to services like Twitter and Facebook via APIs.
 
 Learn the fundamentals of object-oriented programming while receiving support from industry experts and a community of peers.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ## Lab/Homework Submission Procedure
 
@@ -122,35 +99,29 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 <br>
 <br>
 
-
-
 ### We will walk through this together the first time!
-* Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
-* Fill out this [Google Form](https://forms.gle/gsfM8Q1VpwRr9ZvX9) with a link for that specific homework. It will be the same Google Form for each homework
-* **Homework is due one week from the day it was assigned**
-* If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
-* **Homework Feedback is generally administered within one week from the due date**
+
+- Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
+- Fill out this [Google Form](https://forms.gle/UJ8fwmUdLMDvkt1q8) with a link for that specific homework. It will be the same Google Form for each homework
+- **Homework is due one week from the day it was assigned**
+- If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
+- **Homework Feedback is generally administered within one week from the due date**
 
 <br>
 <br>
 <br>
-
-
 
 ## Managing your Projects
-* At the end of each unit, you will create a repo in your personal github for your project... i.e. Unit One - Project One, Unit Two - Project Two ...etc
-* Pushing your labs/homework to your personal github is not recommended
 
+- At the end of each unit, you will create a repo in your personal github for your project... i.e. Unit One - Project One, Unit Two - Project Two ...etc
+- Pushing your labs/homework to your personal github is not recommended
 
 <br>
 <br>
-
-
 
 ## What We Expect From You
 
 <br>
-
 
 ### Graduation Requirements
 
@@ -163,35 +134,25 @@ For an assignment to be marked complete, students must complete 100% of the mini
 <br>
 <br>
 
+#### PROJECTS
 
-
-
- 
-####  PROJECTS
 - Students must complete all of the minimum technical requirements for each unit project
 - Parameters for minimum requirements will be explained when the project is assigned
 
-
 <br>
 <br>
 <br>
 
+#### ZERO ACCOUNT BALANCE
 
-
-
-####  ZERO ACCOUNT BALANCE
 - Students must have no outstanding balances due on their account
 
 <br>
 <br>
 <br>
 
+#### ATTENDANCE
 
-
-
-
-
-####  ATTENDANCE 
 - Have at least an 80% attendance record (you’ve missed 24 hours total or less of class)
 - Attendance is taken at the start of every class meeting
 - 3 late arrivals &/or early departures will constitute one absence
@@ -204,55 +165,45 @@ Unexcused absences are not allowed. If you will have to miss a class, notify the
 
 Students who have fulfilled all of the above requirements will receive a digital certificate of completion via email 1 week after to the course’s end.
 
-Please feel free to contact your instructional team, or a member from student experience  if you have questions regarding this policy.
-
-
+Please feel free to contact your instructional team, or a member from student experience if you have questions regarding this policy.
 
 <br>
 <br>
 <br>
-
 
 ## Additional Expectations
-* Take initiative.
-* Ask for help.
-* Practice, practice, practice.
 
+- Take initiative.
+- Ask for help.
+- Practice, practice, practice.
 
 <br>
 <br>
-
-
 
 ### Classroom Culture
 
 Let's all agree to:
-* Treat each other with respect
-* Avoid bringing distractions into class
-* Participate in class
-* Be on video with mute on during class
+
+- Treat each other with respect
+- Avoid bringing distractions into class
+- Participate in class
+- Be on video with mute on during class
 
 <br>
 <br>
-
-
-
 
 ### How To Succeed in a Remote Environment
 
-* Communication is key! Please respond in a "reasonable" timely manner if we contact you via slack or email.
-* No distractions during class. This means no cell phones (talking/texting), television, or children around.
-* Make sure to speak up and speak out about any problems you are having! Don't be afraid to ask questions during class! Someone else is probably having this same issue!
-* Carve out at least 10 hours outside a class a week for review and homework. Expect the next 6 months to be out of the norm for you. If you have to carve out a personal hour during a family vacation, you will have to do this!
-* Make use of office hours! Find a time that works for you and don't cancel on your instructors :)
-* Hold yourself accountable. Don't let yourself fall behind!
-
+- Communication is key! Please respond in a "reasonable" timely manner if we contact you via slack or email.
+- No distractions during class. This means no cell phones (talking/texting), television, or children around.
+- Make sure to speak up and speak out about any problems you are having! Don't be afraid to ask questions during class! Someone else is probably having this same issue!
+- Carve out at least 10 hours outside a class a week for review and homework. Expect the next 6 months to be out of the norm for you. If you have to carve out a personal hour during a family vacation, you will have to do this!
+- Make use of office hours! Find a time that works for you and don't cancel on your instructors :)
+- Hold yourself accountable. Don't let yourself fall behind!
 
 <br>
 <br>
-
-
-
 
 ## Group Work Formats
+
 We will be using breakout rooms to get more personalized learning environments. Make sure to get to know your classmates and use each other as teachers!

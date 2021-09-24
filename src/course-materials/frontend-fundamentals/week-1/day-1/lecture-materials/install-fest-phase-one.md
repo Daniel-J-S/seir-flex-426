@@ -20,34 +20,16 @@ For the first phase of "install-fest", we'll install or verify the installation 
 - Spectacle - **(optional)**
 - Imgur - **(optional)**
 
-
-
-
-
 <br>
 <br>
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/YzxXuG4AgcE2WqlyajSY5ZJoCrFyfLtrQeHL9zdcVVETfaPgTgque2LpOtMns3dn.e7aOmPjOz0bQQZkA?startTime=1613533744000) to access recording
+**PLEASE NOTE:** **_if you have a linux machine, [here are some resources](/additional-resources/install-fest-linux) that might be more ideal for your computer_**
 
 <br>
 <br>
 <br>
-<br>
-
-
-
-
-
-**PLEASE NOTE:** ***if you have a linux machine, [here are some resources](/additional-resources/install-fest-linux) that might be more ideal for your computer***
-
-
-<br>
-<br>
-<br>
-
-
 
 ## Slack
 
@@ -149,7 +131,7 @@ brew install git
 
 #### Github
 
-[Github](https://github.com/) provides a way to host Git repos in the cloud.  It enables collaboration and is wildly popular.
+[Github](https://github.com/) provides a way to host Git repos in the cloud. It enables collaboration and is wildly popular.
 
 You should have already opened a personal Github account, however, you need to have a General Assembly Github Enterprise account as well. <br>You can get one by signing up here: [https://git.generalassemb.ly/join](https://git.generalassemb.ly/join)
 
@@ -161,9 +143,9 @@ You should have already opened a personal Github account, however, you need to h
 
 Everyone should have a global **git ignore** file so that you don’t have to worry about making the appropriate entries in a project’s git ignore.
 
-First, create the file:  `touch ~/.gitignore_global`
+First, create the file: `touch ~/.gitignore_global`
 
-Next, configure git to use this file:  `git config --global core.excludesfile ~/.gitignore_global`
+Next, configure git to use this file: `git config --global core.excludesfile ~/.gitignore_global`
 
 Finally, lets put some good stuff in there:
 
@@ -287,8 +269,6 @@ _Some of these options below might not work properly on your machine depending o
 <br>
 <br>
 
-
-
 ### Installing Imgur
 
 Create an account on [imgur.com](https://imgur.com/) and install [mac2imgur](https://github.com/mileswd/mac2imgur) to ease uploading screenshots and other images from your computer to your imgur account.
@@ -296,7 +276,6 @@ Create an account on [imgur.com](https://imgur.com/) and install [mac2imgur](htt
 <br>
 <br>
 <br>
-
 
 ### Installing Spectacle
 
@@ -308,19 +287,16 @@ This free "productivity" tool is invaluable when it comes to minimizing the time
 <br>
 <br>
 
-
 ### _Spectacle_'s Basic Default Hotkeys
 
 - Here are the most popular hotkeys:
 
-	- Make window full-size — `opt + cmd + F`
-	- Move to the left half — `opt + cmd + ←`
-	- Move to the right half — `opt + cmd + →`
-	- Move to the top half — `opt + cmd + ↑`
-	- Move to the bottom half — `opt + cmd + ↓`
+      	- Make window full-size — `opt + cmd + F`
+      	- Move to the left half — `opt + cmd + ←`
+      	- Move to the right half — `opt + cmd + →`
+      	- Move to the top half — `opt + cmd + ↑`
+      	- Move to the bottom half — `opt + cmd + ↓`
 
 - Pressing the same hotkey will size the window by thirds!
 
 - You can find more info about Spectacle [here](https://github.com/eczarny/spectacle).
-
-

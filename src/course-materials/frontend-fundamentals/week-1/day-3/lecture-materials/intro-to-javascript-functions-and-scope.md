@@ -8,29 +8,13 @@ type: "lecture"
 
 # JavaScript Functions & Scope
 
-
-
 <br>
 <br>
 <br>
 <br>
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/Gy_VmN8SPk7jH9uwJDuOHvr_TQfIBjWj_6GSHVkSBqOe--8Qa_Deow7RgERGrjMB.PHN2O28oS35Aa18E?startTime=1613863235000) to access recording
-
-<br>
-<br>
-<br>
-<br>
-
-
-
-
-
-
-
 
 ## Roadmap
+
 1. Lesson Setup
 2. What is a function?
 3. Why Functions Anyway?
@@ -42,15 +26,12 @@ type: "lecture"
 <br>
 <br>
 
-
-
-### Lesson Setup  
+### Lesson Setup
 
 For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Functions and Scope Practice"`.
-  
-<br>
-<br>
 
+<br>
+<br>
 
 ### 1. What is a function?
 
@@ -76,12 +57,9 @@ Functions commonly call other functions.
 <br>
 <br>
 
-
-
 ### 2. Why Functions Anyway?
 
 <br>
-
 
 #### Tackle Complexity
 
@@ -102,7 +80,6 @@ Without functions, we might have to write the same code in multiple places of th
 <br>
 <br>
 
-
 #### Documentation & Debugging
 
 Simply naming functions appropriately, e.g., `renderBoard`, documents what the program is doing.
@@ -111,7 +88,6 @@ Organizing code into functions also makes it easier to find and fix code that's 
 
 <br>
 <br>
-
 
 #### Summary
 
@@ -160,7 +136,6 @@ function sendReport(report) {
 <br>
 <br>
 
-
 #### Review
 
 **❓ Which would be a better programming practice:**
@@ -171,12 +146,10 @@ function sendReport(report) {
 <br>
 <br>
 
-
 ### 3. Defining and Calling Functions
 
 <br>
 <br>
-
 
 #### Defining Functions
 
@@ -184,25 +157,22 @@ There are three primary ways to define functions in JS:
 
 <br>
 
-
-
 ##### 1) Function Declaration (AKA Function Definitions)
 
 ```javascript
 function sayHello(name) {
-    console.log('Hello ' + name + '!');
+  console.log("Hello " + name + "!")
 }
 ```
 
 <br>
 
-
 ##### 2) Function Expression
 
 ```javascript
 const sayHello = function(name) {
-    console.log('Hello ' + name + '!');
-};
+  console.log("Hello " + name + "!")
+}
 ```
 
 **What similarities and differences do you see between the two approaches?**
@@ -215,23 +185,22 @@ const sayHello = function(name) {
 For all practical purposes, the difference between them is that _function expressions_ cannot be invoked before they are defined; whereas _function declarations_ are **hoisted** to the top of their scope and can therefore be invoked even if they are defined later in the source code. <br><br>For example:
 
 ```javascript
-fnDeclaration();  // thank you function declarations :)
-fnExpression();  // TypeError: fnExpression is not a function
+fnDeclaration() // thank you function declarations :)
+fnExpression() // TypeError: fnExpression is not a function
 
 function fnDeclaration() {
-	console.log("I'm coming from a function declaration");
+  console.log("I'm coming from a function declaration")
 }
 
 const fnExpression = function() {
-	console.log("I'm coming from a function expression");
-};
+  console.log("I'm coming from a function expression")
+}
 ```
 
 > Note: Attempting to execute a function expression before it's been assigned to its variable is the source of many an error for JS developers!
 
 <br>
 <br>
-
 
 ##### 3) Arrow Functions
 
@@ -242,7 +211,7 @@ The following function declaration:
 ```javascript
 // Function Declaration
 function add(a, b) {
-	return a + b;
+  return a + b
 }
 ```
 
@@ -250,14 +219,14 @@ and the following arrow function are equivalent:
 
 ```javascript
 // Arrow Function
-const add = (a, b) => a + b;
+const add = (a, b) => a + b
 ```
 
 Arrow Functions offer:
 
 - A more concise syntax
 - Implicit return of a single expression
-- A single rule for binding the `this` keyword 
+- A single rule for binding the `this` keyword
 
 However, as cool as Arrow Functions are, they cannot be used in every scenario due to the way they bind `this`.
 
@@ -266,14 +235,12 @@ Rest assured we'll be using Arrow Functions during this course, however, for thi
 <br>
 <br>
 
-
-
 #### Calling Functions
 
 Regardless of which of the three approaches are used to define functions, we call them the same way:
 
 ```javascript
-add(25, 100);  // returns 125
+add(25, 100) // returns 125
 ```
 
 > **Developer Vocab:** Developers might say **call**, **execute**, **invoke** or "**run** a function" - they all mean the thing.
@@ -281,14 +248,13 @@ add(25, 100);  // returns 125
 <br>
 <br>
 
-
 ##### Let's Write Another Function
 
 Let's write the following function together in our `script.js` file:
 
 ```javascript
 function areBothEven(n1, n2) {
-  return !(n1 % 2) && !(n2 % 2);
+  return !(n1 % 2) && !(n2 % 2)
 }
 ```
 
@@ -296,18 +262,16 @@ The `areBothEven` function is defined to accept two arguments. <br><br>These arg
 
 The `return` keyword returns the result of the expression that follows it - which looks kind of crazy, but isn't as intimidating as it appears when you break it down.
 
-> Note: In the real world, much of the code you write will be code designed prevent and handle error conditions. For example, in the `areBothEven` function above, it would be important to ensure that both of the inputs are numbers.  However, in SEIR, we will minimize the amount of error handling code so that we can focus more on what it is we're trying to teach.  There just isn't enough time, so we must prioritize.
+> Note: In the real world, much of the code you write will be code designed prevent and handle error conditions. For example, in the `areBothEven` function above, it would be important to ensure that both of the inputs are numbers. However, in SEIR, we will minimize the amount of error handling code so that we can focus more on what it is we're trying to teach. There just isn't enough time, so we must prioritize.
 
 Let's invoke the function a couple of times to try it out.
 
 **❓ Is the above function a function _declaration_ or _expression_?**
 
-Now it's your turn... 
+Now it's your turn...
 
 <br>
 <br>
-
-
 
 #### Practice Writing Functions
 
@@ -315,11 +279,9 @@ You're going to write two functions, one as a function declaration & the other a
 
 This will be an individual exercise, however, feel free to seek guidance from a partner via direct message or posting a question in the classroom Slack channel if you get stuck.
 
-
 <br>
 <br>
 <br>
-
 
 ##### EXERCISE 1: Write a Function Declaration
 
@@ -329,14 +291,13 @@ It will have two parameters: `width` & `height`.
 
 It will compute the area of a rectangle (_width_ X _height_) and return a string in the following form:
 
-> **The area of a rectangle with a width of ___ and a height of ___ is ___ square units.**
+> **The area of a rectangle with a width of **_ and a height of _** is \_\_\_ square units.**
 
 Invoke the function to test it.
 
 <br>
 <br>
 <br>
-
 
 ##### EXERCISE 2: Write a Function Expression
 
@@ -354,7 +315,6 @@ Invoke the function a couple of times to test it!
 <br>
 <br>
 
-
 ##### FUNCTION REVIEW QUESTIONS
 
 **❓ How many different ways are there to define a function?**
@@ -365,19 +325,18 @@ Invoke the function a couple of times to test it!
 <br>
 <br>
 
-
 ### 4. Parameters/Arguments
 
 There are a few tidbits about parameters/arguments to ponder:
 
-- First, let me answer a common question:  _"What's the difference between a parameter and an argument?"_
+- First, let me answer a common question: _"What's the difference between a parameter and an argument?"_
 
-	<img src="https://i.imgur.com/u5p9n7m.jpg">
-	
-- Parameters become local variables inside the function body. 
+      	<img src="https://i.imgur.com/u5p9n7m.jpg">
+
+- Parameters become local variables inside the function body.
 
 - Therefore, in the example above, `bottle` and `cap` are variables that can be accessed anywhere within the function.
-  
+
 - Just like when naming variables and functions, it's important to name parameters using identifiers that convey the data they will hold.
 
 - Arguments are assigned to their respective parameter positionally. In the example above, the `bottle` parameter would be assigned the string "green bottle" because they are the first parameter and argument respectively.
@@ -386,21 +345,17 @@ There are a few tidbits about parameters/arguments to ponder:
 <br>
 <br>
 
-
-
 ##### Fewer Arguments
 
 JavaScript is very flexible and won't complain when the number of arguments is not the same as the number of parameters defined.
 
 If fewer arguments are passed than parameters defined, then the parameter variables without a matching argument would be set to `undefined`.
 
-> Note: Unlike some other programming languages, JavaScript won't complain if fewer (or extra) arguments are passed to a function.  However, the function that depends on certain arguments to do its job might raise an error or return an unexpected result if it doesn't receive the proper arguments.
-
+> Note: Unlike some other programming languages, JavaScript won't complain if fewer (or extra) arguments are passed to a function. However, the function that depends on certain arguments to do its job might raise an error or return an unexpected result if it doesn't receive the proper arguments.
 
 <br>
 <br>
 <br>
-
 
 ##### Extra Arguments
 
@@ -409,8 +364,9 @@ Let's pretend you need to write a function that accepts an unknown number of arg
 For example, let's say we would like to be able to call a function that accepts a developer's name and any number of their job skills, something like the following:
 
 ```javascript
-let maria = getDevObject('Maria', 'HTML', 'CSS', 'JavaScript', 'jQuery');
+let maria = getDevObject("Maria", "HTML", "CSS", "JavaScript", "jQuery")
 ```
+
 and want that function to return a JS object shaped like this:
 
 ```javascript
@@ -428,14 +384,14 @@ This is how we could use the `arguments` object to code the function:
 
 ```javascript
 function getDevObject(name) {
-  let skills = [];
+  let skills = []
   for (let i = 1; i < arguments.length; i++) {
-    skills.push(arguments[i]);
+    skills.push(arguments[i])
   }
   return {
     devName: name,
-    jobSkills: skills
-  };
+    jobSkills: skills,
+  }
 }
 ```
 
@@ -449,16 +405,16 @@ Using _rest parameters_, the above function can be written as follows:
 function getDevObject(name, ...skills) {
   return {
     devName: name,
-    jobSkills: skills
-  };
+    jobSkills: skills,
+  }
 }
 ```
 
 The `...skills` that's defined will be a true array (unlike `arguments`) holding any extra arguments provided to the function.
-  
+
 Obviously, there can only be a single rest parameter and it must be the last parameter in the list.
 
-When writing new code, devs should  use **rest parameters** instead of `arguments` because:
+When writing new code, devs should use **rest parameters** instead of `arguments` because:
 
 - The existence of the rest parameter in the parameter list better documents the function
 - The rest parameter is a true array and thus includes all of the nifty methods that arrays have
@@ -466,7 +422,6 @@ When writing new code, devs should  use **rest parameters** instead of `argument
 <br>
 <br>
 <br>
-
 
 ##### ES2015 Default Parameters
 
@@ -476,19 +431,20 @@ Prior to ES2015, here is trivial example of what we had to do:
 
 ```javascript
 function setColor(bicycle, color) {
-	// set color to 'purple' if not provided
-	bicycle.color = color || 'purple';
+  // set color to 'purple' if not provided
+  bicycle.color = color || "purple"
 }
 
-const bike = new Bicycle();
-setColor(bike, 'blue');  // sets color to blue
-setColor(bike);  // sets color to purple by default
+const bike = new Bicycle()
+setColor(bike, "blue") // sets color to blue
+setColor(bike) // sets color to purple by default
 ```
+
 Now, using **default parameters**, we can do this:
 
 ```javascript
-function setColor(bicycle, color = 'purple') {
-	bicycle.color = color;
+function setColor(bicycle, color = "purple") {
+  bicycle.color = color
 }
 ```
 
@@ -498,29 +454,26 @@ Any expression can be provided as a default, including objects, etc.
 <br>
 <br>
 
-
 #### Functions as Arguments
 
-In JavaScript, it's easy to pass around functions like data -  because they are - they're objects!
-  
+In JavaScript, it's easy to pass around functions like data - because they are - they're objects!
 
 <br>
 <br>
 <br>
-
 
 ##### Passing an Anonymous Function
 
 Often functions or methods (functions attached to an object) will require a function be provided as an argument.<br><br>For example, the `forEach` method on arrays:
-	
+
 ```javascript
-var a = ['red', 'green', 'blue'];
-	
+var a = ["red", "green", "blue"]
+
 a.forEach(function(color) {
-  console.log(color);
-});
+  console.log(color)
+})
 ```
-	
+
 Since the function provided to the `forEach` will never be called anywhere else in the code, why create a separate named function and pass it in? <br><br>**Anonymous functions** like shown above can really come in handy!
 
 <br>
@@ -532,12 +485,9 @@ Since the function provided to the `forEach` will never be called anywhere else 
 **❓ What's the difference between an _argument_ and a _parameter_?**
 
 **❓ Explain how _arguments_ and _parameters_ are "matched up".**
-  
 
 <br>
 <br>
-
-
 
 ### 5. Scope
 
@@ -557,20 +507,17 @@ JavaScript has three types of scope:
 <br>
 <br>
 
-
 #### Why the Different Types of Scope?
 
 There's a concept in programming known as **The Principle of Least Access**.
 
 The principle is based on the idea that limiting the accessibility of variables (and functions) helps reduce bugs in the code - think of it as a form of "code security".
 
-A practical benefit of having different scope, however, is being able to use the same names for variables in different functions!  If there were only one scope, this wouldn't be possible.
-
+A practical benefit of having different scope, however, is being able to use the same names for variables in different functions! If there were only one scope, this wouldn't be possible.
 
 <br>
 <br>
 <br>
-
 
 #### Examples of Scope
 
@@ -580,11 +527,9 @@ Ignoring _block scope_ for the moment, let's review the following diagram demons
 
 The diagram identifies 3 different scopes along with the identifiers (variables and functions) that live within each scope.
 
-
 <br>
 <br>
 <br>
-
 
 ##### You can look out, but you can't look in!
 
@@ -596,12 +541,9 @@ If the JS runtime engine gets to the _global scope_ (which is the top of the foo
 
 **❓ Does the function `foo` have access to the variable `c`?**
 
-
 <br>
 <br>
 <br>
-
-
 
 ##### Global Scope
 
@@ -609,7 +551,7 @@ In our browsers, the global scope is represented by the `window` object.
 
 It is at the top of the scope chain and its properties are available to **every** function we write.
 
-It is generally bad form for our programs to create variables in the global scope.  Doing so risks us overwriting data in use by JS libraries/frameworks or other routines.
+It is generally bad form for our programs to create variables in the global scope. Doing so risks us overwriting data in use by JS libraries/frameworks or other routines.
 
 Creating lots of global variables is referred to as "polluting the global scope", and we all know that it's not nice to pollute!
 
@@ -619,36 +561,32 @@ If we define a variable (or a function) within the global scope, it becomes a pr
 
 **Any questions before moving on the lab where you'll practice writing several functions?**
 
-
 <br>
 <br>
 <br>
-
 
 ### 6. Further Study
 
-
 <br>
-
 
 ##### Immediately Invoked Function Expressions (IIFE)
 
-One way we can prevent our code from leaking into the global scope is by wrapping it with a construct known as an **Immediately Invoked Function Expression**, or "IIFE" (pronounced "iffy").  It looks like this:
+One way we can prevent our code from leaking into the global scope is by wrapping it with a construct known as an **Immediately Invoked Function Expression**, or "IIFE" (pronounced "iffy"). It looks like this:
 
 ```javascript
-(function() {
-	'use strict';
+;(function() {
+  "use strict"
 
-	// your code here...
-	
-})();
+  // your code here...
+
+})()
 ```
+
 **❓ Why does this construct virtually prevent variables and functions from being created in the global scope?**
 
 <br>
 <br>
 <br>
-
 
 ##### Block Scope
 
@@ -660,21 +598,21 @@ The following code from [MDN's docs about let](https://developer.mozilla.org/en-
 
 ```javascript
 function varTest() {
-  var x = 1;
+  var x = 1
   if (true) {
-    var x = 2;  // same variable!
-    console.log(x);  // 2
+    var x = 2 // same variable!
+    console.log(x) // 2
   }
-  console.log(x);  // 2
+  console.log(x) // 2
 }
 
 function letTest() {
-  let x = 1;
+  let x = 1
   if (true) {
-    let x = 2;  // different variable
-    console.log(x);  // 2
+    let x = 2 // different variable
+    console.log(x) // 2
   }
-  console.log(x);  // 1
+  console.log(x) // 1
 }
 ```
 
@@ -682,11 +620,9 @@ and another example of their differences:
 
 <img src="https://i.imgur.com/K0uJx2P.jpg">
 
-
 <br>
 <br>
 <br>
-
 
 ##### Hoisting
 
@@ -698,9 +634,9 @@ For example, when we write code like this:
 
 ```javascript
 function hoist() {
-	console.log(x);  // outputs undefined, not a ReferenceError
-	var x = 25;
-	console.log(x);  // outputs 25
+  console.log(x) // outputs undefined, not a ReferenceError
+  var x = 25
+  console.log(x) // outputs 25
 }
 ```
 
@@ -708,17 +644,16 @@ Internally, the JS engine actually sees this:
 
 ```javascript
 function hoist() {
-	var x;
-	console.log(x);  // outputs undefined, not a ReferenceError
-	x = 25;
-	console.log(x);  // outputs 25
+  var x
+  console.log(x) // outputs undefined, not a ReferenceError
+  x = 25
+  console.log(x) // outputs 25
 }
 ```
 
 <br>
 <br>
 <br>
-
 
 #### Nesting Functions
 
@@ -730,15 +665,15 @@ For example (no need to execute this):
 
 ```javascript
 function openNewAccount(name, openingBalance) {
-  let acctNum = generateAcctNum();
-  
+  let acctNum = generateAcctNum()
+
   // createAccount is a function available outside this function
-  let acct = createAccount(acctNum, openingBalance);
-  return acct;
-  
+  let acct = createAccount(acctNum, openingBalance)
+  return acct
+
   // helper function that provides a unique account number
   function generateAcctNum() {
-    return Date.now();  // super amazing algorithm :)
+    return Date.now() // super amazing algorithm :)
   }
 }
 ```
