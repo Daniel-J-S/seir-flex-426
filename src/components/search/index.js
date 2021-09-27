@@ -7,7 +7,7 @@ import logo from '../../../static/ga-logo.svg';
 
 const Search = (props) => {
         const [searchState, setSearchState ] = useState({});
-        const searchClient = algoliasearch('AW46ICEW1Y', '41979fdbbd9692353d4ce6447eb71555')
+        const searchClient = algoliasearch('PG32PV476S', '2cb8a671f5679cabc44f43a41d5d462e')
 
         const Results = connectStateResults(({ searchState, searchResults, children }) => {
             if(searchState && searchState.query && children) {
