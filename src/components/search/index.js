@@ -1,45 +1,55 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Hits, SearchBox, connectStateResults, Configure } from 'react-instantsearch-dom';
+import { InstantSearch, Hits, SearchBox, connectStateResults, Configure, Highlight } from 'react-instantsearch-dom';
 import logo from '../../../static/ga-logo.svg';
 
-const searchClient = algoliasearch('AW46ICEW1Y', '41979fdbbd9692353d4ce6447eb71555')
 
+const Search = (props) => {
+        const [searchState, setSearchState ] = useState({});
+        const searchClient = algoliasearch('AW46ICEW1Y', '41979fdbbd9692353d4ce6447eb71555')
 
-const Results = connectStateResults(({ searchState, searchResults, children }) => {
-    if(searchState && searchState.query && children) {
-        return children;
-    } else {
-        return null;
-    }
-});
+        const Results = connectStateResults(({ searchState, searchResults, children }) => {
+            if(searchState && searchState.query && children) {
+                return children;
+            } else {
+                return null;
+            }
+        });
 
-const Hit = ({ hit }) => {
-    return (
-        <div style={{display: "flex", alignItems: "center" }}>
-            <img style={{ height: 25, margin: "0px 5px 0px 0px" }} src={logo} alt={hit.title} />
-            <Link to={hit.url}>{hit.title}</Link>
-        </div>
-    );
-}
+        const Hit = useRef(({ hit }) => {
+            const handleClick = () => {
+                setSearchState({...searchState, query: ''})
+            };
+            return (
+                <div style={{display: 'flex', flexDirection: 'column' }}>
+                    <Link to={hit.url} onClick={handleClick} style={{display: 'flex', alignItems: 'center'}}>
+                        <img style={{ height: 25, margin: '0px 5px 0px 0px' }} src={logo} alt={hit.title} />
+                        <Highlight hit={hit} attribute='title' />
+                    </Link>
+                    <p>{hit.content.slice(0, 125) + ' ...'}</p>
+                </div>
+            );
+        });
 
-
-export default (props) => {
     return (
         <InstantSearch
             searchClient={searchClient}
-            indexName={'netlify_02640dcd-fc5f-43a3-97b4-56ade81a03de_master_all'}
+            indexName={'netlify_3fc516c0-475d-4e1d-86e2-ae1f751ad654_master_all'}
+            searchState={searchState}
+            onSearchStateChange={setSearchState}
             >
             <SearchBox />
             <Results>
                 <Hits 
-                    hitComponent={Hit}
+                    hitComponent={Hit.current}
                 />
             </Results>
             <Configure 
-                hitsPerPage={5}
+                hitsPerPage={3}
             />
         </InstantSearch>
     );
-}
+};
+
+export default Search;

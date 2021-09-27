@@ -1,22 +1,16 @@
 import React, { Fragment } from 'react';
 import { useStaticQuery, graphql } from 'gatsby'
 
-import Head from '../head/';
 import NavBar from '../responsiveNav';
 import Footer from '../footer';
 import Search from '../search';
 
-import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
-
 import '../../styles/base.scss';
 
-import styles from './layout.module.scss';
+import * as styles from './layout.module.scss';
+import 'gatsby-plugin-breadcrumb/gatsby-plugin-breadcrumb.css';
 
-export default ({ 
-        pageTitle, 
-        children, 
-        location, 
-        crumbLabel }) => {
+const Layout = ({ children  }) => {
 
         const { site } = useStaticQuery(graphql`
         query {
@@ -38,7 +32,6 @@ export default ({
 
     return (
         <Fragment>
-            <Head pageTitle={pageTitle} />
             <div className={styles.outerContainer}>
                 <NavBar 
                     title={site.siteMetadata.title}
@@ -48,18 +41,12 @@ export default ({
                 <div 
                     className={styles.innerContainer}>
                     <Search />
-                    <div className={styles.breadContainer}>
-                        <Breadcrumb 
-                            location={location} 
-                            crumbLabel={crumbLabel}
-                            crumbStyle={{ color: "#000" }}
-                            crumbActiveStyle={{ color: "crimson" }} 
-                        />
-                    </div>
                     { children }
                 </div>
                 <Footer />
             </div>
         </Fragment>
     );
-}
+};
+
+export default Layout;

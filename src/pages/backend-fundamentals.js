@@ -1,13 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-
-import Layout from '../components/layout';
+import Head from '../components/head';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 import LectureCard from '../components/lecture-card';
 
-import styles from '../styles/course-content-display.module.scss';
+import * as styles from '../styles/course-content-display.module.scss';
 
 
-export default({ data, location }) => {
+const BackendFundamentals = function({ data, location }) {
     
    const { allMarkdownRemark } = data;
 
@@ -21,18 +21,23 @@ export default({ data, location }) => {
    );
 
     return (
-        <Layout 
-          pageTitle="Backend Fundamentals"
-            
-          location={location} 
-          crumbLabel={"Backend Fundamentals"}>
+        <> 
+        <Head pageTitle="Backend Fundamentals"/>
+          <div style={{margin: '1rem 0 5rem 0'}}>
+            <Breadcrumb 
+                location={location} 
+                crumbLabel="Backend Fundamentals"
+            />
+          </div>
             <h1>Backend Fundamentals</h1>
             <main className={styles.main}>
               {lessons}
             </main>
-        </Layout>
+        </>
     );
 }
+
+export default BackendFundamentals;
 
 export const query = graphql`
 query {

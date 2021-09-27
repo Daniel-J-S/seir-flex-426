@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import styles from './lecture-card.module.scss';
+import * as styles from './lecture-card.module.scss';
 
-export default (props) => {
+const LectureCard = (props) => {
     return (
     <Link to={props.slug}>
         <section className={styles.card}>
@@ -12,4 +12,6 @@ export default (props) => {
         </section>
     </Link>
     );
-}
+};
+
+export default LectureCard;

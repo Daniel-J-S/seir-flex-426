@@ -6,9 +6,7 @@ day: 3
 type: "lab"
 ---
 
-
 # JavaScript Arrays Lab
-
 
 <br>
 <br>
@@ -20,16 +18,13 @@ type: "lab"
 <br>
 <br>
 
-
-
-
 ## Introduction
 
 This lab provides an opportunity to practice defining, accessing and manipulating arrays.
 
 > **Note:** Feel free to reference the arrays lesson, collaborate, google, etc.
 
-This lab **is a deliverable**. When completed, please click the link in the navbar to submit your work to your instructional team for review.
+<!-- This lab **is deliverable**, when completed, please click the **"Submit Homework"** link above **(it's the same form in the navbar)** to submit your lab work to your instructional team. -->
 
 <br>
 <br>
@@ -45,7 +40,7 @@ For the exercises in this lab, create a `JavaScript` `REPL` from [repl.it](https
 
 Copy the exercises below into the included **script.js** file and code away!
 
-**Please note:** ***You will most likely need to comment out the `console.logs` for the exercises you've yet to complete to avoid getting a*** **<span style="color: crimson;">Reference Error</span>**
+**Please note:** **_You will most likely need to comment out the `console.logs` for the exercises you've yet to complete to avoid getting a_** **<span style="color: #673ab7;">Reference Error</span>**
 
 ```javascript
 /*
@@ -55,9 +50,9 @@ Exercise 1:
 
 // Exercise 1 has been completed for you...
 
-const foods = [];
+const foods = []
 
-console.log('Exercise 1 Result: ', foods);
+console.log("Exercise 1 Result: ", foods)
 
 /*
 Exercise 2:
@@ -66,9 +61,7 @@ Exercise 2:
 
 // Complete Exercise 2 below...
 
-
-
-console.log('Exercise 2 Result: ',  foods);
+console.log("Exercise 2 Result: ", foods)
 
 /*
 Exercise 3:
@@ -77,9 +70,7 @@ Exercise 3:
 
 // Complete Exercise 3 below...
 
-
-
-console.log('Exercise 3 Result: ', foods);
+console.log("Exercise 3 Result: ", foods)
 
 /*
 Exercise 4:
@@ -88,9 +79,7 @@ Exercise 4:
 
 // Complete Exercise 4 below...
 
-
-
-console.log('Exercise 4 Result: ', favFood);
+console.log("Exercise 4 Result: ", favFood)
 
 /*
 Exercise 5:
@@ -99,9 +88,7 @@ Exercise 5:
 
 // Complete Exercise 5 below...
 
-
-
-console.log('Exercise 5 Result: ', foods);
+console.log("Exercise 5 Result: ", foods)
 
 /*
 Exercise 6:
@@ -110,9 +97,7 @@ Exercise 6:
 
 // Complete Exercise 6 below...
 
-
-
-console.log('Exercise 6 Result: ', foods);
+console.log("Exercise 6 Result: ", foods)
 
 /*
 Exercise 7:
@@ -122,9 +107,7 @@ Exercise 7:
 
 // Complete Exercise 7 below...
 
-
-
-console.log('Exercise 7 Result: ', yummy);
+console.log("Exercise 7 Result: ", yummy)
 
 /*
 Exercise 8:
@@ -133,9 +116,7 @@ Exercise 8:
 
 // Complete Exercise 8 below...
 
-
-
-console.log('Exercise 8 Result: ', soyIdx);
+console.log("Exercise 8 Result: ", soyIdx)
 
 /*
 Exercise 9:
@@ -145,9 +126,7 @@ Exercise 9:
 
 // Complete Exercise 9 below...
 
-
-
-console.log('Exercise 9 Result: ', allFoods);
+console.log("Exercise 9 Result: ", allFoods)
 
 /*
 Exercise 10:
@@ -156,9 +135,7 @@ Exercise 10:
 
 // Complete Exercise 10 below...
 
-
-
-console.log('Exercise 10 Result: ', hasSoup);
+console.log("Exercise 10 Result: ", hasSoup)
 
 /*
 Exercise 11:
@@ -166,13 +143,11 @@ Exercise 11:
   - Hint: Initialize the odds variable to an empty array before the iteration.
 */
 
-const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90];
+const nums = [100, 5, 23, 15, 21, 72, 9, 45, 66, 7, 81, 90]
 
 // Complete Exercise 11 below...
 
-
-
-console.log('Exercise 11 Result: ', odds);
+console.log("Exercise 11 Result: ", odds)
 
 /*
 Exercise 12:
@@ -184,12 +159,10 @@ Exercise 12:
 
 // Complete Exercise 12 below...
 
-
-
-console.log('Exercise 12 Results:');
-console.log('  fizz:', fizz);
-console.log('  buzz:', buzz);
-console.log('  fizzbuzz:', fizzbuzz);
+console.log("Exercise 12 Results:")
+console.log("  fizz:", fizz)
+console.log("  buzz:", buzz)
+console.log("  fizzbuzz:", fizzbuzz)
 
 /*
 Exercise 13:
@@ -198,17 +171,15 @@ Exercise 13:
 */
 
 const numArrays = [
-	[100, 5, 23],
-	[15, 21, 72, 9],
-	[45, 66],
-	[7, 81, 90]
-];
+  [100, 5, 23],
+  [15, 21, 72, 9],
+  [45, 66],
+  [7, 81, 90],
+]
 
 // Complete Exercise 13 below...
 
-
-
-console.log('Exercise 13 Result: ', numList);
+console.log("Exercise 13 Result: ", numList)
 
 /*
 Exercise 14:
@@ -217,9 +188,7 @@ Exercise 14:
 
 // Complete Exercise 14 below...
 
-
-
-console.log('Exercise 14 Result: ', num);
+console.log("Exercise 14 Result: ", num)
 
 /*
 Exercise 15:
@@ -229,9 +198,7 @@ Exercise 15:
 
 // Complete Exercise 15 below...
 
-
-
-console.log('Exercise 15 Result: ', total);
+console.log("Exercise 15 Result: ", total)
 ```
 
 <br>
@@ -239,5 +206,4 @@ console.log('Exercise 15 Result: ', total);
 
 ## Additional Resources
 
-
-[MDN Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+- [MDN Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)

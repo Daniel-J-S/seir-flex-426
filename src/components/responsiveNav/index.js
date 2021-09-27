@@ -6,7 +6,7 @@ import logo from '../../../static/ga-logo.svg';
 
 import "./responsiveNav.css";
 
-export default ({ 
+const ResponsiveNav = ({ 
     title, 
     navigationLinks, 
     homeworkSubmissionLink }) => {
@@ -15,19 +15,6 @@ export default ({
   const [isNavVisible, setNavVisibility] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(true);
   
-  const links = navigationLinks.map(({ title, slug}, idx) => (
-     <Link key={idx} to={slug}>{title}</Link>
-   ));
-
-  links.push(<a
-      key={homeworkSubmissionLink.href} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      href={homeworkSubmissionLink.href}>
-        {homeworkSubmissionLink.title}
-        </a>
-  );
-
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 1065px)");
     
@@ -51,6 +38,22 @@ export default ({
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
   };
+
+  const links = navigationLinks.map(({ title, slug}, idx) => (
+    <Link key={idx} to={slug} onClick={toggleNav}>{title}</Link>
+  ));
+
+ links.push(
+    <a
+     onClick={toggleNav}
+     key={homeworkSubmissionLink.href} 
+     target="_blank" 
+     rel="noopener noreferrer"
+     href={homeworkSubmissionLink.href}>
+       {homeworkSubmissionLink.title}
+       </a>
+ );
+
 
   return (
     <div className="nav-wrapper">
@@ -78,4 +81,6 @@ export default ({
       </button>
     </div>
   );
-}
+};
+
+export default ResponsiveNav;
