@@ -35,7 +35,7 @@ const Search = (props) => {
     return (
         <InstantSearch
             searchClient={searchClient}
-            indexName={'netlify_3fc516c0-475d-4e1d-86e2-ae1f751ad654_master_all'}
+            indexName={'netlify_61990d90-34b7-4998-987c-600410a12c67_master_all'}
             searchState={searchState}
             onSearchStateChange={setSearchState}
             >
