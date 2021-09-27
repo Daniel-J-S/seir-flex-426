@@ -27,7 +27,6 @@ type: "lecture"
 - Joe Keohan - Instructor Lead
 - Swaroop Uprety - Instructional Associate (IA)
 - Mike Bocon - Instructional Associate (IA)
-  <!-- - Ray Velasquez - Teaching Assistant (TA) -->
 
 <br>
 <br>
@@ -69,12 +68,14 @@ type: "lecture"
 
 ### Slack
 
-#### 4 channels
+#### 6 channels
 
 - **`seirflex-928-classroom`**
 - **`seirflex-928-outcomes`**
 - **`seirflex-928-resources`**
 - **`seirflex-928-partytime`**
+- **`seirflex-928-homework`**
+- **`seirflex-928-recordings`**
 
 <br>
 <br>

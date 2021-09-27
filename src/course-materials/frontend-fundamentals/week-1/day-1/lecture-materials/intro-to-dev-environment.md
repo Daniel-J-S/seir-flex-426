@@ -97,20 +97,6 @@ Students will be able to:
 
 [Click this link](https://help.imgur.com/hc/en-us/articles/209592766-Tools-for-Imgur) to go to a page of different tools you can use to conveniently upload images to imgur from your computer
 
-<!--
-### mac2imgur
-- [mac2imgur](https://github.com/mileswd/mac2imgur) is a simple Mac app that makes uploading images and screenshots to your Imgur account a snap
-
-- Go to the link above and download/install it
-
-- After installed, launch it, click the <img src="https://i.imgur.com/K3RFxZj.png" /> in your menubar, then select `Imgur/Sign-in`.  Note that if you don't sign in, your uploaded images will be uploaded to Imgur's public domain
-
-- You can now upload images from your computer by clicking the _mac2imgur_ icon in the menubar and selecting `Upload images...`
-
-- Screenshots can also now be automatically uploaded to Imgur...
-
--->
-
 <br>
 <br>
 <br>
