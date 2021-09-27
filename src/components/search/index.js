@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Link } from 'gatsby';
 import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, Hits, SearchBox, connectStateResults, Configure, Highlight } from 'react-instantsearch-dom';
+import { InstantSearch, Hits, SearchBox, connectStateResults, Configure } from 'react-instantsearch-dom';
 import logo from '../../../static/ga-logo.svg';
 
 
