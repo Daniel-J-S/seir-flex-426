@@ -17,6 +17,7 @@ const Search = (props) => {
             }
         });
 
+        
         const Hit = useRef(({ hit }) => {
             const handleClick = () => {
                 setSearchState({...searchState, query: ''})
@@ -25,7 +26,7 @@ const Search = (props) => {
                 <div style={{display: 'flex', flexDirection: 'column' }}>
                     <Link to={hit.url} onClick={handleClick} style={{display: 'flex', alignItems: 'center'}}>
                         <img style={{ height: 25, margin: '0px 5px 0px 0px' }} src={logo} alt={hit.title} />
-                        <Highlight hit={hit} attribute='title' />
+                        <h6>{hit.title.replace(' | SEIR Flex 09/28/2021 - "Phoenix"', '')}</h6>
                     </Link>
                     <p>{hit.content.slice(0, 125) + ' ...'}</p>
                 </div>
