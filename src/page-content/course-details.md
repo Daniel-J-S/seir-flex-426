@@ -22,10 +22,11 @@ You will be required to meet 80% completion of homework assignments at the end o
 - End date: 04/05/2022
 - Tuesday/Wednesday 6:30 pm - 10:45 am EST
 - Sat 10 am - 6 pm EST
-- Holidays: TBT
-  <br>
-  <br>
-  <br>
+- Holidays: 11/11, 11/24, 11/25, 11/27, 12/25, 12/28, 12/29, 12/30, 01/01/2022, 01/15/2022, 02/19/2022
+
+<br>
+<br>
+<br>
 
 ## In Class
 
