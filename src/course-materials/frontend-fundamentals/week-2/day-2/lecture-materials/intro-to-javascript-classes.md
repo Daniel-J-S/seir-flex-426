@@ -6,25 +6,14 @@ day: 2
 type: "lecture"
 ---
 
-# Intro to JavaScript Classes  
+# Intro to JavaScript Classes
 
 <br>
 <br>
 <br>
 <br>
-
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/xi0d6CAwzUaXIFM_6O-G_sRhXzrs_K00wbD_2w999I05twKfzjgteRUXrBwsyFRI.hfcDfKiz2N4Kx2qe?startTime=1614216902000) to access recording
-
-<br>
-<br>
-<br>
-<br> 
-
 
 ## Learning Objectives
-
 
 <p>Students will be able to:</p>
 
@@ -44,8 +33,7 @@ type: "lecture"
 <br>
 <br>
 
-
-### Lesson Setup  
+### Lesson Setup
 
 For this lesson, we're going to code along using a `JavaScript` `REPL` from [repl.it](https://repl.it) -- you can name it `"JavaScript Classes Practice"`.
 
@@ -53,10 +41,7 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 <br>
 <br>
 
-
-
 ### What Are <em>Classes</em>?
-
 
 - In **object oriented programming (OOP)**, we use objects to model our application's purpose.
 
@@ -64,18 +49,15 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 
 - Think of classes as the blueprints used to create objects of a certain "type"...
 
-
 <img src="https://i.imgur.com/Pjxlpjs.jpg" width="600">
 
 <br>
 <br>
 <br>
 
-
 ### Why Use <em>Classes</em>?
 
-
-- We've already been creating JS objects using object  ___________ notation.
+- We've already been creating JS objects using object ****\_\_\_**** notation.
 
 - So why do we need classes and/or constructor functions?
 
@@ -83,14 +65,11 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 
 - Classes/constructors provide a convenient way to dynamically create objects as needed.
 
-
 <br>
 <br>
 <br>
-
 
 ## Encapsulation in OOP
-
 
 - **Encapsulation** is a key principle of Object Oriented Programming.
 
@@ -98,26 +77,24 @@ For this lesson, we're going to code along using a `JavaScript` `REPL` from [rep
 
 - Here comes a graphic depicting this principle...
 
-
 <img src="https://i.imgur.com/7e0Qa9K.png" width="600">
 
 - Here's a code example of encapsulating data (attributes/properties) & behavior (methods):
 
-
 ```javascript
 const cohort = {
-  id: 'SEIR Flex',
-  students: ['Mary', 'Toni', 'Fred'],
-  instructors: ['Susan', 'Phil'],
-  addStudent: function(name) {
-    name = name[0].toUpperCase() + name.substr(1).toLowerCase();
-    this.students.push(name);
+  id: "SEIR Flex",
+  students: ["Mary", "Toni", "Fred"],
+  instructors: ["Susan", "Phil"],
+  addStudent: function (name) {
+    name = name[0].toUpperCase() + name.substr(1).toLowerCase()
+    this.students.push(name)
   },
-  pickRandomStudent: function() {
-    const rndIdx = Math.floor(Math.random() * this.students.length);
-    return this.students[rndIdx];
-  }
-};
+  pickRandomStudent: function () {
+    const rndIdx = Math.floor(Math.random() * this.students.length)
+    return this.students[rndIdx]
+  },
+}
 ```
 
 <br>
@@ -125,9 +102,7 @@ const cohort = {
 <br>
 <br>
 
-
 ### Review Questions
-
 
 **❓ What does the acronym OOP stand for?**
 
@@ -139,43 +114,34 @@ const cohort = {
 <br>
 <br>
 
-
-
 ### Defining Classes in JS
-
 
 **Here's a minimal class definition that's good for nothing but creating empty objects:**
 
 ```javascript
 class Vehicle {
- // Code to define the class's properties and methods
+  // Code to define the class's properties and methods
 }
 ```
 
-*Looks similar to defining a function because classes are in fact, _special_ functions, except...*
+_Looks similar to defining a function because classes are in fact, *special* functions, except..._
 
 <br>
 <br>
-
 
 **❓ What's different compared to a function?**
 
-
 **❓ What's different about the naming convention?**
 
-
 <br>
 <br>
 <br>
 <br>
 <br>
-
-
 
 ### Instantiating a Class
 
-
-*Here's a bit more OOP vocab for you:*
+_Here's a bit more OOP vocab for you:_
 
 - **instance**: An object created by a class
 
@@ -185,36 +151,32 @@ class Vehicle {
 
 <br>
 
-*In JS, we create objects using the `new` keyword when invoking (instantiating) the class:*
+_In JS, we create objects using the `new` keyword when invoking (instantiating) the class:_
 
 ```javascript
-const v1 = new Vehicle();
+const v1 = new Vehicle()
 ```
 
 <br>
 <br>
 <br>
-
-
 
 ### The _<span style="text-transform:lowercase">constructor</span>_ Method
 
-*When a class is being instantiated, the special `constructor` method in the class will **automatically** be called:*
+_When a class is being instantiated, the special `constructor` method in the class will **automatically** be called:_
 
 ```javascript
 class Vehicle {
-	constructor(vin, make) {
-		this.vin = vin;
-		this.make = make;
-	// return is not needed 
-	// because the new object is returned by default
-	}
+  constructor(vin, make) {
+    this.vin = vin
+    this.make = make
+    // return is not needed
+    // because the new object is returned by default
+  }
 }
 
-const plane = new Vehicle('X123Y', 'Boeing');
+const plane = new Vehicle("X123Y", "Boeing")
 ```
-
-
 
 - **The purpose** of the `constructor` method is to initialize the data properties of the new object being created (represented by `this`).
 
@@ -224,17 +186,14 @@ const plane = new Vehicle('X123Y', 'Boeing');
 <br>
 <br>
 
-
-
 ### 💪 Practice - Add a Property
 
+**Modify the `Vehicle` class by adding an additional property named `model`.**
 
-**Modify the `Vehicle` class by adding an additional property named  `model`.**
-
-*Test it out by instantiating another object like this:*
+_Test it out by instantiating another object like this:_
 
 ```javascript
-const car = new Vehicle('A1234', 'Toyota', 'Camry');
+const car = new Vehicle("A1234", "Toyota", "Camry")
 ```
 
 <br>
@@ -242,10 +201,10 @@ const car = new Vehicle('A1234', 'Toyota', 'Camry');
 <br>
 <br>
 
-
 ### Object Instantiation
 
-*When we invoke the class prefaced with the `new` keyword, behind the scenes:*
+_When we invoke the class prefaced with the `new` keyword, behind the scenes:_
+
 - JS creates a shiny new object (empty) and assigns it to the `this` keyword.
 - The `constructor` method is called with the arguments we provided when invoking the class. Remember, the `constructor` method is where we create/initialize properties on the new object assigned to `this`.
 - After the `constructor` is finished executing, the class automatically returns the shiny new object.
@@ -256,17 +215,14 @@ const car = new Vehicle('A1234', 'Toyota', 'Camry');
 <br>
 <br>
 
-
-
 ### Defining Methods in a Class
 
-*There are two types of methods that can be added to a class:*
-  - **Prototype (instance) methods**
-  - **Static (class) methods**
+_There are two types of methods that can be added to a class:_
 
+- **Prototype (instance) methods**
+- **Static (class) methods**
 
 **Prototype methods** are the most common and are available to be called by any instance of the class.**What's an instance?**
-
 
 **Static methods** are methods that are called on the class itself and cannot be called by instances.
 
@@ -277,48 +233,39 @@ const car = new Vehicle('A1234', 'Toyota', 'Camry');
 
 ```javascript
 class Vehicle {
-	// the constructor will always be called
-	constructor(vin, make, model) {
-		this.vin = vin;
-		this.make = make;
-		this.model = model;
-		this.running = false;  // default to false
-	}
-	start() {
-		this.running = true;
-		console.log('running...');
-	}
+  // the constructor will always be called
+  constructor(vin, make, model) {
+    this.vin = vin
+    this.make = make
+    this.model = model
+    this.running = false // default to false
+  }
+  start() {
+    this.running = true
+    console.log("running...")
+  }
 }
 ```
 
-***Note that unlike within object literals, methods are not separated by a comma.***
-
+**_Note that unlike within object literals, methods are not separated by a comma._**
 
 <br>
 <br>
 <br>
 <br>
 <br>
-
-
-
 
 ### 💪 Practice - Defining Methods
 
 **Define a `stop` method that sets the `running` property to `false` and console.logs the message "stopped..."**
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Overriding Methods
 
 **Thanks to another OOP principle called _inheritance_, subclasses inherit methods from their parent classes.**
-
 
 - JS is different from class-based languages like Java or Python in that its inheritance implementation is _prototype-based_. <br> We won't go into prototypes during this lesson, but if you want to learn more, [check out the docs here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
@@ -335,7 +282,7 @@ car.toString() // outputs something like '[object Object]'
 
 ```javascript
  // existing methods above
- 
+
  toString() {
    return 'Vehicle (' + this.vin + ') is a ' +
      this.make + ' model ' + this.model;
@@ -345,22 +292,17 @@ car.toString() // outputs something like '[object Object]'
 <br>
 <br>
 
-
 #### Test it out.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Review Questions
 
-
 **You've just learned how to define a class and add prototype methods to it. This represents about 80% there is to know about classes - congrats!**
-  
-<br>  
+
+<br>
 
 **Some questions before moving on:**
 
@@ -376,10 +318,7 @@ car.toString() // outputs something like '[object Object]'
 <br>
 <br>
 
-
-
 ### Constructor Functions - B.C. (before classes 😀)
-
 
 1. Before classes arrived via ES2015, we used _constructor functions_ to do the exact same thing as classes.
 
@@ -391,43 +330,37 @@ car.toString() // outputs something like '[object Object]'
 <br>
 <br>
 
-
-
-
 ### Constructor Functions
 
 ```javascript
 function Vehicle(vin, make, model) {
-  this.vin = vin;
-  this.make = make;
-  this.model = model;
-  this.running = false;  // default to false
+  this.vin = vin
+  this.make = make
+  this.model = model
+  this.running = false // default to false
 }
-Vehicle.prototype.start = function() {
-  this.running = true;
-  console.log('running...');
-};
+Vehicle.prototype.start = function () {
+  this.running = true
+  console.log("running...")
+}
 // other 'prototype' (instance) methods defined like above
-	
-const car = new Vehicle('A1234', 'Toyota', 'Camry');
+
+const car = new Vehicle("A1234", "Toyota", "Camry")
 ```
 
-***Note that constructor functions are similar to the constructor methods in a class. Also note how instance methods are defined on the function's prototype object.***
+**_Note that constructor functions are similar to the constructor methods in a class. Also note how instance methods are defined on the function's prototype object._**
 
-***Invoking a class and a constructor function works identically.***
-
+**_Invoking a class and a constructor function works identically._**
 
 <br>
 <br>
 <br>
-
-
 
 ### Static Methods
 
 **Again, _static methods_ are methods that are callable on the class itself - not on its instances.**
 
-- Static methods are used typically to implement behavior that does not pertain to a particular instance.  For example, we could design the `Vehicle` class so that it tracks every vehicle it creates.  We could then write static methods that return how many vehicles have been created, search for vehicles by their make, etc.
+- Static methods are used typically to implement behavior that does not pertain to a particular instance. For example, we could design the `Vehicle` class so that it tracks every vehicle it creates. We could then write static methods that return how many vehicles have been created, search for vehicles by their make, etc.
 
 <br>
 
@@ -439,8 +372,7 @@ const car = new Vehicle('A1234', 'Toyota', 'Camry');
  }
 ```
 
-*Yup, the only difference is the `static` keyword*
-
+_Yup, the only difference is the `static` keyword_
 
 <br>
 <br>
@@ -449,19 +381,15 @@ const car = new Vehicle('A1234', 'Toyota', 'Camry');
 
 ```javascript
 // invoke static methods on the class
-Vehicle.about();
+Vehicle.about()
 
 // this will not work
-car.about();
+car.about()
 ```
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Review Quesitons
 
@@ -471,26 +399,21 @@ car.about();
 
 **❓ What's wrong with the following code?**
 
-
 ```javascript
 class Shape {
-	constructor(x, y) {
-		this.x = x;
-		this.y = y;
-	}
-	static getPosition() {
-		return [this.x, this.y];
-	}
+  constructor(x, y) {
+    this.x = x
+    this.y = y
+  }
+  static getPosition() {
+    return [this.x, this.y]
+  }
 }
 ```
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Inheritance
 
@@ -502,22 +425,20 @@ class Shape {
 
 <img src="https://i.imgur.com/MvXw4nD.gif" width="800">
 
-
 <br>
 <br>
-
 
 **We use the `extends` keyword to define a subclass:**
 
 ```javascript
 class Plane extends Vehicle {
- constructor(vin, make, model, airline) {
-   super(vin, make, model);
-   this.airline = airline;
- }
- engageAutoPilot() {
-   console.log('Look Mom, no hands!');
- }
+  constructor(vin, make, model, airline) {
+    super(vin, make, model)
+    this.airline = airline
+  }
+  engageAutoPilot() {
+    console.log("Look Mom, no hands!")
+  }
 }
 ```
 
@@ -527,21 +448,16 @@ class Plane extends Vehicle {
 <br>
 <br>
 
-
-
-
 ### Inheritance
-
 
 **Now we can create instances of `Plane` like this:**
 
-```javascript	
-const spyPlane = new Plane('secret', 'Lockheed', 'SR-71', 'USA');
+```javascript
+const spyPlane = new Plane("secret", "Lockheed", "SR-71", "USA")
 ```
 
 <br>
 <br>
-
 
 1. Note how the additional arguments used to initialize subclasses are always provided after those intended for the superclass(es).
 
@@ -549,13 +465,9 @@ const spyPlane = new Plane('secret', 'Lockheed', 'SR-71', 'USA');
 
 <img src="https://i.imgur.com/t9eUguh.png" width="700">
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### 💪 Practice - Inheritance
 
@@ -566,17 +478,14 @@ const spyPlane = new Plane('secret', 'Lockheed', 'SR-71', 'USA');
 **Test it out by instantiating it like this:**
 
 ```javascript
-const fastCar = new Automobile('TS123Z', 'Tesla', 'P100D', 4);
+const fastCar = new Automobile("TS123Z", "Tesla", "P100D", 4)
 ```
 
-*Hint: It's okay to copy and paste your own code (but make sure you understand what it does)*
+_Hint: It's okay to copy and paste your own code (but make sure you understand what it does)_
 
 <br>
 <br>
 <br>
-
-
-
 
 ### Final Notes on Classes
 
@@ -586,13 +495,8 @@ const fastCar = new Automobile('TS123Z', 'Tesla', 'P100D', 4);
 <br>
 <br>
 
-
-
-
-
 ## References
 
 - [Classes on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes)
 
 - [Prototypal Inheritance example](https://gist.github.com/jim-clark/e3fc426d73153fac6dc1)
-
