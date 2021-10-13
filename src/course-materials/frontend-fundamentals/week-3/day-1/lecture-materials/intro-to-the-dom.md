@@ -57,8 +57,7 @@ type: "lecture"
 ```shell
 intro-to-dom/
 	index.html
-	js/
-	 script.js
+	script.js
 ```
 
 - You can add this HTML to your `.html` file:
@@ -88,7 +87,7 @@ intro-to-dom/
   <head>
     ...
     <title>Intro to the DOM</title>
-    <script defer src="./js/script.js"></script>
+    <script defer src="./script.js"></script>
   </head>
   ```
 
@@ -145,7 +144,6 @@ intro-to-dom/
 - To try it out, first select the `h1` element and use the **Styles** panel to add a CSS property of `color: red;`
 
 <img src="https://i.imgur.com/RAvgNl0.png">
-
 
 - Look closely after the closing `</h1>` tag - you see that _`== $0`_?
 

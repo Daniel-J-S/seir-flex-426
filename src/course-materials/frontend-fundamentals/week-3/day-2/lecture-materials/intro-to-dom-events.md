@@ -47,8 +47,7 @@ type: "lecture"
 ```shell
 intro-to-dom-events/
   index.html
-  js/
-    script.js
+  script.js
 ```
 
 - You can add this HTML to your `.html` file:
@@ -77,7 +76,7 @@ intro-to-dom-events/
   <head>
     ...
     <title>Intro to DOM Events</title>
-    <script defer src="./js/script.js"></script>
+    <script defer src="./script.js"></script>
   </head>
   ```
 
