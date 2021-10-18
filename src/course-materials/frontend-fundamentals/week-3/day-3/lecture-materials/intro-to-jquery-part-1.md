@@ -501,9 +501,7 @@ Each jQuery method, **when used as a setter**, returns the updated jQuery object
 
 ```javascript
 // Change our <p> tag's content and color
-$("p")
-  .html("Awesome things jQuery can do:")
-  .css("background-color", "peachpuff")
+$("p").html("Awesome things jQuery can do:").css("background-color", "peachpuff")
 ```
 
 Often, you will see method chaining indented like this to enhance readability:
