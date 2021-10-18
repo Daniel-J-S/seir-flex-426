@@ -8,53 +8,34 @@ type: "lecture"
 
 # Tic-Tac-Toe Code Along
 
-
 <br>
 <br>
 <br>
 <br>
 
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/_gskicbDacb1ov_hjhDTcAI5SY06fVHl0nPlM7MEfHQl-m8lHKx5OjX-eSXM8cCF.2LfESCtoMUKHcIxD?startTime=1615344092000) to access recording
-
-<br>
-<br>
-<br>
-<br> 
-
-
-
-
-  
 ## Objective
 
 Build a Tic-Tac-Toe game incorporating the three web app technologies you've worked with thus far:
+
 - HTML
 - CSS
 - JavaScript
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ## Minimum Requirements
+
 - Display an empty tic-tac-toe board when the page is initially displayed.
 - A player can click on the nine cells to make a move.
 - Every click will alternate between marking an `X` and `O`.
 - Once occupied with an `X` or `O`, the cell cannot be played again.
 - Provide a `Reset Game` button that will clear the contents of the board.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Getting Started
 
@@ -72,20 +53,18 @@ Build a Tic-Tac-Toe game incorporating the three web app technologies you've wor
 
 - Programs, including games, are frequently focused on manipulating data and displaying that data to a user. Decide on the data structures, held in variables, that will maintain the _state_ (data / status) of the game.
 
-- Note that the values you use to represent the state of your game, doesn't necessarily have to match what you want to display.  For example, just because you want to display X and Os doesn't mean that you have to use those letters in your data structure.  You might choose to use 1 to represent player X and -1 to represent player O for example.  Then, in your _render_ function you would have the logic to translate data to what you want to display.
+- Note that the values you use to represent the state of your game, doesn't necessarily have to match what you want to display. For example, just because you want to display X and Os doesn't mean that you have to use those letters in your data structure. You might choose to use 1 to represent player X and -1 to represent player O for example. Then, in your _render_ function you would have the logic to translate data to what you want to display.
 
 - Wire up your click event listener(s). Using a single listener with event bubbling is recommended but not required.
 
 - Lots of little functions!
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Pseudocode
+
 Pseudocode is a detailed description of what an application must do, written in natural language instead of a particular programming language.
 Well-written pseudocode should be easily translated into actual code.
 The best way to get started is to start with the "big picture" of what the app needs to do:
@@ -101,6 +80,7 @@ The best way to get started is to start with the "big picture" of what the app n
 5) Handle a player clicking a square
 6) Handle a player clicking the replay button
 ```
+
 Since most web apps are event-driven by nature. Coding an event-driven program generally requires that we set up the application when it loads (steps 1 - 4) and wait for the user to interact with the app (steps 5 & 6).
 Now we can start filling some more detailed steps:
 
@@ -117,7 +97,7 @@ Now we can start filling some more detailed steps:
     4.1) Initialize the state variables:
         4.1.1) Initialize the board array to 9 nulls to represent empty squares. The 9 elements will "map" to each square, where index 0 maps to the top-left square and index 8 maps to the bottom-right square.
         4.1.2) Initialize whose turn it is to 1 (player 'X'). Player 'O' will be represented by -1.
-        4.1.3) Initialize winner to null to represent that there is no winner or tie yet. Winner will hold the player value (1 or -1) if there's a winner. Winner will hold a 'T' if there's a tie. 
+        4.1.3) Initialize winner to null to represent that there is no winner or tie yet. Winner will hold the player value (1 or -1) if there's a winner. Winner will hold a 'T' if there's a tie.
     4.2) Render those state variables to the page:
         4.2.1) Render the board:
             4.2.1.1) Loop over each of the 9 elements that represent the squares on the page, and for each iteration:
@@ -144,31 +124,28 @@ Now we can start filling some more detailed steps:
     5.7) If there's no winner, check if there's a tie:
         5.7.1) Set winner to 'T' if there are no more nulls in the board array.
     5.8) All state has been updated, so render the state to the page (step 4.2).
-        
+
 6) Handle a player clicking the replay button:
     6.1) Do steps 4.1 (initialize the state variables) and 4.2 (render).
 ```
+
 Using a numbered outline is not required but helps organize the more complex steps into detailed steps.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Bonuses
+
 - Display whose turn it is ("X" or "O").
 - Provide win logic and display a winning message.
 - Provide logic for a cat's game (tie), also displaying a message.
 - Add your personal touch with unique styling.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Resources
+
 [DOM Events](http://www.smashingmagazine.com/2013/11/12/an-introduction-to-dom-events/)

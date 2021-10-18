@@ -6,42 +6,24 @@ day: 3
 type: "lecture"
 ---
 
-
-
 # Intro to Responsive Web Design
 
-
 <br>
 <br>
 <br>
 <br>
-
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/CoBffUhshSvM3rQvHR16WLc0LD9IO5s5ITgMrOfP88-pYPAlZ9qLZ-mWeEcm0OlW.jfnaxBx91URfsXMK?startTime=1615681635000) to access recording
-
-<br>
-<br>
-<br>
-<br> 
-
-
-
 
 ## Learning Objectives
 
-| Students Will Be Able To: |
-| --- |
-| Describe what Responsive Design is |
-| Explain the benefits of Mobile First design |
+| Students Will Be Able To:                              |
+| ------------------------------------------------------ |
+| Describe what Responsive Design is                     |
+| Explain the benefits of Mobile First design            |
 | Use CSS Media Queries to alter page layout and styling |
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Roadmap
 
@@ -56,15 +38,13 @@ type: "lecture"
 <br>
 <br>
 
-
 ## Intro to Responsive Web Design
 
 <br>
 
-
 ### Background
 
-Not that long ago, building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers. 
+Not that long ago, building a successful online presence meant just ensuring that your website worked correctly in all the major desktop browsers.
 
 Fast forward to today and desktop browsing is rapidly being replaced by surfing on mobile devices.
 
@@ -72,11 +52,8 @@ Approximately 80% percent of Americans now own a smartphone and well over 50% of
 
 Web sites and applications designed just for desktop displays don't cut it anymore!
 
-
 <br>
 <br>
-
-
 
 ### Enter - Responsive Web Design
 
@@ -84,13 +61,12 @@ Web sites and applications designed just for desktop displays don't cut it anymo
 
 Specifically, the most important criteria to respond to is the **width** of the device's screen.
 
-Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want.  For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.
+Lastly, what specifically **responds**? Primarily, the overall layout of the page, but you can pretty much change anything on the page you want. For example, I'm sure you've seen the menu links in a navigation bar disappear and be replaced with a "hamburger" icon before.
 
 Okay, now that you know what Responsive Design is, let's look at some real-world examples out there.
 
 <br>
 <br>
-
 
 ## Examples of Responsive Design
 
@@ -100,12 +76,9 @@ For another great example is [Smashing Magazine](https://www.smashingmagazine.co
 
 <img src="https://i.imgur.com/KozEWGq.png">
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Mobile First Design Philosophy
 
@@ -121,12 +94,9 @@ The experts tell us that it's better, to use a **mobile first** approach for the
 - It's easier to detect performance related issues, such as the slow loading of large image files, on mobile devices and it's better to deal with performance issues early on.
 - A design based on a small screen width, although not ideal, is usable on larger devices, however the reverse is often not the case.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## First Step to Enabling a Better Experience on Mobile
 
@@ -141,7 +111,6 @@ By default, mobile browsers scale down the content to fit it in the browser wind
 <br>
 <br>
 
-
 #### `<meta name="viewport" ...>` to the Rescue
 
 The viewport `<meta name="viewport" ...>` enables us to inform the browser not to scale the page as seen above and instead, display the content based upon the physical number of pixels available - just like desktop browsers do.
@@ -151,21 +120,18 @@ This viewport `meta` tag is so important, that VS Code has been adding it automa
 The following should look familiar...
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 ```
 
 With that `meta` tag in the document's `head` element, the above page will now render as:
 
 <img src="https://i.imgur.com/hdSBUzg.jpg">
 
-Much better!  Be sure to always have `<meta name="viewport" ...>` in every web app you write!
-
+Much better! Be sure to always have `<meta name="viewport" ...>` in every web app you write!
 
 <br>
 <br>
 <br>
-
-
 
 ## Setup
 
@@ -195,7 +161,7 @@ body {
   /* mobile first - single column */
   grid-template-columns: 1fr;
   grid-template-rows: 50px 30px auto 100px;
-  grid-template-areas: 
+  grid-template-areas:
     "hdr"
     "ftr"
     "content"
@@ -222,7 +188,10 @@ main {
   background-color: #bf9df7;
 }
 
-header, footer, aside, main {
+header,
+footer,
+aside,
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,15 +206,11 @@ As you can see, using [grid-template-areas](https://developer.mozilla.org/en-US/
 <br>
 <br>
 
-
-
 ## Using Media Queries to Apply Different CSS Rules to a Page
 
 <br>
 <br>
 <br>
-
-
 
 #### What's a Media Query?
 
@@ -255,12 +220,9 @@ A media query contains its own section of CSS that is used to modify the "base" 
 
 The media query can be composed of any number of _media feature expressions_ and an optional _media type_, such as `print`, `screen`, or `all`.
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Our First Media Query
 
@@ -273,7 +235,7 @@ Since we're interested in conditionally adding CSS as the screen increases in wi
     /* tablet - two column display */
     grid-template-columns: 1fr 4fr;
     grid-template-rows: 50px auto 30px;
-    grid-template-areas: 
+    grid-template-areas:
       "hdr hdr"
       "side content"
       "ftr ftr";
@@ -287,11 +249,8 @@ Resize the window and check it out!
 
 There's a link in the references section you can use to start to learn more about media queries.
 
-
 <br>
 <br>
-
-
 
 ### 💪 Practice Exercise (5 min)
 
@@ -301,11 +260,8 @@ Within the query, add some CSS to change colors of the backgrounds and/or text.
 
 Here's a few quick review questions for you...
 
-
 <br>
 <br>
-
-
 
 ### Essential Questions
 
@@ -315,10 +271,8 @@ Here's a few quick review questions for you...
 
 **❓ What key CSS feature did we just learn about that's fundamental to the implementation of responsive design?**
 
-
 <br>
 <br>
-
 
 ## References
 
