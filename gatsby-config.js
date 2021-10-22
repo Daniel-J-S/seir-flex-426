@@ -163,7 +163,7 @@ module.exports = {
         icon: `static/ga-logo.svg`,
         start_url: `/`,
         background_color: `#222222`,
-        theme_color: `#dc143c`,
+        theme_color: `#222222`,
       }
     },
     {
