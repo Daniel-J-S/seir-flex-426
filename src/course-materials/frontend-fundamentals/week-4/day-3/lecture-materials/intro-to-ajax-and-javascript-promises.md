@@ -50,8 +50,7 @@ type: "lecture"
 ```shell
 intro-to-ajax-practice/
   index.html
-  js/
-    script.js
+  script.js
 ```
 
 - You can add this HTML to your `.html` file:
@@ -64,7 +63,7 @@ intro-to-ajax-practice/
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script defer src="./js/script.js"></script>
+    <script defer src="./script.js"></script>
     <title>Intro to AJAX</title>
   </head>
   <body></body>
