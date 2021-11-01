@@ -33,11 +33,9 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-<div style="color: grey;">
+### [Unit Two: Backend Fundamentals](/backend-fundamentals)
 
-<!-- ### [Unit Two: Backend Fundamentals](/backend-fundamentals) -->
-
-### 🔒 Unit Two: Backend Fundamentals - **Locked**
+<!-- ### 🔒 Unit Two: Backend Fundamentals - **Locked** -->
 
 | Week  | Topics                                                                      |
 | ----- | --------------------------------------------------------------------------- |
@@ -49,6 +47,8 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 <br>
 <br>
+
+<div style="color: grey;">
 
 <!-- ### [Unit Three: React Fundamentals](/react-fundamentals) -->
 
