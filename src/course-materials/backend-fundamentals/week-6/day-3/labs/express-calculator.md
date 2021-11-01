@@ -15,7 +15,7 @@ Make a calculator that takes two params from the URI and sends the sum to the br
 <br>
 <br>
 
-&#x1F535; **Setup**
+**Setup**
 
 - Make a directory `express-calculator`.
 - `cd` into the `express-calculator` directory.

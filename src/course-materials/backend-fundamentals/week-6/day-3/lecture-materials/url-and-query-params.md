@@ -294,7 +294,7 @@ app.listen(port, () => {
 
 We can store multiple params in the `req.params` object:
 
-&#x1F535; **Write in (5 min)**
+**Write in (5 min)**
 
 ```javascript
 app.get("/hello/:firstname/:lastname", (req, res) => {
@@ -305,7 +305,7 @@ app.get("/hello/:firstname/:lastname", (req, res) => {
 
 - In your browser, go to `localhost:3000/bob/bobbybob`
 
-&#x1F535; **Check the req.params console.log in Terminal**
+**Check the req.params console.log in Terminal**
 
 ![](https://i.imgur.com/xrq5rSu.png)
 
@@ -353,7 +353,7 @@ app.get("/hello/:firstname/:lastname", (req, res) => {
 <br>
 <br>
 
-&#x1F535; **Activity (5 min)**
+**Activity (5 min)**
 
 - In the browser, go to the firstname/lastname route
 - Have a look through the entire request object in Terminal
