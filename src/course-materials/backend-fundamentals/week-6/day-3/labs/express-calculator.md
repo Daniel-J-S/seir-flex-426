@@ -130,12 +130,3 @@ Do the same for subtraction, division, and exponents.
 Add in an `else` to to send a message: "no operation"
 
 NOTE: We are allowed have many `res.sends` within a single route _if_ they send independently, ie. they are inside **if statements** and have no risk of running at the same time.
-
-<br>
-<br>
-<br>
-
-### Bonus
-
-- Figure out how a user/client could change the query parameters without typing in the URL bar. Hint (you'll need to do a bit of research!)
-- Finish the morning lab
