@@ -25,16 +25,16 @@ type: "lecture"
 <br>
 <br>
 
-## Create a new route and page
+## Create a New Route and Page
 
 1. Let's create a page that will allow us to create a new fruit
 1. First, we'll need a route for displaying the page in our server.js file **IMPORTANT: put this above your show route, so that the show route doesn't accidentally pick up a `/fruits/new` request**
 
 ```javascript
 //put this above your show.ejs file
-app.get("/fruits/new", (req, res) => {
-  res.render("new.ejs")
-})
+app.get('/fruits/new', (req, res) => {
+  res.render('new.ejs');
+});
 ```
 
 1. Now lets's create the html for this page in our `/views/new.ejs` file
@@ -62,7 +62,7 @@ app.get("/fruits/new", (req, res) => {
 <br>
 <br>
 
-## Add interactivity to your site with forms
+## Add Interactivity to Your Site With Forms
 
 We can use forms to allow the user to enter their own data:
 
@@ -92,30 +92,33 @@ We can use forms to allow the user to enter their own data:
 <br>
 <br>
 
-## Create a post route
+## Create a POST Route
 
 Since the form in the last step tells the browser to create a POST request to `/fruits`, we'll need to set up a route handler for this kind of request
 
 ```javascript
-app.post("/fruits", (req, res) => {
-  res.send("hi")
-})
+app.post('/fruits', (req, res) => {
+  res.send('hi');
+});
 ```
 
 <br>
 <br>
 <br>
 
-## Define middleware
+## Define Middleware
 
 We can have a function execute for all routes:
 
 ```javascript
 app.use((req, res, next) => {
-  console.log("I run for all routes")
-  next()
-})
+  console.log("I run for all routes");
+  next();
+});
 ```
+<br>
+<br>
+<br>
 
 - This is called **'middleware'**
 - It runs in the middle of the request response cycle (in the middle)
@@ -127,7 +130,7 @@ app.use((req, res, next) => {
 <br>
 <br>
 
-## View body of a post request
+## View Body of a POST Request
 
 1. The POST request to our sever has data in it (name, color, readyToEat, etc).
 1. We can easily access this data with a middleware function
@@ -135,7 +138,7 @@ app.use((req, res, next) => {
 
 ```javascript
 //near the top, around other app.use() calls
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: false }));
 ```
 
 <br>
@@ -145,49 +148,53 @@ app.use(express.urlencoded({ extended: false }))
 1.  Now, inside the POST to `/fruits` route handler, we can do the following:
 
 ```javascript
-app.post("/fruits", (req, res) => {
-  console.log(req.body)
-  res.send("data received")
-})
+app.post('/fruits', (req, res) => {
+  console.log(req.body);
+  res.send('data received');
+});
 ```
+
+<br>
+<br>
+<br>
 
 1.  Push this data into our fruits array:
 
 ```javascript
-app.post("/fruits", (req, res) => {
-  if (req.body.readyToEat === "on") {
+app.post('/fruits', (req, res) => {
+  if (req.body.readyToEat === 'on') {
     //if checked, req.body.readyToEat is set to 'on'
-    req.body.readyToEat = true //do some data correction
+    req.body.readyToEat = true; //do some data correction
   } else {
     //if not checked, req.body.readyToEat is undefined
-    req.body.readyToEat = false //do some data correction
+    req.body.readyToEat = false; //do some data correction
   }
-  fruits.push(req.body)
-  console.log(fruits)
-  res.send("data received")
-})
+  fruits.push(req.body);
+  console.log(fruits);
+  res.send('data received');
+});
 ```
 
 <br>
 <br>
 <br>
 
-## Redirect the user to another page
+## Redirect the User to Another Page
 
 - The data has been added to our fruits array
 - Let's send the user back to the fruits index page upon completion
 
 ```javascript
-app.post("/fruits", (req, res) => {
-  if (req.body.readyToEat === "on") {
+app.post('/fruits', (req, res) => {
+  if (req.body.readyToEat === 'on') {
     //if checked, req.body.readyToEat is set to 'on'
-    req.body.readyToEat = true
+    req.body.readyToEat = true;
   } else {
     //if not checked, req.body.readyToEat is undefined
-    req.body.readyToEat = false
+    req.body.readyToEat = false;
   }
   fruits.push(req.body)
-  res.redirect("/fruits") //send the user back to /fruits
+  res.redirect('/fruits') //send the user back to /fruits
 })
 ```
 

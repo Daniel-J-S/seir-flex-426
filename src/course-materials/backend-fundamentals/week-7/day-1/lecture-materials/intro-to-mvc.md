@@ -60,45 +60,51 @@ type: "lecture"
 1. Inside `/models`, create a data file named fruits.js
 1. Put your fruits variable in there
 
-   ```javascript
-   const fruits = [
-     {
-       name: "apple",
-       color: "red",
-       readyToEat: true,
-     },
-     {
-       name: "pear",
-       color: "green",
-       readyToEat: false,
-     },
-     {
-       name: "banana",
-       color: "yellow",
-       readyToEat: true,
-     },
-   ]
-   ```
+
+```javascript
+  const fruits = [
+      {
+        name: 'apple',
+        color: 'red',
+        readyToEat: true,
+      },
+      {
+        name: 'pear',
+        color: 'green',
+        readyToEat: false,
+      },
+      {
+        name: 'banana',
+        color: 'yellow',
+        readyToEat: true,
+      },
+  ];
+```
 
 <br>
 <br>
 
 1.  We now require that file in the original `server.js`
 
-    ```javascript
-    const fruits = require("./models/fruits.js") //NOTE: it must start with ./ if it's just a file, not an NPM package
-    ```
+```javascript
+const fruits = require('./models/fruits.js'); //NOTE: it must start with ./ if it's just a file and not an NPM package
+```
+
+<br>
+<br>
+<br>
 
 1.  But, we could have multiple variables in our `/models/fruits.js` file. - How does javascript know which variable in `/models/fruits.js` to assign to the fruits const in `server.js` (the result of the `require()` statment)? - We must tell javascript which variable we want to be the result of the `require()` statement in `server.js`
 
-            ```javascript
-            //at the bottom of /models/fruits.js
-            module.exports = fruits;
-            ```
+```javascript
+//at the bottom of /models/fruits.js
+module.exports = fruits;
+```
 
-    <br>
-    <br>
-    <br>
+<br>
+<br>
+<br>
+
 
 ## Move our presentation code into an EJS file
 
@@ -113,60 +119,78 @@ Now we want to move our View code (HTML) into a separate file just like we did w
    - this will be the html for our show route
 1. Put some html into show.ejs
 
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="utf-8" />
-       <title>Fruits App</title>
-     </head>
-     <body>
-       <h1>Fruits show page</h1>
-     </body>
-   </html>
-   ```
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fruits App</title>
+  </head>
+  <body>
+    <h1>Fruits show page</h1>
+  </body>
+</html>
+```
+
+<br>
+<br>
+<br>
 
 1. Now, instead of `res.send('some text')`, we can call `res.render('show.ejs')`
 
    - express will know to look inside the `/views` directory
    - it will send the html in the show.ejs file as a response
 
-     ```javascript
-     app.get("/fruits/:indexOfFruitsArray", (req, res) => {
-       res.render("show.ejs")
-     })
-     ```
+```javascript
+app.get('/fruits/:indexOfFruitsArray', (req, res) => {
+  res.render('show.ejs');
+});
+```
+
+<br>
+<br>
+<br>
 
 Now lets mix our data into our HTML
 
 1. Our route is acting like the controller now. Let's gather the data and pass it to the view
 
-   ```javascript
-   app.get("/fruits/:indexOfFruitsArray", (req, res) => {
-     res.render("show.ejs", {
-       //second param must be an object
-       fruit: fruits[req.params.indexOfFruitsArray], //there will be a variable available inside the ejs file called fruit, its value is fruits[req.params.indexOfFruitsArray]
-     })
-   })
-   ```
+```javascript
+app.get('/fruits/:indexOfFruitsArray', (req, res) => {
+    res.render('show.ejs', {
+        //second param must be an object
+        fruit: fruits[req.params.indexOfFruitsArray], //there will be a variable available inside the ejs file called fruit, its value is fruits[req.params.indexOfFruitsArray]
+    });
+});
+```
+
+
+<br>
+<br>
+<br>   
 
 1. Access the data in the view:
 
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <meta charset="utf-8" />
-       <title>Fruits App</title>
-     </head>
-     <body>
-       <h1>Fruits show page</h1>
-       The <%=fruit.name; %> is <%=fruit.color; %>. <% if(fruit.readyToEat ===
-       true){ %> It is ready to eat <% } else { %> It is not ready to eat <% }
-       %>
-     </body>
-   </html>
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Fruits App</title>
+  </head>
+  <body>
+    <h1>Fruits show page</h1>
+    The <%=fruit.name; %> is <%=fruit.color; %>. <% if(fruit.readyToEat ===
+    true){ %> It is ready to eat <% } else { %> It is not ready to eat <% }
+    %>
+  </body>
+</html>
    ```
+
+
+<br>
+<br>
+<br>
 
 1. Note that there are two types of new tags
    - `<% %>` run some javascript
@@ -181,12 +205,17 @@ Now lets mix our data into our HTML
 Update the index route in `server.js`:
 
 ```javascript
-app.get("/fruits/", (request, response) => {
-  response.render("index.ejs", {
+app.get('/fruits/', (request, response) => {
+  response.render('index.ejs', {
     allFruits: fruits,
-  })
-})
+  });
+});
 ```
+
+
+<br>
+<br>
+<br>
 
 Create an `index.ejs` file:
 
@@ -209,6 +238,11 @@ Create an `index.ejs` file:
   </body>
 </html>
 ```
+
+
+<br>
+<br>
+<br>
 
 Add a link back to the index route in `show.ejs`:
 

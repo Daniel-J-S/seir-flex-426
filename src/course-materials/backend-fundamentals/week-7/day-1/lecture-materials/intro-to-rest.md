@@ -62,19 +62,24 @@ type: "lecture"
 Let's have a set of resources which is just a javascript array. To create an index route, we'd do the following:
 
 ```javascript
-const express = require("express")
-const app = express()
+const express = require('express');
+const app = express();
 
-const fruits = ["apple", "banana", "pear"]
+const fruits = ['apple', 'banana', 'pear'];
 
-app.get("/fruits/", (req, res) => {
-  res.send(fruits)
-})
+app.get('/fruits/', (req, res) => {
+  res.send(fruits);
+});
 
 app.listen(3000, () => {
-  console.log("listening")
-})
+  console.log('listening');
+});
 ```
+
+
+<br>
+<br>
+<br>
 
 Now go to `http://localhost:3000/fruits/`
 
@@ -102,24 +107,29 @@ If you don't have it already, let's make sure we install it:
 To create a show route, we'd do this:
 
 ```javascript
-const express = require("express")
-const app = express()
+const express = require('express');
+const app = express();
 
-const fruits = ["apple", "banana", "pear"]
+const fruits = ['apple', 'banana', 'pear'];
 
-app.get("/fruits/", (req, res) => {
-  res.send(fruits)
-})
+app.get('/fruits/', (req, res) => {
+  res.send(fruits);
+});
 
 //add show route
-app.get("/fruits/:indexOfFruitsArray", (req, res) => {
-  res.send(fruits[req.params.indexOfFruitsArray])
-})
+app.get('/fruits/:indexOfFruitsArray', (req, res) => {
+  res.send(fruits[req.params.indexOfFruitsArray]);
+});
 
 app.listen(3000, () => {
-  console.log("listening")
-})
+  console.log('listening');
+});
 ```
+
+<br>
+<br>
+<br>
+
 
 Now go to `http://localhost:3000/fruits/1`
 
@@ -134,38 +144,38 @@ Now go to `http://localhost:3000/fruits/1`
 - Let's enhance our data a bit:
 
 ```javascript
-const express = require("express")
-const app = express()
+const express = require('express');
+const app = express();
 
 const fruits = [
   {
-    name: "apple",
-    color: "red",
+    name: 'apple',
+    color: 'red',
     readyToEat: true,
   },
   {
-    name: "pear",
-    color: "green",
+    name: 'pear',
+    color: 'green',
     readyToEat: false,
   },
   {
-    name: "banana",
-    color: "yellow",
+    name: 'banana',
+    color: 'yellow',
     readyToEat: true,
   },
-]
+];
 
-app.get("/fruits/", (req, res) => {
-  res.send(fruits)
-})
+app.get('/fruits/', (req, res) => {
+  res.send(fruits);
+});
 
-app.get("/fruits/:indexOfFruitsArray", (req, res) => {
-  res.send(fruits[req.params.indexOfFruitsArray])
-})
+app.get('/fruits/:indexOfFruitsArray', (req, res) => {
+  res.send(fruits[req.params.indexOfFruitsArray]);
+});
 
 app.listen(3000, () => {
-  console.log("listening")
-})
+  console.log('listening');
+});
 ```
 
 <br>

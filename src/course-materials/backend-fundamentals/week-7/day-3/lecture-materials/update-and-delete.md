@@ -14,12 +14,12 @@ type: "lecture"
 
 ## Lesson Objectives
 
-1. Create a Delete Route
-1. Make the index page send a DELETE request
+1. Create a DELETE Route
+1. Send a DELETE request from the index page 
 1. Create an edit route
 1. Create a link to the edit route
 1. Create an update route
-1. Make the edit page send a PUT request
+1. Send a PUT request from the edit page 
 
 <br>
 <br>
@@ -36,10 +36,10 @@ type: "lecture"
 Inside our server.js file, add a DELETE route:
 
 ```javascript
-app.delete("/fruits/:indexOfFruitsArray", (req, res) => {
-  fruits.splice(req.params.indexOfFruitsArray, 1) //remove the item from the array
-  res.redirect("/fruits") //redirect back to index route
-})
+app.delete('/fruits/:indexOfFruitsArray', (req, res) => {
+  fruits.splice(req.params.indexOfFruitsArray, 1); //remove the item from the array
+  res.redirect('/fruits'); //redirect back to index route
+});
 ```
 
 <br>
@@ -56,7 +56,7 @@ curl -X DELETE localhost:3000/fruits/1
 <br>
 <br>
 
-### Make the index page send a DELETE request
+### Send a DELETE Request From the Index Page 
 
 Inside our `index.ejs` file, add a form with just a delete button.
 
@@ -74,7 +74,7 @@ Inside our `index.ejs` file, add a form with just a delete button.
       <% for(let i = 0; i < fruits.length; i++){ %>
       <li>
         The <a href="/fruits/<%=i%>"><%=fruits[i].name; %></a> is
-        <%=fruits[i].color; %>.
+        <%= fruits[i].color; %>.
         <!--  ADD DELETE FORM HERE-->
         <form>
           <input type="submit" value="DELETE" />
@@ -109,11 +109,11 @@ Now, in our server.js file, add:
 
 ```javascript
 //include the method-override package
-const methodOverride = require("method-override")
+const methodOverride = require('method-override');
 //...
 //after app has been defined
 //use methodOverride.  We'll be adding a query parameter to our delete form named _method
-app.use(methodOverride("_method"))
+app.use(methodOverride('_method'));
 ```
 
 <br>
@@ -141,16 +141,16 @@ Now go back and set up our delete form to send a DELETE request to the appropria
 In our `server.js`, create a GET route which will just display an edit form for a single todo item.
 
 ```javascript
-app.get("/fruits/:indexOfFruitsArray/edit", (req, res) => {
+app.get('/fruits/:indexOfFruitsArray/edit', (req, res) => {
   res.render(
-    "edit.ejs", //render views/edit.ejs
+    'edit.ejs', //render views/edit.ejs
     {
       //pass in an object that contains
       fruit: fruits[req.params.indexOfFruitsArray], //the fruit object
       index: req.params.indexOfFruitsArray, //... and its index in the array
     }
-  )
-})
+  );
+});
 ```
 
 <br>
@@ -232,17 +232,17 @@ In order to UPDATE, we use the http verb PUT.
 Inside server.js add the following:
 
 ```javascript
-app.put("/fruits/:indexOfFruitsArray", (req, res) => {
+app.put('/fruits/:indexOfFruitsArray', (req, res) => {
   //:indexOfFruitsArray is the index of our fruits array that we want to change
-  if (req.body.readyToEat === "on") {
+  if (req.body.readyToEat === 'on') {
     //if checked, req.body.readyToEat is set to 'on'
-    req.body.readyToEat = true
+    req.body.readyToEat = true;
   } else {
     //if not checked, req.body.readyToEat is undefined
-    req.body.readyToEat = false
+    req.body.readyToEat = false;
   }
   fruits[req.params.indexOfFruitsArray] = req.body //in our fruits array, find the index that is specified in the url (:indexOfFruitsArray).  Set that element to the value of req.body (the input data)
-  res.redirect("/fruits") //redirect to the index page
+  res.redirect('/fruits'); //redirect to the index page
 })
 ```
 
@@ -250,7 +250,7 @@ app.put("/fruits/:indexOfFruitsArray", (req, res) => {
 <br>
 <br>
 
-### Make the edit page send a PUT request
+### Send a PUT Request From the Edit Page 
 
 When we click "Submit Changes" on our edit page (edit.ejs), the form needs to make a PUT request to our update route
 

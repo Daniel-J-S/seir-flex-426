@@ -28,7 +28,7 @@ type: "lecture"
 
 - Is a command line tool that acts like a browser
 - You can use it to make requests to a website
-- All it does is take the response and writes it to the terminal
+- All it does is take the response and write it to the terminal
   - no formatting
 
 <br>
@@ -73,10 +73,10 @@ curl https://generalassemb.ly
 Set up the following route handler in our app:
 
 ```javascript
-app.post("/products", (req, res) => {
-  console.log("Create route accessed!")
-  res.send("This route works")
-})
+app.post('/products', (req, res) => {
+  console.log('Create route accessed!');
+  res.send('This route works');
+});
 ```
 
 To make a POST request, we'll need to add some arguments to the terminal command
@@ -96,29 +96,29 @@ The `-X POST` argument tells curl to make a POST request to the server
 Using the above command, the body of the request will be empty
 
 ```javascript
-app.post("/products", (req, res) => {
-  console.log("Create route accessed!")
-  console.log("Req.body is: ", req.body)
-  res.send(req.body)
-})
+app.post('/products', (req, res) => {
+  console.log('Create route accessed!');
+  console.log('req.body ', req.body);
+  res.send(req.body);
+});
 ```
 
 If we want to send in data we need to do so like this:
 
 ```javascript
-curl -X POST -d name="bling" localhost:3000/products
+curl -X POST -d name='bling' localhost:3000/products
 ```
 
 or
 
 ```javascript
-curl -X POST -d name="bling" -d price="cash money" localhost:3000/products
+curl -X POST -d name='bling' -d price='cash money' localhost:3000/products
 ```
 
-For each new key/value pair, add a new `-d property="value"` argument
+For each new key/value pair, add a new `-d property='value'` argument
 
 ```shell
-curl -X POST -d name="kiwi" -d color="green" -d readyToEat="on" localhost:3000/fruits
+curl -X POST -d name='kiwi' -d color='green' -d readyToEat='on' localhost:3000/fruits
 ```
 
 <br>

@@ -80,7 +80,7 @@ Now, the bakery owners want the ability to add new baked good products.
 <br>
 <br>
 
-### Adding new routes (new and create)
+### Adding New and Create Routes
 
 1. Make a **new page** that serves up a form for adding new baked goods
 

@@ -14,7 +14,7 @@ Make an app just for the command line ... no views! ... and get reps with cURL.
 <br>
 <br>
 
-## One POST Route, one GET route
+## One POST Route, One GET Route
 
 You will make an app just for the command line. There will be no webpage.
 
@@ -50,11 +50,15 @@ The `created_at` will be set by the server using Javascript's `Date.now()`. You 
 
 ```js
 const orders = [
-  { item: "Mad cURLy Fries", created_at: Date.now() },
-  { item: "Swirly Milkshake", created_at: Date.now() },
-  { item: "Burly Burger", created_at: Date.now() },
+  { item: 'Mad cURLy Fries', created_at: Date.now() },
+  { item: 'Swirly Milkshake', created_at: Date.now() },
+  { item: 'Burly Burger', created_at: Date.now() },
 ]
 ```
+
+<br>
+<br>
+<br>
 
 Open a new terminal tab using the keyboard shortcut `command + T`
 
@@ -89,7 +93,7 @@ If you restart the server and do it again, values for `created_at` will have cha
 - This route should first console.log `req.body`
 
 ```shell
-console.log('req.body is: ', req.body);
+console.log('req.body is', req.body);
 ```
 
 - And it should `res.redirect` to the `/orders` index route just so it doesn't hang.
@@ -102,11 +106,11 @@ curl -X POST localhost:3000/orders
 
 You should see in your curl tab:
 
-![](https://i.imgur.com/A9IvtHs.png)
+![screenshot](https://i.imgur.com/A9IvtHs.png)
 
 Over in your server tab, you should see the console log of `req.body`:
 
-![](https://i.imgur.com/t2asxfN.png)
+![screenshot](https://i.imgur.com/t2asxfN.png)
 
 It is undefined because we haven't installed and configured body-parser. body-parser adds the req.body object to our request.
 
@@ -132,11 +136,11 @@ curl -X POST localhost:3000/orders
 
 in the curl tab you should see this as before:
 
-![](https://i.imgur.com/A9IvtHs.png)
+![screenshot](https://i.imgur.com/A9IvtHs.png)
 
-In the server tab you should see the console.log for req.body:
+In the server tab you should see the console.log for `req.body`:
 
-![](https://i.imgur.com/Iwxntof.png)
+![screenshot](https://i.imgur.com/Iwxntof.png)
 
 If you get this, you know that body-parser is working. It has given us the body object. For now, it is empty because we haven't POSTed any data.
 
@@ -156,7 +160,7 @@ curl -X POST -d item="Matrix" localhost:3000/orders
 
 Over in the server tab you should see this:
 
-![](https://i.imgur.com/NLw8Q6o.png)
+![screenshot](https://i.imgur.com/NLw8Q6o.png)
 
 <br>
 <br>
@@ -177,10 +181,13 @@ In your curl tab, send the request again:
 ```shell
 curl -X POST -d item="Knurly Garlic Knots" localhost:3000/orders
 ```
+<br>
+<br>
+<br>
 
-Over in the server tab, you should see the updated orders array (the console.log):
+In the server tab, you should see the updated orders array (the console.log):
 
-![](https://i.imgur.com/r9Ozo0Y.png)
+![screenshot](https://i.imgur.com/r9Ozo0Y.png)
 
 <br>
 <br>
@@ -206,7 +213,7 @@ curl -X POST -d item="Matrix" localhost:3000/orders
 
 In the server tab:
 
-![](https://i.imgur.com/y8jqYNe.png)
+![screenshot](https://i.imgur.com/y8jqYNe.png)
 
 <br>
 <br>
@@ -221,7 +228,7 @@ But what if your user does not supply a item?
 We can add a default value for that:
 
 ```shell
-if (!req.body.item) { req.body.item = "NO DATA" }
+if (!req.body.item) { req.body.item = 'NO DATA' }
 ```
 
 If there is no data in `item`, set a default: "NO DATA, You'll get an order of the Surly Soup"
@@ -234,7 +241,7 @@ curl -X POST localhost:3000/orders
 
 In your server the output should look like this:
 
-![](https://i.imgur.com/0IEKtAX.png)
+![screenshot](https://i.imgur.com/0IEKtAX.png)
 
 - req.body is empty because we did not supply data
 - the `item` is "NO DATA" because we set a default
@@ -257,4 +264,4 @@ That date isn't very human readable.
 
 Make that date readable!
 
-![](https://i.imgur.com/0IoPN7X.png)
+![screenshot](https://i.imgur.com/0IoPN7X.png)

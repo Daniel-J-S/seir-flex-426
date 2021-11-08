@@ -80,11 +80,11 @@ function(req, res, next) {}
 - Open **server.js** and add this "do nothing" middleware:
 
 ```javascript
-app.set("view engine", "ejs")
+app.set('view engine', 'ejs')
 
 // add middleware below the above line of code
 app.use(function (req, res, next) {
-  console.log("Hello Intrepid Learner!")
+  console.log('Hello Intrepid Learner!')
   next()
 })
 ```
@@ -103,7 +103,7 @@ app.use(function (req, res, next) {
 
 ```javascript
 app.use(function (req, res, next) {
-  console.log("Hello Intrepid Learner!")
+  console.log('Hello Intrepid Learner!')
   // Add a time property to the req object
   req.time = new Date().toLocaleTimeString()
   next()
@@ -118,7 +118,7 @@ app.use(function (req, res, next) {
 
 ```javascript
 function index(req, res) {
-  res.render("todos/index", {
+  res.render('todos/index', {
     todos: Todo.getAll(),
     time: req.time, // add this line
   })
@@ -138,11 +138,11 @@ function index(req, res) {
 - In **server.js**, let's move our custom middleware below where the routers are being mounted:
 
 ```javascript
-app.use("/", indexRouter)
-app.use("/todos", todosRouter)
+app.use('/', indexRouter)
+app.use('/todos', todosRouter)
 
 app.use(function (req, res, next) {
-  console.log("Hello Intrepid Learner!")
+  console.log('Hello Intrepid Learner!')
   req.time = new Date().toLocaleTimeString()
   next()
 })
@@ -175,7 +175,7 @@ app.use(function (req, res, next) {
 Now we require `morgan` and mount it as middleware
 
 ```javascript
-const morgan = require("morgan")
+const morgan = require('morgan')
 ```
 
 <br>
@@ -183,26 +183,25 @@ const morgan = require("morgan")
 **We'll mount Morgan like this**
 
 ```javascript
-app.use(morgan("dev"))
+app.use(morgan('dev'))
 ```
 
 **Next, we'll mount our static asset middleware and bodyparser middleware**
 
 ```javascript
-app.use(express.static("public"))
-app.use(express.urlencoded({ extended: false }))
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: false }));
 ```
 
 **...by the end, is what our "Middleware Stack" should look like**
 
 ```javascript
 // Mount middleware (app.use)
-app.use(morgan("dev"))
-app.use(express.static("public"))
-app.use(express.urlencoded({ extended: false }))
+app.use(morgan('dev'));
+app.use(express.urlencoded({ extended: false }));
 
-app.use("/", indexRouter)
-app.use("/todos", todosRouter)
+app.use('/', indexRouter);
+app.use('/todos', todosRouter);
 ```
 
 For our static assets, we'll create a `public` folder at the root of our project and the place a `css`, `js`, and `images` subdirectory inside of it (we can also create a `style.css` and `script.js` file inside the appropriate sub-directories as well).
@@ -260,9 +259,9 @@ GET /todos/new
 - Let's add the `new` route in **routes/todos.js** as follows:
 
 ```javascript
-router.get("/", todosCtrl.index)
-router.get("/new", todosCtrl.new)
-router.get("/:id", todosCtrl.show)
+router.get('/', todosCtrl.index);
+router.get('/new', todosCtrl.new);
+router.get('/:id', todosCtrl.show);
 ```
 
 - Why must the `new` route be defined before the `show` route?
@@ -276,14 +275,18 @@ module.exports = {
   index,
   show,
   new: newTodo,
-}
+};
 
 function newTodo(req, res) {
-  res.render("todos/new")
+  res.render('todos/new');
 }
 
 // original code below...
 ```
+
+<br>
+<br>
+<br>
 
 - Note that you cannot create a function using a JS _reserved_ word like `new`.
 
@@ -335,8 +338,8 @@ Same process:
 - In **routes/todos.js**:
 
 ```javascript
-router.get("/:id", todosCtrl.show)
-router.post("/", todosCtrl.create) // add this route
+router.get('/:id', todosCtrl.show);
+router.post('/', todosCtrl.create); // add this route
 ```
 
 - Yay! Our first non-`GET` route!
@@ -365,6 +368,10 @@ In **controllers/todos.js**:
   	}
 ```
 
+<br>
+<br>
+<br>
+
 **Temporarily comment out the `Todo.create(req.body);` line so that we can check out what gets logged out...**
 
 - `req.body` is courtesy of this middleware in **server.js**:
@@ -373,11 +380,18 @@ In **controllers/todos.js**:
 app.use(express.urlencoded({ extended: false }))
 ```
 
+<br>
+<br>
+
+
 - The properties on `req.body` will always match the values of the `<input>`'s `name` attributes:
 
 ```html
 <input type="text" name="text" />
 ```
+<br>
+<br>
+
 
 - We already did Step 5 with the `res.redirect`.
 
@@ -388,20 +402,24 @@ module.exports = {
   getAll,
   getOne,
   create,
-}
+};
 
 const todos = [
-  { text: "Feed Dogs", done: true },
-  { text: "Learn Express", done: false },
-  { text: "Buy Milk", done: false },
+  { text: 'Feed Dogs', done: true },
+  { text: 'Learn Express', done: false },
+  { text: 'Buy Milk', done: false },
 ]
 
 function create(todo) {
-  todos.push(todo)
+  todos.push(todo);
 }
 
 // Original code below
 ```
+<br>
+<br>
+<br>
+
 
 - Test it out!
 
@@ -427,19 +445,33 @@ function create(todo) {
   $ npm i method-override
   ```
 
+
+<br>
+<br>
+<br>
+
+
 - Require it below `morgan` in **server.js**:
 
 ```javascript
-const morgan = require("morgan")
-const methodOverride = require("method-override")
+const morgan = require('morgan');
+const methodOverride = require('method-override');
 ```
+<br>
+<br>
+<br>
+
 
 - Now let's add `method-override` to the middleware pipeline:
 
 ```javascript
-app.use(express.static("public"))
-app.use(methodOverride("_method")) // add this
+app.use(express.static('public'));
+app.use(methodOverride('_method')); // add this
 ```
+
+<br>
+<br>
+<br>
 
 - We are using the [Query String](https://en.wikipedia.org/wiki/Query_string) approach for `method-override` as documented [here](https://www.npmjs.com/package/method-override#override-using-a-query-value).
 
@@ -461,6 +493,10 @@ app.use(methodOverride("_method")) // add this
 ```shell
 DELETE /todos/:id
 ```
+
+<br>
+<br>
+<br>
 
 - Same process:
 
@@ -484,6 +520,11 @@ DELETE /todos/:id
 </li>
 ```
 
+<br>
+<br>
+<br>
+
+
 - The `?_method=DELETE` is the query string.
 
 - Let's some styling in **public/css/style.css**:
@@ -504,6 +545,10 @@ li {
 }
 ```
 
+<br>
+<br>
+<br>
+
 - Refresh and use DevTools to ensure the links look correct.
 
 - Same process:
@@ -517,9 +562,12 @@ li {
 - In **routes/todos.js**:
 
 ```javascript
-router.post("/", todosCtrl.create)
-router.delete("/:id", todosCtrl.delete)
+router.post('/', todosCtrl.create);
+router.delete('/:id', todosCtrl.delete);
 ```
+<br>
+<br>
+<br>
 
 Same process:
 
@@ -540,6 +588,9 @@ function deleteTodo(req, res) {
  res.redirect('/todos');
 }
 ```
+<br>
+<br>
+<br>
 
 - All that's left is to add the `deleteOne` method to the `Todo` model:
 
@@ -549,16 +600,16 @@ module.exports = {
   getOne,
   create,
   deleteOne,
-}
+};
 
 const todos = [
   { text: "Feed Dogs", done: true },
   { text: "Learn Express", done: false },
   { text: "Buy Milk", done: false },
-]
+];
 
 function deleteOne(id) {
-  todos.splice(id, 1)
+  todos.splice(id, 1);
 }
 
 // Original code below

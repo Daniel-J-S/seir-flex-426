@@ -77,25 +77,27 @@ _... because Superheroes need REST Too_
 1. Bring in this data
 
 ```js
-;[
+const villians = [
   {
-    name: "Lex Luthor",
-    powers: ["super brain"],
+    name: 'Lex Luthor',
+    powers: ['super brain'],
   },
   {
-    name: "Ares",
-    powers: ["shape shifting", "teleporting"],
+    name: 'Ares',
+    powers: ['shape shifting', 'teleporting'],
   },
   {
-    name: "Killmonger",
+    name: 'Killmonger',
     powers: [
-      "ability to fit in Black Panther's suit",
-      "internet agreement that he looks badass",
+      'ability to fit in Black Panther\'s suit',
+      'internet agreement that he looks badass',
     ],
   },
-]
+];
 ```
 
+
+<br>
 <br>
 <br>
 
@@ -104,7 +106,7 @@ _... because Superheroes need REST Too_
 
 1. On the show page of the superhero, show the villian's name (hint: the villians array index position matches the hero)
 
-Hints:
+**Hints:**
 
 - It's all just JavaScript! Do JS things to manipulate the 'data'
 
@@ -112,7 +114,7 @@ Hints:
 <br>
 <br>
 
-## Friends
+## Bonus: Friends
 
 Let's do another rep with setting up an express server!
 
