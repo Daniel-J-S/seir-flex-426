@@ -335,7 +335,7 @@ const food = [
 ]
 ```
 
-1. List the food under your drinks list on the index ( food_index.js )
+1. List the food list using an index template ( food_index.js )
 1. Make them clickable as well to go to their show page ( food_show.js )
 
 > 🔴 _Remember to commit!_
