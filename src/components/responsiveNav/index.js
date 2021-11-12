@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from 'gatsby';
 import { CSSTransition } from "react-transition-group";
 
@@ -9,31 +9,12 @@ import "./responsiveNav.css";
 const ResponsiveNav = ({ 
     title, 
     navigationLinks, 
-    homeworkSubmissionLink }) => {
+    homeworkSubmissionLink, 
+    isSmallScreen }) => {
 
   
   const [isNavVisible, setNavVisibility] = useState(false);
-  const [isSmallScreen, setIsSmallScreen] = useState(true);
-  
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1065px)");
-    
-    mediaQuery.addEventListener('change', handleMediaQueryChange);
 
-    handleMediaQueryChange(mediaQuery);
-
-    return () => {
-      mediaQuery.removeEventListener('change', handleMediaQueryChange);
-    };
-  }, []);
-
-  const handleMediaQueryChange = mediaQuery => {
-    if (mediaQuery.matches) {
-      setIsSmallScreen(true);
-    } else {
-      setIsSmallScreen(false);
-    }
-  };
 
   const toggleNav = () => {
     setNavVisibility(!isNavVisible);
