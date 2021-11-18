@@ -9,8 +9,9 @@ import "./responsiveNav.css";
 const ResponsiveNav = ({ 
     title, 
     navigationLinks, 
-    homeworkSubmissionLink, 
-    isSmallScreen }) => {
+    homeworkSubmissionLink,
+    isSmallScreen 
+    }) => {
 
   
   const [isNavVisible, setNavVisibility] = useState(false);
@@ -52,14 +53,22 @@ const ResponsiveNav = ({
         </nav>
       </CSSTransition>
       {
-        !isSmallScreen &&
+        !isSmallScreen ?
         <nav className="nav">
           { links }
         </nav>
+        :
+        <>
+          <button style={{ display: isNavVisible ? 'inline' : 'none'}} onClick={toggleNav} className={`burger close rotate ${isNavVisible ? 'fadeIn' : 'fadeOut'}`}>
+            X
+          </button>
+          <button style={{ display: isNavVisible ? 'none' : 'inline'}} onClick={toggleNav} className={`burger ${isNavVisible ? 'fadeOut' : 'fadeIn'}`}>
+            &#9776;
+          </button>
+        </>
       }
-      <button onClick={toggleNav} className="burger">
-      &#9776;
-      </button>
+  
+  
     </div>
   );
 };
