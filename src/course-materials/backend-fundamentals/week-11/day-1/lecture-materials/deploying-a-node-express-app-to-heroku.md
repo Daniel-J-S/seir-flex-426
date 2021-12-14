@@ -1,31 +1,20 @@
 ---
 track: "Backend Fundamentals"
 title: "Deploying a Node/Express App to Heroku"
-week: 10
-day: 2
+week: 11
+day: 1
 type: "lecture"
 ---
 
-# Deploying a Node/Express App to Heroku
+# Deploying a Node/Express App to Heroku Resource Guide
 
 <br>
 <br>
 <br>
-
-
-### [Click here for recording](https://generalassembly.zoom.us/rec/share/-vAf1loRSZrqw6EukL5tqM5BdjXwhslVvK3OpEeVvizU6ud4vhzq8oGyA5hVwW9i.MJrxVq0EqKWj5Avn?startTime=1619058748000)
-
-<br>
-<br>
-<br> 
-
-
-
-
 
 ## Intro
 
-Project 1 was a static application that required no code to run on a server.  However, SEIR-Flex's Project 2 and beyond are full-stack web applications that need to run code on a backend server.
+Project 1 was a static application that required no code to run on a server. However, SEIR-Flex's Project 2 and beyond are full-stack web applications that need to run code on a backend server.
 
 [Heroku](https://www.heroku.com) is an extremely popular hosting service capable of hosting a variety of web development stacks including Node/Express, Ruby/Rails, Python/Django, and many more.
 
@@ -50,10 +39,8 @@ This will require us to refactor one line of code inside of `server.js`
 ```javascript
 // inside of server.js
 
-const port = process.env.PORT || '3000';
-
+const port = process.env.PORT || "3000"
 ```
-
 
 <br>
 <br>
@@ -64,7 +51,6 @@ Specifying a Node version in the `package.json` is **not** necessary.
 
 <br>
 <br>
-
 
 ### Specifying a Start Script
 
@@ -99,7 +85,6 @@ Click [here](https://devcenter.heroku.com/articles/heroku-cli#download-and-insta
 
 Once the Heroku CLI is installed, type `heroku login` anywhere in terminal and follow the instructions to log in using your Heroku account's credentials.
 
-
 <br>
 <br>
 
@@ -116,6 +101,7 @@ Before you can deploy a new app, you must first create the app and using the CLI
 ```shell
 $ heroku create <optional preferred name of app>
 ```
+
 <br>
 
 If you don't specify the `<optional preferred name of app>` argument, Heroku will assign a randomly generated app name automatically.
@@ -133,10 +119,12 @@ $ heroku create sei-students
 <br>
 
 The output from the above command was:
+
 ```shell
 Creating ⬢ sei-students... done
 https://sei-students.herokuapp.com/ | https://git.heroku.com/sei-students.git
 ```
+
 <br>
 <br>
 
@@ -145,6 +133,7 @@ Verify the command was successful by verifying that a git remote named `heroku` 
 ```shell
 $ git remote -v
 ```
+
 <br>
 <br>
 
@@ -160,6 +149,7 @@ First, make sure your code is committed (on the `master` branch):
 $ git add -A
 $ git commit -m "Deploy to Heroku"
 ```
+
 <br>
 <br>
 
@@ -201,7 +191,7 @@ Each of the key:value pairs in your app's `.env` file must be set on Heroku usin
 $ heroku config:set KEY=VALUE
 ```
 
-For example: 
+For example:
 
 ```shell
 $ heroku config:set DATABASE_URL=mongodb+srv://username:pw@sei-students-1btwt.azure.mongodb.net/students?retryWrites=true
@@ -209,7 +199,7 @@ $ heroku config:set DATABASE_URL=mongodb+srv://username:pw@sei-students-1btwt.az
 
 Multiple key:value pairs can be space separated, or the command can be run as many times as necessary.
 
-> Note:  If using zsh, it may be necessary to quote the KEY=VALUE pair, for example:<br>`heroku config:set "DATABASE_URL=mongodb+srv://username:pw@sei-students-1btwt.azure.mongodb.net/students?retryWrites=true"`
+> Note: If using zsh, it may be necessary to quote the KEY=VALUE pair, for example:<br>`heroku config:set "DATABASE_URL=mongodb+srv://username:pw@sei-students-1btwt.azure.mongodb.net/students?retryWrites=true"`
 
 <br>
 <br>
@@ -217,7 +207,7 @@ Multiple key:value pairs can be space separated, or the command can be run as ma
 
 **IMPORTANT**
 
-For deployments using OAuth, be sure to use your Heroku app's hostname, **not** `localhost:3000` when setting the callbacks URL.  For example, this was the command used to set the Google OAuth callback for _sei-students_:
+For deployments using OAuth, be sure to use your Heroku app's hostname, **not** `localhost:3000` when setting the callbacks URL. For example, this was the command used to set the Google OAuth callback for _sei-students_:
 
 ```shell
 $ heroku config:set GOOGLE_CALLBACK=https://sei-students.herokuapp.com/oauth2callback
@@ -227,20 +217,19 @@ $ heroku config:set GOOGLE_CALLBACK=https://sei-students.herokuapp.com/oauth2cal
 
 Click the project's `Credentials` menu choice on the left, then click the name of the project to edit it's registration:
 
-<img src="https://i.imgur.com/gkZnGRK.png"> 
+<img src="https://i.imgur.com/gkZnGRK.png">
 
 Then click **OAuth consent settings**:
 
 <img src="https://i.imgur.com/vSXoj3U.png">
 
-Scroll down and enter the hostname of your deployed app in the **Authorized domains** input, press [enter], then click the **Save** button: 
+Scroll down and enter the hostname of your deployed app in the **Authorized domains** input, press [enter], then click the **Save** button:
 
 <img src="https://i.imgur.com/cIooadC.png">
 
 Return to the previous screen and add the **Authorized redirect URI** for the Heroku deployment and click the **Save** button:
 
 <img src="https://i.imgur.com/iQ4vxVb.png">
-
 
 <br>
 <br>
@@ -261,6 +250,7 @@ $ heroku open
 <br>
 
 ### Congrats on deploying to Heroku!
+
 <br>
 <br>
 
@@ -271,6 +261,3 @@ Deployment messages, error messages, as well as the output you typically see in 
 ```shell
 $ heroku logs
 ```
-  
-
-
