@@ -64,6 +64,7 @@ Perform the following to complete the lab:
 <br>
 <br>
 
+<!--
 **Bonus**
 
 - Try creating the following additional Components:
@@ -76,3 +77,4 @@ Perform the following to complete the lab:
 If successful, your React Hierarchy will now look like the following:
 
 <img src="https://i.imgur.com/ffkXBPi.png" width=600/>
+-->
