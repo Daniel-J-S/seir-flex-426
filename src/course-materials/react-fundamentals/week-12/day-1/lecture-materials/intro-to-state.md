@@ -156,7 +156,6 @@ Since you already have experience creating Components take a minute to perform t
 **Counter Component**
 
 - Create a new file in `src` called `Counter.js`
-- Import `React`
 - Create the Component
 - Return the following JSX:
 
@@ -171,6 +170,9 @@ Since you already have experience creating Components take a minute to perform t
 ```
 
 - Export the Component
+
+<br>
+<br>
 
 **App Component**
 
@@ -192,7 +194,7 @@ That JSX looks like it could use a little styling.
 So let's copy/paste the following css to `styles.css`:
 
 <details>
-<summary>CSS</summary>
+<summary>CSS <strong>(Click To Expand)</strong></summary>
 
 ```css
 .App {
