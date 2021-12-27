@@ -22,7 +22,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-sass`,
-    `gatsby-plugin-react-helmet-async`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -171,40 +171,6 @@ module.exports = {
       options: {
         precachePages: [`/`]
       }
-    },
-    {
-      resolve: `gatsby-plugin-netlify`,
-      options: {
-        headers: {
-          "/*.js": [
-            'cache-control: public, max-age=31536000, immutable'
-          ],
-          "/*.css": [
-            'cache-control: public, max-age=31536000, immutable'
-          ],
-          "/sw.js": [
-            'cache-control: public, max-age=0, must-revalidate'
-          ],
-          "/*.html": [
-            "cache-control: public", 
-            "cache-control:  max-age=0", 
-            "cache-control: must-revalidate"
-          ],
-          "/**/*.html": [
-            "cache-control: public",
-            "cache-control:  max-age=0", 
-            "cache-control: must-revalidate"
-          ],
-          "/page-data/*": [
-            "cache-control: public",
-            "cache-control:  max-age=0", 
-            "cache-control: must-revalidate"
-          ],
-          "/static/*": [
-            'cache-control: public, max-age=31536000, immutable'
-          ],
-        }
-      }
-    },
+    }
   ]
 };
