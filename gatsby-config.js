@@ -1,6 +1,7 @@
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`
-});
+require('dotenv').config();
+
+
+const { spaceId, accessToken } = process.env;
 
 
 module.exports = {
@@ -23,6 +24,16 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: "gatsby-source-contentful",
+      options: {
+        spaceId,
+        accessToken
+      }
+    },
     {
       resolve: `gatsby-plugin-layout`,
       options: {

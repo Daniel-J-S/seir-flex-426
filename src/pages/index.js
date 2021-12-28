@@ -3,10 +3,8 @@ import { graphql } from 'gatsby';
 import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 import Head from '../components/head';
 
-const IndexPage = ({ data, location }) => {
-    const { allMarkdownRemark } = data;
-
-    const html = allMarkdownRemark.edges[0].node.html;
+const IndexPage = ({ data: { contentfulPage }, location }) => {
+    const { body: { html } } = contentfulPage;
 
     return (
         <>
@@ -25,16 +23,13 @@ const IndexPage = ({ data, location }) => {
 
 export const query = graphql`
     query {
-        allMarkdownRemark (
-        filter: { fileAbsolutePath: {regex : "\/index/"} }
-         ) {
-            edges {
-                node {
-                    frontmatter {
-                    title
-                    }
-                    html
-                }
+        contentfulPage(page: {eq: "Index"}) {
+            page
+            title
+            body {
+              childMarkdownRemark {
+                html
+              }
             }
         }
     }
