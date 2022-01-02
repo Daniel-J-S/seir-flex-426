@@ -20,7 +20,7 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "algoliasearch": "^4.11.0",
     "gatsby": "^4.4.0",
-    "gatsby-plugin-breadcrumb": "^12.2.0",
+    "gatsby-plugin-breadcrumb": "^12.3.0",
     "gatsby-plugin-catch-links": "^4.4.0",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^2.4.0",

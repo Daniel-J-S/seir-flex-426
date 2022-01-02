@@ -27,13 +27,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: "gatsby-source-contentful",
-      options: {
-        spaceId,
-        accessToken
-      }
-    },
+    // TODO: need to figure out how to move to contentful 
+    //{
+    //   resolve: "gatsby-source-contentful",
+    //   options: {
+    //     spaceId,
+    //     accessToken
+    //   }
+    // },
     {
       resolve: `gatsby-plugin-layout`,
       options: {
