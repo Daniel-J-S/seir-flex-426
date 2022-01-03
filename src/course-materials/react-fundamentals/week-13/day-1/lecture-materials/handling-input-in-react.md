@@ -1,8 +1,8 @@
 ---
 track: "React Fundamentals"
 title: "Handling Input In React"
-week: 12
-day: 3
+week: 13
+day: 1
 type: "lecture"
 ---
 
@@ -167,7 +167,6 @@ button:hover {
 <br>
 <br>
 <br>
-
 
 **The sandbox will look something like this once the above setup is complete:**
 
