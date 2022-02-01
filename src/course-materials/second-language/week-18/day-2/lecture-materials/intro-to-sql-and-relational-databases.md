@@ -12,33 +12,21 @@ type: "lecture"
 <br>
 <br>
 
-
-### [Click here](https://generalassembly.zoom.us/rec/share/25TY-Xm7CatpNYFeDpavj4OckkUsa3TjwFiytTppkylsYOjEkQp_nazveFHDo7m-.AygicurhY2er5oOp?startTime=1623890107000) to access recording
-
-<br>
-<br>
-<br> 
-
-
-
-
 ## Learning Objectives
 
-|Students will be able to:|
-|---|
-|Describe the use case of databases|
-|Describe the anatomy of a relational database|
-|Describe the use case of SQL|
-|Use the `psql` Interactive Terminal|
-|Use SQL to create a database and a table|
-|Use SQL to perform CRUD data operations|
-|Use a SQL `JOIN` clause to combine data from multiple tables|
+| Students will be able to:                                    |
+| ------------------------------------------------------------ |
+| Describe the use case of databases                           |
+| Describe the anatomy of a relational database                |
+| Describe the use case of SQL                                 |
+| Use the `psql` Interactive Terminal                          |
+| Use SQL to create a database and a table                     |
+| Use SQL to perform CRUD data operations                      |
+| Use a SQL `JOIN` clause to combine data from multiple tables |
 
 <br>
 <br>
 <br>
-
-
 
 ## Database Intro
 
@@ -46,22 +34,17 @@ type: "lecture"
 <br>
 <br>
 
-
-
 ### What is a Database?
 
 The vast majority of applications manipulate and display data.
 
-Early on, our programs held data in "memory" using data structures such as arrays and objects.  However, when the app was exited, any changes to the data were lost - databases avoid this...
+Early on, our programs held data in "memory" using data structures such as arrays and objects. However, when the app was exited, any changes to the data were lost - databases avoid this...
 
 Simply put, **a database provides permanent storage for data**.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Different Types of Databases
 
@@ -76,19 +59,16 @@ Most database technologies can be broken down into two main categories:
 
 Relational databases are by far the most popular type of database technology. Conceived by [E.F. Codd](https://en.wikipedia.org/wiki/Edgar_F._Codd) while working for IBM back in 1970.
 
-In SEI, we'll be using [PostgreSQL](https://www.postgresql.org/)  since it's arguably the best open-source relational database management system (RDBMS) available.
+In SEI, we'll be using [PostgreSQL](https://www.postgresql.org/) since it's arguably the best open-source relational database management system (RDBMS) available.
 
 <br>
 <br>
 <br>
-
 
 ### Anatomy of a Relational Database
 
 <br>
 <br>
-
-
 
 #### Schema
 
@@ -103,9 +83,7 @@ Schemas define the database's:
 <br>
 <br>
 
-
-
-#### Tables 
+#### Tables
 
 The primary container for data in a relational database is a **table**:
 
@@ -119,25 +97,24 @@ A single table in a relational database holds data for a particular _data entity
 
 TABLE: **artists**
 
-| id (PK)       | name           | nationality |
-|----------|----------------|-------------|
-| 1        | Prince         | American    |
-| 2        | Sir Elton John | British     |
+| id (PK) | name           | nationality |
+| ------- | -------------- | ----------- |
+| 1       | Prince         | American    |
+| 2       | Sir Elton John | British     |
 
 TABLE: **songs**
 
-| id (PK)    | name                | year_released | artist_id (FK) |
-|--------|---------------------|---------------|-----------|
-| 1      | Tiny Dancer         | 1971          | 2         |
-| 2      | Little Red Corvette | 1982          | 1         |
-| 3      | Raspberry Beret     | 1985          | 1         |
-| 4      | Your Song           | 1970          | 2         |
+| id (PK) | name                | year_released | artist_id (FK) |
+| ------- | ------------------- | ------------- | -------------- |
+| 1       | Tiny Dancer         | 1971          | 2              |
+| 2       | Little Red Corvette | 1982          | 1              |
+| 3       | Raspberry Beret     | 1985          | 1              |
+| 4       | Your Song           | 1970          | 2              |
 
 The naming convention for tables is typically snake-cased and always plural.
 
 <br>
 <br>
-
 
 #### Rows (Records / Tuples)
 
@@ -147,8 +124,6 @@ For example a particular **artist** in the **artists** table.
 
 <br>
 <br>
-
-
 
 #### Columns (Fields)
 
@@ -173,54 +148,40 @@ PostgreSQL has [many data types](https://www.postgresql.org/docs/11/datatype.htm
 Common constraints for a column include:
 
 - `PRIMARY KEY`: column, or group of columns, uniquely identify a row
-- `REFERENCES` (Foreign Key): value in column must match the primary key in another table 
+- `REFERENCES` (Foreign Key): value in column must match the primary key in another table
 - `NOT NULL`: column must have a value, it cannot be empty (null)
 - `UNIQUE`: data in this column must be unique among all rows in the table
 
 <br>
 <br>
 
-
 #### Primary Keys (PK) and Foreign Keys (FK)
 
 The field (or fields) that uniquely identify each row in table are know known as that table's **primary key (PK)**.
 
-Since only one type of data entity can be held in a single table, related data, for example, the **songs** for an **artist**, are stored in separate tables and "linked" via what is known as a **foreign key (FK)**.  Note that foreign key fields hold the value of its related parent's PK.
+Since only one type of data entity can be held in a single table, related data, for example, the **songs** for an **artist**, are stored in separate tables and "linked" via what is known as a **foreign key (FK)**. Note that foreign key fields hold the value of its related parent's PK.
 
 <br>
 <br>
-
-
 
 ### Database Review Questions
 
-**❓ A __________ defines the structure of a particular database.**
+**❓ A ****\_\_**** defines the structure of a particular database.**
 
+**❓ A table in a database consists of ****\_\_**** & ****\_\_****.**
 
-**❓ A table in a database consists of __________ & __________.**
+**❓ A ****\_\_**** key uniquely identifies a row within a table.**
 
-
-**❓ A __________ key uniquely identifies a row within a table.**
-
-
-**❓ A __________ key references the primary key in a different table.**
-
-
+**❓ A ****\_\_**** key references the primary key in a different table.**
 
 <br>
 <br>
-
-
-
 
 ## SQL
 
 <br>
 <br>
 <br>
-
-
-
 
 ### What is SQL?
 
@@ -230,12 +191,9 @@ SQL syntax is similar to the English language.
 
 Although SQL is fairly standard, it can vary from depending on the particular RDBMS. For example, the _SQLite_ RDBMS has a minimal implementation of SQL commands.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### The `psql` Interactive Terminal
 
@@ -271,8 +229,6 @@ q    -- exits a psql list or dialogue
 <br>
 <br>
 
-
-
 ### Creating a Database and a Table
 
 Let's create a database named `music` and a `bands` table:
@@ -300,12 +256,9 @@ The backslash commands, e.g. `\d`, are psql commands.
 
 The `CREATE DATABASE` and `CREATE TABLE` are SQL commands.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Basic Querying and Inserting Data
 
@@ -324,15 +277,13 @@ SELECT * FROM bands; -- Use the up arrow to access previous commands
 
 Because the type of `id` is set to `serial`, the RDBMS automatically assigns it.
 
-
 <br>
 <br>
 <br>
-
 
 ### Creating a Table for a Related Data Entity
 
-Let's say we have the following data relationship:  `Band ---< Musician`
+Let's say we have the following data relationship: `Band ---< Musician`
 
 _A Band has many Musicians_ and _a Musician belongs to a Band_
 
@@ -380,14 +331,11 @@ VALUES (
 2);
 ```
 
-> Note:  It's possible to insert multiple rows by providing comma separated value lists:<br>`...VALUES ('Geddy Lee', 2), ('Neil Peart', 2);`
-
+> Note: It's possible to insert multiple rows by providing comma separated value lists:<br>`...VALUES ('Geddy Lee', 2), ('Neil Peart', 2);`
 
 <br>
 <br>
 <br>
-
-
 
 ### Querying Data using a `JOIN` Clause
 
@@ -413,11 +361,9 @@ FROM bands b
 LEFT JOIN musicians m ON b.id = m.band_id;
 ```
 
-
 <br>
 <br>
 <br>
-
 
 ### Querying Data using a `WHERE` Clause
 
@@ -445,8 +391,6 @@ SELECT * FROM musicians WHERE id > 1;
 <br>
 <br>
 
-
-
 ### Updating Data
 
 Time to give Geddy a quote by using the SQL `UPDATE` command:
@@ -457,11 +401,9 @@ SET quote = 'I love to write, it''s my first love.'
 WHERE name = 'Geddy Lee';
 ```
 
-
 <br>
 <br>
 <br>
-
 
 ### Deleting Data
 
@@ -479,8 +421,6 @@ SELECT * FROM bands;
 <br>
 <br>
 
-
-
 ### SQL - Summary
 
 As much fun as it is to write SQL, most developers don't have many opportunities to do so because they use software known as an _Object Relational Mapper (ORM)_ to automatically write SQL and communicate with the database server.
@@ -489,29 +429,25 @@ Regardless, having an understanding of SQL always looks good on a resume!
 
 For additional practice after the lab, check out this interactive site: [PG Exercises](https://pgexercises.com/)
 
-
 <br>
 <br>
 <br>
-
 
 ## Essential Questions
 
 Before moving on to the lab, let's answer a few questions...
 
-**❓ A database contains a _________ for each data entity that an application has.**
+**❓ A database contains a ****\_**** for each data entity that an application has.**
 
 **❓ True or False: In a relational database, all of the data in a given column must be of the same data type.**
 
-**❓ A single instance of a data entity is represented by a ______ in a table.**
+**❓ A single instance of a data entity is represented by a **\_\_** in a table.**
 
-**❓ The programming language used by relational databases is commonly referred to as ______.**
-
+**❓ The programming language used by relational databases is commonly referred to as **\_\_**.**
 
 <br>
 <br>
 <br>
-
 
 ## Further Study
 

@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Intro to Python"
-week: 19
-day: 1
+week: 18
+day: 3
 type: "lecture"
 ---
 
@@ -12,32 +12,20 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/FaX-Nswg2M7bXvzTE36YHqRgiTvdEVe2YB8n4xz9QXxWzSnrjiCirzkAB_ihT7-N.Sa3dR8C1BD7DxFwV?startTime=1624408329000) to access recording 
-
-<br>
-<br>
-<br>
-
-
-
-
-
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
-| Use the Python REPL |
-| Execute Python scripts |
-| Define and use variables |
-| Create comments |
+| Students Will Be Able To:  |
+| -------------------------- |
+| Use the Python REPL        |
+| Execute Python scripts     |
+| Define and use variables   |
+| Create comments            |
 | Describe Python data types |
-| Use and format Strings |
-
+| Use and format Strings     |
 
 <br>
 <br>
 <br>
-
 
 ### History
 
@@ -45,12 +33,9 @@ The Python programming language started in December 1989 as a hobby project for 
 
 Python was first released to the public in 1991.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Versions
 
@@ -60,12 +45,9 @@ Python 3.0 was released in December 2008.
 
 Version 3.0 introduced many enhancements, however, it included changes that made Python 3 incompatible with much of the existing 2.0 code.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Type of Language
 
@@ -79,41 +61,29 @@ Python comes with a large standard library and is suitable for many types of pro
 
 However, if Python does not include functionality that you need, there is a huge repository, the [Python Package Index](https://pypi.org/), with over 169,000 third-party packages available for use.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Syntax & Semantics
 
 Python was designed to be an easy to read programming language.
 
-Its formatting is visually uncluttered and it often uses English keywords where other languages use punctuation or symbols. For example, the equivalent to JS's `&&` operator in Python is `and`. 
+Its formatting is visually uncluttered and it often uses English keywords where other languages use punctuation or symbols. For example, the equivalent to JS's `&&` operator in Python is `and`.
 
 Unlike many other languages, it does not use curly braces to define blocks of code, instead, it uses indentation.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ## Python Interpreter & REPL
 
 We'll be using **Python 3** at all times during SEIR.
 
-
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Ensure `Python 3` is Installed
 
@@ -125,12 +95,9 @@ Similar to what you saw with **Node.js**, Python comes with an interactive REPL 
 
 For now, type `exit()` or press `control + d` to exit the REPL.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Running Python Scripts
 
@@ -143,7 +110,7 @@ $ python3 <filename>.py
 <br>
 <br>
 
-Let's test this out by running the <a download href="/downloads/second_language/python-intro-exercises/python-intro.zip">included **fizzbuzz.py** script.</a>  <br>Make sure you unzip the folder, `cd` into it, open in `VS Code` and then run:
+Let's test this out by running the <a download href="/downloads/second_language/python-intro-exercises/python-intro.zip">included **fizzbuzz.py** script.</a> <br>Make sure you unzip the folder, `cd` into it, open in `VS Code` and then run:
 
 ```shell
 python3 fizzbuzz.py
@@ -156,12 +123,9 @@ You'll see that the print statements within the script output to the terminal.
 
 Unlike we saw with Node.js, providing the file extension (`.py`) is required.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### REPL
 
@@ -173,20 +137,15 @@ At the `>>>` prompt, type `help()`, then type `quit` to return to the REPL.
 
 Cool, let's explore Python a bit in its REPL...
 
-
 <br>
 <br>
 <br>
-
 
 ## The Python Language
 
 <br>
 <br>
 <br>
-
-
-
 
 ### Comments
 
@@ -216,13 +175,9 @@ multiline comment
 
 Multiline comments are often used to document what a function or module does, therefore, they are sometimes referred to as _docstrings_.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Python Variables
 
@@ -230,12 +185,9 @@ Variables in Python work in much the same way that variables work in JavaScript.
 
 Variables hold the data an app needs when it runs.
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Declaring
 
@@ -255,13 +207,9 @@ my_variable
 NameError: name 'my_variable' is not defined
 ```
 
-
 <br>
 <br>
 <br>
-
-
-
 
 #### Naming Convention
 
@@ -271,7 +219,7 @@ When you have a variable name with multiple words, the convention is to **snake_
 
 ```js
 // In JavaScript we use camelCase...
-var myNumber = 10;
+var myNumber = 10
 ```
 
 ```python
@@ -282,8 +230,6 @@ my_number = 10
 <br>
 <br>
 <br>
-
-
 
 #### Reassigning Variables
 
@@ -300,13 +246,9 @@ Of course, reassignment replaces the current value and that previous value would
 
 > The `print()` function works very much like `console.log()` does in JavaScript.
 
-
-
 <br>
 <br>
 <br>
-
-
 
 ### Data Types
 
@@ -314,11 +256,9 @@ Python is very object-oriented.
 
 Every piece of data in Python is an object that's an instance of a _class_.
 
-
 <br>
 <br>
 <br>
-
 
 #### Checking the Data Type (class) of an Object
 
@@ -339,8 +279,6 @@ Python's data types are similar to those available in JavaScript, there's just m
 <br>
 <br>
 
-
-
 #### Integer Numbers (`<class 'int'>`)
 
 Unlike in JavaScript, Python distinguishes between integers (whole numbers) and floats (numbers with decimals).
@@ -355,11 +293,9 @@ When we don't follow a number literal with a decimal point, an integer is assume
 
 We can force numbers to act as integers in some mathematical operations, as we will see. Doing this can force an integer result which is usually the same as calling `Math.floor()` in JavaScript.
 
-
 <br>
 <br>
 <br>
-
 
 #### Floating-point Numbers (`<class 'float'>`)
 
@@ -374,12 +310,9 @@ Numbers with a decimal point are stored in variables as floating-point numbers, 
 <class 'float'>
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Complex Numbers (`<class 'complex'>`)
 
@@ -393,12 +326,9 @@ The imaginary portion is represented by the letter 'j':
 <class 'complex'>
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Booleans (`<class 'bool'>`)
 
@@ -413,13 +343,11 @@ Just like in JS, we have `true` and `false` but spelled slightly differently:
 <class 'bool'>
 ```
 
-Notice how they start with capital letters! You must start them with capital letters in Python or they will not reflect the boolean values. 
+Notice how they start with capital letters! You must start them with capital letters in Python or they will not reflect the boolean values.
 
 <br>
 <br>
 <br>
-
-
 
 #### Nothingness (`<class 'NoneType'>`)
 
@@ -431,12 +359,9 @@ my_nothing = None
 
 The value `None` in Python, with a capital N, provides the same meaning as `null` does in JavaScript.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Math operations
 
@@ -451,12 +376,9 @@ Python has the normal math operators that you are used to from JavaScript:
 
 All work as you would expect. However, there few other things worth mentioning...
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Integer Division
 
@@ -469,18 +391,15 @@ It was mentioned earlier that you could force operands to act like integers to g
 # 2 is printed, because the decimal ".5" is truncated
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Shortcut Assignment Operators
 
-As we saw in JS, the operation of reassigning to a variable the result of adding, etc. to that variable is so common, there are a number of shortcut operators in the language that make it cleaner to write. 
+As we saw in JS, the operation of reassigning to a variable the result of adding, etc. to that variable is so common, there are a number of shortcut operators in the language that make it cleaner to write.
 
-Python has the very same operators, 
+Python has the very same operators,
 
 ```python
 # This line of code...
@@ -502,12 +421,9 @@ num *= 3
 
 > IMPORTANT: A couple of our favorites in JS, the Increment (`++`) and Decrement (`--`) operators, do not exist in Python. Use `+= 1` and `-= 1` instead.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Ternary Expressions
 
@@ -515,14 +431,14 @@ In JS we used the ternary expression to concisely return one of two values depen
 
 ```js
 // Using the ternary operator/expression
-let beverage = age >= 21 ? 'Beer' : 'Milk';
+let beverage = age >= 21 ? "Beer" : "Milk"
 
 // Without a ternary expression
-let beverage;
+let beverage
 if (age >= 21) {
-  beverage = 'Beer';
+  beverage = "Beer"
 } else {
-  beverage = 'Milk';
+  beverage = "Milk"
 }
 ```
 
@@ -537,9 +453,6 @@ beverage = 'Beer' if age >= 21 else 'Milk'
 <br>
 <br>
 <br>
-
-
-
 
 ### Converting Between Data Types
 
@@ -569,12 +482,9 @@ list(item)       # Converts item to a list
 dict(item)       # Converts item to a dictionary
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Working with Strings
 
@@ -593,12 +503,9 @@ multiline_string = '''This is my string that
                           for whatever reason'''
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Concatenating Strings
 
@@ -615,11 +522,6 @@ print(long_string)
 <br>
 <br>
 <br>
-
-
-
-
-
 
 #### String Interpolation using f-Strings
 
@@ -650,9 +552,6 @@ print( template.format("Jim", "tacos") )
 <br>
 <br>
 <br>
-
-
-
 
 #### Useful String Methods
 
@@ -701,9 +600,6 @@ len("Tacos")
 <br>
 <br>
 
-
-
-
 ### Python's Built-in Functions
 
 Notice above that we did not call `len()` as a method on the string - we didn't do this: `"Tacos".len()`.
@@ -712,7 +608,7 @@ Notice above that we did not call `len()` as a method on the string - we didn't 
 
 `len()`, for example, is a function that returns the length (the number of items) of an object. The argument may be any sequence or collection (more on these tomorrow).
 
-Why does `len()` work on strings?  Because in Python, a string is a sequence of characters.
+Why does `len()` work on strings? Because in Python, a string is a sequence of characters.
 
 Because a string is a `sequence`, as we can in JS, we can use square brackets to access the characters in the string (but not assign to them, also like JS):
 
@@ -731,19 +627,13 @@ Later we'll see other fancy uses of square brackets.
 
 Let's wrap up with a few questions...
 
-
 <br>
 <br>
 <br>
-
 
 ## Essential Questions
 
-
-
 **❓ True or False: Every piece of data in Python is an object.**
-
-
 
 **❓ Will the following code run without error in Python?**
 
@@ -752,17 +642,12 @@ Let's wrap up with a few questions...
 	msg = "There are " + num + " tacos"
 ```
 
-
-**❓ String interpolation can be performed in Python by using __-Strings or the ________ method.**
-
+**❓ String interpolation can be performed in Python by using **-Strings or the **\_\_\*\*** method.\*\*
 
 <br>
 <br>
 <br>
 <br>
-
-
-
 
 ## Further Study
 

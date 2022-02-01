@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Intro to Python Control Flow"
-week: 19
-day: 1
+week: 18
+day: 3
 type: "lecture"
 ---
 
@@ -12,30 +12,18 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/FaX-Nswg2M7bXvzTE36YHqRgiTvdEVe2YB8n4xz9QXxWzSnrjiCirzkAB_ihT7-N.Sa3dR8C1BD7DxFwV?startTime=1624415340000) to access recording 
-
-
-<br>
-<br>
-<br>
-
-
-
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
-| Describe what is truthy & falsey in Python |
-| Perform multi-path branching using a `if...elif...else` statement |
-| Perform looping using `while` statements |
-| Use a **range** and a `for` statement to loop through a range of integers  |
-
+| Students Will Be Able To:                                                 |
+| ------------------------------------------------------------------------- |
+| Describe what is truthy & falsey in Python                                |
+| Perform multi-path branching using a `if...elif...else` statement         |
+| Perform looping using `while` statements                                  |
+| Use a **range** and a `for` statement to loop through a range of integers |
 
 <br>
 <br>
 <br>
-
-
 
 ## Set Up
 
@@ -43,14 +31,11 @@ type: "lecture"
 2. Unzip the folder
 3. Open the folder in VS Code: `$ code .`
 
-You should see an **exercise.py** file that will be used to enter Python code during the lesson's exercises.  
-
+You should see an **exercise.py** file that will be used to enter Python code during the lesson's exercises.
 
 <br>
 <br>
 <br>
-
-
 
 ## Review of Control Flow
 
@@ -64,12 +49,9 @@ The good news is that most programming languages, including Python, share these 
 
 It's worth pointing out that programming concepts such as variables, data types, control flow, functions, etc. apply to programming languages in general thus making learning additional languages far easier than the first one!
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Conditional Expressions in Python
 
@@ -79,12 +61,9 @@ In other words, if the **conditional expression** evaluates to _truthiness_, do 
 
 Let's review some of the logic and fundamentals of conditional expressions.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Boolean Values
 
@@ -92,13 +71,9 @@ Python has two logical boolean values: `True` and `False`.
 
 Most logical operations result in one of these two values. They work exactly the same as in JS but are always written with a starting capital letter in Python.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Truthy & Falsey in Python
 
@@ -114,21 +89,18 @@ Here's what is **falsey** in Python:
 - `None`
 - Zero in any numeric type: `0`, `0.0` and `0j`
 - Empty sequences or collections:
-	- `''` (empty string)
-	- `[]` (empty list)
-	- `()` (empty tuple)
-	- `{}` (empty dictionary)
-	- `range(0)` (empty range)
+  - `''` (empty string)
+  - `[]` (empty list)
+  - `()` (empty tuple)
+  - `{}` (empty dictionary)
+  - `range(0)` (empty range)
 
-> Note the difference between Python's `[]` & `{}` and JavaScript. 
-
+> Note the difference between Python's `[]` & `{}` and JavaScript.
 
 <br>
 <br>
 <br>
 <br>
-
-
 
 ### Comparison Operators
 
@@ -143,13 +115,11 @@ Python has all the same comparison operators as JavaScript:
 
 Note that in Python, there's only one equality operator. The `==` in Python is the same as `===` in JavaScript.
 
-
 <br>
 <br>
 <br>
 
-
-#### Examples 
+#### Examples
 
 ```python
 8 > 8
@@ -175,12 +145,9 @@ Note that in Python, there's only one equality operator. The `==` in Python is t
 
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Logical Operators
 
@@ -191,12 +158,9 @@ Luckily, the amazing logical operators we used in JavaScript work the same way i
 
 Again, they work just like they did in JS, which means they always return either the **first** or the **second** operand as follows:
 
-
 <br>
 <br>
 <br>
-
-
 
 #### `or`
 
@@ -241,14 +205,9 @@ False and True
 <br>
 <br>
 
-
-
 ## Control Flow
 
 <br>
-
-
-
 
 ### Indentation!
 
@@ -258,8 +217,6 @@ It has always been recommended to use indentation in languages for readability p
 
 <br>
 <br>
-
-
 
 ### Branching with the `if` Statement
 
@@ -313,12 +270,9 @@ Also note that `else` is always optional.
 
 > There is no `switch` construct in Python
 
-
 <br>
 <br>
 <br>
-
-
 
 ### 💪 Branching Exercise (7 minutes)
 
@@ -342,15 +296,10 @@ To run the code, open a terminal in VS Code by typing `control + backtick`, then
 <br>
 <br>
 
-
-
 ## Looping
 
 <br>
 <br>
-
-
-
 
 ### The `for` Statement
 
@@ -377,17 +326,16 @@ for name in names:
 The above Python code is like the following ES2015 JS:
 
 ```js
-var names = ["Tom", "Deborah", "Murray", "Axel"];
+var names = ["Tom", "Deborah", "Murray", "Axel"]
 
 for (name of names) {
-  console.log(name);
+  console.log(name)
 }
 ```
 
 <br>
 <br>
 <br>
-
 
 ### The `while` loop
 
@@ -405,43 +353,30 @@ while condition:
 
 > Beware of infinite loops! When using `while` loops, it's important to ensure that the condition will change to a falsey value so that the loop exits.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### The `break` Statement
 
 Just like in JavaScript, the `break` statement in Python can be used to immediately exit `for` and `while` loops and continue executing any statements that may follow them.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### 💪 Looping Exercise (7 minutes)
 
 Wrap the code in **exercise.py** in a `while` loop such that it continues to prompt for a color until the word `quit` is entered.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Python Ranges
 
 <br>
 <br>
-
-
-
 
 ### Purpose of Ranges
 
@@ -451,12 +386,8 @@ The **range** type represents an immutable sequence of numbers and is commonly u
 
 _Ranges_ have a class (type) of `range`.
 
-
 <br>
 <br>
-
-
-
 
 ### Ranges - Basic Syntax
 
@@ -502,9 +433,6 @@ print(odds)
 <br>
 <br>
 
-
-
-
 ### Ranges - Negative Step
 
 If the _step_ is a negative integer, the _sequence_ counts down:
@@ -523,8 +451,6 @@ for num in range(5, 0, -1):
 <br>
 <br>
 
-
-
 ## Summary
 
 As you have seen today so far, Python is not all that different than JavaScript.
@@ -539,9 +465,7 @@ Take a minute to review before the picker shows up...
 
 **❓ What are the two types of control flow discussed in this lesson.**
 
-
 **❓ Name three values in Python that are considered to be falsey.**
-
 
 **❓ What is returned by the following expression:**
 
@@ -550,7 +474,6 @@ Take a minute to review before the picker shows up...
 ```
 
 <br>
-
 
 **❓ What is returned by the following expression:**
 
@@ -561,8 +484,6 @@ Take a minute to review before the picker shows up...
 <br>
 <br>
 <br>
-
-
 
 ## References
 

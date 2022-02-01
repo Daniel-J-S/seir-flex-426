@@ -65,11 +65,9 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-<div style="color: grey;">
+### [Unit Four: Second Language](/second-language)
 
-<!-- ### [Unit Four: Second Language](/second-language) -->
-
-### 🔒 Unit Four: Second Language - **Locked**
+<!-- ### 🔒 Unit Four: Second Language - **Locked** -->
 
 | Week | Topics                                                                      |
 | ---- | --------------------------------------------------------------------------- |
@@ -82,4 +80,4 @@ Curriculum schedule and content is subject to change at the instructor's discret
 | 24   | Project 4 Week, Presentations & Begin Portfolio Project                     |
 | 25   | Portfolio Project Week & Graduation 🎉                                      |
 
-</div>
+<div style="color: grey;"></div>

@@ -1,12 +1,10 @@
 ---
 track: "Second Language"
 title: "Python Challenges Lab"
-week: 19
-day: 1
+week: 18
+day: 3
 type: "lab"
 ---
-
-
 
 # Python Challenges Lab
 
@@ -16,9 +14,8 @@ type: "lab"
 
 ## Getting Started
 
-* Create a file locally on your machine called `python_challenges.py` to complete the following exercises <br>*(you can place this file in a working folder if you choose)*
-* **NOTE:** While you're solving each challenge, you can run `python3 python_challenges.py` to check your work
-
+- Create a file locally on your machine called `python_challenges.py` to complete the following exercises <br>_(you can place this file in a working folder if you choose)_
+- **NOTE:** While you're solving each challenge, you can run `python3 python_challenges.py` to check your work
 
 <br>
 <br>
@@ -28,7 +25,7 @@ type: "lab"
 
 Create a simple calculator that first asks the user what operation they would like
 to use (addition, subtraction, multiplication, division) and then asks the user
-for two numbers, returning the result of the operation with the two numbers. 
+for two numbers, returning the result of the operation with the two numbers.
 
 Here is a sample prompt:
 
@@ -46,8 +43,8 @@ Your result is 9
 <br>
 <br>
 
-
 ### Challenge 2 - Reverse a string
+
 Reverse a string manually. Create a new variable storing an empty string and add the letters from
 the first string one by one. The for loop should iterate over the length
 of the string and you should access letters individually.
@@ -64,10 +61,10 @@ em_esrever
 <br>
 <br>
 
-
 ### Challenge 3 - Bank Transactions
+
 Create a prompt that asks the user if they would like to display their balance,
-withdraw or deposit. 
+withdraw or deposit.
 
 Write three functions to perform these calculations and
 output the result to the user.
@@ -75,7 +72,6 @@ output the result to the user.
 **We haven't taught a dedicated lesson on functions yet, but here's a simple function example in `python`**
 
 ![python functions](https://i.imgur.com/pixhxbF.png)
-
 
 As you can see:
 
@@ -90,7 +86,6 @@ As you can see:
 <br>
 
 **... now on to the exercise**
-
 
 Gather user input using the built in `input` function. Note that input always returns
 user input as a string. You have to manually convert it to an int or a float
@@ -116,15 +111,15 @@ Are you done?
 yes
 Thank you!
 ```
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
 
 ### Challenge 4 - Sort a String
 
-Write a function that takes a string and returns the string with the letters in 
-alphabetical order (ie. `hello` becomes `ehllo`), Assume numbers and punctuation 
+Write a function that takes a string and returns the string with the letters in
+alphabetical order (ie. `hello` becomes `ehllo`), Assume numbers and punctuation
 symbols will not be included in the string.
 
 **HINT:** You will also need to prompt the user for input
@@ -143,7 +138,7 @@ Alphabetized: aaacccdeefgiiiiiiillloopprrssstuux
 
 Write a method called `print_contacts` that takes a dictionary of key-value pairs for names and phone numbers then outputs the `name` with the contact info.
 
-We have a dedicated lesson on `python` dictionaries soon, but just know that are very similar to JavaScript object literals ... *i.e collections of key value pairs*
+We have a dedicated lesson on `python` dictionaries soon, but just know that are very similar to JavaScript object literals ... _i.e collections of key value pairs_
 
 Here's an example:
 
@@ -165,9 +160,9 @@ Example function call:
 ```python
  print_contacts(contacts)
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 Example Output:
 
@@ -181,21 +176,19 @@ Daniel has a phone number of 777-777-7777
 <br>
 <br>
 
-
 ### Challenge 6 - Muliply by
 
 Write a method called `multiply_by` that takes a list and a number, and returns the list of numbers multiplied by that number.
 
 You'll want to apply your fundamental programming knowledge here. What are the pieces to this problem? You'll need to define a function, a return statement, and a for loop to iterate over the array.
 
-
 Example function call:
-
 
 ```python
  multiply_by([1, 2, 3], 5)
 
- ```
+```
+
 <br>
 <br>
 Example Output:

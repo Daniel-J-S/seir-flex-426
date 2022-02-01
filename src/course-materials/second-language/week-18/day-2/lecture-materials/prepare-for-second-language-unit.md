@@ -7,26 +7,17 @@ type: "lecture"
 topics: "Prepare For Second Language Unit"
 ---
 
-
 # Prepare For Second Language Unit
 
 At this point, we're ready to move on to learning our second programming language and accompanying framework. However, before we get started, we need to ensure we have the proper tools installed on our machines.
 
-
 <br>
 <br>
 <br>
-
-### [Click Here](https://generalassembly.zoom.us/rec/share/oEYwr6vWDCumFqhS8PFUekF9MXBKFQHUuN4JHhXuLDjibLvr3AsrfTJxvqV0XXc_.oKqKmqHm9iPl1k_M?startTime=1623813642000) to access recording
-
-<br>
-<br>
-<br>
-
-
 
 ## PostgreSQL
-<!-- 
+
+<!--
 
 Install the **PostgreSQL** database management system (DBMS) using Homebrew with this command:
 
@@ -39,12 +30,12 @@ After Postgres is installed run this command:
 ```shell
 brew services start postgresql
 ```
- 
+
 Followed by this command to test the install by creating a new database named the same as the current system user:
- 
+
 ```shell
 createdb
-``` 
+```
 -->
 
 We will learn SQL in Unit 4 using the PostgreSQL Engine - for MacOSX users, there's a very simple and safe solution for getting this installed locally.
@@ -61,28 +52,22 @@ Also, if you're interested in using a GUI client for PostgreSQL, consider using 
 <br>
 <br>
 
-
-
-
-
-
 ## Installing Python 3
 
-<!-- 
+<!--
 > Note: Due to time constraints and for simplicity, we will not be using Python "virtual environments" during SEI.  If you are familiar with using virtual environments, you may continue to use them.  If you decide to continue to develop using Python beyond SEI, your next step would be to learn about using virtual environments. -->
 
 Brew is also used to install Python 3. (_Python 2 is already installed on your Mac, the latest versions of MacOSX are also including Python 3 now. However, for safety concerns, we shouldn't actively develop our Python projects with the globally installed Python interpreter_)
 
 **First, you might want to update Homebrew: `brew update`.**
 
-**Install Python3 using Homebrew with this command:** `brew install python`. 
+**Install Python3 using Homebrew with this command:** `brew install python`.
 
 1. You can test the installation by running `python3 --version`.
 
 2. You can also further test that you're using the correct (Homebrew) installation of Python by closing your terminal and then typing `which python3`
 
-    - You should see `/usr/local/bin/python3` print as a result
-
+   - You should see `/usr/local/bin/python3` print as a result
 
 **Python 3's package manager, `pip3` should have automatically been installed with Python 3.**
 
@@ -92,14 +77,10 @@ Brew is also used to install Python 3. (_Python 2 is already installed on your M
 
 1. To install, run: `pip3 install pipenv`
 
-
-
 <br>
 <br>
 <br>
-
 
 ## Summary
 
 At this point, these are all the items we need for now, but eventually we'll end up installing Django and some other packages along the way.
-
