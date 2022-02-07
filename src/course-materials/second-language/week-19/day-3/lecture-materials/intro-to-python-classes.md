@@ -6,45 +6,33 @@ day: 3
 type: "lecture"
 ---
 
-# Intro to Python Classes  
-
-
-<br>
-<br>
-<br>
-
-### [Click here](https://generalassembly.zoom.us/rec/share/qvtk8KAgQHbBBhdBE5vdCea82FPCNzDg1SmV3gLVJQn9B7oQvnD8Z2CUS8LZUHFj.GOApS90pJUOGJU_l?startTime=1624732299000) to access recording
+# Intro to Python Classes
 
 <br>
 <br>
 <br>
-
-
 
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
+| Students Will Be Able To:                           |
+| --------------------------------------------------- |
 | Describe the difference between classes and objects |
-| Define a class in Python |
-| Instantiate a class to create an object |
-| Explain the special `__init__` method |
-| Understand class vs. instance members |
+| Define a class in Python                            |
+| Instantiate a class to create an object             |
+| Explain the special `__init__` method               |
+| Understand class vs. instance members               |
 
 <br>
 <br>
 <br>
-
 
 ## Set Up
 
 Open a Python-based repl in [repl.it](https://repl.it).
 
-
 <br>
 <br>
 <br>
-
 
 ## Review of OOP
 
@@ -54,7 +42,7 @@ Python is an **object-oriented programming (OOP) language**.
 
 Object-oriented programming is characterized by programming with **objects** that represent the real-world objects of the application.
 
-For example, the logged in user would be represented by a _user_ object. Or a _book_ object in a book-related app: 
+For example, the logged in user would be represented by a _user_ object. Or a _book_ object in a book-related app:
 
 <img src="https://i.imgur.com/3AQdh0F.png">
 
@@ -64,7 +52,6 @@ Remember the analogy of a **class** being a blueprint for objects? In an OOP lan
 
 <br>
 <br>
-
 
 #### Objects in Python
 
@@ -82,7 +69,7 @@ You'll see a list printed containing strings representing the _members_ (propert
 
 The other methods that start and end with double-underscores, are called _magic_, or _dunder_, methods. They are internal methods most commonly used to _overload_ operators. If you would like to learn more about them, be sure to check out the link in the Further Study section.
 
-We'll be using the `__init__` dunder method shortly. 
+We'll be using the `__init__` dunder method shortly.
 
 When we start working with Django, we'll be defining quite a few classes, so let's see how to we do it...
 
@@ -140,7 +127,7 @@ Ruby, Swift and others call it `self`.
 
 However, in Python, only by convention is it called `self` because it's just a parameter name...
 
-Take a look at the `__init__` and `bark` method definitions, notice how the first parameter is named `self`.  When we write code like `spot.bark()`, the object to the left of the dot is automatically assigned to the method's first parameter - which should be named `self`. This is how Python provides the "context" in both instance and class methods!
+Take a look at the `__init__` and `bark` method definitions, notice how the first parameter is named `self`. When we write code like `spot.bark()`, the object to the left of the dot is automatically assigned to the method's first parameter - which should be named `self`. This is how Python provides the "context" in both instance and class methods!
 
 <br>
 <br>
@@ -176,7 +163,6 @@ print(dog.name, dog.age) # -> Lassie 0
 <br>
 <br>
 
-
 ## Overriding Methods
 
 As you saw above, when we used `print(spot)` to print the `spot` object, we got an unfriendly output.
@@ -193,14 +179,13 @@ class Dog():
 
   def bark(self):
     print(f'{self.name} says woof!')
-    
+
   def __str__(self):
     return f'Dog named {self.name} is {self.age} years old'
 ```
 
 <br>
 <br>
-
 
 Let's try it out:
 
@@ -221,7 +206,7 @@ At the top of the repl, define a class named `Vehicle` with the following member
 1. **`vin`**: attribute for the vehicle's identification
 1. **`make`**: attribute for the vehicle's make
 1. **`model`**: attribute for the vehicle's model
-1. **`running`**: attribute for maintaining whether or not the vehicle is running.  This should be set to `False` within the `__init__` method instead of being passed in at the time of instantiation.
+1. **`running`**: attribute for maintaining whether or not the vehicle is running. This should be set to `False` within the `__init__` method instead of being passed in at the time of instantiation.
 1. **`start`**: method for changing `running` to `True`
 1. **`stop`**: method for changing `running` to `False`
 
@@ -242,7 +227,7 @@ print(plane.vin, plane.make, plane.model)
 Time permitting, override the `__str__` method so that it returns a string formatted as:
 
 ```shell
-Vehicle (<vin>) is a <make> model <model> 
+Vehicle (<vin>) is a <make> model <model>
 ```
 
 <br>
@@ -281,10 +266,8 @@ Note how the `Dog.next_id` class attribute is being accessed within the `__init_
 
 > Note: Technically, instances can also access class members via `self` due to the fact that if the instance does not have an accessed member, Python will check the class and provide the class version of the member if it exists.
 
-
 <br>
 <br>
-
 
 Now let's make sure it worked :)
 
@@ -302,7 +285,7 @@ Add this to the bottom of the `Dog` class:
 ```python
   def __str__(self):
     return f'Dog ({self.id}) named {self.name} is {self.age} years old'
-  
+
   # new code below
 
   @classmethod
@@ -316,7 +299,7 @@ There's only two differences when defining a class method:
 1. The `@classmethod` _decorator_
 2. The naming convention of the first parameter is to use `cls` instead of `self`
 
-> _Decorators_ in programming are used to implement _metaprogramming_ (when a program has knowledge or manipulates itself).  In Python, decorators are used to modify the behavior of a function or class. They are not very common, but there's a link in the Further Study section if you'd like to learn more about decorators in Python.
+> _Decorators_ in programming are used to implement _metaprogramming_ (when a program has knowledge or manipulates itself). In Python, decorators are used to modify the behavior of a function or class. They are not very common, but there's a link in the Further Study section if you'd like to learn more about decorators in Python.
 
 Let's test out the new class method:
 
@@ -331,7 +314,6 @@ print(Dog.get_total_dogs())  # -> 2
 <br>
 <br>
 <br>
-
 
 ## Inheritance
 
@@ -348,7 +330,6 @@ For example, in the JS Classes lesson, we specialized the `Vehicle` class by _ex
 <br>
 <br>
 
-
 Let's see how inheritance is implemented in Python by creating a `ShowDog` class that specializes the `Dog` class:
 
 ```python
@@ -360,7 +341,7 @@ class ShowDog(Dog):
     Dog.__init__(self, name, age)
     # Now add any new attributes
     self.total_earnings = total_earnings
-  
+
   # Add additional methods
   def add_prize_money(self, amount):
     self.total_earnings += amount
@@ -384,12 +365,11 @@ print(winky.total_earnings) # -> 1500
 <br>
 <br>
 
-
-Inheritance is critical to OOP languages. In fact, they even have their own **object hierarchies**.  Check this out:
+Inheritance is critical to OOP languages. In fact, they even have their own **object hierarchies**. Check this out:
 
 <img src="https://i.imgur.com/GC3UE9l.jpg">
 
-Frameworks like Django and Rails have elaborate object hierarchies of their own.  For example, when we move on to Django, we'll be defining Models by inheriting from a Django class like this:
+Frameworks like Django and Rails have elaborate object hierarchies of their own. For example, when we move on to Django, we'll be defining Models by inheriting from a Django class like this:
 
 ```python
 class Person(models.Model):
@@ -399,7 +379,6 @@ class Person(models.Model):
 <br>
 <br>
 
-
 ## Essential Questions
 
 Take a couple of minutes to review these...
@@ -408,7 +387,7 @@ Take a couple of minutes to review these...
 
 **❓ What Python keyword is used to define a class?**
 
-**❓ Another word for an object is an _________.**
+**❓ Another word for an object is an ****\_****.**
 
 **❓ How do we use a class to create objects?**
 
@@ -416,15 +395,13 @@ Take a couple of minutes to review these...
 
 **❓ What OOP principle refers to subclasses specializing superclasses?**
 
-
 <br>
 <br>
 <br>
-
 
 ##💪 Practice Exercise
 
-Looking for some practice building an object hierarchy in Python?  Good!
+Looking for some practice building an object hierarchy in Python? Good!
 
 In a separate Python repl...
 
@@ -436,10 +413,8 @@ Create a `BankAccount` class with the following members:
 1. **`deposit(amount)`**: (method) When called on an instance, increases the `balance` by the `amount` argument and returns the new balance
 1. **`withdraw(amount)`**: (method) When called on an instance, decreases the `balance` by the `amount` argument and returns the new balance
 
-
 <br>
 <br>
-
 
 Here's how to generate a random integer for the in Python:
 
@@ -456,7 +431,6 @@ Create two instances, make both deposits and withdrawals, and print the attribut
 
 <br>
 <br>
-
 
 #### Bonus 1
 
@@ -480,11 +454,10 @@ Create a `SavingsAccount` class that subclasses `BankAccount` and specializes it
 
 Add an additional `has_overdraft` attribute to the `BankAccount` class that accepts `True` or `False` at the time of instantiation, but defaults to `False` if not passed in (hint: review default parameters discussed above).
 
-When the `withdraw` method is called, do not allow the withdraw if the amount being withdrawn is greater than `balance`, unless `has_overdraft` is `True`.  `withdraw` should continue to return the `balance`.
+When the `withdraw` method is called, do not allow the withdraw if the amount being withdrawn is greater than `balance`, unless `has_overdraft` is `True`. `withdraw` should continue to return the `balance`.
 
 <br>
 <br>
-
 
 ## Further Study
 

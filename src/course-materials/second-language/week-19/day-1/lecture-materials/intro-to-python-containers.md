@@ -1,18 +1,12 @@
 ---
 track: "Second Language"
 title: "Intro to Python Containers"
-week: 21
+week: 19
 day: 1
 type: "lecture"
 ---
 
 # Intro to Python Containers
-
-<br>
-<br>
-<br>
-
-### [Click here](https://generalassembly.zoom.us/rec/share/3W-bs7OyFsx2xSvDKOEVoHJyM6jw_-opgGkYf9SnHFN9eLsjvuVXFIDWp_q6OatF.xTUL1R4wUNlkWcXT?startTime=1624494785000) to access recording
 
 <br>
 <br>
@@ -30,14 +24,12 @@ type: "lecture"
 
 - Create subsets of a _sequence_ using the _slice_ operator
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Setup
+
 <br>
 
 To test some of the examples and complete the exercises, please open a Python [_repl.it_](https://repl.it/)
@@ -46,39 +38,27 @@ To test some of the examples and complete the exercises, please open a Python [_
 <br>
 <br>
 
-
-
-
 ### General Purpose Containers
+
 <br>
 
 As you know by now, applications frequently need to maintain collections of data within a _container_ data type.
 
 **What did we use in JS to hold collections of data?**
 
-In this lesson, we're going to review the following Python built-in types commonly used as _containers_:
-	- **dictionaries**
-	- **lists**
-	- **tuples**
-
+In this lesson, we're going to review the following Python built-in types commonly used as _containers_: - **dictionaries** - **lists** - **tuples**
 
 <br>
 <br>
 <br>
-
-
-
 
 ## Dictionaries
 
 <br>
 <br>
 
-
-
-
-
 ### Dictionaries - Purpose
+
 <br>
 
 - **Dictionaries** are to Python as **objects** are to JS.
@@ -87,15 +67,12 @@ In this lesson, we're going to review the following Python built-in types common
 
 - _Dictionaries_ have a class (type) of `dict`.
 
-
-
 <br>
 <br>
 <br>
-
-
 
 ### Dictionaries - Basic Syntax
+
 <br>
 
 Like _objects_ in JS, a **dictionary** is created with a set of _curly braces_:
@@ -105,8 +82,9 @@ student = {
 	'name': 'Fred',
 	'course': 'SEIR',
 	'current_week': 7
-} 
+}
 ```
+
 Unlike in JS, _strings_ used as keys must be quoted.
 
 If not quoted, Python expects the identifier to be a variable holding what you want to use as the key. This is similar to how _computed properties_ work in JS.
@@ -115,9 +93,8 @@ If not quoted, Python expects the identifier to be a variable holding what you w
 <br>
 <br>
 
-
-
 ### Dictionaries - Features
+
 <br>
 
 <p><em>Dictionaries</em></p> have the following features:
@@ -125,19 +102,19 @@ If not quoted, Python expects the identifier to be a variable holding what you w
 - They are unordered (just like JS objects)
 
 - They are mutable:
- 	- The values assigned to a key can be changed
- 	- Additional items can be added
- 	- Existing items can be deleted
- 
+
+  - The values assigned to a key can be changed
+  - Additional items can be added
+  - Existing items can be deleted
+
 - Any immutable type can be used as a key, including _numbers_ and _tuples_ (which we'll cover in a bit).
 
-
 <br>
 <br>
 <br>
-
 
 ### Dictionaries - Getting/Setting Values
+
 <br>
 
 We use _square brackets_ to get and set an item's value:
@@ -153,15 +130,12 @@ print(name)
 
 Unlike JS, you cannot access items in a Python dictionary using **dot notation** (dots are used to invoke methods).
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Dictionaries - <span style="text-transform: lowercase">get</span> Method
+
 <br>
 
 Unlike JS which returns `undefined` when accessing a property that does not exist, a _dictionary_ will raise a `KeyError`.
@@ -178,20 +152,17 @@ print( student.get('birthdate', '07-04-1776') )
 > 07-04-1776
 ```
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Dictionaries - <span style="text-transform: lowercase">in</span> Operator
+
 <br>
 
 Another way to avoid the `KeyError` is to use the `in` operator to check if the _dictionary_ includes a key:
 
-```python	
+```python
 if 'course' in student:
     print( f"{student['name']} is enrolled in {student['course']}")
 else:
@@ -202,10 +173,8 @@ else:
 <br>
 <br>
 
-
-
-
 ### Dictionaries - Adding Items
+
 <br>
 
 Simply assigning to a _key_ that does not exist will create a new item in the dictionary:
@@ -214,15 +183,12 @@ Simply assigning to a _key_ that does not exist will create a new item in the di
 student['age'] = 21
 ```
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Dictionaries - Deleting Items
+
 <br>
 
 The `del` statement is used to delete an item from a _dictionary_:
@@ -238,9 +204,8 @@ del student['age']
 <br>
 <br>
 
-
-
 ### Dictionaries - Number of Items
+
 <br>
 
 Use the built-in `len` function to retrieve the number of items in a _dictionary_:
@@ -258,9 +223,8 @@ len({})
 <br>
 <br>
 
-
-
 ### Dictionaries - Iterating Items
+
 <br>
 
 `for` loops are used to iterate over the items in a dictionary. However, the following is considered to be a Python [anti-pattern](https://en.wikipedia.org/wiki/Anti-pattern):
@@ -269,7 +233,7 @@ len({})
 for key in student:
 	print( f"{key} = {student[key]}" )
 ```
-	
+
 The preferred way is to use the `items()` method to obtain a [dictionary view object](https://docs.python.org/3/library/stdtypes.html#dictionary-view-objects)...
 
 <br>
@@ -280,6 +244,7 @@ The best practice way to iterate over the items in a _dictionary_ is to use a `f
 for key, val in student.items():
 	print( f"{key} = {val}" )
 ```
+
 <br>
 
 The `student.items()` call above returns a wrapped set of _tuples_:
@@ -295,21 +260,17 @@ The `for` statement "unpacks" the tuples by assigning its values to multiple var
 <br>
 <br>
 
-
-
 ## 💪 <small>Dictionary Practice Exercise - (10 minutes)</small>
+
 <br>
 
-1. Define a Python _dictionary_ named **`where_my_things_are`** containing a few items; where  the `keys` are things you have, and the `value` is the location you keep those things.
+1. Define a Python _dictionary_ named **`where_my_things_are`** containing a few items; where the `keys` are things you have, and the `value` is the location you keep those things.
 
 2. Write a `for` loop that iterates over the items in the dictionary and prints each one as _My [thing] is kept [location]_.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## Lists
 
@@ -317,9 +278,8 @@ The `for` statement "unpacks" the tuples by assigning its values to multiple var
 <br>
 <br>
 
-
-
 ### Lists - Purpose
+
 <br>
 
 - **Lists** are to Python as **arrays** are to JS.
@@ -330,20 +290,18 @@ The `for` statement "unpacks" the tuples by assigning its values to multiple var
 
 - **Lists** have a class (type) of `list`.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Lists - Basic Syntax
+
 <br>
 
 Like _arrays_ in JS, a **list** is created with a set of _square brackets_:
 
 ```python
-colors = ['red', 'green', 'blue'] 
+colors = ['red', 'green', 'blue']
 ```
 
 The number of items in a _list_ is returned using the built-in `len()` function:
@@ -357,14 +315,13 @@ len(colors)
 <br>
 <br>
 
-
-
 ### Lists - Features
+
 <br>
 
 <p><em>Lists</em></p> have the following features:
 
-- They are considered to be a _sequence_ type in Python. A _sequence_ is a generic term used for an **ordered** collection. 
+- They are considered to be a _sequence_ type in Python. A _sequence_ is a generic term used for an **ordered** collection.
 - Other _sequence_ types in Python include _strings_ and _tuples_.
 
 - Lists are mutable:
@@ -376,10 +333,8 @@ len(colors)
 <br>
 <br>
 
-
-
-
 ### Lists - Accessing Items
+
 <br>
 
 Accessing the individual items of a _list_ is much like accessing elements in a JS array, i.e., by using _square brackets_ with an expression that evaluates to an integer:
@@ -397,17 +352,14 @@ colors[-1]
 > blue
 ```
 
-
 No need to write code like `colors[len(colors) - 1]` - yay!
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Lists - Assigning Items
+
 <br>
 
 We also use square brackets to target an item of a _list_ for assignment:
@@ -418,14 +370,12 @@ print(colors)
 > ['red', 'green', 'brown']
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Lists - Adding Items
+
 <br>
 
 The equivalent to JS's `push()` method is `append()`:
@@ -433,10 +383,8 @@ The equivalent to JS's `push()` method is `append()`:
 ```python
 colors.append('purple')
 ```
-	
-	
+
 However, unlike JS's `push()` method, `append()` can only add one item and does not return a value.
-	
 <br>
 <br>
 <br>
@@ -451,9 +399,8 @@ colors.extend(['orange', 'black'])
 <br>
 <br>
 
-
-
 ### Lists - Inserting Item
+
 <br>
 
 To add items to anywhere but the end of a _list_, use the `insert()` method:
@@ -469,11 +416,9 @@ colors.insert(1, 'yellow')
 <br>
 <br>
 
-
-
 ### Lists - Deleting Items
-<br>
 
+<br>
 
 Yup, there's a `pop()` method, but it's more flexible in Python because you can specify the index of the item to remove and return:
 
@@ -484,9 +429,9 @@ green = colors.pop(2)
 print(colors)
 > ['red', 'yellow', 'brown', 'purple', 'orange', 'black']
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 If you don't care about the value returned by `pop()`, you can also use the `del` operator to delete items:
 
@@ -513,17 +458,13 @@ print(colors)
 
 No value is returned by the `remove()` method.
 
-
 <br>
 <br>
 <br>
-
-
-
 
 ### Lists - Clearing
-<br>
 
+<br>
 
 Lastly, `clear()` does just what it's name implies:
 
@@ -539,9 +480,8 @@ print(colors)
 <br>
 <br>
 
-
-
 ### Lists - Iteration
+
 <br>
 
 The `for` loop is used to iterate over the items in a _list_:
@@ -572,8 +512,6 @@ for idx, color in enumerate(colors):
 <br>
 <br>
 
-
-
 ## Dictionary & List Review Questions
 
 **❓ What are _dictionaries_ similar to in JS?**
@@ -583,7 +521,6 @@ for idx, color in enumerate(colors):
 <br>
 
 **❓ Why won't the follow code work?**
-
 
 ```python
 	menu = {
@@ -605,7 +542,6 @@ for idx, color in enumerate(colors):
 
 ## List Comprehensions
 
-
 - One of the most powerful features in Python are _list comprehensions_.
 
 - _List comprehensions_ provide a concise way to create and work with lists.
@@ -616,8 +552,8 @@ for idx, color in enumerate(colors):
 <br>
 <br>
 
-
 ### List Comprehensions<br><small>Numerical Example</small>
+
 <br>
 
 If we needed to square all of the numbers in a _list_ and put them into a new _list_, we might use a for loop like this:
@@ -625,7 +561,7 @@ If we needed to square all of the numbers in a _list_ and put them into a new _l
 ```python
 nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# I want 'n * n' for each 'n' in nums 
+# I want 'n * n' for each 'n' in nums
 squares = []
 for n in nums:
 	squares.append(n * n)
@@ -637,30 +573,29 @@ print(squares)
 <br>
 <br>
 
-
 **What method in JS would we use in this scenario?**
-
 
 A _list comprehension_ can reduce this code:
 
 ```python
-# I want 'n * n' for each 'n' in nums 
+# I want 'n * n' for each 'n' in nums
 squares = []
 for n in nums:
 	squares.append(n * n)
 ```
+
 <br>
 <br>
 
 To this:
 
 ```python
-# I want 'n * n' for each 'n' in nums 
+# I want 'n * n' for each 'n' in nums
 squares = [n * n for n in nums]
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 The _comprehension_ is basically an advanced `for` loop within _square brackets_ which, of course, returns a new _list_.
 
@@ -668,9 +603,8 @@ The _comprehension_ is basically an advanced `for` loop within _square brackets_
 <br>
 <br>
 
-
-
 ### List Comprehensions - Basic Syntax
+
 <br>
 
 Here's the basic syntax of a _list comprehension_:
@@ -684,7 +618,6 @@ Here's the basic syntax of a _list comprehension_:
 <br>
 <br>
 
-
 ### List Comprehensions - Filtering
 
 We've seen how _list comprehensions_ are a nice way to map a list, but they can be used for **filtering** too.
@@ -697,7 +630,7 @@ nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 # I want 'n * n' for each 'n' in nums  if 'n * n' is even
 even_squares = []
 for n in nums:
-	square = n * n 
+	square = n * n
 	if square % 2 == 0:
 		even_squares.append(square)
 print(even_squares)
@@ -707,44 +640,44 @@ print(even_squares)
 <br>
 <br>
 
-
 Again _list comprehensions_ reduce the mapping and filtering from:
 
 ```python
 # I want 'n * n' for each 'n' in nums  if 'n * n' is even
 even_squares = []
 for n in nums:
-	square = n * n 
+	square = n * n
 	if square % 2 == 0:
 		even_squares.append(square)
 ```
+
 To this one-liner:
 
 ```python
 # I want 'n * n' for each 'n' in nums  if 'n * n' is even
 even_squares = [n * n for n in nums if (n * n) % 2 == 0]
 ```
+
 Nice and readable!
 
 <br>
 <br>
 <br>
 
-
 ### List Comprehensions - Review Questions
+
 <br>
 
 **❓ What characters start and end a _list comprehension_**
 
 **❓ Does a _list comprehension_ create a new list?**
 
-
 <br>
 <br>
 <br>
-
 
 ### List Comprehensions - Summary
+
 <br>
 
 Keep in mind that we've only scratched the surface of _list comprehensions_.
@@ -755,18 +688,14 @@ If you'd like to see more interactive information on list comprehentions, [check
 <br>
 <br>
 
-
-
 ## Tuples
 
 <br>
 <br>
 <br>
 
-
-
-
 ### Tuples - Purpose
+
 <br>
 
 - **Tuples** in Python are very similar to **lists**.
@@ -777,12 +706,11 @@ If you'd like to see more interactive information on list comprehentions, [check
 <br>
 <br>
 
-
-
 ### Tuples - Basic Syntax
+
 <br>
 
-_Tuples_ can be defined in a few different ways.  Most basically, they are defined like this:
+_Tuples_ can be defined in a few different ways. Most basically, they are defined like this:
 
 ```python
 colors = ('red', 'green', 'blue')
@@ -790,13 +718,12 @@ print(colors)
 > ('red', 'green', 'blue')
 print( len(colors) )
 > 3
-``` 
+```
+
 Although it seems that _parentheses_ are used to create _tuples_, it's actually the _commas_...
 
 <br>
 <br>
-
-
 
 For more proof that the use of commas create a tuple, let's say you wanted to create a 1-tuple containing the string of "Hello".
 
@@ -805,9 +732,9 @@ If parens created tuples, this would work:
 ```python
 hello_tuple = ('Hello')
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 But it doesn't, however, this will:
 
@@ -827,6 +754,7 @@ colors = 'red', 'green', 'blue'
 print(type(colors))
 > <class 'tuple'>
 ```
+
 <br>
 <br>
 
@@ -858,7 +786,6 @@ print(colors)
 <br>
 <br>
 
-
 ### Tuples - Accessing Items
 
 Although _tuples_ can't be modified like _lists_, we can retrieve their items in exactly the same way:
@@ -869,6 +796,7 @@ green = colors[1]
 print(green)
 > green
 ```
+
 _Sequences_ also have an `index()` method that returns the index of the first match:
 
 ```python
@@ -882,9 +810,8 @@ print(blue_idx)
 <br>
 <br>
 
-
-
 ### Tuples - Iteration
+
 <br>
 
 Just like with _lists_, other _sequences_ are iterated upon in the same way - by using `for` loops:
@@ -902,8 +829,8 @@ for idx, color in enumerate(colors):
 <br>
 <br>
 
-
 ### Tuples - Unpacking
+
 <br>
 
 _Tuples_ have a convenient feature, called _unpacking_, for doing multiple variable assignment:
@@ -921,13 +848,13 @@ A tuple of variables on the left-side of the assignment operator and a tuple of 
 <br>
 <br>
 
-
 ## Sequences Can Be "Sliced"
 
 <br>
 <br>
 
 ### Slicing Sequences
+
 <br>
 
 Python is known for having some cool tricks up its sleeve, for one, there's the "slice" operator (`[m:n]`).
@@ -947,7 +874,6 @@ print(short_name)
 
 Note that the slice includes up to, but not including the index to the right of the colon.
 
-
 <br>
 <br>
 <br>
@@ -959,7 +885,7 @@ colors = ('red', 'green', 'blue')
 print( colors[:2] )
 > ('red', 'green')
 ```
- 
+
 If the up to index is omitted, the slice copies the _sequence_ all the way to the end:
 
 ```python
@@ -972,6 +898,7 @@ print( colors[1:] )
 <br>
 
 ### Slicing Sequences - Question
+
 <br>
 
 **What would the value of `fruit_copy` be?**
@@ -987,6 +914,7 @@ fruit_copy = fruit[:]
 <br>
 
 ## Conclusion
+
 <br>
 
 Python offers amazing power, convenience and readability with features such as _list comprehensions_ and _slicing_.
@@ -996,7 +924,6 @@ However, as usual, it takes practice to become "comfortable" with these concepts
 <br>
 <br>
 <br>
-
 
 ## Resources
 

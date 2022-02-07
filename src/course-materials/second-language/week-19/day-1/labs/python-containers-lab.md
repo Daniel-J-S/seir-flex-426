@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Python Containers Lab"
-week: 21
+week: 19
 day: 1
 type: "lab"
 ---
@@ -12,8 +12,6 @@ type: "lab"
 <br>
 <br>
 
-
-
 ## Setup
 
 Use a Python-based [repl.it](https://repl.it/repls) to complete the following exercises...
@@ -22,14 +20,11 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 
-
 ## Exercises
 
 <br>
 <br>
 <br>
-
-
 
 #### Exercise 1
 
@@ -41,8 +36,6 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 
-
-
 #### Exercise 2
 
 - Create a tuple named `foods` containing the same number of foods (strings) as there are names in the `students` list.
@@ -52,36 +45,28 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 
-
-
-
 #### Exercise 3
 
 - Using a `for` loop, print just the last two food strings from `foods`.
 
-
 <br>
 <br>
 <br>
-
 
 #### Exercise 4
 
 - Create a dictionary named `home_town` containing the keys of `city`, `state` and `population`.
 - Print a string with this format:<br>"I was born in _city_, _state_ - population of _population_"
 
-
 <br>
 <br>
 <br>
-
-
 
 #### Exercise 5
 
 - Iterate over the _key: value_ pairs in `home_town` and print a string for each item, for example:
 
-```shell  
+```shell
 	"city = Arcadia"
 	"state = California"
 	"population = 58000"
@@ -90,8 +75,6 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 <br>
-
-
 
 #### Exercise 6
 
@@ -104,13 +87,12 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 	'fav_food': 'Cheeseburger'
 }
 ```
+
 - Iterate over `cohort` printing out each element.
 
 <br>
 <br>
 <br>
-
-
 
 #### Exercise 7
 
@@ -121,8 +103,6 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 
-
-
 #### Exercise 8
 
 - Using the tuple `foods` and list comprehension within a `for` loop, print each food string that contains the letter `a`.
@@ -131,18 +111,10 @@ Use a Python-based [repl.it](https://repl.it/repls) to complete the following ex
 <br>
 <br>
 
-
-
-<!-- 
+<!--
 ## Solution
 
 A solution can be found [here](https://repl.it/@DanielJS/Python-Containers-Solution).
 
 
  -->
-
-
-
-
-
-

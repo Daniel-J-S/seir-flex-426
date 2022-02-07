@@ -6,35 +6,26 @@ day: 3
 type: "lecture"
 ---
 
-
 # Intro to Django
 
 <br>
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/qvtk8KAgQHbBBhdBE5vdCea82FPCNzDg1SmV3gLVJQn9B7oQvnD8Z2CUS8LZUHFj.GOApS90pJUOGJU_l?startTime=1624748037000) to access recording
-
-<br>
-<br>
-<br>
-
-
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
-| Describe the use case of Django |
+| Students Will Be Able To:                   |
+| ------------------------------------------- |
+| Describe the use case of Django             |
 | Contrast MVC with Django's MVT architecture |
 | Describe the components of a Django project |
-| Describe Django's routing methodology |
-| Install Django and psycopg2 |
-| Build Django's official tutorial app |
+| Describe Django's routing methodology       |
+| Install Django and psycopg2                 |
+| Build Django's official tutorial app        |
 
 <br>
 <br>
 <br>
-
 
 ## What is Django?
 
@@ -54,8 +45,6 @@ Compared to the minimalist web framework of Express, Django is a much higher-lev
 <br>
 <br>
 
-
-
 ## Django's MVT Architecture
 
 Django's architecture is similar, but different than that of MVC:
@@ -64,11 +53,11 @@ Django's architecture is similar, but different than that of MVC:
 
 This chart compares MVC to Django's MVT:
 
-| Concern | MVC | MVT |
-|---|:-:|:-:|
-| Database access | Model | Model |
-| Code mapped to routes | Controller | View |
-| Rendering of dynamic HTML | View | Template |
+| Concern                   |    MVC     |   MVT    |
+| ------------------------- | :--------: | :------: |
+| Database access           |   Model    |  Model   |
+| Code mapped to routes     | Controller |   View   |
+| Rendering of dynamic HTML |    View    | Template |
 
 When developing with Django, we'll just have to be careful to say:
 
@@ -78,7 +67,6 @@ When developing with Django, we'll just have to be careful to say:
 <br>
 <br>
 <br>
-
 
 ## Components of a Django Project
 
@@ -94,15 +82,13 @@ Further, what we think of as part of an app's functionality, or **modules**, Dja
 
 A Django _project_ can have many _apps_, and a Django _app_ can belong to multiple _projects_. More on this later.
 
-
 <br>
 <br>
 <br>
-
 
 ## Django's Routing Methodology
 
-Because routing is so fundamental to developing web apps, it's worthwhile knowing in advance an important difference between Express and Django's routing methodology. 
+Because routing is so fundamental to developing web apps, it's worthwhile knowing in advance an important difference between Express and Django's routing methodology.
 
 Web frameworks such as Express and Ruby on Rails, use both the HTTP verb & URL to define routes used to map requests to controller actions.
 
@@ -114,17 +100,14 @@ That's why the Python modules used to define routes in Django are named **urls.p
 <br>
 <br>
 
-
 ## Installation & Set Up
 
 <br>
 <br>
 
-
-
 #### Prerequisite Installs
 
-Django should have been installed during installfest.  
+Django should have been installed during installfest.
 
 Let's verify the installation as follows:
 
@@ -142,7 +125,6 @@ $ pip3 install Django
 <br>
 <br>
 
-
 By default, Django uses a lightweight database called SQLite. However, SQLLite is not appropriate for production use because it's considered not to be scalable (for example, only one user/request can access the database at a time).
 
 Therefore, from the start, we'll be following the better practice of using a more capable database by configuring each of our Django projects to work with PostgreSQL.
@@ -158,7 +140,6 @@ $ pip3 install psycopg2-binary
 <br>
 <br>
 <br>
-
 
 #### Create a Database for the Project
 
@@ -183,27 +164,23 @@ With the database created, type `\q` to exit the psql shell.
 <br>
 <br>
 
-
-
 ## Build Django's Official Tutorial App
 
-
-You excited?  Ready to build your first Django app?  Let's do this!
+You excited? Ready to build your first Django app? Let's do this!
 
 Django, in so many words, is a beast! Its documentation is hundreds of times larger than that of Express.
 
-A great way to get started learning it is by following the official Django tutorial.  It's an excellent tutorial and we'll be getting a lot of information straight from the horses mouth!
+A great way to get started learning it is by following the official Django tutorial. It's an excellent tutorial and we'll be getting a lot of information straight from the horses mouth!
 
 As we work through the tutorial together, I'll be sure to draw analogies to Express whenever possible.
 
 Next week, we'll be diving deeper into each of the topics we'll be touching upon during the tutorial, and more, like learning how to upload images to Amazon S3!
 
-Let's get started by clicking [here](https://docs.djangoproject.com/en/3.1/intro/tutorial01/)!
+Let's get started by clicking [here](https://docs.djangoproject.com/en/4.0/intro/tutorial01/)!
 
 <br>
 <br>
 <br>
-
 
 ## References
 

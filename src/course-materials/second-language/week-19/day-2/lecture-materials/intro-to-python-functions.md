@@ -2,38 +2,28 @@
 track: "Second Language"
 title: "Intro to Python Functions"
 week: 19
-day: 3
+day: 2
 type: "lecture"
 ---
 
-# Intro to Python Functions  
-
-
-<br>
-<br>
-<br>
-
-### [Click here](https://generalassembly.zoom.us/rec/share/qvtk8KAgQHbBBhdBE5vdCea82FPCNzDg1SmV3gLVJQn9B7oQvnD8Z2CUS8LZUHFj.GOApS90pJUOGJU_l?startTime=1624723422000) to access recording
+# Intro to Python Functions
 
 <br>
 <br>
 <br>
-
-
 
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
+| Students Will Be Able To:                |
+| ---------------------------------------- |
 | Contrast Python and JavaScript functions |
-| Define functions in Python |
-| Invoke functions in Python |
-| Use `*args` and `**kwargs` parameters |
+| Define functions in Python               |
+| Invoke functions in Python               |
+| Use `*args` and `**kwargs` parameters    |
 
 <br>
 <br>
 <br>
-
 
 ## Set Up
 
@@ -42,8 +32,6 @@ To experiment with the code in this lesson, please use a Python-based repl in [r
 <br>
 <br>
 <br>
-
-
 
 ## Review the Use Case of Functions - What & Why?
 
@@ -66,11 +54,9 @@ Functions provide:
 
 Functions are the building blocks of programming and all programming languages have them, including Python...
 
-
 <br>
 <br>
 <br>
-
 
 ## Defining Functions in Python
 
@@ -91,8 +77,6 @@ As you can see:
 <br>
 <br>
 
-
-
 ## A Minimal Function in Python
 
 In JavaScript, we often would create an "empty" function temporarily.
@@ -104,7 +88,7 @@ def first_function():
   pass
 ```
 
-The `pass` statement is simply a "do nothing" statement and is useful here to create a function that has at least one statement in its block, which is a requirement. 
+The `pass` statement is simply a "do nothing" statement and is useful here to create a function that has at least one statement in its block, which is a requirement.
 
 <details><summary> What does a JS function return by default if it doesn't include a return statement?</summary>
 <p><code>undefined</code></p>
@@ -119,7 +103,7 @@ def first_function():
 # Assign value returned by default
 result = first_function()
 print(result)
-``` 
+```
 
 Good guess!
 
@@ -127,12 +111,9 @@ Good guess!
 <br>
 <br>
 
-
 ## Key Differences Between Python & JS Functions
 
 Besides the obvious syntactical differences, here are a few other things to be aware of
-
-
 
 <br>
 <br>
@@ -143,7 +124,7 @@ Python function declarations are defined using the `def` keyword and these funct
 
 However, Python does have a the concept of anonymous and/or inline functions - called `lambda` functions.
 
-`lambda` functions are very much like _Arrow Functions_ in JavaScript:  
+`lambda` functions are very much like _Arrow Functions_ in JavaScript:
 
 - They implicitly return a single expression's result.
 - They can be assigned to a variable.
@@ -157,10 +138,10 @@ For example:
 
 ```js
 // JavaScript
-const nums = [1, 3, 2, 6, 5];
-let odds = nums.filter(num => num % 2);
+const nums = [1, 3, 2, 6, 5]
+let odds = nums.filter((num) => num % 2)
 ```
-	
+
 ```python
 # Python
 nums = [1, 3, 2, 6, 5]
@@ -168,7 +149,6 @@ odds = list( filter(lambda num: num % 2, nums) )
 ```
 
 Lambda functions in Django are really nifty when using Python functions such as `map()`.
-
 
 <br>
 <br>
@@ -184,11 +164,11 @@ add(5, 10)
 def add(a, b):
   return a + b
 ```
-<br>
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
+<br>
 
 ## Calling Functions
 
@@ -197,7 +177,7 @@ In Python, calling functions is the same as it is in JavaScript:
 ```python
 def add(a, b):
   return a + b
-  
+
 def sub(a, b):
   return a - b
 
@@ -210,7 +190,6 @@ print( compute(1, 2, add) )
 Yup, functions in Python can be passed to other functions - **callbacks** exist in Python!
 
 Let's learn more about Python's **parameters** & **arguments**...
-
 
 <br>
 <br>
@@ -241,9 +220,9 @@ However, unlike JavaScript, Python requires that the correct number of arguments
 ```python
 def add(a, b):
   return a + b
-  
+
 add()
-  
+
 # Generates the following error:
 # TypeError: add() missing 2 required positional arguments: 'a' and 'b'
 ```
@@ -253,7 +232,6 @@ add()
 <br>
 <br>
 
-
 ### Accepting a varying number of arguments
 
 In JavaScript, we were able to access "extra" arguments being passed in to a function by using the special `arguments`:
@@ -261,22 +239,22 @@ In JavaScript, we were able to access "extra" arguments being passed in to a fun
 ```js
 // Using the arguments special variable
 function sum() {
-  let total = 0;
-  for (arg of arguments) total += arg;
-  return total;
+  let total = 0
+  for (arg of arguments) total += arg
+  return total
 }
 
-console.log( sum(1, 5, 10) );  // -> 16
+console.log(sum(1, 5, 10)) // -> 16
 ```
 
 Or preferably by using ES2015's _rest parameters_:
 
 ```js
 function sum(...nums) {
-  return nums.reduce((sum, num) => sum + num, 0);
+  return nums.reduce((sum, num) => sum + num, 0)
 }
 
-console.log( sum(1, 5, 10) );  // -> 16
+console.log(sum(1, 5, 10)) // -> 16
 ```
 
 #### Python's `*` Parameter Specifier (`*args`)
@@ -318,9 +296,9 @@ def dev_skills(dev_name, *args):
 print(dev_skills('Alex', 'HTML', 'CSS', 'JavaScript', 'Python'))
 # -> {'name': 'Alex', 'skills': ['HTML', 'CSS', 'JavaScript', 'Python']}
 ```
-<br>
-<br>
 
+<br>
+<br>
 
 #### Python's `**` Parameter Specifier (`**kwargs`)
 
@@ -374,7 +352,6 @@ Positional params: A, B
 <br>
 <br>
 
-
 ## Review Questions
 
 Take a moment to review the following questions:
@@ -389,7 +366,6 @@ def add(a, b):
 ```
 
 **Which of the following statements will result in an error?<br> (there could be more than one)**
-	
 **A)** `add(10, 100.)` <br>
 
 **B)** `add(10, '10')` <br>
@@ -403,9 +379,8 @@ def add(a, b):
 <br>
 <br>
 
-
 **❓ What "feature" in Python would allow the `add` function above to accept any number of numbers to add together?**
 
 ## References
 
-[*args and **kwargs in python explained](https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/)
+[\*args and \*\*kwargs in python explained](https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/)
