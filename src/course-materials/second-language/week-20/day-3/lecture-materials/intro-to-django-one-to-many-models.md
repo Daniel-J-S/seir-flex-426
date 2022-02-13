@@ -1,8 +1,8 @@
 ---
 track: "Second Language"
 title: "Intro to Django One-to-Many Models"
-week: 21
-day: 1
+week: 20
+day: 3
 type: "lecture"
 ---
 
@@ -12,21 +12,15 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/T1O-ts0QRt5O9HhpHnBjw2pmhE51NlOuE3x6QKoSnMR-9GEXlOLfhaB5hZCAQYeA.-I6A2Nczy-ZN7n6s?startTime=1625704333000) to access recording
-
-<br>
-<br>
-<br>
-
 ## Learning Objectives
 
-| Students will be able to: |
-|---|
-| Implement a one-to-many relationship in Django Models |
-| Traverse a Model's related data |
-| Use a `ModelForm` to generate form inputs for a Model |
+| Students will be able to:                                         |
+| ----------------------------------------------------------------- |
+| Implement a one-to-many relationship in Django Models             |
+| Traverse a Model's related data                                   |
+| Use a `ModelForm` to generate form inputs for a Model             |
 | Assign the foreign key when creating a new "child" model instance |
-| Add a custom method to a Model |
+| Add a custom method to a Model                                    |
 
 <br>
 <br>
@@ -57,7 +51,6 @@ This lesson will pick up from where the last lesson left off.
 <br>
 <br>
 <br>
-
 
 ## A Cat's Got to Eat!
 
@@ -125,7 +118,7 @@ Django has a feature, Field.choices, that will make the single-characters more u
 <br>
 <br>
 
-The first step is to define a tuple of 2-tuples.  Because we might need to access this tuple within the `Cat` class also, let's define it above both of the Model classes:
+The first step is to define a tuple of 2-tuples. Because we might need to access this tuple within the `Cat` class also, let's define it above both of the Model classes:
 
 ```python
 # A tuple of 2-tuples
@@ -137,7 +130,8 @@ MEALS = (
 # new code above
 
 class Cat(models.Model):
-``` 
+```
+
 <br>
 <br>
 <br>
@@ -169,7 +163,6 @@ class Feeding(models.Model):
 #### Add the `__str__` Method
 
 As always, we should add a `__str__` method to Models so that they provide more meaningful output when they are printed:
-
 
 ```python
 class Feeding(models.Model):
@@ -223,7 +216,7 @@ As you can see, the `ForeignKey` field-type is used to create a one-to-many rela
 
 The first argument provides the parent Model.
 
-In a _one-to-many_ relationship, the `on_delete=models.CASCADE` is required.  It ensures that if a Cat record is deleted, all of the child Feedings will be deleted automatically as well - thus avoiding _orphan_ records (seriously, that's what they're called).
+In a _one-to-many_ relationship, the `on_delete=models.CASCADE` is required. It ensures that if a Cat record is deleted, all of the child Feedings will be deleted automatically as well - thus avoiding _orphan_ records (seriously, that's what they're called).
 
 > In the database, the column in the `feedings` table for the FK will actually be called `cat_id` because Django by default appends `_id` to the name of the attribute we use in the Model.
 
@@ -346,10 +339,10 @@ So far, so good!
 <QuerySet [<Feeding: Breakfast on 2018-10-07>, <Feeding: Lunch on 2018-10-07>]>
 exit()
 ```
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
 
 Now how much would you pay for that ORM?
 
@@ -371,7 +364,7 @@ from django.contrib import admin
 from .models import Cat, Feeding
 
 admin.site.register(Cat)
-# register the new Feeding Model 
+# register the new Feeding Model
 admin.site.register(Feeding)
 ```
 
@@ -421,7 +414,6 @@ Refresh and...
 
 What's cool is that the custom labels will be used in all of Django's ModelForms too!
 
-
 <br>
 <br>
 <br>
@@ -430,7 +422,7 @@ What's cool is that the custom labels will be used in all of Django's ModelForms
 
 Just like it would make sense in an app to show _comments_ for a _post_ when that post is displayed, a cat's _detail_ page is where it would make sense to display a cat's feedings.
 
-No additional views or templates necessary.  All we have to do is update the **detail.html**.
+No additional views or templates necessary. All we have to do is update the **detail.html**.
 
 Our imaginary wireframe calls for a cat's _feedings_ to be displayed to the right of the cat's details. We can do this using Materialize's grid system to define layout columns.
 
@@ -440,11 +432,8 @@ Our imaginary wireframe calls for a cat's _feedings_ to be displayed to the righ
 
 Here's the new content of **detail.html**. Best to copy/paste this new markup, then we'll review:
 
-
-
 ```html
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Cat Details</h1>
 
@@ -456,9 +445,9 @@ Here's the new content of **detail.html**. Best to copy/paste this new markup, t
         <p>Breed: {{ cat.breed }}</p>
         <p>Description: {{ cat.description }}</p>
         {% if cat.age > 0 %}
-          <p>Age: {{ cat.age }}</p>
+        <p>Age: {{ cat.age }}</p>
         {% else %}
-          <p>Age: Kitten</p>
+        <p>Age: Kitten</p>
         {% endif %}
       </div>
       <div class="card-action">
@@ -470,14 +459,17 @@ Here's the new content of **detail.html**. Best to copy/paste this new markup, t
   <div class="col s6">
     <table class="striped">
       <thead>
-        <tr><th>Date</th><th>Meal</th></tr>
+        <tr>
+          <th>Date</th>
+          <th>Meal</th>
+        </tr>
       </thead>
       <tbody>
         {% for feeding in cat.feeding_set.all %}
-          <tr>
-            <td>{{feeding.date}}</td>
-            <td>{{feeding.get_meal_display}}</td>
-          </tr>
+        <tr>
+          <td>{{feeding.date}}</td>
+          <td>{{feeding.get_meal_display}}</td>
+        </tr>
         {% endfor %}
       </tbody>
     </table>
@@ -504,7 +496,7 @@ Now we want to add the capability to add a new feeding when viewing a cat's deta
 
 Previously, you were shown how to use class-based views to productively help perform create and update data operations for a Model.
 
-The CBV we used automatically created a `ModelForm` for the Model that was specified like this:  `model = Cat`.
+The CBV we used automatically created a `ModelForm` for the Model that was specified like this: `model = Cat`.
 
 The CBV then used the `ModelForm` behind the scenes to generate the inputs and provide the posted data as new Model on the server.
 
@@ -592,7 +584,6 @@ def cats_detail(request, cat_id):
 
 `feeding_form` is set to an instance of `FeedingForm` and then it's passed to _detail.html_ just like `cat`.
 
-
 <br>
 <br>
 <br>
@@ -605,24 +596,23 @@ We're going to display a `<form>` at the top of the feedings column in **detail.
 
 This is how we can "render" the ModelForm's inputs within `<form>` tags in **templates/cats/detail.html**:
 
-
 ```html
 <div class="col s6">
   <!-- new code below -->
   <form method="post">
-    {% csrf_token %}
-    {{ feeding_form.as_p }}
-    <input type="submit" class="btn" value="Add Feeding">
+    {% csrf_token %} {{ feeding_form.as_p }}
+    <input type="submit" class="btn" value="Add Feeding" />
   </form>
   <!-- new code above -->
   <table class="striped">
-  ...
+    ...
+  </table>
+</div>
 ```
 
 <br>
 <br>
 <br>
-
 
 As always, we need to include the `{% csrf_token %}` for security purposes.
 
@@ -644,7 +634,7 @@ Let's see what it looks like - not perfect but it's a start:
 
 Unfortunately, the _Feeding Date_ field is just a basic text input. This is what Django uses by default for `DateField`s.
 
-Also, we don't see a drop-down for the _Meal_ field as expected.  However, it's in the HTML, but it's not rendering correctly due to the use of Materialize.
+Also, we don't see a drop-down for the _Meal_ field as expected. However, it's in the HTML, but it's not rendering correctly due to the use of Materialize.
 
 <br>
 <br>
@@ -660,33 +650,31 @@ Luckily we can use Materialize to solve both problems. However, solving the prob
 
 First, update _base.html_ to include the Materialize JS library:
 
-
 ```html
 <head>
   ...
-  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
   <!-- Add the following below --->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   ...
+</head>
 ```
 
 <br>
 <br>
 <br>
 
- 
 ##### Using a Date-picker for _Feeding Date_
 
 Okay now let's make the `<input>` for _Feeding Date_ a sweet date-picker using Materialize.
 
-Materialize requires us to "initialize" certain inputs using a bit of JavaScript.  We want this JS to run after the elements are in the DOM, so we'll just put the JS at the bottom of the template.
+Materialize requires us to "initialize" certain inputs using a bit of JavaScript. We want this JS to run after the elements are in the DOM, so we'll just put the JS at the bottom of the template.
 
 <br>
 <br>
 <br>
 
 Let's add `<script>` tags at the bottom of of **detail.html**:
-
 
 ```html
 </div>
@@ -702,7 +690,6 @@ Let's add `<script>` tags at the bottom of of **detail.html**:
 <br>
 <br>
 
-
 Using Materialize, it takes two steps to get the inputs the way we want them:
 
 1. Select the element(s)
@@ -713,7 +700,6 @@ Using Materialize, it takes two steps to get the inputs the way we want them:
 <br>
 
 Now let's add the JS to inside of the `<script>` tags to initialize the date-picker:
-
 
 ```js
 </div>
@@ -734,9 +720,9 @@ Now let's add the JS to inside of the `<script>` tags to initialize the date-pic
 <br>
 <br>
 
-As you can see, the `ModelForm` automatically generated an `id` attribute for each `<input>`.  Always be sure to use Devtools to figure out how to select elements for styling, etc.
+As you can see, the `ModelForm` automatically generated an `id` attribute for each `<input>`. Always be sure to use Devtools to figure out how to select elements for styling, etc.
 
-There are plenty of additional options for date-pickers than the four used above.  [Materialize's date-picker documentation](https://materializecss.com/pickers.html) has the details.
+There are plenty of additional options for date-pickers than the four used above. [Materialize's date-picker documentation](https://materializecss.com/pickers.html) has the details.
 
 Refresh and test it out by clicking inside of _Feeding Date_ - you should see a sweet date-picker pop up like this:
 
@@ -764,7 +750,6 @@ But, `<select>` dropdowns also need to be initialized when using Materialize.
 
 It doesn't require any options, just select it and init it:
 
-
 ```html
 </div>
 
@@ -787,7 +772,6 @@ It doesn't require any options, just select it and init it:
 <br>
 <br>
 <br>
-
 
 Refresh and the _Meal_ `<select>` is looking good:
 
@@ -836,27 +820,25 @@ The above route is basically saying that the `<form>`'s **action** attribute wil
 
 Now that we have a _named URL_, let's add the `action` attribute to the `<form>` in **detail.html**:
 
-
 ```html
 <div class="col s6">
   <!-- add the action attribute as follows -->
   <form action="{% url 'add_feeding' cat.id %}" method="post">
-    {% csrf_token %}
-    {{ feeding_form.as_p }}
-    <input type="submit" class="btn" value="Add Feeding">
+    {% csrf_token %} {{ feeding_form.as_p }}
+    <input type="submit" class="btn" value="Add Feeding" />
   </form>
+</div>
 ```
 
 <br>
 <br>
 <br>
 
-
 Once again, we're using the better practice of using the `url` template tag to write out the correct the URL for a route.
 
 If the URL requires values for named parameters such as `<int:cat_id>`, the `url` template tag accepts them after the name of the route.
 
-> Note that arguments provided to template tags are always separated using a space character, not a comma. 
+> Note that arguments provided to template tags are always separated using a space character, not a comma.
 
 We won't be able to refresh and check it out until we add the `views.add_feeding` function...
 
@@ -886,12 +868,11 @@ Refreshing and inspecting the elements using DevTools shows that our `<form>` is
 
 <img src="https://i.imgur.com/ENEb2d0.png">
 
-
 <br>
 <br>
 <br>
 
-Now let's turn our attention back to the `add_feeding` function. 
+Now let's turn our attention back to the `add_feeding` function.
 
 <br>
 <br>
@@ -912,10 +893,10 @@ def add_feeding(request, cat_id):
     new_feeding.save()
   return redirect('detail', cat_id=cat_id)
 ```
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
 
 After ensuring that the form contains valid data, we save the form with the `commit=False` option, which returns an in-memory model object so that we can assign the `cat_id` before actually saving to the database.
 
@@ -994,7 +975,7 @@ Take a moment to review, then on to the student picker!
 
 **2. What are `ModelForm`s used for?**
 
-**3. What technique did we use to pass the `id` of the cat to the `add_feeding` _view function_?** 
+**3. What technique did we use to pass the `id` of the cat to the `add_feeding` _view function_?**
 
 <br>
 <br>
@@ -1012,7 +993,7 @@ We're going to add a custom method to the `Cat` Model that help's enable the fol
 <br>
 <br>
 
-When a cat does not have at least the number of MEALS: 
+When a cat does not have at least the number of MEALS:
 
 <img src="https://i.imgur.com/3TEZ8nl.png">
 
@@ -1069,41 +1050,40 @@ len( self.feeding_set.filter(date=date.today()) )
 
 because this code would return all objects from the database when all we need is the number of objects returned by `count()`. In other words, don't return data from the database if you don't need it.
 
-
 <br>
 <br>
 <br>
-
 
 #### Update the **detail.html** Template
 
 All that's left is to sprinkle in a little template code like this:
 
-
 ```html
 ...
-  <div class="col s6">
-    <form action="{% url 'add_feeding' cat.id %}" method="post">
-      {% csrf_token %}
-      {{ feeding_form.as_p }}
-      <input type="submit" class="btn" value="Add Feeding">
-    </form>
-    <!-- new markup below -->
-    <br>
-    {% if cat.fed_for_today %}
-      <div class="card-panel teal-text center-align">{{cat.name}} has been fed all meals for today</div>
-    {% else %}
-      <div class="card-panel red-text center-align">{{cat.name}} might be hungry</div>
-    {% endif %}
-    <!-- new markup above-->
-    <table class="striped">
-
+<div class="col s6">
+  <form action="{% url 'add_feeding' cat.id %}" method="post">
+    {% csrf_token %} {{ feeding_form.as_p }}
+    <input type="submit" class="btn" value="Add Feeding" />
+  </form>
+  <!-- new markup below -->
+  <br />
+  {% if cat.fed_for_today %}
+  <div class="card-panel teal-text center-align">
+    {{cat.name}} has been fed all meals for today
+  </div>
+  {% else %}
+  <div class="card-panel red-text center-align">
+    {{cat.name}} might be hungry
+  </div>
+  {% endif %}
+  <!-- new markup above-->
+  <table class="striped"></table>
+</div>
 ```
 
 <br>
 <br>
 <br>
-
 
 Congrats on using a custom Model method to implement business logic!
 

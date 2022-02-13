@@ -8,32 +8,22 @@ type: "lecture"
 
 # Intro to Django Models
 
-
-<br>
-<br>
-<br>
-
-### [Click here](https://generalassembly.zoom.us/rec/share/meNblp3SAG10yWJVEO8hrQHmEyYxQxNvzYhCWXgD9uZMAx1pshXR1r6ytn2_mrYj.4F-KS34btK4ELXnU?startTime=1625099512000) to access recording
-
 <br>
 <br>
 <br>
 
 ## Learning Objectives
 
-| Students will be able to: |
-|---|
-| Define a Django Model for a data entity |
+| Students will be able to:                            |
+| ---------------------------------------------------- |
+| Define a Django Model for a data entity              |
 | Generate migrations when Models are added or updated |
-| Run pending migrations |
+| Run pending migrations                               |
 | Implement a Details page for a single model instance |
 
-
-
 <br>
 <br>
 <br>
-
 
 ## Roadmap
 
@@ -47,7 +37,6 @@ type: "lecture"
 8. I am the Admin!
 9. Adding a Cat "Details" Page
 
-
 <br>
 <br>
 <br>
@@ -58,7 +47,6 @@ type: "lecture"
 	
 This lesson focuses on the **Model layer** which provides **Views** with access to the **database**.
 
-
 <br>
 <br>
 <br>
@@ -68,7 +56,6 @@ This lesson focuses on the **Model layer** which provides **Views** with access 
 The only change to the starter code from where the last lesson left off is that the `home` view now renders a **home.html** template instead of using `HttpResponse` to send back a string.
 
 Note that since the `HttpResponse` function is no longer being used in **views.py**, its import has been removed.
-
 
 <br>
 <br>
@@ -84,10 +71,9 @@ A Django Model represents a single entity from the ERD.
 
 Thus, a Model has a one-to-one mapping with a table in the database and is what allows us to perform create, read, update and delete data operations on that table.
 
-When we retrieve data from the database (using a Model of course), we will have **model objects**, each of which represents a row in a database table. Model objects are also called _instances_ of the Model.  We can work with these instances of the Model just like how we worked with Mongoose documents.
+When we retrieve data from the database (using a Model of course), we will have **model objects**, each of which represents a row in a database table. Model objects are also called _instances_ of the Model. We can work with these instances of the Model just like how we worked with Mongoose documents.
 
 > Note: Since a "model" can technically refer to the Model class or an instance of that class, we will try to use "Model" (capitalized) to refer to a Model class we use to perform CRUD with and "model" (lowercased) to refer to a model instance.
-
 
 <br>
 <br>
@@ -112,7 +98,6 @@ It's important to note that the Field types for a Model don't just determine the
 - To implement some validation in automatically-generated forms.
 - To determine the default HTML [widget](https://docs.djangoproject.com/en/2.1/ref/forms/widgets/) to render in forms for the Model. For example, a `CharField` uses a `<input type="text">` as its _widget_, whereas, a `TextField` uses a `<textarea>`.
 
-
 <br>
 <br>
 <br>
@@ -126,7 +111,6 @@ It's important to note that the Field types for a Model don't just determine the
 	<p><strong>A Model</strong></p>
 </details>
 
-
 <br>
 <br>
 
@@ -136,7 +120,6 @@ It's important to note that the Field types for a Model don't just determine the
 	</summary>
 	<p><strong>With a Python class</strong></p>
 </details>
-
 
 <br>
 <br>
@@ -148,13 +131,11 @@ It's important to note that the Field types for a Model don't just determine the
 	<p>An ERD Entity maps to a <strong>Model</strong> in Django, which maps to a <strong>table</strong> in the database.</p>
 </details>
 
-
 <br>
 <br>
 <br>
 
 ## Making and Running Migrations
-
 
 <br>
 <br>
@@ -164,10 +145,9 @@ It's important to note that the Field types for a Model don't just determine the
 
 [Migrations](https://docs.djangoproject.com/en/2.1/topics/migrations/) are used to synchronize a database's schema with the app's Models.
 
-Migrations are used to evolve a database over time - as the requirements of the application change.  However, they can be "destructive" (cause a loss of data), so be careful with migrations if you're working with an application in _production_.
+Migrations are used to evolve a database over time - as the requirements of the application change. However, they can be "destructive" (cause a loss of data), so be careful with migrations if you're working with an application in _production_.
 
 Migrations in Django are Python files that are created by running a command Django in Terminal.
-
 
 <br>
 <br>
@@ -175,7 +155,7 @@ Migrations in Django are Python files that are created by running a command Djan
 
 #### Making Migration Files
 
-Okay, we've defined a `Cat` Model, but the database does not yet have a table to hold all of our furry model instances (rows). 
+Okay, we've defined a `Cat` Model, but the database does not yet have a table to hold all of our furry model instances (rows).
 
 The following command creates migration files for all Models that have been added or changed since the last migration:
 
@@ -190,7 +170,6 @@ A `migrations` directory is created for an **app** the first time you run `makem
 You don't have to do anything with the migration files, but since this is the first time we've made one, let's open it and take a peek.
 
 > You should rarely need to edit migration files by hand, but it’s entirely possible to do so if you ever need to.
-
 
 <br>
 <br>
@@ -207,7 +186,6 @@ $ python manage.py migrate
 ```
 
 `OK` messages are a good thing 😊
-
 
 <br>
 <br>
@@ -239,20 +217,17 @@ List the tables:
 \d
 ```
 
-You'll find quite a few tables named like `django_*`.  These tables are used by the framework to track migrations, server-side sessions, etc.
+You'll find quite a few tables named like `django_*`. These tables are used by the framework to track migrations, server-side sessions, etc.
 
-You'll also find several tables named like `auth_*`.  These were created by the `dango.contrib.auth` app that's listed in the `INSTALLED_APPS` variable within `settings.py`.
+You'll also find several tables named like `auth_*`. These were created by the `dango.contrib.auth` app that's listed in the `INSTALLED_APPS` variable within `settings.py`.
 
 Finally, there's our `main_app_cat` table that maps to our `Cat` Model. It's empty now - we'll change that in a bit, but first...
-
 
 <br>
 <br>
 <br>
 
 ### ❓ Review Questions
-
-
 
 <details>
 	<summary>
@@ -261,11 +236,8 @@ Finally, there's our `main_app_cat` table that maps to our `Cat` Model. It's emp
 	<p><strong>Migrations</strong></p>
 </details>
 
-
-
 <br>
 <br>
-
 
 <details>
 	<summary>
@@ -274,19 +246,15 @@ Finally, there's our `main_app_cat` table that maps to our `Cat` Model. It's emp
 	<p><strong>Whenever a Model is added or updated in a way that impacts the database's schema.</strong></p>
 </details>
 
-
-
 <br>
 <br>
 <br>
 
 ## Performing CRUD Using Django's ORM
 
-
 <br>
 <br>
 <br>
-
 
 #### What's an ORM?
 
@@ -305,7 +273,6 @@ Another benefit is that the ORM & Model layer abstracts away the differences bet
 <br>
 <br>
 <br>
-
 
 #### Django's ORM
 
@@ -346,7 +313,6 @@ To retrieve all of the Cat objects, enter this command:
 <QuerySet []>
 ```
 
-
 <br>
 <br>
 <br>
@@ -361,7 +327,6 @@ By default, Django adds a Manager to every Model class - this is the `objects` a
 <br>
 <br>
 
-
 ##### **The `<QuerySet>`**
 
 The `<QuerySet []>` returned represents a database query that can be refined by chaining additional methods to it.
@@ -370,7 +335,6 @@ Ultimately though, when the app needs the data, for example, to iterate over cat
 
 Besides `Cat.objects.all()`, let's see some of the other common ORM operations...
 
-
 <br>
 <br>
 <br>
@@ -378,7 +342,7 @@ Besides `Cat.objects.all()`, let's see some of the other common ORM operations..
 #### Give Me a "C"
 
 Here's how we can create an in-memory model (an instance of a Model) and then save it to the database:
- 
+
 ```python
 >>> c = Cat(name="Biscuit", breed='Sphinx',
 >>> description='Evil looking cuddle monster. Hairless', age=2)
@@ -389,7 +353,7 @@ Here's how we can create an in-memory model (an instance of a Model) and then sa
 
 As you can see, we pass the data for the model's attributes as kwargs.
 
-> Note:  The model currently has `None` as its `id` because it is not yet saved to the database.
+> Note: The model currently has `None` as its `id` because it is not yet saved to the database.
 
 ```python
 >>> c.save()
@@ -403,7 +367,6 @@ If you call `Cat.objects.all()` again you'll see a `Cat` object exists now:
 >>> Cat.objects.all()
 <QuerySet [<Cat: Cat object (1)>]>
 ```
-
 
 <br>
 <br>
@@ -420,7 +383,6 @@ Check that your cat was added by using `Cat.objects.all()`.
 <br>
 <br>
 <br>
-
 
 ##### Adding a `__str__` Method
 
@@ -444,7 +406,6 @@ Note that changes to a Model do not become active in the shell unless you `exit(
 <br>
 <br>
 
-
 #### Give Me a "U"
 
 A single attribute value can be updated by simply assigning the new value and calling `save()`:
@@ -459,7 +420,6 @@ A single attribute value can be updated by simply assigning the new value and ca
 >>> c
 <Cat: Rubber Biscuit>
 ```
-
 
 <br>
 <br>
@@ -486,6 +446,7 @@ For example if we wanted to query for all cats whose names _contain_ a string:
 >>> Cat.objects.filter(name__contains='Bis')
 <QuerySet [<Cat: Rubber Biscuit>]>
 ```
+
 The above's SQL equivalent would be something like:
 
 ```sql
@@ -499,7 +460,7 @@ As another example, here's how we can find cats that have an age _equal to or le
 <QuerySet [<Cat: Biscuit>]>
 ```
 
-For basic lookups, the format is:  `field__lookuptype=value` (that's a double underscore).
+For basic lookups, the format is: `field__lookuptype=value` (that's a double underscore).
 
 The above `filter` operation is similar to executing the following SQL:
 
@@ -511,7 +472,6 @@ Filters can even be chained!
 
 Like most things in SEI, learning how to use `filter()` will take practice.
 
-
 <br>
 <br>
 <br>
@@ -520,7 +480,7 @@ Like most things in SEI, learning how to use `filter()` will take practice.
 
 You've seen how `Cat.objects.all()` and `Cat.objects.filter()` returns a list of objects.
 
-However, it's a very common data operation to read one specific model object from the table based on some provided value, usually its `id`. 
+However, it's a very common data operation to read one specific model object from the table based on some provided value, usually its `id`.
 
 Instead of the `objects.all()` method, we can use the `get()` method like this:
 
@@ -532,7 +492,6 @@ The `get()` method can also be called with multiple `field=value` arguments to q
 
 Be sure to use error handling if there's a chance that `get()` won't find what you're looking for because if Django doesn't find it, an error is raised.
 
-
 <br>
 <br>
 <br>
@@ -543,7 +502,7 @@ Similar to what you saw in SQL, there's an [order_by](https://docs.djangoproject
 
 ```python
 >>> Cat.objects.order_by('name')
-``` 
+```
 
 Or in descending order:
 
@@ -559,14 +518,13 @@ Poor old cat:
 >>> Cat.objects.order_by('-age')[0]
 ```
 
-
 <br>
 <br>
 <br>
 
 ## Let's Get Coding!
 
-Time to add some of this ORM magic to the  Cat Collector app!
+Time to add some of this ORM magic to the Cat Collector app!
 
 Currently, we are "faking" the data with a `list` of cats.
 
@@ -601,7 +559,6 @@ Nice!
 <br>
 <br>
 
-
 ## I am the Admin!
 
 But wait, there's another really REALLY neat thing about Django - it comes with built-in administrator functionality! Remember that `django.contrib.auth` in the `INSTALLED_APPS`? Let's use it!
@@ -618,7 +575,7 @@ Django will want you to create a password that's at least 3 characters long and 
 
 You will be prompted to enter a username, email address, and a password.
 
-Now go to your webpage and head over to the `/admin` route to see an _administration_ portal!  
+Now go to your webpage and head over to the `/admin` route to see an _administration_ portal!
 
 Did you mess up your password? It's okay - no big fish. Go back to your terminal and use this handy command:
 
@@ -626,7 +583,7 @@ Did you mess up your password? It's okay - no big fish. Go back to your terminal
 python manage.py changepassword <user_name>
 ```
 
-But I don't see **Cats**!  That's because in order to manipulate Cat data, we need to "register" the `Cat` Model so that the admin portal knows about.
+But I don't see **Cats**! That's because in order to manipulate Cat data, we need to "register" the `Cat` Model so that the admin portal knows about.
 
 We register our Models in the `main_app/admin.py` file:
 
@@ -647,10 +604,9 @@ We can add, edit, and remove data objects anytime we need to by browsing to `/ad
 <br>
 <br>
 
-
 ## Adding a Cat "Details" Page
 
-Typically, the _index_ page showing all cats would only show a "summary" of each cat's info.  For example, just their "name" perhaps.
+Typically, the _index_ page showing all cats would only show a "summary" of each cat's info. For example, just their "name" perhaps.
 
 Then, it would be commonplace to show the "details" for a data object using a separate page that results from the user clicking on that summary info - in this case, the cat's "card" in **index.html**.
 
@@ -658,26 +614,23 @@ Then, it would be commonplace to show the "details" for a data object using a se
 <br>
 <br>
 
-
 #### Typical Process to Add Functionality to an App
 
 Remember, nothing is going to happen unless an HTTP request leaves the browser informing the server what the app wants to do.
 
 When adding additional functionality to a web app we need to do the following:
 
-1. With Django, decide the appropriate URL for the route.  Because Django does not follow the RESTful routing methodology, you are free to name the URLs as you see fit. 
+1. With Django, decide the appropriate URL for the route. Because Django does not follow the RESTful routing methodology, you are free to name the URLs as you see fit.
 2. Add the UI that is going to trigger the HTTP request to be sent to the server. For example, adding a `<form>` to submit a new cat.
-3. Code the route on the server.  In the case of Django, this is done by adding an additional `path(...)` to the `urlpatterns` list within the app's `urls.py` module. **Each entry in `urlpatterns` determines what code will run when the URL matches an HTTP request**.
+3. Code the route on the server. In the case of Django, this is done by adding an additional `path(...)` to the `urlpatterns` list within the app's `urls.py` module. **Each entry in `urlpatterns` determines what code will run when the URL matches an HTTP request**.
 4. Now you need to add the _view function_ referenced by the `path(...)` inside of the **views.py** module. The _view function_ contains the code to perform CRUD, etc. It ultimately is responsible for responding to the client's request...
 5. If data was changed, respond with a **redirect**. Otherwise, you'll typically **render** a _template_, optionally passing data to it. If a _template_ is required, time to write it, and you're done - other than debugging.
 
 Make it a habit to follow the steps above anytime you need new functionality in your app.
 
-
 <br>
 <br>
 <br>
-
 
 ##### Step 1
 
@@ -690,7 +643,6 @@ For sure we need to "capture" the `id` of the cat we want the details for in the
 Let's go with this: `cats/<int:cat_id>/`
 
 The `int:` part is called a converter and it's used to match and convert the captured value from a string into, in this case, an integer. If the info in the segment does not look like an integer, then it will not be matched - this is different than what we saw in Express where the type of info in a segment didn't matter.
-
 
 <br>
 <br>
@@ -711,12 +663,12 @@ We can accomplish this by wrapping the card's content with an `<a>` tag and sett
       <p>Breed: {{ cat.breed }}</p>
       <p>Description: {{ cat.description }}</p>
       {% if cat.age > 0 %}
-        <p>Age: {{ cat.age }}</p>
+      <p>Age: {{ cat.age }}</p>
       {% else %}
-        <p>Age: Kitten</p>
+      <p>Age: Kitten</p>
       {% endif %}
     </div>
-  <!-- and this following one as well -->
+    <!-- and this following one as well -->
   </a>
 </div>
 ```
@@ -726,7 +678,6 @@ The above is pretty similar to what we did in EJS templates.
 After refreshing the page, hover over a cat card and check the URL in the bottom-left of the browser window. It should look something like:<br>`localhost:8000/cats/2`.
 
 Cool, on to the next step...
-
 
 <br>
 <br>
@@ -741,13 +692,12 @@ urlpatterns = [
   path('', views.home, name='home'),
   path('about/', views.about, name='about'),
   path('cats/', views.cats_index, name='index'),
-  # new route below 
+  # new route below
   path('cats/<int:cat_id>/', views.cats_detail, name='detail'),
 ]
 ```
 
-We've decided that the newly added route will invoke an appropriately named _view function_, `cats_detail`.  That's next...
-
+We've decided that the newly added route will invoke an appropriately named _view function_, `cats_detail`. That's next...
 
 <br>
 <br>
@@ -775,7 +725,6 @@ The `cats_detail` function is using the `get` method to obtain the cat object by
 
 **What determined the parameter name of cat_id in the cars_detail view function?**
 
-
 <br>
 <br>
 <br>
@@ -794,10 +743,8 @@ $ touch main_app/templates/cats/detail.html
 
 Now let's add the following template code:
 
-
 ```html
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Cat Details</h1>
 
@@ -807,9 +754,9 @@ Now let's add the following template code:
     <p>Breed: {{ cat.breed }}</p>
     <p>Description: {{ cat.description }}</p>
     {% if cat.age > 0 %}
-      <p>Age: {{ cat.age }}</p>
+    <p>Age: {{ cat.age }}</p>
     {% else %}
-      <p>Age: Kitten</p>
+    <p>Age: Kitten</p>
     {% endif %}
   </div>
 </div>
@@ -817,24 +764,17 @@ Now let's add the following template code:
 {% endblock %}
 ```
 
-
 It's basically the same cat "card" from **index.html**, except the wrapping `<a>` tags have been removed.
 
 **What's this business about?**
 
-
-
 ```html
-
 {% extends 'base.html' %}{% block content %}
-
 ```
-
 
 Okay, let's refresh and check it out!
 
 <img src="https://i.imgur.com/mee5Cxv.png">
-
 
 <br>
 <br>
@@ -849,8 +789,8 @@ For example, in **index.html**, we find:
 ```html
 ...
 <div class="card">
-  <a href="/cats/{{ cat.id }}">
-  ...
+  <a href="/cats/{{ cat.id }}"> ...</a>
+</div>
 ```
 
 Django has a better way!
@@ -871,23 +811,18 @@ That `name` argument within each `path` is used to obtain the correct URL in tem
 In **index.html**, replace this code:
 
 ```html
-<a href="/cats/{{cat.id}}">
+<a href="/cats/{{cat.id}}"></a>
 ```
 
 With this code:
 
-
 ```html
-
-<a href="{% url 'detail' cat.id %}">
-
+<a href="{% url 'detail' cat.id %}"> </a>
 ```
-
 
 The above is the Django way.
 
 **Congrats on coding the Django `Cat` Model and adding the _detail_ functionality for the Cat Collector.**
-
 
 <br>
 <br>
@@ -898,7 +833,6 @@ The above is the Django way.
 For practice, do everything we did in this lesson on your Finch Collector project!
 
 Don't forget to make commits.
-
 
 <br>
 <br>
