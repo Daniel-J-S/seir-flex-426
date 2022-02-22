@@ -12,25 +12,17 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/BdBZMiz1v7-wV9LfPt-OoZiC7-D2X5bI2BMt_acaKo1rCvOS0Ww0WJf9obQWqGs3.ih_k_ps8UDaCfUOP?startTime=1626223613000) to access recording
-
-<br>
-<br>
-<br>
-
-
 ## Learning Objectives
 
-| Students will be able to: |
-|---|
+| Students will be able to:                         |
+| ------------------------------------------------- |
 | Set up Amazon S3 to hold an app's uploaded images |
 | Use an HTML `<form>` to send a file to the server |
-| Upload a file to S3 from the server |
+| Upload a file to S3 from the server               |
 
 <br>
 <br>
 <br>
-
 
 ## Roadmap
 
@@ -69,10 +61,10 @@ Once inside the **catcollector** directory, spin up the Django development serve
 ```bash
 $ python3 manage.py runserver
 ```
-<br>
-<br>
-<br>
 
+<br>
+<br>
+<br>
 
 ## Set up Amazon S3
 
@@ -86,12 +78,11 @@ The specific web service we are going to use to host our uploaded images is the 
 <br>
 <br>
 
-
 ### Set up an Amazon AWS Account
 
 Before we can use S3, or any Amazon Web Service, we'll need an Amazon AWS account.
 
-**Notice:** Even though AWS has a "free tier" and we will do nothing in SEI that will cost money, AWS requires a credit card to open an account.  If you don't wish to provide a credit card, you will not be able to complete this lesson and you won't be able to upload images using Amazon Web Services. Unfortunately, alternative services such as Microsoft Azure have the same credit card requirement.
+**Notice:** Even though AWS has a "free tier" and we will do nothing in SEI that will cost money, AWS requires a credit card to open an account. If you don't wish to provide a credit card, you will not be able to complete this lesson and you won't be able to upload images using Amazon Web Services. Unfortunately, alternative services such as Microsoft Azure have the same credit card requirement.
 
 Click the orange "Sign in to the Console" button, then click "Create a new AWS account".
 
@@ -101,12 +92,11 @@ Unfortunately, the signup process is a bit lengthy...
 <br>
 <br>
 
-
 ### Sign in to the AWS Console
 
 After you have signed up, log in to the Console.
 
-Click the `>  All services` drop-down.
+Click the `> All services` drop-down.
 
 The first thing we're going to do is create access keys to access S3 with.
 
@@ -116,7 +106,6 @@ We will be obtaining two keys: An **Access Key ID** and a **Secret Access Key**.
 <br>
 <br>
 
-
 Locate the "Security, Identity & Compliance" section and click **IAM**:
 
 <img src="https://i.imgur.com/2pAZLVG.png">
@@ -124,7 +113,6 @@ Locate the "Security, Identity & Compliance" section and click **IAM**:
 <br>
 <br>
 <br>
-
 
 Click "Users" in the sidebar:
 
@@ -134,7 +122,6 @@ Click "Users" in the sidebar:
 <br>
 <br>
 
-
 Click the "Add user" button:
 
 <img src="https://i.imgur.com/HEMERzW.png">
@@ -143,7 +130,6 @@ Click the "Add user" button:
 <br>
 <br>
 
-
 Enter a user name and select "Programmatic access":
 
 <img src="https://i.imgur.com/PVvaMCt.png">
@@ -151,7 +137,6 @@ Enter a user name and select "Programmatic access":
 <br>
 <br>
 <br>
-
 
 Click the "Next: Permissions" button.
 
@@ -167,7 +152,6 @@ Enter a "Group name" - `django-s3-assets` is fine. Then scroll way down and sele
 <br>
 <br>
 
-
 Click the "Create group" button (bottom-right).
 
 Click the "Next: Review" button (bottom-right).
@@ -179,7 +163,6 @@ Then click the "Create user" button (bottom-right):
 <br>
 <br>
 <br>
-
 
 Copy both access keys to a safe place - we'll need them later in the lesson.
 
@@ -193,13 +176,11 @@ Now click the "Services" drop-down (top-left):
 <br>
 <br>
 
-
 Click the `S3` link under the "Storage" section.
 
 <br>
 <br>
 <br>
-
 
 ### Create an S3 Bucket for the `catcollector` App
 
@@ -211,7 +192,6 @@ Typically, you would want to create an S3 bucket for each web application you de
 <br>
 <br>
 
-
 Let's click the blue button to get started:
 
 <img src="https://i.imgur.com/ux61Yn0.png">
@@ -222,17 +202,15 @@ You'll have to enter a **globally unique** _Bucket name_. I'm willing to sell "c
 <br>
 <br>
 
-
 Then select the nearest _Region_ as follows:
 
 <img src="https://i.imgur.com/pgQHKMB.png">
 
-For the best performance, always be sure to select the nearest location to where most of your users will be.  For this lesson, be sure to select the Region nearest you.
+For the best performance, always be sure to select the nearest location to where most of your users will be. For this lesson, be sure to select the Region nearest you.
 
 <br>
 <br>
 <br>
-
 
 Click the **Next** button (bottom-right of popup) - **TWICE** to get to this screen:
 
@@ -246,7 +224,6 @@ Click **Next**, then a new screen will appear where you will click the **Create 
 <br>
 <br>
 
-
 The bucket has been created!
 
 <img src="https://i.imgur.com/2fVW2Kg.png">
@@ -259,7 +236,6 @@ To do so, we need to specify a "bucket policy" that enables read-only access to 
 <br>
 <br>
 
-
 Click on the bucket name:
 
 <img src="https://i.imgur.com/1fK4RZo.png">
@@ -268,7 +244,6 @@ Click on the bucket name:
 <br>
 <br>
 
-
 Click the "Permissions" tab at the top:
 
 <img src="https://i.imgur.com/HAEVb6y.png">
@@ -276,7 +251,6 @@ Click the "Permissions" tab at the top:
 <br>
 <br>
 <br>
-
 
 Click on the square "Bucket Policy" button.
 
@@ -288,7 +262,6 @@ Then at the bottom click the "Policy generator" link:
 <br>
 <br>
 
-
 A new tab will open in your browser.
 
 Start entering the data as follows. BTW, that's a `*` in the "Principle" input.
@@ -299,8 +272,7 @@ Start entering the data as follows. BTW, that's a `*` in the "Principle" input.
 <br>
 <br>
 
-
-This next one's a bit challenging.  In the "Amazon Resources Name (ARN)" input enter this:
+This next one's a bit challenging. In the "Amazon Resources Name (ARN)" input enter this:
 
 `arn:aws:s3:::catcollector/*`
 
@@ -314,7 +286,6 @@ Once that is done, click the "Generate Policy" button.
 <br>
 <br>
 
-
 Copy the text inside the box, including the curly braces:
 
 <img src="https://i.imgur.com/w90Jq1x.png">
@@ -322,7 +293,6 @@ Copy the text inside the box, including the curly braces:
 <br>
 <br>
 <br>
-
 
 Now go back to the main tab and paste in that text:
 
@@ -334,12 +304,11 @@ Click the "Save" button (top-right).
 <br>
 <br>
 
-
 You should see something like this at the top of the page:
 
 <img src="https://i.imgur.com/Mn1Dl5P.png">
 
-Congrats!  You now have an S3 bucket that, using the access keys, an application can upload files of any type to; that also allows any browser to download by using a known URL.
+Congrats! You now have an S3 bucket that, using the access keys, an application can upload files of any type to; that also allows any browser to download by using a known URL.
 
 Now let's get on with the app!
 
@@ -347,13 +316,11 @@ Now let's get on with the app!
 <br>
 <br>
 
-
 ### Install & Configure - Boto 3
 
 <br>
 <br>
 <br>
-
 
 #### Install `boto3`
 
@@ -369,8 +336,6 @@ $ pip3 install boto3
 <br>
 <br>
 
-
-
 #### Configure Credentials
 
 <p style="color:red">Do not ever put your Amazon AWS, or any other secret keys, in your source code!</p>
@@ -385,17 +350,15 @@ During development (not in a deployed app), boto3 will automatically look in a s
 <br>
 <br>
 
-
 First let's create the folder it needs:
 
 ```bash
 $ mkdir ~/.aws
 ```
-<br>
-<br>
-<br>
 
-
+<br>
+<br>
+<br>
 
 Now let's create the file:
 
@@ -409,7 +372,6 @@ Note that there is no file extension on the _credentials_ file.
 <br>
 <br>
 
-
 Now let's open it and put our keys in there:
 
 ```shell
@@ -419,7 +381,6 @@ $ code ~/.aws/credentials
 <br>
 <br>
 <br>
-
 
 Then type the following in the file, substituting your real keys:
 
@@ -435,19 +396,17 @@ aws_secret_access_key=YOUR_SECRET_KEY
 <br>
 <br>
 
-
 ## Add a `Photo` Model
 
 <br>
 <br>
 <br>
 
-
 #### The Relationship
 
 We're going to add a `Photo` Model that will hold the URL of a cat image in S3.
 
-The relationship looks like this:  `Cat -----< Photo`
+The relationship looks like this: `Cat -----< Photo`
 
 <details>
 	<summary>
@@ -461,7 +420,6 @@ The relationship looks like this:  `Cat -----< Photo`
 <br>
 <br>
 <br>
-
 
 #### Define the `Photo` Model
 
@@ -478,7 +436,7 @@ class Photo(models.Model):
 
 Nice and simple!
 
-> **Reminder:** If a Model "belongs to" another Model, it must have a foreign key. More than one "belongs to" relationship - means more than one foreign key. 
+> **Reminder:** If a Model "belongs to" another Model, it must have a foreign key. More than one "belongs to" relationship - means more than one foreign key.
 
 <details>
 	<summary>
@@ -493,7 +451,6 @@ Nice and simple!
 <br>
 <br>
 <br>
-
 
 ## Add the `add_photo` URL
 
@@ -510,22 +467,20 @@ urlpatterns = [
     path('cats/<int:cat_id>/add_photo/', views.add_photo, name='add_photo'),
 ]
 ```
-<br>
-<br>
-<br>
 
-
+<br>
+<br>
+<br>
 
 Pretty much like the `add_feeding` route!
 
 Notice once again, we're going to capture the cat's `id` using a URL parameter named `cat_id`.
 
-The server currently shows an error because we've referenced an `add_photo` _view function_ that doesn't exist.  Let's take care of that next...
+The server currently shows an error because we've referenced an `add_photo` _view function_ that doesn't exist. Let's take care of that next...
 
 <br>
 <br>
 <br>
-
 
 ## Add the `add_photo` View Function
 
@@ -539,8 +494,6 @@ The server currently shows an error because we've referenced an `add_photo` _vie
 <br>
 <br>
 <br>
-
-
 
 First, we need to import three more things:
 
@@ -564,10 +517,9 @@ from .models import Cat, Toy, Photo
 <br>
 <br>
 
-
 Next, we're going to define a couple of variables we'll use in the _view function_.
 
-First, find the **endpoint** for your the **region** you selected when you created the bucket on the following list: 
+First, find the **endpoint** for your the **region** you selected when you created the bucket on the following list:
 
 <img src="https://i.imgur.com/fQ6Nxpa.png">
 
@@ -582,11 +534,10 @@ from .forms import FeedingForm
 S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
 BUCKET = 'catcollector'
 ```
-<br>
-<br>
-<br>
 
-
+<br>
+<br>
+<br>
 
 **Make sure that you use YOUR S3 bucket name instead of `catcollector`.**
 
@@ -595,7 +546,6 @@ We'll be using `S3_BASE_URL`, `BUCKET` and a randomly generated key to build a u
 <br>
 <br>
 <br>
-
 
 Finally, this is where the magic happens, we'll review the code as we type it in:
 
@@ -628,7 +578,6 @@ On to the UI...
 <br>
 <br>
 
-
 ## Update the _details.html_ Template
 
 We're going to need to update the _details.html_ template to:
@@ -641,11 +590,9 @@ We're going to need to update the _details.html_ template to:
 <br>
 <br>
 
-
 #### Display Cat Images
 
 We're going to use Django's nifty `for...empty` template tags to iterate through each cat's photos like this:
-
 
 ```html
 ...
@@ -659,13 +606,11 @@ We're going to use Django's nifty `for...empty` template tags to iterate through
 ...
 ```
 
-
 > The `for...empty` template tags avoid having to wrap a `for...in` loop with an `if...else` like we did earlier to display a "No Toys" message.
 
 <br>
 <br>
 <br>
-
 
 Let's see how it looks:
 
@@ -677,9 +622,7 @@ Since we haven't uploaded any photos yet, we are seeing the _No Photos Uploaded_
 <br>
 <br>
 
-
-Reminder - we don't actually invoke methods within Django template tags.  For example, notice that there's no `()` in this line of code:
-
+Reminder - we don't actually invoke methods within Django template tags. For example, notice that there's no `()` in this line of code:
 
 ```html
 {% for photo in cat.photo_set.all %}
@@ -689,59 +632,54 @@ Reminder - we don't actually invoke methods within Django template tags.  For ex
 <br>
 <br>
 
-
-This is because Django templates automatically call an attribute if it's a function. This can be a problem if you ever need to actually call a function that takes arguments.  For example, the following **will not work**:
-
+This is because Django templates automatically call an attribute if it's a function. This can be a problem if you ever need to actually call a function that takes arguments. For example, the following **will not work**:
 
 ```html
 {% if len(cat.photo_set.all) > 0 %}
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 Django templates provide [filters](https://docs.djangoproject.com/en/2.2/ref/templates/builtins/#ref-templates-builtins-filters) for use in both `{{ }}` (variable) and `{% %}` (tags).
 
 For example, to check the length, you can use the `length` filter like this:
 
-
 ```html
 {% if cat.photo_set.all|length > 0 %}
 ```
 
-
-Filters can also be used to transform/format data, e.g., 
+Filters can also be used to transform/format data, e.g.,
 
 <br>
 <br>
 <br>
-
 
 #### Form for Uploading Photos
 
 Okay, let's code a `<form>` that we can use to upload files to the server:
 
-
 ```html
 {% for photo in cat.photo_set.all %}
-    <img class="responsive-img card-panel" src="{{photo.url}}">
+<img class="responsive-img card-panel" src="{{photo.url}}" />
 {% empty %}
-    <div class="card-panel teal-text center-align">No Photos Uploaded</div>
+<div class="card-panel teal-text center-align">No Photos Uploaded</div>
 {% endfor %}
 
 <!-- new code below -->
-<form action="{% url 'add_photo' cat.id %}" enctype="multipart/form-data" method="POST" class="card-panel">
-    {% csrf_token %}
-    <input type="file" name="photo-file">
-    <br><br>
-    <input type="submit" class="btn" value="Upload Photo">
+<form
+  action="{% url 'add_photo' cat.id %}"
+  enctype="multipart/form-data"
+  method="POST"
+  class="card-panel"
+>
+  {% csrf_token %}
+  <input type="file" name="photo-file" />
+  <br /><br />
+  <input type="submit" class="btn" value="Upload Photo" />
 </form>
 ```
-
 
 When using HTML forms to upload files, it's important to add the `enctype="multipart/form-data"` attribute to the `<form>` tag.
 
@@ -757,7 +695,6 @@ Looking good...
 <br>
 <br>
 
-
 ## Test it Out!
 
 Try uploading your favorite cat pic.
@@ -769,7 +706,6 @@ Success!
 <br>
 <br>
 <br>
-
 
 ## Check it Out in Admin
 
@@ -800,13 +736,11 @@ Note how the photo's url is formed.
 <br>
 <br>
 
-
 #### Congrats on uploading files to Amazon S3!
 
 <br>
 <br>
 <br>
-
 
 ## Resources
 
