@@ -75,9 +75,20 @@ Curriculum schedule and content is subject to change at the instructor's discret
 | 19   | Intro to Python Container, Functions, Classes & Django                      |
 | 20   | Django URLs, Views, Templates, Models & Independence Day Holiday            |
 | 21   | Django Model Relationships, Class Based Views & Photo Upload with Amazon S3 |
-| 22   | Project 4 Planning & Django Auth                                            |
-| 23   | Project 4 Week                                                              |
-| 24   | Project 4 Week, Presentations & Begin Portfolio Project                     |
-| 25   | Portfolio Project Week & Graduation 🎉                                      |
+| 22   | Django Auth, Intro to Data Modeling & Begin Project 4 Planning              |
+| 23   | Project 4 Planning                                                          |
+| 24   | Project 4 Week                                                              |
+| 25   | Project 4 Week & Project 4 Presentations                                    |
+
+<br>
+<br>
+
+### 🔒 Unit Five: Capstone Essentials
+
+<!-- ### [<u>Unit Five: Capstone Essentials</u>](/capstone-week) -->
+
+| Week  | Topics                                |
+| ----- | ------------------------------------- |
+| 26/27 | Capstone Project and Graduation 🥳 🎉 |
 
 <div style="color: grey;"></div>
