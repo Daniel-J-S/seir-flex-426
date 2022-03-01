@@ -12,29 +12,21 @@ type: "lecture"
 <br>
 <br>
 
-### [Click here](https://generalassembly.zoom.us/rec/share/1fiPlK6qLzTQaY0KI7bHSw-QZ2EYVMZ3P_gl5vhzaoZxULSYcQwf15_Eilpn6bId.aFzz6E0AHaCDei6u?startTime=1626309146000) to access recording
-
-<br>
-<br>
-<br>
-
 ## Learning Objectives
 
-| Students Will Be Able To: |
-|---|
+| Students Will Be Able To:                                        |
+| ---------------------------------------------------------------- |
 | Add a relationship between the built-in `User` and another Model |
-| Use the built-in `LoginView` to log in |
-| Use the built-in `LogoutView` to log out |
-| Use the built-in `UserCreationForm` to sign up new users |
-| Dynamically render HTML based upon auth status |
-| Access data that belongs to a logged in user only |
-| Protect routes from unauthorized access |
-
+| Use the built-in `LoginView` to log in                           |
+| Use the built-in `LogoutView` to log out                         |
+| Use the built-in `UserCreationForm` to sign up new users         |
+| Dynamically render HTML based upon auth status                   |
+| Access data that belongs to a logged in user only                |
+| Protect routes from unauthorized access                          |
 
 <br>
 <br>
 <br>
-
 
 ## Road Map
 
@@ -50,7 +42,6 @@ type: "lecture"
 10. Displaying only the User's Cats
 11. Implement Authorization
 12. Further Study - Customizing the `User` Model
-
 
 <br>
 <br>
@@ -69,7 +60,7 @@ The starter code is located in this lesson's `/starter-code/catcollector` direct
 Once inside the **catcollector** directory, spin up the Django development server:
 
 ```bash
-$ python3 manage.py runserver
+$ python manage.py runserver
 ```
 
 <br>
@@ -86,7 +77,6 @@ Two review questions for you:
 - **What is authorization?**
 
 Django's built-in authentication functionality is provided by the `'django.contrib.auth'` app included within the `INSTALLED_APPS` list in `settings.py`:
-
 
 <br>
 <br>
@@ -108,7 +98,6 @@ Django provides the common **user** authentication where the user signs up and l
 
 Django relies on server-side sessions, implemented by the `'django.contrib.sessions'` app, to track when a user is logged in or out.
 
-
 <br>
 <br>
 <br>
@@ -129,9 +118,7 @@ Although these attributes are fine for the Cat Collector, some projects may need
 <br>
 <br>
 
-
 ## 3. Creating the `User ---< Cat` Relationship
-
 
 <br>
 
@@ -148,7 +135,6 @@ Ordinarily, it's important to implement an app's authentication up front to avoi
 <br>
 <br>
 <br>
-
 
 #### Update the `Cat` Model
 
@@ -189,7 +175,6 @@ class Cat(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
 ```
 
-
 <br>
 <br>
 <br>
@@ -203,7 +188,7 @@ However, there will now be a FK constraint on cats, which means that every cat r
 Here we go:
 
 ```shell
-$ python3 manage.py makemigrations
+$ python manage.py makemigrations
 ```
 
 Which then presents us with this message:
@@ -226,15 +211,15 @@ Please enter the default value now, as valid Python
 The datetime and django.utils.timezone modules are available,
 so you can do e.g. timezone.now
 Type 'exit' to exit this prompt
->>> 
+>>>
 ```
 
 Our superuser's `id` should be `1`, so type `1` and press `[enter]`.
 
-The migration file will then be created.  Let's migrate the changes:
+The migration file will then be created. Let's migrate the changes:
 
 ```shell
-$ python3 manage.py migrate
+$ python manage.py migrate
 ```
 
 Congrats, the one-to-many relationship between User and Cat has been created and all existing cats have been collected by the superuser!
@@ -242,7 +227,6 @@ Congrats, the one-to-many relationship between User and Cat has been created and
 <br>
 <br>
 <br>
-
 
 ## 4. Adding URLs for Authentication
 
@@ -286,7 +270,7 @@ Let's spin up the server and browse to `localhost:8000/accounts/login` to see wh
 
 This is a beautiful error because it's simply complaining about a missing **registration/login.html** template. But wait, we didn't define a view to render anything - what's up?
 
-What's happening is that the `django.contrib.auth` app is doing its job!  It's using a built-in `LoginView` and this view is trying to render a _login.html_ template.
+What's happening is that the `django.contrib.auth` app is doing its job! It's using a built-in `LoginView` and this view is trying to render a _login.html_ template.
 
 Now let's implement logging in...
 
@@ -318,16 +302,13 @@ $ touch main_app/templates/registration/login.html
 
 Let's put a bit of markup in **login.html** so that we can see things are working:
 
-
 ```html
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Log In</h1>
 
 {% endblock %}
 ```
-
 
 Refresh!
 
@@ -335,29 +316,24 @@ Refresh!
 
 When `LoginView` renders the **login.html** template, it passes in the context a default `form` object we can display in **login.html**:
 
-
 ```html
 <h1>Log In</h1>
 
 <!-- Add the login form -->
 <form method="post" action="{% url 'login' %}">
-    {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" class="btn" value="login" />
+  <input type="hidden" name="next" value="{{ next }}" />
 </form>
 ```
 
-
 The
 
-
 ```html
-<input type="hidden" name="next" value="{{ next }}">
+<input type="hidden" name="next" value="{{ next }}" />
 ```
 
-
-is really cool.  It is a feature of Django's authentication that will automatically redirect a user that tries to access a protected route back to that route after they log in!
+is really cool. It is a feature of Django's authentication that will automatically redirect a user that tries to access a protected route back to that route after they log in!
 
 > Using hidden inputs in forms is a common technique in web apps for providing additional data to the server when the form is submitted.
 
@@ -390,7 +366,6 @@ Test it out - sweet!
 <br>
 <br>
 
-
 ## 6. Updating the Nav Bar Dynamically
 
 In most applications, many of the links displayed in a nav bar usually depend upon whether there is a logged in user or not.
@@ -416,23 +391,21 @@ To check if the user is logged in, we simply use `user.is_authenticated`, which 
 
 With this knowledge in hand, let's make the nav bar dynamic in **base.html**:
 
-
 ```html
 <ul class="right">
-    <!-- changes below -->
+  <!-- changes below -->
   <li><a href="{% url 'about' %}">About</a></li>
   {% if user.is_authenticated %}
-    <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
-    <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
-    <li><a href="{% url 'cats_create' %}">Add a Cat</a></li>
-    <li><a href="{% url 'index' %}">View All My Cats</a></li>
-    <li><a href="{% url 'logout' %}">Log Out</a></li>
+  <li><a href="{% url 'toys_create' %}">Add a Toy</a></li>
+  <li><a href="{% url 'toys_index' %}">View All Toys</a></li>
+  <li><a href="{% url 'cats_create' %}">Add a Cat</a></li>
+  <li><a href="{% url 'index' %}">View All My Cats</a></li>
+  <li><a href="{% url 'logout' %}">Log Out</a></li>
   {% else %}
-    <li><a href="{% url 'login' %}">Log In</a></li>
+  <li><a href="{% url 'login' %}">Log In</a></li>
   {% endif %}
 </ul>
 ```
-
 
 Note how the **Log In** and **Log Out** links are using the `url` template tag along with the built-in named URL patterns (listed above).
 
@@ -453,7 +426,6 @@ Logging out even works, but it doesn't redirect to our _Home_ page (root route).
 <br>
 <br>
 <br>
-
 
 ## 7. Logging Out
 
@@ -476,7 +448,6 @@ That was easy!
 <br>
 <br>
 
-
 ## 8. Update the `CatCreate` View to Assign a New Cat to the Logged in User
 
 Since cats belong to a user, before a new cat can be added to the database, its user is going to have to be assigned to its `user` attribute that we added to the model earlier.
@@ -487,7 +458,7 @@ To do this, we're going to have to add some additional code to the `CatCreate` v
 class CatCreate(CreateView):
   model = Cat
   fields = ['name', 'breed', 'description', 'age']
-  
+
   # This inherited method is called when a
   # valid cat form is being submitted
   def form_valid(self, form):
@@ -503,7 +474,7 @@ In Python, methods inherited by the superclass can be invoked by prefacing the m
 
 Okay, let's check out the refactor by:
 
-- First, opening the admin app:  `localhost:8000/admin`
+- First, opening the admin app: `localhost:8000/admin`
 - Click on **Cats**
 - Select a cat and verify the user is assigned to it
 - Leave the admin app open, and go add a new cat in Cat Collector
@@ -518,7 +489,6 @@ Moving right along...
 ## 9. Sign Up New Users
 
 Unfortunately, Django's built-in auth does not provide a URL or view for signing up new users.
-
 
 <br>
 <br>
@@ -543,14 +513,12 @@ There's no generic view available to help us out, so we're going to write the ne
 <br>
 <br>
 
-
 #### Add the `signup` View Function
 
 The `signup` view function will be the first view we've coded that performs two different behaviors based upon whether it was called via a GET or POST request:
 
 - If it's a **GET request**: The view function should render a template with a form for the user to enter their info.
 - If it's a **POST request**: The user has submitted their info and the function should create the user and redirect.
-
 
 Although Django did not include a URL or view, it **does** include a `UserCreationForm ` that we can use in a template to generate all of the inputs for a `User` model.
 
@@ -596,25 +564,21 @@ There's really no way to remember that code, so just refer to this lesson, the d
 <br>
 <br>
 
-
 #### Add the **Sign Up** Link to the Nav
 
 Now that we know the URL, we can add a **Sign Up** link to the nav in **base.html**:
 
-
 ```html
 {% else %}
-  <!-- New link below -->
-  <li><a href="{% url 'signup' %}">Sign Up</a></li>
-  <li><a href="{% url 'login' %}">Log In</a></li>
+<!-- New link below -->
+<li><a href="{% url 'signup' %}">Sign Up</a></li>
+<li><a href="{% url 'login' %}">Log In</a></li>
 {% endif %}
 ```
 
-
 <br>
 <br>
 <br>
-
 
 #### Create the **signup.html** Template
 
@@ -629,22 +593,21 @@ If you use VS Code's UI to copy it, just make sure **signup.html** is within the
 Make the necessary changes to **signup.html**:
 
 ```html
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Sign Up</h1>
 
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+{% if error_message %}
+<p class="red-text">{{ error_message }}</p>
+{% endif %}
 
 <form method="post" action="{% url 'signup' %}">
-    {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
+  {% csrf_token %} {{ form.as_p }}
+  <input type="submit" class="btn" value="signup" />
 </form>
 
 {% endblock %}
 ```
-
 
 With the above template, clicking the **Sign Up** in the nav should show a page like the following:
 
@@ -652,7 +615,7 @@ With the above template, clicking the **Sign Up** in the nav should show a page 
 
 By using the the `UserCreationForm`, you get help messages that go with all of the validations.
 
-However, notice that the form does not include inputs for the user's: 
+However, notice that the form does not include inputs for the user's:
 
 - `email`
 - `first_name`
@@ -667,7 +630,6 @@ You should now be able to sign up!
 <br>
 <br>
 <br>
-
 
 ## 10. Displaying Only the User's Cats
 
@@ -698,7 +660,6 @@ Last step, coming up!
 <br>
 <br>
 
-
 ## 11. Implement Authorization
 
 Now that authentication has been implemented, the last step is to protect the routes that are dependent upon a user being logged in.
@@ -707,11 +668,9 @@ Yes, the dynamic nav bar helps prevent access, but users can still type somethin
 
 Of course Django provides an easy way to protect both function and class-based views...
 
-
 <br>
 <br>
 <br>
-
 
 #### Implement Authorization on View Functions
 
@@ -747,7 +706,6 @@ Be sure to add the `@login_required` to these remaining view functions:
 <br>
 <br>
 <br>
-
 
 #### Implement Authorization on Class-based Views
 
@@ -787,7 +745,6 @@ Wow, that was a blast - congrats!
 <br>
 <br>
 
-
 ## Summary
 
 Authentication is incredibly important to virtually every application.
@@ -812,7 +769,6 @@ It sure would - "Make it so number one"
 <br>
 <br>
 
-
 ## 12. Further Study - Customizing the `User` Model
 
 There are a couple of options when it comes to adding additional attributes and/or behavior to the "user" in a Django app.
@@ -821,8 +777,7 @@ There are a couple of options when it comes to adding additional attributes and/
 <br>
 <br>
 
-
-#### APPROACH 1:  "Extending" the Existing `User` Model
+#### APPROACH 1: "Extending" the Existing `User` Model
 
 This recommended approach would be to extend the current `User` model by creating a one-to-one relationship with another Model, usually named something like `Profile`:
 
@@ -840,10 +795,9 @@ Start [here](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#exte
 <br>
 <br>
 
+#### APPROACH 2: Custom `User` Model
 
-#### APPROACH 2:  Custom `User` Model
-
-> Note:  This approach is more complex and requires more effort to implement - it is recommended that the first approach be followed.
+> Note: This approach is more complex and requires more effort to implement - it is recommended that the first approach be followed.
 
 This approach creates a custom `User` Model by inheriting from an `AbstractUser` class provided by Django:
 
@@ -859,7 +813,6 @@ Start [here](https://docs.djangoproject.com/en/2.2/topics/auth/customizing/#usin
 <br>
 <br>
 <br>
-
 
 ## References
 

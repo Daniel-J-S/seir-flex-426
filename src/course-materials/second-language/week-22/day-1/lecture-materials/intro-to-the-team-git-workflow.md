@@ -2,24 +2,15 @@
 track: "Second Language"
 title: "Intro To The Team Git Workflow"
 week: 22
-day: 3
+day: 1
 type: "lecture"
 ---
+
 # Intro To The Team Git Workflow
 
 <br>
 <br>
 <br>
-
-
-### [Click here](https://generalassembly.zoom.us/rec/share/3ZMmQR7dvswco0HnliTR4rPQTfoukY7c3kObg1FVOIArZO2o5WdBFRC3yJ75ytit.exF6BGCjpY-YVQ4Y?startTime=1626553867000) to access recording
-
-<br>
-<br>
-<br>
-
-
-
 
 ## Team Workflow
 
@@ -27,11 +18,9 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 
 **Programmers** will contribute code and issue pull requests, while **managers** integrate the code by merging the pull requests into the repo.
 
-
 <br>
 <br>
 <br>
-
 
 ### Creating the Repo (One-time Setup)
 
@@ -50,8 +39,7 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 4. `cd` into the newly created project folder.
 5. Now add a link to the manager's repo as well: `$ git remote add upstream https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git`
 6. Ensure that you have two remotes named `origin` & `upstream`: `$ git remote -v`
-7. Ensure you are notified of changes to the project by clicking the **Watch** button near the top right of the manager's repo.  Then make sure you GitHub account's notification settings are adjusted to notify you via email, etc.
-
+7. Ensure you are notified of changes to the project by clicking the **Watch** button near the top right of the manager's repo. Then make sure you GitHub account's notification settings are adjusted to notify you via email, etc.
 
 <br>
 <br>
@@ -64,19 +52,18 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 **Manager** & **Programmer**:
 
 1. Frequently ensure that you have the most recently merged code on your local computer:
-	- Checkout the `master` branch with `git checkout master`. *Only
-   pull when you are on `master`.*
-	- Now you can `$ git pull upstream master`. **Managers** will always use `origin` in place of `upstream`.
+   - Checkout the `master` branch with `git checkout master`. _Only
+     pull when you are on `master`._
+   - Now you can `$ git pull upstream master`. **Managers** will always use `origin` in place of `upstream`.
 2. **Use a feature branch** with `$ git checkout <feature_branch_name>`;
    add `-b` to create a new branch if necessary. Most students will use their name as the name of the branch. **You should never write code while in the `master` branch**.
 3. Write some code!
 4. **When you have completed a feature:**
-	- Commit your code as usual...
-   	- `$ git push origin <feature_branch_name>`
+   - Commit your code as usual...
+   - `$ git push origin <feature_branch_name>`
 5. On **your** GitHub repo's page, find and click the Pull Request button.
 6. FYI, multiple commits are grouped within a single open pull request.
 7. Go back to step #2.
-
 
 <br>
 <br>
@@ -91,22 +78,20 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 3. If the request is very comprehensive and may cause plenty of merge conflicts, the manager may decide to test and merge the pull request locally/manually by clicking **command line instructions** and following the steps listed.
 4. After a merge, ensure your team members pull the recent changes into their local repo ASAP.
 
-
 <br>
 <br>
 <br>
 
 ### Minimizing Merge Conflicts
 
-1. Try to divide up work so that programmers don't make changes to the same file between merges. 
+1. Try to divide up work so that programmers don't make changes to the same file between merges.
 2. When notified that branches have been merged into `master` by the manager, **immediately** bring your local repo up to date so that you are working with the latest and greatest:
-	- We're going to need to checkout the master branch to update it, however, _sometimes_ Git will not allow us checkout a different branch if there are uncommitted changes in the current branch.  The solution is to either `stash` or `commit` the changes first. Please read [this StackOverflow](https://stackoverflow.com/questions/22053757/checkout-another-branch-when-there-are-uncommitted-changes-on-the-current-branch) for how to resolve this scenario if Git does not allow the next step (`$ git checkout master`).
-	- `$ git checkout master`
-	- `$ git pull upstream master` **Manager** uses `origin` instead of `upstream`
-	- `$ git checkout <feature_branch_name>`
-	- `$ git merge master` This brings the latest code into your feature branch so that you are always developing with the latest and greatest.
+   - We're going to need to checkout the master branch to update it, however, _sometimes_ Git will not allow us checkout a different branch if there are uncommitted changes in the current branch. The solution is to either `stash` or `commit` the changes first. Please read [this StackOverflow](https://stackoverflow.com/questions/22053757/checkout-another-branch-when-there-are-uncommitted-changes-on-the-current-branch) for how to resolve this scenario if Git does not allow the next step (`$ git checkout master`).
+   - `$ git checkout master`
+   - `$ git pull upstream master` **Manager** uses `origin` instead of `upstream`
+   - `$ git checkout <feature_branch_name>`
+   - `$ git merge master` This brings the latest code into your feature branch so that you are always developing with the latest and greatest.
 3. Making frequent and small commits and pull requests will help minimize merge conflicts.
-
 
 <br>
 <br>
@@ -114,16 +99,15 @@ To help illustrate collaborating on a project using Git/GitHub, consider the fol
 
 ### Fixing Merge Conflicts Locally (especially for programmers)
 
->Note: When merging the latest and greatest into your feature branch, it's possible to create merge conflicts too. So managers aren't the only ones who get to enjoy fixing merge conflicts!
+> Note: When merging the latest and greatest into your feature branch, it's possible to create merge conflicts too. So managers aren't the only ones who get to enjoy fixing merge conflicts!
 
 1. You will/should be in your feature branch when the conflicts occurred.
 2. Typing `$ git status` will show you which file(s) have conflicts.
 3. You will need to edit those files to remove the markers and fix up the code to what it "should" be - if in doubt what, consult your manager or other teammates.
 4. After fixing the commits:
-	- `$ git add -A`
-	- `$ git commit -m "Fix merge conflicts"`
+   - `$ git add -A`
+   - `$ git commit -m "Fix merge conflicts"`
 5. Continue developing as usual.
-
 
 <br>
 <br>
@@ -137,13 +121,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
 
 ---
 
-
 <br>
 <br>
 <br>
 
 ## Git Command Reference
-
 
 <br>
 <br>
@@ -159,13 +141,11 @@ To visualize the history of commits made to the repo we use the `git log` comman
   a new remote at the given URL, via the given connection format
   (SSH or HTTPS), and names it with the given name.
 
-
 <br>
 <br>
 <br>
 
 #### Working on Repos
-
 
 <br>
 <br>
@@ -180,14 +160,13 @@ To visualize the history of commits made to the repo we use the `git log` comman
 - **`$ git merge <branch_name>`** Merges the branch cwith the given name into
   the current branch.
 
-
 <br>
 <br>
 <br>
 
 ##### Staging Changes
 
-- **`$ git add <file_name>`** Adds changes made to the given file to 
+- **`$ git add <file_name>`** Adds changes made to the given file to
   the staging area.
 - **`$ git add .`** Adds all changes (creating, updating and removing files),
   to files in this directory and sub-directories, to the staging area.
@@ -195,7 +174,6 @@ To visualize the history of commits made to the repo we use the `git log` comman
   in all files, to the staging area.
 - **`$ git add -p`** Adds updates in all staged files to the staging area,
   but runs you through all the changes step by step.
-
 
 <br>
 <br>
@@ -205,11 +183,10 @@ To visualize the history of commits made to the repo we use the `git log` comman
 
 - **`$ git commit -m "awesome commit message"`** Saves a snapshot of the
   filesystem including any changes that have been added/staged as a commit.
-  It saves the commit with a simple description, or *message*, given after
+  It saves the commit with a simple description, or _message_, given after
   `-m`.
 - **`$ git commit`** Commits as above, but takes you to a text editor (`nano`)
-  to edit the commit's *message*.
-
+  to edit the commit's _message_.
 
 <br>
 <br>
@@ -228,10 +205,9 @@ To visualize the history of commits made to the repo we use the `git log` comman
 - **`$ git remote` & `$ git remote -v`** Prints out a list of all available
   bremotes connected to the repo.
 - **`$ git diff <branch_or_commit_name>`** Prints out information about
-  *differences*, as insertions (in green) and deletions (in red), between
+  _differences_, as insertions (in green) and deletions (in red), between
   the current commit and the given commit (or the most current commit in the
   given branch).
-
 
 <br>
 <br>
@@ -248,7 +224,6 @@ To visualize the history of commits made to the repo we use the `git log` comman
 - **`$ git pull <remote_name> <branch_name>`** Performs a `git fetch` into a new
   branch, then merges it into the current branch and removes the fetched
   branch.
-
 
 <br>
 <br>
@@ -269,14 +244,11 @@ Articles and tutorials on branching and workflows in Git:
 <!-- Links -->
 
 [repo-image]: assets/git-workflow-1.png
-
-[branching-deck]:         https://docs.google.com/presentation/d/1tE0D8F-TNNG36tjCN-H1hzhjAb2rWknGcohEESaPW08/edit#slide=id.p
-[atlassian-branches]:     https://www.atlassian.com/git/tutorials/using-branches
-[atlassian-workflows]:    https://www.atlassian.com/git/tutorials/comparing-workflows
-[in-depth-workflow]:      http://nvie.com/posts/a-successful-git-branching-model
-[git-scm-blog-reset]:     https://git-scm.com/blog/2011/07/11/reset.html
-[git-viz-game]:           http://pcottle.github.io/learnGitBranching
-
+[branching-deck]: https://docs.google.com/presentation/d/1tE0D8F-TNNG36tjCN-H1hzhjAb2rWknGcohEESaPW08/edit#slide=id.p
+[atlassian-branches]: https://www.atlassian.com/git/tutorials/using-branches
+[atlassian-workflows]: https://www.atlassian.com/git/tutorials/comparing-workflows
+[in-depth-workflow]: http://nvie.com/posts/a-successful-git-branching-model
+[git-scm-blog-reset]: https://git-scm.com/blog/2011/07/11/reset.html
+[git-viz-game]: http://pcottle.github.io/learnGitBranching
 [local-merge]: https://help.github.com/articles/checking-out-pull-requests-locally/#modifying-an-inactive-pull-request-locally
-[pr]:          https://help.github.com/articles/creating-a-pull-request
-
+[pr]: https://help.github.com/articles/creating-a-pull-request

@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Deploying a Django App to Heroku"
-week: 23
+week: 22
 day: 2
 type: "walk-thru"
 ---
@@ -10,22 +10,9 @@ type: "walk-thru"
 
 # Deploying a Django App to Heroku
 
-
-
 <br>
 <br>
 <br>
-
-
-[Click here](https://generalassembly.zoom.us/rec/share/cAjclB1d2DNGfibCb8-JsbVnfMhQZ_pL8GM5yNRGa14MEWTgnp9_3MSZkXf9mvu1.JjYFCAv51FeHACFW?startTime=1626913960000) to access recording
-
-<br>
-<br>
-<br>
-
-
-
-
 
 ## Road Map
 
@@ -40,12 +27,9 @@ type: "walk-thru"
 9. Create the superuser
 10. Test the Admin Portal
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 1. Preparation
 
@@ -64,8 +48,6 @@ type: "walk-thru"
 <br>
 <br>
 <br>
-
-
 
 ### Heroku Account & Toolbelt
 
@@ -93,12 +75,9 @@ If not logged in, type the following and enter your credentials:
 $ heroku login
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Create the App on Heroku
 
@@ -116,20 +95,15 @@ The name you choose will be the name of the app in your Heroku dashboard and the
 <br>
 <br>
 
-
-
 ## 2. Ready the Django Project
 
 Django projects need to be configured to be deployed.
 
 Django has detailed deployment [docs](https://docs.djangoproject.com/en/3.0/howto/deployment/) and a [checklist](https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/), however, there is dedicated package we will use to make deploying to Heroku much easier.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Install `django-heroku`
 
@@ -142,8 +116,6 @@ $ pipenv install django-heroku
 <br>
 <br>
 <br>
-
-
 
 ### Update `settings.py`
 
@@ -161,12 +133,9 @@ django_heroku.settings(locals())
 
 > Note that the import name is `django_heroku` instead of `django-heroku` we used when installing.
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Install `gunicorn`
 
@@ -180,12 +149,9 @@ Let's install it:
 $ pipenv install gunicorn
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ### Create & Configure `Procfile`
 
@@ -210,11 +176,9 @@ WSGI_APPLICATION = 'catcollector.wsgi.application'
 # catcollector is the project name
 ```
 
-
 <br>
 <br>
 <br>
-
 
 ### Create a `requirements.txt`
 
@@ -240,13 +204,11 @@ Since we're not using [virtual environments](https://packaging.python.org/guides
 
 However, the `requirements.txt` file may be edited to remove packages that you **are sure** your project doesn't need.
 
-> Note:  If you install any additional Python packages during development after your initial deployment, you will need to run `pip freeze > requirements.txt` again to update the **requirements.txt** after the install of the additional Python package.
-
+> Note: If you install any additional Python packages during development after your initial deployment, you will need to run `pip freeze > requirements.txt` again to update the **requirements.txt** after the install of the additional Python package.
 
 <br>
 <br>
 <br>
-
 
 ## 3. Commit the Changes
 
@@ -257,12 +219,9 @@ $ git add -A
 $ git commit -m "Config deployment"
 ```
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 4. Deploy to Heroku
 
@@ -274,26 +233,20 @@ So, deploying the first time and re-deploying later is as easy as running this c
 $ git push heroku master
 ```
 
-The first deployment will take considerably longer than subsequent deployments because Heroku will have to install all of the Python packages.  However, during re-deployments, Heroku will only install/uninstall changes made to `requirements.txt`.
+The first deployment will take considerably longer than subsequent deployments because Heroku will have to install all of the Python packages. However, during re-deployments, Heroku will only install/uninstall changes made to `requirements.txt`.
 
 Read the output during deployment carefully. You'll need to address the errors if the deployment fails.
 
 In the case of a successful first deployment - **the app is still not quite ready to run**...
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 5. Migrate the Database Migrations
 
 <br>
 <br>
-
-
-
 
 ### Checking that Heroku Created a PostgreSQL Database
 
@@ -326,9 +279,6 @@ Add-on:                postgresql-parallel-89032
 <br>
 <br>
 <br>
-
-
-
 
 ### Check and Migrate the Migrations
 
@@ -416,12 +366,9 @@ $ heroku run python manage.py migrate
 
 Lots of `OK`s is a good sign!
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 6. Set Environment Variables
 
@@ -435,7 +382,7 @@ $ heroku config:set AWS_ACCESS_KEY_ID=AKIAJYO6WFUBRZUI6ZNQ
 
 > Note: If setting AWS keys from Boto3, ensure the key names are in all caps (they are lowercase in `~/.aws/credentials`).
 
-Setting the environment variables via the command line automatically restarts the server - which is necessary.  If you set the _config vars_ in Heroku's Dashboard, it won't restart the server.  However, you can restart the server manually using<br>`$ heroku restart`
+Setting the environment variables via the command line automatically restarts the server - which is necessary. If you set the _config vars_ in Heroku's Dashboard, it won't restart the server. However, you can restart the server manually using<br>`$ heroku restart`
 
 After you are finished setting all of the environment variables, you can verify them as follows:
 
@@ -445,12 +392,9 @@ $ heroku config
 
 Included in the output will be a `DATABASE_URL` that Heroku automatically added.
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 7. Open the Application
 
@@ -460,31 +404,25 @@ Let's check it out!
 $ heroku open
 ```
 
-Since the database is new, there will not be any users or data.  After signing up, creating and uploading a photo for Whiskers, I celebrated!
+Since the database is new, there will not be any users or data. After signing up, creating and uploading a photo for Whiskers, I celebrated!
 
 <img src="https://i.imgur.com/7hpQqOU.png">
 
-
 <br>
 <br>
 <br>
-
-
 
 ## 8. Troubleshooting
 
-The following command shows Heroku's log for our app and is useful for troubleshooting.  The log also contains the output from your app's `print()` statements:
+The following command shows Heroku's log for our app and is useful for troubleshooting. The log also contains the output from your app's `print()` statements:
 
 ```shell
 $ heroku logs
-``` 
-
+```
 
 <br>
 <br>
 <br>
-
-
 
 ## 9. Create the superuser
 
@@ -500,9 +438,6 @@ It's the same process as locally, just a bit slower.
 <br>
 <br>
 
-
-
-
 ## 10. Test the Admin Portal
 
 Okay, the finale is to browse to:
@@ -513,11 +448,8 @@ to checkout the admin portal:
 
 <img src="https://i.imgur.com/fFsrfae.png">
 
-
 <br>
 <br>
 <br>
-
 
 ### Congrats!
-
