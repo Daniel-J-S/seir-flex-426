@@ -110,54 +110,60 @@ Your capstone project should be an app that
 * Have a **link to your hosted working app** in the `README.md` file in  each of your github repos
 * Due to the open-ended nature of this capstone project, each project will have their own additional MVPs that are agreed upon by the instructional team
 * Demonstrate that you can **teach yourself something new**, use a technology that you haven't used in class _NOR_ on a previous project
-    <details><summary>Expand for a non-exhaustive list of examples:</summary>
 
-        - 3rd party api
-        - CSS - Styled Components
-        - CSS - CSS-grid
+<br>
+<br>
 
-        - React - integrate Redux
-        - React - integrate React Router
-        - React - Typescript
-        - React UI library: React Materialize, React BootStrap etc.
-        - React Jest/Enzyme testing library
+#### list of examples:
 
-        Module Bundlers:
-        - Webpack - non-rails app
-        - Webpacker - for rails app with react
-        - Gulp
+- 3rd party api
+- CSS - Styled Components
+- CSS - CSS-grid
 
-        Other Front Ends:
-        - React Native/Expo
-        - Vue
-        - Angular 7
+- React - integrate Redux
+- React - integrate React Router
+- React - Typescript
+- React UI library: React Materialize, React BootStrap etc.
+- React Jest/Enzyme testing library
 
-        Other Back Ends:
-        - Python/Django Rest Framework
-        - Python/Flask
-        - Ruby/Sinatra
+Module Bundlers:
+- Webpack - non-rails app
+- Webpacker - for rails app with react
+- Gulp
 
-        Authorization:
-        - Authorization using JWT (JSON Web Tokens)
+Other Front Ends:
+- React Native/Expo
+- Vue
+- Angular 7
 
-        Other Hosting:
-        - Host on Digital Ocean
-        - Host on AWS
-        - Host on Netlify
+Other Back Ends:
+- Python/Django Rest Framework
+- Python/Flask
+- Ruby/Sinatra
 
-        - Other Libraries:
-        - Lodash
-        - Google Maps
-        - Moment.js
-        - jQuery UI
-        - Chart.js
-        - D3
+Authorization:
+- Authorization using JWT (JSON Web Tokens)
 
-        Other Databases
-        - Firebase
-        - Redis
-    </details>
+Other Hosting:
+- Host on Digital Ocean
+- Host on AWS
+- Host on Netlify
 
+- Other Libraries:
+- Lodash
+- Google Maps
+- Moment.js
+- jQuery UI
+- Chart.js
+- D3
+
+Other Databases
+- Firebase
+- Redis
+
+
+<br>
+<br>
 <br>
 
 ### Suggested Ways to Get Started
@@ -219,6 +225,7 @@ On graduation day, you will provide a **technical demonstration** of your projec
 <br>
 
 ### Summary
+
 In closing if you have any questions regarding these options, feel free to reach out to your instructional team for advice. 
 
 Good luck!
