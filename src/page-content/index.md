@@ -83,9 +83,8 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### 🔒 Unit Five: Capstone Essentials
 
-<!-- ### [<u>Unit Five: Capstone Essentials</u>](/capstone-week) -->
+### [<u>Unit Five: The Capstone Project</u>](/capstone/) 
 
 | Week  | Topics                                |
 | ----- | ------------------------------------- |
