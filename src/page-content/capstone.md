@@ -162,7 +162,6 @@ Your capstone project should be an app that
 
 ### Suggested Ways to Get Started
 
-<details><summary>List of ways to get started</summary>
 
 * **Wireframe** Make a drawing of what your app will look like on each page of your application (what does it look like as soon as you log on to the site? What does it look like once a user logs in, etc.).
 
@@ -198,11 +197,15 @@ Your capstone project should be an app that
 
 * **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
 
-</details>
 
----
+<br>
+<br>
+<br>
 
-## ALSO, remember: a **technical demonstration** of your project which:
+
+## Presentation
+
+On graduation day, you will provide a **technical demonstration** of your project which:
 
 * Is ~5-10 minutes in length
 * Shows off the features of your project
