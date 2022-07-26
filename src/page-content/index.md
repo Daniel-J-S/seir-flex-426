@@ -2,7 +2,7 @@
 title: "Home"
 ---
 
-# Welcome to SEIR Flex "Phoenix" 9/28/21 - 4/05/22
+# Welcome to SEIR Flex 426
 
 This website contains assignments and materials for General Assembly's Software Engineering Immersive Flex Program.
 

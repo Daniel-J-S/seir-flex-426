@@ -1,6 +1,5 @@
-# SEIR-Flex 09/28/21 "Phoenix"
+# SEIR-Flex 04/26/22
 
-![Phoenix](https://images.unsplash.com/photo-1617147510149-7fbbd5def782?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/02640dcd-fc5f-43a3-97b4-56ade81a03de/deploy-status)](https://app.netlify.com/sites/seir-flex-phoenix/deploys)
 

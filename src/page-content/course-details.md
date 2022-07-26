@@ -18,11 +18,11 @@ You will be required to meet 80% completion of homework assignments at the end o
 
 ## Schedule and Holidays
 
-- Start date: 09/28/2021
-- End date: 04/05/2022
-- Tuesday/Wednesday 6:30 pm - 10:45 am EST
-- Sat 10 am - 6 pm EST
-- Holidays: 11/11, 11/24, 11/25, 11/27, 12/25, 12/28, 12/29, 12/30, 01/01/2022, 01/15/2022, 02/19/2022
+- Start date: 04/26/2022
+- End date: 10/22/2022
+- Tuesday/Wednesday 6:30 pm - 10:45 am PST
+- Sat 10 am - 6 pm PST
+- Holidays: 5/28, 6:18, 7/2, & 9/2
 
 <br>
 <br>
@@ -49,10 +49,10 @@ You will be required to meet 80% completion of homework assignments at the end o
 
 | Name           | Role                    |
 | -------------- | ----------------------- |
-| Audrey Galo    | Outcomes Coach          |
+| Brittany Dawson    | Outcomes Coach       |
+| Alyx Warner    | Student Success Specialist  |
 | Daniel Scott   | Lead Instructor         |
-| Joe Keohan     | Lead Instructor         |
-| Swaroop Uprety | Instructional Associate |
+| Andrea Williams | Instructional Associate |
 | Mike Bocon     | Instructional Associate |
 
 <br>
@@ -102,7 +102,7 @@ Learn the fundamentals of object-oriented programming while receiving support fr
 ### We will walk through this together the first time!
 
 - Depending on the assignment, your homework will be completed on [repl.it](https://repl.it/), [CodeSandbox](https://codesandbox.io/), or [GitHub](https://github.com/)
-- Fill out this [Google Form](https://forms.gle/UJ8fwmUdLMDvkt1q8nexu) with a link for that specific homework. It will be the same Google Form for each homework
+- Fill out this [Google Form](https://forms.gle/rDU1UoY8PJJj7cbv9) with a link for that specific homework. It will be the same Google Form for each homework
 - **Homework is due one week from the day it was assigned**
 - If homework is marked `incomplete`, you may be asked to re-submit it; a new timeline will be discussed how long you have to re-submit the homework
 - **Homework Feedback is generally administered within one week from the due date**

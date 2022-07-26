@@ -6,7 +6,7 @@ const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
-    title: 'SEIR Flex 09/28/2021 - "Phoenix"',
+    title: 'SEIR Flex 426',
     author: 'DanielJS',
     currentYear: new Date().getFullYear(),
     description: 'An interactive website for students currently enrolled in the General Assembly Software Engineering Immersive Remote Flex Program',
@@ -18,7 +18,7 @@ module.exports = {
     ],
     homeworkSubmissionLink: {
       title: 'Submit Homework',
-      href: 'https://forms.gle/UJ8fwmUdLMDvkt1q8',
+      href: 'https://forms.gle/rDU1UoY8PJJj7cbv9',
     },
   },
   plugins: [
