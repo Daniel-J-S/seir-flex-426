@@ -19,7 +19,12 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### [Unit One: Frontend Fundamentals](/frontend-fundamentals)
+
+<div style="color: grey;">
+
+### 🔒 Unit One: Frontend Fundamentals - **Locked**
+
+<!-- ### [Unit One: Frontend Fundamentals](/frontend-fundamentals) -->
 
 | Week | Topics                                                                      |
 | ---- | --------------------------------------------------------------------------- |
@@ -33,9 +38,10 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### [Unit Two: Backend Fundamentals](/backend-fundamentals)
+<!-- ### [Unit Two: Backend Fundamentals](/backend-fundamentals) -->
 
-<!-- ### 🔒 Unit Two: Backend Fundamentals - **Locked** -->
+
+### 🔒 Unit Two: Backend Fundamentals - **Locked**
 
 | Week  | Topics                                                                      |
 | ----- | --------------------------------------------------------------------------- |
@@ -48,7 +54,11 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
+</div>
+
+
 ### [Unit Three: React Fundamentals](/react-fundamentals)
+
 
 <!-- ### 🔒 Unit Three: React Fundamentals - **Locked** -->
 
@@ -65,9 +75,11 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-### [Unit Four: Second Language](/second-language)
+<div style="color: grey;">
 
-<!-- ### 🔒 Unit Four: Second Language - **Locked** -->
+<!-- ### [Unit Four: Second Language](/second-language) -->
+
+### 🔒 Unit Four: Second Language - **Locked**
 
 | Week | Topics                                                                      |
 | ---- | --------------------------------------------------------------------------- |
@@ -84,10 +96,16 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 
 
-### [<u>Unit Five: The Capstone Project</u>](/capstone/) 
+### 🔒 Unit Five: The Capstone Project - **Locked**
+
+
+
+<!-- ### [<u>Unit Five: The Capstone Project</u>](/capstone/)  -->
+
+
 
 | Week  | Topics                                |
 | ----- | ------------------------------------- |
 | 26/27 | Capstone Project and Graduation 🥳 🎉 |
 
-<div style="color: grey;"></div>
+</div>
