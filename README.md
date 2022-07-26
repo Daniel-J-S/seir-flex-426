@@ -1,7 +1,7 @@
 # SEIR-Flex 04/26/22
 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/02640dcd-fc5f-43a3-97b4-56ade81a03de/deploy-status)](https://app.netlify.com/sites/seir-flex-phoenix/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/64cbf0c6-a036-4dd2-a358-c6a29336bb1c/deploy-status)](https://app.netlify.com/sites/seir-flex-426/deploys)
 
 - **Author:** [DanielJS](https://github.com/myDeveloperJourney)
 - **Version:** 2.3.0
