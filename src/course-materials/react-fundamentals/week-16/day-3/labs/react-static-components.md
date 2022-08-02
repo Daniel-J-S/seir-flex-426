@@ -1,7 +1,7 @@
 ---
 track: "React Fundamentals"
 title: "React Static Components"
-week: 11
+week: 16
 day: 3
 type: "lab"
 ---

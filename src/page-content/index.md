@@ -26,14 +26,14 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 <!-- ### [Unit One: Frontend Fundamentals](/frontend-fundamentals) -->
 
-| Week | Topics                                                                      |
-| ---- | --------------------------------------------------------------------------- |
-| 1    | Intro to the Dev Environment, Git/Github, and JavaScript Fundamentals       |
-| 2    | Intro to JavaScript Objects, Classes, and OOP (Object Oriented Programming) |
-| 3    | Intro to the DOM & jQuery                                                   |
-| 4    | Frontend project practice and AJAX                                          |
-| 5    | More practice with Frontend projects and Start Project 1                    |
-| 6    | Finish Project 1 and Project Presentations                                  |
+| Topics                                                                      |
+| --------------------------------------------------------------------------- |
+| Intro to the Dev Environment, Git/Github, and JavaScript Fundamentals       |
+| Intro to JavaScript Objects, Classes, and OOP (Object Oriented Programming) |
+| Intro to the DOM & jQuery                                                   |
+| Frontend project practice and AJAX                                          |
+
+
 
 <br>
 <br>
@@ -43,13 +43,13 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 ### 🔒 Unit Two: Backend Fundamentals - **Locked**
 
-| Week  | Topics                                                                      |
-| ----- | --------------------------------------------------------------------------- |
-| 6/7   | Intro to Full-Stack Development - Node, Express & MongoDB                   |
-| 8     | Intro to the Mongoose ODM & Data Entity Relationships - Introduce Project 2 |
-| 9     | Catch up to Labs, Project 2 Planning, and Authentication With Oauth         |
-| 10    | Project 2 Week, Cloud-Hosted MongoDB & Heroku Deployment                    |
-| 11/12 | Project 2 Week (Cont) and Project 2 Presentations                           |
+| Topics                                                                      |
+| --------------------------------------------------------------------------- |
+| Intro to Full-Stack Development - Node, Express & MongoDB                   |
+| Intro to the Mongoose ODM & Data Entity Relationships - Introduce Project 2 |
+| Catch up to Labs, Project 2 Planning, and Authentication With Oauth         |
+
+
 
 <br>
 <br>
@@ -64,13 +64,13 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 | Week | Topics                                                                 |
 | ---- | ---------------------------------------------------------------------- |
-| 12   | Intro to React, JSX & Components                                       |
-| 13   | State, Props, CSS, Event Handling & AJAX with React                    |
-| 14   | Handling Input, Full-Stack React, React w/Firebase Auth & React Router |
-| 15   | Project 3 Planning, React w/Firebase Workshop & Memorial Day Holiday   |
-| 16   | Project 3 Week & React w/Firebase Auth Workshops                       |
-| 17   | Project 3 Week & React Review Workshops                                |
-| 18   | Project 3 Presentations                                                |
+| 16   | Intro to React, JSX & Components                                       |
+| 17   | State, Props, CSS, Event Handling & AJAX with React                    |
+| 18   | Handling Input, Full-Stack React, React w/Firebase Auth & React Router |
+| 19   | Project 3 & Project 3 Planning   |
+
+
+
 
 <br>
 <br>
@@ -83,14 +83,12 @@ Curriculum schedule and content is subject to change at the instructor's discret
 
 | Week | Topics                                                                      |
 | ---- | --------------------------------------------------------------------------- |
-| 18   | Intro SQL/Relational Databases & Python                                     |
-| 19   | Intro to Python Container, Functions, Classes & Django                      |
-| 20   | Django URLs, Views, Templates, Models & Independence Day Holiday            |
-| 21   | Django Model Relationships, Class Based Views & Photo Upload with Amazon S3 |
-| 22   | Django Auth, Intro to Data Modeling & Begin Project 4 Planning              |
-| 23   | Project 4 Planning                                                          |
-| 24   | Project 4 Week                                                              |
-| 25   | Project 4 Week & Project 4 Presentations                                    |
+| 20   | Intro SQL/Relational Databases & Python                                     |
+| 21   | Intro to Python Container, Functions, Classes & Django                      |
+| 22   | Django URLs, Views, Templates & Models                                      |
+| 23   | Django Model Relationships, Class Based Views & Photo Upload with Amazon S3 |
+| 24   | Django Auth & Intro to Data Modeling                                        |
+                                
 
 <br>
 <br>

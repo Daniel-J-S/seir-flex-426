@@ -4,22 +4,15 @@ title: "Week 16 - Day 3"
 week: 16
 day: 3
 type: "homepage"
-topics: "Project 3"
+topics: "Intro to React"
 ---
-
 
 # Week 16 - Day 3
 
-#### Students Work on Project 3
+#### Intro to React
 
-
-
-
-
-
-
-
-
-
-
-
+- [**Lecture:** Intro to ReactJS](/react-fundamentals/week-16/day-3/lecture-materials/intro-to-react/)
+- [**Lecture:** Intro to Props](/react-fundamentals/week-16/day-3/lecture-materials/intro-to-props/)
+- [**Lab:** React Weather Forecast](/react-fundamentals/week-16/day-3/labs/react-weather-forecast/) - **Deliverable**
+- [**Lab:** React Static Components](/react-fundamentals/week-16/day-3/labs/react-static-components/) - **Deliverable**
+- [**Bonus Lab:** React Floorplan](/react-fundamentals/week-16/day-3/labs/react-floorplan/) - **Non-Deliverable**
