@@ -1,7 +1,7 @@
 ---
 track: "React Fundamentals"
 title: "React Movie Search"
-week: 12
+week: 17
 day: 2
 type: "lab"
 ---
@@ -10,7 +10,7 @@ type: "lab"
 
 Let's build a react giphy app!
 
-Here is a [working version of the Giphy App](https://h6kdy.csb.app/)
+Here is a <a target="_blank" href="https://v72lsl.csb.app/">working version of the Giphy App</a>
 
 <br>
 <br>
