@@ -228,11 +228,4 @@ Here are previous student examples:
 
 - [Haley](https://i56hg.csb.app/)
 
-<br>
-<br>
-<br>
 
-## Resources
-
-- [Solution Repo & Video for Korilla Receipts Lab](https://git.generalassemb.ly/HomeworkReviews/kr-review)
-- [Solution Repo & Video for iStocks Lab](https://git.generalassemb.ly/HomeworkReviews/istocks)
