@@ -62,7 +62,7 @@ PORT=3001
 <br>
 <br>
 
-## Starting Server.js
+## Set Up: `server.js`
 
 Let's build out the minimum to get `server.js` running:
 
@@ -384,7 +384,7 @@ app.listen(PORT, () => console.log(`listening on PORT ${PORT}`))
 
 1. Commit `git commit -m "message"`
 
-1. Create a new repo on github.com (make sure its empty and public)
+1. Create a new repo on <a href="https://git.generalassemb.ly" target="_blank">GitHub Enterprise</a> ***(make sure its public)***
 
 1. Add the remote to your local repo `git remote add origin URL` replace `URL` with your repos url
 
@@ -402,20 +402,20 @@ app.listen(PORT, () => console.log(`listening on PORT ${PORT}`))
 <br>
 <br>
 
-## Lab Part 1 - Cheese App
+## Lab Part 1 - Cat App
 
-1. Create another folder called "Cheese App"
+1. Create another folder called "Cat App"
 
 1. Create a backend and frontend folder like you did for today's lesson
 
-1. Create a cheese API with index, create, update and delete routes
+1. Create a cat API with index, create, update and delete routes
 
 1. The model should look like:
 
 ```shell
-name: String,
-countryOfOrigin: String,
-image: String
+breed: String,
+description: String,
+age: Number
 ```
 
 5. Test the API, deploy the API, test the deployed API
