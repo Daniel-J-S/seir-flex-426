@@ -12,6 +12,8 @@ type: "lab"
 <br>
 <br>
 
+## Set Up
+
 Spin up a new react app using `create-react-app`.
 
 Look over the working <a href="https://vhixt.csb.app/" target="_blank">solution</a> and examine the app in React Dev Tools to see if you can elicit the structure so that you have a starting point for you app.
