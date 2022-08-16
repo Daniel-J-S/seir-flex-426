@@ -105,7 +105,7 @@ Let's pass the people data to the show page via props and make a update and dele
 
 ```jsx
 import { useEffect, useState } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Index from "../pages/Index";
 import Show from "../pages/Show";
 
@@ -161,22 +161,22 @@ function Main(props) {
 
   return (
     <main>
-      <Switch>
-        <Route exact path="/">
-          <Index people={people} createPeople={createPeople} />
-        </Route>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Index people={people} createPeople={createPeople} />}
+        />
         <Route
           path="/people/:id"
-          render={(rp) => (
+          element={
             <Show
               people={people}
               updatePeople={updatePeople}
               deletePeople={deletePeople}
-              {...rp}
             />
-          )}
+          }
         />
-      </Switch>
+      </Routes>
     </main>
   );
 }
@@ -193,8 +193,10 @@ Let's grab the selected person from the people array in props and display them.
 `Show.js`
 
 ```jsx
+import { useParams } from "react-router-dom";
+
 function Show(props) {
-  const id = props.match.params.id;
+  const { id } = useParams();
   const people = props.people;
   const person = people.find((p) => p._id === id);
 
@@ -225,9 +227,13 @@ On the show page let's add:
 1. A form in the JSX below the person
 
 ```jsx
-import { useState } from "react"
+import { useParams, useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 function Show(props) {
-  const id = props.match.params.id;
+  // invoke useNavigate to allow for programatic navigation
+  const navigate = useNavigate();
+  const { id } = useParams();
   const people = props.people;
   const person = people.find((p) => p._id === id);
 
@@ -247,7 +253,7 @@ function Show(props) {
     event.preventDefault();
     props.updatePeople(editForm, person._id);
     // redirect people back to index
-    props.history.push("/");
+    navigate("/");
   };
 
   return (
@@ -295,9 +301,12 @@ export default Show;
 Last Stop is adding a button on the show page to delete a user.
 
 ```jsx
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
+
 function Show(props) {
-  const id = props.match.params.id;
+  const navigate = useNavigate();
+  const { id } = useParams();
   const people = props.people;
   const person = people.find((p) => p._id === id);
 
@@ -314,12 +323,12 @@ function Show(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     props.updatePeople(editForm);
-    props.history.push("/");
+    navigate("/");
   };
 
   const removePerson = () => {
     props.deletePeople(person._id);
-    props.history.push("/");
+    navigate("/");
   };
 
   return (

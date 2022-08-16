@@ -27,28 +27,27 @@ type: "lecture"
 Update `index.js` to like like so:
 
 ```jsx
-import React from "react"
-import ReactDOM from "react-dom"
-// IMPORT SCSS FILE TO BE SOURCE OF STYLING
-import "./styles.scss"
-// IMPORT ROUTER
-import { BrowserRouter as Router } from "react-router-dom"
-import App from "./App"
-import reportWebVitals from "./reportWebVitals"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { BrowserRouter as Router } from 'react-router-dom';
 
-ReactDOM.render(
-  <Router>
-    <React.StrictMode>
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <Router>
       <App />
-    </React.StrictMode>
-  </Router>,
-  document.getElementById("root")
-)
+    </Router>
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();
+
 ```
 
 <br>
@@ -64,10 +63,10 @@ reportWebVitals()
 
 ```jsx
 function Component(props) {
-  return <h1>Component Name</h1>
+  return <h1>Component Name</h1>;
 }
 
-export default Component
+export default Component;
 ```
 
 <br>
@@ -96,9 +95,9 @@ Our desired component Architecture:
 Let's add the following to `App.js`:
 
 ```jsx
-import "./App.css"
-import Header from "./components/Header"
-import Main from "./components/Main"
+import "./App.css";
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   return (
@@ -107,9 +106,9 @@ function App() {
       <Main />
     </div>
   )
-}
+};
 
-export default App
+export default App;
 ```
 
 <br>
@@ -121,24 +120,22 @@ export default App
 Let's create our routes:
 
 ```jsx
-import { Route, Switch } from "react-router-dom"
-import Index from "../pages/Index"
-import Show from "../pages/Show"
+import { Routes, Route } from "react-router-dom";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 function Main(props) {
   return (
     <main>
-      <Switch>
-        <Route exact path="/">
-          <Index />
-        </Route>
-        <Route path="/people/:id" render={(rp) => <Show {...rp} />} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/people/:id" element={<Show />} />
+      </Routes>
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;
 ```
 
 <br>
@@ -150,7 +147,7 @@ export default Main
 Let's put the following in `Header.js`:
 
 ```jsx
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Header(props) {
   return (
@@ -159,10 +156,10 @@ function Header(props) {
         <div>People App</div>
       </Link>
     </nav>
-  )
+  );
 }
 
-export default Header
+export default Header;
 ```
 
 <br>
@@ -239,20 +236,20 @@ So let's update Main to have:
 `Main.js`
 
 ```jsx
-import { useEffect, useState } from "react"
-import { Route, Switch } from "react-router-dom"
-import Index from "../pages/Index"
-import Show from "../pages/Show"
+import { useEffect, useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 function Main(props) {
-  const [people, setPeople] = useState(null)
+  const [people, setPeople] = useState(null);
 
-  const URL = "http://localhost:3001/people/"
+  const URL = "http://localhost:3001/people/";
 
   const getPeople = async () => {
-    const response = await fetch(URL)
-    const data = await response.json()
-    setPeople(data)
+    const response = await fetch(URL);
+    const data = await response.json();
+    setPeople(data);
   }
 
   const createPeople = async (person) => {
@@ -265,32 +262,33 @@ function Main(props) {
       body: JSON.stringify(person),
     })
     // update list of people
-    getPeople()
+    getPeople();
   }
 
   useEffect(() => {
-    getPeople()
-  }, [])
+    getPeople();
+  }, []);
 
   return (
     <main>
-      <Switch>
-        <Route exact path="/">
-          <Index people={people} createPeople={createPeople} />
-        </Route>
-        <Route path="/people/:id" render={(rp) => <Show {...rp} />} />
-      </Switch>
+      <Routes>
+        <Route 
+          path="/" 
+          element={<Index people={people} createPeople={createPeople} />} 
+        />
+        <Route path="/people/:id" element={<Show />} />
+      </Routes>
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;
 ```
 
 Let's now display the people in `Index.js`:
 
 ```jsx
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Index(props) {
   // loaded function
@@ -303,17 +301,17 @@ function Index(props) {
         <img src={person.image} alt={person.name} />
         <h3>{person.title}</h3>
       </div>
-    ))
-  }
+    ));
+  };
 
   const loading = () => {
-    return <h1>Loading...</h1>
-  }
+    return <h1>Loading...</h1>;
+  };
 
-  return props.people ? loaded() : loading()
+  return props.people ? loaded() : loading();
 }
 
-export default Index
+export default Index;
 ```
 
 <br>
@@ -330,8 +328,8 @@ Let's now add a form to our `Index.js`:
 1. `handleSubmit` function handle form submisssion
 
 ```jsx
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Index(props) {
   // state to hold formData
@@ -339,26 +337,26 @@ function Index(props) {
     name: "",
     image: "",
     title: "",
-  })
+  });
 
   // handleChange function for form
   const handleChange = (event) => {
     setNewForm((prevState) => ({
       ...prevState,
       [event.target.name]: event.target.value,
-    }))
+    }));
   }
 
   // handle submit function for form
   const handleSubmit = (event) => {
-    event.preventDefault()
-    props.createPeople(newForm)
+    event.preventDefault();
+    props.createPeople(newForm);
     setNewForm({
       name: "",
       image: "",
       title: "",
-    })
-  }
+    });
+  };
 
   // loaded function
   const loaded = () => {
@@ -370,12 +368,12 @@ function Index(props) {
         <img src={person.image} alt={person.name} />
         <h3>{person.title}</h3>
       </div>
-    ))
-  }
+    ));
+  };
 
   const loading = () => {
-    return <h1>Loading...</h1>
-  }
+    return <h1>Loading...</h1>;
+  };
 
   return (
     <section>
@@ -405,10 +403,10 @@ function Index(props) {
       </form>
       {props.people ? loaded() : loading()}
     </section>
-  )
+  );
 }
 
-export default Index
+export default Index;
 ```
 
 <br>
