@@ -268,7 +268,9 @@ function Main(props) {
     getPeople()
   }
 
-  useEffect(() => getPeople(), [])
+  useEffect(() => {
+    getPeople()
+  }, [])
 
   return (
     <main>
@@ -423,4 +425,4 @@ You should now be able to see all the people and create people.
 
 ## Lab
 
-Begin the frontend for your Cheese app, and create the ability to display and create cheeses like our People app.
+Begin the frontend for your Cat app, and add the ability to display and create Cats like our People app.

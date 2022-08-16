@@ -17,8 +17,8 @@ type: "lecture"
 We want generate links to each persons show page so let's do the following in `Index.js`:
 
 ```jsx
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Index(props) {
   // state to hold formData
@@ -26,23 +26,23 @@ function Index(props) {
     name: "",
     image: "",
     title: "",
-  })
+  });
 
   // handleChange function for form
   const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.name]: event.target.value })
-  }
+    setNewForm({ ...newForm, [event.target.name]: event.target.value });
+  };
 
   // handle submit function for form
   const handleSubmit = (event) => {
-    event.preventDefault()
-    props.createPeople(newForm)
+    event.preventDefault();
+    props.createPeople(newForm);
     setNewForm({
       name: "",
       image: "",
       title: "",
-    })
-  }
+    });
+  };
 
   // loaded function
   const loaded = () => {
@@ -54,12 +54,12 @@ function Index(props) {
         <img src={person.image} alt={person.name} />
         <h3>{person.title}</h3>
       </div>
-    ))
+    ));
   }
 
   const loading = () => {
-    return <h1>Loading...</h1>
-  }
+    return <h1>Loading...</h1>;
+  };
 
   return (
     <section>
@@ -89,10 +89,10 @@ function Index(props) {
       </form>
       {props.people ? loaded() : loading()}
     </section>
-  )
+  );
 }
 
-export default Index
+export default Index;
 ```
 
 <br>
@@ -104,21 +104,21 @@ export default Index
 Let's pass the people data to the show page via props and make a update and delete function for the show page, head over to `Main.js`:
 
 ```jsx
-import { useEffect, useState } from "react"
-import { Route, Switch } from "react-router-dom"
-import Index from "../pages/Index"
-import Show from "../pages/Show"
+import { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
+import Index from "../pages/Index";
+import Show from "../pages/Show";
 
 function Main(props) {
-  const [people, setPeople] = useState(null)
+  const [people, setPeople] = useState(null);
 
-  const URL = "http://localhost:3001/people/"
+  const URL = "http://localhost:3001/people/";
 
   const getPeople = async () => {
-    const response = await fetch(URL)
-    const data = await response.json()
-    setPeople(data)
-  }
+    const response = await fetch(URL);
+    const data = await response.json();
+    setPeople(data);
+  };
 
   const createPeople = async (person) => {
     // make post request to create people
@@ -128,10 +128,10 @@ function Main(props) {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(person),
-    })
+    });
     // update list of people
-    getPeople()
-  }
+    getPeople();
+  };
 
   const updatePeople = async (person, id) => {
     // make put request to create people
@@ -141,21 +141,23 @@ function Main(props) {
         "Content-Type": "Application/json",
       },
       body: JSON.stringify(person),
-    })
+    });
     // update list of people
-    getPeople()
-  }
+    getPeople();
+  };
 
   const deletePeople = async (id) => {
     // make delete request to create people
     await fetch(URL + id, {
       method: "DELETE",
-    })
+    });
     // update list of people
-    getPeople()
-  }
+    getPeople();
+  };
 
-  useEffect(() => getPeople(), [])
+  useEffect(() => {
+    getPeople();
+  }, []);
 
   return (
     <main>
@@ -176,10 +178,10 @@ function Main(props) {
         />
       </Switch>
     </main>
-  )
+  );
 }
 
-export default Main
+export default Main;
 ```
 
 <br>
@@ -192,9 +194,9 @@ Let's grab the selected person from the people array in props and display them.
 
 ```jsx
 function Show(props) {
-  const id = props.match.params.id
-  const people = props.people
-  const person = people.find((p) => p._id === id)
+  const id = props.match.params.id;
+  const people = props.people;
+  const person = people.find((p) => p._id === id);
 
   return (
     <div className="person">
@@ -202,10 +204,10 @@ function Show(props) {
       <h2>{person.title}</h2>
       <img src={person.image} alt={person.name} />
     </div>
-  )
+  );
 }
 
-export default Show
+export default Show;
 ```
 
 <br>
@@ -225,28 +227,28 @@ On the show page let's add:
 ```jsx
 import { useState } from "react"
 function Show(props) {
-  const id = props.match.params.id
-  const people = props.people
-  const person = people.find((p) => p._id === id)
+  const id = props.match.params.id;
+  const people = props.people;
+  const person = people.find((p) => p._id === id);
 
   // state for form
-  const [editForm, setEditForm] = useState(person)
+  const [editForm, setEditForm] = useState(person);
 
   // handleChange function for form
   const handleChange = (event) => {
     setEditForm((prevState) => ({
       ...prevState,
       [event.target.name]: event.target.value,
-    }))
-  }
+    }));
+  };
 
   // handlesubmit for form
   const handleSubmit = (event) => {
-    event.preventDefault()
-    props.updatePeople(editForm, person._id)
+    event.preventDefault();
+    props.updatePeople(editForm, person._id);
     // redirect people back to index
-    props.history.push("/")
-  }
+    props.history.push("/");
+  };
 
   return (
     <div className="person">
@@ -281,7 +283,7 @@ function Show(props) {
   )
 }
 
-export default Show
+export default Show;
 ```
 
 <br>
@@ -452,43 +454,19 @@ img {
 
 ## Deploy
 
-Add a `netlify.toml` with the following:
+Your instructor will demo this process, or you can check out this video for a walkthrough of React Deployment using Netlify
 
-```toml
-[[redirects]]
-  from = "/*"
-  to = "/"
-```
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HFiYKklAtNI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-_NOTE, if you wanted to deploy to Version you'd include a `vercel.json` with the follow_
-
-```json
-{
-  "version": 2,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/.*", "dest": "/index.html" }
-  ]
-}
-```
-
-1. Push frontend repo to github
-
-1. Connect to netlify
-
-1. Done
-
-**[Finished Backend App Example](https://git.generalassemb.ly/AlexMerced/people_backend)**
-**[Finished Frontend App Example](https://git.generalassemb.ly/AlexMerced/people_frontend)**
 
 <br>
 <br>
 <br>
 
-## Lab - Complete Your Cheese App
+## Lab - Complete Your Cat App
 
-Complete your cheese app using the steps of todays lessons adding the following:
+Complete your Cat app using the steps of todays lessons adding the following:
 
-1. The ability see an individual cheese
-1. The ability edit a cheese
-1. The ability to delete a cheese
+1. The ability see an individual Cat
+1. The ability edit a Cat
+1. The ability to delete a Cat
