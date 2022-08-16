@@ -407,15 +407,15 @@ Notice when we click any of the links it takes us to the price component, use th
 
 ## The Price Component
 
-Before we create this component take a moment to get your FREE Api key from coinapi.io. Keep in mind you can only make 100 requests per day with your free apiKey.
+Before we create this component take a moment to get a FREE Api key from <a href="https://www.coinapi.io/pricing?apikey" target="_blank">coinapi.io</a>. Keep in mind you can only make 100 requests per day with your free apiKey.
 
 Once you have your api key here is what we will do:
 
-- store the apikey and currency symbol in different variables
-- use the useEffect hook to make an api call
-- interpolate the apikey and symbol in the fetch URL
-- save the resulting data in state and render it
-- loaded and loading function for rendering the data if exists
+1. store the apikey and currency symbol in different variables
+1. use the useEffect hook to make an api call
+1. interpolate the apikey and symbol in the fetch URL
+1. save the resulting data in state and render it
+1. loaded and loading function for rendering the data if exists
 
 <br>
 <br>
@@ -477,4 +477,6 @@ export default Price
 <br>
 <br>
 
-### Your App Should now be working! Voila! 🎉
+## Conclusion
+
+#### At this point, your App Should now be working! Voila! 🎉
