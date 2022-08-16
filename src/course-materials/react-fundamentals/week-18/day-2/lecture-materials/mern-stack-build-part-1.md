@@ -1,8 +1,8 @@
 ---
 track: "React Fundamentals"
 title: "MERN Stack Build Part 1"
-week: 13
-day: 3
+week: 18
+day: 1
 type: "lecture"
 ---
 

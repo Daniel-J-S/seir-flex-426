@@ -1,8 +1,8 @@
 ---
 track: "React Fundamentals"
 title: "React Router BitCoin PriceFinder"
-week: 13
-day: 2
+week: 18
+day: 1
 type: "lecture"
 ---
 
