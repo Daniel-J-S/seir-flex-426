@@ -52,13 +52,13 @@ The first component we'll explore is BrowserRouter which is underneath the hood 
 `index.js`
 
 ```jsx
-import React from "react"
-import ReactDOM from "react-dom"
-import "./index.css"
-import App from "./App"
-import reportWebVitals from "./reportWebVitals"
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 //IMPORT BrowserRouter and rename it to Router
-import { BrowserRouter as Router } from "react-router-dom"
+import { BrowserRouter as Router } from "react-router-dom";
 
 //Wrap the App Component with the Router component to enable the router features
 ReactDOM.render(
@@ -68,12 +68,12 @@ ReactDOM.render(
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
-)
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals()
+reportWebVitals();
 ```
 
 <br>
@@ -91,13 +91,11 @@ A common convention is to create two folders, components and pages. Any componen
 `Main.js`
 
 ```jsx
-import React from "react"
-
 const Main = (props) => {
-  return <h1>This is the Main Component</h1>
-}
+  return <h1>This is the Main Component</h1>;
+};
 
-export default Main
+export default Main;
 ```
 
 <br>
@@ -107,13 +105,11 @@ export default Main
 <br>
 
 ```jsx
-import React from "react"
-
 const Currencies = (props) => {
-  return <h1>This is the Currencies Component</h1>
-}
+  return <h1>This is the Currencies Component</h1>;
+};
 
-export default Currencies
+export default Currencies;
 ```
 
 <br>
@@ -123,13 +119,11 @@ export default Currencies
 <br>
 
 ```jsx
-import React from "react"
-
 const Price = (props) => {
-  return <h1>This is the Price Component</h1>
+  return <h1>This is the Price Component</h1>;
 }
 
-export default Price
+export default Price;
 ```
 
 <br>
@@ -147,32 +141,29 @@ Now we will will import the Route component into App, this will allow us define 
 `App.js`
 
 ```jsx
-import React from "react"
-import "./App.css"
-//Import route and our components
-import { Route } from "react-router-dom"
-import Currencies from "./pages/Currencies"
-import Main from "./pages/Main"
-import Price from "./pages/Price"
+import './App.css';
+// inporting Routes
+import { Routes, Route } from "react-router-dom";
+
+// importing "page" components
+import Main from "./pages/Main";
+import Currencies from "./pages/Currencies";
+import Price from "./pages/Price";
 
 function App() {
-  // We will use the Route component to specify each route
   return (
     <div className="App">
-      <Route path="/">
-        <Main />
-      </Route>
-      <Route path="/currencies">
-        <Currencies />
-      </Route>
-      <Route path="/price">
-        <Price />
-      </Route>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/price" element={<Price />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
+
 ```
 
 <br>
@@ -191,8 +182,7 @@ In your components folder create a `Nav.js`:
 `components/Nav.js`
 
 ```jsx
-import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Nav = (props) => {
   return (
@@ -204,10 +194,10 @@ const Nav = (props) => {
         <div>CURRENCIES</div>
       </Link>
     </div>
-  )
-}
+  );
+};
 
-export default Nav
+export default Nav;
 ```
 
 <br>
@@ -239,96 +229,45 @@ Next add the following styles to `index.css`:
 import the Nav component into `App.js`:
 
 ```jsx
-import React from "react"
-import "./App.css"
-//Import route and our components
-import { Route } from "react-router-dom"
-import Currencies from "./pages/Currencies"
-import Main from "./pages/Main"
-import Price from "./pages/Price"
-import Nav from "./components/Nav"
+import './App.css';
+// inporting Routes
+import { Routes, Route } from "react-router-dom";
+
+// importing "page" components
+import Main from "./pages/Main";
+import Currencies from "./pages/Currencies";
+import Price from "./pages/Price";
+
+// import "UI" componennts
+import Nav from "./components/Nav";
 
 function App() {
-  // We will use the Route component to specify each route
   return (
     <div className="App">
       <Nav />
-      <Route path="/">
-        <Main />
-      </Route>
-      <Route path="/currencies">
-        <Currencies />
-      </Route>
-      <Route path="/price">
-        <Price />
-      </Route>
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/currencies" element={<Currencies />} />
+        <Route path="/price" element={<Price />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
 ```
 
 <br>
 <br>
 <br>
 
-A Few things to notice:
+***Something to notice:***
 
-- The function of the link tags is to change the URL bar to match the "to" prop, look at the change in the URL bar when you click on them. The reason we don't use an a tag is cause clicking an a tag triggers the browser to make a request and refresh the page which will break router (cause there is no server to respond to the browsers request, the url is merely a simulation of multiple pages).
-
-- When we click on currencies the Main component remains part on the screen and this is cause "/" is technically inside of "/currencies", to make sure only one of these route is active at a time we can wrap them in a Switch component which only renders the first viable route within it.
-
-```jsx
-import React from "react"
-import "./App.css"
-//Import route and our components
-import { Route, Switch } from "react-router-dom"
-import Currencies from "./pages/Currencies"
-import Main from "./pages/Main"
-import Price from "./pages/Price"
-import Nav from "./components/Nav"
-
-function App() {
-  // We will use the Route component to specify each route
-  return (
-    <div className="App">
-      <Nav />
-      <Switch>
-        <Route path="/">
-          <Main />
-        </Route>
-        <Route path="/currencies">
-          <Currencies />
-        </Route>
-        <Route path="/price">
-          <Price />
-        </Route>
-      </Switch>
-    </div>
-  )
-}
-
-export default App
-```
+*The function of the link tags is to change the URL bar to match the "to" prop, look at the change in the URL bar when you click on them. The reason we don't use an a tag is cause clicking an a tag triggers the browser to make a request and refresh the page which will break router (cause there is no server to respond to the browsers request, the url is merely a simulation of multiple pages).*
 
 <br>
 <br>
-<br>
 
-- Now we have a different problem, while only one route is rendering it always seems to be routing the main component. This is cause the path "/" matches "/" and "/currencies". To fix this issue we need the Main route to only be visible when the path is exactly "/", we can do this by adding the exact prop.
-
-```jsx
-<Route exact path="/">
-  <Main />
-</Route>
-```
-
-Use exact sparingly, most of the time you'll just be using it on the root path.
-
-<br>
-<br>
-<br>
 
 ## Params
 
@@ -337,13 +276,12 @@ We are going to soon build out our currencies component which will allow us to s
 ```jsx
 <Route
   path="/price/:symbol"
-  render={(routerProps) => <Price {...routerProps} />}
+  element={<Price />}
 />
 ```
+<br>
 
-We are now using the Route components "render" prop. Instead of passing Price as a child of component we are passing a function that returns JSX because then Route will allow us to send a special batch route related props, the router props. In this case we used the spread operator to expand each property in routerProps into its own prop.
-
-The :symbol part is a URL Param, a variable in the url. Whatever is in that spot in the path will get passed to the component via the router props (props.match.params.symbol).
+The `:symbol` part is a URL Param, a variable in the url. Whatever is in that spot in the path will be made available to us via the `useParams` hook.
 
 <br>
 <br>
@@ -353,9 +291,9 @@ The :symbol part is a URL Param, a variable in the url. Whatever is in that spot
 
 In this component we will be doing the following
 
-- Creating an array of the currencies our app can find prices for
-- Looping over that array to generate a link for each one to the price route
-- The currency symbol should be placed in the :symbol part of the URL
+1. Creating an array of the currencies our app can find prices for
+1. Looping over that array to generate a link for each one to the price route
+1. The currency symbol should be placed in the :symbol part of the URL
 
 <br>
 <br>
@@ -364,8 +302,7 @@ In this component we will be doing the following
 `Currencies.js`
 
 ```jsx
-import React from "react"
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 const Currencies = (props) => {
   const currencies = [
@@ -377,29 +314,31 @@ const Currencies = (props) => {
     { name: "Dash", symbol: "DASH" },
     { name: "Ripple", symbol: "XRP" },
     { name: "Zcash", symbol: "ZEC" },
-  ]
+  ];
 
   return (
     <div className="currencies">
       {currencies.map((coin) => {
-        const { name, symbol } = coin
+        const { name, symbol } = coin;
 
         return (
           <Link to={`/price/${symbol}`}>
             <h2>{name}</h2>
           </Link>
-        )
+        );
       })}
     </div>
   )
 }
 
-export default Currencies
+export default Currencies;
 ```
 
 <br>
 
-Notice when we click any of the links it takes us to the price component, use the React devTools to look for the router props and you should be able to find the value of the symbol param in there.
+Notice when we click any of the links it takes us to the price component. 
+
+For our next step, we'll use the `useParams` hook to access the appropriate symbol from our URL params in the browser address bar so we can render more details for each currency. 
 
 <br>
 <br>
@@ -411,11 +350,11 @@ Before we create this component take a moment to get a FREE Api key from <a href
 
 Once you have your api key here is what we will do:
 
-1. store the apikey and currency symbol in different variables
-1. use the useEffect hook to make an api call
-1. interpolate the apikey and symbol in the fetch URL
-1. save the resulting data in state and render it
-1. loaded and loading function for rendering the data if exists
+1. Store the `apikey` and currency symbol from our URL params in seperate variables
+1. Use the `useEffect` hook to make an API call
+1. Interpolate the `apikey` and symbol in the fetch URL
+1. Save the resulting data in state and render it
+1. Invoke a Loaded or Loading function to render the data if it exists
 
 <br>
 <br>
@@ -424,32 +363,34 @@ Once you have your api key here is what we will do:
 `Price.js`
 
 ```jsx
-import React from "react"
+// Our imports; useParams is designed to read URL params in the address bar
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Price = (props) => {
   // Our api key from coinapi.io
-  const apiKey = "YOUR API KEY"
+  const apiKey = "YOUR API KEY";
   // Grabbing the Currency symbol from the URL Param
-  const symbol = props.match.params.symbol
+  const { symbol } = useParams();
   // Using the other two variables to create our URL
-  const url = `http://rest-sandbox.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`
+  const url = `http://rest-sandbox.coinapi.io/v1/exchangerate/${symbol}/USD?apikey=${apiKey}`;
 
-  //state to hold the coin data
-  const [coin, setCoin] = React.useState(null)
+  // State to hold the coin data
+  const [coin, setCoin] = useState(null);
 
-  //function to fetch coin data
+  // Our function to fetch coin data
   const getCoin = async () => {
-    const response = await fetch(url)
-    const data = await response.json()
-    setCoin(data)
+    const response = await fetch(url);
+    const data = await response.json();
+    setCoin(data);
   }
 
   // useEffect to run getCoin when component mounts
-  React.useEffect(() => {
-    getCoin()
-  }, [])
+  useEffect(() => {
+    getCoin();
+  }, []);
 
-  // loaded function for when data is fetched
+  // Loaded function for when data is fetched
   const loaded = () => {
     return (
       <div>
@@ -458,19 +399,18 @@ const Price = (props) => {
         </h1>
         <h2>{coin.rate}</h2>
       </div>
-    )
-  }
+    );
+  };
 
   // Function for when data doesn't exist
   const loading = () => {
-    return <h1>Loading...</h1>
-  }
+    return <h1>Loading...</h1>;
+  };
+  // If coin has data, run the loaded function, otherwise, run loading
+  return coin ? loaded() : loading();
+};
 
-  // if coin has data, run the loaded function, otherwise, run loading
-  return coin ? loaded() : loading()
-}
-
-export default Price
+export default Price;
 ```
 
 <br>
