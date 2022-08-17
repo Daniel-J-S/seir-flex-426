@@ -230,7 +230,7 @@ import the Nav component into `App.js`:
 
 ```jsx
 import './App.css';
-// inporting Routes
+// importing Routes
 import { Routes, Route } from "react-router-dom";
 
 // importing "page" components
@@ -318,11 +318,11 @@ const Currencies = (props) => {
 
   return (
     <div className="currencies">
-      {currencies.map((coin) => {
+      {currencies.map((coin, index) => {
         const { name, symbol } = coin;
 
         return (
-          <Link to={`/price/${symbol}`}>
+          <Link to={`/price/${symbol}`} key={index}>
             <h2>{name}</h2>
           </Link>
         );
