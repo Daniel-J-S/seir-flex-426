@@ -346,13 +346,15 @@ For our next step, we'll use the `useParams` hook to access the appropriate symb
 
 ## The Price Component
 
-Before we create this component take a moment to get a FREE Api key from <a href="https://www.coinapi.io/pricing?apikey" target="_blank">coinapi.io</a>. Keep in mind you can only make 100 requests per day with your free apiKey.
+Before we create this component take a moment to get a FREE API key from <a href="https://www.coinapi.io/pricing?apikey" target="_blank">coinapi.io</a>. Keep in 
 
-Once you have your api key here is what we will do:
+Keep in mind that you can only make 100 requests per day with your free API Key.
 
-1. Store the `apikey` and currency symbol from our URL params in seperate variables
+Once you have your API key here is what we will do:
+
+1. Store the API key and currency symbol from our URL params in separate variables
 1. Use the `useEffect` hook to make an API call
-1. Interpolate the `apikey` and symbol in the fetch URL
+1. Interpolate the API key and symbol in the fetch URL
 1. Save the resulting data in state and render it
 1. Invoke a Loaded or Loading function to render the data if it exists
 
