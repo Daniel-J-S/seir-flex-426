@@ -142,7 +142,7 @@ Now we will will import the Route component into App, this will allow us define 
 
 ```jsx
 import './App.css';
-// inporting Routes
+// importing Routes
 import { Routes, Route } from "react-router-dom";
 
 // importing "page" components
