@@ -174,7 +174,7 @@ Sass is a CSS pre-compiler that allows us some new tricks in writing CSS includi
 1. Mixin
 1. Variables
 
-Let's write some Sass in our styles.scss:
+Let's write some Sass in our index.scss:
 
 ```scss
 // --------------------------
