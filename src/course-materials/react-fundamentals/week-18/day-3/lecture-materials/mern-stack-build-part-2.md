@@ -16,7 +16,7 @@ type: "lecture"
 
 1. Open terminal in frontend folder
 1. Install react router and sass `npm install react-router-dom sass`
-1. Create a file called styles.scss in the `/src` folder
+1. Change the name of `index.css` to `index.scss` in the `/src` folder and then change the inport statement inside of `index.js`
 
 <br>
 <br>
@@ -29,7 +29,7 @@ Update `index.js` to like like so:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -81,7 +81,7 @@ Our desired component Architecture:
 -> App
   -> Header
   -> Main |state: people|
-    -> Switch
+    -> Routes
       -> Route |path: "/"|
         -> Index |Props: people, createPeople|
       -> Route |path="/people/:id|
