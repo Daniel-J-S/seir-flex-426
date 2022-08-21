@@ -386,7 +386,7 @@ function Index(props) {
   };
 
   return (
-    <section>
+    <section className="person-section">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
