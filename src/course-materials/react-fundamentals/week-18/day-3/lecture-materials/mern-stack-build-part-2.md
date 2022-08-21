@@ -14,9 +14,9 @@ type: "lecture"
 
 ## Setup
 
-1. Open terminal in frontend folder
+1. Open frontend folder in VS Code
 1. Install react router and sass `npm install react-router-dom sass`
-1. Change the name of `index.css` to `index.scss` in the `/src` folder and then change the inport statement inside of `index.js`
+1. Change the name of `index.css` to `index.scss` in the `/src` folder and then change the inport statement inside of `index.js` appropriately.
 
 <br>
 <br>
@@ -29,7 +29,7 @@ Update `index.js` to like like so:
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.scss';
+import './index.scss'; // update to index.scss
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
@@ -95,9 +95,9 @@ Our desired component Architecture:
 Let's add the following to `App.js`:
 
 ```jsx
-import "./App.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
+import './App.css';
+import Header from './components/Header';
+import Main from './components/Main';
 
 function App() {
   return (
@@ -120,9 +120,9 @@ export default App;
 Let's create our routes:
 
 ```jsx
-import { Routes, Route } from "react-router-dom";
-import Index from "../pages/Index";
-import Show from "../pages/Show";
+import { Routes, Route } from 'react-router-dom';
+import Index from '../pages/Index';
+import Show from '../pages/Show';
 
 function Main(props) {
   return (
@@ -147,7 +147,7 @@ export default Main;
 Let's put the following in `Header.js`:
 
 ```jsx
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 function Header(props) {
   return (
@@ -197,18 +197,24 @@ $contrastcolor: white;
 // Header
 // --------------------------
 
-nav {
+.nav {
   @include white-text-black-bg;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 
   a {
     @include white-text-black-bg;
-
+    text-decoration: none;
     div {
       margin: 10px;
       font-size: large;
     }
+  }
+}
+
+@media (min-width: 768px) {
+  .nav {
+    justify-content: flex-start;
   }
 }
 ```
@@ -236,33 +242,39 @@ So let's update Main to have:
 `Main.js`
 
 ```jsx
-import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
-import Index from "../pages/Index";
-import Show from "../pages/Show";
+import { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Index from '../pages/Index';
+import Show from '../pages/Show';
 
 function Main(props) {
   const [people, setPeople] = useState(null);
 
-  const URL = "http://localhost:3001/people/";
+  const API_URL = 'http://localhost:3001/api/people/';
 
   const getPeople = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setPeople(data);
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setPeople(data);
+    } catch (error) {
+      // TODO: Add a task we wish to perform in the event of an error
+    }
   }
 
   const createPeople = async (person) => {
-    // make post request to create people
-    await fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(person),
-    })
-    // update list of people
-    getPeople();
+    try {
+      await fetch(URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'Application/json',
+        },
+        body: JSON.stringify(person),
+      });
+      getPeople();
+    } catch (error) {
+      // TODO: Add a task we wish to perform in the event of an error
+    }
   }
 
   useEffect(() => {
@@ -328,15 +340,15 @@ Let's now add a form to our `Index.js`:
 1. `handleSubmit` function handle form submisssion
 
 ```jsx
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Index(props) {
   // state to hold formData
   const [newForm, setNewForm] = useState({
-    name: "",
-    image: "",
-    title: "",
+    name: '',
+    image: '',
+    title: '',
   });
 
   // handleChange function for form
@@ -352,9 +364,9 @@ function Index(props) {
     event.preventDefault();
     props.createPeople(newForm);
     setNewForm({
-      name: "",
-      image: "",
-      title: "",
+      name: '',
+      image: '',
+      title: '',
     });
   };
 
@@ -365,8 +377,6 @@ function Index(props) {
         <Link to={`/people/${person._id}`}>
           <h1>{person.name}</h1>
         </Link>
-        <img src={person.image} alt={person.name} />
-        <h3>{person.title}</h3>
       </div>
     ));
   };
