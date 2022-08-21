@@ -68,29 +68,41 @@ Let's build out the minimum to get `server.js` running:
 
 ```js
 ///////////////////////////////
-// DEPENDENCIES
+// Dependencies
 ////////////////////////////////
-// get .env variables
-require("dotenv").config();
-// pull PORT from .env, give default value of 3001
-const { PORT = 3001 } = process.env;
-// import express
 const express = require("express");
 // create application object
 const app = express();
 
 ///////////////////////////////
-// ROUTES
+// Application Settings
 ////////////////////////////////
+require("dotenv").config();
+
+const { PORT = 3001, DATABASE_URI } = process.env;
+
+
+///////////////////////////////
+// Mount Middleware
+////////////////////////////////
+
+
+///////////////////////////////
+// Mount Routes
+////////////////////////////////
+
 // create a test route
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 
+
 ///////////////////////////////
-// LISTENER
+// Tell the app to listen
 ////////////////////////////////
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Express is listening on port: ${PORT}`);
+});
 ```
 
 <br>
@@ -109,43 +121,55 @@ Let's update our `server.js` to include a database connection:
 
 ```js
 ///////////////////////////////
-// DEPENDENCIES
+// Dependencies
 ////////////////////////////////
-// get .env variables
-require("dotenv").config();
-// pull PORT from .env, give default value of 3001
-// pull DATABASE_URL from .env
-const { PORT = 3001, DATABASE_URL } = process.env;
-// import express
+const mongoose = require("mongoose");
 const express = require("express");
 // create application object
 const app = express();
-// import mongoose
-const mongoose = require("mongoose");
 
 ///////////////////////////////
-// DATABASE CONNECTION
+// Application Settings
 ////////////////////////////////
-// Establish Connection
-mongoose.connect(DATABASE_URL);
-// Connection Events
+require("dotenv").config();
+
+const { PORT = 3001, DATABASE_URI } = process.env;
+///////////////////////////////
+// Database Connection
+////////////////////////////////
+mongoose.connect(DATABASE_URI);
+// Mongo connection Events
 mongoose.connection
   .on("open", () => console.log("You are connected to MongoDB"))
   .on("close", () => console.log("You are disconnected from MongoDB"))
-  .on("error", (error) => console.log(error));
+  .on("error", (error) => console.log(`MongoDB Error: ${error.message}`));
 
 ///////////////////////////////
-// ROUTES
+// Models
 ////////////////////////////////
+
+
+///////////////////////////////
+// Mount Middleware
+////////////////////////////////
+
+app.use(express.json()); 
+
+///////////////////////////////
+// Mount Routes
+////////////////////////////////
+
 // create a test route
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 
 ///////////////////////////////
-// LISTENER
+// Tell the app to listen
 ////////////////////////////////
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Express is listening on port: ${PORT}`);
+});
 ```
 
 <br>
@@ -166,86 +190,73 @@ _Make sure you see the MongoDB Connection message when the server restarts_
 
 ```js
 ///////////////////////////////
-// DEPENDENCIES
+// Dependencies
 ////////////////////////////////
-// get .env variables
-require("dotenv").config();
-// pull PORT from .env, give default value of 3001
-// pull DATABASE_URL from .env
-const { PORT = 3001, DATABASE_URL } = process.env;
-// import express
+const mongoose = require("mongoose");
+const cors = require("cors");
+const morgan = require("morgan");
 const express = require("express");
 // create application object
 const app = express();
-// import mongoose
-const mongoose = require("mongoose");
-// import middlware
-const cors = require("cors");
-const morgan = require("morgan");
 
 ///////////////////////////////
-// DATABASE CONNECTION
+// Application Settings
 ////////////////////////////////
-// Establish Connection
-mongoose.connect(DATABASE_URL);
-// Connection Events
+require("dotenv").config();
+
+const { PORT = 3001, DATABASE_URI } = process.env;
+///////////////////////////////
+// Database Connection
+////////////////////////////////
+mongoose.connect(DATABASE_URI);
+// Mongo connection Events
 mongoose.connection
   .on("open", () => console.log("You are connected to MongoDB"))
   .on("close", () => console.log("You are disconnected from MongoDB"))
-  .on("error", (error) => console.log(error));
+  .on("error", (error) => console.log(`MongoDB Error: ${error.message}`));
 
 ///////////////////////////////
-// MODELS
+// Models
 ////////////////////////////////
 const PeopleSchema = new mongoose.Schema({
   name: String,
   image: String,
   title: String,
-});
+}, { timestamps: true });
 
 const People = mongoose.model("People", PeopleSchema);
 
 ///////////////////////////////
-// MiddleWare
+// Mount Middleware
 ////////////////////////////////
-app.use(cors()); // to prevent cors errors, open access to all origins
-app.use(morgan("dev")); // logging
-app.use(express.json()); // parse json bodies
+app.use(cors()); 
+app.use(morgan("dev")); 
+app.use(express.json()); 
 
 ///////////////////////////////
-// ROUTES
+// Mount Routes
 ////////////////////////////////
+
 // create a test route
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-// PEOPLE INDEX ROUTE
+// Index Route
 app.get("/people", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.find({}));
+    res.status(200).json(await People.find({}));
   } catch (error) {
-    //send error
-    res.status(400).json(error);
-  }
-});
-
-// PEOPLE CREATE ROUTE
-app.post("/people", async (req, res) => {
-  try {
-    // send all people
-    res.json(await People.create(req.body));
-  } catch (error) {
-    //send error
-    res.status(400).json(error);
+    res.status(400).json({ message: "something went wrong" });
   }
 });
 
 ///////////////////////////////
-// LISTENER
+// Tell the app to listen
 ////////////////////////////////
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Express is listening on port: ${PORT}`);
+});
 ```
 
 <br>
@@ -266,110 +277,104 @@ Let's add an Update and Delete API Route to `server.js`:
 
 ```js
 ///////////////////////////////
-// DEPENDENCIES
+// Dependencies
 ////////////////////////////////
-// get .env variables
-require("dotenv").config();
-// pull PORT from .env, give default value of 3001
-// pull DATABASE_URL from .env
-const { PORT = 3001, DATABASE_URL } = process.env;
-// import express
+const mongoose = require("mongoose");
+const cors = require("cors");
+const morgan = require("morgan");
 const express = require("express");
 // create application object
 const app = express();
-// import mongoose
-const mongoose = require("mongoose");
-// import middlware
-const cors = require("cors");
-const morgan = require("morgan");
 
 ///////////////////////////////
-// DATABASE CONNECTION
+// Application Settings
 ////////////////////////////////
-// Establish Connection
-mongoose.connect(DATABASE_URL);
-// Connection Events
+require("dotenv").config();
+
+const { PORT = 3001, DATABASE_URI } = process.env;
+///////////////////////////////
+// Database Connection
+////////////////////////////////
+mongoose.connect(DATABASE_URI);
+// Mongo connection Events
 mongoose.connection
   .on("open", () => console.log("You are connected to MongoDB"))
   .on("close", () => console.log("You are disconnected from MongoDB"))
-  .on("error", (error) => console.log(error));
+  .on("error", (error) => console.log(`MongoDB Error: ${error.message}`));
 
 ///////////////////////////////
-// MODELS
+// Models
 ////////////////////////////////
 const PeopleSchema = new mongoose.Schema({
   name: String,
   image: String,
   title: String,
-});
+}, { timestamps: true });
 
 const People = mongoose.model("People", PeopleSchema);
 
 ///////////////////////////////
-// MiddleWare
+// Mount Middleware
 ////////////////////////////////
-app.use(cors()); // to prevent cors errors, open access to all origins
-app.use(morgan("dev")); // logging
-app.use(express.json()); // parse json bodies
+app.use(cors()); 
+app.use(morgan("dev")); 
+app.use(express.json()); 
 
 ///////////////////////////////
-// ROUTES
+// Mount Routes
 ////////////////////////////////
+
 // create a test route
 app.get("/", (req, res) => {
   res.send("hello world");
 });
 
-// PEOPLE INDEX ROUTE
+// Index Route
 app.get("/people", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.find({}));
+    res.status(200).json(await People.find({}));
   } catch (error) {
-    //send error
-    res.status(400).json(error);
+    res.status(400).json({ message: "something went wrong" });
   }
 });
 
-// PEOPLE CREATE ROUTE
+
+// Create Route
 app.post("/people", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.create(req.body));
+    res.status(201).json(await People.create(req.body));
   } catch (error) {
-    //send error
-    res.status(400).json(error);
+    res.status(400).json({ message: "something went wrong" });
   }
 });
 
-// PEOPLE DELETE ROUTE
+// Delete Route
 app.delete("/people/:id", async (req, res) => {
   try {
-    // send all people
-    res.json(await People.findByIdAndDelete(req.params.id));
+    res.status(200).json(await People.findByIdAndDelete(req.params.id));
   } catch (error) {
-    //send error
-    res.status(400).json(error);
+    res.status(400).json({ message: "something went wrong" });
   }
 })
 
-// PEOPLE UPDATE ROUTE
+// Update Route
 app.put("/people/:id", async (req, res) => {
   try {
-    // send all people
-    res.json(
+    res.status(200).json(
       await People.findByIdAndUpdate(req.params.id, req.body, { new: true })
     );
   } catch (error) {
-    //send error
-    res.status(400).json(error);
+    res.status(400).json({ message: "something went wrong" });
   }
-})
+});
 
 ///////////////////////////////
-// LISTENER
+// Tell the app to listen
 ////////////////////////////////
-app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
+app.listen(PORT, () => {
+  console.log(`Express is listening on port: ${PORT}`);
+});
+
 ```
 
 <br>
