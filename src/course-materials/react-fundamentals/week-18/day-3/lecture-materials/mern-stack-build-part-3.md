@@ -12,147 +12,45 @@ type: "lecture"
 <br>
 <br>
 
-## Links to Show Page
-
-We want generate links to each persons show page so let's do the following in `Index.js`:
-
-```jsx
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-function Index(props) {
-  // state to hold formData
-  const [newForm, setNewForm] = useState({
-    name: "",
-    image: "",
-    title: "",
-  });
-
-  // handleChange function for form
-  const handleChange = (event) => {
-    setNewForm({ ...newForm, [event.target.name]: event.target.value });
-  };
-
-  // handle submit function for form
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    props.createPeople(newForm);
-    setNewForm({
-      name: "",
-      image: "",
-      title: "",
-    });
-  };
-
-  // loaded function
-  const loaded = () => {
-    return props.people.map((person) => (
-      <div key={person._id} className="person">
-        <Link to={`/people/${person._id}`}>
-          <h1>{person.name}</h1>
-        </Link>
-        <img src={person.image} alt={person.name} />
-        <h3>{person.title}</h3>
-      </div>
-    ));
-  }
-
-  const loading = () => {
-    return <h1>Loading...</h1>;
-  };
-
-  return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={newForm.name}
-          name="name"
-          placeholder="name"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.image}
-          name="image"
-          placeholder="image URL"
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          value={newForm.title}
-          name="title"
-          placeholder="title"
-          onChange={handleChange}
-        />
-        <input type="submit" value="Create Person" />
-      </form>
-      {props.people ? loaded() : loading()}
-    </section>
-  );
-}
-
-export default Index;
-```
-
-<br>
-<br>
-<br>
 
 ## The Show Page
 
-Let's pass the people data to the show page via props and make a update and delete function for the show page, head over to `Main.js`:
+Inside of `Main.js`, let's ensure we've passed the people data to the show page via props:
 
 ```jsx
-import { useEffect, useState } from "react";
-import { Route, Routes } from "react-router-dom";
-import Index from "../pages/Index";
-import Show from "../pages/Show";
+import { useEffect, useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Index from '../pages/Index';
+import Show from '../pages/Show';
 
 function Main(props) {
   const [people, setPeople] = useState(null);
 
-  const URL = "http://localhost:3001/people/";
+  const URL = 'http://localhost:3001/api/people/';
 
   const getPeople = async () => {
-    const response = await fetch(URL);
-    const data = await response.json();
-    setPeople(data);
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      setPeople(data);
+    } catch (error) {
+      // TODO: Add a task we'd like to perform in the event of an error
+    }
   };
 
   const createPeople = async (person) => {
-    // make post request to create people
-    await fetch(URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(person),
-    });
-    // update list of people
-    getPeople();
-  };
-
-  const updatePeople = async (person, id) => {
-    // make put request to create people
-    await fetch(URL + id, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "Application/json",
-      },
-      body: JSON.stringify(person),
-    });
-    // update list of people
-    getPeople();
-  };
-
-  const deletePeople = async (id) => {
-    // make delete request to create people
-    await fetch(URL + id, {
-      method: "DELETE",
-    });
-    // update list of people
-    getPeople();
+    try {
+      await fetch(URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'Application/json',
+        },
+        body: JSON.stringify(person),
+      });
+      getPeople();
+    } catch (error) {
+      // TODO: Add a task we'd like to perform in the event of an error
+    }
   };
 
   useEffect(() => {
@@ -164,15 +62,18 @@ function Main(props) {
       <Routes>
         <Route 
           path="/" 
-          element={<Index people={people} createPeople={createPeople} />}
+          element={
+            <Index 
+              people={people} 
+              createPeople={createPeople} 
+            />
+          }
         />
         <Route
           path="/people/:id"
           element={
             <Show
               people={people}
-              updatePeople={updatePeople}
-              deletePeople={deletePeople}
             />
           }
         />
@@ -188,23 +89,39 @@ export default Main;
 <br>
 <br>
 
-Let's grab the selected person from the people array in props and display them.
+Let's reference the selected person from the `people` array we've passed as props and display them. To do this, we'll use a combination of `react-router-dom`'s `useParams` hook to retrieve the `id` value from our browser URL `:id` param segment so that we can use it to locate the appropriate object inside of the `people` array.
 
 `Show.js`
 
 ```jsx
-import { useParams } from "react-router-dom";
+import { useParams } from 'react-router-dom';
 
 function Show(props) {
+
   const { id } = useParams();
   const people = props.people;
-  const person = people.find((p) => p._id === id);
+  const person = people ? people.find((p) => p._id === id) : null;
+
+  const loaded = () => {
+    return (
+      <>
+        <h1>{person.name}</h1>
+        <h2>{person.title}</h2>
+        <img 
+          className="avatar-image" 
+          src={person.image} 
+          alt={person.name} 
+        />
+      </>
+    );
+  };
+  const loading = () => {
+    return <h1>Loading ...</h1>;
+  };
 
   return (
     <div className="person">
-      <h1>{person.name}</h1>
-      <h2>{person.title}</h2>
-      <img src={person.image} alt={person.name} />
+      { person ? loaded() : loading() }
     </div>
   );
 }
@@ -218,27 +135,69 @@ export default Show;
 
 ## Updating a Person
 
+First, we'll need to add a helper function inside the `Main.js` component, which will initiate the HTTP request using `fetch`. You'll notice that this function is very similar to the `createPeople` function we wrote previously, except this function uses the `PUT` HTTP request verb, and it also needs to have the `id` of the updated person appended to the URL.
+
+```js
+// ... more code above
+
+// Inside of Main.js
+
+  const updatePeople = async (person, id) => {
+    await fetch(URL + id, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'Application/json',
+      },
+      body: JSON.stringify(person),
+    });
+    // update list of people
+    getPeople();
+  };
+
+// ... more code below
+```
+
+<br>
+<br>
+
+Next, pass this function down as a prop to the `Show` component, where we render it inside our defined routes.
+
+```js
+<Route
+  path="/people/:id"
+  element={
+    <Show
+      people={people}
+      updatePeople={updatePeople}
+    />
+  }
+/>
+```
+
 On the show page let's add:
 
 1. State for a form
-
-1. `handleChange` and `handleSubmit` function
-
+1. The `useEffect` hook for checking if we have a person object and setting `editForm` state to that person object.
+1. `handleChange` and `handleUpdate` function
 1. A form in the JSX below the person
 
 ```jsx
-import { useParams, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function Show(props) {
-  // invoke useNavigate to allow for programatic navigation
-  const navigate = useNavigate();
+
   const { id } = useParams();
   const people = props.people;
-  const person = people.find((p) => p._id === id);
+  const person = people ? people.find((p) => p._id === id) : null;
+
 
   // state for form
-  const [editForm, setEditForm] = useState(person);
+  const [editForm, setEditForm] = useState({
+    name: "",
+    title: "",
+    image: ""
+  });
 
   // handleChange function for form
   const handleChange = (event) => {
@@ -248,20 +207,41 @@ function Show(props) {
     }));
   };
 
-  // handlesubmit for form
-  const handleSubmit = (event) => {
+  // a submit event handler for our edit form
+  const handleUpdate = (event) => {
     event.preventDefault();
     props.updatePeople(editForm, person._id);
-    // redirect people back to index
-    navigate("/");
   };
+
+
+  const loaded = () => {
+    return (
+      <>
+        <h1>{person.name}</h1>
+        <h2>{person.title}</h2>
+        <img 
+          className="avatar-image" 
+          src={person.image} 
+          alt={person.name} 
+        />
+      </>
+    );
+  };
+  const loading = () => {
+    return <h1>Loading ...</h1>;
+  };
+
+  useEffect(() => {
+    if(person) { // if we have a person object
+      setEditForm(person) // set our form state to that person
+      // this is how we can pre-fill our edit form with person data
+    }
+  }, [person]);
 
   return (
     <div className="person">
-      <h1>{person.name}</h1>
-      <h2>{person.title}</h2>
-      <img src={person.image} alt={person.name} />
-      <form onSubmit={handleSubmit}>
+      { person ? loaded() : loading() }
+      <form onSubmit={handleUpdate}>
         <input
           type="text"
           value={editForm.name}
@@ -298,19 +278,58 @@ export default Show;
 
 ## Deleting a Person
 
-Last Stop is adding a button on the show page to delete a user.
+Once again, we'll start by adding a helper function inside of `Main.js` to initiate a HTTP, `DELETE` request to our API to delete a person; in this case, we'll configure the `fetch` method to `DELETE`. 
+
+```js
+const deletePeople = async (id) => {
+  await fetch(API_URL + id, {
+    method: 'DELETE',
+  });
+  getPeople();
+};
+```
+<br>
+<br>
+
+Next, we'll pass this function down to the `Show` component as a prop:
+
+```js
+<Route
+  path="/people/:id"
+  element={
+    <Show
+      people={people}
+      updatePeople={updatePeople}
+      deletePeople={deletePeople}
+    />
+  }
+/>
+```
+<br>
+<br>
+<br>
+
+Last Stop is adding a button on the show page to delete a user. To do this, we'll need to import the `useNavigate` hook from `react-router-dom` so we can perform programmatic navigation; this hook is handy for changing browser location by invoking a function. 
+
+We'll also set up a `handleDelete` function as an event listener to call whenever click events are triggered from our button. Once this function is called, we'll invoke the `deletePeople` function we passed down as a prop and pass to it the `id` of the person we're deleting. We'll also need to programmatically navigate back to the index page upon deleting a person, so we'll use the `navigate` function we set up earlier for that.
 
 ```jsx
-import { useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
+// importing the useNavigate hook
+import { useNavigate, useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 function Show(props) {
+  // set up nav function with the useNavigate hook
   const navigate = useNavigate();
   const { id } = useParams();
   const people = props.people;
-  const person = people.find((p) => p._id === id);
+  const person = people ? people.find((p) => p._id === id) : null;
 
-  const [editForm, setEditForm] = useState(person);
+  const [editForm, setEditForm] = useState({
+    name: "",
+    title: "",
+    image: ""
+  });
 
   // handleChange function for form
   const handleChange = (event) => {
@@ -320,25 +339,45 @@ function Show(props) {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleUpdate = (event) => {
     event.preventDefault();
     props.updatePeople(editForm);
-    navigate("/");
   };
 
-  const removePerson = () => {
+  const handleDelete = () => {
     props.deletePeople(person._id);
-    navigate("/");
+    navigate('/');
   };
+
+  const loaded = () => {
+    return (
+      <>
+        <h1>{person.name}</h1>
+        <h2>{person.title}</h2>
+        <img 
+          className="avatar-image" 
+          src={person.image} 
+          alt={person.name} 
+        />
+        <button id="delete" onClick={handleDelete}>
+          DELETE
+        </button>
+      </>
+    );
+  };
+  const loading = () => {
+    return <h1>Loading ...</h1>;
+  };
+
+  useEffect(() => {
+    if(person) { 
+      setEditForm(person);
+    }
+  }, [person]);
 
   return (
     <div className="person">
-      <h1>{person.name}</h1>
-      <h2>{person.title}</h2>
-      <img src={person.image} alt={person.name} />
-      <button id="delete" onClick={removePerson}>
-        DELETE
-      </button>
+      { person ? loaded() : loading() }
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -399,13 +438,14 @@ $contrastcolor: white;
 // Header
 // --------------------------
 
-nav {
+.nav {
   @include white-text-black-bg;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 
   a {
     @include white-text-black-bg;
+    text-decoration: none;
     div {
       margin: 10px;
       font-size: large;
@@ -417,7 +457,7 @@ nav {
 // Form
 // --------------------------
 
-section,
+.person-section,
 div {
   form {
     input {
@@ -449,11 +489,17 @@ button#delete {
 // images
 // --------------------------
 
-img {
+.avatar-img {
   width: 300px;
   height: 300px;
   border-radius: 90px;
   object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    justify-content: flex-start;    
+  }
 }
 ```
 
