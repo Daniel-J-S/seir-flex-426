@@ -70,14 +70,14 @@ Let's build out the minimum to get `server.js` running:
 ///////////////////////////////
 // Dependencies
 ////////////////////////////////
-const express = require("express");
+const express = require('express');
 // create application object
 const app = express();
 
 ///////////////////////////////
 // Application Settings
 ////////////////////////////////
-require("dotenv").config();
+require('dotenv').config();
 
 const { PORT = 3001, DATABASE_URI } = process.env;
 
@@ -92,8 +92,8 @@ const { PORT = 3001, DATABASE_URI } = process.env;
 ////////////////////////////////
 
 // create a test route
-app.get("/", (req, res) => {
-  res.send("hello world");
+app.get('/', (req, res) => {
+  res.send('hello world');
 });
 
 
@@ -109,7 +109,7 @@ app.listen(PORT, () => {
 <br>
 <br>
 
-Run the server `npm start` and make sure you see `"Hello World"` when you go to `localhost:3001`.
+Run the server `npm start` and make sure you see `'Hello World'` when you go to `localhost:3001`.
 
 <br>
 <br>
@@ -123,15 +123,15 @@ Let's update our `server.js` to include a database connection:
 ///////////////////////////////
 // Dependencies
 ////////////////////////////////
-const mongoose = require("mongoose");
-const express = require("express");
+const mongoose = require('mongoose');
+const express = require('express');
 // create application object
 const app = express();
 
 ///////////////////////////////
 // Application Settings
 ////////////////////////////////
-require("dotenv").config();
+require('dotenv').config();
 
 const { PORT = 3001, DATABASE_URI } = process.env;
 ///////////////////////////////
@@ -140,9 +140,9 @@ const { PORT = 3001, DATABASE_URI } = process.env;
 mongoose.connect(DATABASE_URI);
 // Mongo connection Events
 mongoose.connection
-  .on("open", () => console.log("You are connected to MongoDB"))
-  .on("close", () => console.log("You are disconnected from MongoDB"))
-  .on("error", (error) => console.log(`MongoDB Error: ${error.message}`));
+  .on('open', () => console.log('You are connected to MongoDB'))
+  .on('close', () => console.log('You are disconnected from MongoDB'))
+  .on('error', (error) => console.log(`MongoDB Error: ${error.message}`));
 
 ///////////////////////////////
 // Models
@@ -160,8 +160,8 @@ app.use(express.json());
 ////////////////////////////////
 
 // create a test route
-app.get("/", (req, res) => {
-  res.send("hello world");
+app.get('/', (req, res) => {
+  res.send('hello world');
 });
 
 ///////////////////////////////
@@ -192,17 +192,17 @@ _Make sure you see the MongoDB Connection message when the server restarts_
 ///////////////////////////////
 // Dependencies
 ////////////////////////////////
-const mongoose = require("mongoose");
-const cors = require("cors");
-const morgan = require("morgan");
-const express = require("express");
+const mongoose = require('mongoose');
+const cors = require('cors');
+const morgan = require('morgan');
+const express = require('express');
 // create application object
 const app = express();
 
 ///////////////////////////////
 // Application Settings
 ////////////////////////////////
-require("dotenv").config();
+require('dotenv').config();
 
 const { PORT = 3001, DATABASE_URI } = process.env;
 ///////////////////////////////
@@ -211,7 +211,7 @@ const { PORT = 3001, DATABASE_URI } = process.env;
 mongoose.connect(DATABASE_URI);
 // Mongo connection Events
 mongoose.connection
-  .on("open", () => console.log("You are connected to MongoDB"))
+  .on('open", () => console.log("You are connected to MongoDB"))
   .on("close", () => console.log("You are disconnected from MongoDB"))
   .on("error", (error) => console.log(`MongoDB Error: ${error.message}`));
 
