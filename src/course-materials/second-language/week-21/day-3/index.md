@@ -4,22 +4,16 @@ title: "Week 21 - Day 3"
 week: 21
 day: 3
 type: "homepage"
-topics: "Many to Many Models & Image Upload to Amazon S3"
+topics: "Intro to Python & Python Control Flow"
 ---
 
 # Week 21 - Day 3
 
-#### Many to Many Models & Image Upload to Amazon S3
+#### Intro to Python & Python Control Flow
 
-- [**Lecture:** Intro to Django Many to Many Models](/second-language/week-21/day-3/lecture-materials/intro-to-django-many-to-many-models)
-- [**Lecture:** Uploading Images to Amazon S3 with Django](/second-language/week-21/day-3/lecture-materials/uploading-images-to-amazon-s3/)
-- [**Activity:** Review Project 4 Requirements](/unit-projects/unit-four-project-requirements)
-
-<br>
-<br>
-
-**Collector Lab:**
-
-_For practice, do everything we did in this lesson on your Finch Collector project!_
-
-_Don't forget to make commits._
+- [**Lecture:** Intro to Python](/second-language/week-21/day-3/lecture-materials/intro-to-python/)
+- [**Lecture:** Intro to Python Control Flow](/second-language/week-21/day-3/lecture-materials/intro-to-python-control-flow/)
+- [**Lab:** Python Control Flow Lab](/second-language/week-21/day-3/labs/python-control-flow-lab/) - **Deliverable**
+- [**Lecture:** Intro to Python containers](/second-language/week-21/day-3/lecture-materials/intro-to-python-containers/)
+- [**Lab:** Python containers Lab](/second-language/week-21/day-3/labs/python-containers-lab/) - **Deliverable**
+- [**Bonus Lab:** Python Challenges Lab](/second-language/week-21/day-3/labs/python-challenges-lab/) - **Non-Deliverable**

@@ -4,16 +4,13 @@ title: "Week 21 - Day 2"
 week: 21
 day: 2
 type: "homepage"
-topics: "Intro to Django 1:M Models"
+topics: "Into to SQL and Relational Databases"
 ---
 
 # Week 21 - Day 2
 
-#### Intro to Django 1:M Models
+#### Into to SQL and Relational Databases
 
-- [**Lecture:** Intro to Django One to Many Models](/second-language/week-21/day-2/lecture-materials/intro-to-django-one-to-many-models)
-- **Lab:** _For practice, do everything we did in this lesson on your Finch Collector project!_
+- [**Lecture:** Intro to SQL and Relational Databases](/second-language/week-21/day-2/lecture-materials/intro-to-sql-and-relational-databases/)
+- [**Lab:** Carmen San Diego Lab](/second-language/week-21/day-2/labs/carmen-san-diego-lab/) - **Non-Deliverable**
 
-<br>
-
-_Don't forget to make commits._
