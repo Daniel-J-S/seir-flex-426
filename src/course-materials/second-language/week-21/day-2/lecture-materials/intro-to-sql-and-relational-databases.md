@@ -164,6 +164,7 @@ docker exec -it postgresql psql -U postgres
 
 This command executes the `psql` interactive terminal process for the container named `postgresql` as the user `postgres`.
 
+Awesome! We should be ready to start learning about relational Databases and PostgreSQL.
 
 <br>
 <br>
