@@ -1,9 +1,9 @@
 ---
 track: "Second Language"
 title: "Carmen San Diego Lab"
-week: 18
+week: 21
 day: 2
-type: "lecture"
+type: "lab"
 ---
 
 # Carmen San Diego Lab 
@@ -50,11 +50,12 @@ We're going to use what we've learned already about querying a database using SQ
 	CREATE DATABASE carmen;
 	\c carmen
 	```
+6. Next, go ahead and terminal the interactive terminal with `\q`
 
-6. Create `city`, `country` & `countrylanguage` tables and seed their data using the _import_ (`\i`) psql command:
+7. Create `city`, `country` & `countrylanguage` tables and seed their data using this command:
 
-	```sql
-	\i world.sql
+	```bash
+	$ cat world.sql | docker exec -i postgresql psql -U postgres -d carmen
 	```
 
 <br>
@@ -69,7 +70,7 @@ The goal is to figure out what city Carmen Sandiego is heading to so that she ca
 
 You'll be writing SQL queries within `clues.sql` to answer each clue.
 
-Run the queries in psql by typing `\i clues.sql`.
+Run the queries in psql by typing `cat clues.sql | docker exec -i postgresql psql -U postgres -d carmen`.
 
 
 <br>

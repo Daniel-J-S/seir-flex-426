@@ -1,7 +1,7 @@
 ---
 track: "Second Language"
 title: "Intro to Relational Databases and SQL"
-week: 18
+week: 21
 day: 2
 type: "lecture"
 ---
@@ -16,6 +16,7 @@ type: "lecture"
 
 | Students will be able to:                                    |
 | ------------------------------------------------------------ |
+| Set up a PostgreSQL Environment using Docker                 |
 | Describe the use case of databases                           |
 | Describe the anatomy of a relational database                |
 | Describe the use case of SQL                                 |
@@ -23,6 +24,139 @@ type: "lecture"
 | Use SQL to create a database and a table                     |
 | Use SQL to perform CRUD data operations                      |
 | Use a SQL `JOIN` clause to combine data from multiple tables |
+
+<br>
+<br>
+<br>
+
+## Set up a PostgreSQL Environment using Docker
+
+First, PostgreSQL is a database management server that we can execute in the cloud ... *(think MongoDB Atlas)*, or locally on our physical machine. For Unit 4, we'll learn how to run PostgreSQL locally.
+
+However, to ensure we all have a consistent experience, we will set up a special environment using a tool called Docker.
+
+<br>
+<br>
+
+#### What is Docker?
+
+Docker is a software development platform and a virtualization technology of sorts.
+
+The purpose of Docker is to make it easy for us as Software Engineers to develop and deploy applications within virtual containerized environments. The keyword containerized refers to a container; this is an isolated computerized environment that runs on a host machine. By the way, "host machine" is a fancy way of saying your physical machine, but in the context of containerized/virtualized environments. The purpose of this container is that it's self-contained and will behave the same way no matter which hosts operating system is running it. This idea might be challenging to appreciate right now. However, try imagining how many different options we have regarding operating systems. Without a containerized environment like Docker, we would need to follow a specific set of instructions for installing our application's dependencies for the particular operating system used by each team member.
+
+So, to put this into perspective, each docker container behaves like a separate computer. Each container comes with a dedicated operating system, CPU process, memory, and network resources; this makes it super easy to add, remove, start or stop them without affecting each other or the host machine. Most of the time, each container runs a specific task, such as a MySQL Server, MongoDB Server, NodeJS/Express server, etc., so we can connect them on the same network to compose a solution.
+
+<br>
+<br>
+
+#### Get Started with Docker and PostgreSQL
+
+To get started with Docker, we'll install the desktop application for our particular operating system.
+
+Start by downloading <a href="https://www.docker.com/products/docker-desktop/" target="_blank"><strong>Docker Desktop</strong></a>. Ensure that you select the application type that matches your OS/Chip combo. Follow the install steps, and then start the Docker Desktop application.
+
+🚨 NOTE: As part of installation ensure Docker Desktop starts on login from the preferences in the Docker application.
+
+
+## Heads up Linux users (NOT WSL users)
+
+- You will need to install the docker Engine first. Open the toggle for steps to accomplish this.
+    
+    The following instructions mirror <a href="https://docs.docker.com/engine/install/ubuntu/" target="_blank"><strong>this guide</strong></a>.
+    
+    Start by updating apt, and allow the use of a repo over **HTTPS** by running these commands in your terminal:
+    
+    ```bash
+    sudo apt-get update
+    ```
+    
+    ```bash
+    sudo apt-get install ca-certificates curl gnupg lsb-release
+    ```
+    
+    Then add Docker’s official GPG key:
+    
+    ```bash
+    sudo mkdir -p /etc/apt/keyrings
+    ```
+    
+    ```bash
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+    ```
+    
+    And set up the repo with:
+    
+    ```bash
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+      $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    ```
+    
+    Now you can finally install the Docker Engine:
+    
+    ```bash
+    sudo apt-get update
+    ```
+    
+    ```bash
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+    ```
+    
+    You should now be able to download and run the Docker Desktop for Linux DEB package from here: <a href="https://docs.docker.com/desktop/install/linux-install/" target="_blank"><strong><code>https://docs.docker.com/desktop/install/linux-install/</code></strong></a>    
+    After you’ve installed Docker Desktop for Linux run this command to create a `docker` user group:
+    
+    ```bash
+    sudo groupadd docker
+    ```
+    
+    Then add your user to this new user group:
+    
+    ```bash
+    sudo usermod -aG docker $USER
+    ```
+    
+    
+    🚨 **NOTE:** You must restart your machine at this point. Do so before continuing on.
+    
+
+## Download and install official PostgreSQL Docker Image from Docker Hub
+
+Now that the Docker Desktop is installed, let's download and install the <a href="https://hub.docker.com/_/postgres/" target="_blank">official PostgreSQL container</a> from Docker Hub.
+
+This part is relatively simple, all we need to do is run the following command in our terminal:
+
+```bash
+$ docker pull postgres
+```
+
+Next, in the same terminal session, we'll run this command to initialize a new PostgreSQL Instance:
+
+```bash
+$ docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=abc1234
+```
+
+This command runs the new docker image with the container name of `postgresql` and sets a username and password to `postgres` and `abc1234` respectively.
+
+In case we need to start or stop this container in the terminal, we can run the following commands:
+
+```bash
+# stop the container, assuming the container name is postgresql
+
+$ docker stop postgresql
+
+# start the container, assuming the container name is postgresql
+
+$ docker start postgresql
+```
+
+Once we're ready to use the `psql` interactive shell, we'll run the following command:
+
+```bash
+docker exec -it postgresql psql -U postgres
+```
+
+This command executes the `psql` interactive terminal process for the container named `postgresql` as the user `postgres`.
+
 
 <br>
 <br>
@@ -201,16 +335,16 @@ There are [several GUI tools available](https://wiki.postgresql.org/wiki/Communi
 
 `psql` is a tool that runs in terminal and allows us to work with PostgreSQL databases by typing in commands. It was installed with PostgreSQL.
 
-Open a terminal session and type: `psql`.
+Open a terminal session and type: `docker exec -it postgresql psql -U postgres`.
 
 You'll see your PostgreSQL version and psql's prompt:
 
 ```
-$ psql
-psql (9.6.3)
+$ docker exec -it postgresql psql -U postgres
+psql (14.5 (Debian 14.5-1.pgdg110+1))
 Type "help" for help.
 
-jimclark=#
+postgres=#
 ```
 
 Here are some useful commands (note the use of a **backslash**):
