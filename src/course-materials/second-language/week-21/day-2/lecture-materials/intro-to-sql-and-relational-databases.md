@@ -42,9 +42,16 @@ However, to ensure we all have a consistent experience, we will set up a special
 
 Docker is a software development platform and a virtualization technology of sorts.
 
-The purpose of Docker is to make it easy for us as Software Engineers to develop and deploy applications within virtual containerized environments. The keyword containerized refers to a container; this is an isolated computerized environment that runs on a host machine. By the way, "host machine" is a fancy way of saying your physical machine, but in the context of containerized/virtualized environments. The purpose of this container is that it's self-contained and will behave the same way no matter which hosts operating system is running it. This idea might be challenging to appreciate right now. However, try imagining how many different options we have regarding operating systems. Without a containerized environment like Docker, we would need to follow a specific set of instructions for installing our application's dependencies for the particular operating system used by each team member.
+The purpose of Docker is to make it easy for us as Software Engineers to develop and deploy applications within virtual containerized environments. 
 
-So, to put this into perspective, each docker container behaves like a separate computer. Each container comes with a dedicated operating system, CPU process, memory, and network resources; this makes it super easy to add, remove, start or stop them without affecting each other or the host machine. Most of the time, each container runs a specific task, such as a MySQL Server, MongoDB Server, NodeJS/Express server, etc., so we can connect them on the same network to compose a solution.
+The keyword containerized refers to a container; this is an isolated computerized environment that runs on a host machine. By the way, "host machine" is a fancy way of saying your physical machine, but in the context of containerized/virtualized environments. The purpose of this container is that it's self-contained and will behave the same way no matter which hosts operating system is running it. 
+
+
+This idea might be challenging to appreciate right now. However, try imagining how many different options we have regarding operating systems. Without a containerized environment like Docker, we would need to follow a specific set of instructions for installing our application's dependencies for the particular operating system used by each team member.
+
+So, to put this into perspective, each docker container behaves like a separate computer. Each container comes with a dedicated operating system, CPU process, memory, and network resources; this makes it super easy to add, remove, start or stop them without affecting each other or the host machine. 
+
+Most of the time, each container runs a specific task, such as a MySQL Server, MongoDB Server, NodeJS/Express server, etc., so we can connect them on the same network to compose a solution.
 
 <br>
 <br>
