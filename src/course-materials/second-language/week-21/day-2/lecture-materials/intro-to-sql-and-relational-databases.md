@@ -64,8 +64,11 @@ Start by downloading <a href="https://www.docker.com/products/docker-desktop/" t
 
 🚨 NOTE: As part of installation ensure Docker Desktop starts on login from the preferences in the Docker application.
 
+<br>
+<br>
 
-## Heads up Linux users (NOT WSL users)
+
+### Heads up Linux users (NOT WSL users)
 
 - You will need to install the docker Engine first. Open the toggle for steps to accomplish this.
     
@@ -126,7 +129,11 @@ Start by downloading <a href="https://www.docker.com/products/docker-desktop/" t
     🚨 **NOTE:** You must restart your machine at this point. Do so before continuing on.
     
 
-## Download and install official PostgreSQL Docker Image from Docker Hub
+
+<br>
+<br>
+
+### Download and install official PostgreSQL Docker Image from Docker Hub
 
 Now that the Docker Desktop is installed, let's download and install the <a href="https://hub.docker.com/_/postgres/" target="_blank">official PostgreSQL container</a> from Docker Hub.
 
@@ -172,7 +179,7 @@ Awesome! We should be ready to start learning about relational Databases and Pos
 
 ## Database Intro
 
-<br>
+
 <br>
 <br>
 
