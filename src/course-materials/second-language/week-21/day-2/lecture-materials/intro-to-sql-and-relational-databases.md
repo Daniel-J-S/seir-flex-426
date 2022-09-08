@@ -146,7 +146,7 @@ $ docker pull postgres
 Next, in the same terminal session, we'll run this command to initialize a new PostgreSQL Instance:
 
 ```bash
-$ docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=abc1234
+$ docker run --name postgresql -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=abc1234 -d postgres
 ```
 
 This command runs the new docker image with the container name of `postgresql` and sets a username and password to `postgres` and `abc1234` respectively.
