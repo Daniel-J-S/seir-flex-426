@@ -1325,3 +1325,32 @@ h1:first-of-type {
     font-size: 1rem;
   }
 }
+
+
+.gatsby-code-button-container {
+  background-color: rgb(42, 33, 57);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  z-index: 0 !important;
+  max-height: 1.5rem;
+}
+
+.gatsby-code-button-icon {
+  background-color: rgb(42, 33, 57);
+}
+
+.gatsby-code-button {
+  padding: .2rem;
+  fill: #fff;
+  margin-top: .4rem;
+  margin-bottom: .5rem;
+}
+
+.gatsby-code-button-toaster-text {
+  border-radius: 7px !important;
+}
+
+.gatsby-code-button-toaster {
+  max-width: 15rem;
+  margin: auto;
+}
