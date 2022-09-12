@@ -43,7 +43,7 @@ type: "lecture"
 
 ## The Model Layer in the Django Architecture
 
-<img src="https://i.imgur.com/1fFg7lz.png">
+<img src="https://i.imgur.com/QjlDj7f.png" alt="the diagram of data flow for django web framework">
 	
 This lesson focuses on the **Model layer** which provides **Views** with access to the **database**.
 
@@ -53,9 +53,62 @@ This lesson focuses on the **Model layer** which provides **Views** with access 
 
 ## Review the Starter Code
 
-The only change to the starter code from where the last lesson left off is that the `home` view now renders a **home.html** template instead of using `HttpResponse` to send back a string.
+For this lesson, we'll use the same project we started during our **Django URLs, Views & Templates** lesson.
 
-Note that since the `HttpResponse` function is no longer being used in **views.py**, its import has been removed.
+However, let's make one slight change; let's ensure that the `home` view renders a **home.html** template instead of using `HttpResponse` to send back a string. 
+
+Also, since the `HttpResponse` function will no longer be used in **views.py**, we should remove it's import statement.
+
+<br>
+
+That said, here's what our updated `main_app/views.py` should look like:
+
+```python
+
+from django.shortcuts import render
+
+class Cat: 
+  def __init__(self, name, breed, description, age):
+    self.name = name
+    self.breed = breed
+    self.description = description
+    self.age = age
+
+cats = [
+  Cat('Lolo', 'tabby', 'Kinda rude.', 3),
+  Cat('Sachi', 'tortoiseshell', 'Looks like a turtle.', 0),
+  Cat('Fancy', 'bombay', 'Happy fluff ball.', 4),
+  Cat('Bonk', 'selkirk rex', 'Meows loudly.', 6)
+]
+
+def home(request):
+  return render(request, 'home.html')
+
+def about(request):
+  return render(request, 'about.html')
+
+def cats_index(request):
+  return render(request, 'cats/index.html', { 'cats': cats })
+```
+
+<br>
+<br>
+
+Next, we'll add this template to our `main_app/templates` directory for our new `home.html` file:
+
+```html
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Home</h1>
+
+{% endblock %}
+```
+<br>
+<br>
+
+**Excellent! Now we're ready to get started!**
 
 <br>
 <br>
@@ -77,6 +130,13 @@ When we retrieve data from the database (using a Model of course), we will have 
 
 <br>
 <br>
+
+**Here's our final ERD for Cat Collector:**
+
+<img src="https://i.imgur.com/buPsQ7Z.png" alt="an erd for the app"/>
+
+<br>
+<br>
 <br>
 
 ## Models in Django
@@ -85,7 +145,7 @@ Each Model is defined as a Python class that inherits from `django.db.models.Mod
 
 Here's the **Cat** entity from an ERD and the code to define the equivalent Model:
 
-<img src="https://i.imgur.com/gwlOAXc.png">
+<img src="https://i.imgur.com/gwlOAXc.png" alt="an example erd" />
 
 All of the Models for an app are defined in the app's `models.py` file.
 
@@ -101,6 +161,23 @@ It's important to note that the Field types for a Model don't just determine the
 <br>
 <br>
 <br>
+
+## Adding a `__str__` Method
+
+It’s a best practice to override the `__str__` method in Models so that they will print in a more helpful way.
+
+For the `Cat` model, we’ll code `__str__` to return the cat’s `name` attribute:
+
+```python
+...
+  age = models.IntegerField()
+
+	# new code below
+  def __str__(self):
+    return self.name
+```
+
+Watch your indentation here! This is a class method so it belongs in the `Cat` class.
 
 ### ❓ Review Questions
 
@@ -157,10 +234,13 @@ Migrations in Django are Python files that are created by running a command Djan
 
 Okay, we've defined a `Cat` Model, but the database does not yet have a table to hold all of our furry model instances (rows).
 
-The following command creates migration files for all Models that have been added or changed since the last migration:
+<br>
+<br>
+
+Run the following command in the **Web Container Shell** to create migration files for all Models that have been added or changed since the last migration:
 
 ```bash
-$ python manage.py makemigrations
+$ python3 manage.py makemigrations
 ```
 
 The output in the terminal informs us that the following migration file was created: `main_app/migrations/0001_initial.py`
@@ -169,7 +249,7 @@ A `migrations` directory is created for an **app** the first time you run `makem
 
 You don't have to do anything with the migration files, but since this is the first time we've made one, let's open it and take a peek.
 
-> You should rarely need to edit migration files by hand, but it’s entirely possible to do so if you ever need to.
+> 🤯 You shouldn’t ever need to edit migration files by hand, but it’s entirely possible to do so if you needed to (please don’t in this course though).
 
 <br>
 <br>
@@ -179,10 +259,10 @@ You don't have to do anything with the migration files, but since this is the fi
 
 Simply creating migration files does not update the database's schema.
 
-To synchronize the database with the code in the migration files, we "migrate" using this command:
+To synchronize the database with the code in the migration files, we “migrate” using this command in the **Web Container Shell**:
 
 ```bash
-$ python manage.py migrate
+$ python3 manage.py migrate
 ```
 
 `OK` messages are a good thing 😊
@@ -193,7 +273,22 @@ $ python manage.py migrate
 
 #### What Exactly Was Created in the Database?
 
-To checkout the tables we have in our database, open psql:
+To checkout the tables we have in our database, attach a shell to the postgres container.
+
+Here's an example of that one again:
+
+<img src="https://i.imgur.com/LSYiYN0.png" alt="an example erd" />
+
+<br>
+<br>
+
+
+Then switch to the postgres user in that shell **(the user we created in the docker-compose.yaml file)**:
+
+```shell
+su postgres
+```
+
 
 ```shell
 $ psql
@@ -214,7 +309,7 @@ Connect to the `catcollector` database:
 List the tables:
 
 ```shell
-\d
+\dt
 ```
 
 You'll find quite a few tables named like `django_*`. These tables are used by the framework to track migrations, server-side sessions, etc.
@@ -304,7 +399,7 @@ Any model you want to work with must be imported just like you will have to do i
 >>> from main_app.models import Cat
 ```
 
-> **Key Point:** The code we type in the shell to perform CRUD is going to be the same or similar to the code we use in the application's views!
+> 💡 **Key Point:** The code we type in the shell to perform CRUD is going to be the same or similar to the code we use in the application's views!
 
 To retrieve all of the Cat objects, enter this command:
 
@@ -379,28 +474,6 @@ Create another `Cat` with attribute values of your choice.
 Note that you can re-use the variables in your code, such as `c` above, unless there's a reason you have to "remember" the current object held by `c`.
 
 Check that your cat was added by using `Cat.objects.all()`.
-
-<br>
-<br>
-<br>
-
-##### Adding a `__str__` Method
-
-It's a best practice to override the `__str__` method in Models so that they will print in a more helpful way.
-
-For the `Cat` model, we'll code `__str__` to return the cat's `name` attribute:
-
-```python
-# main_app/models.py
-...
-    age = models.IntegerField()
-
-	# new code below
-    def __str__(self):
-        return self.name
-```
-
-Note that changes to a Model do not become active in the shell unless you `exit()`, re-launch, and re-import the Models.
 
 <br>
 <br>
@@ -565,10 +638,10 @@ But wait, there's another really REALLY neat thing about Django - it comes with 
 
 A _super user_ is an administrator for the site. When you are logged in to this account, you can access the Admin app to add additional users and manipulate Model data.
 
-Run this command in the terminal:
+Run this command in the **Web Container Shell**:
 
 ```bash
-$ python manage.py createsuperuser
+$ python3 manage.py createsuperuser
 ```
 
 Django will want you to create a password that's at least 3 characters long and complex, however, you can bypass it by typing `y` at the warning prompt.
@@ -577,7 +650,7 @@ You will be prompted to enter a username, email address, and a password.
 
 Now go to your webpage and head over to the `/admin` route to see an _administration_ portal!
 
-Did you mess up your password? It's okay - no big fish. Go back to your terminal and use this handy command:
+Did you mess up your password? It's okay - no big fish. Go back to your **Web Container Shell** and use this handy command:
 
 ```bash
 python manage.py changepassword <user_name>
@@ -616,12 +689,12 @@ Then, it would be commonplace to show the "details" for a data object using a se
 
 #### Typical Process to Add Functionality to an App
 
-Remember, nothing is going to happen unless an HTTP request leaves the browser informing the server what the app wants to do.
+Remember, nothing is going to happen unless an **HTTP** request leaves the browser informing the server what the app wants to do.
 
 When adding additional functionality to a web app we need to do the following:
 
 1. With Django, decide the appropriate URL for the route. Because Django does not follow the RESTful routing methodology, you are free to name the URLs as you see fit.
-2. Add the UI that is going to trigger the HTTP request to be sent to the server. For example, adding a `<form>` to submit a new cat.
+2. Add the UI that is going to trigger the **HTTP** request to be sent to the server. For example, adding a `<form>` to submit a new cat.
 3. Code the route on the server. In the case of Django, this is done by adding an additional `path(...)` to the `urlpatterns` list within the app's `urls.py` module. **Each entry in `urlpatterns` determines what code will run when the URL matches an HTTP request**.
 4. Now you need to add the _view function_ referenced by the `path(...)` inside of the **views.py** module. The _view function_ contains the code to perform CRUD, etc. It ultimately is responsible for responding to the client's request...
 5. If data was changed, respond with a **redirect**. Otherwise, you'll typically **render** a _template_, optionally passing data to it. If a _template_ is required, time to write it, and you're done - other than debugging.

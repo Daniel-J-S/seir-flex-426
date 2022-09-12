@@ -399,7 +399,7 @@ Take a couple of minutes to review these...
 <br>
 <br>
 
-##💪 Practice Exercise
+## 💪 Practice Exercise
 
 Looking for some practice building an object hierarchy in Python? Good!
 
@@ -461,14 +461,14 @@ When the `withdraw` method is called, do not allow the withdraw if the amount be
 
 ## Further Study
 
-[Classes Tutorial](https://docs.python.org/3.7/tutorial/classes.html)
+- [Classes Tutorial](https://docs.python.org/3.7/tutorial/classes.html)
 
-[Python Inheritance](https://www.programiz.com/python-programming/inheritance)
+- [Python Inheritance](https://www.programiz.com/python-programming/inheritance)
 
-Learn more about magic methods [here](https://rszalski.github.io/magicmethods/)
+- Learn more about magic methods [here](https://rszalski.github.io/magicmethods/)
 
-Learn more about Python's `self` [here](https://medium.com/quick-code/understanding-self-in-python-a3704319e5f0)
+- Learn more about Python's `self` [here](https://medium.com/quick-code/understanding-self-in-python-a3704319e5f0)
 
-Learn more about metaprogramming [here](https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming)
+- Learn more about metaprogramming [here](https://stackoverflow.com/questions/514644/what-exactly-is-metaprogramming)
 
-[Decorators](https://www.programiz.com/python-programming/decorator) in Python
+- [Decorators](https://www.programiz.com/python-programming/decorator) in Python

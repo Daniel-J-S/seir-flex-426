@@ -101,9 +101,9 @@ In Unit 2, we learned that in a full-stack web application:
   - Renders dynamic templates for Read data operations.
   - Redirects the browser in the case of Create, Update or Delete data operations.
 
-Once again, let's review this diagram that shows how a request flows through a Django project:
+Here's a diagram that shows how a request flows through a Django project:
 
-<img src="https://i.imgur.com/1fFg7lz.png">
+<img src="https://i.imgur.com/QjlDj7f.png" alt="the diagram of data flow for django web framework">
 
 <br>
 <br>
@@ -111,61 +111,81 @@ Once again, let's review this diagram that shows how a request flows through a D
 
 ## Start the **CatCollector** Project
 
-<br>
-<br>
-<br>
+Navigate to the same folder containing our `catcollector` Django project, open your VS Code terminal and ensure you have spooled up the containers for the project with:
 
-#### Create the database
-
-Databases are not automatically created by Django.
-
-Let's use a command installed with PostgreSQL to create the database for the CatCollector project:
-
-```shell
-$ createdb catcollector
+```bash
+docker compose up
 ```
 
+
 <br>
 <br>
 <br>
 
-#### Start the Project
+### Set Up the App
 
-There is no starter-code for this lesson. Move into this lesson's folder and run the following command to create the Django project:
+Take a look at the `INSTALLED_APPS` list in `**catcollector/settings.py**`. Those pre-installed apps provide services such as the admin app and the ability to serve static files.
 
-```shell
-$ django-admin startproject catcollector
+For `catcollector`, as well as for your `finchcollector` lab, and your Unit 4 project, you will need an app to implement the main functionality, in this case collecting cats.
+
+It makes sense to name the main app generically, so let’s do it!
+
+
+<br>
+<br>
+<br>
+
+
+### Handling Errors
+
+You may see the below error if you already have a container that you’ve composed up - you’ll need to run `docker compose down` in the directory of the currently running container to proceed.
+
+
+<br>
+<br>
+<br>
+
+
+### Using the Docker Extension
+
+Navigate to the <a href="https://code.visualstudio.com/docs/containers/overview" target="_blank">Docker extension</a> on the side bar in VS Code; tt is shown on the right. 
+
+If you still don't have it installed you can do so at this time.
+
+Once installed, go to the the **CONTAINERS** section, select **cat-collector**, then right click on **cat-collector_web** and select the **Attach Shell** option. 
+
+This will open a new terminal session running in the **cat-collector_web** container.
+
+Here's an image for reference:
+
+<img src="https://i.imgur.com/OO5AF6Z.png" alt="how to use the vs code docker extension" />
+
+<br>
+<br>
+
+The webshell should look like this:
+
+<img src="https://i.imgur.com/XGe3sNy.png" alt="how to use the vs code docker extension" />
+
+<br>
+
+
+<aside>
+
+🧠 From now on we’ll refer to this as the **Web Container Shell**. When you are directed to run commands in this terminal, this is where you should be.
+
+</aside>
+
+
+Back to the task at hand. Run this command in the **Web Container Shell** to create the app where we will implement the main functionality of our project:
+
+```bash
+python3 manage.py startapp main_app
 ```
 
-The above command generates and configures a Django project in a folder named **catcollector**.
+You’ll now find a `main_app` folder within the top-level project folder. That folder has been configured to be a Python module.
 
-Change into the **catcollector** folder just created and open the folder in your text editor.
-
-<br>
-<br>
-<br>
-
-#### Create the App
-
-A Django _project_ contains Django _apps_.
-
-Django _apps_ represent major functionality in a project.
-
-Realistically, however, we can think of the catcollector project as our web application.
-
-Take a look at the `INSTALLED_APPS` list in **catcollector/settings.py**. Those pre-installed apps provide services such as the admin app and the ability to serve static files.
-
-For catcollector, as well as for your project 3, you will need an app to implement the main functionality, in this case collecting cats 😊
-
-It makes sense to name the main app generically, so let's do it:
-
-```shell
-$ python manage.py startapp main_app
-```
-
-You'll now find a **main_app** folder within the top-level project folder. That folder has been configured to be a Python module.
-
-Let's include it as part of the catcollector project by adding it to the `INSTALLED_APPS` in **settings.py**:
+Let’s include it as part of the catcollector project by adding it to the `INSTALLED_APPS` in `**catcollector/settings.py**`:
 
 ```python
 INSTALLED_APPS = [
@@ -179,46 +199,76 @@ INSTALLED_APPS = [
 ]
 ```
 
-Let's check to make sure the project starts up:
+<br>
+<br>
 
-```shell
-$ python manage.py runserver
+### Verifying Permissions
+
+When the above command has completed its execution, list the contents of the project with:
+
+```bash
+ls -l
 ```
 
-Ignore the red message about unapplied migrations, we'll take care of those in a bit.
+You’ll note that this shows file ownership details as well. The `root` user may own the **`main_app`** directory. If they do, you need to reclaim ownership of those project assets with this command:
 
-Browse to `localhost:8000` and make sure you see the rocket on the page:
-
-<img src="https://i.imgur.com/RozMgJ0.png">
-
-<br>
-<br>
-<br>
-
-#### Connecting to the Database
-
-Earlier we created a dedicated `catcollector` PostgreSQL database.
-
-A Django project's configuration lives in **settings.py**. Let's update it to use our `catcollector` database:
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'catcollector',
-    }
-}
+```bash
+sudo chown -R $USER:$USER main_app
 ```
 
-> Note: By default, Django uses SQLite, a lightweight database that is not recommended for deployment. Be sure to make the above changes in your Django projects so that PostgreSQL is used instead.
+That command may produce an error. If it does, use this command instead.
+    
+```bash
+sudo chown -R $USER main_app
+```
+    
+You’ll note that the root user will still own the `**data**` directory. This is the desired behavior, do not modify the permissions of that directory.
 
-Now let's test our database connection by getting rid of the red unapplied migration message:
+Verify that the command worked and that you now own the `**main_app**` directory by running `ls -l` again.
 
-```shell
-$ python manage.py migrate
+<br>
+<br>
+<br>
+
+
+### Success!
+
+Browse to [http://localhost:8000](http://localhost:8000) and make sure you see the rocket on the page. If so then you’re all set to go in the new app.
+
+
+![success](https://i.imgur.com/vLmO1cU.png)
+
+<br>
+<br>
+<br>
+
+
+## Migrating
+
+Now let’s test our database connection by getting rid of the unapplied migration message. 
+
+Run this command in the **Web Container Shell**:
+
+```bash
+python3 manage.py migrate
 ```
 
 The `migrate` command is used to update the database schema over time as the application evolves - we will cover migrations in more detail this afternoon.
+
+Every time after we migrate we’ll want to re-run the `docker compose` step of our app.
+
+Run this in your terminal to kill the containers:
+
+```bash
+docker compose down
+```
+
+Then start up the containers again:
+
+```bash
+docker compose up
+```
+
 
 Nice. Now let's code our first feature: a HOME page.
 
@@ -440,7 +490,6 @@ Let's start with a simple template for the About page:
    <h1>About the Cat Collector</h1>
    <hr />
    <p>Hire the Cat Collector!</p>
-   <footer>All Rights Reserved, &copy; 2019 Cat Collector</footer>
    ```
 
 4. Now update the `about` view in **views.py** to `render` the **about.html** template instead of sending a string response:
@@ -645,7 +694,9 @@ To see how data is rendered dynamically using Django templating, we're going to 
 
 _As a User, when I click the **View All My Cats** link, I want to see a page listing all of my cats._
 
-Luckily the [process of how to add a feature to a web application](https://gist.github.com/jim-clark/9f9bd19d60d9ce2ec57be8242b6aee96) from the previous unit you had tattooed applies to all web frameworks!
+Luckily we've come up with a clever [process of how to add a feature to a web application](https://gist.github.com/jim-clark/9f9bd19d60d9ce2ec57be8242b6aee96); it's an awesome mental model to apply to all web frameworks!
+
+The steps to this process are listed below:
 
 <br>
 <br>
@@ -659,7 +710,10 @@ For this **index** page user story, what would have been the RESTful path works 
 
 <br>
 <br>
-<br>#### Step 2 - Create the UI
+<br>
+
+
+#### Step 2 - Create the UI
 
 For the UI, it makes sense to add the **View All My Cats** link to the navigation bar in **base.html**:
 
