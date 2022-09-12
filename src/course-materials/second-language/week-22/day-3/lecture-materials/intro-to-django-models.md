@@ -300,10 +300,10 @@ List all databases:
 \l
 ```
 
-Connect to the `catcollector` database:
+Connect to the `postgres` database:
 
 ```shell
-\c catcollector
+\c postgres
 ```
 
 List the tables:
