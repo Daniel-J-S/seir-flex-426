@@ -66,6 +66,14 @@ module.exports = {
       options: {
         plugins: [
           {
+            resolve: `gatsby-remark-code-buttons`,
+            options: {
+              toasterText: 'Copied 💾',
+              // Optional toaster duration. Defaults to 3500.
+              toasterDuration: 5000
+            }
+          },
+          {
             resolve: `gatsby-remark-prismjs`,
             options: {
               // Class prefix for <pre> tags containing syntax highlighting;
