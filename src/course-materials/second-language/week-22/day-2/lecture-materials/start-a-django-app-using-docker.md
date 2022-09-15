@@ -11,7 +11,9 @@ type: "lecture"
 
 ## Docker
 
-We will be using [**Docker**](https://www.docker.com/) to simply the Django development process, but not much else. Docker is useful for ensuring that we are building and running our applications in identical environments - this eliminates discrepancies between the different system configurations and will ensure that our Python/Postgres installations are consistent between our machines. 
+We will be using [**Docker**](https://www.docker.com/) to simplify the Django development process. 
+
+Docker is useful for ensuring that we are building and running our applications in identical environments; this eliminates discrepancies between the different system configurations and will ensure that our Python/Postgres installations are consistent between our machines. 
 
 The instructions below follow the guide available [here](https://docs.docker.com/samples/django/) very closely. If you want to dive in deeper and learn more about Docker, their [**extremely well-written docs**](https://docs.docker.com/get-started/) and [**this video**](https://www.youtube.com/watch?v=gAkwW2tuIqE) are great places to begin!
 
