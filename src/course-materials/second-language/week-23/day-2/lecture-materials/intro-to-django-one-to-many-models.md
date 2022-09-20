@@ -48,6 +48,17 @@ type: "lecture"
 
 This lesson will pick up from where the last lesson left off.
 
+**Be sure to be inside of the catcollector directory** before you open VS Code with `code .`.
+
+**Be sure that no other Django server is running!**
+
+Once inside the **catcollector** directory, spin up the Django development server:
+
+```bash
+docker compose up
+```
+
+
 <br>
 <br>
 <br>
@@ -226,7 +237,9 @@ In a _one-to-many_ relationship, the `on_delete=models.CASCADE` is required. It 
 
 ## Make and Run the Migration
 
-We added/updated a new Model, so it's that time again...
+We changed our models.py file, so it’s that time again! 
+
+Open your **Web Container Shell** and run:
 
 ```bash
 $ python manage.py makemigrations
@@ -241,112 +254,6 @@ $ python manage.py makemigrations
 
 After creating a Model, especially one that relates to another, it's always a good idea to test drive the Model and relationships in the shell.
 
-<br>
-<br>
-<br>
-
-## Test the Models in the Shell
-
-Besides testing Models and their relationships, the following will demonstrate how to work with the ORM in views.
-
-<br>
-<br>
-<br>
-
-First, open the shell:
-
-```bash
-$ python manage.py shell
-```
-
-<br>
-<br>
-<br>
-
-Now let's import everything _models.py_ has to offer:
-
-```python
->>> from main_app.models import *
->>> Feeding
-<class 'main_app.models.Feeding'>
->>> MEALS
-(('B', 'Breakfast'), ('L', 'Lunch'), ('D', 'Dinner'))
-```
-
-So far, so good!
-
-<br>
-<br>
-<br>
-
-#### May the Test Drive Commence
-
-```python
-# get first cat object in db
->>> c = Cat.objects.all()[0]   # or Cat.objects.first()
->>> c
-<Cat: Maki>
-# obtain all feeding objects for a cat (no surprise there aren't any)
->>> c.feeding_set.all()
-<QuerySet []>
-# create a feeding for a given cat
->>> c.feeding_set.create(date='2018-10-06')
-<Feeding: Breakfast on 2018-10-06>
-# yup, it's there and the default of 'B' for the meal worked
->>> Feeding.objects.all()
-<QuerySet [<Feeding: Breakfast on 2018-10-06>]>
-# and it belongs to a cat
->>> c.feeding_set.all()
-<QuerySet [<Feeding: Breakfast on 2018-10-06>]>
-# get the first feeding object in the db
->>> f = Feeding.objects.first()
->>> f
-<Feeding: Breakfast on 2018-10-06>
->>> f.cat
-<Cat: Maki>
->>> f.cat.description
-'Lazy but ornery & cute'
-# another way to create a feeding for a cat
->>> f = Feeding(date='2018-10-06', meal='L', cat=c)
->>> f.save()
->>> f
-<Feeding: Lunch on 2018-10-06>
->>> c.feeding_set.all()
-<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Lunch on 2018-10-06>]>
-# finish the day's feeding
->>> Feeding(date='2018-10-06', meal='D', cat=c).save()
->>> c.feeding_set.count()
-3
-# list cat ids
->>> for cat in Cat.objects.all():
-...     print(cat.id)
-...
-2
-3
-# feed another cat
->>> c = Cat.objects.get(id=3)
->>> c
-<Cat: Whiskers>
->>> c.feeding_set.create(date='2018-10-07', meal='B')
-<Feeding: Breakfast on 2018-10-07>
->>> Feeding.objects.filter(meal='B')
-<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Breakfast on 2018-10-07>]>
-# the foreign key (cat_id) can be used as well
->>> Feeding.objects.filter(cat_id=2)
-<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Lunch on 2018-10-06>, <Feeding: Dinner on 2018-10-06>]>
->>> Feeding(date='2018-10-07', meal='L', cat_id=3).save()
->>> Cat.objects.get(id=3).feeding_set.all()
-<QuerySet [<Feeding: Breakfast on 2018-10-07>, <Feeding: Lunch on 2018-10-07>]>
-exit()
-```
-
-<br>
-<br>
-<br>
-
-Now how much would you pay for that ORM?
-
-Behind the scenes, an enormous amount of SQL was being generated and sent to the database.
 
 <br>
 <br>
@@ -953,13 +860,7 @@ class Feeding(models.Model):
 <br>
 <br>
 
-Feed the cats!
-
-Be sure to check out the BONUS section on your own.
-
-<br>
-<br>
-<br>
+Feed the cats! Be sure to check out the BONUS section on your own.
 
 Let's wrap up with a few questions...
 
@@ -1085,7 +986,95 @@ All that's left is to sprinkle in a little template code like this:
 <br>
 <br>
 
-Congrats on using a custom Model method to implement business logic!
+
+
+## EXTRA BONUS: Testing Models in the Shell
+
+Besides testing Models and their relationships, the following will demonstrate how to work with the ORM in views.
+
+First, open the Web Container shell and run this command:
+
+```bash
+python manage.py shell
+```
+
+Now let’s import everything **`models.py`** has to offer:
+
+```bash
+>>> from main_app.models import *
+>>> Feeding
+<class 'main_app.models.Feeding'>
+>>> MEALS
+(('B', 'Breakfast'), ('L', 'Lunch'), ('D', 'Dinner'))
+```
+
+So far, so good!
+
+### May the Test Drive Commence…
+
+```bash
+# get first cat object in db
+>>> c = Cat.objects.first()   # or Cat.objects.all()[0]
+>>> c
+<Cat: Maki>
+# obtain all feeding objects for a cat using the "related manager" object
+>>> c.feeding_set.all()
+<QuerySet []>
+# create a feeding for a given cat
+>>> c.feeding_set.create(date='2021-08-17')
+<Feeding: Breakfast on 2021-08-17>
+# yup, it's there and the default of 'B' for the meal worked
+>>> Feeding.objects.all()
+<QuerySet [<Feeding: Breakfast on 2021-08-17>]>
+# and it belongs to a cat
+>>> c.feeding_set.all()
+<QuerySet [<Feeding: Breakfast on 2021-08-17>]>
+# get the first feeding object in the db
+>>> f = Feeding.objects.first()
+>>> f
+<Feeding: Breakfast on 2021-08-17>
+# cat is the name of the field we defined in the Feeding model
+>>> f.cat
+<Cat: Maki>
+>>> f.cat.description
+'Lazy but ornery & cute'
+# another way to create a feeding for a cat
+>>> f = Feeding(date='2018-10-06', meal='L', cat=c)
+>>> f.save()
+>>> f
+<Feeding: Lunch on 2018-10-06>
+>>> c.feeding_set.all()
+<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Lunch on 2018-10-06>]>
+# finish the day's feeding, this time using the create method
+>>> Feeding.objects.create(date='2018-10-06', meal='D', cat=c)
+>>> c.feeding_set.count()
+3
+# list cat ids
+>>> for cat in Cat.objects.all():
+...     print(cat.id)
+...
+2
+3
+# feed another cat
+>>> c = Cat.objects.get(id=3)
+>>> c
+<Cat: Whiskers>
+>>> c.feeding_set.create(date='2018-10-07', meal='B')
+<Feeding: Breakfast on 2018-10-07>
+>>> Feeding.objects.filter(meal='B')
+<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Breakfast on 2018-10-07>]>
+# the foreign key (cat_id) can be used as well
+>>> Feeding.objects.filter(cat_id=2)
+<QuerySet [<Feeding: Breakfast on 2018-10-06>, <Feeding: Lunch on 2018-10-06>, <Feeding: Dinner on 2018-10-06>]>
+>>> Feeding.objects.create(date='2018-10-07', meal='L', cat_id=3)
+>>> Cat.objects.get(id=3).feeding_set.all()
+<QuerySet [<Feeding: Breakfast on 2018-10-07>, <Feeding: Lunch on 2018-10-07>]>
+exit()
+```
+
+Now how much would you pay for that ORM?
+
+Behind the scenes, an enormous amount of SQL was being generated and sent to the database.
 
 <br>
 <br>

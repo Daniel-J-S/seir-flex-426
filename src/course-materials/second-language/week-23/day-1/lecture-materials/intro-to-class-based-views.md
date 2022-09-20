@@ -28,7 +28,7 @@ type: "lecture"
 
 ## Road Map
 
-1. Set up
+1. Adjust the nav
 2. What are Class-based Views (CBVs)?
 3. Why use CBVs?
 4. Creating Data Using a CBV
@@ -38,9 +38,34 @@ type: "lecture"
 <br>
 <br>
 
-## 1. Set Up
+## Adjust the nav
 
-This lesson continues to build-out Cat Collector beginning from where the _Intro to Django Models_ lesson left off.
+This lesson continues to build-out Cat Collector beginning from where the **Intro to Django Models** lesson left off.
+
+**Be sure to be inside of the catcollector directory** before you open VS Code with `code .`.
+
+**Be sure that no other Django server is running!**
+
+Once inside the **catcollector** directory, spin up the Django development server:
+
+```bash
+docker compose up
+```
+
+However, before we move on, let's adjust the nav in `**base.html**` to use the `url` template tag instead of hard-coding the URL in the links:
+
+```html
+<!-- <li><a href="/cats">All Cats</a></li>  BYYYYYE -->
+<li><a href="{% url 'cats_index' %}">All Cats</a></li>
+<!-- <li><a href="/about">About</a></li>  BYYYYE-->
+<li><a href="{% url 'about' %}">About</a></li>
+```
+
+<br>
+<br>
+
+❓ What enables us to use the `url` template tag to automatically generate the proper URL?
+
 
 <br>
 <br>
@@ -90,6 +115,18 @@ We extended the generic `ListView` to create a `BookList` and used
 
 to inform `BookList` that it is to access the `Book` Model.
 
+Then, in `**urls.py**`, we invoke the `as_view()` class method of the `BookList` CBV (which returns a view function) and connect it to a route as usual:
+
+```python
+from django.urls import path
+from books.views import BookList
+
+urlpatterns = [
+  path('books/', BookList.as_view(), name='books_index'),
+]
+```
+
+
 Notice that there's not even a call to render? By default, the CBV will expect to render a template named **templates/\<name of app\>/book_list.html**. This convention can of course be overridden.
 
 <br>
@@ -113,19 +150,15 @@ We also could easily replace the existing `cats_index` and `cats_detail` view fu
 
 ## 3. Why use Class-based Views?
 
-Much of the code we write in CRUD applications repeats certain patterns again and again.
+Django [**has this to say**](https://docs.djangoproject.com/en/4.0/topics/class-based-views/intro/#the-relationship-and-history-of-generic-views-class-based-views-and-class-based-generic-views) about why they created Class-based Views. Much of the code we write in CRUD applications repeats certain patterns repeatedly. As you saw in the above example, we can leverage CBVs to avoid having to write the same repeating code over and over.
 
-As you saw in the above example, we can leverage CBVs to avoid having to write the same repeating code over and over.
-
-CBVs can save time thus making us more productive developers.
-
-CBVs are highly configurable by adding class attributes, overriding methods and using decorators.
+CBVs can save time, thus making us more productive developers. CBVs are highly configurable by adding class attributes, overriding methods and using decorators (see the Level Up).
 
 <br>
 <br>
 <br>
 
-For example, here's how we could have used the `template_name` attribute in the above `BookList` to render a template other than the default:
+For example, we set the `template_name` attribute to render a template other than the default:
 
 ```python
 class BookList(ListView):

@@ -49,19 +49,20 @@ type: "lecture"
 
 ## 1. Set Up
 
-This lesson's starter code picks up from the Uploading Images to S3 lesson.
+This lesson picks up from where the last one left off at
 
-The starter code is located in this lesson's `/starter-code/catcollector` directory.
+**Be sure to be inside of the catcollector directory** 
 
-**Be sure to be inside of the catcollector directory** before you open VS Code with `code .`.
+Once inside the **catcollector** directory, open it in VS Code with `code .`.
 
 **Be sure that no other Django server is running!**
 
-Once inside the **catcollector** directory, spin up the Django development server:
+Now spin up the Django development server with the following command:
 
 ```bash
-$ python manage.py runserver
+docker compose up
 ```
+
 
 <br>
 <br>
@@ -185,7 +186,7 @@ Now that we've made a change to a Model that impacts the database, we need to mi
 
 However, there will now be a FK constraint on cats, which means that every cat record must hold the PK of a user record and because there are existing cats, Django is going to prompt us with two options...
 
-Here we go:
+In your Web Container Shell, enter the following:
 
 ```shell
 $ python manage.py makemigrations

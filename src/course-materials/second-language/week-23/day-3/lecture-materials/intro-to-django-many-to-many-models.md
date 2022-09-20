@@ -26,7 +26,7 @@ type: "lecture"
 
 ## Road Map
 
-1. Set Up
+1. Intro
 2. Review the Starter Code
 3. Many-to-Many Relationships in RDBMs
 4. Many-to-Many Relationship in Django
@@ -39,57 +39,26 @@ type: "lecture"
 <br>
 <br>
 
-## 1. Set Up
+## 1. Intro
 
-The <a href="/downloads/second_language/django-many-to-many-models/cat_collector.zip" download>starter code</a> for this lesson has had quite a bit of code added to it since you last saw the Cat Collector.
+This lecture picks up from where our last lesson, `Django 1:M Models`, left off at, assuming full-CRUD for a `Toy` model was implemented.
 
-However, none of the additional code has anything that you haven't worked with already.
+**Be sure to be inside of the catcollector directory** before you open VS Code with `code .`.
 
-Because many-to-many relationships require a Model that is independent of other models, a `Toy` Model and all of its CRUD has been implemented.
+**Be sure that no other Django server is running!**
 
-This way, we can focus on how to implement the actual `Cat >--< Toy` relationship in this lesson.
+Once inside the **catcollector** directory, spin up the Django development server:
 
-<br>
-<br>
-<br>
-
-Because a new `Toy` model has been added, there are migration files in the starter code that have not yet been migrated to the database on your computer. Let's do that now:
-
-```shell
-$ python manage.py migrate
+```bash
+docker compose up
 ```
 
-<br>
-<br>
-<br>
 
-Now start up the server:
-
-```shell
-$ python manage.py runserver
-```
 
 <br>
 <br>
 <br>
 
-## 2. Review the Starter Code
-
-Browse to `localhost:8000` and checkout the CRUD features for Toys.
-
-As you can see, the `Toy` Model is pretty minimal, just `name` and `color` attributes.
-
-Go ahead and create a few toys so that you have them to assign to cats later.
-
-After you're done, let's take a look at the `Toy`-related Django modules in `main_app`:
-
-1. **models.py**
-1. **urls.py**
-1. **views.py**
-
-<br>
-<br>
-<br>
 
 ## 3. Many-to-Many Relationships in RDBMs
 
@@ -146,7 +115,7 @@ class Cat(models.Model):
 
 #### Make and Run the Migration
 
-Because we've made a change to a Model that impacts the database's schema, we must make a migration and migrate it to update the database.
+Because we’ve made a change to a Model that impacts the database’s schema, we must make a migration and migrate it to update the database with the Web Container Shell.
 
 <br>
 <br>
@@ -178,157 +147,27 @@ Now, let's migrate the created migration to update the schema:
 python manage.py migrate
 ```
 
-We're ready to test drive the new relationship!
+We’re ready to test drive the new relationship ... after a quick bug fix!
+
 
 <br>
 <br>
 <br>
 
-#### Open the Interactive Sheel
+## Bug Fix
 
-We'll use the shell to check out the `Cat >--< Toy` relationship:
+Try making a new cat. You'll see a new form field: Toys.
 
-```shell
-$ python manage.py shell
-```
+This isn't great. Right now when we add a cat we are forced to give it at least one toy, which we may not want. We need to make sure this field isn't shown when a user is creating a cat. Let's do it!
 
-<br>
-<br>
-<br>
+***Where do we need to make this change?***
 
-Now let's import everything from **models.py**:
-
-```shell
-$ from main_app.models import *
-```
-
-<br>
-<br>
-<br>
-
-#### The "Related Manager"
-
-When we perform CRUD using a Model in Django, we've used the the `objects` manager to do it. For example, let's use the manager to query for all cats:
+Here's the new `CatCreate` class:
 
 ```python
->>> Cat.objects.all()
-<QuerySet [<Cat: Biscuit>, <Cat: Morris>, <Cat: Maki>]>
+fields = ['name', 'breed', 'description', 'age']
 ```
 
-However, when a one-to-many or many-to-many relationship exists, Django also creates a [related manager](https://docs.djangoproject.com/en/2.1/ref/models/relations/) used to access the data related to a model instance.
-
-<br>
-<br>
-<br>
-
-To check this out, let's query for a cat and save it in a variable:
-
-```python
->>> cat = Cat.objects.get(name='Maki')
-```
-
-<br>
-<br>
-<br>
-
-Now, thanks to the `toys = models.ManyToManyField(Toy)` field we added, we can use the `toys` _related manager_ like this:
-
-```python
->>> cat.toys.all()
-<QuerySet []>   # Maki has no toys associated with it yet
-```
-
-<br>
-<br>
-<br>
-
-Let's grab the first toy:
-
-```python
->>> first_toy = Toy.objects.first()
->>> first_toy
-<Toy: Cat Charmer>
-```
-
-Although we didn't add another field on the `Toy` Model, Django still created a related manager that allows a toy to read, add & remove associated cats:
-
-```python
->>> first_toy.cat_set.all()
-<QuerySet []>
-```
-
-> Note the naming convention Django used for naming the related manager - the related model's name (lower cased) and append `_set`.
-
-<br>
-<br>
-<br>
-
-#### Adding Associated Data
-
-To add an association, use the related manager's `add` method.
-
-<br>
-<br>
-<br>
-
-Let's associate the `cat` and the `first_toy`:
-
-```python
->>> cat.toys.add(first_toy)
->>> cat.toys.all()
-<QuerySet [<Toy: Cat Charmer>]>
-```
-
-> Alternatively, `first_toy.cat_set.add(cat)` would have created the same association.
-
-<br>
-<br>
-<br>
-
-Let's get crazy and associate the last cat with both the first and last toy:
-
-```python
->>> Cat.objects.last().toys.add(Toy.objects.first(), Toy.objects.last())
->>> Cat.objects.last().toys.all()
-<QuerySet [<Toy: Cat Charmer>, <Toy: Bouncy Mouse>]>
-```
-
-Behind the scenes, there's an amazing amount of SQL being sent to the database!
-
-<br>
-<br>
-<br>
-
-#### Removing Associated Data
-
-To remove an association, use the related manager's `remove` method.
-
-Let's remove the association between the `cat` and the `first_toy`, but this time we'll do it using `first_toy`:
-
-```python
->>> first_toy.cat_set.all()
-<QuerySet [<Cat: Morris>, <Cat: Maki>]>   # Associated with two cats
->>> cat    # Going to unassociate this cat
-<Cat: Morris>
->>> first_toy.cat_set.remove(cat)
->>> first_toy.cat_set.all()
-<QuerySet [<Cat: Maki>]>    # No more Morris
-```
-
-<br>
-<br>
-<br>
-
-Here's how we can use a `for...in` loop and the `clear()` method to remove all associations between cats and toys:
-
-```python
->>> for c in Cat.objects.all():
-...     c.toys.clear()    # Don't forget to tab
-... [press enter]
->>>
-```
-
-Fun stuff! Exit the shell by typing `control + D` or `exit()`
 
 <br>
 <br>
@@ -585,3 +424,158 @@ For more information regarding _many-to-many through relationships_, start [here
 ## References
 
 [Examples of CRUD with Many-to-Many Relationships](https://docs.djangoproject.com/en/2.1/topics/db/examples/many_to_many/)
+
+
+
+
+
+<!--
+
+
+#### Open the Interactive Shell
+
+We'll use the shell to check out the `Cat >--< Toy` relationship:
+
+```shell
+$ python manage.py shell
+```
+
+<br>
+<br>
+<br>
+
+Now let's import everything from **models.py**:
+
+```shell
+$ from main_app.models import *
+```
+
+<br>
+<br>
+<br>
+
+#### The "Related Manager"
+
+When we perform CRUD using a Model in Django, we've used the the `objects` manager to do it. For example, let's use the manager to query for all cats:
+
+```python
+>>> Cat.objects.all()
+<QuerySet [<Cat: Biscuit>, <Cat: Morris>, <Cat: Maki>]>
+```
+
+However, when a one-to-many or many-to-many relationship exists, Django also creates a [related manager](https://docs.djangoproject.com/en/2.1/ref/models/relations/) used to access the data related to a model instance.
+
+<br>
+<br>
+<br>
+
+To check this out, let's query for a cat and save it in a variable:
+
+```python
+>>> cat = Cat.objects.get(name='Maki')
+```
+
+<br>
+<br>
+<br>
+
+Now, thanks to the `toys = models.ManyToManyField(Toy)` field we added, we can use the `toys` _related manager_ like this:
+
+```python
+>>> cat.toys.all()
+<QuerySet []>   # Maki has no toys associated with it yet
+```
+
+<br>
+<br>
+<br>
+
+Let's grab the first toy:
+
+```python
+>>> first_toy = Toy.objects.first()
+>>> first_toy
+<Toy: Cat Charmer>
+```
+
+Although we didn't add another field on the `Toy` Model, Django still created a related manager that allows a toy to read, add & remove associated cats:
+
+```python
+>>> first_toy.cat_set.all()
+<QuerySet []>
+```
+
+> Note the naming convention Django used for naming the related manager - the related model's name (lower cased) and append `_set`.
+
+<br>
+<br>
+<br>
+
+#### Adding Associated Data
+
+To add an association, use the related manager's `add` method.
+
+<br>
+<br>
+<br>
+
+Let's associate the `cat` and the `first_toy`:
+
+```python
+>>> cat.toys.add(first_toy)
+>>> cat.toys.all()
+<QuerySet [<Toy: Cat Charmer>]>
+```
+
+> Alternatively, `first_toy.cat_set.add(cat)` would have created the same association.
+
+<br>
+<br>
+<br>
+
+Let's get crazy and associate the last cat with both the first and last toy:
+
+```python
+>>> Cat.objects.last().toys.add(Toy.objects.first(), Toy.objects.last())
+>>> Cat.objects.last().toys.all()
+<QuerySet [<Toy: Cat Charmer>, <Toy: Bouncy Mouse>]>
+```
+
+Behind the scenes, there's an amazing amount of SQL being sent to the database!
+
+<br>
+<br>
+<br>
+
+#### Removing Associated Data
+
+To remove an association, use the related manager's `remove` method.
+
+Let's remove the association between the `cat` and the `first_toy`, but this time we'll do it using `first_toy`:
+
+```python
+>>> first_toy.cat_set.all()
+<QuerySet [<Cat: Morris>, <Cat: Maki>]>   # Associated with two cats
+>>> cat    # Going to unassociate this cat
+<Cat: Morris>
+>>> first_toy.cat_set.remove(cat)
+>>> first_toy.cat_set.all()
+<QuerySet [<Cat: Maki>]>    # No more Morris
+```
+
+<br>
+<br>
+<br>
+
+Here's how we can use a `for...in` loop and the `clear()` method to remove all associations between cats and toys:
+
+```python
+>>> for c in Cat.objects.all():
+...     c.toys.clear()    # Don't forget to tab
+... [press enter]
+>>>
+```
+
+Fun stuff! Exit the shell by typing `control + D` or `exit()`
+
+-->

@@ -54,12 +54,16 @@ This lesson will cover how to add this ability to your Django project should you
 
 ## Ready the Starter Code
 
-This lesson's starter code picks up from the many-to-many models lesson.
+This lesson's starter code picks up from our authentication lesson.
 
-Once inside the **catcollector** directory, spin up the Django development server:
+in your terminal, navigate to the **catcollector** directory, and open it in VS Code with `code .`.
+
+**Be sure that no other Django server is running!**
+
+Now spin up the Django development server with the following command:
 
 ```bash
-$ python3 manage.py runserver
+docker compose up
 ```
 
 <br>
@@ -324,9 +328,7 @@ Now let's get on with the app!
 
 #### Install `boto3`
 
-The official Amazon AWS SDK (Software Development Kit) for Python is a library called _Boto 3_.
-
-Let's install it:
+The official Amazon AWS SDK (Software Development Kit) for Python is a library called Boto3. Open the Web Container Shell and let’s install it:
 
 ```bash
 $ pip3 install boto3
@@ -342,55 +344,76 @@ $ pip3 install boto3
 
 If you do, and push your code to GitHub, it will be discovered within minutes and could result in a major financial liability!
 
-Have I scared you? Good...
+Have I scared you? Good…
 
-During development (not in a deployed app), boto3 will automatically look in a special file for your AWS keys.
+Let's check out the [**Boto3 docs**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) to see all the options we have for configuring our AWS credentials in our app. You'll see that there are TONS. We'll be using this method: [**Environment Variables with specific names**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables).
 
 <br>
 <br>
 <br>
 
-First let's create the folder it needs:
 
-```bash
-$ mkdir ~/.aws
+### Environment Variables in Django
+
+Here's how we create environment variables in Django:
+
+1. Install `django-environ` using the **Web Container Shell**
+    
+    ```
+    pip install django-environ
+    ```
+    
+2. Create a `**.env**` file ***in the same folder as*** `**settings.py**`.
+3. Just like Express, you’ll put your secrets inside of `.env` (one per line, no spaces). For example:
+    
+    ```
+    SECRET_KEY=abc123
+    ```
+    
+4. Add this code to the top of `**settings.py**`:
+    
+    ```python
+    import environ
+    env = environ.Env()
+    environ.Env.read_env()
+    ```
+    
+    <aside>
+    🚨 Because you are installing these packages in the container and NOT locally, you’ll get linting within VS Code for `environ`.  Don’t worry about this, your code will still run!
+    
+    ![display](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21e633d5-f267-4692-af0c-e17b33bd81b2/Untitled.png)
+    
+    </aside>
+    
+5. Then in whatever module you need access to the secrets:
+    
+    ```python
+    env('SECRET_KEY')
+    ```
+    
+
+Replacing `SECRET_KEY` with the key name in your `**.env**` file as necessary
+
+Don’t forget after deploying, you’ll need to set the exact same config vars in Heroku, but their values may be different
+
+To configure Boto3, we're going to need these 2 environment variables:
+
+```
+AWS_ACCESS_KEY_ID=
+AWS_SECRET_ACCESS_KEY=
 ```
 
-<br>
-<br>
-<br>
+Put your access keys here, make sure you do not use quotes or spaces after the `=` sign. By using these specific names we don't have to do any additional work to make use of them in our application.
 
-Now let's create the file:
+We’re done with Boto3, on to the larger project…
 
-```bash
-$ touch ~/.aws/credentials
+TKTKS - (Was this put in here to store the Django secret key?  If so, we need to flesh it out.)  Add another environment variable:
+
+```html
+SECRET_KEY=
 ```
 
-Note that there is no file extension on the _credentials_ file.
 
-<br>
-<br>
-<br>
-
-Now let's open it and put our keys in there:
-
-```shell
-$ code ~/.aws/credentials
-```
-
-<br>
-<br>
-<br>
-
-Then type the following in the file, substituting your real keys:
-
-```bash
-[default]
-aws_access_key_id=YOUR_ACCESS_KEY
-aws_secret_access_key=YOUR_SECRET_KEY
-```
-
-> If you use AWS S3 in your project 3 - when deploying your projects next week, you will need to set these same keys on Heroku using `heroku config:set`, however, **the key names will need to be CAPITALIZED when setting them on Heroku**.
 
 <br>
 <br>
@@ -517,31 +540,50 @@ from .models import Cat, Toy, Photo
 <br>
 <br>
 
+
+🚨 Because you are installing the package in the container and NOT locally, you’ll get linting within VS Code for `boto3`.  Don’t worry about this, your code will still run!
+
+![display](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55241e6b-e872-494d-b755-09496dfd5711/Untitled.png)
+
+
+
 Next, we're going to define a couple of variables we'll use in the _view function_.
 
-First, find the **endpoint** for your the **region** you selected when you created the bucket on the following list:
+<br>
+<br>
+<br>
 
-<img src="https://i.imgur.com/fQ6Nxpa.png">
+### Determine the correct AWS Service Endpoint
 
-> The above screenshot came from this [AWS Regions and Endpoints reference](https://docs.aws.amazon.com/general/latest/gr/rande.html)
+AWS has different endpoints (URLs) dependent upon the service (S3 in our case) and geographic region.
 
-Use the format of the endpoint below as a guide on how to enter yours.
+In regards to S3, [**the docs**](https://docs.aws.amazon.com/general/latest/gr/s3.html) point to these endpoints for the regions in the US:
+
+- **`https://s3.us-east-1.amazonaws.com/`** (N. Virginia)
+- `**https://s3.us-east-2.amazonaws.com/**` (Ohio)
+- `**https://s3.us-west-1.amazonaws.com/**` (N. California)
+- `**https://s3.us-west-2.amazonaws.com/**` (Oregon)
+
+Pick the endpoint nearest to you and assign it to the `S3_BASE_URL` variable. In addition, assign your bucket name to a `BUCKET` variable as follows:
 
 ```python
-from .forms import FeedingForm
-
-# Add these "constants" below the imports
-S3_BASE_URL = 'https://s3-us-west-1.amazonaws.com/'
-BUCKET = 'catcollector'
+# Add these "constant" variables below the imports
+S3_BASE_URL = 'Your endpoint from above'
+BUCKET = 'your-bucket-name-here'
 ```
 
 <br>
 <br>
-<br>
 
-**Make sure that you use YOUR S3 bucket name instead of `catcollector`.**
+**Make sure that you use YOUR S3 base URL and bucket name instead of** `'Your endpoint from above'` and ****`your-bucket-name-here`**.**
 
-We'll be using `S3_BASE_URL`, `BUCKET` and a randomly generated key to build a unique URL used for uploading to Amazon S3 and for saving in the `url` attribute or each `Photo` instance.
+Each file uploaded to S3 must have a unique URL.
+
+We’ll be using `S3_BASE_URL`, `BUCKET` and a randomly generated key to build this unique URL.
+
+The unique URL will also be saved in the `url` attribute in each `Photo` instance.
+
+Finally, this is where the magic happens, we’ll review the code as we type it in:
 
 <br>
 <br>
@@ -570,9 +612,17 @@ def add_photo(request, cat_id):
     return redirect('detail', cat_id=cat_id)
 ```
 
-> The `url` has to be unique, otherwise we risk overwriting existing files.
+> Again, the `url` has to be unique, otherwise we risk overwriting existing files.
 
-On to the UI...
+By the way, code like:
+
+```python
+key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
+```
+
+is a great line of code to examine in smaller pieces if it seems overwhelming.
+
+On to the UI…
 
 <br>
 <br>
