@@ -56,7 +56,13 @@ This lesson will cover how to add this ability to your Django project should you
 
 This lesson's starter code picks up from our authentication lesson.
 
-in your terminal, navigate to the **catcollector** directory, and open it in VS Code with `code .`.
+in your terminal, navigate to the **catcollector** directory, and open it in VS Code with:
+
+```shell
+$ code .
+```
+
+<br>
 
 **Be sure that no other Django server is running!**
 
@@ -320,19 +326,51 @@ Now let's get on with the app!
 <br>
 <br>
 
-### Install & Configure - Boto 3
+### Install & Configure New Dependencies
+
+We've reached a point where we need to add additional dependencies to our project.
+
+1. `boto3` - This is the offical SDK for AWS, so we can use services, like `s3`, in Django, or any other Python powered programs.
+2. `django-environ` - This package allows us to store environment variables for our Django projects inside of a `.env` file.
 
 <br>
-<br>
-<br>
 
-#### Install `boto3`
+Here's what we'll need to do:
 
-The official Amazon AWS SDK (Software Development Kit) for Python is a library called Boto3. Open the Web Container Shell and let’s install it:
+1. First, we need to add the next dependencies to our `requirements.txt`
 
-```bash
-$ pip3 install boto3
+*At the time of authoring this guide, the following versions for `boto3` and `django-environ` are 1.24.82 and 0.9.0 respectively; it's advised that we check if there are any newer releases of these*
+
+```shell
+boto3==1.24.82
+django-environ==0.9.0
 ```
+<br>
+
+Here's what our full `requirements.txt` should look like:
+
+```shell
+Django>=4.0,<5.0
+psycopg2>=2.8
+django-extensions>=3.0,<4.0
+boto3==1.24.82
+django-environ==0.9.0
+```
+<br>
+
+Unfortunately, changing `requirements.txt` isn't enough to invoke a change for our project's container running with Docker; we'll need to rebuild the container so it can install these new dependencies permanently.
+
+Here's the command to build/rebuild our container:
+
+```shell
+$ docker compose build
+```
+
+<br>
+
+Great, now all we need to do is run `docker compose up` to get our rebuilt container running again.
+
+Let's move on to the next steps
 
 <br>
 <br>
@@ -346,7 +384,9 @@ If you do, and push your code to GitHub, it will be discovered within minutes an
 
 Have I scared you? Good…
 
-Let's check out the [**Boto3 docs**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) to see all the options we have for configuring our AWS credentials in our app. You'll see that there are TONS. We'll be using this method: [**Environment Variables with specific names**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables).
+Let's check out the [**Boto3 docs**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) to see all the options we have for configuring our AWS credentials in our app. You'll see that there are TONS. 
+
+We'll use this method: [**Environment Variables with specific names**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables).
 
 <br>
 <br>
@@ -357,16 +397,12 @@ Let's check out the [**Boto3 docs**](https://boto3.amazonaws.com/v1/documentatio
 
 Here's how we create environment variables in Django:
 
-1. Install `django-environ` using the **Web Container Shell**
-    
-    ```
-    pip install django-environ
-    ```
+1. Install `django-environ` - We did this earlier 😎
     
 2. Create a `**.env**` file ***in the same folder as*** `**settings.py**`.
 3. Just like Express, you’ll put your secrets inside of `.env` (one per line, no spaces). For example:
     
-    ```
+    ```shell
     SECRET_KEY=abc123
     ```
     
@@ -398,7 +434,7 @@ Don’t forget after deploying, you’ll need to set the exact same config vars 
 
 To configure Boto3, we're going to need these 2 environment variables:
 
-```
+```shell
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
@@ -407,12 +443,13 @@ Put your access keys here, make sure you do not use quotes or spaces after the `
 
 We’re done with Boto3, on to the larger project…
 
-TKTKS - (Was this put in here to store the Django secret key?  If so, we need to flesh it out.)  Add another environment variable:
+TKTKS - (Was this put in here to store the Django secret key?  If so, we need to flesh it out.)  
 
-```html
+Add another environment variable:
+
+```shell
 SECRET_KEY=
 ```
-
 
 
 <br>
