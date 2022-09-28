@@ -330,16 +330,16 @@ Now let's get on with the app!
 
 We've reached a point where we need to add additional dependencies to our project.
 
-1. `boto3` - This is the offical SDK for AWS, so we can use services, like `s3`, in Django, or any other Python powered programs.
-2. `django-environ` - This package allows us to store environment variables for our Django projects inside of a `.env` file.
+1. `boto3` - This is the offical SDK (Software Development Kit) for AWS, so we can use services, like `s3` in our Python Projects.
+2. `django-environ` - This package allows us to read environment variable stored inside of a `.env` file.
 
 <br>
 
 Here's what we'll need to do:
 
-1. First, we need to add the next dependencies to our `requirements.txt`
+1. First, we need to add our new dependencies to our `requirements.txt`.
 
-*At the time of authoring this guide, the following versions for `boto3` and `django-environ` are 1.24.82 and 0.9.0 respectively; it's advised that we check if there are any newer releases of these*
+*At the time of authoring this guide, the following versions for `boto3` and `django-environ` are 1.24.82 and 0.9.0 respectively; it's advised that we check https://pypi.org if there are any newer releases of these.*
 
 ```txt
 boto3==1.24.82
@@ -347,7 +347,7 @@ django-environ==0.9.0
 ```
 <br>
 
-Here's what our full `requirements.txt` should look like:
+Here's what our full `requirements.txt` should look like after we add `boto3` and `django-environ`:
 
 ```txt
 Django>=4.0,<5.0
@@ -358,7 +358,7 @@ django-environ==0.9.0
 ```
 <br>
 
-Unfortunately, changing `requirements.txt` isn't enough to invoke a change for our project's container running with Docker; we'll need to rebuild the container so it can install these new dependencies permanently.
+Unfortunately, changing `requirements.txt` isn't enough to invoke a change for our project's Docker container; we'll need to rebuild the container to install these new dependencies permanently.
 
 Here's the command to build/rebuild our container:
 
@@ -368,7 +368,7 @@ $ docker compose build
 
 <br>
 
-Great, now all we need to do is run `docker compose up` to get our rebuilt container running again.
+Great, now all we need to do is run `docker compose up` again.
 
 Let's move on to the next steps
 
@@ -378,15 +378,15 @@ Let's move on to the next steps
 
 #### Configure Credentials
 
-<p style="color:red">Do not ever put your Amazon AWS, or any other secret keys, in your source code!</p>
+<p style="color: crimson;">Do not ever put your Amazon AWS, or any other secret keys, in your source code!</p>
 
 If you do, and push your code to GitHub, it will be discovered within minutes and could result in a major financial liability!
 
 Have I scared you? Good…
 
-Let's check out the [**Boto3 docs**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) to see all the options we have for configuring our AWS credentials in our app. You'll see that there are TONS. 
+Let's check out the [**`boto3` docs**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html) to see all the options we have for configuring our AWS credentials in our app. You'll see that there are TONS. 
 
-We'll use this method: [**Environment Variables with specific names**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables).
+We'll use this method: [**environment Variables with specific names**](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/credentials.html#environment-variables).
 
 <br>
 <br>
@@ -399,14 +399,16 @@ Here's how we create environment variables in Django:
 
 1. Install `django-environ` - We did this earlier 😎
     
-2. Create a `**.env**` file ***in the same folder as*** `**settings.py**`.
-3. Just like Express, you’ll put your secrets inside of `.env` (one per line, no spaces). For example:
+2. Create a **`.env`** file ***in the same folder as*** **`settings.py`**.
+3. Just like Express, you’ll put your secrets inside of `.env` (one per line, no spaces). 
+
+For example:
     
-    ```txt
-    SECRET_KEY=abc123
-    ```
+```txt
+SECRET_KEY=abc123
+```
     
-4. Add this code to the top of `**settings.py**`:
+4. Next, let's add this code to the top of **`settings.py`**:
     
     ```python
     import environ
@@ -414,13 +416,11 @@ Here's how we create environment variables in Django:
     environ.Env.read_env()
     ```
     
-    <aside>
+    
     🚨 Because you are installing these packages in the container and NOT locally, you’ll get linting within VS Code for `environ`.  Don’t worry about this, your code will still run!
-    
-    ![display](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21e633d5-f267-4692-af0c-e17b33bd81b2/Untitled.png)
-    
-    </aside>
-    
+
+<br>
+
 5. Then in whatever module you need access to the secrets:
     
     ```python
@@ -428,7 +428,7 @@ Here's how we create environment variables in Django:
     ```
     
 
-Replacing `SECRET_KEY` with the key name in your `**.env**` file as necessary
+Replacing `SECRET_KEY` with the key name in your **`.env`** file as necessary
 
 Don’t forget after deploying, you’ll need to set the exact same config vars in Heroku, but their values may be different
 
@@ -582,8 +582,6 @@ from .models import Cat, Toy, Photo
 
 🚨 Because you are installing the package in the container and NOT locally, you’ll get linting within VS Code for `boto3`.  Don’t worry about this, your code will still run!
 
-![display](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/55241e6b-e872-494d-b755-09496dfd5711/Untitled.png)
-
 
 
 Next, we're going to define a couple of variables we'll use in the _view function_.
@@ -598,10 +596,10 @@ AWS has different endpoints (URLs) dependent upon the service (S3 in our case) a
 
 In regards to S3, [**the docs**](https://docs.aws.amazon.com/general/latest/gr/s3.html) point to these endpoints for the regions in the US:
 
-- **`https://s3.us-east-1.amazonaws.com/`** (N. Virginia)
-- **`https://s3.us-east-2.amazonaws.com/`** (Ohio)
-- **`https://s3.us-west-1.amazonaws.com/`** (N. California)
-- **`https://s3.us-west-2.amazonaws.com/`** (Oregon)
+1. **`https://s3.us-east-1.amazonaws.com/`** (N. Virginia)
+1. **`https://s3.us-east-2.amazonaws.com/`** (Ohio)
+1. **`https://s3.us-west-1.amazonaws.com/`** (N. California)
+1. **`https://s3.us-west-2.amazonaws.com/`** (Oregon)
 
 Pick the endpoint nearest to you and assign it to the `S3_BASE_URL` variable. In addition, assign your bucket name to a `BUCKET` variable as follows:
 
@@ -651,15 +649,18 @@ def add_photo(request, cat_id):
     return redirect('detail', cat_id=cat_id)
 ```
 
-> Again, the `url` has to be unique, otherwise we risk overwriting existing files.
+Again, the `url` has to be unique, otherwise we risk overwriting existing files.
 
-By the way, code like:
+<br>
+<br>
+
+
 
 ```python
 key = uuid.uuid4().hex + photo_file.name[photo_file.name.rfind('.'):]
 ```
 
-is a great line of code to examine in smaller pieces if it seems overwhelming.
+By the way, ☝️ this is a great line of code to examine in smaller pieces if it seems overwhelming.
 
 On to the UI…
 
@@ -695,7 +696,7 @@ We're going to use Django's nifty `for...empty` template tags to iterate through
 ...
 ```
 
-> The `for...empty` template tags avoid having to wrap a `for...in` loop with an `if...else` like we did earlier to display a "No Toys" message.
+The `for...empty` template tags avoid having to wrap a `for...in` loop with an `if...else` like we did earlier to display a "No Toys" message.
 
 <br>
 <br>
@@ -721,7 +722,9 @@ Reminder - we don't actually invoke methods within Django template tags. For exa
 <br>
 <br>
 
-This is because Django templates automatically call an attribute if it's a function. This can be a problem if you ever need to actually call a function that takes arguments. For example, the following **will not work**:
+This is because Django templates automatically call an attribute if it's a function. This can be a problem if you ever need to actually call a function that takes arguments. 
+
+For example, the following **will not work**:
 
 ```html
 {% if len(cat.photo_set.all) > 0 %}

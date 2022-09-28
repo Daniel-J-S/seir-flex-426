@@ -2,7 +2,7 @@
 track: "Second Language"
 title: "Intro To The Team Git Workflow"
 week: 24
-day: 1
+day: 2
 type: "lecture"
 ---
 
