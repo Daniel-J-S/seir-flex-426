@@ -341,7 +341,7 @@ Here's what we'll need to do:
 
 *At the time of authoring this guide, the following versions for `boto3` and `django-environ` are 1.24.82 and 0.9.0 respectively; it's advised that we check if there are any newer releases of these*
 
-```shell
+```txt
 boto3==1.24.82
 django-environ==0.9.0
 ```
@@ -349,7 +349,7 @@ django-environ==0.9.0
 
 Here's what our full `requirements.txt` should look like:
 
-```shell
+```txt
 Django>=4.0,<5.0
 psycopg2>=2.8
 django-extensions>=3.0,<4.0
@@ -402,7 +402,7 @@ Here's how we create environment variables in Django:
 2. Create a `**.env**` file ***in the same folder as*** `**settings.py**`.
 3. Just like Express, you’ll put your secrets inside of `.env` (one per line, no spaces). For example:
     
-    ```shell
+    ```txt
     SECRET_KEY=abc123
     ```
     
@@ -434,12 +434,14 @@ Don’t forget after deploying, you’ll need to set the exact same config vars 
 
 To configure Boto3, we're going to need these 2 environment variables:
 
-```shell
+```txt
 AWS_ACCESS_KEY_ID=
 AWS_SECRET_ACCESS_KEY=
 ```
 
-Put your access keys here, make sure you do not use quotes or spaces after the `=` sign. By using these specific names we don't have to do any additional work to make use of them in our application.
+Put your access keys here, make sure you do not use spaces before or after the `=` sign. 
+
+By using these specific names we don't have to do any additional work to make use of them in our application.
 
 We’re done with Boto3, on to the larger project…
 
@@ -447,7 +449,7 @@ TKTKS - (Was this put in here to store the Django secret key?  If so, we need to
 
 Add another environment variable:
 
-```shell
+```txt
 SECRET_KEY=
 ```
 
@@ -597,9 +599,9 @@ AWS has different endpoints (URLs) dependent upon the service (S3 in our case) a
 In regards to S3, [**the docs**](https://docs.aws.amazon.com/general/latest/gr/s3.html) point to these endpoints for the regions in the US:
 
 - **`https://s3.us-east-1.amazonaws.com/`** (N. Virginia)
-- `**https://s3.us-east-2.amazonaws.com/**` (Ohio)
-- `**https://s3.us-west-1.amazonaws.com/**` (N. California)
-- `**https://s3.us-west-2.amazonaws.com/**` (Oregon)
+- **`https://s3.us-east-2.amazonaws.com/`** (Ohio)
+- **`https://s3.us-west-1.amazonaws.com/`** (N. California)
+- **`https://s3.us-west-2.amazonaws.com/`** (Oregon)
 
 Pick the endpoint nearest to you and assign it to the `S3_BASE_URL` variable. In addition, assign your bucket name to a `BUCKET` variable as follows:
 
@@ -612,7 +614,7 @@ BUCKET = 'your-bucket-name-here'
 <br>
 <br>
 
-**Make sure that you use YOUR S3 base URL and bucket name instead of** `'Your endpoint from above'` and ****`your-bucket-name-here`**.**
+**Make sure that you use YOUR S3 base URL and bucket name instead of:** `'Your endpoint from above'` and `'your-bucket-name-here'`.
 
 Each file uploaded to S3 must have a unique URL.
 
