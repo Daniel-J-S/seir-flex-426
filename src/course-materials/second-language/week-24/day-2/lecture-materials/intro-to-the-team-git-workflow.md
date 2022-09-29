@@ -231,14 +231,15 @@ To visualize the history of commits made to the repo we use the `git log` comman
 
 ## Resources
 
+<!--
 - [Slides for the lesson on branching][branching-deck]
 
 Articles and tutorials on branching and workflows in Git:
-
+- ['Reset Demystified'][git-scm-blog-reset] (helps to understand the structures of Git)
+-->
 - [Git Branching][atlassian-branches]
 - [Common Git Workflows][atlassian-workflows]
 - [In-depth Discussion of a Workflow][in-depth-workflow]
-- ['Reset Demystified'][git-scm-blog-reset] (helps to understand the structures of Git)
 - **[A Git Branching visualization game!][git-viz-game]**
 
 <!-- Links -->
