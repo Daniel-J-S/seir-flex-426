@@ -225,6 +225,7 @@ If you don't already have one, add a `DEBUG` key in your local **`.env`** and se
 ```python
 DEBUG=True
 ```
+<br>
 
 Also add the `DEBUG` key to Heroku and make sure its value is set to `False`. 
 
@@ -236,7 +237,11 @@ Change the `DEBUG = True` line in **`settings.py`** to:
 DEBUG = env('DEBUG') == 'True' 
 ```
 
-This will get the value of DEBUG in your **`.env`** file. If it's `'True'` then the debugger will be turned on. 
+
+
+This will get the value of DEBUG in your **`.env`** file. 
+
+If it's `'True'` then the debugger will be turned on. 
 
 For any other value it will be turned off.
 
@@ -246,7 +251,7 @@ For any other value it will be turned off.
 
 #### `SECRET_KEY`
 
-If you don't already have one, add a `SECRET_KEY` in your `**.env**`. 
+If you don't already have one, add a `SECRET_KEY` in your **`.env`**. 
 
 You can also generate a secret key by running this command in the **Web Container Shell**:
 
@@ -301,6 +306,7 @@ $ heroku config:set AWS_ACCESS_KEY_ID=AKIAJYO6WFUBRZUI6ZNQ
 ```
 
 > Note: If setting AWS keys from Boto3, ensure the key names are in all caps.
+
 > Also Note: Ensure you set `DEBUG` to `False` on Heroku
 
 Setting the environment variables via the command line automatically restarts the server - which is necessary. If you set the _config vars_ in Heroku's Dashboard, it won't restart the server. 
@@ -312,8 +318,11 @@ After you are finished setting all of the environment variables, you can verify 
 ```shell
 $ heroku config
 ```
+<br>
 
 Included in the output will be a `DATABASE_URL` that Heroku automatically added.
+
+> NOTE: if you don't see a `DATABASE_URL`, we may need to add it manually later. 
 
 
 <br>
@@ -339,6 +348,7 @@ Let’s go into the **Web Container Shell** and check it out:
 ```shell
 $ pip freeze
 ```
+<br>
 
 That list of packages is in the correct format for the `requirements.txt` file.
 
@@ -368,7 +378,7 @@ Now let's commit the changes made to the project (make sure that you're on the `
 
 ```shell
 $ git add -A
-$ git commit -m "Config deployment"
+$ git commit -m "wip: config deployment"
 ```
 
 <br>
@@ -384,6 +394,8 @@ So, deploying the first time and re-deploying later is as easy as running this c
 ```shell
 $ git push heroku master
 ```
+
+<br>
 
 The first deployment will take considerably longer than subsequent deployments because Heroku will have to install all of the Python packages. However, during re-deployments, Heroku will only install/uninstall changes made to `requirements.txt`.
 
@@ -429,6 +441,60 @@ Add-on:                postgresql-parallel-89032
 ```
 
 <br>
+
+If you don't see the above information and get a message such as `⬢ <your app name> has no heroku-postgresql databases.`, we'll need to create one. 
+
+Fortunately, the process to add PostgreSQL to our deployed Django App on Heroku is simple.
+
+1. First, we must go to the `DATABASES` dictionary inside of `settings.py` and comment out the `HOST` key.
+
+This is necessary because the cloud-hosted database will have a different identifier than the one we use locally.
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.environ.get('POSTGRES_NAME'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+        'USER': os.environ.get('POSTGRES_USER'),
+        # 'HOST': 'db'
+    }
+}
+```
+
+
+> NOTE: Commenting out `HOST` will cause our Django Project to crash locally; this is expected and okay for now.
+
+<br>
+<br>
+
+2. Next, we need to include the `Heroku PostgreSQL` addon.
+
+```bash
+$ heroku addons:create heroku-postgresql:hobby-dev
+```
+
+> NOTE: Addons are simple software packages and configuration that extend the capabilities of heroku; if you're curious, checkout: https://elements.heroku.com/addons to see what's available
+
+
+<br>
+<br>
+
+
+3. Great! Now we need to `stage > commit > push` the recent changes we made to `settings.py` to Heroku with these commands:
+
+```bash
+$ git add -A
+$ git commit -m "wip: config deployment #2"
+$ git push heroku <your branch name>
+```
+
+<br>
+
+4. Now you can run the `heroku pg` command; you should be able to see that our Heroku app has a PosgreSQL database now.
+
+
+
 <br>
 <br>
 
@@ -576,6 +642,29 @@ Okay, the finale is to browse to:
 to checkout the admin portal:
 
 <img src="https://i.imgur.com/fFsrfae.png">
+
+<br>
+<br>
+<br>
+
+### Wait! What happened to my data?
+
+By this time it's very likely you noticed that your cloud-hosted database doesn't contain the data you created locally during the development phase; this is completely expected.
+
+Remember, we created data with our Django Project using a locally-hosted database through `docker`.
+
+##### Q: Can we just transfer our local database to the cloud?
+##### A: Yes, this is possible, but not very easy, unfortunately.
+
+Want to restore a cloud-hosted PostgreSQL database from locally-hosted database?
+
+You're in for quite a challenge, but here are some resources to help you get started:
+
+1. <a href="https://devcenter.heroku.com/articles/heroku-postgres-import-export" target="_blank">Here are the Heroku docs that explain what needs to happen</a>
+2. Part of the process involves creating a dump file of your `"dockerized"` PostgreSQL database; <a href="https://stackoverflow.com/questions/24718706/backup-restore-a-dockerized-postgresql-database" target="_target">here's an interesting post on Stack Overflow</a> that provides an example of how to do this.
+
+> NOTE: "dumps" are files that contain a current snapshot of a database Schema along with it's current data; these are commonly used for noSQL and SQL databases. Simply put, we use them to backup and restore databases.
+
 
 <br>
 <br>
