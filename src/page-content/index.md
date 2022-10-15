@@ -93,18 +93,16 @@ Curriculum schedule and content is subject to change at the instructor's discret
 <br>
 <br>
 
-<div style="color: grey;">
 
-### 🔒 Unit Five: The Capstone Project - **Locked**
-
+<!-- ### 🔒 Unit Five: The Capstone Project - **Locked** -->
 
 
-<!-- ### [<u>Unit Five: The Capstone Project</u>](/capstone/)  -->
 
-
+### [<u>Unit Five: The Capstone Project</u>](/capstone/) 
 
 | Week  | Topics                                |
 | ----- | ------------------------------------- |
 | 26/27 | Capstone Project and Graduation 🥳 🎉 |
 
-</div>
+
+<div style="color: grey;"></div>

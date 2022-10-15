@@ -2,6 +2,7 @@
 title: "The Capstone Project"
 ---
 
+<!-- 
 # The Capstone Project
 
 The last period of the program is dedicated to your capstone!
@@ -18,26 +19,27 @@ That said, you will be given two options in order to pursue your capstone projec
 <br>
 <br>
 <br>
+-->
 
+## The Capstone Project: Build Your Portfolio Website:
 
-## Option A: Build Your Portfolio Website:
-
-A Portfolio Website is essential to all Developers as it allows us to show off our work. 
+A Portfolio/Personal Website is essential to all Developers as it allows us to show off our work.
 
 Here are some important considerations:
 
-- We suggest creating your site with HTML, CSS, and Javascript **OR** Wordpress (see below)
-- No site builder services are permitted. Frameworks like Bootstrap, Materialize, Bourbon, etc. are okay, but site builders like Hugo, Wix, Weebly, Squarespace etc. are **not** okay. If you aren't sure about it, ask an instructor.
+- We suggest creating your site with HTML, CSS, and Javascript, **OR** you can choose something more challenging that involves React, such as React (the core library), or React Web Frameworks such as <a href="https://nextjs.org/" target="_blank" rel="noopener noreferrer">Next.js</a> or <a href="https://www.gatsbyjs.com/" target="_blank" rel="noopener noreferrer">Gatsby.js</a>.
+- No site builder services are permitted. Frameworks like Bootstrap, Materialize, Bourbon, etc., are okay, but site builders like Hugo, Wix, Weebly, Squarespace, etc., are **not**. If you aren't sure about it, ask an instructor
 
+- **Your Portfolio/Personal Website does not need a web server or a database, nor does it need to be a full-stack web application.** - *One small exception here would be if you're building a content management system (blog) or planning on rendering dynamic content on your site; if you're unsure, feel free to ask your instructional team.*
 
 <br>
 <br>
 
-## Here are some other attributes of a great porfolio site:
+## Here are some attributes of a great porfolio site:
 
 Your site ...
 
-- Is deployed to vercel, netlify, heroku, or github pages or hosted somewhere else
+- Is deployed to Vercel, Netlify or Github pages or hosted somewhere else
 - Contains a list of your current projects (with links to the live sites)
 - Contains your resume
 - Contains your bio
@@ -51,7 +53,15 @@ Your site ...
 
 **Optional / Your Site Has a Nice Touch**
 
-Here are a list of links to various sites in the tech world that you follow:
+Here are a list of links to various sites that contain layout templates for design inspiration:
+
+- <a href="https://html5up.net/" target="_blank" rel="noopener noreferrer">HTML5up</a>
+- <a href="https://startbootstrap.com/" target="_blank" rel="noopener noreferrer">Start Bootstrap</a>
+- <a href="https://materializecss.com/themes.html" target="_blank" rel="noopener noreferrer">Materialize.css Themes</a>
+- <a href="https://www.gatsbyjs.com/starters/#Portfolio" target="_blank" rel="noopener noreferrer">Gatsby.js Starters Portfolio Designs</a>
+- <a href="https://nextjs.org/examples" target="_blank" rel="noopener noreferrer">Next.js Examples</a>
+
+<!--
 
 - Possible places to find a designer:
     - https://www.freelancer.com/
@@ -66,16 +76,21 @@ Here are a list of links to various sites in the tech world that you follow:
 - Articles with more freelancer lists
     - http://mashable.com/2010/03/02/finding-designers-online/
     - https://www.entrepreneur.com/article/245953
+-->
 
 
 
-**Optional: Your Site is Linked to a Purchased URL (...possibly yourname.com).**
-- See a pretty decent walkthrough of using your domain name [here for github pages](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages)
-- or for wordpress go [here for wordpress](https://en.support.wordpress.com/move-domain/#transfer-domain-registration-to-another-registrar)
+**Optional: Linked your site to a Purchased URL (...possibly yourname.com).**
+- See a pretty decent walkthrough of using your domain name <a href="https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages" target="_blank" rel="noopener noreferrer">GitHub pages</a>.
+- Here's another article that talks about how to configure domains on <a href="https://www.netlify.com/blog/2018/06/19/buy-and-secure-a-custom-domain-through-netlify/" target="_blank" rel="noopener noreferrer">Netlify</a>.
+
+<!-- - or for wordpress go [here for wordpress](https://en.support.wordpress.com/move-domain/#transfer-domain-registration-to-another-registrar) -->
 
 <br>
 <br>
 
+
+<!-- 
 **Optional: Your Site is Built Using WordPress**
 - It is estsimated that 31% of webpages are built with WordPress. If you think you'd like to work in Wordpress then it is strongly encouraged that you have your porfolio built in Wordpress. [More info on wordpress](https://wordpress.com/)
 
@@ -166,42 +181,45 @@ Other Databases
 <br>
 <br>
 
+
+-->
+
 ### Suggested Ways to Get Started
 
 
-* **Wireframe** Make a drawing of what your app will look like on each page of your application (what does it look like as soon as you log on to the site? What does it look like once a user logs in, etc.).
+1. **Wireframe** Make a drawing of what your app will look like on each page of your application (what does it look like as soon as you log on to the site? What does it look like once a user logs in, etc.).
 
 <br>
 
-* **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually.
+2. **Break the project down into different components** (data, presentation, views, style, DOM manipulation) and brainstorm each component individually.
 
 <br>
 
-* Create your **user stories**
+3. Create your **user stories**
 
 <br>
 
-* Create a **Trello board** and break down the user stories into cards
+4. Create a **Trello board** and break down the user stories into cards
 
 <br>
 
-* **Use your Development Tools** (console.log, inspector, alert statements, etc) to debug and solve problems
+5. **Use your Development Tools** (console.log, inspector, alert statements, etc) to debug and solve problems
 
 <br>
 
-* Work through the lessons in class for help and inspiration! Think about adding relevant code to your application each day - you are given 5 days so that you can work on it in small chunks, COMMIT OFTEN. We will be looking at your commit dates and comments are part of your scoring.
+5. **Review previous lessons in class for help and inspiration!** Think about adding relevant code to your application each day - you are given 5 days so that you can work on it in small chunks, COMMIT OFTEN.
 
 <br>
 
-* **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
+6. **Commit early, commit often.** Don’t be afraid to break something because you can always go back in time to a previous version.
 
 <br>
 
-* **Consult documentation resources** (MDN, jQuery, etc.) at home to better understand what you’ll be getting into.
+7. **Consult documentation resources** (MDN, jQuery, React Docs ... etc) at home to better understand what you’ll be getting into.
 
 <br>
 
-* **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
+8. **Don’t be afraid to write code that you know you will have to remove later.** Create temporary elements (buttons, links, etc) that trigger events if real data is not available. For example, if you’re trying to figure out how to change some text when the game is over but you haven’t solved the win/lose game logic, you can create a button to simulate that until then.
 
 
 <br>
@@ -211,11 +229,11 @@ Other Databases
 
 ## Presentation
 
-On graduation day, you will provide a **technical demonstration** of your project which:
+On graduation day, you will provide a **technical demonstration** of your portfolio which:
 
 * Is ~5-10 minutes in length
 * Shows off the features of your project
-* Be sure to talk about the new thing you taught yourself
+* Discusses what you've learned throughout the process
 * Explains the technical details
 * Explains the technical challenges
 * Explains which improvements you might make
@@ -228,4 +246,4 @@ On graduation day, you will provide a **technical demonstration** of your projec
 
 In closing if you have any questions regarding these options, feel free to reach out to your instructional team for advice. 
 
-Good luck!
+Good luck! 🎉
